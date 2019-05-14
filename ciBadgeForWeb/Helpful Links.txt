@@ -1,0 +1,14 @@
+﻿
+Helpful Links  
+
+
+
+
+Get started with ASP.NET on Azure    
+  Azure for .NET and .NET Core developers  
+  https://docs.microsoft.com/en-us/dotnet/azure/?utm_source=aspnet-start-page&utm_campaign=vside
+
+Publish your app to Azure 
+  Create an ASP.NET Framework web app in Azure
+  Launch the publish wizard
+  https://docs.microsoft.com/en-us/azure/app-service/app-service-web-get-started-dotnet-framework#launch-the-publish-wizard
