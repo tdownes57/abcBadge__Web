@@ -1,0 +1,52 @@
+
+Public Class CIRecipient  
+
+   Public RecipientID as String    
+   Public FirstName As String
+   Public LastName As String 
+   Public MiddleName As String 
+   Public EffectiveDate As String 
+   Public ExpirationDate As String 
+   Public TextFields As List(Of String) '' = New String(5)     
+   Public DateFields As List(Of Date)   
+
+   Private mod_row As System.Data.DataRow
+   Private mod_config As CIPersonalityConfig
+
+   Public Sub New(par_row as System.Data.DataRow, par_config As CIPersonalityConfig) 
+
+      mod_row = par_row
+      mod_config = par_config         
+
+      RecipientID = par_row("fstrID").Value
+      FirstName = par_row("fstrFirstName").Value
+      LastName = par_row("fstrLastName").Value
+      TextFields = New List(Of String)         
+      DateFields = New List(Of Date)         
+
+      TextFields.Add("Index 0 not in use")
+       
+      For indexFld As Integer = 1 to par_config.CustomFields_Text.Count
+       
+          TextFields.Add(par_row("TextField" + String.Format(indexFld, "00")).ToString)
+
+      Next indexFid        
+
+      For indexDateFld As Integer = 1 to par_config.CustomFields_Date.Count
+          Try
+             DateFields.Add(par_row("DateField" + String.Format(indexDateFld, "00")).Value)
+          Catch
+             DateFields.Add(DateTime.MinValue)   
+          End Try
+      Next indexFid        
+
+   End Sub ''End of "Public Sub New(par_row as System.Data.DataRow, par_config As CIPersonalityConfig)" 
+
+   Public Sub New(par_customerID As String, par_configID As Integer, par_recipID As String
+
+
+   End Sub   
+
+
+
+End Class   

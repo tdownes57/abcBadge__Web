@@ -1,0 +1,15 @@
+
+
+Public Class LayoutPrint  
+
+    Private mod_datarowRecip As System.Data.DataRow
+    Private mod_layoutCI As InterfaceCILayout  
+    Private mod_recipient As CIRecipient   
+    
+
+    Public Sub New (par_datarowRecipient as System.Data.DataRow, _
+                    par_layout As InterfaceCILayout)
+
+        
+   
+    End Sub   
