@@ -42,9 +42,10 @@ namespace ciBadgeForWeb.Controllers
             return View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         }
 
-        public ActionResult Contact()
+        public ActionResult Example()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Example of a badge.";
+            //ViewBag.ToString();
 
             return View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         }

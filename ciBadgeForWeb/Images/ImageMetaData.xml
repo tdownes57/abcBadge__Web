@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<images>
+  <image>
+    <filename>1957.jpg</filename>
+    <description>Anthony Robbins</description>
+  </image>
+  <image>
+    <filename>1958.png</filename>
+    <description>Chetan Bhagat</description>
+  </image>
+  <image>
+    <filename>1959.PNG</filename>
+    <description>Deepak Chopra</description>
+  </image>
+  <image>
+    <filename>1960.JPG</filename>
+    <description>Robin Sharama</description>
+  </image>
+  <image>
+    <filename>1961.jpg</filename>
+    <description>Steven Covey</description>
+  </image>
+  <image>
+    <filename>1961.PNG</filename>
+    <description>Taslima Nasrren</description>
+  </image>
+  <image>
+    <filename>1962.jpg</filename>
+    <description>Taslima Nasrren</description>
+  </image>
+</images>

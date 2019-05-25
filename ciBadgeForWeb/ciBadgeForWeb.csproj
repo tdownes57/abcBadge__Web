@@ -133,6 +133,7 @@
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\ExampleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PortraitImageController.cs" />
     <Compile Include="Controllers\RecipientController.cs" />
     <Compile Include="Controllers\ValuesController1.cs" />
     <Compile Include="Global.asax.cs">
@@ -142,7 +143,34 @@
     <Compile Include="ImageHandler.ashx.cs">
       <DependentUpon>ImageHandler.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Models\PortraitImage.cs" />
+    <Compile Include="Models\PortraitImageModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Example\Example1.aspx.cs">
+      <DependentUpon>Example1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Example\Example1.aspx.designer.cs">
+      <DependentUpon>Example1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\IISHandler1.cs" />
+    <Compile Include="Views\Home\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Home\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PortraitImage\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PortraitImage\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PortraitImage\Index.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -154,6 +182,17 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Helpful Links.txt" />
+    <Content Include="Images\1962.jpg" />
+    <Content Include="Images\1957.jpg" />
+    <Content Include="Images\1958.png" />
+    <Content Include="Images\1959.PNG" />
+    <Content Include="Images\1960.JPG" />
+    <Content Include="Images\ImageMetaData.xml" />
+    <Content Include="Images\PureWhite.png" />
+    <Content Include="Images\RotatedLayout.png" />
+    <Content Include="Images\test - backup.jpg" />
+    <Content Include="Images\1961.jpg" />
+    <Content Include="Images\1961.PNG" />
     <Content Include="Models\CICustomField.txt" />
     <Content Include="Models\CILayoutBackgroundImg.txt" />
     <Content Include="Models\CILayoutPrint.txt" />
@@ -176,6 +215,12 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Views\BadgeRecipient\test_JpegFile.htm" />
+    <Content Include="Views\Example\Example1.aspx" />
+    <Content Include="Views\Home\Test_Badge.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Home\WebForm1.aspx" />
+    <Content Include="Views\PortraitImage\Index.aspx" />
     <Content Include="Views\Recipient\test_JpegFile.htm" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -195,6 +240,10 @@
     <Content Include="Views\Home\CustomerLogin.cshtml" />
     <Content Include="Views\BadgeRecipient\BadgePrint.cshtml" />
     <Content Include="Views\Example\Index.cshtml" />
+    <Content Include="Views\Home\Example_BAK.cshtml" />
+    <Content Include="Views\Home\Example_Blank.cshtml" />
+    <Content Include="Views\Home\Example.cshtml" />
+    <Content Include="Views\PortraitImage\Index_BACKUP.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
