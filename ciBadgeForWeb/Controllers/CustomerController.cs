@@ -20,21 +20,25 @@ namespace ciBadgeForWeb.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-            return View(); //A View, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
+            //
+            //  Index = No further specification was made.  Enact "parental"/default behavior.  
+            //
+            return View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         }
 
         // GET: Customer/Details/5
         public ActionResult Details(int id)
         {
-            return View(); //A View, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
+            return View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         }
 
         // GET: Customer/Create
         public ActionResult Create()
         {
-            //Index = "Nothing specified, go to the root page or action."  
+            // 
             //
-            return View(); //A View, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
+            //
+            return View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         }
 
         // POST: Customer/Create
@@ -52,14 +56,14 @@ namespace ciBadgeForWeb.Controllers
             }
             catch
             {
-                return View(); //A View, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
+                return View(); //A ViewResule, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
             }
         }
 
         // GET: Customer/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View();  //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         }
 
         // POST: Customer/Edit/5
@@ -78,14 +82,14 @@ namespace ciBadgeForWeb.Controllers
             }
             catch
             {
-                return View(); //A View, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
+                return View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
             }
         }
 
         // GET: Customer/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         }
 
         // POST: Customer/Delete/5
@@ -104,7 +108,7 @@ namespace ciBadgeForWeb.Controllers
             }
             catch
             {
-                return View(); //A View, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
+                return View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
             }
         }
     }

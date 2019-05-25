@@ -15,26 +15,39 @@ namespace ciBadgeForWeb.Controllers
 
         //public ActionResult Index(int? id)
         //{
-        //    return View();
+        //    return View();  //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         //}
 
-        public ActionResult Index(int id)
+        public ActionResult Index(Nullable<int> id)
         {
-            return View();
+            //
+            //  Index = No further specification was made.  Enact "parental"/default behavior.  
+            //
+            //5-24-2019 td//public ActionResult Index(int id)
+
+            return View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         }
 
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
-            return View();
+            return View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         }
 
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
 
-            return View();
+            return View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         }
+
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
+        }
+
     }
 }

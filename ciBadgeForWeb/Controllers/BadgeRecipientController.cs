@@ -14,6 +14,10 @@ namespace ciBadgeForWeb.Controllers
         // GET: BadgeRecipient
         public ActionResult Index()
         {
+            //
+            //  Index = No further specification was made.  Enact "parental"/default behavior.  
+            //
+
             return View();
         }
 
