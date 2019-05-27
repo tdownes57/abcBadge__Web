@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Xml.Ling; 
+using System.Xml.Linq;
+using System.Drawing;   //Added 5/27/2019 td
 
 namespace ciBadgeForWeb.Models
 {
