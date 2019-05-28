@@ -201,6 +201,8 @@
     <Content Include="Images\test - backup.jpg" />
     <Content Include="Images\1961.jpg" />
     <Content Include="Images\1961.PNG" />
+    <Content Include="Javascript\drag_simple_wTextArea.htm" />
+    <Content Include="Javascript\MainDataEntry_mock.png" />
     <Content Include="Models\CICustomField.txt" />
     <Content Include="Models\CILayoutBackgroundImg.txt" />
     <Content Include="Models\CILayoutPrint.txt" />
