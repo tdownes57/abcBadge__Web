@@ -22,7 +22,7 @@ namespace ciBadgeForWeb.Controllers
         }
 
         // GET: BadgeRecipient/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int parameter_id)
         {
             return View();
         }
@@ -50,14 +50,14 @@ namespace ciBadgeForWeb.Controllers
         }
 
         // GET: BadgeRecipient/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int parameter_id)
         {
             return View();
         }
 
         // POST: BadgeRecipient/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int parameter_id, FormCollection collection)
         {
             try
             {
@@ -72,14 +72,14 @@ namespace ciBadgeForWeb.Controllers
         }
 
         // GET: BadgeRecipient/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int parameter_id)
         {
             return View();
         }
 
         // POST: BadgeRecipient/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int parameter_id, FormCollection collection)
         {
             try
             {

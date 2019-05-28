@@ -133,6 +133,7 @@
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\ExampleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LegacyPagesController.cs" />
     <Compile Include="Controllers\PortraitImageController.cs" />
     <Compile Include="Controllers\RecipientController.cs" />
     <Compile Include="Controllers\ValuesController1.cs" />
@@ -144,6 +145,7 @@
       <DependentUpon>ImageHandler.ashx</DependentUpon>
     </Compile>
     <Compile Include="Models\CIRecipient.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\PortraitImage.cs" />
     <Compile Include="Models\PortraitImageModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -256,11 +258,13 @@
     <Content Include="Views\Home\Example.cshtml" />
     <Content Include="Views\PortraitImage\Index_BACKUP.cshtml" />
     <Content Include="Views\Recipient\Index.cshtml" />
+    <Content Include="Views\Customer\Edit.cshtml" />
+    <Content Include="Views\LegacyPages\Index.cshtml" />
+    <Content Include="Views\Recipient\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="LegacyPages\" />
-    <Folder Include="Views\Customer\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

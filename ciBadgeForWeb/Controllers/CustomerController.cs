@@ -17,6 +17,19 @@ namespace ciBadgeForWeb.Controllers
 
     public class CustomerController : Controller
     {
+        //
+        //Recipient = Student or Employee receiving the Badge. 
+        //
+        IList<Models.Customer> mod_customerList = new List<Models.Customer>() {
+                    new Models.Customer(){ CustomerCode ="CIS100", CustomerName="CI Solutions" },
+                    new Models.Customer(){ CustomerCode ="CIS101", CustomerName="CI Solutions" },
+                    new Models.Customer(){ CustomerCode ="CIS102", CustomerName="CI Solutions"  },
+                    new Models.Customer(){ CustomerCode ="CIS103", CustomerName="CI Solutions"  },
+                    new Models.Customer(){ CustomerCode ="CIS104", CustomerName="CI Solutions" },
+                    new Models.Customer(){ CustomerCode ="CIS105", CustomerName="CI Solutions"  },
+                    new Models.Customer(){ CustomerCode ="CIS106", CustomerName="CI Solutions"  }
+                };
+
         // GET: Customer
         public ActionResult Index()
         {
@@ -30,7 +43,7 @@ namespace ciBadgeForWeb.Controllers
         }
 
         // GET: Customer/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int parameter_id)
         {
             const bool c_boolSpecifyViewName = true;    //Added 5/28/2019 td
             if (c_boolSpecifyViewName) return View("Details");  //A View, i.e. a webpage, is the most popular type of ActionResult !!
@@ -73,7 +86,7 @@ namespace ciBadgeForWeb.Controllers
         }
 
         // GET: Customer/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int parameter_id)
         {
             const bool c_boolSpecifyViewName = true;    //Added 5/28/2019 td
             if (c_boolSpecifyViewName) return View("Edit");  //A View, i.e. a webpage, is the most popular type of ActionResult !!
@@ -83,7 +96,7 @@ namespace ciBadgeForWeb.Controllers
 
         // POST: Customer/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int parameter_id, FormCollection collection)
         {
             try
             {
@@ -105,7 +118,7 @@ namespace ciBadgeForWeb.Controllers
         }
 
         // GET: Customer/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int parameter_id)
         {
             const bool c_boolSpecifyViewName = true;    //Added 5/28/2019 td
             if (c_boolSpecifyViewName) return View("Delete");  //A View, i.e. a webpage, is the most popular type of ActionResult !!
@@ -115,7 +128,7 @@ namespace ciBadgeForWeb.Controllers
 
         // POST: Customer/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int parameter_id, FormCollection collection)
         {
             try
             {

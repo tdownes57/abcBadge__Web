@@ -28,20 +28,27 @@ namespace ciBadgeForWeb.Controllers
         // GET: Recipient
         public ActionResult Index()
         {
-            const bool c_boolSpecifyViewName = true;    //Added 5/28/2019 td
+            const bool c_boolSpecifyViewName = false;    //Added 5/28/2019 td
             if (c_boolSpecifyViewName) return View("Index");  //A View, i.e. a webpage, is the most popular type of ActionResult !!
-            return View();  //A ViewResult, i.e. a webpage, is the most popular type of ActionResult !!
+            //return View();  //A ViewResult, i.e. a webpage, is the most popular type of ActionResult !!
+            return View(mod_recipientList);
         }
 
         // GET: Recipient/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int parameter_id)
         {
+            const bool c_boolSpecifyViewName = false;    //Added 5/28/2019 td
+            if (c_boolSpecifyViewName) return View("Details");  //A View, i.e. a webpage, is the most popular type of ActionResult !!
+
             return View();  //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!
         }
 
         // GET: Recipient/Create
         public ActionResult Create()
         {
+            const bool c_boolSpecifyViewName = false;    //Added 5/28/2019 td
+            if (c_boolSpecifyViewName) return View("Create");  //A View, i.e. a webpage, is the most popular type of ActionResult !!
+
             return View();   //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!
         }
 
@@ -63,11 +70,22 @@ namespace ciBadgeForWeb.Controllers
         }
 
         // GET: Recipient/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int parameter_id)
         {
-            const bool c_boolSpecifyViewName = true; //Added 5/28/2019 td
+            const bool c_boolSpecifyViewName = false; //Added 5/28/2019 td
             if (c_boolSpecifyViewName) return View("Edit");  //A ViewResult, i.e. a webpage, is the most popular type of ActionResult !!
-            return View();  //A ViewResult, i.e. a webpage, is the most popular type of ActionResult !!
+            //return View();  //A ViewResult, i.e. a webpage, is the most popular type of ActionResult !!
+
+            var id_doublecheck = Request.QueryString["parameter_id"];
+
+            //Get the student from studentList sample collection for demo purpose.
+            //Get the student from the database in the real application
+            var recipients_by_id_list = mod_recipientList.Where(s => s.RecipientID == parameter_id.ToString());
+            var recipient_by_id_onlyone = recipients_by_id_list.FirstOrDefault();
+            //return View(recipients_by_id);
+            //return View("Index", recipients_by_id);
+            return View(recipient_by_id_onlyone);
+
         }
 
         // POST: Recipient/Edit/5
@@ -80,7 +98,14 @@ namespace ciBadgeForWeb.Controllers
                 //
                 //Get the student from studentList sample collection for demo purpose.
                 //Get the student from the database in the real application
-                var std = mod_recipientList.Where(s => s.RecipientID == parameter_id.ToString()).FirstOrDefault();
+                var edited_recip = mod_recipientList.Where(s => s.RecipientID == parameter_id.ToString()).FirstOrDefault();
+
+                var name_first = Request["FirstName"];
+                var name_last = Request["LastName"];
+
+                edited_recip.FirstName = name_first;  // std.FirstName + "_Revised";
+                edited_recip.LastName = name_last;  //  std.LastName + "_Revised";
+
 
                 //Index = "Nothing specified, go to the root page or action."  
                 return RedirectToAction("Index");  //A Redirect is a less-common ActionResult.  ----5/24 td
@@ -92,7 +117,7 @@ namespace ciBadgeForWeb.Controllers
         }
 
         // GET: Recipient/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int parameter_id)
         {
             const bool c_boolSpecifyViewName = true; //Added 5/28/2019 td
             if (c_boolSpecifyViewName) return View("Delete");  //A ViewResult, i.e. a webpage, is the most popular type of ActionResult !!
@@ -101,7 +126,7 @@ namespace ciBadgeForWeb.Controllers
 
         // POST: Recipient/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int parameter_id, FormCollection collection)
         {
             try
             {

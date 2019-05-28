@@ -54,9 +54,12 @@
             @Html.DisplayFor(modelItem => item.ExpirationDate)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @*@Html.ActionLink("Edit", "Edit", new { /* id = item.PrimaryKey */ }) |
+        @Html.ActionLink("Details", "Details", new { /* id = item.PrimaryKey */ }) |
+        @Html.ActionLink("Delete", "Delete", new { /* id = item.PrimaryKey */ })*@
+            @Html.ActionLink("Edit", "Edit", new { parameter_id = item.RecipientID }) |
+            @Html.ActionLink("Details", "Details", new { parameter_id = item.RecipientID }) |
+            @Html.ActionLink("Delete", "Delete", new { parameter_id = item.RecipientID })
         </td>
     </tr>
 }

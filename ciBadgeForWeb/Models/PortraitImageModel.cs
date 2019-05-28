@@ -20,8 +20,8 @@ namespace ciBadgeForWeb.Models
         {
             string directoryOfImage = HttpContext.Current.Server.MapPath("~/Images/");
             XDocument imageData = XDocument.Load(directoryOfImage + @"/ImageMetaData.xml");
-            var images = from image in imageData.Descendants("image") select new Image(image.Element("filename").Value, image.Element("description").Value);
-            this.AddRange(images.ToList<Image>());
+            var images = from image in imageData.Descendants("image") select new PortraitImage(image.Element("filename").Value, image.Element("description").Value);
+            this.AddRange(images.ToList<PortraitImage>());
         }
 
     }
