@@ -23,12 +23,18 @@ namespace ciBadgeForWeb.Controllers
             //
             //  Index = No further specification was made.  Enact "parental"/default behavior.  
             //
+            const bool c_boolSpecifyViewName = true;    //Added 5/28/2019 td
+            if (c_boolSpecifyViewName) return View("Index");  //A View, i.e. a webpage, is the most popular type of ActionResult !!
+
             return View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         }
 
         // GET: Customer/Details/5
         public ActionResult Details(int id)
         {
+            const bool c_boolSpecifyViewName = true;    //Added 5/28/2019 td
+            if (c_boolSpecifyViewName) return View("Details");  //A View, i.e. a webpage, is the most popular type of ActionResult !!
+
             return View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         }
 
@@ -38,6 +44,9 @@ namespace ciBadgeForWeb.Controllers
             // 
             //
             //
+            const bool c_boolSpecifyViewName = true;    //Added 5/28/2019 td
+            if (c_boolSpecifyViewName) return View("Create");  //A View, i.e. a webpage, is the most popular type of ActionResult !!
+
             return View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         }
 
@@ -56,13 +65,19 @@ namespace ciBadgeForWeb.Controllers
             }
             catch
             {
-                return View(); //A ViewResule, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
+                const bool c_boolSpecifyViewName = true;    //Added 5/28/2019 td
+                if (c_boolSpecifyViewName) return View("Create");  //A View, i.e. a webpage, is the most popular type of ActionResult !!
+
+                return View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
             }
         }
 
         // GET: Customer/Edit/5
         public ActionResult Edit(int id)
         {
+            const bool c_boolSpecifyViewName = true;    //Added 5/28/2019 td
+            if (c_boolSpecifyViewName) return View("Edit");  //A View, i.e. a webpage, is the most popular type of ActionResult !!
+
             return View();  //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         }
 
@@ -82,6 +97,9 @@ namespace ciBadgeForWeb.Controllers
             }
             catch
             {
+                const bool c_boolSpecifyViewName = true;    //Added 5/28/2019 td
+                if (c_boolSpecifyViewName) return View("Edit");  //A View, i.e. a webpage, is the most popular type of ActionResult !!
+
                 return View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
             }
         }
@@ -89,6 +107,9 @@ namespace ciBadgeForWeb.Controllers
         // GET: Customer/Delete/5
         public ActionResult Delete(int id)
         {
+            const bool c_boolSpecifyViewName = true;    //Added 5/28/2019 td
+            if (c_boolSpecifyViewName) return View("Delete");  //A View, i.e. a webpage, is the most popular type of ActionResult !!
+
             return View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         }
 
@@ -104,7 +125,8 @@ namespace ciBadgeForWeb.Controllers
 
                 //Index = "Nothing specified, go to the root page or action."  
                 //
-                return RedirectToAction("Index");  //A Redirect is a less-common ActionResult.  ----5/24 td
+                return RedirectToAction("Index");  //Probably opens the Index View.  A Redirect is 
+                //   a less-common ActionResult.  ----5/24 td
             }
             catch
             {

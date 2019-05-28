@@ -9,11 +9,17 @@ namespace ciBadgeForWeb.Views.Example
 {
     public partial class Example1 : System.Web.UI.Page
     {
+        //
+        // https://stackoverflow.com/questions/21877/dynamically-rendering-aspimage-from-blob-entry-in-asp-net
+        //
         protected void Page_Load(object sender, EventArgs e)
         {
+            //
+            // https://stackoverflow.com/questions/21877/dynamically-rendering-aspimage-from-blob-entry-in-asp-net
+            //
+            //imageBadge.ImageUrl = "imageHandler.ashx";
 
-            imageBadge.ImageUrl = "imageHandler.ashx";
-
+            imageBadge.ImageUrl = "~/ImageHandler.ashx?ID=myImageId";
 
         }
     }

@@ -143,6 +143,7 @@
     <Compile Include="ImageHandler.ashx.cs">
       <DependentUpon>ImageHandler.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Models\CIRecipient.cs" />
     <Compile Include="Models\PortraitImage.cs" />
     <Compile Include="Models\PortraitImageModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -152,6 +153,13 @@
     </Compile>
     <Compile Include="Views\Example\Example1.aspx.designer.cs">
       <DependentUpon>Example1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\ExampleBadge.aspx.cs">
+      <DependentUpon>ExampleBadge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Home\ExampleBadge.aspx.designer.cs">
+      <DependentUpon>ExampleBadge.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Home\IISHandler1.cs" />
     <Compile Include="Views\Home\WebForm1.aspx.cs">
@@ -216,6 +224,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Views\BadgeRecipient\test_JpegFile.htm" />
     <Content Include="Views\Example\Example1.aspx" />
+    <Content Include="Views\Home\ExampleBadge.aspx" />
     <Content Include="Views\Home\Test_Badge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -244,9 +253,11 @@
     <Content Include="Views\Home\Example_Blank.cshtml" />
     <Content Include="Views\Home\Example.cshtml" />
     <Content Include="Views\PortraitImage\Index_BACKUP.cshtml" />
+    <Content Include="Views\Recipient\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="LegacyPages\" />
     <Folder Include="Views\Customer\" />
   </ItemGroup>
   <ItemGroup>

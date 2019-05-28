@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Xml.Ling; 
+using System.Xml.Linq; 
 
 namespace ciBadgeForWeb.Models
 {
