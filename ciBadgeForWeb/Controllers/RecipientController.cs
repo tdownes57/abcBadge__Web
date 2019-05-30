@@ -15,21 +15,31 @@ namespace ciBadgeForWeb.Controllers
         //
         //Recipient = Student or Employee receiving the Badge. 
         //
-        IList<Models.CIRecipient> mod_recipientList = new List<Models.CIRecipient>() {
-                    new Models.CIRecipient(){ RecipientID ="1", FirstName="John", LastName = "Davidson" },
-                    new Models.CIRecipient(){ RecipientID ="2", FirstName="Steve", LastName = "Austin" },
-                    new Models.CIRecipient(){ RecipientID ="3", FirstName="Bill", LastName = "Clinton"  },
-                    new Models.CIRecipient(){ RecipientID ="4", FirstName="Ram", LastName = "Thegot"  },
-                    new Models.CIRecipient(){ RecipientID ="5", FirstName="Ron" , LastName = "Wood" },
-                    new Models.CIRecipient(){ RecipientID ="6", FirstName="Christopher", LastName = "Forbes"  },
-                    new Models.CIRecipient(){ RecipientID = "7", FirstName="Robin", LastName = "Forbes"  }
-                };
+        static IList<Models.CIRecipient> mod_recipientList = new List<Models.CIRecipient>() {
+                    new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID ="2", FirstName="Steve", LastName = "Austin" },
+                    new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID ="3", FirstName="Bill", LastName = "Clinton"  },
+                    new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID ="4", FirstName="Ram", LastName = "Thegot"  },
+                    new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID ="5", FirstName="Ron" , LastName = "Wood" },
+                    new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID ="6", FirstName="Christopher", LastName = "Forbes"  },
+                    new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID = "7", FirstName="Robin", LastName = "Forbes"  },
+                            new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="1", FirstName="John", LastName = "Davidson" },
+                    new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="2", FirstName="Steve", LastName = "Austin" },
+                    new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="3", FirstName="Bill", LastName = "Clinton"  },
+                    new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="4", FirstName="Ram", LastName = "Thegot"  },
+                    new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="5", FirstName="Ron" , LastName = "Wood" },
+                    new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="6", FirstName="Christopher", LastName = "Forbes"  },
+                    new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID = "7", FirstName="Robin", LastName = "Forbes"  }
+};
 
         // GET: Recipient
         public ActionResult Index()
         {
             const bool c_boolSpecifyViewName = false;    //Added 5/28/2019 td
             if (c_boolSpecifyViewName) return View("Index");  //A View, i.e. a webpage, is the most popular type of ActionResult !!
+
+            //Let's test it.  Does the List retain edits??? ----5/29/2019 td
+            mod_recipientList.FirstOrDefault().LastName += "P";
+
             //return View();  //A ViewResult, i.e. a webpage, is the most popular type of ActionResult !!
             return View(mod_recipientList);
         }
