@@ -31,6 +31,19 @@ namespace ciBadgeForWeb.Models
         public List<string> TextFields { get; set; }
         public List<DateTime> DateFields { get; set; }
 
+        public string EffectiveDate_Text
+        {
+            //Added 5/30/2019
+            get { return EffectiveDate.ToString("MM/dd/yyyy");  }
+            set { EffectiveDate = DateTime.Parse(value);  }
+        }
+
+        public string ExpirationDate_Text
+        {
+            //Added 5/30/2019
+            get { return ExpirationDate.ToString("MM/dd/yyyy"); }
+            set { ExpirationDate = DateTime.Parse(value); }
+        }
 
 
         public string ErrorMessage()

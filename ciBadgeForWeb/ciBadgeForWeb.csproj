@@ -144,6 +144,7 @@
     <Compile Include="ImageHandler.ashx.cs">
       <DependentUpon>ImageHandler.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Models\CICustomer.cs" />
     <Compile Include="Models\CIRecipient.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\PortraitImage.cs" />
@@ -209,7 +210,7 @@
     <Content Include="Models\CILayoutBackgroundImg.txt" />
     <Content Include="Models\CILayoutPrint.txt" />
     <Content Include="Models\CILayoutText.txt" />
-    <Content Include="Models\CIPersonalityConfig.txt" />
+    <Compile Include="Models\CIPersonalityConfig.cs" />
     <Content Include="Models\CIRecipient..txt" />
     <Content Include="Models\CIRecipient.txt" />
     <Content Include="Scripts\bootstrap.js" />
