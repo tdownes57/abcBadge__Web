@@ -18,17 +18,13 @@ namespace ciBadgeForWeb.Controllers
     public class CustomerController : Controller
     {
         //
-        //Recipient = Student or Employee receiving the Badge. 
+        //Customer
         //
-        IList<Models.Customer> mod_customerList = new List<Models.Customer>() {
-                    new Models.Customer(){ CustomerCode ="CIS100", CustomerName="CI Solutions" },
-                    new Models.Customer(){ CustomerCode ="CIS101", CustomerName="CI Solutions" },
-                    new Models.Customer(){ CustomerCode ="CIS102", CustomerName="CI Solutions"  },
-                    new Models.Customer(){ CustomerCode ="CIS103", CustomerName="CI Solutions"  },
-                    new Models.Customer(){ CustomerCode ="CIS104", CustomerName="CI Solutions" },
-                    new Models.Customer(){ CustomerCode ="CIS105", CustomerName="CI Solutions"  },
-                    new Models.Customer(){ CustomerCode ="CIS106", CustomerName="CI Solutions"  }
-                };
+    
+        static IList<Models.CICustomer> mod_customerList = new List<Models.CICustomer>() {
+                    new Models.CICustomer(){ CustomerCode="CIS100", CustomerName="CI Solutions" },
+                    new Models.CICustomer(){ CustomerCode="XYZ999", CustomerName="XYZ High School"  },
+           };
 
         // GET: Customer
         public ActionResult Index()
