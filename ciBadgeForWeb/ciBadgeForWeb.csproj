@@ -182,6 +182,13 @@
     <Compile Include="Views\PortraitImage\Index.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Views\PortraitImage\UploadImageToBase64.aspx.cs">
+      <DependentUpon>UploadImageToBase64.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PortraitImage\UploadImageToBase64.aspx.designer.cs">
+      <DependentUpon>UploadImageToBase64.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -239,6 +246,7 @@
     </Content>
     <Content Include="Views\Home\WebForm1.aspx" />
     <Content Include="Views\PortraitImage\Index.aspx" />
+    <Content Include="Views\PortraitImage\UploadImageToBase64.aspx" />
     <Content Include="Views\Recipient\test_JpegFile.htm" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
