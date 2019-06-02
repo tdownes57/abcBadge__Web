@@ -28,7 +28,7 @@ namespace ciBadgeForWeb
             //   http://www.leftycoder.com/routing-file-requests-to-an-asp-net-mvc-route/
             //
             routes.MapRoute(name: "LegacyAspx",
-                            url: "{page}.aspx",
+                            url: "{page}.aspeee",
                             defaults: new { controller = "LegacyPages", action = "Index", page = UrlParameter.Optional });
 
             routes.MapRoute(
