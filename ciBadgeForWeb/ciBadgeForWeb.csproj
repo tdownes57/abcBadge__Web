@@ -136,6 +136,7 @@
     <Compile Include="Controllers\LegacyPagesController.cs" />
     <Compile Include="Controllers\PortraitImageController.cs" />
     <Compile Include="Controllers\RecipientController.cs" />
+    <Compile Include="Controllers\Steps1and2Controller.cs" />
     <Compile Include="Controllers\ValuesController1.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -284,6 +285,7 @@
     <Content Include="Views\Customer\Edit.cshtml" />
     <Content Include="Views\LegacyPages\Index.cshtml" />
     <Content Include="Views\Recipient\Edit.cshtml" />
+    <Content Include="Views\Steps1and2\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
