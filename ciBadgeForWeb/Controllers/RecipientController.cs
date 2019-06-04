@@ -41,7 +41,7 @@ namespace ciBadgeForWeb.Controllers
             mod_recipientList.FirstOrDefault().LastName += "P";
 
             //return View();  //A ViewResult, i.e. a webpage, is the most popular type of ActionResult !!
-            return View(mod_recipientList);
+            return (ViewResult)View(mod_recipientList);
         }
 
         // GET: Recipient/Details/5
@@ -50,7 +50,7 @@ namespace ciBadgeForWeb.Controllers
             const bool c_boolSpecifyViewName = false;    //Added 5/28/2019 td
             if (c_boolSpecifyViewName) return View("Details");  //A View, i.e. a webpage, is the most popular type of ActionResult !!
 
-            return View();  //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!
+            return (ViewResult)View();  //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!
         }
 
         // GET: Recipient/Create
@@ -59,7 +59,7 @@ namespace ciBadgeForWeb.Controllers
             const bool c_boolSpecifyViewName = false;    //Added 5/28/2019 td
             if (c_boolSpecifyViewName) return View("Create");  //A View, i.e. a webpage, is the most popular type of ActionResult !!
 
-            return View();   //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!
+            return (ViewResult)View();   //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!
         }
 
         // POST: Recipient/Create
@@ -75,7 +75,7 @@ namespace ciBadgeForWeb.Controllers
             }
             catch
             {
-                return View();  //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
+                return (ViewResult)View();  //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
             }
         }
 
@@ -94,7 +94,7 @@ namespace ciBadgeForWeb.Controllers
             var recipient_by_id_onlyone = recipients_by_id_list.FirstOrDefault();
             //return View(recipients_by_id);
             //return View("Index", recipients_by_id);
-            return View(recipient_by_id_onlyone);
+            return (ViewResult)View(recipient_by_id_onlyone);
 
         }
 
@@ -122,7 +122,7 @@ namespace ciBadgeForWeb.Controllers
             }
             catch
             {
-                return View();  //A ViewResult, i.e. a webpage, is the most popular type of ActionResult !!
+                return (ViewResult)View();  //A ViewResult, i.e. a webpage, is the most popular type of ActionResult !!
             }
         }
 
@@ -148,7 +148,7 @@ namespace ciBadgeForWeb.Controllers
             }
             catch
             {
-                return View();  //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
+                return (ViewResult)View();  //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
             }
         }
     }
