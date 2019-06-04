@@ -18,7 +18,7 @@ namespace ciBadgeForWeb.Controllers
         //    return View();  //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         //}
 
-        public ActionResult Index(Nullable<int> id)
+        public ActionResult Index(Nullable<int> parameter_id)
         {
             //
             //  Index = No further specification was made.  Enact "parental"/default behavior.  

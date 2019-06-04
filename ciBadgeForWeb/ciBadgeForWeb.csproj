@@ -136,6 +136,7 @@
     <Compile Include="Controllers\LegacyPagesController.cs" />
     <Compile Include="Controllers\PortraitImageController.cs" />
     <Compile Include="Controllers\RecipientController.cs" />
+    <Compile Include="Controllers\Steps1and2Controller.cs" />
     <Compile Include="Controllers\ValuesController1.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -189,6 +190,13 @@
     <Compile Include="Views\PortraitImage\UploadImageToBase64.aspx.designer.cs">
       <DependentUpon>UploadImageToBase64.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -205,6 +213,8 @@
     <Content Include="Images\1958.png" />
     <Content Include="Images\1959.PNG" />
     <Content Include="Images\1960.JPG" />
+    <Content Include="Images\blue_star.jpg" />
+    <Content Include="Images\CI Badge v9 Susan.jpg" />
     <Content Include="Images\ImageMetaData.xml" />
     <Content Include="Images\PureWhite.png" />
     <Content Include="Images\RotatedLayout.png" />
@@ -227,6 +237,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ImageHandler.ashx" />
+    <Content Include="WebForm1.aspx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -274,6 +285,7 @@
     <Content Include="Views\Customer\Edit.cshtml" />
     <Content Include="Views\LegacyPages\Index.cshtml" />
     <Content Include="Views\Recipient\Edit.cshtml" />
+    <Content Include="Views\Steps1and2\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
