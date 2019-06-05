@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "BadgePrint";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<head>
+    <script type="text/javascript">
+        function printDiv(divName) {
+            var printContents = document.getElementById(divName).innerHTML;
+            w = window.open();
+            w.document.write(printContents);
+            w.print();
+            w.close();
+        }
+    </script>
+
+    <script type="text/javascript">
+        function printWholeDocument(pboolOpenPrintDialog) {
+
+            //Return focus to the RFID textbox.   Added 5/22/2019 td
+            document.getElementById("valueRFID").focus();
+
+            var printContents = document.body.innerHTML;
+            if (pboolOpenPrintDialog) w = window.open();
+            w.document.write(printContents);
+            w.print();
+            w.close();
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div id="print-content">
+        <!-----img alt="beastie.png" src="file:///C:\Users\Thomas\source\repos\ciLayout\ciLayoutDesignVB\test.png"----->
+        <img alt="Test of Layout Design" src="Test.png" ----->
+    </div>
+
+    <div id="print-button">
+
+        <style type="text/css">
+            @media print {
+                #printbtn {
+                    display: none;
+                }
+            }
+        </style>
+        <!-----input id="printbtn" type="button" value="Print this badge" onclick="window.print();"----> <br />
+        <input id="printbtn" type="button" value="Print this badge" onclick="printWholeDocument(false);">
+        <input id="printbtn" type="button" value="Open Print Dialog" onclick="printWholeDocument(true);">
+
+        <br />
+
+        <form>
+            RFID Enrollment: <input type="text" id="valueRFID" value=""><br />
+            <input type="button" id="submitRFID" onclick="submitRFID" value="Submit the RFID" /><br />
+            <!------input type="submit" value="Submit"-------->
+        </form>
+
+    </div>
+
+</body>
+</html>
+
+
+
+
+

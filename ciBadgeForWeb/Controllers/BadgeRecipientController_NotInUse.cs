@@ -9,7 +9,7 @@ namespace ciBadgeForWeb.Controllers
     //
     //Recipient = Student or Employee receiving the Badge. 
     //
-    public class BadgeRecipientController : Controller
+    public class BadgeRecipientController_NotInUse : Controller
     {
         // GET: BadgeRecipient
         public ActionResult Index()
