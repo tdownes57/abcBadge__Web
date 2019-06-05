@@ -23,9 +23,24 @@ namespace ciBadgeForWeb.Controllers
             //
             //  Index = No further specification was made.  Enact "parental"/default behavior.  
             //
-            //5-24-2019 td//public ActionResult Index(int id)
+            //   5-24-2019 td//public ActionResult Index(int id
+            //
 
             return View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
+        }
+
+        [HttpPost]
+        public ActionResult Index(Models.UserLogin objUserLogin)
+        {
+            if (objUserLogin.UserName.ToLower() == "Support".ToLower() && 
+                objUserLogin.Password == "teal90720")
+                return RedirectToAction("WelcomePage");
+
+            else
+            {
+                objUserLogin.Message = "Invalid UserName/Password";
+                return View(objUserLogin);
+            }
         }
 
         public ActionResult About()
