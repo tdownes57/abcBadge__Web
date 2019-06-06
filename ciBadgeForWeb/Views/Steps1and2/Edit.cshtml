@@ -11,7 +11,13 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
+<div>
+    Last Name:<br>
+    <input type="text" id="par_lastname">
+    @Html.ActionLink("Search by name", "Search")
+</div>
+
     <div class="form-horizontal">
 
         <h4>Step 2: Edit information of Badge Recipient</h4>
