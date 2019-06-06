@@ -64,11 +64,14 @@ namespace ciBadgeForWeb.Controllers
 
         // POST: Recipient/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Models.CIRecipient par_recip)     // (FormCollection collection)
         {
             try
             {
-                // TODO: Add insert logic here
+                // Added 6/5/2019 td
+                //
+                mod_recipientList.Add(par_recip);
+
 
                 //Index = "Nothing specified, go to the root page or action."  
                 return RedirectToAction("Index");

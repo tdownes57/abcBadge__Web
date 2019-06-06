@@ -7,7 +7,7 @@ using System.Web;
 //Added 6/4/2019 td
 //
 
-namespace CIBadgeForWeb.Models {
+namespace ciBadgeForWeb.Models {
     public class UserLogin {
         //
         //Added 6/4/2019 td

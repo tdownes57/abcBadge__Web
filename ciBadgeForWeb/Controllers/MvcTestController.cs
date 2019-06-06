@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace ciBadgeForWeb.Controllers
 {
-    public class HomeController : Controller
+    public class MvcTestController : Controller
     {
         public ActionResult Index()
         {

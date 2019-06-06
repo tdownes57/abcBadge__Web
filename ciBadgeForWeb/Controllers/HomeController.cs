@@ -30,7 +30,7 @@ namespace ciBadgeForWeb.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(Models.UserLogin objUserLogin)
+        public ActionResult Index(ciBadgeForWeb.Models.UserLogin objUserLogin)
         {
             if (objUserLogin.UserName.ToLower() == "Support".ToLower() && 
                 objUserLogin.Password == "teal90720")
