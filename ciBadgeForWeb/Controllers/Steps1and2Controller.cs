@@ -36,17 +36,23 @@ namespace ciBadgeForWeb.Controllers
 
         // POST: Steps1and2/Search  
         [HttpGet]
-        public ActionResult Search(object par_lastname)  //6/6/2019  ---- , FormCollection collection)
+        public ActionResult ShowSearchResults(object par_lastname)  //6/6/2019  ---- , FormCollection collection)
         {
             try
             {
                 //
                 // TODO: Add update logic here
                 //
-                var recipients_by_id_list = mod_recipientList.Where(s => s.LastName == par_lastname.ToString());
-                var recipient_by_id_onlyone = recipients_by_id_list.FirstOrDefault();
+                var recipients_by_id_list = mod_recipientList.Where(s => s.LastName.Contains(par_lastname.ToString()));
+
+                //var recipient_by_id_onlyone = recipients_by_id_list.FirstOrDefault();
                 //return (ViewResult)View(recipient_by_id_onlyone);
-                return RedirectToAction("Edit", recipient_by_id_onlyone.RecipientID);
+
+                //return RedirectToAction("Edit", recipients_by_id_onlyone);
+                //return RedirectToAction("Edit", recipients_by_id_list);
+
+                //Added 6/8/2019 thomas downes
+                return RedirectToAction("ShowSearchResults", "Recipient", recipients_by_id_list);
 
             }
             catch
