@@ -1,0 +1,31 @@
+﻿
+
+https://stackoverflow.com/questions/8167853/performing-search-in-asp-net-mvc
+
+Asp.Net MVC uses standard HTTP verbs. For the html part, it's a normal html form that points to an url. Server side, that url will be 
+routed to a controller/action which will handle the input and do what is needed.
+Let's have a sample. You want to make a search form. First of all, it's a best practice to have search forms use the HTTP GET method 
+instead of POST, so the search results can be bookmarked, linked, indexed, etc. I won't be using Html.BeginForm helper method to 
+make things more clear.
+
+<form method="get" action="@Url.Action("MyAction", "MyController")">
+   <label for="search">Search</label>
+   <input type="text" name="search" id="search" />
+   <button type="submit">Perform search</button>
+</form>
+
+That's all the html you need. Now you'll have a controller called "MyController" and the method will be something like this:
+
+[HttpGet]
+public ActionResult MyAction(string search)
+{
+   //do whatever you need with the parameter, 
+   //like using it as parameter in Linq to Entities or Linq to Sql, etc. 
+   //Suppose your search result will be put in variable "result".
+   ViewData.Model = result;
+   return View();
+}
+
+Now the view called "MyAction" will be rendered, and the Model of that view will be your "result". Then you'll display it as you wish.
+
+

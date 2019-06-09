@@ -146,6 +146,7 @@
     <Compile Include="Controllers\MvcTestController.cs" />
     <Compile Include="Controllers\PortraitImageController.cs" />
     <Compile Include="Controllers\RecipientController.cs" />
+    <Compile Include="Controllers\Step1Controller.cs" />
     <Compile Include="Controllers\Steps1and2Controller.cs" />
     <Compile Include="Controllers\TestingParamsController.cs" />
     <Compile Include="Controllers\ValuesController1.cs" />
@@ -276,6 +277,7 @@
     <Content Include="Views\PortraitImage\Index.aspx" />
     <Content Include="Views\PortraitImage\UploadImageToBase64.aspx" />
     <Content Include="Views\Recipient\test_JpegFile.htm" />
+    <Content Include="Views\Step1\StackOverflow URl.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -305,6 +307,8 @@
     <Content Include="Views\Steps1and2\Edit.cshtml" />
     <Content Include="Views\Recipient\Create.cshtml" />
     <Content Include="Views\Home\LoginPage.cshtml" />
+    <Content Include="Views\Step1\Index.cshtml" />
+    <Content Include="Views\Step1\ShowSearchResults.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
