@@ -7,16 +7,32 @@
 
 <h2>Steps 1 and 2:  Searching and Edit</h2>
 
+<a href="https://www.aspsnippets.com/Articles/Multiple-Forms-in-Same-Page-View-in-ASPNet-MVC.aspx">https://www.aspsnippets.com/Articles/Multiple-Forms-in-Same-Page-View-in-ASPNet-MVC.aspx</a>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("ShowSearchResults", "Step1", FormMethod.Post))
 {
-    @Html.AntiForgeryToken()
 
-<div>
-    Last Name:<br>
-    <input type="text" id="par_lastname" >
-    @Html.ActionLink("Search by name", "ShowSearchResults")
-</div>
+    <label for="search">
+        Search
+    </label>
+    <input type="text" name="par_lastname" id="par_lastname" />
+    <button type="submit">Perform search</button>
+
+}
+
+@*<div>
+        Last Name:<br>
+        <input type="text" id="par_lastname">
+        @Html.ActionLink("Search by name", "ShowSearchResults")
+        @Html.ActionLink("    Show Search Results", "ShowSearchResults", "Step1")
+    </div>*@
+
+@using (Html.BeginForm("Edit", "Steps1and2", FormMethod.Post))
+{
+
+    <a href="https://www.aspsnippets.com/Articles/Multiple-Forms-in-Same-Page-View-in-ASPNet-MVC.aspx">https://www.aspsnippets.com/Articles/Multiple-Forms-in-Same-Page-View-in-ASPNet-MVC.aspx</a>
+
+    @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
 
@@ -110,12 +126,14 @@
             </div>
         </div>
     </div>
-}
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+
 }

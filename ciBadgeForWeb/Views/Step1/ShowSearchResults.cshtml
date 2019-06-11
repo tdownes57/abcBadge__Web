@@ -78,7 +78,7 @@
             @Html.DisplayFor(modelItem => item.ExpirationDate_Text)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Edit", "Edit", "Steps1and2", new { parameter_id =item.RecipientID }, new { htmlAttributes = new { @class="name", @readonly="readonly" }  }) |
             @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
             @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
         </td>

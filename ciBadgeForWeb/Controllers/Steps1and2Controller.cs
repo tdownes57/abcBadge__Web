@@ -34,9 +34,38 @@ namespace ciBadgeForWeb.Controllers
         }
 
 
+        [HttpGet]
+        public ActionResult Show_SearchResults(string par_lastname)
+        {
+            //do whatever you need with the parameter, 
+            //like using it as parameter in Linq to Entities or Linq to Sql, etc. 
+            //Suppose your search result will be put in variable "result".
+            //ViewData.Model = result;
+
+            var recipients_by_id_list = mod_recipientList.Where(s => s.LastName.Contains(par_lastname.ToString()));
+            ViewData.Model = recipients_by_id_list;
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult ShowSearchResults(object par_lastname)
+        {
+            //do whatever you need with the parameter, 
+            //like using it as parameter in Linq to Entities or Linq to Sql, etc. 
+            //Suppose your search result will be put in variable "result".
+
+            //ViewData.Model = result;
+
+            var recipients_by_id_list = mod_recipientList.Where(s => s.LastName.Contains(par_lastname.ToString()));
+
+            ViewData.Model = recipients_by_id_list;
+            return View();
+        }
+
+
         // POST: Steps1and2/Search  
         [HttpGet]
-        public ActionResult ShowSearchResults(object par_lastname)  //6/6/2019  ---- , FormCollection collection)
+        public ActionResult ShowSearchResults_NotInUse(object par_lastname)  //6/6/2019  ---- , FormCollection collection)
         {
             try
             {
@@ -60,6 +89,7 @@ namespace ciBadgeForWeb.Controllers
                 return View();
             }
         }
+
 
 
         // GET: Steps1and2/Details/5
@@ -120,6 +150,13 @@ namespace ciBadgeForWeb.Controllers
                 //
                 // TODO: Add update logic here
                 //
+                var edited_recip = mod_recipientList.Where(s => s.RecipientID == parameter_id.ToString()).FirstOrDefault();
+
+                var name_first = Request["FirstName"];
+                var name_last = Request["LastName"];
+
+                edited_recip.FirstName = name_first;  // std.FirstName + "_Revised";
+                edited_recip.LastName = name_last;  //  std.LastName + "_Revised"
 
                 return RedirectToAction("Index");
             }

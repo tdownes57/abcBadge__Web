@@ -42,8 +42,8 @@ namespace ciBadgeForWeb
 
             routes.MapRoute(
                 name: "Steps1and2_Search",
-                url: "Steps1and2/Search/{par_lastname}",
-                defaults: new { controller = "Steps1and2", action = "Search", par_lastname="Forbes" }
+                url: "Steps1and2/ShowSearchResults/{par_lastname}",
+                defaults: new { controller = "Steps1and2", action = "ShowSearchResults", par_lastname="Forbes" }
             );
 
             //

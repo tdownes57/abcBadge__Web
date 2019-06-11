@@ -309,6 +309,7 @@
     <Content Include="Views\Home\LoginPage.cshtml" />
     <Content Include="Views\Step1\Index.cshtml" />
     <Content Include="Views\Step1\ShowSearchResults.cshtml" />
+    <Content Include="Views\Steps1and2\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
