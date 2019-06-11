@@ -59,7 +59,10 @@ namespace ciBadgeForWeb.Controllers
             var recipients_by_id_list = mod_recipientList.Where(s => s.LastName.Contains(par_lastname.ToString()));
 
             ViewData.Model = recipients_by_id_list;
-            return View();
+            //return View("Edit");
+            //return View("ShowSearchResults", "Step1");
+            //return RedirectToAction("ShowSearchResults", "Step1", recipients_by_id_list);
+            return RedirectToAction("ShowSearchResults", "Step1", new { par_lastname = par_lastname });
         }
 
 
@@ -154,11 +157,13 @@ namespace ciBadgeForWeb.Controllers
 
                 var name_first = Request["FirstName"];
                 var name_last = Request["LastName"];
+                //var recid_id = Request
 
                 edited_recip.FirstName = name_first;  // std.FirstName + "_Revised";
                 edited_recip.LastName = name_last;  //  std.LastName + "_Revised"
 
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                return RedirectToAction("Edit", new { parameter_id = parameter_id });
             }
             catch
             {
