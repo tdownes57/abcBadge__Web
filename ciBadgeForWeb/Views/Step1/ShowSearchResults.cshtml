@@ -1,0 +1,88 @@
+﻿@model IEnumerable<ciBadgeForWeb.Models.CIRecipient>
+
+@{
+    ViewBag.Title = "ShowSearchResults";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ShowSearchResults</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Personality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecipientID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MiddleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EffectiveDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpirationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EffectiveDate_Text)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpirationDate_Text)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Personality)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecipientID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MiddleName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EffectiveDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpirationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EffectiveDate_Text)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpirationDate_Text)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", "Steps1and2", new { parameter_id =item.RecipientID }, new { htmlAttributes = new { @class="name", @readonly="readonly" }  }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

@@ -40,6 +40,12 @@ namespace ciBadgeForWeb
                 constraints: new { p4 = @"/d{2}" }
             );
 
+            routes.MapRoute(
+                name: "Steps1and2_Search",
+                url: "Steps1and2/ShowSearchResults/{par_lastname}",
+                defaults: new { controller = "Steps1and2", action = "ShowSearchResults", par_lastname="Forbes" }
+            );
+
             //
             //Added 5/28/2019 thomas downes
             //

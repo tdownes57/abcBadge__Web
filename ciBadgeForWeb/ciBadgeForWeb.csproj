@@ -52,6 +52,8 @@
     <Reference Include="System.Net.Http.Formatting, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -129,13 +131,22 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="ASPX\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\BadgeRecipientController_NotInUse.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\ExampleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LegacyPagesController.cs" />
+    <Compile Include="Controllers\MvcTestController.cs" />
     <Compile Include="Controllers\PortraitImageController.cs" />
     <Compile Include="Controllers\RecipientController.cs" />
+    <Compile Include="Controllers\Step1Controller.cs" />
     <Compile Include="Controllers\Steps1and2Controller.cs" />
     <Compile Include="Controllers\TestingParamsController.cs" />
     <Compile Include="Controllers\ValuesController1.cs" />
@@ -149,8 +160,14 @@
     <Compile Include="Models\CICustomer.cs" />
     <Compile Include="Models\CIRecipient.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\ModelEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelEntity.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\PortraitImage.cs" />
     <Compile Include="Models\PortraitImageModel.cs" />
+    <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Example\Example1.aspx.cs">
       <DependentUpon>Example1.aspx</DependentUpon>
@@ -191,15 +208,9 @@
     <Compile Include="Views\PortraitImage\UploadImageToBase64.aspx.designer.cs">
       <DependentUpon>UploadImageToBase64.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ASPX\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ASPX\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ASPX\WebForm1.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -238,7 +249,13 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ImageHandler.ashx" />
-    <Content Include="ASPX\WebForm1.aspx" />
+    <EntityDeploy Include="Models\ModelEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelEntity.edmx.diagram">
+      <DependentUpon>ModelEntity.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -250,7 +267,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Views\BadgeRecipient_NotInUse\test_JpegFile.htm" />
+    <Content Include="Views\BadgeRecipient\test_JpegFile.htm" />
     <Content Include="Views\Example\Example1.aspx" />
     <Content Include="Views\Home\ExampleBadge.aspx" />
     <Content Include="Views\Home\Test_Badge.png">
@@ -260,6 +277,7 @@
     <Content Include="Views\PortraitImage\Index.aspx" />
     <Content Include="Views\PortraitImage\UploadImageToBase64.aspx" />
     <Content Include="Views\Recipient\test_JpegFile.htm" />
+    <Content Include="Views\Step1\StackOverflow URl.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -276,7 +294,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="ViewPage1.cshtml" />
     <Content Include="Views\Home\CustomerLogin.cshtml" />
-    <Content Include="Views\BadgeRecipient_NotInUse\BadgePrint_NotInUse.cshtml" />
+    <Content Include="Views\BadgeRecipient\BadgePrint.cshtml" />
     <Content Include="Views\Example\Index.cshtml" />
     <Content Include="Views\Home\Example_BAK.cshtml" />
     <Content Include="Views\Home\Example_Blank.cshtml" />
@@ -287,11 +305,16 @@
     <Content Include="Views\LegacyPages\Index.cshtml" />
     <Content Include="Views\Recipient\Edit.cshtml" />
     <Content Include="Views\Steps1and2\Edit.cshtml" />
-    <Content Include="Views\Recipient\BadgePrint.cshtml" />
+    <Content Include="Views\Recipient\Create.cshtml" />
+    <Content Include="Views\Home\LoginPage.cshtml" />
+    <Content Include="Views\Step1\Index.cshtml" />
+    <Content Include="Views\Step1\ShowSearchResults.cshtml" />
+    <Content Include="Views\Steps1and2\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\TestingParams\" />
+    <Folder Include="LegacyPages\" />
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

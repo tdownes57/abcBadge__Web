@@ -62,13 +62,25 @@ namespace ciBadgeForWeb.Controllers
             return (ViewResult)View();   //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!
         }
 
+        // Recipient/ShowSearchResults   (Doesn't directly match an HTTP command.)
+        public ActionResult ShowSearchResults(IList<Models.CIRecipient> par_results) => View("Index",  par_results);
+
+        //const bool c_boolSpecifyViewName = false;    / /Added 5/28/2019 td
+        //if (c_boolSpecifyViewName) return View("Create");  //A View, i.e. a webpage, is the most popular type of ActionResult !!
+        //return (ViewResult)View();   //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!
+
+
+
         // POST: Recipient/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Models.CIRecipient par_recip)     // (FormCollection collection)
         {
             try
             {
-                // TODO: Add insert logic here
+                // Added 6/5/2019 td
+                //
+                mod_recipientList.Add(par_recip);
+
 
                 //Index = "Nothing specified, go to the root page or action."  
                 return RedirectToAction("Index");

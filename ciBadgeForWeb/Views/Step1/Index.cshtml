@@ -1,0 +1,20 @@
+﻿@model ciBadgeForWeb.Models.CIRecipient
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<!--    https://stackoverflow.com/questions/8167853/performing-search-in-asp-net-mvc   -->
+
+<form method="get" action="@Url.Action("ShowSearchResults", "Step1")"    >
+    <label for="search">
+    Search</label>
+    <input type="text" name="par_lastname" id="par_lastname" />
+    <button type="submit">Perform search</button>
+</form>
+
+
+
