@@ -27,7 +27,8 @@ namespace ciBadgeForWeb.Controllers
         //                    new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="6", FirstName="Christopher", LastName = "Forbes"  },
         //                    new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID = "7", FirstName="Robin", LastName = "Forbes"  }
         //};
-        static IList<Models.CIRecipient> mod_recipientList = Steps1and2Controller.mod_recipientList;
+        // 6/15/2019 td //static IList<Models.CIRecipient> mod_recipientList = Steps1and2Controller.mod_recipientList;
+        static IList<Models.CIRecipient> mod_recipientList = RecipientController.mod_recipientList;
 
         // GET: Step1
         public ActionResult Index()

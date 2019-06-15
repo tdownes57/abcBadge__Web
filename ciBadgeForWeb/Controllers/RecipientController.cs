@@ -1,7 +1,6 @@
-﻿using System;
+﻿using ciPictures_VB;  //Added 6/15/2019 thomas d.  
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace ciBadgeForWeb.Controllers
@@ -15,20 +14,20 @@ namespace ciBadgeForWeb.Controllers
         //
         //Recipient = Student or Employee receiving the Badge. 
         //
-        static IList<Models.CIRecipient> mod_recipientList = new List<Models.CIRecipient>() {
-                    new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID ="2", FirstName="Steve", LastName = "Austin", Picture = ciPictures.Example() },
-                    new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID ="3", FirstName="Bill", LastName = "Clinton", Picture = ciPictures.Example()   },
-                    new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID ="4", FirstName="Ram", LastName = "Thegot", Picture = ciPictures.Example()   },
-                    new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID ="5", FirstName="Ron" , LastName = "Wood", Picture = ciPictures.Example()  },
-                    new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID ="6", FirstName="Christopher", LastName = "Forbes", Picture = ciPictures.Example()   },
-                    new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID = "7", FirstName="Robin", LastName = "Forbes", Picture = ciPictures.Example()   },
-                    new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="1", FirstName="John", LastName = "Davidson", Picture = ciPictures.Example()  },
-                    new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="2", FirstName="Steve", LastName = "Austin", Picture = ciPictures.Example()  },
-                    new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="3", FirstName="Bill", LastName = "Clinton", Picture = ciPictures.Example()   },
-                    new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="4", FirstName="Ram", LastName = "Thegot", Picture = ciPictures.Example()   },
-                    new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="5", FirstName="Ron" , LastName = "Wood", Picture = ciPictures.Example()  },
-                    new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="6", FirstName="Christopher", LastName = "Forbes", Picture = ciPictures.Example()   },
-                    new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID = "7", FirstName="Robin", LastName = "Forbes", Picture = ciPictures.Example()   }
+        public static IList<Models.CIRecipient> mod_recipientList = new List<Models.CIRecipient>() {
+                    new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID ="2", FirstName="Steve", LastName = "Austin", Picture = PictureExamples.GetExample() },
+                    new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID ="3", FirstName="Bill", LastName = "Clinton", Picture = PictureExamples.GetExample()   },
+                    new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID ="4", FirstName="Ram", LastName = "Thegot", Picture = PictureExamples.GetExample()   },
+                    new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID ="5", FirstName="Ron" , LastName = "Wood", Picture = PictureExamples.GetExample()  },
+                    new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID ="6", FirstName="Christopher", LastName = "Forbes", Picture = PictureExamples.GetExample()   },
+                    new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID = "7", FirstName="Robin", LastName = "Forbes", Picture = PictureExamples.GetExample()   },
+                    new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="1", FirstName="John", LastName = "Davidson", Picture = PictureExamples.GetExample()  },
+                    new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="2", FirstName="Steve", LastName = "Austin", Picture = PictureExamples.GetExample()  },
+                    new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="3", FirstName="Bill", LastName = "Clinton", Picture = PictureExamples.GetExample()   },
+                    new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="4", FirstName="Ram", LastName = "Thegot", Picture = PictureExamples.GetExample()   },
+                    new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="5", FirstName="Ron" , LastName = "Wood", Picture = PictureExamples.GetExample()  },
+                    new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="6", FirstName="Christopher", LastName = "Forbes", Picture = PictureExamples.GetExample()   },
+                    new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID = "7", FirstName="Robin", LastName = "Forbes", Picture = PictureExamples.GetExample()   }
 };
 
         // GET: Recipient

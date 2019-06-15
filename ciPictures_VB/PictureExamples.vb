@@ -18,10 +18,13 @@ Public Class PictureExamples
         ''
         Static s_intCallIndex As Integer
 
+        ''Moved here from below. 6/15/2019
+        If (mod_images Is Nothing) Then mod_images = GetListOfImages()
+
         ''See bottom.''s_intCallIndex += 1
         If (s_intCallIndex >= mod_images.Count) Then s_intCallIndex = 0
 
-        If (mod_images Is Nothing) Then mod_images = GetListOfImages()
+        ''Moved up. 6/15 td ''If (mod_images Is Nothing) Then mod_images = GetListOfImages()
 
         Return mod_images(s_intCallIndex)
 
