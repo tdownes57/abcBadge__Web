@@ -17,6 +17,7 @@ Public Class PictureExamples
         ''Added 6/13/2019 td  
         ''
         Static s_intCallIndex As Integer
+        Dim output_image As Image
 
         ''Moved here from below. 6/15/2019
         If (mod_images Is Nothing) Then mod_images = GetListOfImages()
@@ -26,10 +27,17 @@ Public Class PictureExamples
 
         ''Moved up. 6/15 td ''If (mod_images Is Nothing) Then mod_images = GetListOfImages()
 
-        Return mod_images(s_intCallIndex)
+        output_image = mod_images(s_intCallIndex)
 
 ExitHandler:
-            s_intCallIndex += 1
+
+        s_intCallIndex += 1
+
+        ''6/17/2019 td''Return mod_images(s_intCallIndex)
+        Return output_image
+
+        ''6/17 td''ExitHandler:
+        ''6/17 td''        s_intCallIndex += 1
 
     End Function
 
@@ -57,7 +65,7 @@ ExitHandler:
             ''    If (.Image IsNot Nothing) Then output_list.Add(.Image)
             ''End With
 
-            Dim each_image As Image
+            Dim each_image As Image ''Added 6/16/2019 Thomas DOWNES  
 
             each_image = (New Bitmap(each_file.FullName))
             output_list.Add(each_image)
@@ -66,7 +74,7 @@ ExitHandler:
 
         Return output_list
 
-    End Function
+    End Function ''End of "Private Shared Function GetListOfImages() As List(Of Image)"
 
 End Class  ''End of "Public Class PictureExamples"
 
