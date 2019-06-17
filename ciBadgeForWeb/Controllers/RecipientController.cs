@@ -15,6 +15,7 @@ namespace ciBadgeForWeb.Controllers
         //Recipient = Student or Employee receiving the Badge. 
         //
         public static IList<Models.CIRecipient> mod_recipientList = new List<Models.CIRecipient>() {
+                    new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID ="1", FirstName="John", LastName = "Davidson", Picture = PictureExamples.GetExample()  },
                     new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID ="2", FirstName="Steve", LastName = "Austin", Picture = PictureExamples.GetExample() },
                     new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID ="3", FirstName="Bill", LastName = "Clinton", Picture = PictureExamples.GetExample()   },
                     new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID ="4", FirstName="Ram", LastName = "Thegot", Picture = PictureExamples.GetExample()   },

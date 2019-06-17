@@ -42,17 +42,26 @@ ExitHandler:
         Dim picture_box As New System.Windows.Forms.PictureBox
         Dim output_list = New List(Of Image)
 
-        strPathToFolderWithPics = My.Application.Info.DirectoryPath & "\PictureExamples"
+        ''6/16/2019 td''strPathToFolderWithPics = My.Application.Info.DirectoryPath & "\PictureExamples"
+        strPathToFolderWithPics = "C:\Users\Jane\source\repos\ciBadgeForWeb\ciPictures_VB\PictureExamples"
 
         all_Jpegs = (New System.IO.DirectoryInfo(strPathToFolderWithPics)).EnumerateFiles()
 
         For Each each_file As System.IO.FileInfo In all_Jpegs
-            With picture_box
-                .ImageLocation = each_file.FullName
-                .Visible = True
-                .Refresh()
-                If (.Image IsNot Nothing) Then output_list.Add(.Image)
-            End With
+
+            ''With picture_box
+            ''    .ImageLocation = each_file.FullName
+            ''    .Visible = True
+            ''    ''6/16/2019 td''.Refresh()
+            ''    .Load()
+            ''    If (.Image IsNot Nothing) Then output_list.Add(.Image)
+            ''End With
+
+            Dim each_image As Image
+
+            each_image = (New Bitmap(each_file.FullName))
+            output_list.Add(each_image)
+
         Next each_file
 
         Return output_list

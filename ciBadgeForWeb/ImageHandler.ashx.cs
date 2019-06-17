@@ -16,22 +16,46 @@ namespace ciBadgeForWeb
 
         public void ProcessRequest(HttpContext context)
         {
+            IList<Models.CIRecipient> recipients_list; 
+
             //context.Response.ContentType = "text/plain";
             //context.Response.Write("Hello World");
+            //
             context.Response.Clear();
+
             if (!String.IsNullOrEmpty(context.Request.QueryString["id"]))
             {
-                int id = Int32.Parse(context.Request.QueryString["id"]);
+                int recipient_id = Int32.Parse(context.Request.QueryString["id"]);
 
                 // Now you have the id, do what you want with it, to get the right image
                 // More than likely, just pass it to the method, that builds the image
                 //Image image = GetImage(id);
-                Image image = SusanSampletonPng();
+                // 6/16/2019 td //Image image = SusanSampletonPng();
+                // 6/16/2019 td //Image image = ciPictures_VB.PictureExamples.GetExample();
+
+                recipients_list = Controllers.RecipientController.mod_recipientList;
+
+                var recipients_by_id_list = recipients_list.Where(s => s.RecipientID == recipient_id.ToString());
+                var recipient_by_id_onlyone = recipients_by_id_list.FirstOrDefault();
+
+                Image image = recipient_by_id_onlyone.Picture;
 
                 // Of course set this to whatever your format is of the image
-                context.Response.ContentType = "image/png";
+                //context.Response.ContentType = "image/png";
+                context.Response.ContentType = "image/Jpeg";
+
                 // Save the image to the OutputStream
-                image.Save(context.Response.OutputStream, ImageFormat.Png);
+                //image.Save(context.Response.OutputStream, ImageFormat.Jpeg);
+
+                //context.Response.Clear();
+                //context.Response.ContentType = "image/Jpeg";
+                MemoryStream ms = new MemoryStream();
+                //Bitmap objBitmap = GenerateBarcode(context.Request.Params["Code"]);
+
+                //objBitmap.Save(ms, ImageFormat.Jpeg);
+                image.Save(ms, ImageFormat.Jpeg);
+                context.Response.BinaryWrite(ms.GetBuffer());
+
             }
             else
             {

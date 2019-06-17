@@ -9,7 +9,7 @@ Public Class PictureExamples
     ''
     ''Added 6/13/2019 td  
     ''
-    Public Shared Function GetExample() As Image  ''6/13/2019 td''As System.Drawing.Image
+    Public Shared Function GetExample() As String ''6/13 td ''Image  ''6/13/2019 td''As System.Drawing.Image
         ''
         ''Added 6/13/2019 td  
         ''
