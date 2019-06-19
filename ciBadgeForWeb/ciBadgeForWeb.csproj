@@ -257,6 +257,8 @@
       <DependentUpon>ModelEntity.edmx</DependentUpon>
     </Content>
     <Content Include="Documentation\Possibilities and Challenges for CI Badge Web.docx" />
+    <Content Include="Documentation\CI Web - Proposed Features.docx" />
+    <Content Include="Documentation\Product Specifications - CI Web Secure Share v1.docx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
