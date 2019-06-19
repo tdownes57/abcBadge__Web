@@ -20,10 +20,11 @@ namespace ciBadgeForWeb
             //Added 6/4/2019 thomas downes
             //
             //   For specifying both Personality Configuration and Recipient ID.  
+            //      (cis = CI Solutions)  
             //
             routes.MapRoute(
                 name: "PersonalityCfgAndRecip",
-                url: "CfgRecipient/{personalitycfg_id}/{recipient_id}",
+                url: "cis/CfgRecipient/{personalitycfg_id}/{recipient_id}",
                 defaults: new { controller = "CfgRecipient", action = "Index", personalitycfg_id = 1, recipient_id = "A999" }, 
                 constraints: new { personalitycfg_id = @"/d{1}"}
             );
@@ -40,10 +41,22 @@ namespace ciBadgeForWeb
                 constraints: new { p4 = @"/d{2}" }
             );
 
+            //
+            // cis = CI Solutions
+            //
             routes.MapRoute(
                 name: "Steps1and2_Search",
-                url: "Steps1and2/ShowSearchResults/{par_lastname}",
+                url: "cis/Steps1and2/ShowSearchResults/{par_lastname}",
                 defaults: new { controller = "Steps1and2", action = "ShowSearchResults", par_lastname="Forbes" }
+            );
+
+            //
+            // tcd = Thomas C. Downes
+            //
+            routes.MapRoute(
+                name: "Steps1and2_Search",
+                url: "tcd/Steps1and2/ShowSearchResults/{par_lastname}",
+                defaults: new { controller = "Steps1and2", action = "ShowSearchResults", par_lastname = "Forbes" }
             );
 
             //
@@ -65,13 +78,23 @@ namespace ciBadgeForWeb
                             defaults: new { controller = "LegacyPages", action = "Index", page = UrlParameter.Optional });
 
             //
-            //Standard MVC Scaffolding
+            //CI Solutions, Standard MVC Scaffolding
             //
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{parameter_id}",
+                url: "cis/{controller}/{action}/{parameter_id}",
                 defaults: new { controller = "Home", action = "Index", parameter_id = UrlParameter.Optional }
             );
+
+            //
+            //Thomas C. Downes, Standard MVC Scaffolding
+            //
+            routes.MapRoute(
+                name: "Default",
+                url: "tcd/{controller}/{action}/{parameter_id}",
+                defaults: new { controller = "Home", action = "Index", parameter_id = UrlParameter.Optional }
+            );
+
         }
     }
 }
