@@ -46,8 +46,10 @@ namespace ciBadgeForWeb
 
                 objLayoutEx.RecipientID = "1234";
                 objLayoutEx.RecipientName = "Chanin Mountebank";
-                objLayoutEx.GenerateImage("1234", "Chanin Ferrin", image_ex);
+                objLayoutEx.RecipientFaceImage = recipient_by_id_onlyone.Picture;
 
+                image_ex = objLayoutEx.GenerateImage("1234", "Chanin Ferrin", 
+                    objLayoutEx.RecipientFaceImage);
 
                 // Of course set this to whatever your format is of the image
                 //context.Response.ContentType = "image/png";
