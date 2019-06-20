@@ -233,8 +233,11 @@
     <Content Include="Images\test - backup.jpg" />
     <Content Include="Images\1961.jpg" />
     <Content Include="Images\1961.PNG" />
+    <Content Include="Images\The UI for v831 MD.JPG" />
     <Content Include="Images\The UI for v900.BAK.PNG" />
     <Content Include="Images\The UI for v900.PNG" />
+    <Content Include="Images\__UI for V831 w No Pic.JPG" />
+    <Content Include="Images\__UI for V831 w No Pic.PNG" />
     <Content Include="Images\__UI for v900 w demo face.BAK.png" />
     <Content Include="Images\__UI for v900 w demo face.PNG" />
     <Content Include="Javascript\drag_simple_wTextArea.htm" />
