@@ -45,7 +45,7 @@ namespace ciBadgeForWeb
             // cis = CI Solutions
             //
             routes.MapRoute(
-                name: "Steps1and2_Search",
+                name: "Steps1and2_Search_CIS",
                 url: "cis/Steps1and2/ShowSearchResults/{par_lastname}",
                 defaults: new { controller = "Steps1and2", action = "ShowSearchResults", par_lastname="Forbes" }
             );
@@ -54,7 +54,7 @@ namespace ciBadgeForWeb
             // tcd = Thomas C. Downes
             //
             routes.MapRoute(
-                name: "Steps1and2_Search",
+                name: "Steps1and2_Search_TCD",
                 url: "tcd/Steps1and2/ShowSearchResults/{par_lastname}",
                 defaults: new { controller = "Steps1and2", action = "ShowSearchResults", par_lastname = "Forbes" }
             );
@@ -81,7 +81,13 @@ namespace ciBadgeForWeb
             //CI Solutions, Standard MVC Scaffolding
             //
             routes.MapRoute(
-                name: "Default",
+                name: "Default_CIS1",
+                url: "{controller}/{action}/{parameter_id}",
+                defaults: new { controller = "Home", action = "Index", parameter_id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Default_CIS2",
                 url: "cis/{controller}/{action}/{parameter_id}",
                 defaults: new { controller = "Home", action = "Index", parameter_id = UrlParameter.Optional }
             );
@@ -90,7 +96,7 @@ namespace ciBadgeForWeb
             //Thomas C. Downes, Standard MVC Scaffolding
             //
             routes.MapRoute(
-                name: "Default",
+                name: "Default_TCD",
                 url: "tcd/{controller}/{action}/{parameter_id}",
                 defaults: new { controller = "Home", action = "Index", parameter_id = UrlParameter.Optional }
             );

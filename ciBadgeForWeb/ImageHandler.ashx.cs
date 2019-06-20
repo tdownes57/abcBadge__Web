@@ -38,6 +38,9 @@ namespace ciBadgeForWeb
                 var recipients_by_id_list = recipients_list.Where(s => s.RecipientID == recipient_id.ToString());
                 var recipient_by_id_onlyone = recipients_by_id_list.FirstOrDefault();
 
+                //Added 6/20/2019 td 
+                if (recipient_by_id_onlyone is null) return; 
+
                 Image image = recipient_by_id_onlyone.Picture;
 
                 // Of course set this to whatever your format is of the image
