@@ -17,8 +17,23 @@ namespace ciBadgeForWeb
         public void ProcessRequest(HttpContext context)
         {
             IList<Models.CIRecipient> recipients_list;
+            bool bSizeLarge, bHorizontalLarge, bHorizontalSmall; //Added 6/20/2019 thomas downes 
 
             context.Response.Clear();
+
+            //Added 6/20/2019 td
+            //
+            if (!String.IsNullOrEmpty(context.Request.QueryString["size"]))
+            {
+                //Added 6/20/2019 td
+                if (!String.IsNullOrEmpty(context.Request.QueryString["hori"]))
+                {
+                    //Added 6/20/2019 td
+                    bSizeLarge = ("y" == context.Request.QueryString["size"]);
+                    bHorizontalLarge = (bSizeLarge && ("y" == context.Request.QueryString["hori"]));
+                    bHorizontalSmall = (!(bSizeLarge) && ("y" == context.Request.QueryString["hori"]));
+                }
+            }
 
             if (!String.IsNullOrEmpty(context.Request.QueryString["id"]))
             {
@@ -46,10 +61,20 @@ namespace ciBadgeForWeb
 
                 objLayoutEx.RecipientID = "1234";
                 objLayoutEx.RecipientName = "Chanin Mountebank";
-                objLayoutEx.RecipientFaceImage = recipient_by_id_onlyone.Picture;
+                //6/20 td// objLayoutEx.RecipientFaceImage = recipient_by_id_onlyone.Picture;
+                objLayoutEx.RecipientPhoto = recipient_by_id_onlyone.Picture;
 
-                image_ex = objLayoutEx.GenerateImage("1234", "Chanin Ferrin", 
-                    objLayoutEx.RecipientFaceImage);
+                // 6/20/2019 td // image_ex = objLayoutEx.GenerateImage("1234", "Chanin Ferrin", 
+                //    objLayoutEx.RecipientPhoto);
+
+                string strRecipID = recipient_id.ToString();
+                string strLastName = recipient_by_id_onlyone.LastName;
+                string strFirstName = recipient_by_id_onlyone.FirstName;
+                string strFullName = (strFirstName + " " + strLastName);
+
+                image_ex = objLayoutEx.GenerateImage(strRecipID, strFullName,
+                                         objLayoutEx.RecipientPhoto, 
+                                         bHorizontalLarge, bHorizontalSmall);
 
                 // Of course set this to whatever your format is of the image
                 //context.Response.ContentType = "image/png";
