@@ -17,21 +17,22 @@ namespace ciBadgeForWeb
         public void ProcessRequest(HttpContext context)
         {
             IList<Models.CIRecipient> recipients_list;
-            bool bSizeLarge, bHorizontalLarge, bHorizontalSmall; //Added 6/20/2019 thomas downes 
+
+            bool bSizeLarge = false, bHorizontalLarge = false, bHorizontalSmall= false; //Added 6/20/2019 thomas downes 
 
             context.Response.Clear();
 
             //Added 6/20/2019 td
             //
-            if (!String.IsNullOrEmpty(context.Request.QueryString["size"]))
+            if (!String.IsNullOrEmpty(context.Request.QueryString["big"])) // ....["size"]))
             {
                 //Added 6/20/2019 td
-                if (!String.IsNullOrEmpty(context.Request.QueryString["hori"]))
+                if (!String.IsNullOrEmpty(context.Request.QueryString["hor"]))
                 {
                     //Added 6/20/2019 td
-                    bSizeLarge = ("y" == context.Request.QueryString["size"]);
-                    bHorizontalLarge = (bSizeLarge && ("y" == context.Request.QueryString["hori"]));
-                    bHorizontalSmall = (!(bSizeLarge) && ("y" == context.Request.QueryString["hori"]));
+                    bSizeLarge = ("y" == context.Request.QueryString["big"]);  // ["size"]);
+                    bHorizontalLarge = (bSizeLarge && ("y" == context.Request.QueryString["hor"]));
+                    bHorizontalSmall = (!(bSizeLarge) && ("y" == context.Request.QueryString["hor"]));
                 }
             }
 
