@@ -245,6 +245,10 @@
     <Content Include="Images\__UI for v900 w demo face.PNG" />
     <Content Include="Javascript\drag_simple_wTextArea.htm" />
     <Content Include="Javascript\MainDataEntry_mock.png" />
+    <Content Include="Javascript\TextMover1.js" />
+    <Content Include="Javascript\TextMover2.js" />
+    <Content Include="Javascript\TextMover3.js" />
+    <Content Include="Javascript\TextMover4.js" />
     <Content Include="Models\CICustomField.txt" />
     <Content Include="Models\CILayoutBackgroundImg.txt" />
     <Content Include="Models\CILayoutPrint.txt" />
@@ -323,6 +327,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\NewFolder1\" />
     <Folder Include="LegacyPages\" />
     <Folder Include="NewFolder1\" />
   </ItemGroup>
