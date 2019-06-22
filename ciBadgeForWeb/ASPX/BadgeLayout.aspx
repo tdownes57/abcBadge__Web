@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="MVC_w_Webforms.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="BadgeLayout.aspx.cs" Inherits="MVC_w_Webforms.WebForm1" %>
 
 <!DOCTYPE html>
 
@@ -7,6 +7,13 @@
     <title></title>
 </head>
 <body>
+
+    <script src="Javacript\TextMover1.js"></script>
+    <script src="Javacript\TextMover2.js"></script>
+    <script src="Javacript\TextMover3.js"></script>
+    <script src="Javacript\TextMover4.js"></script>
+
+
     <form id="form1" runat="server">
         <div style="height: 275px; width: 1036px">        
             <asp:Image ID="Image1" runat="server" Height="267px" ImageUrl="../Images/blue_star.jpg" Width="316px" />

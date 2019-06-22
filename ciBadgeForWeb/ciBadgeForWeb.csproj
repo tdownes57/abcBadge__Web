@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -131,14 +137,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="ASPX\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="ASPX\BadgeLayout.aspx.cs">
+      <DependentUpon>BadgeLayout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ASPX\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="ASPX\BadgeLayout.aspx.designer.cs">
+      <DependentUpon>BadgeLayout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\BadgeRecipientController_NotInUse.cs" />
+    <Compile Include="Controllers\CILayoutTextController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\ExampleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -213,7 +220,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ASPX\WebForm1.aspx" />
+    <Content Include="ASPX\BadgeLayout.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -249,10 +256,10 @@
     <Content Include="Javascript\TextMover2.js" />
     <Content Include="Javascript\TextMover3.js" />
     <Content Include="Javascript\TextMover4.js" />
-    <Content Include="Models\CICustomField.txt" />
+    <Compile Include="Models\CICustomField.cs" />
     <Content Include="Models\CILayoutBackgroundImg.txt" />
     <Content Include="Models\CILayoutPrint.txt" />
-    <Content Include="Models\CILayoutText.txt" />
+    <Compile Include="Models\CILayoutText.cs" />
     <Compile Include="Models\CIPersonalityConfig.cs" />
     <Content Include="Models\CIRecipient..txt" />
     <Content Include="Models\CIRecipient.txt" />
@@ -330,6 +337,7 @@
     <Folder Include="Controllers\NewFolder1\" />
     <Folder Include="LegacyPages\" />
     <Folder Include="NewFolder1\" />
+    <Folder Include="Views\CILayoutText\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
