@@ -17,7 +17,7 @@ namespace ciBadgeForWeb.Models
         public int CILayoutTextId { get; set; }
 
         [Display(Name = "Field Name")]
-        public string FieldNameId { get; set; }
+        public string FieldName { get; set; }
 
         [Display(Name = "Width (or Length) in Pixels")]
         public int WidthLengthPixels { get; set; }

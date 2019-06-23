@@ -140,20 +140,23 @@ buttonBtnHeightMore.addEventListener('click', function (event) {
     //
     var moveable_div5 = document.getElementById("id__mydivheader5");
     moveable_div5.style.height = heightButtonMore() + "px";
-}
+});
                   
-        buttonBtnHeightLess.addEventListener('click', function (event) {
+buttonBtnHeightLess.addEventListener('click', function (event) {
     //
     // Click event-handler for the Save button.
     //
     var moveable_div5 = document.getElementById("id__mydivheader5");
     moveable_div5.style.height = heightButtonLess() + "px";
-}
+});
                             
-        buttonBtnWidthMore.addEventListener('click', function (event) {
+buttonBtnWidthMore.addEventListener('click', function (event) {
     //
     // Click event-handler for the Save button.
     //
     var moveable_div5 = document.getElementById("id__mydivheader5");
     moveable_div5.style.height = heightButtonMore() + "px";
-}
+});
+
+
+

@@ -250,7 +250,10 @@
     <Content Include="Images\__UI for V831 w No Pic.PNG" />
     <Content Include="Images\__UI for v900 w demo face.BAK.png" />
     <Content Include="Images\__UI for v900 w demo face.PNG" />
-    <Content Include="Javascript\drag_simple_wTextArea.htm" />
+    <Content Include="Javascript\BadgeLayout_mock.htm" />
+    <Content Include="Javascript\MainData_v90_mock.htm" />
+    <Content Include="Javascript\exec_context.html" />
+    <Content Include="Javascript\exec_context.js" />
     <Content Include="Javascript\MainDataEntry_mock.png" />
     <Content Include="Javascript\TextMover1.js" />
     <Content Include="Javascript\TextMover2.js" />

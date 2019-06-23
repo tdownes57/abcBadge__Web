@@ -10,44 +10,45 @@ alert("This is TextMover1  !!");
 //Make the DIV element draggable:
 //
 dragElement(document.getElementById("id__mydivheader1"));
-dragElement(document.getElementById("id__mydivheader2"));
-dragElement(document.getElementById("id__mydivheader3"));
-dragElement(document.getElementById("id__mydivheader4"));
-dragElement(document.getElementById("id__mydivheader5"));
 
-var curr_heightButton = 100;
-var curr_widthButton = 100;
+//dragElement(document.getElementById("id__mydivheader2"));
+//dragElement(document.getElementById("id__mydivheader3"));
+//dragElement(document.getElementById("id__mydivheader4"));
+//dragElement(document.getElementById("id__mydivheader5"));
 
-function heightButtonMore() {
-    //Added 5/26/2019 td
-    curr_heightButton = (curr_heightButton + 5);
-    return (curr_heightButton);
-}
+//var curr_heightButton = 100;
+//var curr_widthButton = 100;
 
-function heightButtonLess() {
-    //Added 5/26/2019 td
-    curr_heightButton = (curr_heightButton - 5);
-    return (curr_heightButton);
-}
+//function heightButtonMore() {
+//    //Added 5/26/2019 td
+//    curr_heightButton = (curr_heightButton + 5);
+//    return (curr_heightButton);
+//}
 
-function widthButtonMore() {
-    //Added 5/26/2019 td
-    curr_widthButton = (curr_widthButton + 5);
-    return (curr_widthButton);
-}
+//function heightButtonLess() {
+//    //Added 5/26/2019 td
+//    curr_heightButton = (curr_heightButton - 5);
+//    return (curr_heightButton);
+//}
 
-function widthButtonLess() {
-    //Added 5/26/2019 td
-    curr_widthButton = (curr_widthButton - 5);
-    return (curr_widthButton);
-}
+//function widthButtonMore() {
+//    //Added 5/26/2019 td
+//    curr_widthButton = (curr_widthButton + 5);
+//    return (curr_widthButton);
+//}
+
+//function widthButtonLess() {
+//    //Added 5/26/2019 td
+//    curr_widthButton = (curr_widthButton - 5);
+//    return (curr_widthButton);
+//}
 
 
 //A parameter variable is declared by being listed as a parameter.
 //
 function dragElement(parameter_element) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-    var boolResize = true; // false;//Added 5/26/2019 td
+    var boolResize = false;  //true; // false;//Added 5/26/2019 td
 
     parameter_element.onmousedown = dragMouseDown;
 
@@ -90,7 +91,7 @@ function dragElement(parameter_element) {
             //parameter_element.style.height = (parameter_element.offsetTop - pos2 ) + "px";
             //parameter_element.style.width = (parameter_element.offsetLeft - pos1 ) + "px";
 
-            parameter_element.style.height = "100px";
+            //parameter_element.style.height = "100px";
         }
         else {
             //Move the element.
@@ -116,17 +117,17 @@ button_printpositions.addEventListener('click', function (event) {
     var output_box = document.getElementById("textarea_values");
 
     var moveable_div1 = document.getElementById("id__mydivheader1");
-    var moveable_div2 = document.getElementById("id__mydivheader2");
-    var moveable_div3 = document.getElementById("id__mydivheader3");
-    var moveable_div4 = document.getElementById("id__mydivheader4");
-    var moveable_div5 = document.getElementById("id__mydivheader5");
+    //var moveable_div2 = document.getElementById("id__mydivheader2");
+    //var moveable_div3 = document.getElementById("id__mydivheader3");
+    //var moveable_div4 = document.getElementById("id__mydivheader4");
+    //var moveable_div5 = document.getElementById("id__mydivheader5");
 
     output_box.value = "mydivheader1, OffsetLeft: " + moveable_div1.offsetLeft + "  " +
         " , OffsetTop:  " + moveable_div1.offsetTop + " \n  " +
         "mydivheader1, ClientHeight: " + moveable_div1.clientHeight + " \n " +
-        " , ClientWidth:  " + moveable_div1.clientWidth + " \n " +
-        "mydivheader2, OffsetLeft: " + moveable_div2.offsetLeft + "  \n " +
-        " , OffsetTop:  " + moveable_div2.offsetTop + " \n  "
+        " , ClientWidth:  " + moveable_div1.clientWidth + " \n ";  // +
+        //"mydivheader2, OffsetLeft: " + moveable_div2.offsetLeft + "  \n " +
+        //" , OffsetTop:  " + moveable_div2.offsetTop + " \n  "
 
     //alert("Div #1  Left coordinate: " + moveable_div1.offsetLeft + ", Top coordinate: " + moveable_div1.offsetTop);
     //var m oveable_div2 = document.getElementById("mydiv2");
@@ -134,26 +135,28 @@ button_printpositions.addEventListener('click', function (event) {
 });
 
 
-buttonBtnHeightMore.addEventListener('click', function (event) {
-    //
-    // Click event-handler for the Save button.
-    //
-    var moveable_div5 = document.getElementById("id__mydivheader5");
-    moveable_div5.style.height = heightButtonMore() + "px";
-}
+//buttonBtnHeightMore.addEventListener('click', function (event) {
+//    //
+//    // Click event-handler for the Save button.
+//    //
+//    var moveable_div5 = document.getElementById("id__mydivheader5");
+//    moveable_div5.style.height = heightButtonMore() + "px";
+//});
                   
-        buttonBtnHeightLess.addEventListener('click', function (event) {
-    //
-    // Click event-handler for the Save button.
-    //
-    var moveable_div5 = document.getElementById("id__mydivheader5");
-    moveable_div5.style.height = heightButtonLess() + "px";
-}
+//buttonBtnHeightLess.addEventListener('click', function (event) {
+//    //
+//    // Click event-handler for the Save button.
+//    //
+//    var moveable_div5 = document.getElementById("id__mydivheader5");
+//    moveable_div5.style.height = heightButtonLess() + "px";
+//});
                             
-        buttonBtnWidthMore.addEventListener('click', function (event) {
-    //
-    // Click event-handler for the Save button.
-    //
-    var moveable_div5 = document.getElementById("id__mydivheader5");
-    moveable_div5.style.height = heightButtonMore() + "px";
-}
+//buttonBtnWidthMore.addEventListener('click', function (event) {
+//    //
+//    // Click event-handler for the Save button.
+//    //
+//    var moveable_div5 = document.getElementById("id__mydivheader5");
+//    moveable_div5.style.height = heightButtonMore() + "px";
+//});
+
+
