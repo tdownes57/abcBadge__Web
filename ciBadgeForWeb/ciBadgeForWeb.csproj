@@ -145,7 +145,7 @@
       <DependentUpon>BadgeLayout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\BadgeRecipientController_NotInUse.cs" />
-    <Compile Include="Controllers\CILayoutTextController.cs" />
+    <Compile Include="Controllers\LayoutTextController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\ExampleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -238,8 +238,10 @@
     <Content Include="Images\blue_star.jpg" />
     <Content Include="Images\CI Badge v9 Susan.jpg" />
     <Content Include="Images\ImageMetaData.xml" />
+    <Content Include="Images\LayoutBack1of3.jpg" />
     <Content Include="Images\PureWhite.png" />
     <Content Include="Images\RotatedLayout.png" />
+    <Content Include="Images\SOU735-IVC-VENDOR.jpg" />
     <Content Include="Images\test - backup.jpg" />
     <Content Include="Images\1961.jpg" />
     <Content Include="Images\1961.PNG" />
@@ -334,6 +336,7 @@
     <Content Include="Views\Step1\ShowSearchResults.cshtml" />
     <Content Include="Views\Steps1and2\Index.cshtml" />
     <Content Include="Step4Handler.ashx" />
+    <Content Include="Views\LayoutText\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

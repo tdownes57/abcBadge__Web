@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace ciBadgeForWeb.Controllers
 {
-    public class CILayoutTextController : Controller
+    public class LayoutTextController : Controller
     {
         // GET: CILayoutText
         public ActionResult Index()
