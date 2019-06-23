@@ -292,6 +292,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\TextMover1.js" />
+    <Content Include="Scripts\TextMover2.js" />
+    <Content Include="Scripts\TextMover3.js" />
+    <Content Include="Scripts\TextMover4.js" />
     <Content Include="Views\BadgeRecipient\test_JpegFile.htm" />
     <Content Include="Views\Example\Example1.aspx" />
     <Content Include="Views\Home\ExampleBadge.aspx" />
@@ -299,6 +303,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Views\Home\WebForm1.aspx" />
+    <Content Include="Views\LayoutText\TextMover1.js" />
+    <Content Include="Views\LayoutText\TextMover2.js" />
+    <Content Include="Views\LayoutText\TextMover3.js" />
+    <Content Include="Views\LayoutText\TextMover4.js" />
     <Content Include="Views\PortraitImage\Index.aspx" />
     <Content Include="Views\PortraitImage\UploadImageToBase64.aspx" />
     <Content Include="Views\Recipient\test_JpegFile.htm" />

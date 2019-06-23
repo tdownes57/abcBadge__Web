@@ -1,9 +1,11 @@
+
 //
 //CI Solutions, Thomas C. Downes..  ----6/22/2019 td  
 //
+
 var a;
 a = 5;
-alert("This is TextMover4  !!");
+alert("This is TextMover1  !!");
 
 //Make the DIV element draggable:
 //

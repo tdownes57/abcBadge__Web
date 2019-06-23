@@ -1,8 +1,11 @@
 
+//
+//CI Solutions, Thomas C. Downes..  ----6/22/2019 td  
+//
 
 var a;
 a = 5;
-alert("This is TextMover2  !!");
+alert("This is TextMover1  !!");
 
 //Make the DIV element draggable:
 //
@@ -139,7 +142,7 @@ buttonBtnHeightMore.addEventListener('click', function (event) {
     moveable_div5.style.height = heightButtonMore() + "px";
 });
                   
-        buttonBtnHeightLess.addEventListener('click', function (event) {
+buttonBtnHeightLess.addEventListener('click', function (event) {
     //
     // Click event-handler for the Save button.
     //
@@ -154,3 +157,6 @@ buttonBtnWidthMore.addEventListener('click', function (event) {
     var moveable_div5 = document.getElementById("id__mydivheader5");
     moveable_div5.style.height = heightButtonMore() + "px";
 });
+
+
+

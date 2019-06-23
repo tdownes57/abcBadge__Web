@@ -19,6 +19,12 @@ namespace ciBadgeForWeb.Models
         [Display(Name = "Field Name")]
         public string FieldName { get; set; }
 
+        [Display(Name = "Top-Edge Position in Pixels")]
+        public int TopEdgePositionPixels { get; set; }
+
+        [Display(Name = "Left-Edge Position in Pixels")]
+        public int LeftEdgePositionPixels { get; set; }
+
         [Display(Name = "Width (or Length) in Pixels")]
         public int WidthLengthPixels { get; set; }
 

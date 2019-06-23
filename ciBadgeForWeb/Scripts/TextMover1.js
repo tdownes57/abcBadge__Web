@@ -3,51 +3,60 @@
 //CI Solutions, Thomas C. Downes..  ----6/22/2019 td  
 //
 
-var a;  
-a = 5; 
+var a;
+a = 5;
 alert("This is TextMover1  !!");
 
 //Make the DIV element draggable:
 //
 dragElement(document.getElementById("id__mydivheader1"));
-dragElement(document.getElementById("id__mydivheader2"));
-dragElement(document.getElementById("id__mydivheader3"));
-dragElement(document.getElementById("id__mydivheader4"));
-dragElement(document.getElementById("id__mydivheader5"));
 
-var curr_heightButton = 100;
-var curr_widthButton = 100;
+//dragElement(document.getElementById("id__mydivheader2"));
+//dragElement(document.getElementById("id__mydivheader3"));
+//dragElement(document.getElementById("id__mydivheader4"));
+//dragElement(document.getElementById("id__mydivheader5"));
 
-function heightButtonMore() {
-    //Added 5/26/2019 td
-    curr_heightButton = (curr_heightButton + 5);
-    return (curr_heightButton);
-}
+//var curr_heightButton = 100;
+//var curr_widthButton = 100;
 
-function heightButtonLess() {
-    //Added 5/26/2019 td
-    curr_heightButton = (curr_heightButton - 5);
-    return (curr_heightButton);
-}
+//function heightButtonMore() {
+//    //Added 5/26/2019 td
+//    curr_heightButton = (curr_heightButton + 5);
+//    return (curr_heightButton);
+//}
 
-function widthButtonMore() {
-    //Added 5/26/2019 td
-    curr_widthButton = (curr_widthButton + 5);
-    return (curr_widthButton);
-}
+//function heightButtonLess() {
+//    //Added 5/26/2019 td
+//    curr_heightButton = (curr_heightButton - 5);
+//    return (curr_heightButton);
+//}
 
-function widthButtonLess() {
-    //Added 5/26/2019 td
-    curr_widthButton = (curr_widthButton - 5);
-    return (curr_widthButton);
-}
+//function widthButtonMore() {
+//    //Added 5/26/2019 td
+//    curr_widthButton = (curr_widthButton + 5);
+//    return (curr_widthButton);
+//}
+
+//function widthButtonLess() {
+//    //Added 5/26/2019 td
+//    curr_widthButton = (curr_widthButton - 5);
+//    return (curr_widthButton);
+//}
 
 
 //A parameter variable is declared by being listed as a parameter.
 //
 function dragElement(parameter_element) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-    var boolResize = true; // false;//Added 5/26/2019 td
+    var boolResize = false;  //true; // false;//Added 5/26/2019 td
+
+    var badge_back = jQuery("#badge_back");
+    var box_topedge = $("#TopEdgePositionPixels");
+    var box_leftedge = jQuery("#LeftEdgePositionPixels");
+
+    console.log('Is it found or not?  TopEdgePositionPixels.Length = ' + $('#TopEdgePositionPixels').length)
+    console.log('Is it found or not?  LeftEdgePositionPixels.Length = ' + $('#LeftEdgePositionPixels').length)
+    console.log('Is it found or not?  badge_back.Length = ' + $('#badge_back').length)
 
     parameter_element.onmousedown = dragMouseDown;
 
@@ -90,12 +99,30 @@ function dragElement(parameter_element) {
             //parameter_element.style.height = (parameter_element.offsetTop - pos2 ) + "px";
             //parameter_element.style.width = (parameter_element.offsetLeft - pos1 ) + "px";
 
-            parameter_element.style.height = "100px";
+            //parameter_element.style.height = "100px";
         }
         else {
             //Move the element.
             parameter_element.style.top = (parameter_element.offsetTop - pos2) + "px";
             parameter_element.style.left = (parameter_element.offsetLeft - pos1) + "px";
+
+            //Added 6/23/2019 thomas d.
+            var intTopEdge = (parameter_element.offsetTop); // - badge_back.offsetTop);
+            var intLeftEdge = (parameter_element.offsetLeft); // - badge_back.offsetLeft);
+
+            box_topedge.value = intTopEdge; // parameter_element.offsetTop - badge_back.offsetTop;
+            box_leftedge.value = intLeftEdge; // parameter_element.offsetLeft - badge_back.offsetLeft;
+
+            box_topedge.text = intTopEdge; 
+
+            console.log('intTopEdge = ' + intTopEdge);
+            console.log('intLeftEdge = ' + intLeftEdge);
+            console.log('badge_back.offsetLeft = ' + badge_back.offsetLeft);
+
+            $("input[name='TopEdgePositionPixels']").val = intTopEdge;
+
+            //console.log('Is it found or not?  ' + $('#id').length)
+
         }
     }
 
@@ -105,58 +132,66 @@ function dragElement(parameter_element) {
         /* stop moving when mouse button is released:*/
         document.onmouseup = null;
         document.onmousemove = null;
+
+        //var box_topedge = $("#TopEdgePositionPixels");
+        //var box_leftedge = jQuery("#LeftEdgePositionPixels");
+
+        //box_topedge.val = this.dragElement.offsetTop;
+        //box_leftedge.val = this.dragElement.offsetLeft;
+
     }
 }
 
 
-button_printpositions.addEventListener('click', function (event) {
+//button_printpositions.addEventListener('click', function (event) {
     //
     // Click event-handler for the Save button.
     //
-    var output_box = document.getElementById("textarea_values");
+    //var output_box = document.getElementById("textarea_values");
 
-    var moveable_div1 = document.getElementById("id__mydivheader1");
-    var moveable_div2 = document.getElementById("id__mydivheader2");
-    var moveable_div3 = document.getElementById("id__mydivheader3");
-    var moveable_div4 = document.getElementById("id__mydivheader4");
-    var moveable_div5 = document.getElementById("id__mydivheader5");
+    //var moveable_div1 = document.getElementById("id__mydivheader1");
 
-    output_box.value = "mydivheader1, OffsetLeft: " + moveable_div1.offsetLeft + "  " +
-        " , OffsetTop:  " + moveable_div1.offsetTop + " \n  " +
-        "mydivheader1, ClientHeight: " + moveable_div1.clientHeight + " \n " +
-        " , ClientWidth:  " + moveable_div1.clientWidth + " \n " +
-        "mydivheader2, OffsetLeft: " + moveable_div2.offsetLeft + "  \n " +
-        " , OffsetTop:  " + moveable_div2.offsetTop + " \n  "
+    //var moveable_div2 = document.getElementById("id__mydivheader2");
+    //var moveable_div3 = document.getElementById("id__mydivheader3");
+    //var moveable_div4 = document.getElementById("id__mydivheader4");
+    //var moveable_div5 = document.getElementById("id__mydivheader5");
+
+    //output_box.value = "mydivheader1, OffsetLeft: " + moveable_div1.offsetLeft + "  " +
+    //    " , OffsetTop:  " + moveable_div1.offsetTop + " \n  " +
+    //    "mydivheader1, ClientHeight: " + moveable_div1.clientHeight + " \n " +
+    //    " , ClientWidth:  " + moveable_div1.clientWidth + " \n ";  // +
+        //"mydivheader2, OffsetLeft: " + moveable_div2.offsetLeft + "  \n " +
+        //" , OffsetTop:  " + moveable_div2.offsetTop + " \n  "
 
     //alert("Div #1  Left coordinate: " + moveable_div1.offsetLeft + ", Top coordinate: " + moveable_div1.offsetTop);
     //var m oveable_div2 = document.getElementById("mydiv2");
     //alert("Div #2  Left coordinate: " + moveable_div2.offsetLeft + ", Top coordinate: " + moveable_div2.offsetTop);
-});
+
+// });
 
 
-buttonBtnHeightMore.addEventListener('click', function (event) {
-    //
-    // Click event-handler for the Save button.
-    //
-    var moveable_div5 = document.getElementById("id__mydivheader5");
-    moveable_div5.style.height = heightButtonMore() + "px";
-});
+//buttonBtnHeightMore.addEventListener('click', function (event) {
+//    //
+//    // Click event-handler for the Save button.
+//    //
+//    var moveable_div5 = document.getElementById("id__mydivheader5");
+//    moveable_div5.style.height = heightButtonMore() + "px";
+//});
                   
-buttonBtnHeightLess.addEventListener('click', function (event) {
-    //
-    // Click event-handler for the Save button.
-    //
-    var moveable_div5 = document.getElementById("id__mydivheader5");
-    moveable_div5.style.height = heightButtonLess() + "px";
-});
+//buttonBtnHeightLess.addEventListener('click', function (event) {
+//    //
+//    // Click event-handler for the Save button.
+//    //
+//    var moveable_div5 = document.getElementById("id__mydivheader5");
+//    moveable_div5.style.height = heightButtonLess() + "px";
+//});
                             
-buttonBtnWidthMore.addEventListener('click', function (event) {
-    //
-    // Click event-handler for the Save button.
-    //
-    var moveable_div5 = document.getElementById("id__mydivheader5");
-    moveable_div5.style.height = heightButtonMore() + "px";
-});
-
+//buttonBtnWidthMore.addEventListener('click', function (event) {
+//    //
+//    // Click event-handler for the Save button.
+//    //
+//    var moveable_div5 = document.getElementById("id__mydivheader5");
+//    moveable_div5.style.height = heightButtonMore() + "px";
+//});
 
 

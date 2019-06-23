@@ -5,7 +5,7 @@
 
 var a;
 a = 5;
-alert("This is TextMover3  !!");
+alert("This is TextMover1  !!");
 
 //Make the DIV element draggable:
 //
@@ -157,3 +157,6 @@ buttonBtnWidthMore.addEventListener('click', function (event) {
     var moveable_div5 = document.getElementById("id__mydivheader5");
     moveable_div5.style.height = heightButtonMore() + "px";
 });
+
+
+
