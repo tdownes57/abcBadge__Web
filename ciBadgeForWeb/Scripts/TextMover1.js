@@ -54,9 +54,10 @@ function dragElement(parameter_element) {
     var box_topedge = $("#TopEdgePositionPixels");
     var box_leftedge = jQuery("#LeftEdgePositionPixels");
 
-    console.log('Is it found or not?  TopEdgePositionPixels.Length = ' + $('#TopEdgePositionPixels').length)
-    console.log('Is it found or not?  LeftEdgePositionPixels.Length = ' + $('#LeftEdgePositionPixels').length)
-    console.log('Is it found or not?  badge_back.Length = ' + $('#badge_back').length)
+    console.log('Is it found or not?  0 < TopEdgePositionPixels.Length = ' + $('#TopEdgePositionPixels').length)
+    console.log('Is it found or not?  0< LeftEdgePositionPixels.Length = ' + $('#LeftEdgePositionPixels').length)
+    console.log('Is it found or not?  0 < badge_back.Length = ' + $('#badge_back').length)
+    console.log('Is it found or not?  0 < box_topedge.Length = ' + box_topedge.Length);
 
     parameter_element.onmousedown = dragMouseDown;
 
@@ -110,16 +111,18 @@ function dragElement(parameter_element) {
             var intTopEdge = (parameter_element.offsetTop); // - badge_back.offsetTop);
             var intLeftEdge = (parameter_element.offsetLeft); // - badge_back.offsetLeft);
 
-            box_topedge.value = intTopEdge; // parameter_element.offsetTop - badge_back.offsetTop;
-            box_leftedge.value = intLeftEdge; // parameter_element.offsetLeft - badge_back.offsetLeft;
+            //box_topedge.value = intTopEdge; // parameter_element.offsetTop - badge_back.offsetTop;
+            //box_leftedge.value = intLeftEdge; // parameter_element.offsetLeft - badge_back.offsetLeft;
 
-            box_topedge.text = intTopEdge; 
+            //box_topedge.text = intTopEdge; 
+            //box_leftedge.text = intLeftEdge; 
 
             console.log('intTopEdge = ' + intTopEdge);
             console.log('intLeftEdge = ' + intLeftEdge);
             console.log('badge_back.offsetLeft = ' + badge_back.offsetLeft);
+            console.log('Current value of TopEdge = ' + box_topedge.value)
 
-            $("input[name='TopEdgePositionPixels']").val = intTopEdge;
+            $("input[name='TopEdgePositionPixels']").value = 'Testing my javacript.....'; //intTopEdge;
 
             //console.log('Is it found or not?  ' + $('#id').length)
 
