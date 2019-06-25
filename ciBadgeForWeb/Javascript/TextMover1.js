@@ -122,10 +122,10 @@ button_printpositions.addEventListener('click', function (event) {
     //var moveable_div4 = document.getElementById("id__mydivheader4");
     //var moveable_div5 = document.getElementById("id__mydivheader5");
 
-    output_box.value = "mydivheader1, OffsetLeft: " + moveable_div1.offsetLeft + "  " +
-        " , OffsetTop:  " + moveable_div1.offsetTop + " \n  " +
-        "mydivheader1, ClientHeight: " + moveable_div1.clientHeight + " \n " +
-        " , ClientWidth:  " + moveable_div1.clientWidth + " \n ";  // +
+    //output_box.value = "mydivheader1, OffsetLeft: " + moveable_div1.offsetLeft + "  " +
+    //    " , OffsetTop:  " + moveable_div1.offsetTop + " \n  " +
+    //    "mydivheader1, ClientHeight: " + moveable_div1.clientHeight + " \n " +
+    //    " , ClientWidth:  " + moveable_div1.clientWidth + " \n ";  // +
         //"mydivheader2, OffsetLeft: " + moveable_div2.offsetLeft + "  \n " +
         //" , OffsetTop:  " + moveable_div2.offsetTop + " \n  "
 

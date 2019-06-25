@@ -1,0 +1,57 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+<script > 
+   
+  //
+  //  https://answers.acrobatusers.com/How-do-I-reference-a-field-through-javascript-q192043.aspx
+  //
+   function GetField(cName) {
+        // get field object fro cName field with error reporting;
+        var oField = this.getField(cName);
+        // test for error;
+        if (oField == null) app.alert("Error accessing field " + cName);
+        return oField; // return field object or null;
+} // end GetField function;
+
+    var obj_input_text = $("#showField");  
+    var obj_input_hide = $("#hiddenField_customerID");  
+
+    //var oField_Show = this.getField("showField");
+    //var oField_Hide = this.getField("hiddenField_customerID");
+
+    var oField_Show = GetField("showField");
+    var oField_Hide = GetField("hiddenField_customerID");
+
+    obj_input_text.val("This is jquery power!!");   
+
+    console.log("Text (Visible) is (obj_input_text):     " + obj_input_text.val());  
+    console.log("Text (Hidden) is (obj_input_hide):   " + obj_input_hide.val());  
+
+    console.log("Displayed Field (oField_Show) is :   " + obj_input_text.val());  
+    console.log("Hidden Field (oField_Hide) is :   " + obj_input_hide.val());  
+
+    var inputs, index;
+    inputs = document.getElementsByTagName('input');
+    for (index = 0; index < inputs.length; ++index) {
+         // deal with inputs[index] element.
+         console.log("Input element: " + inputs[index].name; 
+    }
+
+</script>
+
+
+<form> 
+<input type="text" id="showField" name="showField" value="John" placeholder="Type here!"  ></input>  
+<label for="text"> Type your text here</label>
+<input type="hidden" id="hiddenField_customerID" name="hiddenField_customerID" value="3487">
+</form>  
+
+
+</body>
+</html>
+
