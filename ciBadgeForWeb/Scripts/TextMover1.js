@@ -108,9 +108,14 @@ function dragElement(parameter_element) {
             parameter_element.style.top = (parameter_element.offsetTop - pos2) + "px";
             parameter_element.style.left = (parameter_element.offsetLeft - pos1) + "px";
 
+            badge_back = document.getElementById('badge_back');   // Added 6/24/2019 thomas downes.
+
             //Added 6/23/2019 thomas d.
-            var intTopEdge = (parameter_element.offsetTop); // - badge_back.offsetTop);
+            var intTopEdge = (parameter_element.offsetTop);  // - badge_back.offsetTop);
             var intLeftEdge = (parameter_element.offsetLeft); // - badge_back.offsetLeft);
+
+            document.getElementsByName('TopEdgePositionPixels')[0].value = intTopEdge;  
+            document.getElementsByName('LeftEdgePositionPixels')[0].value = intLeftEdge;  
 
             //box_topedge.value = intTopEdge; // parameter_element.offsetTop - badge_back.offsetTop;
             //box_leftedge.value = intLeftEdge; // parameter_element.offsetLeft - badge_back.offsetLeft;
@@ -118,15 +123,15 @@ function dragElement(parameter_element) {
             //box_topedge.text = intTopEdge; 
             //box_leftedge.text = intLeftEdge; 
 
-            console.log('intTopEdge = ' + intTopEdge);
-            console.log('intLeftEdge = ' + intLeftEdge);
-            console.log('badge_back.offsetLeft = ' + badge_back.offsetLeft);
-            console.log('Current value of TopEdge = ' + box_topedge.value)
+            //console.log('intTopEdge = ' + intTopEdge);
+            //console.log('intLeftEdge = ' + intLeftEdge);
+            //console.log('badge_back.offsetLeft = ' + badge_back.offsetLeft);
+            //console.log('Current value of TopEdge = ' + box_topedge.value)
 
-            $("input[name='TopEdgePositionPixels']").value = 'Testing my javacript.....'; //intTopEdge;
-            elem.value = "Testing....";
-
+            // $("input[name='TopEdgePositionPixels']").value = 'Testing my javacript.....'; //intTopEdge;
+            //elem.value = "Testing....";
             //console.log('Is it found or not?  ' + $('#id').length)
+
 
         }
     }
