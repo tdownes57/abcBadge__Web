@@ -51,7 +51,8 @@ ExitHandler:
         Dim output_list = New List(Of Image)
 
         ''6/16/2019 td''strPathToFolderWithPics = My.Application.Info.DirectoryPath & "\PictureExamples"
-        strPathToFolderWithPics = "C:\Users\Jane\source\repos\ciBadgeForWeb\ciPictures_VB\PictureExamples"
+        ''6/22/2019 td''strPathToFolderWithPics = "C:\Users\Jane\source\repos\ciBadgeForWeb\ciPictures_VB\PictureExamples"
+        strPathToFolderWithPics = "C:\CI Solutions\CI Badge Web\ciPictures_VB\PictureExamples"
 
         all_Jpegs = (New System.IO.DirectoryInfo(strPathToFolderWithPics)).EnumerateFiles()
 

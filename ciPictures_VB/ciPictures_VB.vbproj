@@ -103,6 +103,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="PictureExamples\1957.jpg" />
+    <Content Include="PictureExamples\1958.png" />
+    <Content Include="PictureExamples\1959.PNG" />
+    <Content Include="PictureExamples\1960.JPG" />
+    <Content Include="PictureExamples\1961.jpg" />
+    <Content Include="PictureExamples\1961.PNG" />
+    <Content Include="PictureExamples\1962.jpg" />
+    <Content Include="PictureExamples\CI Badge v9 Susan - Copy.jpg" />
+    <Content Include="PictureExamples\CI Badge v9 Susan.jpg" />
+    <Content Include="PictureExamples\test - backup.jpg" />
     <Content Include="PictureExamples\test_Chanin.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

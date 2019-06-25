@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;// Added 5/20/2019 thomas d. 
-using System.Drawing; // Added 5/20/2019 thomas d. 
-using System.Drawing.Imaging;// Added 5/20/2019 thomas d. 
-using System.IO;// Added 5/20/2019 thomas d. 
+using System.Web;               //Added 5/20/2019 thomas d. 
+using System.Drawing;           //Added 5/20/2019 thomas d. 
+using System.Drawing.Imaging;   //Added 5/20/2019 thomas d. 
+using System.IO;                //Added 5/20/2019 thomas d. 
 
 namespace ciBadgeForWeb
 {
