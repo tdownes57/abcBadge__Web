@@ -245,6 +245,12 @@
     <Content Include="Images\__UI for v900 w demo face.PNG" />
     <Content Include="Javascript\drag_simple_wTextArea.htm" />
     <Content Include="Javascript\MainDataEntry_mock.png" />
+    <Content Include="Javascript\pietschsoft WORKS GREAT.htm" />
+    <Content Include="Javascript\pietschsoft.BACKUP.htm" />
+    <Content Include="Javascript\pietschsoft.BK3.htm" />
+    <Content Include="Javascript\pietschsoft.htm" />
+    <Content Include="Javascript\pietschsoft.WORKS GREAT.htm" />
+    <Content Include="Javascript\pietschsoft.WORKS.htm" />
     <Content Include="Models\CICustomField.txt" />
     <Content Include="Models\CILayoutBackgroundImg.txt" />
     <Content Include="Models\CILayoutPrint.txt" />

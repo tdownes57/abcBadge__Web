@@ -1,0 +1,28 @@
+<html>
+<head>
+
+</head>
+
+<body>
+
+<script src="jquery.js"> </script>
+
+<script > 
+
+    var obj_input = $("#my_text");  
+
+    obj_input.val("This is jquery !!");   
+
+</script>
+
+
+<form> 
+
+<input type="text" id="my_text" ></input>  
+
+</form>  
+
+
+</body>
+</html>
+

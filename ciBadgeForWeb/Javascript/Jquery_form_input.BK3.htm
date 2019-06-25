@@ -1,0 +1,30 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+<script > 
+
+    var obj_input_text = $("#my_text");  
+    var obj_input_hide = $("#custId");  
+
+    obj_input_text.val("This is jquery power!!");   
+
+    console.log("Text (Visible) is: " + obj_input_text.val());  
+    console.log("Text (Hidden) is: " + obj_input_hide.val());  
+
+</script>
+
+
+<form> 
+<input type="text" id="my_text" name="my_text" value="John" placeholder="Type here!"  ></input>  
+<label for="text"> Type your text here</label>
+<input type="hidden" id="custId" name="custId" value="3487">
+</form>  
+
+
+</body>
+</html>
+

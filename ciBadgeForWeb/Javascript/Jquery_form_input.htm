@@ -1,0 +1,44 @@
+<html>
+<head>
+  
+
+</head>
+
+<body>
+
+
+
+
+<form name="my_form" id="my_form" > 
+<input type="text" id="showField" name="showField" value="John" placeholder="Type here!"  ></input>  
+<label for="text"> Type your text here</label>
+<input type="hidden" id="hiddenField_customerID" name="hiddenField_customerID" value="3487">
+</form>  
+
+<script > 
+    console.log('Hello, World!'); 
+   
+    var inputs, index, doc_form_element;
+
+   doc_form_element = document.getElementByID("my_form");
+
+    //inputs = document.getElementsByTagName('input');
+    //inputs = document.getElementsByTagName('form');
+    //inputs = document.getElementsByID('showField');
+    //inputs = document.getElementsByName('showField');
+    //inputs = document.getElementsByName("my_form");
+
+    //inputs = doc_form_element.getElementsByName('showField');
+    inputs = doc_form_element.getElementByID('showField');
+
+    console.log(inputs.length); 
+
+    for (index = 0; index < inputs.length; ++index) {
+         // deal with inputs[index] element.
+         console.log("Input element: " + inputs[index].name); 
+    }
+</script>
+
+</body>
+</html>
+

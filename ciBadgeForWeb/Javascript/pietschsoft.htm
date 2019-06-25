@@ -1,0 +1,48 @@
+<html>
+<head>
+
+  <!-- http://pietschsoft.com/post/2006/06/01/JavaScript-Loop-through-all-elements-in-a-form  --> 
+
+<script type="text/javascript">
+    function DisplayFormValues()
+    {
+        var str = '';
+        var elem = document.getElementById('frmMain').elements;
+
+        for(var i = 0; i < elem.length; i++)
+        {
+           if (elem[i].name === 'ElemText') elem[i].value = '1957 is my favorite year !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!';     // Works !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+            str += "<b>Type:</b>" + elem[i].type + "&nbsp&nbsp";
+            str += "<b>Name:</b>" + elem[i].name + "&nbsp;&nbsp;";
+            str += "<b>Value:</b><i>" + elem[i].value + "</i>&nbsp;&nbsp;";
+            str += "<BR>";
+        } 
+
+        str += "<BR>";
+        var elem_TEXT = document.getElementsByName('ElemText')[0].value;
+         str += elem_TEXT;
+
+        //
+        // Output the multi-line string. 
+        //    
+        document.getElementById('lblValues').innerHTML = str;
+
+    }
+</script>
+</head>
+<body>
+
+  <!-- http://pietschsoft.com/post/2006/06/01/JavaScript-Loop-through-all-elements-in-a-form  --> 
+
+    <form id="frmMain" name="frmMain">
+        <input type="hidden" name="ElemHidden" value="some hidden text"    />
+        <input type="text" name="ElemText" value="some text" /><br />
+        <textarea name="ElemTextArea">Some text area text</textarea><br />
+        <br />
+        <input type="button" value="Test" onclick="DisplayFormValues();" /> 
+    </form>
+    <hr />
+    <div id="lblValues"></div>
+</body>
+</html>
