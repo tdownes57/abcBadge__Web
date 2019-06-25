@@ -53,6 +53,7 @@ function dragElement(parameter_element) {
     var badge_back = jQuery("#badge_back");
     var box_topedge = $("#TopEdgePositionPixels");
     var box_leftedge = jQuery("#LeftEdgePositionPixels");
+    var elem_TEXT = document.getElementsByName('TopEdgePositionPixels')[0].value;
 
     console.log('Is it found or not?  0 < TopEdgePositionPixels.Length = ' + $('#TopEdgePositionPixels').length)
     console.log('Is it found or not?  0< LeftEdgePositionPixels.Length = ' + $('#LeftEdgePositionPixels').length)
@@ -123,6 +124,7 @@ function dragElement(parameter_element) {
             console.log('Current value of TopEdge = ' + box_topedge.value)
 
             $("input[name='TopEdgePositionPixels']").value = 'Testing my javacript.....'; //intTopEdge;
+            elem.value = "Testing....";
 
             //console.log('Is it found or not?  ' + $('#id').length)
 

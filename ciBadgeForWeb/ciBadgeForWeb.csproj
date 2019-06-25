@@ -257,6 +257,11 @@
     <Content Include="Javascript\exec_context.html" />
     <Content Include="Javascript\exec_context.js" />
     <Content Include="Javascript\MainDataEntry_mock.png" />
+    <Content Include="Javascript\pietschsoft WORKS GREAT.htm" />
+    <Content Include="Javascript\pietschsoft.BACKUP.htm" />
+    <Content Include="Javascript\pietschsoft.htm" />
+    <Content Include="Javascript\pietschsoft.WORKS GREAT.htm" />
+    <Content Include="Javascript\pietschsoft.WORKS.htm" />
     <Content Include="Javascript\TextMover1.js" />
     <Content Include="Javascript\TextMover2.js" />
     <Content Include="Javascript\TextMover3.js" />
