@@ -50,7 +50,10 @@ function dragElement(parameter_element) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     var boolResize = false;  //true; // false;//Added 5/26/2019 td
 
-    var badge_back = jQuery("#badge_back");
+     // 6-26-2019 //var badge_back = jQuery("#badge_back");
+     // #1 6-26-2019 //var badge_back = document.getElementsByName('badge_back')[0].value;   //Oops!! .value is wrong.  
+     //  #2 6-26-2019 //var badge_back = document.getElementsByName('badge_back')[0];   //Oops!!  6-26-2019 // [0].value;
+
     var box_topedge = $("#TopEdgePositionPixels");
     var box_leftedge = jQuery("#LeftEdgePositionPixels");
     var elem_TEXT = document.getElementsByName('TopEdgePositionPixels')[0].value;
@@ -108,11 +111,17 @@ function dragElement(parameter_element) {
             parameter_element.style.top = (parameter_element.offsetTop - pos2) + "px";
             parameter_element.style.left = (parameter_element.offsetLeft - pos1) + "px";
 
-            badge_back = document.getElementById('badge_back');   // Added 6/24/2019 thomas downes.
+            // 6/26 td//var badge_back = document.getElementById('badge_back');   // Added 6/24/2019 thomas downes.
+            //Added 6/26/2019 td 
+            var badge_back = document.getElementsByName('badge_back')[0];
 
             //Added 6/23/2019 thomas d.
             var intTopEdge = (parameter_element.offsetTop);  // - badge_back.offsetTop);
             var intLeftEdge = (parameter_element.offsetLeft); // - badge_back.offsetLeft);
+
+            //Added 6/23/2019 thomas d.
+            intTopEdge = (parameter_element.offsetTop - badge_back.offsetTop);
+            intLeftEdge = (parameter_element.offsetLeft - badge_back.offsetLeft);
 
             document.getElementsByName('TopEdgePositionPixels')[0].value = intTopEdge;  
             document.getElementsByName('LeftEdgePositionPixels')[0].value = intLeftEdge;  
