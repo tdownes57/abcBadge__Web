@@ -37,9 +37,19 @@ namespace ciBadgeForWeb.Models
         [Display(Name = "Font Family Name")]
         public string FontFamilyName { get; set; }
 
+        public CILayoutText()
+        {
+            //
+            //Added 6/25/2019 thomas downes
+            //
+            this.CILayoutTextId = 1;
+            this.FieldName = "Comic Sans";
+            this.FontSize = 12;
+            this.LeftEdgePositionPixels = 20;
+            this.TopEdgePositionPixels = 20;
 
-
-
+        }
+            
         public string ErrorMessage()
         {
             //

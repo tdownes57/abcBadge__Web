@@ -3,15 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ciBadgeForWeb.Models;
 
 namespace ciBadgeForWeb.Controllers
 {
     public class LayoutTextController : Controller
     {
+        //Added 6/25/2019 thomas downes  
+        //
+        CILayoutText mod_objLayoutText = new CILayoutText();
+
         // GET: CILayoutText
         public ActionResult Index()
         {
-            return View();
+            //return View();
+            //CILayoutText obj_layoutText = new CILayoutText();
+            //return View(obj_layoutText);
+            return View(mod_objLayoutText);
         }
 
         // GET: CILayoutText/Details/5
@@ -50,12 +58,19 @@ namespace ciBadgeForWeb.Controllers
 
         // POST: CILayoutText/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, FormCollection formValues)
         {
             try
             {
-                // TODO: Add update logic here
+                // Added 6/25/2019
+                //
+                //mod_objLayoutText.TopEdgePositionPixels = collection["TopEdgePositionPixels"].value;
+                //mod_objLayoutText.LeftEdgePositionPixels = collection.count;
 
+                // Added 6/25/2019
+                UpdateModel(mod_objLayoutText, formValues); // Automatically updates properties with values from the collection
+                
+                //dinnerRepository.Save();
                 return RedirectToAction("Index");
             }
             catch
