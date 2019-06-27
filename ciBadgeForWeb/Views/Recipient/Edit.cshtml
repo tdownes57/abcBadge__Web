@@ -10,7 +10,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>CIRecipient</h4>
         <hr />
@@ -70,6 +70,12 @@
         </div>
     </div>
 }
+
+<img alt="Image Handler" src="~/ASPX/ImageHandler.ashx?id=@Model.RecipientID" />
+<img alt="Step4 Handler" src="~/ASPX/Step4Handler.ashx?id=@Model.RecipientID" />
+
+<!-- img alt="Image Handler" src="../ASPX/ImageHandler.ashx?id=<%= Request.QueryString[" id"] %>" -->
+<!-- img alt="Step4 Handler" src="../ASPX/Step4Handler.ashx?id=<%= Request.QueryString[" id"] %>" -->
 
 <div>
     @Html.ActionLink("Back to List", "Index")

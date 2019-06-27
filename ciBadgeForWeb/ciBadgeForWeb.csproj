@@ -161,7 +161,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="IISHandler1.cs" />
-    <Compile Include="ImageHandler.ashx.cs">
+    <Compile Include="ASPX\ImageHandler.ashx.cs">
       <DependentUpon>ImageHandler.ashx</DependentUpon>
     </Compile>
     <Compile Include="Models\CICustomer.cs" />
@@ -176,7 +176,7 @@
     <Compile Include="Models\PortraitImageModel.cs" />
     <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Step4Handler.ashx.cs">
+    <Compile Include="ASPX\Step4Handler.ashx.cs">
       <DependentUpon>Step4Handler.ashx</DependentUpon>
     </Compile>
     <Compile Include="Views\Example\Example1.aspx.cs">
@@ -275,7 +275,7 @@
     <Content Include="Models\CIRecipient.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="ImageHandler.ashx" />
+    <Content Include="ASPX\ImageHandler.ashx" />
     <EntityDeploy Include="Models\ModelEntity.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelEntity.Designer.cs</LastGenOutput>
@@ -336,7 +336,7 @@
     <Content Include="Views\Example\Index.cshtml" />
     <Content Include="Views\Home\Example_BAK.cshtml" />
     <Content Include="Views\Home\Example_Blank.cshtml" />
-    <Content Include="Views\Home\Example.cshtml" />
+    <Content Include="Views\Home\Example_empty.cshtml" />
     <Content Include="Views\PortraitImage\Index_BACKUP.cshtml" />
     <Content Include="Views\Recipient\Index.cshtml" />
     <Content Include="Views\Customer\Edit.cshtml" />
@@ -348,7 +348,7 @@
     <Content Include="Views\Step1\Index.cshtml" />
     <Content Include="Views\Step1\ShowSearchResults.cshtml" />
     <Content Include="Views\Steps1and2\Index.cshtml" />
-    <Content Include="Step4Handler.ashx" />
+    <Content Include="ASPX\Step4Handler.ashx" />
     <Content Include="Views\LayoutText\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
