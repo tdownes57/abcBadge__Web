@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ciBadgeForWeb.Models;
+using ciLayoutPrintLib;  //Added 6/27/2019 thomas downes 
 
 namespace ciBadgeForWeb.Controllers
 {
@@ -11,7 +12,8 @@ namespace ciBadgeForWeb.Controllers
     {
         //Added 6/25/2019 thomas downes  
         //
-        public static CILayoutText mod_objLayoutText = new CILayoutText();
+        public static Models.CILayoutText mod_objLayoutText_NA = new Models.CILayoutText();
+        public static ciLayoutPrintLib.CILayoutText mod_objLayoutText = new ciLayoutPrintLib.CILayoutText();
 
         // GET: CILayoutText
         public ActionResult Index()
