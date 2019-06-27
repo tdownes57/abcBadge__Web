@@ -69,7 +69,7 @@ namespace ciBadgeForWeb
                 //    objLayoutEx.RecipientPhoto);
 
                 //Modify the placement of the Student/Employee's Full Name. ----6/27/2019 td
-                objLayoutEx.UpdateLabelPositions(Controllers.LayoutTextController.mod_objLayoutText);
+                objLayoutEx.UpdateLabelPositions(Controllers.LayoutText1Controller.mod_objLayoutText);
 
                 string strRecipID = recipient_id.ToString();
                 string strLastName = recipient_by_id_onlyone.LastName;
