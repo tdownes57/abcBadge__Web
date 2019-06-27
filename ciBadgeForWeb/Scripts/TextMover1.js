@@ -9,14 +9,45 @@ alert("This is TextMover1  !!");
 
 //Make the DIV element draggable:
 //
-dragElement(document.getElementById("id__mydivheader1"));
+// 6/26/2019 td//dragElement(document.getElementById("id__mydivheader1"));
+
+//
+//Added 6/26/2019 thomas downes
+//
+var moveable_text = document.getElementById("id__mydivheader1");
+var textbox_TopEdge = document.getElementsByName('TopEdgePositionPixels')[0];
+var textbox_LeftEdge = document.getElementsByName('LeftEdgePositionPixels')[0];
+
+var badge_back = document.getElementsByName('badge_back')[0];
+badge_back = document.getElementById("badge_back");
+
+//
+//Added 6/26/2019 thomas downes
+//
+dragElement(moveable_text);
+
+//
+//Added 6/26/2019 thomas downes
+//
+moveable_text.offsetTop = document.getElementsByName('TopEdgePositionPixels')[0].value; // = intTopEdge;
+moveable_text.offsetLeft = document.getElementsByName('LeftEdgePositionPixels')[0].value; // = intLeftEdge;  
+
+//
+//Added 6/26/2019 thomas downes
+//
+//moveable_text.offsetLeft = textbox_LeftEdge.value;
+//moveable_text.offsetTop = textbox_TopEdge.value;
+
+moveable_text.style.left = (badge_back.offsetLeft + textbox_LeftEdge.value) + "pix";
+moveable_text.style.top = (badge_back.offsetTop + textbox_TopEdge.value) + "pix";
 
 //dragElement(document.getElementById("id__mydivheader2"));
 //dragElement(document.getElementById("id__mydivheader3"));
 //dragElement(document.getElementById("id__mydivheader4"));
 //dragElement(document.getElementById("id__mydivheader5"));
 
-//var curr_heightButton = 100;
+var curr_heightButton = 100;
+curr_heightButton = 10;
 //var curr_widthButton = 100;
 
 //function heightButtonMore() {
@@ -114,6 +145,7 @@ function dragElement(parameter_element) {
             // 6/26 td//var badge_back = document.getElementById('badge_back');   // Added 6/24/2019 thomas downes.
             //Added 6/26/2019 td 
             var badge_back = document.getElementsByName('badge_back')[0];
+            badge_back = document.getElementById("badge_back");
 
             //Added 6/23/2019 thomas d.
             var intTopEdge = (parameter_element.offsetTop);  // - badge_back.offsetTop);
