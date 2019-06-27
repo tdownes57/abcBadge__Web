@@ -11,7 +11,7 @@ namespace ciBadgeForWeb.Controllers
     {
         //Added 6/25/2019 thomas downes  
         //
-        CILayoutText mod_objLayoutText = new CILayoutText();
+        public static CILayoutText mod_objLayoutText = new CILayoutText();
 
         // GET: CILayoutText
         public ActionResult Index()
@@ -36,11 +36,14 @@ namespace ciBadgeForWeb.Controllers
 
         // POST: CILayoutText/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Save(FormCollection formValues)
         {
             try
             {
                 // TODO: Add insert logic here
+
+                // Added 6/25/2019
+                UpdateModel(mod_objLayoutText, formValues); // Automatically updates properties with values from the collection
 
                 return RedirectToAction("Index");
             }
@@ -58,7 +61,7 @@ namespace ciBadgeForWeb.Controllers
 
         // POST: CILayoutText/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection formValues)
+        public ActionResult Index(FormCollection formValues)
         {
             try
             {

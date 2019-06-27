@@ -5,7 +5,7 @@
 
 var a;
 a = 5;
-alert("This is TextMover1  !!");
+//alert("This is TextMover1  !!");
 
 //Make the DIV element draggable:
 //
@@ -25,6 +25,8 @@ badge_back = document.getElementById("badge_back");
 //Added 6/26/2019 thomas downes
 //
 dragElement(moveable_text);
+var intPosTop = 20;
+var intPosLeft = 20;
 
 //
 //Added 6/26/2019 thomas downes
@@ -38,8 +40,11 @@ moveable_text.offsetLeft = document.getElementsByName('LeftEdgePositionPixels')[
 //moveable_text.offsetLeft = textbox_LeftEdge.value;
 //moveable_text.offsetTop = textbox_TopEdge.value;
 
-moveable_text.style.left = (badge_back.offsetLeft + textbox_LeftEdge.value) + "pix";
-moveable_text.style.top = (badge_back.offsetTop + textbox_TopEdge.value) + "pix";
+intPosLeft = (badge_back.offsetLeft + Number(textbox_LeftEdge.value));
+moveable_text.style.left = (intPosLeft) + "px";
+
+intPosTop = (badge_back.offsetTop + Number(textbox_TopEdge.value));
+moveable_text.style.top = (intPosTop) + "px";
 
 //dragElement(document.getElementById("id__mydivheader2"));
 //dragElement(document.getElementById("id__mydivheader3"));

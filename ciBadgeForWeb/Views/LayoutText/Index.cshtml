@@ -61,14 +61,14 @@
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.CILayoutTextId)
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save the Layout Positions above" class="btn btn-default" />
-        </div>
-    </div>
-
     <div id="badge_back" class="div_back" name="badge-back">
         <img src="~/Images/LayoutBack1of3.jpg" id="image_back" class="class_border" width="860" height="490" />
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" text="Save the Layout Positions above" value ="Save" class="btn btn-default" />
+        </div>
     </div>
 
     <div class="form-group">
