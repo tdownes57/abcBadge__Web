@@ -38,6 +38,26 @@ namespace ciBadgeForWeb
 
             if (!String.IsNullOrEmpty(context.Request.QueryString["id"]))
             {
+                //
+                //Added 6/20/2019 thomas downes  
+                //
+                Image image_ex = null;  // = recipient_by_id_onlyone.Picture;
+
+                //Added 6/20/2019 td
+                //
+                ciLayoutPrintLib.LayoutExample objLayoutEx = new ciLayoutPrintLib.LayoutExample();
+                ciLayoutPrintLib.FormLayoutEg objFormLayoutEg = new ciLayoutPrintLib.FormLayoutEg();
+                ciLayoutPrintLib.LayoutPrint objLayoutPrint = new ciLayoutPrintLib.LayoutPrint();
+
+                //Added 6/28/2019 thomas downes
+                bool boolPlainBackgroundImage;//Added 6/28/2019 thomas downes 
+                boolPlainBackgroundImage = ("back" == context.Request.QueryString["id"]);
+                if (boolPlainBackgroundImage)
+                {
+                    //Added 6/28/2019 thomas downes
+                    image_ex = objLayoutEx.GenerateImage_BackgroundOnly(false, false);
+                }
+
                 int recipient_id = Int32.Parse(context.Request.QueryString["id"]);
 
                 recipients_list = Controllers.RecipientController.mod_recipientList;
@@ -48,13 +68,8 @@ namespace ciBadgeForWeb
                 //Added 6/20/2019 td 
                 if (recipient_by_id_onlyone is null) return;
 
-                Image image_ex = null;  // = recipient_by_id_onlyone.Picture;
+                //Moved to the top of this if-block. 6/28/2019 td //Image image_ex = null;  // = recipient_by_id_onlyone.Picture;
 
-                //Added 6/20/2019 td
-                //
-                ciLayoutPrintLib.LayoutExample objLayoutEx = new ciLayoutPrintLib.LayoutExample();
-                ciLayoutPrintLib.FormLayoutEg objFormLayoutEg = new ciLayoutPrintLib.FormLayoutEg();
-                ciLayoutPrintLib.LayoutPrint objLayoutPrint = new ciLayoutPrintLib.LayoutPrint();
 
                 //objLayout;
                 //objFormLayoutEg;
@@ -78,9 +93,17 @@ namespace ciBadgeForWeb
                 string strFirstName = recipient_by_id_onlyone.FirstName;
                 string strFullName = (strFirstName + " " + strLastName);
 
-                image_ex = objLayoutEx.GenerateImage(strRecipID, strFullName,
-                                         objLayoutEx.RecipientPhoto, 
-                                         bHorizontalLarge, bHorizontalSmall);
+                if (boolPlainBackgroundImage)
+                {
+                    //Added 6/28/2019 thomas downes  
+                    image_ex = objLayoutEx.GenerateImage_BackgroundOnly(bHorizontalLarge, bHorizontalSmall);
+                }
+                else
+                {
+                    image_ex = objLayoutEx.GenerateImage(strRecipID, strFullName,
+                                             objLayoutEx.RecipientPhoto,
+                                             bHorizontalLarge, bHorizontalSmall);
+                }
 
                 // Of course set this to whatever your format is of the image
                 //context.Response.ContentType = "image/png";
