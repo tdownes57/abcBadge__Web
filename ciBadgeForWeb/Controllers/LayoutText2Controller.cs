@@ -79,11 +79,20 @@ namespace ciBadgeForWeb.Controllers
                 //
                 // ----- WORKED FOR LayoutText1, won't work for LayoutText2 !!!!!!   -Thursday 6/27/2019 td
                 //
-                UpdateModel(mod_objLayout, formValues); // Automatically updates properties with values from the collection
+                //UpdateModel(mod_objLayout, formValues); // Automatically updates properties with values from the collection
+
+                FormCollection formValues_T1 = mod_objLayout.FormValues_T1(formValues);
+                FormCollection formValues_T2 = mod_objLayout.FormValues_T2(formValues);
+
+                UpdateModel(mod_objLayout.T1, formValues_T1);
+                UpdateModel(mod_objLayout.T2, formValues_T2);
 
                 //Added 6/27/2019 thomas downes
                 //
-                //   //mod_objLayout.UpdateByFormValues(formValues);
+                //   //
+                //mod_objLayout.UpdateByFormValues(formValues);
+                //mod_objLayout.Update_T1();
+                //mod_objLayout.Update_T2(); 
 
                 //dinnerRepository.Save();
                 return RedirectToAction("Index");
