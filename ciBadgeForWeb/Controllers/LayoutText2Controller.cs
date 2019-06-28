@@ -10,7 +10,7 @@ namespace ciBadgeForWeb.Controllers
 {
     public class LayoutText2Controller : Controller
     {
-        //Added 6/25/2019 thomas downes  
+        //Added 6/27/2019 thomas downes  
         //
         public static ciLayoutPrintLib.CILayoutBadge mod_objLayout = new ciLayoutPrintLib.CILayoutBadge();
 
@@ -72,6 +72,9 @@ namespace ciBadgeForWeb.Controllers
                 //mod_objLayoutText.LeftEdgePositionPixels = collection.count;
 
                 // Added 6/25/2019
+                //
+                // ----- WORKED FOR LayoutText1, won't work for LayoutText2 !!!!!!   -Thursday 6/27/2019 td
+                //
                 UpdateModel(mod_objLayout, formValues); // Automatically updates properties with values from the collection
 
                 //dinnerRepository.Save();

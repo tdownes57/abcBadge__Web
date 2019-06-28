@@ -299,9 +299,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\TextMover1.js" />
-    <Content Include="Scripts\TextMover2.js" />
-    <Content Include="Scripts\TextMover3.js" />
-    <Content Include="Scripts\TextMover4.js" />
+    <Content Include="Scripts\TextMover_T1.js" />
+    <Content Include="Scripts\TextMover_T2.js" />
+    <Content Include="Scripts\TextMover_T3.js" />
+    <Content Include="Scripts\TextMover_T4.js" />
     <Content Include="Views\BadgeRecipient\test_JpegFile.htm" />
     <Content Include="Views\Example\Example1.aspx" />
     <Content Include="Views\Home\ExampleBadge.aspx" />

@@ -2,6 +2,11 @@
 //
 //CI Solutions, Thomas C. Downes..  ----6/22/2019 td  
 //
+//    TextMover1.js
+//
+//         (Not to be confused with TextMover_T1.js  !!!!) 
+//
+//
 
 var a;
 a = 5;
