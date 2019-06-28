@@ -151,6 +151,7 @@
     <Compile Include="Controllers\Step1Controller.cs" />
     <Compile Include="Controllers\Steps1and2Controller.cs" />
     <Compile Include="Controllers\TestingParamsController.cs" />
+    <Compile Include="Controllers\UploadBackController.cs" />
     <Compile Include="Controllers\ValuesController1.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -348,6 +349,7 @@
     <Content Include="ASPX\Step4Handler.ashx" />
     <Content Include="Views\LayoutText1\Index.cshtml" />
     <Content Include="Views\LayoutText2\Index.cshtml" />
+    <Content Include="Views\UploadBack\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
