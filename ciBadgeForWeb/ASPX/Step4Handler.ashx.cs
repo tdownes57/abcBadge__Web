@@ -68,7 +68,9 @@ namespace ciBadgeForWeb
                 // 6/20/2019 td // image_ex = objLayoutEx.GenerateImage("1234", "Chanin Ferrin", 
                 //    objLayoutEx.RecipientPhoto);
 
+                //
                 //Modify the placement of the Student/Employee's Full Name. ----6/27/2019 td
+                //
                 objLayoutEx.UpdateLabelPositions(Controllers.LayoutText1Controller.mod_objLayoutText);
 
                 string strRecipID = recipient_id.ToString();
