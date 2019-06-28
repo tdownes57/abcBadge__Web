@@ -55,18 +55,21 @@ namespace ciBadgeForWeb
                 if (boolPlainBackgroundImage)
                 {
                     //Added 6/28/2019 thomas downes
-                    image_ex = objLayoutEx.GenerateImage_BackgroundOnly(false, false);
+                    //image_ex = objLayoutEx.GenerateImage_BackgroundOnly(false, false);
+                    image_ex = objLayoutEx.GenerateImage_BackgroundOnly(bHorizontalLarge, bHorizontalSmall);
                 }
+                else
+                {
+                    int recipient_id = Int32.Parse(context.Request.QueryString["id"]);
 
-                int recipient_id = Int32.Parse(context.Request.QueryString["id"]);
+                    recipients_list = Controllers.RecipientController.mod_recipientList;
 
-                recipients_list = Controllers.RecipientController.mod_recipientList;
+                    var recipients_by_id_list = recipients_list.Where(s => s.RecipientID == recipient_id.ToString());
+                    var recipient_by_id_onlyone = recipients_by_id_list.FirstOrDefault();
 
-                var recipients_by_id_list = recipients_list.Where(s => s.RecipientID == recipient_id.ToString());
-                var recipient_by_id_onlyone = recipients_by_id_list.FirstOrDefault();
+                    //Added 6/20/2019 td 
+                    if (recipient_by_id_onlyone is null) return;
 
-                //Added 6/20/2019 td 
-                if (recipient_by_id_onlyone is null) return;
 
                 //Moved to the top of this if-block. 6/28/2019 td //Image image_ex = null;  // = recipient_by_id_onlyone.Picture;
 
@@ -93,17 +96,23 @@ namespace ciBadgeForWeb
                 string strFirstName = recipient_by_id_onlyone.FirstName;
                 string strFullName = (strFirstName + " " + strLastName);
 
-                if (boolPlainBackgroundImage)
-                {
-                    //Added 6/28/2019 thomas downes  
-                    image_ex = objLayoutEx.GenerateImage_BackgroundOnly(bHorizontalLarge, bHorizontalSmall);
-                }
-                else
-                {
                     image_ex = objLayoutEx.GenerateImage(strRecipID, strFullName,
-                                             objLayoutEx.RecipientPhoto,
-                                             bHorizontalLarge, bHorizontalSmall);
+                         objLayoutEx.RecipientPhoto,
+                         bHorizontalLarge, bHorizontalSmall);
+
                 }
+
+                //if (boolPlainBackgroundImage)
+                //{
+                //    //Added 6/28/2019 thomas downes  
+                //    image_ex = objLayoutEx.GenerateImage_BackgroundOnly(bHorizontalLarge, bHorizontalSmall);
+                //}
+                //else
+                //{
+                //    image_ex = objLayoutEx.GenerateImage(strRecipID, strFullName,
+                //                             objLayoutEx.RecipientPhoto,
+                //                             bHorizontalLarge, bHorizontalSmall);
+                //}
 
                 // Of course set this to whatever your format is of the image
                 //context.Response.ContentType = "image/png";

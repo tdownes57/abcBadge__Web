@@ -21,6 +21,10 @@ var moveable_text = document.getElementById("id__mydivheaderT1");
 var textbox_TopEdge = document.getElementsByName('T1.TopEdgePositionPixels')[0];
 var textbox_LeftEdge = document.getElementsByName('T1.LeftEdgePositionPixels')[0];
 
+var textbox_HeightPixels = document.getElementsByName('T1.HeightPixels')[0];
+var textbox_WidthLengthPixels = document.getElementsByName('T1.WidthLengthPixels')[0];
+var textbox_BackgroundColor = document.getElementsByName('T1.BackgroundColor')[0];
+
 var badge_back = document.getElementsByName('badge_back')[0];
 badge_back = document.getElementById("badge_back");
 
@@ -48,6 +52,11 @@ moveable_text.style.left = (intPosLeft) + "px";
 
 intPosTop = (badge_back.offsetTop + Number(textbox_TopEdge.value));
 moveable_text.style.top = (intPosTop) + "px";
+
+//Added 6/28/2019 td
+moveable_text.style.height = (textbox_HeightPixels.value) + "px";
+moveable_text.style.width = (textbox_WidthLengthPixels.value) + "px";
+moveable_text.style.backgroundColor = (textbox_BackgroundColor.value);
 
 //dragElement(document.getElementById("id__mydivheader2"));
 //dragElement(document.getElementById("id__mydivheader3"));
@@ -93,9 +102,15 @@ function dragElement(parameter_element) {
      // #1 6-26-2019 //var badge_back = document.getElementsByName('badge_back')[0].value;   //Oops!! .value is wrong.  
      //  #2 6-26-2019 //var badge_back = document.getElementsByName('badge_back')[0];   //Oops!!  6-26-2019 // [0].value;
 
-    var box_topedge = $("#TopEdgePositionPixels");
-    var box_leftedge = jQuery("#LeftEdgePositionPixels");
-    var elem_TEXT = document.getElementsByName('T1.TopEdgePositionPixels')[0].value;
+    var box_topedge = $("#T1.TopEdgePositionPixels");
+    var box_leftedge = jQuery("#T1.LeftEdgePositionPixels");
+    var elem_TEXT = document.getElementsByName('T1_TopEdgePositionPixels')[0].value;
+
+    var boxHeightPixels = document.getElementsByName('T1_HeightPixels')[0];
+    var boxWidthLengthPixels = document.getElementsByName('T1_WidthLengthPixels')[0];
+    var badge_back = document.getElementById("badge_back");
+    var intLeftEdge = 20;
+    var intTopEdge = 20;
 
     console.log('Is it found or not?  0 < TopEdgePositionPixels.Length = ' + $('#TopEdgePositionPixels').length)
     console.log('Is it found or not?  0< LeftEdgePositionPixels.Length = ' + $('#LeftEdgePositionPixels').length)
@@ -163,8 +178,8 @@ function dragElement(parameter_element) {
             intTopEdge = (parameter_element.offsetTop - badge_back.offsetTop);
             intLeftEdge = (parameter_element.offsetLeft - badge_back.offsetLeft);
 
-            document.getElementsByName('T1.TopEdgePositionPixels')[0].value = intTopEdge;  
-            document.getElementsByName('T1.LeftEdgePositionPixels')[0].value = intLeftEdge;  
+            document.getElementsByName('T1_TopEdgePositionPixels')[0].value = intTopEdge;  
+            document.getElementsByName('T1_LeftEdgePositionPixels')[0].value = intLeftEdge;  
 
             //box_topedge.value = intTopEdge; // parameter_element.offsetTop - badge_back.offsetTop;
             //box_leftedge.value = intLeftEdge; // parameter_element.offsetLeft - badge_back.offsetLeft;
@@ -198,7 +213,58 @@ function dragElement(parameter_element) {
         //box_topedge.val = this.dragElement.offsetTop;
         //box_leftedge.val = this.dragElement.offsetLeft;
 
+        //6/28 td---if (intTopEdge < 0 && intLeftEdge < 0) {
+        if (intTopEdge > 0 && intLeftEdge < 0) {
+
+            //parameter_element.style.height = changedHeightPX(10);
+            //parameter_element.style.height = changedHeightPX(-10);
+            parameter_element.style.height = changedHeightPX(+10);
+        }
+
+        //Added 6/28/2019 thomas D.
+        //if (intTopEdge < 0 && intLeftEdge > 0) {
+
+        //    parameter_element.style.width = changedWidthPX(-10);
+        //}
+
+        ////Added 6/28/2019 thomas D.
+        //if (intTopEdge > (badge_back.offsetHeight) && intLeftEdge > 0) {
+
+        //    parameter_element.style.width = changedWidthPX(+10);
+        //}
+
+        ////Added 6/28/2019 thomas D.
+        //if (intTopEdge > 0 && intLeftEdge > (badge_back.offsetWidth)) {
+
+        //    parameter_element.style.height = changedHeightPX(+10);
+        //}
+
     }
+
+    function changedHeightPX(intAmount) {
+        //
+        //  Added 6/28/2019 Thomas DOWNES
+        //
+        var intHeight = parseInt(parameter_element.style.height, 10);
+        var intHeight_new = (intHeight + intAmount);
+        if (Number.isNaN(intHeight_new)) { intHeight_new = 40; }
+        boxHeightPixels.value = intHeight_new;
+        return (intHeight_new + "px");
+    }
+
+    function changedWidthPX(intAmount) {
+        //
+        //  Added 6/28/2019 Thomas DOWNES
+        //
+        var intWidth = parseInt(parameter_element.style.width, 10);
+        var intWidth_new = (intWidth + intAmount);
+
+        if (Number.isNaN(intWidth_new)) { intWidth_new = 140; }
+        boxWidthPixels.value = intWidth_new;
+        return (intWidth_new + "px");
+
+    }  //End of "function changedWidthPX(intAmount)"
+
 }
 
 
