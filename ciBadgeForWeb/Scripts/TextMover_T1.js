@@ -16,9 +16,10 @@ a = 5;
 //
 //Added 6/26/2019 thomas downes
 //
-var moveable_text = document.getElementById("id__mydivheader1");
-var textbox_TopEdge = document.getElementsByName('TopEdgePositionPixels')[0];
-var textbox_LeftEdge = document.getElementsByName('LeftEdgePositionPixels')[0];
+var moveable_text = document.getElementById("id__mydivheaderT1");
+
+var textbox_TopEdge = document.getElementsByName('T1.TopEdgePositionPixels')[0];
+var textbox_LeftEdge = document.getElementsByName('T1.LeftEdgePositionPixels')[0];
 
 var badge_back = document.getElementsByName('badge_back')[0];
 badge_back = document.getElementById("badge_back");
@@ -33,8 +34,8 @@ var intPosLeft = 20;
 //
 //Added 6/26/2019 thomas downes
 //
-moveable_text.offsetTop = document.getElementsByName('TopEdgePositionPixels')[0].value; // = intTopEdge;
-moveable_text.offsetLeft = document.getElementsByName('LeftEdgePositionPixels')[0].value; // = intLeftEdge;  
+moveable_text.offsetTop = document.getElementsByName('T1.TopEdgePositionPixels')[0].value; // = intTopEdge;
+moveable_text.offsetLeft = document.getElementsByName('T1.LeftEdgePositionPixels')[0].value; // = intLeftEdge;  
 
 //
 //Added 6/26/2019 thomas downes
@@ -94,7 +95,7 @@ function dragElement(parameter_element) {
 
     var box_topedge = $("#TopEdgePositionPixels");
     var box_leftedge = jQuery("#LeftEdgePositionPixels");
-    var elem_TEXT = document.getElementsByName('TopEdgePositionPixels')[0].value;
+    var elem_TEXT = document.getElementsByName('T1.TopEdgePositionPixels')[0].value;
 
     console.log('Is it found or not?  0 < TopEdgePositionPixels.Length = ' + $('#TopEdgePositionPixels').length)
     console.log('Is it found or not?  0< LeftEdgePositionPixels.Length = ' + $('#LeftEdgePositionPixels').length)
@@ -162,8 +163,8 @@ function dragElement(parameter_element) {
             intTopEdge = (parameter_element.offsetTop - badge_back.offsetTop);
             intLeftEdge = (parameter_element.offsetLeft - badge_back.offsetLeft);
 
-            document.getElementsByName('TopEdgePositionPixels')[0].value = intTopEdge;  
-            document.getElementsByName('LeftEdgePositionPixels')[0].value = intLeftEdge;  
+            document.getElementsByName('T1.TopEdgePositionPixels')[0].value = intTopEdge;  
+            document.getElementsByName('T1.LeftEdgePositionPixels')[0].value = intLeftEdge;  
 
             //box_topedge.value = intTopEdge; // parameter_element.offsetTop - badge_back.offsetTop;
             //box_leftedge.value = intLeftEdge; // parameter_element.offsetLeft - badge_back.offsetLeft;

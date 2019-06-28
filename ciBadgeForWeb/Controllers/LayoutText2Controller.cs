@@ -44,6 +44,10 @@ namespace ciBadgeForWeb.Controllers
                 // TODO: Add insert logic here
 
                 // Added 6/25/2019
+                // Added 6/25/2019
+                //
+                // ----- WORKED FOR LayoutText1, won't work for LayoutText2 !!!!!!   -Thursday 6/27/2019 td
+                //
                 UpdateModel(mod_objLayout, formValues); // Automatically updates properties with values from the collection
 
                 return RedirectToAction("Index");
@@ -76,6 +80,10 @@ namespace ciBadgeForWeb.Controllers
                 // ----- WORKED FOR LayoutText1, won't work for LayoutText2 !!!!!!   -Thursday 6/27/2019 td
                 //
                 UpdateModel(mod_objLayout, formValues); // Automatically updates properties with values from the collection
+
+                //Added 6/27/2019 thomas downes
+                //
+                //   //mod_objLayout.UpdateByFormValues(formValues);
 
                 //dinnerRepository.Save();
                 return RedirectToAction("Index");
