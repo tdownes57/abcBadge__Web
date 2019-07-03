@@ -13,7 +13,7 @@ namespace ciBadgeForWeb.Models.ViewModels
     {
 
         public List<CILayoutText> LayoutTextFields = new List<CILayoutText>();
-        public List<CILayoutPic> LayoutPics = new List<CILayoutPic>();
+        public List<CILayoutPic> LayoutPictures = new List<CILayoutPic>();
         
 
         public string ErrorMessage()

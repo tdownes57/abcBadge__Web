@@ -382,6 +382,9 @@
     <Content Include="Views\LayoutText1\Index.cshtml" />
     <Content Include="Views\LayoutText2\Index.cshtml" />
     <Content Include="Views\UploadBack\Index.cshtml" />
+    <Content Include="Views\CILayoutLists\Index.cshtml" />
+    <Content Include="Views\CILayoutLists\CILayoutText.cshtml" />
+    <Content Include="Views\CILayoutLists\CILayoutPicture.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
