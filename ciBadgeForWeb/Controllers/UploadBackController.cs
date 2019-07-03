@@ -63,7 +63,8 @@ namespace ciBadgeForWeb.Controllers
                     }
                 }
             }
-            return View();
+            //return View();
+            return Redirect("~/LayoutText1");
         }
 
 
