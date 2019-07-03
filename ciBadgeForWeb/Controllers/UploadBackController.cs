@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.IO;
 
 //
 //Added 6/28/2019 Thomas Downes   
@@ -24,76 +25,47 @@ namespace ciBadgeForWeb.Controllers
             return View();
         }
 
-        // GET: UploadBack/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
+        //
+        //https://www.dotnettricks.com/learn/mvc/how-to-upload-a-file-in-mvc4
+        //
 
-        // GET: UploadBack/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: UploadBack/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult FileUpload(HttpPostedFileBase file)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
+                if (file == null)
+                {
+                    ModelState.AddModelError("File", "Please Upload Your file");
+                }
+                else if (file.ContentLength > 0)
+                {
+                    int MaxContentLength = 1024 * 1024 * 3; //3 MB
+                    string[] AllowedFileExtensions = new string[] { ".jpg", ".gif", ".png", ".pdf" };
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+                    if (!AllowedFileExtensions.Contains(file.FileName.Substring(file.FileName.LastIndexOf('.'))))
+                    {
+                        ModelState.AddModelError("File", "Please file of type: " + string.Join(", ", AllowedFileExtensions));
+                    }
 
-        // GET: UploadBack/Edit/5
-        public ActionResult Edit(int id)
-        {
+                    else if (file.ContentLength > MaxContentLength)
+                    {
+                        ModelState.AddModelError("File", "Your file is too large, maximum allowed size is: " + MaxContentLength + " MB");
+                    }
+                    else
+                    {
+                        //TO:DO
+                        var fileName = Path.GetFileName(file.FileName);
+                        var path = Path.Combine(Server.MapPath("~/Content/Upload"), fileName);
+                        file.SaveAs(path); 
+                        ModelState.Clear();
+                        ViewBag.Message = "File uploaded successfully";
+                    }
+                }
+            }
             return View();
         }
 
-        // POST: UploadBack/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: UploadBack/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: UploadBack/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

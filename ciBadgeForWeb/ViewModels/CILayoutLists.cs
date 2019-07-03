@@ -28,8 +28,8 @@ namespace ciBadgeForWeb.Models.ViewModels
              * than included in the string: 
              *  string msg = $"Customer {cust.Id} has an invalid status {cust.Status}.";  **/
 
-            string strOutput;
-            strOutput = $"CILayoutText {this.FieldName} has a big problem.";
+            string strOutput = "";
+            //strOutput = $"CILayoutText {this.FieldName} has a big problem.";
             return strOutput;
         }
 

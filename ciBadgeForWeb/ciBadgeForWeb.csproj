@@ -388,6 +388,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Upload\" />
     <Folder Include="LegacyPages\" />
     <Folder Include="NewFolder1\" />
     <Folder Include="Views\CILayoutText\" />
