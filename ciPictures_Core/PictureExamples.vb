@@ -13,7 +13,7 @@ Public Class PictureExamples
         ''
         ''Added 6/13/2019 td  
         ''
-
+        Return "Not implemented.  See _______"
 
 
 

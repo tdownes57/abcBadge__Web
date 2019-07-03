@@ -204,6 +204,7 @@
     <Compile Include="ASPX\Step4Handler.ashx.cs">
       <DependentUpon>Step4Handler.ashx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\CILayoutLists.cs" />
     <Compile Include="Views\Example\Example1.aspx.cs">
       <DependentUpon>Example1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
