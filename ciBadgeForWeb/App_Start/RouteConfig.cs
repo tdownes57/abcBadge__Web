@@ -51,6 +51,15 @@ namespace ciBadgeForWeb
             );
 
             //
+            // Added 7/3/2019 thomas DOWNES
+            //
+            routes.MapRoute(
+                name: "UploadBack",
+                url: "UploadBack",
+                defaults: new { controller = "UploadBack", action = "Index" }
+            );
+
+            //
             // tcd = Thomas C. Downes
             //
             routes.MapRoute(

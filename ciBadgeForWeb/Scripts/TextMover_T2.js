@@ -95,17 +95,18 @@ function dragElement_T2(parameter_element) {
 
     var box_topedge = $("#T2.TopEdgePositionPixels");
     var box_leftedge = jQuery("#T2.LeftEdgePositionPixels");
-    var elem_TEXT = document.getElementsByName('T2_TopEdgePositionPixels')[0].value;
+    var elem_TEXT = document.getElementsByName('T2.TopEdgePositionPixels')[0].value;
 
-    var boxHeightPixels = document.getElementsByName('HeightPixels')[0];
-    var boxWidthLengthPixels = document.getElementsByName('WidthLengthPixels')[0];
+    var boxHeightPixels = document.getElementsByName('T2.HeightPixels')[0];
+    var boxWidthLengthPixels = document.getElementsByName('T2.WidthLengthPixels')[0];
     var badge_back = document.getElementById("badge_back");
+
     var intLeftEdge = 20;
     var intTopEdge = 20;
 
-    console.log('T2 Is it found or not?  0 < TopEdgePositionPixels.Length = ' + $('#T2.TopEdgePositionPixels').length)
-    console.log('T2 Is it found or not?  0< LeftEdgePositionPixels.Length = ' + $('#T2.LeftEdgePositionPixels').length)
-    console.log('T2 Is it found or not?  0 < badge_back.Length = ' + $('#badge_back').length)
+    console.log('T2 Is it found or not?  0 < TopEdgePositionPixels.Length = ' + $('#T2_TopEdgePositionPixels').length)
+    console.log('T2 Is it found or not?  0< LeftEdgePositionPixels.Length = ' + $('#T2_LeftEdgePositionPixels').length)
+    console.log('T2 Is it found or not?  0 < badge_back.Length = ' + $('badge_back').length)
     console.log('T2 Is it found or not?  0 < box_topedge.Length = ' + box_topedge.Length);
 
     parameter_element.onmousedown = dragMouseDown;
@@ -169,8 +170,8 @@ function dragElement_T2(parameter_element) {
             intTopEdge = (parameter_element.offsetTop - badge_back.offsetTop);
             intLeftEdge = (parameter_element.offsetLeft - badge_back.offsetLeft);
 
-            document.getElementsByName('T2_TopEdgePositionPixels')[0].value = intTopEdge;
-            document.getElementsByName('T2_LeftEdgePositionPixels')[0].value = intLeftEdge;
+            document.getElementsByName('T2.TopEdgePositionPixels')[0].value = intTopEdge;
+            document.getElementsByName('T2.LeftEdgePositionPixels')[0].value = intLeftEdge;
 
             //box_topedge.value = intTopEdge; // parameter_element.offsetTop - badge_back.offsetTop;
             //box_leftedge.value = intLeftEdge; // parameter_element.offsetLeft - badge_back.offsetLeft;

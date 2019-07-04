@@ -66,6 +66,11 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.CILayoutBadgeId)
+
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-default" />
+    </div>
 
     <div id="badge_back" class="div_back" name="badge-back">
         <img src="~/Images/LayoutBack1of3.jpg" id="image_back" class="class_border" width="860" height="490" />
@@ -75,8 +80,6 @@
         <h4>CILayoutBadge</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.CILayoutBadgeId)
-
 
         <h1>Text Label # T1</h1>
 
@@ -137,7 +140,13 @@
             </div>
         </div>
 
-
+        <div class="form-group">
+            @Html.LabelFor(model => model.T1.BackgroundColor, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.T1.BackgroundColor, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.T1.BackgroundColor, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
         <h1>Text Label # T2</h1>
 
@@ -198,7 +207,13 @@
             </div>
         </div>
 
-
+        <div class="form-group">
+            @Html.LabelFor(model => model.T2.BackgroundColor, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.T2.BackgroundColor, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.T2.BackgroundColor, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
 
         <div class="form-group">
