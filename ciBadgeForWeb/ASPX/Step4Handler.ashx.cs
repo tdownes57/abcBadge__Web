@@ -46,8 +46,8 @@ namespace ciBadgeForWeb
                 //Added 6/20/2019 td
                 //
                 ciLayoutPrintLib.LayoutExample objLayoutEx = new ciLayoutPrintLib.LayoutExample();
-                ciLayoutPrintLib.FormLayoutEg objFormLayoutEg = new ciLayoutPrintLib.FormLayoutEg();
-                ciLayoutPrintLib.LayoutPrint objLayoutPrint = new ciLayoutPrintLib.LayoutPrint();
+                ciLayoutPrintLib.FormLayoutEg objFormLayoutEg_MaybeUnused = new ciLayoutPrintLib.FormLayoutEg();
+                ciLayoutPrintLib.LayoutPrint objLayoutPrint_MaybeUnused = new ciLayoutPrintLib.LayoutPrint();
 
                 //Added 6/28/2019 thomas downes
                 bool boolPlainBackgroundImage;//Added 6/28/2019 thomas downes 
