@@ -54,10 +54,17 @@ namespace ciBadgeForWeb.Controllers
                     }
                     else
                     {
-                        //TO:DO
-                        var fileName = Path.GetFileName(file.FileName);
-                        var path = Path.Combine(Server.MapPath("~/Content/Upload"), fileName);
-                        file.SaveAs(path); 
+                        //Save #1 of 2.  System.IO.Path.Combine !!
+                        //
+                        string fileName = Path.GetFileName(file.FileName);
+                        string path = Path.Combine(Server.MapPath("~/Content/Upload"), fileName);
+                        file.SaveAs(path);
+
+                        //Save #2 of 2.  System.IO.Path.Combine !!
+                        //
+                        path = Path.Combine("C:\\CI Solutions\\CI Badge Web\\ciPictures_VB\\BackExamples", fileName);
+                        file.SaveAs(path);
+
                         ModelState.Clear();
                         ViewBag.Message = "File uploaded successfully";
 
