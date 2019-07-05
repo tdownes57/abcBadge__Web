@@ -60,6 +60,12 @@ namespace ciBadgeForWeb.Controllers
                         file.SaveAs(path); 
                         ModelState.Clear();
                         ViewBag.Message = "File uploaded successfully";
+
+                        //Added 7/4/2019 thomas downes
+                        //
+                        System.Drawing.Image myImg = System.Drawing.Image.FromFile(path);
+                        //(new ciLayoutPrintLib.BackImageExamples())
+
                     }
                 }
             }
