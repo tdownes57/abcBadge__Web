@@ -21,6 +21,10 @@ namespace ciBadgeForWeb.Controllers
             //return View();
             //CILayoutText obj_layoutText = new CILayoutText();
             //return View(obj_layoutText);
+
+            // ADDED 7/6/2019 TD
+            ciLayoutPrintLib.LayoutExample.RefreshChoiceOfBackground_Next();
+
             return View(mod_objLayoutText);
         }
 
