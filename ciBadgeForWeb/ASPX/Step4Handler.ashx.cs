@@ -18,7 +18,7 @@ namespace ciBadgeForWeb
         {
             IList<Models.CIRecipient> recipients_list;
 
-            bool bSizeLarge = false, bHorizontalLarge = false, bHorizontalSmall= false; //Added 6/20/2019 thomas downes 
+            bool bSizeLarge = false, bHorizontalLarge = false, bHorizontalSmall = false; //Added 6/20/2019 thomas downes 
 
             context.Response.Clear();
 
@@ -52,11 +52,42 @@ namespace ciBadgeForWeb
                 //Added 6/28/2019 thomas downes
                 bool boolPlainBackgroundImage;//Added 6/28/2019 thomas downes 
                 boolPlainBackgroundImage = ("back" == context.Request.QueryString["id"]);
+                bool boolNoImages = false; //added 7/6/2019 td
+
+                //Added 7/06/2019 thomas downes
+                int intPixelsWidth = 0; //Added 7/06/2019 thomas downes 
+                try
+                {
+                    //Added 7/06/2019 thomas downes
+                    intPixelsWidth = int.Parse(context.Request.QueryString["width"]);
+                }
+                catch
+                {
+                    //Just try .......
+                }
+
                 if (boolPlainBackgroundImage)
                 {
                     //Added 6/28/2019 thomas downes
                     //image_ex = objLayoutEx.GenerateImage_BackgroundOnly(false, false);
-                    image_ex = objLayoutEx.GenerateImage_BackgroundOnly(bHorizontalLarge, bHorizontalSmall);
+                    // 7/6/2019 td//image_ex = objLayoutEx.GenerateImage_BackgroundOnly(bHorizontalLarge, bHorizontalSmall);
+
+                    //Added 7/6/2019 td
+                    objLayoutEx.WidthInPixels_Land = intPixelsWidth;
+
+                    image_ex = objLayoutEx.GenerateImage_BackgroundOnly(bHorizontalLarge, bHorizontalSmall, ref boolNoImages);
+
+
+                    //Added 7/6/2019 thomas d.
+                    //
+                    if (boolNoImages)
+                    {
+                        context.Response.ContentType = "text/html";
+                        context.Response.Write("<p>No images were loaded, unfortunately.</p>");
+                        return;
+
+                    }
+
                 }
                 else
                 {
@@ -71,30 +102,30 @@ namespace ciBadgeForWeb
                     if (recipient_by_id_onlyone is null) return;
 
 
-                //Moved to the top of this if-block. 6/28/2019 td //Image image_ex = null;  // = recipient_by_id_onlyone.Picture;
+                    //Moved to the top of this if-block. 6/28/2019 td //Image image_ex = null;  // = recipient_by_id_onlyone.Picture;
 
 
-                //objLayout;
-                //objFormLayoutEg;
-                //objLayoutPrint.
+                    //objLayout;
+                    //objFormLayoutEg;
+                    //objLayoutPrint.
 
-                objLayoutEx.RecipientID = "1234";
-                objLayoutEx.RecipientName = "Chanin Mountebank";
-                //6/20 td// objLayoutEx.RecipientFaceImage = recipient_by_id_onlyone.Picture;
-                objLayoutEx.RecipientPhoto = recipient_by_id_onlyone.Picture;
+                    objLayoutEx.RecipientID = "1234";
+                    objLayoutEx.RecipientName = "Chanin Mountebank";
+                    //6/20 td// objLayoutEx.RecipientFaceImage = recipient_by_id_onlyone.Picture;
+                    objLayoutEx.RecipientPhoto = recipient_by_id_onlyone.Picture;
 
-                // 6/20/2019 td // image_ex = objLayoutEx.GenerateImage("1234", "Chanin Ferrin", 
-                //    objLayoutEx.RecipientPhoto);
+                    // 6/20/2019 td // image_ex = objLayoutEx.GenerateImage("1234", "Chanin Ferrin", 
+                    //    objLayoutEx.RecipientPhoto);
 
-                //
-                //Modify the placement of the Student/Employee's Full Name. ----6/27/2019 td
-                //
-                objLayoutEx.UpdateLabelPositions(Controllers.LayoutText1Controller.mod_objLayoutText);
+                    //
+                    //Modify the placement of the Student/Employee's Full Name. ----6/27/2019 td
+                    //
+                    objLayoutEx.UpdateLabelPositions(Controllers.LayoutText1Controller.mod_objLayoutText);
 
-                string strRecipID = recipient_id.ToString();
-                string strLastName = recipient_by_id_onlyone.LastName;
-                string strFirstName = recipient_by_id_onlyone.FirstName;
-                string strFullName = (strFirstName + " " + strLastName);
+                    string strRecipID = recipient_id.ToString();
+                    string strLastName = recipient_by_id_onlyone.LastName;
+                    string strFirstName = recipient_by_id_onlyone.FirstName;
+                    string strFullName = (strFirstName + " " + strLastName);
 
                     image_ex = objLayoutEx.GenerateImage(strRecipID, strFullName,
                          objLayoutEx.RecipientPhoto,

@@ -173,6 +173,7 @@
     <Compile Include="Controllers\ExampleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LayoutText2Controller.cs" />
+    <Compile Include="Controllers\LayoutText99Controller.cs" />
     <Compile Include="Controllers\LegacyPagesController.cs" />
     <Compile Include="Controllers\MvcTestController.cs" />
     <Compile Include="Controllers\PortraitImageController.cs" />
@@ -331,6 +332,7 @@
     <Content Include="Scripts\TextMover_T2.js" />
     <Content Include="Scripts\TextMover_T3.js" />
     <Content Include="Scripts\TextMover_T4.js" />
+    <Content Include="Scripts\TextMover_T99.js" />
     <Content Include="Scripts\ToolTips1of4.js" />
     <Content Include="Views\BadgeRecipient\test_JpegFile.htm" />
     <Content Include="Views\Example\Example1.aspx" />
@@ -387,6 +389,7 @@
     <Content Include="Views\CILayoutLists\CILayoutText.cshtml" />
     <Content Include="Views\CILayoutLists\CILayoutPicture.cshtml" />
     <Content Include="Views\LayoutText2\ToolTips.cshtml" />
+    <Content Include="Views\LayoutText99\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
