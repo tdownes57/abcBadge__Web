@@ -46,6 +46,46 @@ namespace ciBadgeForWeb.Controllers
 
         }
 
+        // GET: Recipient/Edit/5
+        public ActionResult Edit(int id)
+        {
+            var backgrounds_by_id_list = mod_backgrounds.Where(s => s.Index == id );
+            var background_by_id_onlyone = backgrounds_by_id_list.FirstOrDefault();
+            return (ViewResult)View(background_by_id_onlyone);
+
+        }
+
+        // GET: Recipient/Delete/5
+        public ActionResult Delete(int id)
+        {
+            var backgrounds_by_id_list = mod_backgrounds.Where(s => s.Index == id);
+            var background_by_id_onlyone = backgrounds_by_id_list.FirstOrDefault();
+            mod_backgrounds.Remove(background_by_id_onlyone);
+            return (ViewResult)View("ShowAll");
+
+        }
+
+        // POST: Recipient/Edit/5
+        [HttpPost]
+        public ActionResult Edit(int id, FormCollection collection)
+        {
+            try
+            {
+                // Added 7/7/2019 thomas downes
+                //
+                var edited_back = mod_backgrounds.Where(s => s.Index == id).FirstOrDefault();
+
+                UpdateModel(edited_back, collection);
+
+                //Index = "Nothing specified, go to the root page or action."  
+                return RedirectToAction("ShowAll");  //A Redirect is a less-common ActionResult.  ----5/24 td
+            }
+            catch
+            {
+                return (ViewResult)View();  //A ViewResult, i.e. a webpage, is the most popular type of ActionResult !!
+            }
+        }
+
         //
         //https://www.dotnettricks.com/learn/mvc/how-to-upload-a-file-in-mvc4
         //

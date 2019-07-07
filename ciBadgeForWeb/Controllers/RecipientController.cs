@@ -38,7 +38,7 @@ namespace ciBadgeForWeb.Controllers
             if (c_boolSpecifyViewName) return View("Index");  //A View, i.e. a webpage, is the most popular type of ActionResult !!
 
             //Let's test it.  Does the List retain edits??? ----5/29/2019 td
-            mod_recipientList.FirstOrDefault().LastName += "P";
+            //mod_recipientList.FirstOrDefault().LastName += "P";
 
             //return View();  //A ViewResult, i.e. a webpage, is the most popular type of ActionResult !!
             return (ViewResult)View(mod_recipientList);
@@ -141,9 +141,13 @@ namespace ciBadgeForWeb.Controllers
         // GET: Recipient/Delete/5
         public ActionResult Delete(int parameter_id)
         {
-            const bool c_boolSpecifyViewName = true; //Added 5/28/2019 td
-            if (c_boolSpecifyViewName) return View("Delete");  //A ViewResult, i.e. a webpage, is the most popular type of ActionResult !!
-            return View();
+            //const bool c_boolSpecifyViewName = true; //Added 5/28/2019 td
+            //if (c_boolSpecifyViewName) return View("Delete");  //A ViewResult, i.e. a webpage, is the most popular type of ActionResult !!
+
+            var recipient_tobeDeleted = mod_recipientList.Where(s => s.RecipientID == parameter_id.ToString()).FirstOrDefault();
+            mod_recipientList.Remove(recipient_tobeDeleted);
+
+            return View("Index");
         }
 
         // POST: Recipient/Delete/5
