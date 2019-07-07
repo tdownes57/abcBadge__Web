@@ -54,6 +54,14 @@ namespace ciBadgeForWeb
                 boolPlainBackgroundImage = ("back" == context.Request.QueryString["id"]);
                 bool boolNoImages = false; //added 7/6/2019 td
 
+                //Added 7/7/2019 td
+                //
+                int intBackgroundImageIndex = -1;
+                if (!String.IsNullOrEmpty(context.Request.QueryString["backid"]))
+                {
+                    intBackgroundImageIndex = int.Parse(context.Request.QueryString["backid"]);
+                }
+
                 //Added 7/06/2019 thomas downes
                 int intPixelsWidth = 0; //Added 7/06/2019 thomas downes 
                 try
@@ -78,6 +86,9 @@ namespace ciBadgeForWeb
                     //A dded 7/6/2019 td
                     // 7-6-2019 td//ciLayoutPrintLib.LayoutExample
                     // 7-6-2019 td//    .RefreshChoiceOfBackground_Next();
+                    // 7-7-2019 td //if (-1 != intBackgroundImageIndex) objLayoutEx.BackgroundImageIndex = intBackgroundImageIndex;
+
+                    if (-1 != intBackgroundImageIndex) ciLayoutPrintLib.LayoutExample.RefreshChoiceOfBackground_ByIndex(intBackgroundImageIndex);
 
                     image_ex = objLayoutEx.GenerateImage_BackgroundOnly(bHorizontalLarge, bHorizontalSmall, ref boolNoImages);
 
