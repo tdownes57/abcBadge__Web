@@ -55,13 +55,26 @@ namespace ciBadgeForWeb.Controllers
 
         }
 
+        // GET: Recipient/Create
+        public ActionResult Create()
+        {
+            const bool c_boolSpecifyViewName = false;    //Added 5/28/2019 td
+            if (c_boolSpecifyViewName) return View("Create");  //A View, i.e. a webpage, is the most popular type of ActionResult !!
+
+            return (ViewResult)View();   //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!
+        }
+
         // GET: Recipient/Delete/5
         public ActionResult Delete(int id)
         {
             var backgrounds_by_id_list = mod_backgrounds.Where(s => s.Index == id);
             var background_by_id_onlyone = backgrounds_by_id_list.FirstOrDefault();
             mod_backgrounds.Remove(background_by_id_onlyone);
-            return (ViewResult)View("ShowAll");
+
+            //System.Threading.Thread.Sleep(1000);
+
+            //return (ViewResult)View("ShowAll");
+            return RedirectToAction("ShowAll");
 
         }
 

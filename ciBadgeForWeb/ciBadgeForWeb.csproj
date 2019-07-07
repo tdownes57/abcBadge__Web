@@ -393,6 +393,7 @@
     <Content Include="Views\LayoutText99\Index.cshtml" />
     <Content Include="Views\UploadBack\ShowAll.cshtml" />
     <Content Include="Views\UploadBack\Edit.cshtml" />
+    <Content Include="Views\UploadBack\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
