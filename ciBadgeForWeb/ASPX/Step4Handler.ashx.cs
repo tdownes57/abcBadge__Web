@@ -75,9 +75,9 @@ namespace ciBadgeForWeb
                     //Added 7/6/2019 td
                     objLayoutEx.WidthInPixels_Land = intPixelsWidth;
 
-                    //Added 7/6/2019 td
-                    ciLayoutPrintLib.LayoutExample
-                        .RefreshChoiceOfBackground_Next();
+                    //A dded 7/6/2019 td
+                    // 7-6-2019 td//ciLayoutPrintLib.LayoutExample
+                    // 7-6-2019 td//    .RefreshChoiceOfBackground_Next();
 
                     image_ex = objLayoutEx.GenerateImage_BackgroundOnly(bHorizontalLarge, bHorizontalSmall, ref boolNoImages);
 

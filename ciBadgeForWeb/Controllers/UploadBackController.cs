@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.IO;
+using ciLayoutPrintLib; // Added 7/7/2019 thomas downes
 
 //
 //Added 6/28/2019 Thomas Downes   
@@ -19,10 +20,30 @@ namespace ciBadgeForWeb.Controllers
         /// https://theburningmonk.com/2010/02/converting-hex-to-int-in-csharp/
         /// </summary>
         /// <returns></returns>
+        /// 
+
+        //
+        //Background Images
+        //
+        public static IList<Models.Background> mod_backgrounds = new List<Models.Background>() {
+                    new Models.Background(){ Index = 0, FileName = "..", Description = "..", BackgroundImage = BackImageExamples.Item(0)  },
+                    new Models.Background(){ Index = 1, FileName = "..", Description = "..", BackgroundImage = BackImageExamples.Item(1) },
+                    new Models.Background(){ Index = 2, FileName = "..", Description ="..", BackgroundImage = BackImageExamples.Item(2)   },
+                    new Models.Background(){ Index = 3, FileName = "..", Description = "..", BackgroundImage = BackImageExamples.Item(3) } };
+
         // GET: UploadBack
         public ActionResult Index()
         {
             return View();
+        }
+
+        // GET: UploadBack
+        public ActionResult ShowAll()
+        {
+            //return View();
+
+            return View(mod_backgrounds);
+
         }
 
         //

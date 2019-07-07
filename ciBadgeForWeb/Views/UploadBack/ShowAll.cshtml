@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ciBadgeForWeb.Models.Background>
+
+@{
+    ViewBag.Title = "ShowAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ShowAll</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Background Image
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Index)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FileName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img src="~/ASPX/Step4Handler.ashx?id=back&big=y&hor=y&width=500" width="500" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Index)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FileName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

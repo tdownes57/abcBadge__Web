@@ -23,7 +23,7 @@ namespace ciBadgeForWeb.Controllers
             //return View(obj_layoutText);
 
             // ADDED 7/6/2019 TD
-            ciLayoutPrintLib.LayoutExample.RefreshChoiceOfBackground_Next();
+            // 7-6-2019 td//ciLayoutPrintLib.LayoutExample.RefreshChoiceOfBackground_Next();
 
             return View(mod_objLayoutText);
         }

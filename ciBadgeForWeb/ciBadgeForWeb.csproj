@@ -190,6 +190,7 @@
     <Compile Include="ASPX\ImageHandler.ashx.cs">
       <DependentUpon>ImageHandler.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Background.cs" />
     <Compile Include="Models\CICustomer.cs" />
     <Compile Include="Models\CIRecipient.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -390,6 +391,7 @@
     <Content Include="Views\CILayoutLists\CILayoutPicture.cshtml" />
     <Content Include="Views\LayoutText2\ToolTips.cshtml" />
     <Content Include="Views\LayoutText99\Index.cshtml" />
+    <Content Include="Views\UploadBack\ShowAll.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
