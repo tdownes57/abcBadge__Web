@@ -56,9 +56,11 @@ namespace ciBadgeForWeb
                 //Bitmap objBitmap = GenerateBarcode(context.Request.Params["Code"]);
 
                 //objBitmap.Save(ms, ImageFormat.Jpeg);
-                image.Save(ms, ImageFormat.Jpeg);
-                context.Response.BinaryWrite(ms.GetBuffer());
-
+                if (image != null)
+                {
+                    image.Save(ms, ImageFormat.Jpeg);
+                    context.Response.BinaryWrite(ms.GetBuffer());
+                }
             }
             else
             {

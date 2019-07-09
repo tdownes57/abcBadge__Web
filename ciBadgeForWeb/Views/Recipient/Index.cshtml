@@ -13,6 +13,9 @@
 <table class="table">
     <tr>
         <th>
+            Picture
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Personality)
         </th>
         <th>
@@ -39,6 +42,9 @@
 @foreach (var item in Model) {
 <tr>
     <td>
+        <img alt="Image Handler" width="60" src="~/ASPX/ImageHandler.ashx?id=@item.RecipientID" />
+    </td>
+    <td>
         @Html.DisplayFor(modelItem => item.Personality)
     </td>
     <td>
@@ -64,7 +70,7 @@
             @Html.ActionLink("Details", "Details", new { /* id = item.PrimaryKey */ }) |
             @Html.ActionLink("Delete", "Delete", new { /* id = item.PrimaryKey */ })*@
         @Html.ActionLink("Edit", "Edit", new { parameter_id = item.RecipientID }) |
-        @Html.ActionLink("Details", "Details", new { parameter_id = item.RecipientID }) |
+        @*@Html.ActionLink("Details", "Details", new { parameter_id = item.RecipientID }) |*@
         @Html.ActionLink("Delete", "Delete", new { parameter_id = item.RecipientID })
     </td>
 </tr>

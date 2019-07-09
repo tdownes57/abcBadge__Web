@@ -128,6 +128,7 @@ namespace ciBadgeForWeb.Controllers
                 edited_recip.FirstName = name_first;  // std.FirstName + "_Revised";
                 edited_recip.LastName = name_last;  //  std.LastName + "_Revised";
 
+                UpdateModel(edited_recip, collection);
 
                 //Index = "Nothing specified, go to the root page or action."  
                 return RedirectToAction("Index");  //A Redirect is a less-common ActionResult.  ----5/24 td
@@ -147,7 +148,8 @@ namespace ciBadgeForWeb.Controllers
             var recipient_tobeDeleted = mod_recipientList.Where(s => s.RecipientID == parameter_id.ToString()).FirstOrDefault();
             mod_recipientList.Remove(recipient_tobeDeleted);
 
-            return View("Index");
+            //return View("Index");
+            return RedirectToAction("Index");
         }
 
         // POST: Recipient/Delete/5
