@@ -22,6 +22,7 @@ namespace ciBadgeForWeb.Controllers
                     new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID ="5", FirstName="Ron" , LastName = "Wood", Picture = PictureExamples.GetExample()  },
                     new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID ="6", FirstName="Christopher", LastName = "Forbes", Picture = PictureExamples.GetExample()   },
                     new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID = "7", FirstName="Robin", LastName = "Forbes", Picture = PictureExamples.GetExample()   },
+ 
                     //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="1", FirstName="John", LastName = "Davidson", Picture = PictureExamples.GetExample()  },
                     //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="2", FirstName="Steve", LastName = "Austin", Picture = PictureExamples.GetExample()  },
                     //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="3", FirstName="Bill", LastName = "Clinton", Picture = PictureExamples.GetExample()   },

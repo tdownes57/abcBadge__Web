@@ -16,22 +16,51 @@ namespace ciBadgeForWeb
 
         public void ProcessRequest(HttpContext context)
         {
-            IList<Models.CIRecipient> recipients_list; 
+            IList<Models.CIRecipient> recipients_list;
+            bool boolImageNoPicture = false; //Added 7/9/2019 td 
 
             //context.Response.ContentType = "text/plain";
             //context.Response.Write("Hello World");
             //
             context.Response.Clear();
 
-            if (!String.IsNullOrEmpty(context.Request.QueryString["id"]))
+            //Added 7/9/2019 td  
+            string queryID_ofRecip = context.Request.QueryString["id"];
+
+            //if (!String.IsNullOrEmpty(context.Request.QueryString["id"]))
+
+            //Added 7/9/2019 td
+            if (!String.IsNullOrEmpty(queryID_ofRecip))
             {
-                int recipient_id = Int32.Parse(context.Request.QueryString["id"]);
+                //Added 7/9/2019 td
+                boolImageNoPicture = ("NoPic" == queryID_ofRecip);
+
+                if (boolImageNoPicture)
+                {
+                    //
+                    //Added 7/9/2019 td
+                    //
+                    Image imageNoPic = ciPictures_VB.PictureExamples.GetImageWithNoPicture();
+
+                    context.Response.ContentType = "image/Jpeg";
+                    MemoryStream msNoPic = new MemoryStream();
+
+                    if (imageNoPic != null)
+                    {
+                        imageNoPic.Save(msNoPic, ImageFormat.Jpeg);
+                        context.Response.BinaryWrite(msNoPic.GetBuffer());
+                    } //End of "if (imageNoPic != null)"
+
+                } //End of "if (boolImageNoPicture)"
+
+                //int recipient_id = Int32.Parse(context.Request.QueryString["id"]);
+                int recipient_id = Int32.Parse(queryID_ofRecip);
 
                 // Now you have the id, do what you want with it, to get the right image
                 // More than likely, just pass it to the method, that builds the image
-                //Image image = GetImage(id);
-                // 6/16/2019 td //Image image = SusanSampletonPng();
-                // 6/16/2019 td //Image image = ciPictures_VB.PictureExamples.GetExample();
+                // Image image = GetImage(id);
+                //   6/16/2019 td //Image image = SusanSampletonPng();
+                //   6/16/2019 td //Image image = ciPictures_VB.PictureExamples.GetExample();
 
                 recipients_list = Controllers.RecipientController.mod_recipientList;
 
@@ -41,7 +70,7 @@ namespace ciBadgeForWeb
                 //Added 6/20/2019 td 
                 if (recipient_by_id_onlyone is null) return; 
 
-                Image image = recipient_by_id_onlyone.Picture;
+                Image imagePic = recipient_by_id_onlyone.Picture;
 
                 // Of course set this to whatever your format is of the image
                 //context.Response.ContentType = "image/png";
@@ -52,14 +81,14 @@ namespace ciBadgeForWeb
 
                 //context.Response.Clear();
                 //context.Response.ContentType = "image/Jpeg";
-                MemoryStream ms = new MemoryStream();
+                MemoryStream msPic = new MemoryStream();
                 //Bitmap objBitmap = GenerateBarcode(context.Request.Params["Code"]);
 
                 //objBitmap.Save(ms, ImageFormat.Jpeg);
-                if (image != null)
+                if (imagePic != null)
                 {
-                    image.Save(ms, ImageFormat.Jpeg);
-                    context.Response.BinaryWrite(ms.GetBuffer());
+                    imagePic.Save(msPic, ImageFormat.Jpeg);
+                    context.Response.BinaryWrite(msPic.GetBuffer());
                 }
             }
             else
