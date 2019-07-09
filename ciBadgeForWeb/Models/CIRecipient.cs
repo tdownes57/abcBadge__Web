@@ -39,15 +39,30 @@ namespace ciBadgeForWeb.Models
         public string EffectiveDate_Text
         {
             //Added 5/30/2019
-            get { return EffectiveDate.ToString("MM/dd/yyyy");  }
-            set { EffectiveDate = DateTime.Parse(value);  }
+            get
+            {
+                if (EffectiveDate.Year < 2000) return ""; //Added 7/8/2019 td 
+                return EffectiveDate.ToString("MM/dd/yyyy");
+            }
+            set
+            {
+                if (value == null) return;  //Added 7/8/2019 td
+                EffectiveDate = DateTime.Parse(value);
+            }
         }
 
         public string ExpirationDate_Text
         {
             //Added 5/30/2019
-            get { return ExpirationDate.ToString("MM/dd/yyyy"); }
-            set { ExpirationDate = DateTime.Parse(value); }
+            get {
+                if (ExpirationDate.Year < 2000) return ""; //Added 7/8/2019 td 
+                return ExpirationDate.ToString("MM/dd/yyyy");
+            }
+            set
+            {
+                if (value == null) return;  //Added 7/8/2019 td
+                ExpirationDate = DateTime.Parse(value);
+            }
         }
 
 
