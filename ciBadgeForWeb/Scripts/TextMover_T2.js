@@ -4,6 +4,10 @@
 //
 //    TextMover_T2.js
 //
+//         (Used by LayoutText2Controller/Index.cshtml)
+//
+//         (Eventually this script will depend upon Scripts/Elements_T2.js)
+//
 
 var aT2;
 aT2 = 5;

@@ -19,7 +19,6 @@
         border: 1px solid #d3d3d3;
         height: 30px;
         width: 350px;
-
     }
 
     .class_border {
@@ -42,7 +41,6 @@
     #id__mydivheader1 {
         left: 142px;
         top: 429px;
-  
         align-content: center;
         font-size: 14px;
     }
@@ -57,123 +55,125 @@
 {
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
-    <h4>CILayoutText</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    @Html.HiddenFor(model => model.CILayoutTextId)
+    <div class="form-horizontal">
+        <h4>CILayoutText</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.CILayoutTextId)
 
-    <div class="form-group">
-        <input type="submit" value="Save" class="btn btn-default" />
-    </div>
-
-    <div id="badge_back" class="div_back" name="badge-back">
-        @*        <img src="~/Images/LayoutBack1of3.jpg" id="image_back" class="class_border" width="860" height="490" />*@
-        @*<img src="~/ASPX/Step4Handler.ashx?id=back&big=y&hor=y" id="image_back" class="class_border" width="860" height="490" />*@
-        <img src="~/ASPX/Step4Handler.ashx?id=back&big=y&hor=y&width=860" id="image_back" class="class_border" width="860"  />
-    </div>
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" text="Save the Layout Positions below" value="Save" class="btn btn-default" />
-            @*@Html.RouteLink(linkText: "Upload a new background image", routeName: "UploadBack", routeValues: new { action = String.Empty })*@
-            @* @Html.RouteLink(linkText: "Change the background image", routeName: "Backgrounds", routeValues: new { action = String.Empty })*@
-            @Html.ActionLink("Change the background image", "ShowAll", "UploadBack" )
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.FieldName, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.FieldName, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.FieldName, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.TopEdgePositionPixels, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.TopEdgePositionPixels, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.TopEdgePositionPixels, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.LeftEdgePositionPixels, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.LeftEdgePositionPixels, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.LeftEdgePositionPixels, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.WidthLengthPixels, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.WidthLengthPixels, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.WidthLengthPixels, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.HeightPixels, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.HeightPixels, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.HeightPixels, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.FontSize, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.FontSize, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.FontSize, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.FontFamilyName, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.FontFamilyName, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.FontFamilyName, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.FontColor, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.FontColor, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.FontColor, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        <input type="submit" value="Save" class="btn btn-default" />
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.BackgroundColor, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.BackgroundColor, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.BackgroundColor, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
+        <div class="form-group">
             <input type="submit" value="Save" class="btn btn-default" />
         </div>
-    </div>
-</div>
-    }
 
-    @section Scripts
+        <div id="badge_back" class="div_back" name="badge-back">
+            @*        <img src="~/Images/LayoutBack1of3.jpg" id="image_back" class="class_border" width="860" height="490" />*@
+            @*<img src="~/ASPX/Step4Handler.ashx?id=back&big=y&hor=y" id="image_back" class="class_border" width="860" height="490" />*@
+            <img src="~/ASPX/Step4Handler.ashx?id=back&big=y&hor=y&width=860" id="image_back" class="class_border" width="860" />
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" text="Save the Layout Positions below" value="Save" class="btn btn-default" />
+                @*@Html.RouteLink(linkText: "Upload a new background image", routeName: "UploadBack", routeValues: new { action = String.Empty })*@
+                @* @Html.RouteLink(linkText: "Change the background image", routeName: "Backgrounds", routeValues: new { action = String.Empty })*@
+                @Html.ActionLink("Change the background image", "ShowAll", "UploadBack")
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FieldName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FieldName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FieldName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TopEdgePositionPixels, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TopEdgePositionPixels, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TopEdgePositionPixels, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LeftEdgePositionPixels, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LeftEdgePositionPixels, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LeftEdgePositionPixels, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.WidthLengthPixels, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.WidthLengthPixels, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.WidthLengthPixels, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.HeightPixels, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.HeightPixels, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.HeightPixels, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FontSize, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FontSize, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FontSize, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FontFamilyName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FontFamilyName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FontFamilyName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FontColor, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FontColor, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FontColor, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BackgroundColor, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BackgroundColor, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BackgroundColor, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts
 {
-        @*<script src="@Url.Content("~/Scripts/TextMover1.js")"></script>*@
-        @*<script src="@Url.Content("~/Scripts/TextMover_T1.js")"></script>*@
-        <script src="@Url.Content("~/Scripts/TextMover1.js")"></script>
-    }
+    @*<script src="@Url.Content("~/Scripts/TextMover1.js")"></script>*@
+    @*<script src="@Url.Content("~/Scripts/TextMover_T1.js")"></script>*@
 
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
+    <script src="@Url.Content("~/Scripts/Elements1.js")"></script>
+    <script src="@Url.Content("~/Scripts/TextMover1.js")"></script>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

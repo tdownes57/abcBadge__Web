@@ -4,6 +4,10 @@
 //
 //    TextMover_T1.js
 //
+//         (Used by LayoutText2Controller/Index.cshtml)
+//
+//         (Eventually this script will depend upon Scripts/Elements_T1.js)
+//
 
 var a;
 a = 5;

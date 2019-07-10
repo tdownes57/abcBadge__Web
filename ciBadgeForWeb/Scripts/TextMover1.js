@@ -4,7 +4,11 @@
 //
 //    TextMover1.js
 //
-//         (Not to be confused with TextMover_T1.js  !!!!) 
+//         (Used by LayoutText1Controller/Index.cshtml)
+//
+//         (Eventually this script will depend upon Scripts/Elements1.js)
+//
+//         (Not to be confused with TextMover_T1.js  !!!!)
 //
 //
 
