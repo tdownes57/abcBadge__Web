@@ -320,6 +320,9 @@
     <Content Include="ApplicationInsights.config" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\Elements1.js" />
+    <Content Include="Scripts\Elements_T1.js" />
+    <Content Include="Scripts\Elements_T2.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -337,7 +340,8 @@
     <Content Include="Scripts\TextMover_T4.js" />
     <Content Include="Scripts\TextMover_T99.js" />
     <Content Include="Scripts\ToolTips1of4.js" />
-    <Content Include="Views\BadgeRecipient\test_JpegFile.htm" />
+    <Content Include="Scripts\UploadBackground.js" />
+    <Content Include="Views\__BadgeRecipient_Unused\test_JpegFile.htm" />
     <Content Include="Views\Example\Example1.aspx" />
     <Content Include="Views\Home\ExampleBadge.aspx" />
     <Content Include="Views\Home\Test_Badge.png">
@@ -345,9 +349,9 @@
     </Content>
     <Content Include="Views\Home\WebForm1.aspx" />
     <Content Include="Views\LayoutText1\TextMover1_notUsed.js" />
-    <Content Include="Views\LayoutText1\TextMover2.js" />
-    <Content Include="Views\LayoutText1\TextMover3.js" />
-    <Content Include="Views\LayoutText1\TextMover4.js" />
+    <Content Include="Views\LayoutText1\TextMover2_not in use.js" />
+    <Content Include="Views\LayoutText1\TextMover3_empty.js" />
+    <Content Include="Views\LayoutText1\TextMover4 - Not Used.js" />
     <Content Include="Views\PortraitImage\Index.aspx" />
     <Content Include="Views\PortraitImage\UploadImageToBase64.aspx" />
     <Content Include="Views\Recipient\test_JpegFile.htm" />
@@ -368,7 +372,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="ViewPage1.cshtml" />
     <Content Include="Views\Home\CustomerLogin.cshtml" />
-    <Content Include="Views\BadgeRecipient\BadgePrint.cshtml" />
+    <Content Include="Views\__BadgeRecipient_Unused\BadgePrint.cshtml" />
     <Content Include="Views\Example\Index.cshtml" />
     <Content Include="Views\Home\Example_BAK.cshtml" />
     <Content Include="Views\Home\Example_Blank.cshtml" />

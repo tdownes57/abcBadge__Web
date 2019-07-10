@@ -93,8 +93,11 @@ namespace ciBadgeForWeb.Controllers
         }
 
         // GET: Recipient/Edit/5
-        public ActionResult Edit(int parameter_id)
+        public ActionResult Edit(int? parameter_id)
         {
+            //Added 7/9/2019 td
+            if (!(parameter_id.HasValue)) parameter_id = 5;
+
             const bool c_boolSpecifyViewName = false; //Added 5/28/2019 td
             if (c_boolSpecifyViewName) return View("Edit");  //A ViewResult, i.e. a webpage, is the most popular type of ActionResult !!
             //return View();  //A ViewResult, i.e. a webpage, is the most popular type of ActionResult !!

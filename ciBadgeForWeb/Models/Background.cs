@@ -19,5 +19,9 @@ namespace ciBadgeForWeb.Models
 
         public string Description { get; set; }
 
+        public string FullPathToFile { get; set; }
+
+        public DateTime UploadDate { get; set; }
+
     }
 }

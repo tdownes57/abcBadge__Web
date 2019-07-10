@@ -64,6 +64,18 @@ namespace ciBadgeForWeb.Controllers
             return (ViewResult)View();   //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!
         }
 
+        // GET: Recipient/Select/5
+        public ActionResult Select(int id)
+        {
+            var backgrounds_by_id_list = mod_backgrounds.Where(s => s.Index == id);
+            var background_by_id_onlyone = backgrounds_by_id_list.FirstOrDefault();
+
+            ciLayoutPrintLib.BackImageExamples.CurrentIndex = id;
+
+            return RedirectToAction("Index", "LayoutText1");
+
+        }
+
         // GET: Recipient/Delete/5
         public ActionResult Delete(int id)
         {

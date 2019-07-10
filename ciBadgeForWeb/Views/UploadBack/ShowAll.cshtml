@@ -12,7 +12,7 @@
 </p>
 <table class="table">
     <tr>
-        <th>
+        <th width="415">
             Background Image
         </th>
         <th>
@@ -30,7 +30,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            <img src="~/ASPX/Step4Handler.ashx?id=back&big=y&hor=y&width=500&backid=@item.Index" width="500" />
+            <img src="~/ASPX/Step4Handler.ashx?id=back&big=y&hor=y&width=400&backid=@item.Index" width="400" />
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Index)
@@ -42,9 +42,10 @@
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Index  }) 
+            @Html.ActionLink("Select Background", "Select", new { id = item.Index })
+            @Html.ActionLink("Edit", "Edit", new { id = item.Index })
             @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ })*@ |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Index })
+            @Html.ActionLink("Delete", "Delete", new { id = item.Index })
         </td>
     </tr>
 }
