@@ -198,11 +198,13 @@
     <Compile Include="Models\CICustomer.cs" />
     <Compile Include="Models\CIRecipient.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\CustomField.cs" />
     <Compile Include="Models\ModelEntity.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelEntity.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Personality.cs" />
     <Compile Include="Models\PortraitImage.cs" />
     <Compile Include="Models\PortraitImageModel.cs" />
     <Compile Include="Models\TrackPrints.cs" />
