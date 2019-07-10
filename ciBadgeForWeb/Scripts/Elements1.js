@@ -39,7 +39,7 @@ var EL = {
 //
 
 //Added 7/10/2019 thomas downes
-var global_elementLastTouched = EL.moveable_text;
+var global_elementLastTouched = EL.moveable_text; //Default. 
 
 
 

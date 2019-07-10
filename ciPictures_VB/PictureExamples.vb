@@ -12,7 +12,9 @@ Public Class PictureExamples
     ''
     Private Shared mod_images_Jpegs As List(Of Image)
     Private Shared mod_images_PNGs As List(Of Image) ''Added 7/8/2019 td
+
     Private Shared mod_imageForNoPicture As Image ''Added 7/8/2019 td 
+    Private Shared mod_imageSusanSample As Image ''Added 7/10/2019 td 
 
     Public Shared Function GetExample() As Image
         ''
@@ -75,11 +77,31 @@ ExitHandler:
         ''
         ''Added 7/8/2019 thomas downes 
         '' 
-        If (mod_images_Jpegs Is Nothing) Then mod_images_Jpegs = GetListOfImages_Jpegs()
+        If (mod_images_Jpegs Is Nothing) Then
+            ''
+            ''The following function looks for the image "NoPic.jpg".  ---7/10/2019 td
+            ''
+            mod_images_Jpegs = GetListOfImages_Jpegs()
+        End If ''End of "If (mod_images_Jpegs Is Nothing) Then"
 
         Return mod_imageForNoPicture
 
     End Function ''End of "Public Shared Function GetImageWithNoPicture() As Image"
+
+    Public Shared Function GetImageSusanSample() As Image
+        ''
+        ''Added 7/10/2019 thomas downes 
+        '' 
+        If (mod_images_Jpegs Is Nothing) Then
+            ''
+            ''The following function looks for the image "Sample.jpg".  ---7/10/2019 td
+            ''
+            mod_images_Jpegs = GetListOfImages_Jpegs()
+        End If ''End of "If (mod_images_Jpegs Is Nothing) Then"
+
+        Return mod_imageSusanSample
+
+    End Function ''End of "Public Shared Function GetImageSusanSample() As Image"
 
     Private Shared Function GetListOfImages_Jpegs() As List(Of Image)
         '' 7/8 td''Private Shared Function GetListOfImages() As List(Of Image)
@@ -108,6 +130,12 @@ ExitHandler:
                     mod_imageForNoPicture = (New Bitmap(each_file.FullName))
                     Continue For
                 End If ''End of "If (each_file.Name.StartsWith("NoPic")) Then"
+
+                ''Added 7/10/2019 thomas downes
+                If (each_file.Name.StartsWith("Sample")) Then
+                    mod_imageSusanSample = (New Bitmap(each_file.FullName))
+                    Continue For
+                End If ''End of "If (each_file.Name.StartsWith("Sample")) Then"
 
                 ''7/8/2019 td''With picture_box
                 ''    .ImageLocation = each_file.FullName

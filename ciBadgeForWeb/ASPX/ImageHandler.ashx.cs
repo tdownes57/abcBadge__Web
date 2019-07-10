@@ -18,6 +18,7 @@ namespace ciBadgeForWeb
         {
             IList<Models.CIRecipient> recipients_list;
             bool boolImageNoPicture = false; //Added 7/9/2019 td 
+            bool boolImageSample = false; //Added 7/10/2019 td 
 
             //context.Response.ContentType = "text/plain";
             //context.Response.Write("Hello World");
@@ -35,6 +36,10 @@ namespace ciBadgeForWeb
                 //Added 7/9/2019 td
                 boolImageNoPicture = ("NoPic" == queryID_ofRecip);
 
+                //Added 7/10/2019 td
+                boolImageSample = ("Sample" == queryID_ofRecip);
+
+                //Added 7/9/2019 td
                 if (boolImageNoPicture)
                 {
                     //
@@ -52,6 +57,23 @@ namespace ciBadgeForWeb
                     } //End of "if (imageNoPic != null)"
 
                 } //End of "if (boolImageNoPicture)"
+
+                //Added 7/10/2019 td
+                if (boolImageSample)
+                {
+                    //Added 7/10/2019 td
+                    Image imageNoPic = ciPictures_VB.PictureExamples.GetImageSusanSample();
+
+                    context.Response.ContentType = "image/Jpeg";
+                    MemoryStream msNoPic = new MemoryStream();
+
+                    if (imageNoPic != null)
+                    {
+                        imageNoPic.Save(msNoPic, ImageFormat.Jpeg);
+                        context.Response.BinaryWrite(msNoPic.GetBuffer());
+                    } //End of "if (imageNoPic != null)"
+
+                } //End of "if (boolImageSample)"
 
                 //int recipient_id = Int32.Parse(context.Request.QueryString["id"]);
                 int recipient_id = Int32.Parse(queryID_ofRecip);
@@ -164,3 +186,4 @@ namespace ciBadgeForWeb
 
     }
 }
+

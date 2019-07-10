@@ -15,7 +15,7 @@ namespace ciBadgeForWeb.Controllers
     {
         //Added 6/25/2019 thomas downes  
         //
-        public static Models.CILayoutText mod_objLayoutText_NA = new Models.CILayoutText();
+        //public static Models.CILayoutText mod_objLayoutText_NA = new Models.CILayoutText();
         public static ciLayoutPrintLib.CILayoutText mod_objLayoutText = new ciLayoutPrintLib.CILayoutText();
 
         // GET: CILayoutText

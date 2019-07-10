@@ -167,8 +167,12 @@
     <Compile Include="ASPX\BadgeLayout.aspx.designer.cs">
       <DependentUpon>BadgeLayout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ASPX\PicHandler.ashx.cs">
+      <DependentUpon>PicHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\BadgeRecipientController_NotInUse.cs" />
     <Compile Include="Controllers\CustomFieldController.cs" />
+    <Compile Include="Controllers\LayoutPicController.cs" />
     <Compile Include="Controllers\LayoutText1Controller.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\ExampleController.cs" />
@@ -323,6 +327,7 @@
     <Content Include="Documentation\CI Web - Proposed Features.docx" />
     <Content Include="Documentation\Product Specifications - CI Web Secure Share v1.docx" />
     <Content Include="ApplicationInsights.config" />
+    <Content Include="ASPX\PicHandler.ashx" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\DragElement_T99.js" />
@@ -414,6 +419,7 @@
     <Content Include="Views\UploadBack\Create.cshtml" />
     <Content Include="Views\TrackPrints\Index.cshtml" />
     <Content Include="Views\LayoutText4\Index.cshtml" />
+    <Content Include="Views\LayoutPic\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
