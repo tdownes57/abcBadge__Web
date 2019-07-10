@@ -1,0 +1,74 @@
+﻿@model IEnumerable<ciBadgeForWeb.Models.TrackPrints>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RecipientID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Operator)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkstationName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrintDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RFID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MagTrack1)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.EncodedTrack2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EncodedTrack3)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecipientID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Operator)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkstationName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrintDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RFID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MagTrack1)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.EncodedTrack2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EncodedTrack3)
+        </td>*@
+        <td>
+            @Html.ActionLink("Delete", "Delete", new { id=item.TrackPrintsID })
+        </td>
+    </tr>
+}
+
+</table>

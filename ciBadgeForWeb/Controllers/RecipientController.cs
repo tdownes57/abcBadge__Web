@@ -111,6 +111,20 @@ namespace ciBadgeForWeb.Controllers
 
         }
 
+        // GET: Recipient/CardsPrintedLog/5
+        public ActionResult CardsPrintedLog(int parameter_id)
+        {
+            const bool c_boolSpecifyViewName = false; //Added 5/28/2019 td
+            if (c_boolSpecifyViewName) return View("Index", "TrackPrints");  //A ViewResult, i.e. a webpage, is the most popular type of ActionResult !!
+            //return View();  //A ViewResult, i.e. a webpage, is the most popular type of ActionResult !!
+
+            var id_doublecheck = Request.QueryString["parameter_id"];
+
+            var printLog_by_id_list = TrackPrintsController.mod_trackPrintsLog.Where(s => s.RecipientID == parameter_id.ToString());
+            return (ViewResult)View(printLog_by_id_list);
+
+        }
+
         // POST: Recipient/Edit/5
         [HttpPost]
         public ActionResult Edit(int parameter_id, FormCollection collection)

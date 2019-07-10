@@ -181,6 +181,7 @@
     <Compile Include="Controllers\Step1Controller.cs" />
     <Compile Include="Controllers\Steps1and2Controller.cs" />
     <Compile Include="Controllers\TestingParamsController.cs" />
+    <Compile Include="Controllers\TrackPrintsController.cs" />
     <Compile Include="Controllers\UploadBackController.cs" />
     <Compile Include="Controllers\ValuesController1.cs" />
     <Compile Include="Global.asax.cs">
@@ -201,6 +202,7 @@
     </Compile>
     <Compile Include="Models\PortraitImage.cs" />
     <Compile Include="Models\PortraitImageModel.cs" />
+    <Compile Include="Models\TrackPrints.cs" />
     <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ASPX\Step4Handler.ashx.cs">
@@ -394,6 +396,7 @@
     <Content Include="Views\UploadBack\ShowAll.cshtml" />
     <Content Include="Views\UploadBack\Edit.cshtml" />
     <Content Include="Views\UploadBack\Create.cshtml" />
+    <Content Include="Views\TrackPrints\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
