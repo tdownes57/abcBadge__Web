@@ -38,4 +38,8 @@ var EL = {
 //  https://stackoverflow.com/questions/7942398/nested-objects-in-javascript-best-practices
 //
 
+//Added 7/10/2019 thomas downes
+var global_elementLastTouched = EL.moveable_text;
+
+
 

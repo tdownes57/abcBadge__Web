@@ -176,6 +176,9 @@ function dragElement_T99_T3(par_T99, parameter_element) {
         document.onmouseup = null;
         document.onmousemove = null;
 
+        //Added 7/10/2019 thomas downes
+        global_elementLastTouched = par_T99;
+
         //var box_topedge = $("#TopEdgePositionPixels");
         //var box_leftedge = jQuery("#LeftEdgePositionPixels");
 
