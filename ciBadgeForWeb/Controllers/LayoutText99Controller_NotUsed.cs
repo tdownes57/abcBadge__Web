@@ -7,7 +7,7 @@ using System.Web.Mvc;
 namespace ciBadgeForWeb.Controllers
 {
 
-    public class LayoutText99Controller : Controller
+    public class LayoutText99Controller_NotUsed : Controller
     {
         //
         //Added 7/04/2019 thomas downes  

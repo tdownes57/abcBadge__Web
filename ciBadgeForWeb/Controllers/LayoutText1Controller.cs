@@ -6,6 +6,9 @@ using System.Web.Mvc;
 using ciBadgeForWeb.Models;
 using ciLayoutPrintLib;  //Added 6/27/2019 thomas downes 
 
+//
+//Added 6/25/2019 thomas downes  
+//
 namespace ciBadgeForWeb.Controllers
 {
     public class LayoutText1Controller : Controller

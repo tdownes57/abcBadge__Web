@@ -173,7 +173,8 @@
     <Compile Include="Controllers\ExampleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LayoutText2Controller.cs" />
-    <Compile Include="Controllers\LayoutText99Controller.cs" />
+    <Compile Include="Controllers\LayoutText4Controller.cs" />
+    <Compile Include="Controllers\LayoutText99Controller_NotUsed.cs" />
     <Compile Include="Controllers\LegacyPagesController.cs" />
     <Compile Include="Controllers\MvcTestController.cs" />
     <Compile Include="Controllers\PortraitImageController.cs" />
@@ -323,9 +324,13 @@
     <Content Include="Scripts\DragElement_T99.js" />
     <Content Include="Scripts\Elements1.js" />
     <Content Include="Scripts\Elements_T1.js" />
+    <Content Include="Scripts\Elements_T1b.js" />
     <Content Include="Scripts\Elements_T2.js" />
+    <Content Include="Scripts\Elements_T2b.js" />
     <Content Include="Scripts\Elements_T3.js" />
+    <Content Include="Scripts\Elements_T3b.js" />
     <Content Include="Scripts\Elements_T4.js" />
+    <Content Include="Scripts\Elements_T4b.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -404,6 +409,7 @@
     <Content Include="Views\UploadBack\Edit.cshtml" />
     <Content Include="Views\UploadBack\Create.cshtml" />
     <Content Include="Views\TrackPrints\Index.cshtml" />
+    <Content Include="Views\LayoutText4\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
