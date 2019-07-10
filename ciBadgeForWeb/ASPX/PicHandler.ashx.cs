@@ -43,16 +43,18 @@ namespace ciBadgeForWeb
                 if (boolImageSample)
                 {
                     //Added 7/10/2019 td
-                    Image imageNoPic = ciPictures_VB.PictureExamples.GetImageSusanSample();
+                    Image imageSample = ciPictures_VB.PictureExamples.GetImageSusanSample();
 
                     context.Response.ContentType = "image/Jpeg";
-                    MemoryStream msNoPic = new MemoryStream();
+                    MemoryStream msSample = new MemoryStream();
 
-                    if (imageNoPic != null)
+                    if (imageSample != null)
                     {
-                        imageNoPic.Save(msNoPic, ImageFormat.Jpeg);
-                        context.Response.BinaryWrite(msNoPic.GetBuffer());
-                    } //End of "if (imageNoPic != null)"
+                        imageSample.Save(msSample, ImageFormat.Jpeg);
+                        context.Response.BinaryWrite(msSample.GetBuffer());
+                    } //End of "if (imageSample != null)"
+
+                    return; //Added 7/10/2019 td
 
                 } //End of "if (boolImageSample)"
 
@@ -71,6 +73,8 @@ namespace ciBadgeForWeb
                         imageNoPic.Save(msNoPic, ImageFormat.Jpeg);
                         context.Response.BinaryWrite(msNoPic.GetBuffer());
                     } //End of "if (imageNoPic != null)"
+
+                    return; //Added 7/10/2019 td
 
                 } //End of "if (boolImageNoPicture)"
 
