@@ -168,6 +168,7 @@
       <DependentUpon>BadgeLayout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\BadgeRecipientController_NotInUse.cs" />
+    <Compile Include="Controllers\CustomFieldController.cs" />
     <Compile Include="Controllers\LayoutText1Controller.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\ExampleController.cs" />
@@ -177,6 +178,7 @@
     <Compile Include="Controllers\LayoutText99Controller_NotUsed.cs" />
     <Compile Include="Controllers\LegacyPagesController.cs" />
     <Compile Include="Controllers\MvcTestController.cs" />
+    <Compile Include="Controllers\PersonalityController.cs" />
     <Compile Include="Controllers\PortraitImageController.cs" />
     <Compile Include="Controllers\RecipientController.cs" />
     <Compile Include="Controllers\Step1Controller.cs" />
@@ -417,6 +419,8 @@
     <Folder Include="LegacyPages\" />
     <Folder Include="NewFolder1\" />
     <Folder Include="Views\CILayoutText\" />
+    <Folder Include="Views\CustomField\" />
+    <Folder Include="Views\Personality\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
