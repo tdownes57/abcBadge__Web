@@ -99,9 +99,15 @@ namespace ciBadgeForWeb
             //CI Solutions, Standard MVC Scaffolding
             //
             routes.MapRoute(
-                name: "Default_CIS1",
+                name: "Default_CIS1_param",
                 url: "{controller}/{action}/{parameter_id}",
                 defaults: new { controller = "Home", action = "Index", parameter_id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Default_CIS1_id",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(

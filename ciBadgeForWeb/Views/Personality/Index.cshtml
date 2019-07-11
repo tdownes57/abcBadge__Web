@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ciBadgeForWeb.Models.Personality>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ConfigID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConfigNameBrief)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConfigNameFull)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddressInfo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MiddleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpirationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AutoIncrementedID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConfigID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConfigNameBrief)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConfigNameFull)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddressInfo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MiddleName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpirationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AutoIncrementedID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ConfigID }) |
+            @Html.ActionLink("Fields", "Custom Fields", new { id = item.ConfigID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ConfigID })
+        </td>
+    </tr>
+}
+
+</table>

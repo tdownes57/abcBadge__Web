@@ -276,6 +276,7 @@
     <Content Include="Images\1960.JPG" />
     <Content Include="Images\blue_star.jpg" />
     <Content Include="Images\CI Badge v9 Susan.jpg" />
+    <Content Include="Images\CIBadgeLogo.png" />
     <Content Include="Images\ImageMetaData.xml" />
     <Content Include="Images\LayoutBack1of3.jpg" />
     <Content Include="Images\PureWhite.png" />
@@ -310,7 +311,7 @@
     <Content Include="Models\CILayoutBackgroundImg.txt" />
     <Content Include="Models\CILayoutPrint.txt" />
     <Compile Include="Models\CILayoutText.cs" />
-    <Compile Include="Models\CIPersonalityConfig.cs" />
+    <Compile Include="Models\CIPersonalityConfig_Not in use.cs" />
     <Content Include="Models\CIRecipient..txt" />
     <Content Include="Models\CIRecipient.txt" />
     <Content Include="Scripts\bootstrap.js" />
@@ -420,6 +421,8 @@
     <Content Include="Views\TrackPrints\Index.cshtml" />
     <Content Include="Views\LayoutText4\Index.cshtml" />
     <Content Include="Views\LayoutPic\Index.cshtml" />
+    <Content Include="Views\Personality\Index.cshtml" />
+    <Content Include="Views\Personality\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -428,7 +431,6 @@
     <Folder Include="NewFolder1\" />
     <Folder Include="Views\CILayoutText\" />
     <Folder Include="Views\CustomField\" />
-    <Folder Include="Views\Personality\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

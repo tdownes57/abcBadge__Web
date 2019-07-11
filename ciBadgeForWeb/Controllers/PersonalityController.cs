@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ciBadgeForWeb.Models;  //Added 7/11/2019 Thomas DOWNES
 
 namespace ciBadgeForWeb.Controllers
 {
@@ -66,11 +67,15 @@ namespace ciBadgeForWeb.Controllers
 
         // POST: Personality/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int parameter_id, FormCollection collection)
         {
             try
             {
-                // TODO: Add update logic here
+                // Added 7/11/2019 thomas downes
+                //
+                // 7/11 td//UpdateModel(mod_Personalities[id], collection);
+
+                Personality editedConfig = mod_Personalities.Where(s => s.ConfigID == parameter_id).FirstOrDefault();
 
                 return RedirectToAction("Index");
             }
