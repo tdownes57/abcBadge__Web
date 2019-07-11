@@ -276,7 +276,10 @@
     <Content Include="Images\1960.JPG" />
     <Content Include="Images\blue_star.jpg" />
     <Content Include="Images\CI Badge v9 Susan.jpg" />
+    <Content Include="Images\CIBadgeLogo.jpg" />
     <Content Include="Images\CIBadgeLogo.png" />
+    <Content Include="Images\CISolutionsLogo.jpg" />
+    <Content Include="Images\CISolutionsLogo.png" />
     <Content Include="Images\ImageMetaData.xml" />
     <Content Include="Images\LayoutBack1of3.jpg" />
     <Content Include="Images\PureWhite.png" />
