@@ -2,11 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc; //Added 7/10/2019 td
+using System.ComponentModel.DataAnnotations; //Added 7/10/2019 td
+using System.Drawing; //Added 7/10/2019 thomas d. 
 
 namespace ciBadgeForWeb.Models
 {
     public class Personality
     {
+        //Personality Configuration ID
+
         //Long Name (e.g. Students at Fullbright High School, Teachers & Staff of Fullbright High School) 
 
         //Short Name (e.g. Students, Staff) 
@@ -20,6 +25,30 @@ namespace ciBadgeForWeb.Models
         //  
 
         //Custom Fields....
+
+        public int ConfigID { get; set; }
+
+        [Display(Name = "Short Name, e.g. Students")]
+        public string ConfigNameBrief { get; set; }
+
+        [Display(Name = "Descriptive Name")]
+        public string ConfigNameFull { get; set; }
+
+        [Display(Name = "Store address.")]
+        public bool AddressInfo { get; set; }
+
+        [Display(Name = "Middle Name?")]
+        public bool MiddleName { get; set; }
+
+        [Display(Name = "Expiration Date?")]
+        public bool ExpirationDate { get; set; }
+
+        /// <summary>
+        /// Whether a new Recipient receives a ID which is calculated by the CI Badge program.  
+        /// </summary>
+        [Display(Name = "Auto-Increment ID?")]
+        public bool AutoIncrementedID { get; set; }
+
 
     }
 }

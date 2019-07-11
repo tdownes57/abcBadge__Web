@@ -8,6 +8,22 @@ namespace ciBadgeForWeb.Controllers
 {
     public class PersonalityController : Controller
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+
+        //
+        //Added 7/10/2019 td
+        //
+        //
+        //Recipient = Student or Employee receiving the Badge. 
+        //
+        public static IList<Models.Personality> mod_Personalities = new List<Models.Personality>() {
+          new Models.Personality() { ConfigID = 1, ConfigNameBrief = "Students"  },
+          new Models.Personality() { ConfigID = 2, ConfigNameBrief = "Staff" }
+        };
+
         // GET: Personality
         public ActionResult Index()
         {
