@@ -59,6 +59,26 @@ namespace ciBadgeForWeb.Controllers
             return (ViewResult)View(mod_recipientList.Where(s => s.ConfigID == PersonalityConfigID_current));
         }
 
+        // GET: Recipient
+        public ActionResult Index_Cfg1()
+        {
+            //
+            //Added 7/12/2019 thomas downes
+            //
+            PersonalityConfigID_current = 1;  //Set Config #1 to be the Current Personality Config. 
+            return (ViewResult)View(mod_recipientList.Where(s => s.ConfigID == PersonalityConfigID_current));
+        }
+
+        // GET: Recipient
+        public ActionResult Index_Cfg2()
+        {
+            //
+            //Added 7/12/2019 thomas downes
+            //
+            PersonalityConfigID_current = 2;  //Set Config #1 to be the Current Personality Config. 
+            return (ViewResult)View(mod_recipientList.Where(s => s.ConfigID == PersonalityConfigID_current));
+        }
+
         // GET: Recipient/Details/5
         public ActionResult Details(int parameter_id)
         {
@@ -78,7 +98,7 @@ namespace ciBadgeForWeb.Controllers
         }
 
         // Recipient/ShowSearchResults   (Doesn't directly match an HTTP command.)
-        public ActionResult ShowSearchResults(IList<Models.CIRecipient> par_results) => View("Index",  par_results);
+        public ActionResult ShowSearchResults(IList<Models.CIRecipient> par_results) => View("Index", par_results);
 
         //const bool c_boolSpecifyViewName = false;    / /Added 5/28/2019 td
         //if (c_boolSpecifyViewName) return View("Create");  //A View, i.e. a webpage, is the most popular type of ActionResult !!
@@ -201,5 +221,36 @@ namespace ciBadgeForWeb.Controllers
                 return (ViewResult)View();  //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
             }
         }
+
+
+
+
+        public static IEnumerable<ciBadgeForWeb.Models.CIRecipient> GetRecipents_CurrentPC()
+        {
+            //
+            //Added 7/12/2019 td 
+            //
+            return mod_recipientList.Where(s => s.ConfigID == RecipientController.PersonalityConfigID_current);
+
+        }
+
+        public static  IEnumerable<ciBadgeForWeb.Models.CIRecipient> GetStudents() 
+        {
+            //
+            //Added 7/12/2019 td 
+            //
+            return mod_recipientList.Where(s => s.ConfigID == 1);
+
+        }
+
+        public static IEnumerable<ciBadgeForWeb.Models.CIRecipient> GetStaff()
+        {
+            //
+            //Added 7/12/2019 td 
+            //
+            return mod_recipientList.Where(s => s.ConfigID == 2);
+
+        }
+
     }
 }
