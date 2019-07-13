@@ -6,8 +6,17 @@ using System.Web.Mvc;
 
 namespace ciBadgeForWeb.Controllers
 {
-    public class CustomFieldController : Controller
+    public class CustomTextFieldController : Controller
     {
+        //
+        //List of example custom fields. 
+        //
+        public static IList<Models.CustomTextField> mod_customFieldsList = new List<Models.CustomTextField>() {
+                    new Models.CustomTextField() { ConfigID =1, CustomTextFieldID = 1,  LabelCaption = "Teacher" },
+                    new Models.CustomTextField() { ConfigID =1, CustomTextFieldID = 2, LabelCaption = "Grade (1st to 6th)"   },
+                    new Models.CustomTextField() { ConfigID = 1, CustomTextFieldID = 3, LabelCaption = "School"   }
+        };
+
         // GET: CustomField
         public ActionResult Index()
         {

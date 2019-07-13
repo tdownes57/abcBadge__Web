@@ -171,7 +171,7 @@
       <DependentUpon>PicHandler.ashx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\BadgeRecipientController_NotInUse.cs" />
-    <Compile Include="Controllers\CustomFieldController.cs" />
+    <Compile Include="Controllers\CustomTextFieldController.cs" />
     <Compile Include="Controllers\LayoutPicController.cs" />
     <Compile Include="Controllers\LayoutText1Controller.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
@@ -202,8 +202,9 @@
     <Compile Include="Models\Background.cs" />
     <Compile Include="Models\CICustomer.cs" />
     <Compile Include="Models\CIRecipient.cs" />
+    <Compile Include="Models\CustomDateField.cs" />
     <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\CustomField.cs" />
+    <Compile Include="Models\CustomTextField.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\MenuItem.cs" />
     <Compile Include="Models\ModelEntity.Designer.cs">
