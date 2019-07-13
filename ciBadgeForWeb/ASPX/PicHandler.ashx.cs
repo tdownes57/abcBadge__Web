@@ -5,6 +5,7 @@ using System.Web;// Added 5/20/2019 thomas d.
 using System.Drawing; // Added 5/20/2019 thomas d. 
 using System.Drawing.Imaging;// Added 5/20/2019 thomas d. 
 using System.IO;// Added 5/20/2019 thomas d. 
+using ciLayoutPrintLib; // Added 7/13/2019 td
 
 namespace ciBadgeForWeb
 {
@@ -60,6 +61,14 @@ namespace ciBadgeForWeb
                     //Added 7/10/2019 td
                     Image imageSample = ciPictures_VB.PictureExamples.GetImageSusanSample();
 
+                    //Added 7/13/2019
+                    //
+                    if (boolApplyWidth)
+                    {
+                        //Added 7/13/2019
+                        imageSample = LayoutPrint.ResizeImage_ToWidth(imageSample, intPixelsWidth);
+                    }
+
                     context.Response.ContentType = "image/Jpeg";
                     MemoryStream msSample = new MemoryStream();
 
@@ -79,6 +88,14 @@ namespace ciBadgeForWeb
                     //Added 7/9/2019 td
                     //
                     Image imageNoPic = ciPictures_VB.PictureExamples.GetImageWithNoPicture();
+
+                    //Added 7/13/2019
+                    //
+                    if (boolApplyWidth)
+                    {
+                        //Added 7/13/2019
+                        imageNoPic = LayoutPrint.ResizeImage_ToWidth(imageNoPic, intPixelsWidth);
+                    }
 
                     context.Response.ContentType = "image/Jpeg";
                     MemoryStream msNoPic = new MemoryStream();
@@ -111,6 +128,14 @@ namespace ciBadgeForWeb
                 if (recipient_by_id_onlyone is null) return; 
 
                 Image imagePic = recipient_by_id_onlyone.Picture;
+
+                //Added 7/13/2019
+                //
+                if (boolApplyWidth)
+                {
+                    //Added 7/13/2019
+                    imagePic = LayoutPrint.ResizeImage_ToWidth(imagePic, intPixelsWidth);
+                }
 
                 // Of course set this to whatever your format is of the image
                 //context.Response.ContentType = "image/png";

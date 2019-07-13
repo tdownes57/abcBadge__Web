@@ -5,6 +5,7 @@ using System.Web;// Added 5/20/2019 thomas d.
 using System.Drawing; // Added 5/20/2019 thomas d. 
 using System.Drawing.Imaging;// Added 5/20/2019 thomas d. 
 using System.IO;// Added 5/20/2019 thomas d. 
+using ciLayoutPrintLib; // Added 7/13/2019 td
 
 namespace ciBadgeForWeb
 {
@@ -19,6 +20,23 @@ namespace ciBadgeForWeb
             IList<Models.CIRecipient> recipients_list;
             bool boolImageNoPicture = false; //Added 7/9/2019 td 
             bool boolImageSample = false; //Added 7/10/2019 td 
+            bool boolApplyWidth = false;  //Added 7/13/2019 td  
+
+            //Added 7/9/2019 td  
+            string queryID_ofRecip = context.Request.QueryString["id"];
+
+            //Added 7/06/2019 thomas downes
+            int intPixelsWidth = 0; //Added 7/06/2019 thomas downes 
+            try
+            {
+                //Added 7/06/2019 thomas downes
+                intPixelsWidth = int.Parse(context.Request.QueryString["width"]);
+                boolApplyWidth = (20 < intPixelsWidth);
+            }
+            catch
+            {
+                //Just try .......
+            }
 
             //context.Response.ContentType = "text/plain";
             //context.Response.Write("Hello World");
@@ -26,7 +44,7 @@ namespace ciBadgeForWeb
             context.Response.Clear();
 
             //Added 7/9/2019 td  
-            string queryID_ofRecip = context.Request.QueryString["id"];
+            //string queryID_ofRecip = context.Request.QueryString["id"];
 
             //if (!String.IsNullOrEmpty(context.Request.QueryString["id"]))
 
@@ -47,6 +65,14 @@ namespace ciBadgeForWeb
                     //
                     Image imageNoPic = ciPictures_VB.PictureExamples.GetImageWithNoPicture();
 
+                    //Added 7/13/2019
+                    //
+                    if (boolApplyWidth)
+                    {
+                        //Added 7/13/2019
+                        imageNoPic = LayoutPrint.ResizeImage_ToWidth(imageNoPic, intPixelsWidth);
+                    }
+
                     context.Response.ContentType = "image/Jpeg";
                     MemoryStream msNoPic = new MemoryStream();
 
@@ -65,6 +91,14 @@ namespace ciBadgeForWeb
                 {
                     //Added 7/10/2019 td
                     Image imageSample = ciPictures_VB.PictureExamples.GetImageSusanSample();
+
+                    //Added 7/13/2019
+                    //
+                    if (boolApplyWidth)
+                    {
+                        //Added 7/13/2019
+                        imageSample = LayoutPrint.ResizeImage_ToWidth(imageSample, intPixelsWidth);
+                    }
 
                     context.Response.ContentType = "image/Jpeg";
                     MemoryStream msSample = new MemoryStream();
@@ -97,6 +131,14 @@ namespace ciBadgeForWeb
                 if (recipient_by_id_onlyone is null) return; 
 
                 Image imagePic = recipient_by_id_onlyone.Picture;
+
+                //Added 7/13/2019
+                //
+                if (boolApplyWidth)
+                {
+                    //Added 7/13/2019
+                    imagePic = LayoutPrint.ResizeImage_ToWidth(imagePic, intPixelsWidth);
+                }
 
                 // Of course set this to whatever your format is of the image
                 //context.Response.ContentType = "image/png";
