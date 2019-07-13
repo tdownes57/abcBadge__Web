@@ -26,15 +26,17 @@ namespace ciBadgeForWeb.Models
 
         //Custom Fields....
 
+        [Key]
+        [Display(Name = "Personality Configuration ID")]
         public int ConfigID { get; set; }
 
-        [Display(Name = "Short Name, e.g. Students")]
+        [Display(Name = "Brief Name (e.g. Cardholders/Staff/Students)")]
         public string ConfigNameBrief { get; set; }
 
-        [Display(Name = "Descriptive Name")]
+        [Display(Name = "Name in Full (Optional)")]
         public string ConfigNameFull { get; set; }
 
-        [Display(Name = "Store address.")]
+        [Display(Name = "Address? (Street, etc.")]
         public bool AddressInfo { get; set; }
 
         [Display(Name = "Middle Name?")]

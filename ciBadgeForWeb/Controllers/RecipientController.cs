@@ -12,24 +12,37 @@ namespace ciBadgeForWeb.Controllers
     public class RecipientController : Controller
     {
         //
+        //Currently active Personality-Configuration ID
+        //
+        public static int PersonalityConfigID_current = 1; //Added 7/12/2019 td 
+
+        //
         //Recipient = Student or Employee receiving the Badge. 
         //
         public static IList<Models.CIRecipient> mod_recipientList = new List<Models.CIRecipient>() {
-                    new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID ="1", FirstName="John", LastName = "Davidson", Picture = PictureExamples.GetExample()  },
-                    new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID ="2", FirstName="Steve", LastName = "Austin", Picture = PictureExamples.GetExample() },
-                    new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID ="3", FirstName="Bill", LastName = "Clinton", Picture = PictureExamples.GetExample()   },
-                    new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID ="4", FirstName="Ram", LastName = "Thegot", Picture = PictureExamples.GetExample()   },
-                    new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID ="5", FirstName="Ron" , LastName = "Wood", Picture = PictureExamples.GetExample()  },
-                    new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID ="6", FirstName="Christopher", LastName = "Forbes", Picture = PictureExamples.GetExample()   },
-                    new Models.CIRecipient(){ CustomerID="CIS100", Personality="Staff", RecipientID = "7", FirstName="Robin", LastName = "Forbes", Picture = PictureExamples.GetExample()   },
- 
-                    //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="1", FirstName="John", LastName = "Davidson", Picture = PictureExamples.GetExample()  },
-                    //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="2", FirstName="Steve", LastName = "Austin", Picture = PictureExamples.GetExample()  },
-                    //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="3", FirstName="Bill", LastName = "Clinton", Picture = PictureExamples.GetExample()   },
-                    //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="4", FirstName="Ram", LastName = "Thegot", Picture = PictureExamples.GetExample()   },
-                    //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="5", FirstName="Ron" , LastName = "Wood", Picture = PictureExamples.GetExample()  },
-                    //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="6", FirstName="Christopher", LastName = "Forbes", Picture = PictureExamples.GetExample()   },
-                    //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID = "7", FirstName="Robin", LastName = "Forbes", Picture = PictureExamples.GetExample()   }
+                    new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=1, RecipientID ="1", FirstName="Johnny", LastName = "Davidson", Picture = PictureExamples.GetExample()  },
+                    new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=1, RecipientID ="2", FirstName="Stevie", LastName = "Austin", Picture = PictureExamples.GetExample() },
+                    new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=1, RecipientID ="3", FirstName="Billy", LastName = "Clinton", Picture = PictureExamples.GetExample()   },
+                    new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=1, RecipientID ="4", FirstName="Ronny", LastName = "Thegot", Picture = PictureExamples.GetExample()   },
+                    new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=1, RecipientID ="5", FirstName="Dorothy" , LastName = "Wood", Picture = PictureExamples.GetExample()  },
+                    new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=1, RecipientID ="6", FirstName="Christy", LastName = "Forbes", Picture = PictureExamples.GetExample()   },
+                    new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=1, RecipientID = "7", FirstName="Tommy", LastName = "Forbes", Picture = PictureExamples.GetExample()   },
+
+            //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="1", FirstName="John", LastName = "Davidson", Picture = PictureExamples.GetExample()  },
+            //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="2", FirstName="Steve", LastName = "Austin", Picture = PictureExamples.GetExample()  },
+            //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="3", FirstName="Bill", LastName = "Clinton", Picture = PictureExamples.GetExample()   },
+            //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="4", FirstName="Ram", LastName = "Thegot", Picture = PictureExamples.GetExample()   },
+            //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="5", FirstName="Ron" , LastName = "Wood", Picture = PictureExamples.GetExample()  },
+            //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="6", FirstName="Christopher", LastName = "Forbes", Picture = PictureExamples.GetExample()   },
+            //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID = "7", FirstName="Robin", LastName = "Forbes", Picture = PictureExamples.GetExample()   }
+
+                            new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=2, RecipientID ="1", FirstName="Jayce", LastName = "P.", Picture = PictureExamples.GetExample()  },
+                    new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=2, RecipientID ="2", FirstName="Chanin", LastName = "F.", Picture = PictureExamples.GetExample() },
+                    new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=2, RecipientID ="3", FirstName="Sammi", LastName = "F.", Picture = PictureExamples.GetExample()   },
+                    new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=2, RecipientID ="4", FirstName="Erick", LastName = "M.", Picture = PictureExamples.GetExample()   },
+                    new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=2, RecipientID ="5", FirstName="Erica" , LastName = "A.", Picture = PictureExamples.GetExample()  },
+                    new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=2, RecipientID ="6", FirstName="Jimmy", LastName = "A.", Picture = PictureExamples.GetExample()   },
+                    new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=2, RecipientID = "7", FirstName="Thomas", LastName = "D.", Picture = PictureExamples.GetExample()   }
 };
 
         // GET: Recipient
@@ -42,7 +55,8 @@ namespace ciBadgeForWeb.Controllers
             //mod_recipientList.FirstOrDefault().LastName += "P";
 
             //return View();  //A ViewResult, i.e. a webpage, is the most popular type of ActionResult !!
-            return (ViewResult)View(mod_recipientList);
+            //     7-12-2019 td//return (ViewResult)View(mod_recipientList);
+            return (ViewResult)View(mod_recipientList.Where(s => s.ConfigID == PersonalityConfigID_current));
         }
 
         // GET: Recipient/Details/5

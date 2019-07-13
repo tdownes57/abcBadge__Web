@@ -43,7 +43,7 @@
             @Html.LabelFor(model => model.AddressInfo, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
-                    @Html.EditorFor(model => model.AddressInfo)
+                    @Html.CheckBoxFor(model => model.AddressInfo)
                     @Html.ValidationMessageFor(model => model.AddressInfo, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -53,7 +53,7 @@
             @Html.LabelFor(model => model.MiddleName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
-                    @Html.EditorFor(model => model.MiddleName)
+                    @Html.CheckBoxFor(model => model.MiddleName)
                     @Html.ValidationMessageFor(model => model.MiddleName, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -63,7 +63,7 @@
             @Html.LabelFor(model => model.ExpirationDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
-                    @Html.EditorFor(model => model.ExpirationDate)
+                    @Html.CheckBoxFor(model => model.ExpirationDate)
                     @Html.ValidationMessageFor(model => model.ExpirationDate, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -73,7 +73,7 @@
             @Html.LabelFor(model => model.AutoIncrementedID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
-                    @Html.EditorFor(model => model.AutoIncrementedID)
+                    @Html.CheckBoxFor(model => model.AutoIncrementedID)
                     @Html.ValidationMessageFor(model => model.AutoIncrementedID, "", new { @class = "text-danger" })
                 </div>
             </div>

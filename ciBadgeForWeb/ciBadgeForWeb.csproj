@@ -181,6 +181,7 @@
     <Compile Include="Controllers\LayoutText4Controller.cs" />
     <Compile Include="Controllers\LayoutText99Controller_NotUsed.cs" />
     <Compile Include="Controllers\LegacyPagesController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\MvcTestController.cs" />
     <Compile Include="Controllers\PersonalityController.cs" />
     <Compile Include="Controllers\PortraitImageController.cs" />
@@ -203,6 +204,8 @@
     <Compile Include="Models\CIRecipient.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\CustomField.cs" />
+    <Compile Include="Models\Menu.cs" />
+    <Compile Include="Models\MenuItem.cs" />
     <Compile Include="Models\ModelEntity.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -427,6 +430,7 @@
     <Content Include="Views\LayoutPic\Index.cshtml" />
     <Content Include="Views\Personality\Index.cshtml" />
     <Content Include="Views\Personality\Edit.cshtml" />
+    <Content Include="Views\Shared\_Menu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -435,6 +439,7 @@
     <Folder Include="NewFolder1\" />
     <Folder Include="Views\CILayoutText\" />
     <Folder Include="Views\CustomField\" />
+    <Folder Include="Views\Menu\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

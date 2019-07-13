@@ -15,9 +15,9 @@
         <th>
             Picture
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.Personality)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.RecipientID)
         </th>
@@ -44,9 +44,9 @@
     <td>
         <img alt="Image Handler" width="60" src="~/ASPX/ImageHandler.ashx?id=@item.RecipientID" />
     </td>
-    <td>
+    @*<td>
         @Html.DisplayFor(modelItem => item.Personality)
-    </td>
+    </td>*@
     <td>
         @Html.DisplayFor(modelItem => item.RecipientID)
     </td>

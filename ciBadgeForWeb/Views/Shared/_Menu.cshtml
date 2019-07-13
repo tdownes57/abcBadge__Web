@@ -1,0 +1,18 @@
+﻿@model ciBadgeForWeb.Models.Menu
+
+<ul>
+
+    <li>
+        <a href="#">
+
+            <span>@Model.Name</span>
+
+        </a>
+        <ul>
+            @foreach (var item in Model.MenuItems)
+            {
+                <li><a href="@Url.Action(@item.ActionName , @item.ControllerName )"><i class="fa fa-circle-o"></i>@item.Name</a></li>
+            }
+        </ul>
+    </li>
+</ul>

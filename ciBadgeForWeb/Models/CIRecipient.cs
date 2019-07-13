@@ -12,17 +12,20 @@ namespace ciBadgeForWeb.Models
     {
         //public int Mystring { get; set; }
 
-        [Display(Name = "Picture")]
-        public Image Picture { get; set; }
-
+        [Key]
         [Display(Name = "Customer ID")]
         public string CustomerID { get; set; }
 
-        [Display(Name = "Personality")]
-        public string Personality { get; set; }
+        [Key]
+        [Display(Name = "Config ID")]
+        public int ConfigID { get; set; }
 
+        [Key]
         [Display(Name = "ID")]
         public string RecipientID { get; set; }
+
+        [Display(Name = "Picture")]
+        public Image Picture { get; set; }
 
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
