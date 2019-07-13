@@ -42,6 +42,9 @@ namespace ciBadgeForWeb.Models
         [Display(Name = "Middle Name?")]
         public bool MiddleName { get; set; }
 
+        [Display(Name = "Full Name (for edits if required)?")]
+        public bool AllowEditsToFullName { get; set; }  // Added 7/13/2019
+
         [Display(Name = "Expiration Date?")]
         public bool ExpirationDate { get; set; }
 

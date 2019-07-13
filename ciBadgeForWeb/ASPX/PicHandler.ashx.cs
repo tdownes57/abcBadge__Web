@@ -19,14 +19,29 @@ namespace ciBadgeForWeb
             IList<Models.CIRecipient> recipients_list;
             bool boolImageNoPicture = false; //Added 7/9/2019 td 
             bool boolImageSample = false; //Added 7/10/2019 td 
+            bool boolApplyWidth = false;  //Added 7/13/2019 td  
+
+            //Added 7/9/2019 td  
+            string queryID_ofRecip = context.Request.QueryString["id"];
+
+            //Added 7/06/2019 thomas downes
+            int intPixelsWidth = 0; //Added 7/06/2019 thomas downes 
+            try
+            {
+                //Added 7/06/2019 thomas downes
+                intPixelsWidth = int.Parse(context.Request.QueryString["width"]);
+                boolApplyWidth = (20 < intPixelsWidth);
+            }
+            catch
+            {
+                //Just try .......
+            }
 
             //context.Response.ContentType = "text/plain";
             //context.Response.Write("Hello World");
             //
             context.Response.Clear();
 
-            //Added 7/9/2019 td  
-            string queryID_ofRecip = context.Request.QueryString["id"];
 
             //if (!String.IsNullOrEmpty(context.Request.QueryString["id"]))
 

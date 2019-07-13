@@ -33,7 +33,14 @@ namespace ciBadgeForWeb.Models
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
+        [Display(Name = "Middle Name")]
         public string MiddleName { get; set; }
+
+        //
+        //Added 7/13/2019 THOMAS DOWNES
+        //
+        public string FullNameOnBadge { get; set; }
+
         public DateTime EffectiveDate { get; set; }
         public DateTime ExpirationDate { get; set; }
         public List<string> TextFields { get; set; }
@@ -68,6 +75,47 @@ namespace ciBadgeForWeb.Models
             }
         }
 
+        //
+        //Added 7-13-2019 thomas d.
+        //
+        public Models.Personality GetRecipientsPersonality()
+        {
+            //
+            //Added 7-13-2019 thomas d.
+            //
+            return Controllers.PersonalityController.mod_Personalities[this.ConfigID];
+        }
+
+        //
+        //Added 7/13/2019 Thomas C. Downes
+        //
+        public bool UseMiddleNameOnBadge()
+        {
+            //Added 7/13/2019 Thomas C. Downes
+            return GetRecipientsPersonality().MiddleName;
+        }
+
+        //
+        //Added 7/13/2019 THOMAS DOWNES
+        //
+        public string FullNameOnBadge_Composed()
+        {
+            bool boolUseOverride; //Added 7/13/2019
+            bool boolEditsToFullnameOkay;
+
+            //
+            //Account for possible operator-judgement overrides. (Operators must use sparingly!)   
+            //
+            boolEditsToFullnameOkay = GetRecipientsPersonality().AllowEditsToFullName;
+            boolUseOverride = (boolEditsToFullnameOkay && (!(String.IsNullOrEmpty(FullNameOnBadge.Trim()))));
+            if (boolUseOverride) boolUseOverride = (3 + 1 + 2 <= FullNameOnBadge.Length);
+            if (boolUseOverride) return FullNameOnBadge;
+
+            if (UseMiddleNameOnBadge()) return (FirstName + " " + MiddleName + " " + LastName);
+
+            return (FirstName + " " + LastName);
+
+        }
 
         public string ErrorMessage()
         {

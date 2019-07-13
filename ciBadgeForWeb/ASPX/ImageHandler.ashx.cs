@@ -56,6 +56,8 @@ namespace ciBadgeForWeb
                         context.Response.BinaryWrite(msNoPic.GetBuffer());
                     } //End of "if (imageNoPic != null)"
 
+                    return;
+
                 } //End of "if (boolImageNoPicture)"
 
                 //Added 7/10/2019 td
