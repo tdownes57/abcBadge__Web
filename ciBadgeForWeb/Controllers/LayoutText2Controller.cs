@@ -88,7 +88,7 @@ namespace ciBadgeForWeb.Controllers
                 //UpdateModel(mod_objLayout, formValues); // Automatically updates properties with values from the collection
 
                 //Added 7/5/2019 thomas downes 
-                ciLayoutPrintLib.LayoutExample.RefreshChoiceOfBackground_Next();
+                //ciLayoutPrintLib.LayoutExample.RefreshChoiceOfBackground_Next();
 
                 FormCollection formValues_T1 = mod_objLayout.FormValues_T1(formValues);
                 FormCollection formValues_T2 = mod_objLayout.FormValues_T2(formValues);

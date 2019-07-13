@@ -42,10 +42,17 @@
         left: 142px;
         top: 429px;
         align-content: center;
-        font-size: 14px;
+        font-size: 20px;
     }
 
-       /*   http://jsfiddle.net/Mottie/pu2p1u9g/   */
+    #id__adjustWH {
+          position: absolute;
+      left: 1042px;
+        top: 129px;
+        align-content: center;
+    }
+
+    /*   http://jsfiddle.net/Mottie/pu2p1u9g/   */
     /*   https://www.w3schools.com/csS/css_align.asp */
     /*  7/13/2019 CI Solutions, thomas d. */
     .div_back img {
@@ -60,15 +67,16 @@
     /*  https://www.w3schools.com/csS/css_align.asp  */
     /*  7/13/2019 CI Solutions, thomas d. */
     .div_back {
-      width: 60%;
-      background: #777;
-      margin: 0 auto;
+        width: 60%;
+        background: #777;
+        margin: 0 auto;
     }
-
 </style>
 
 <div id="id__mydivheader1" class="blue_box">Text Field #1 - Move into position</div>
 @*script src="TextMover1.js"></script>*@
+
+@*<div id="id__adjustWH" ><img src="~/Images/Adjust_width_height.jpg" width="600"  /></div>*@
 
 <h2>Badge Design</h2>
 
@@ -83,13 +91,14 @@
         @Html.HiddenFor(model => model.CILayoutTextId)
 
         <div class="form-group">
-            <input type="submit" value="Save" class="btn btn-default" />
+            <input type="submit" value="Save this layout design" class="btn btn-default" >
         </div>
 
         <div id="badge_back" class="div_back" name="badge-back">
             @*        <img src="~/Images/LayoutBack1of3.jpg" id="image_back" class="class_border" width="860" height="490" />*@
             @*<img src="~/ASPX/Step4Handler.ashx?id=back&big=y&hor=y" id="image_back" class="class_border" width="860" height="490" />*@
             <img src="~/ASPX/Step4Handler.ashx?id=back&big=y&hor=y&width=860" id="image_back" class="class_border" width="860" />
+            <img src="~/Images/Adjust_width_height.jpg" width="600" />
         </div>
 
         <div class="form-group">
@@ -167,7 +176,7 @@
         </div>
 
         <div class="form-group">
-            <input type="submit" value="Save" class="btn btn-default" />
+            <input type="submit" value="Save this layout design" class="btn btn-default" />
         </div>
 
         <div class="form-group">
