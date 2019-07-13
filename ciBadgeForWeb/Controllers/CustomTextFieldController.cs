@@ -11,10 +11,14 @@ namespace ciBadgeForWeb.Controllers
         //
         //List of example custom fields. 
         //
+        public static string ListOfTeachers = "Mason,Ross,Henderson,Havisu,Brown,Favreau,Halford,Cumberbatch";
+        public static string ListOfGrades = "9th,10th,11th,12th";
+        public static string ListOfSchools = "Canyon High,Hart High,Saugus High";
+
         public static IList<Models.CustomTextField> mod_customFieldsList = new List<Models.CustomTextField>() {
-                    new Models.CustomTextField() { ConfigID =1, CustomTextFieldID = 1,  LabelCaption = "Teacher" },
-                    new Models.CustomTextField() { ConfigID =1, CustomTextFieldID = 2, LabelCaption = "Grade (1st to 6th)"   },
-                    new Models.CustomTextField() { ConfigID = 1, CustomTextFieldID = 3, LabelCaption = "School"   }
+                    new Models.CustomTextField() { ConfigID = 1, CustomTextFieldID = 1,  LabelCaption = "Teacher", DropdownValues = true, DropdownValuesCSV = ListOfTeachers },
+                    new Models.CustomTextField() { ConfigID = 1, CustomTextFieldID = 2, LabelCaption = "Grade (1st to 6th)", DropdownValues = true, DropdownValuesCSV = ListOfGrades   },
+                    new Models.CustomTextField() { ConfigID = 1, CustomTextFieldID = 3, LabelCaption = "High School", DropdownValues = true   }
         };
 
         // GET: CustomField
