@@ -1,0 +1,29 @@
+﻿@model ciBadgeForWeb.Models.CIRecipient
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Batch Printing of Badges</title>
+</head>
+<body>
+    <div>
+
+        <img alt="Batch-Printing a Badge" width="500" src="~/ASPX/Step4Handler.ashx?id=@Model.RecipientID&hor=n" />
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.EditorFor(model => model.RFIDValue, new { htmlAttributes = new { @class = "form-control" } })
+
+        }
+
+    </div>
+</body>
+</html>

@@ -41,6 +41,11 @@ namespace ciBadgeForWeb.Models
         //
         public string FullNameOnBadge { get; set; }
 
+        //
+        //Added 7/14/2019 THOMAS DOWNES
+        //
+        public string RFIDValue { get; set; }
+
         public DateTime EffectiveDate { get; set; }
         public DateTime ExpirationDate { get; set; }
         public List<string> TextFields { get; set; }

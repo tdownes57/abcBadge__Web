@@ -171,6 +171,7 @@
       <DependentUpon>PicHandler.ashx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\BadgeRecipientController_NotInUse.cs" />
+    <Compile Include="Controllers\BatchPrintController.cs" />
     <Compile Include="Controllers\CustomTextFieldController.cs" />
     <Compile Include="Controllers\LayoutPicController.cs" />
     <Compile Include="Controllers\LayoutText1Controller.cs" />
@@ -433,6 +434,7 @@
     <Content Include="Views\Personality\Index.cshtml" />
     <Content Include="Views\Personality\Edit.cshtml" />
     <Content Include="Views\Shared\_Menu.cshtml" />
+    <Content Include="Views\BatchPrint\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
