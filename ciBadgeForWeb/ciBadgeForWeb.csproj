@@ -181,6 +181,7 @@
     <Compile Include="Controllers\LayoutText2Controller.cs" />
     <Compile Include="Controllers\LayoutText4Controller.cs" />
     <Compile Include="Controllers\LayoutText99Controller_NotUsed.cs" />
+    <Compile Include="Controllers\LayoutTextboxesController.cs" />
     <Compile Include="Controllers\LegacyPagesController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\MvcTestController.cs" />
@@ -280,7 +281,7 @@
     <Content Include="Images\1959.PNG" />
     <Content Include="Images\1960.JPG" />
     <Content Include="Images\Adjust width &amp; height.jpg" />
-    <Content Include="Images\Adjust_width_height.jpg" />
+    <Content Include="Images\AdjustWHColor_V101.jpg" />
     <Content Include="Images\blue_star.jpg" />
     <Content Include="Images\CI Badge v9 Susan.jpg" />
     <Content Include="Images\CIBadgeLogo.jpg" />
@@ -324,6 +325,8 @@
     <Compile Include="Models\CIPersonalityConfig_Not in use.cs" />
     <Content Include="Models\CIRecipient..txt" />
     <Content Include="Models\CIRecipient.txt" />
+    <Content Include="Scripts\Adjustment_Click.js" />
+    <Content Include="Scripts\Adjustment_Master.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ASPX\ImageHandler.ashx" />
@@ -443,6 +446,7 @@
     <Folder Include="NewFolder1\" />
     <Folder Include="Views\CILayoutText\" />
     <Folder Include="Views\CustomField\" />
+    <Folder Include="Views\LayoutTextboxes\" />
     <Folder Include="Views\Menu\" />
   </ItemGroup>
   <ItemGroup>
