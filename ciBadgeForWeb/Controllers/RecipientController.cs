@@ -15,6 +15,7 @@ namespace ciBadgeForWeb.Controllers
         //Currently active Personality-Configuration ID
         //
         public static int PersonalityConfigID_current = 1; //Added 7/12/2019 td 
+        public static int RecipientID_current = 1; //Needed for the future Steps1234 controller.  ----Added 7/17/2019 td 
 
         //
         //Recipient = Student or Employee receiving the Badge. 
