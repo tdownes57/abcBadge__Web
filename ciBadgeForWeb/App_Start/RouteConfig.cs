@@ -101,19 +101,19 @@ namespace ciBadgeForWeb
             routes.MapRoute(
                 name: "Default_CIS1_param",
                 url: "{controller}/{action}/{parameter_id}",
-                defaults: new { controller = "Home", action = "Index", parameter_id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Login", parameter_id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
                 name: "Default_CIS1_id",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Login", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
                 name: "Default_CIS2",
                 url: "cis/{controller}/{action}/{parameter_id}",
-                defaults: new { controller = "Home", action = "Index", parameter_id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Login", parameter_id = UrlParameter.Optional }
             );
 
             //
@@ -122,7 +122,7 @@ namespace ciBadgeForWeb
             routes.MapRoute(
                 name: "Default_TCD",
                 url: "tcd/{controller}/{action}/{parameter_id}",
-                defaults: new { controller = "Home", action = "Index", parameter_id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Login", parameter_id = UrlParameter.Optional }
             );
 
         }

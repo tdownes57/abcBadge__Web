@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ciBadgeForWeb.Models;  //Added 8/10/2019 thomas downes    
 
 namespace ciBadgeForWeb.Controllers
 {
@@ -17,6 +18,52 @@ namespace ciBadgeForWeb.Controllers
         //{
         //    return View();  //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         //}
+
+        public ActionResult Login()
+        {
+            //
+            //  https://www.c-sharpcorner.com/article/simple-login-application-using-Asp-Net-mvc/ 
+            //
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(UserLogin objUser)
+        {
+            //
+            //  https://www.c-sharpcorner.com/article/simple-login-application-using-Asp-Net-mvc/ 
+            //
+            if (ModelState.IsValid)
+            {
+                using (DB_Entities db = new DB_Entities())
+                {
+                    var obj = db.UserProfiles.Where(a => a.UserName.Equals(objUser.UserName) && a.Password.Equals(objUser.Password)).FirstOrDefault();
+                    if (obj != null)
+                    {
+                        Session["UserID"] = obj.UserId.ToString();
+                        Session["UserName"] = obj.UserName.ToString();
+                        return RedirectToAction("UserDashBoard");
+                    }
+                }
+            }
+            return View(objUser);
+        }
+
+        public ActionResult UserDashBoard()
+        {
+            //
+            //  https://www.c-sharpcorner.com/article/simple-login-application-using-Asp-Net-mvc/ 
+            //
+            if (Session["UserID"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
+        }
 
         public ActionResult Index(Nullable<int> parameter_id)
         {

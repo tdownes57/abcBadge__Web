@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "UserDashBoard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--https://www.c-sharpcorner.com/article/simple-login-application-using-Asp-Net-mvc/ -->
+
+< fieldset >
+    < legend > User DashBoard < /legend>
+
+@if (Session["UserName"] != null)
+{< text >
+    Welcome @Session["UserName"].ToString() < /text>
+    } < /fieldset>
+
