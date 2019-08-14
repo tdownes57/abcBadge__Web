@@ -16,6 +16,15 @@ Public Class PictureExamples
     Private Shared mod_imageForNoPicture As Image ''Added 7/8/2019 td 
     Private Shared mod_imageSusanSample As Image ''Added 7/10/2019 td 
 
+    Public Shared Function GetImageByIndex(par_indexImage As Integer) As Image
+        ''
+        ''Added 7/9/2019  
+        ''
+        Return mod_images_Jpegs(par_indexImage)
+
+    End Function ''End of "Public Shared Function GetImageByIndex() As Image"
+
+
     Public Shared Function GetExample() As Image
         ''
         ''Added 7/9/2019  
