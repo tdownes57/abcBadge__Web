@@ -20,7 +20,7 @@ Public Class PictureExamples
         ''
         ''Added 8/13/2019  
         ''
-        If (mod_images_PNGs Is Nothing) Then mod_images_PNGs = GetListOfImages_PNGs()
+        If (mod_images_Jpgs Is Nothing) Then mod_images_Jpegs = GetListOfImages_Jpegs()
 
         Return mod_images_Jpegs(par_indexImage)
 
