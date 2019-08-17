@@ -18,7 +18,8 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44349</IISExpressSSLPort>
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -451,6 +452,7 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\UserDashBoard.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -476,6 +478,10 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\ciLayout\ciBadgeInterfaces\ciBadgeInterfaces.vbproj">
+      <Project>{3d1acca6-585e-4c92-9a6d-9a51d2f72f5f}</Project>
+      <Name>ciBadgeInterfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\ciLayout\ciLayoutPrintLib\ciLayoutPrintLib.vbproj">
       <Project>{f8271e6c-5c26-4cec-bd4c-ad3b10fef6b9}</Project>
       <Name>ciLayoutPrintLib</Name>

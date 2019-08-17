@@ -23,6 +23,7 @@ namespace ciBadgeForWeb.Controllers
     
         static IList<Models.CICustomer> mod_customerList = new List<Models.CICustomer>() {
                     new Models.CICustomer(){ CustomerCode="CIS100", CustomerName="CI Solutions" },
+                    new Models.CICustomer(){ CustomerCode="ABC999", CustomerName="Good College" },
                     new Models.CICustomer(){ CustomerCode="XYZ999", CustomerName="XYZ High School"  },
            };
 
