@@ -126,7 +126,8 @@ ExitHandler:
 
         ''6/16/2019 td''strPathToFolderWithPics = My.Application.Info.DirectoryPath & "\PictureExamples"
         ''6/22/2019 td''strPathToFolderWithPics = "C:\Users\Jane\source\repos\ciBadgeForWeb\ciPictures_VB\PictureExamples"
-        strPathToFolderWithPics = "C:\CI Solutions\CI Badge Web\ciPictures_VB\PictureExamples"
+        ''8/20/2019 td''strPathToFolderWithPics = "C:\CI Solutions\CI Badge Web\ciPictures_VB\PictureExamples"
+        strPathToFolderWithPics = (My.Application.Info.DirectoryPath & "\PictureExamples")
 
         For intTry As Integer = 1 To 2
 

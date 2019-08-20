@@ -148,7 +148,8 @@ namespace ciBadgeForWeb.Controllers
 
                         //Save #2 of 2.  System.IO.Path.Combine !!
                         //
-                        path = Path.Combine("C:\\CI Solutions\\CI Badge Web\\ciPictures_VB\\BackExamples", fileName);
+                        //path = Path.Combine("C:\\CI Solutions\\CI Badge Web\\ciPictures_VB\\BackExamples", fileName);
+                        path = Path.Combine("~/Images/BackExamples", fileName);
                         file.SaveAs(path);
 
                         ModelState.Clear();
