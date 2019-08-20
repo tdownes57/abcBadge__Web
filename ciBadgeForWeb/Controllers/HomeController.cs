@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using ciBadgeForWeb.Models;  //Added 8/10/2019 thomas downes    
+using ciBadgeForWeb.Models;  //Added 8/10/2019 thomas downes   
+//using EntityFramework;  //Added 8/15/2019 td  
 
 namespace ciBadgeForWeb.Controllers
 {
@@ -36,16 +37,28 @@ namespace ciBadgeForWeb.Controllers
             //
             if (ModelState.IsValid)
             {
-                using (DB_Entities db = new DB_Entities())
+                //  8/15/2019 td''using (DB_Entities db = new DB_Entities())
+                //{
+                //    var obj = db.UserProfiles.Where(a => a.UserName.Equals(objUser.UserName) && a.Password.Equals(objUser.Password)).FirstOrDefault();
+                //    if (obj != null)
+                //    {
+                //        Session["UserID"] = obj.UserId.ToString();
+                //        Session["UserName"] = obj.UserName.ToString();
+                //        return RedirectToAction("UserDashBoard");
+                //    }
+                //  8/15/2019 td''}
+
+                bool boolUserSupport = ("support".Equals(objUser.UserName.ToLower()));
+                bool boolSupportPW = ("teal90720".Equals(objUser.Password));
+                bool boolSupportAuthenticated = (boolUserSupport && boolSupportPW); 
+
+                if (boolSupportAuthenticated)
                 {
-                    var obj = db.UserProfiles.Where(a => a.UserName.Equals(objUser.UserName) && a.Password.Equals(objUser.Password)).FirstOrDefault();
-                    if (obj != null)
-                    {
-                        Session["UserID"] = obj.UserId.ToString();
-                        Session["UserName"] = obj.UserName.ToString();
-                        return RedirectToAction("UserDashBoard");
-                    }
+                     Session["UserID"] = objUser.UserName.ToString();
+                     Session["UserName"] = objUser.UserName.ToString();
+                     return RedirectToAction("UserDashBoard");
                 }
+
             }
             return View(objUser);
         }
