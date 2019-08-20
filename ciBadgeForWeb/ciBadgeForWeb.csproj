@@ -401,6 +401,10 @@
     <Content Include="Scripts\TextMover_T99.js" />
     <Content Include="Scripts\ToolTips1of4.js" />
     <Content Include="Scripts\UploadBackground.js" />
+    <Content Include="SQL\CreateTables - Just 5 + 1 tables.sql" />
+    <Content Include="SQL\CreateTables - Just 6 tables.sql" />
+    <Content Include="SQL\CreateTables - Mar29.sql" />
+    <Content Include="SQL\CreateTables.sql" />
     <Content Include="Views\__BadgeRecipient_Unused\test_JpegFile.htm" />
     <Content Include="Views\Example\Example1.aspx" />
     <Content Include="Views\Home\ExampleBadge.aspx" />
