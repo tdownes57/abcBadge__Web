@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ciBadgeForWeb.Models;  //Added 8/10/2019 thomas downes    
+//using EntityFramework;   //Added 8/11/2019 thomas downes 
 
 namespace ciBadgeForWeb.Controllers
 {
