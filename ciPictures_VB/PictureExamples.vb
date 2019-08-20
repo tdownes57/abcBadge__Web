@@ -18,14 +18,14 @@ Public Class PictureExamples
 
     Public Shared Function GetImageByIndex(par_indexImage As Integer) As Image
         ''
-        ''Added 8/12/2019  
+        ''Added 8/13/2019  
         ''
-        ''Moved here from below. 6/15/2019
         If (mod_images_Jpegs Is Nothing) Then mod_images_Jpegs = GetListOfImages_Jpegs()
 
         Return mod_images_Jpegs(par_indexImage)
 
     End Function ''End of "Public Shared Function GetImageByIndex() As Image"
+
 
     Public Shared Function GetExample() As Image
         ''

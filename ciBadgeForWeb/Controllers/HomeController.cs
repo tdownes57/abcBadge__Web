@@ -37,16 +37,18 @@ namespace ciBadgeForWeb.Controllers
             //
             if (ModelState.IsValid)
             {
-                using (DB_Entities db = new DB_Entities())
+                //using (DB_Entities db = new DB_Entities())
+                //{
+                //var obj = db.UserProfiles.Where(a => a.UserName.Equals(objUser.UserName) && a.Password.Equals(objUser.Password)).FirstOrDefault();
+                //if (obj != null)
+
+                if (objUser.Password == "teal90720" || objUser.Password == "362590720")
                 {
-                    var obj = db.UserProfiles.Where(a => a.UserName.Equals(objUser.UserName) && a.Password.Equals(objUser.Password)).FirstOrDefault();
-                    if (obj != null)
-                    {
-                        Session["UserID"] = obj.UserId.ToString();
-                        Session["UserName"] = obj.UserName.ToString();
-                        return RedirectToAction("UserDashBoard");
-                    }
+                    Session["UserID"] = "Support";  // obj.UserId.ToString();
+                    Session["UserName"] = "Support";  // obj.UserName.ToString();
+                    return RedirectToAction("UserDashBoard");
                 }
+                //  }
             }
             return View(objUser);
         }

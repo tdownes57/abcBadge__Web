@@ -11,6 +11,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ciPictures_VB", "ciPictures
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ciLayoutPrintLib", "..\ciLayout\ciLayoutPrintLib\ciLayoutPrintLib.vbproj", "{F8271E6C-5C26-4CEC-BD4C-AD3B10FEF6B9}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ciBadgeInterfaces", "..\ciLayout\ciBadgeInterfaces\ciBadgeInterfaces.vbproj", "{3D1ACCA6-585E-4C92-9A6D-9A51D2F72F5F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{F8271E6C-5C26-4CEC-BD4C-AD3B10FEF6B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8271E6C-5C26-4CEC-BD4C-AD3B10FEF6B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8271E6C-5C26-4CEC-BD4C-AD3B10FEF6B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D1ACCA6-585E-4C92-9A6D-9A51D2F72F5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D1ACCA6-585E-4C92-9A6D-9A51D2F72F5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D1ACCA6-585E-4C92-9A6D-9A51D2F72F5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D1ACCA6-585E-4C92-9A6D-9A51D2F72F5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
