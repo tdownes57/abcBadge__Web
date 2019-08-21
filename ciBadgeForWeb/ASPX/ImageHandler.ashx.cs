@@ -22,6 +22,10 @@ namespace ciBadgeForWeb
             bool boolImageSample = false; //Added 7/10/2019 td 
             bool boolApplyWidth = false;  //Added 7/13/2019 td  
 
+            //Added 8/20/2019 td 
+            //
+            // 8-21-2019 td//ciPictures_VB.PictureExamples.PathToFolderOfImages = "~/Images/PictureExamples";
+
             //Added 7/9/2019 td  
             string queryID_ofRecip = context.Request.QueryString["id"];
 

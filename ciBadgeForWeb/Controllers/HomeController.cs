@@ -25,6 +25,8 @@ namespace ciBadgeForWeb.Controllers
             //
             //  https://www.c-sharpcorner.com/article/simple-login-application-using-Asp-Net-mvc/ 
             //
+            ciPictures_VB.PictureExamples.PathToFolderOfImages = (HttpRuntime.AppDomainAppPath + "\\Images\\PictureExamples");
+
             return View();
         }
 
@@ -85,6 +87,7 @@ namespace ciBadgeForWeb.Controllers
             //
             //   5-24-2019 td//public ActionResult Index(int id
             //
+            ciPictures_VB.PictureExamples.PathToFolderOfImages = (HttpRuntime.AppDomainAppPath + "Images\\PictureExamples");
 
             return (ViewResult)View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         }

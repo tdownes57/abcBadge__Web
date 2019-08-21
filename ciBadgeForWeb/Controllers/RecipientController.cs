@@ -67,7 +67,8 @@ namespace ciBadgeForWeb.Controllers
             //Added 7/12/2019 thomas downes
             //
             PersonalityConfigID_current = 1;  //Set Config #1 to be the Current Personality Config. 
-            return (ViewResult)View(mod_recipientList.Where(s => s.ConfigID == PersonalityConfigID_current));
+            //return (ViewResult)View(mod_recipientList.Where(s => s.ConfigID == PersonalityConfigID_current));
+            return (ViewResult)View("Index", mod_recipientList.Where(s => s.ConfigID == PersonalityConfigID_current));
         }
 
         // GET: Recipient
@@ -77,7 +78,8 @@ namespace ciBadgeForWeb.Controllers
             //Added 7/12/2019 thomas downes
             //
             PersonalityConfigID_current = 2;  //Set Config #1 to be the Current Personality Config. 
-            return (ViewResult)View(mod_recipientList.Where(s => s.ConfigID == PersonalityConfigID_current));
+            //return (ViewResult)View(mod_recipientList.Where(s => s.ConfigID == PersonalityConfigID_current));
+            return (ViewResult)View("Index", mod_recipientList.Where(s => s.ConfigID == PersonalityConfigID_current));
         }
 
         // GET: Recipient/Details/5

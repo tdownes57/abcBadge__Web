@@ -16,11 +16,15 @@ Public Class PictureExamples
     Private Shared mod_imageForNoPicture As Image ''Added 7/8/2019 td 
     Private Shared mod_imageSusanSample As Image ''Added 7/10/2019 td 
 
+    Public Shared PathToFolderOfImages As String = "" ''Added 8/20/2019 td  
+
     Public Shared Function GetImageByIndex(par_indexImage As Integer) As Image
         ''
         ''Added 8/13/2019  
         ''
-        If (mod_images_Jpegs Is Nothing) Then mod_images_Jpegs = GetListOfImages_Jpegs()
+        ''8/20/2019 td''If (mod_images_Jpegs Is Nothing) Then mod_images_Jpegs = GetListOfImages_Jpegs()
+
+        If (mod_images_Jpegs Is Nothing) Then mod_images_Jpegs = GetListOfImages_Jpegs(PathToFolderOfImages)
 
         Return mod_images_Jpegs(par_indexImage)
 
@@ -31,11 +35,13 @@ Public Class PictureExamples
         ''
         ''Added 7/9/2019  
         ''
-        Return GetExample_Jpeg()
+        ''8/20/2019 td''Return GetExample_Jpeg()
+        Return GetExample_Jpeg(PathToFolderOfImages)
 
     End Function ''End of "Public Shared Function GetExample() As Image"
 
-    Public Shared Function GetExample_Jpeg() As Image  ''6/13/2019 td''As System.Drawing.Image
+    Public Shared Function GetExample_Jpeg(par_pathToJpegsFolder As String) As Image  ''6/13/2019 td''As System.Drawing.Image
+        ''8/20/2019 td'' Public Shared Function GetExample_Jpeg(par_pathToJpegsFolder As String) As Image
         ''7/9/2019 td''Public Shared Function GetExample() As Image
         ''
         ''Added 6/13/2019 td  
@@ -45,7 +51,8 @@ Public Class PictureExamples
 
         ''Moved here from below. 6/15/2019
         ''7/8/2019 td''If (mod_images_Jpegs Is Nothing) Then mod_images_Jpegs = GetListOfImages()
-        If (mod_images_Jpegs Is Nothing) Then mod_images_Jpegs = GetListOfImages_Jpegs()
+        '' 8/20/2019 td''If (mod_images_Jpegs Is Nothing) Then mod_images_Jpegs = GetListOfImages_Jpegs()
+        If (mod_images_Jpegs Is Nothing) Then mod_images_Jpegs = GetListOfImages_Jpegs(par_pathToJpegsFolder)
 
         ''See bottom.''s_intCallIndex += 1
         If (s_intCallIndex >= mod_images_Jpegs.Count) Then s_intCallIndex = 0
@@ -92,7 +99,9 @@ ExitHandler:
             ''
             ''The following function looks for the image "NoPic.jpg".  ---7/10/2019 td
             ''
-            mod_images_Jpegs = GetListOfImages_Jpegs()
+            ''8/20/2019 td''mod_images_Jpegs = GetListOfImages_Jpegs()
+            mod_images_Jpegs = GetListOfImages_Jpegs(PathToFolderOfImages)
+
         End If ''End of "If (mod_images_Jpegs Is Nothing) Then"
 
         Return mod_imageForNoPicture
@@ -107,14 +116,17 @@ ExitHandler:
             ''
             ''The following function looks for the image "Sample.jpg".  ---7/10/2019 td
             ''
-            mod_images_Jpegs = GetListOfImages_Jpegs()
+            '' 8/20/2019 td''mod_images_Jpegs = GetListOfImages_Jpegs()
+            mod_images_Jpegs = GetListOfImages_Jpegs(PathToFolderOfImages)
+
         End If ''End of "If (mod_images_Jpegs Is Nothing) Then"
 
         Return mod_imageSusanSample
 
     End Function ''End of "Public Shared Function GetImageSusanSample() As Image"
 
-    Private Shared Function GetListOfImages_Jpegs() As List(Of Image)
+    Private Shared Function GetListOfImages_Jpegs(par_pathToJpegsFolder As String) As List(Of Image)
+        ''  8/20 td'' Private Shared Function GetListOfImages_Jpegs() As List(Of Image) 
         '' 7/8 td''Private Shared Function GetListOfImages() As List(Of Image)
         '' 
         ''Added 6/13/2019 thomas downes 
@@ -126,8 +138,9 @@ ExitHandler:
 
         ''6/16/2019 td''strPathToFolderWithPics = My.Application.Info.DirectoryPath & "\PictureExamples"
         ''6/22/2019 td''strPathToFolderWithPics = "C:\Users\Jane\source\repos\ciBadgeForWeb\ciPictures_VB\PictureExamples"
-        ''8/20/2019 td''strPathToFolderWithPics = "C:\CI Solutions\CI Badge Web\ciPictures_VB\PictureExamples"
-        strPathToFolderWithPics = (My.Application.Info.DirectoryPath & "\PictureExamples")
+        ''#1 8/20/2019 td''strPathToFolderWithPics = "C:\CI Solutions\CI Badge Web\ciPictures_VB\PictureExamples"
+        '' #2 8/20/2019 td''strPathToFolderWithPics = (My.Application.Info.DirectoryPath & "\Images\PictureExamples")
+        strPathToFolderWithPics = par_pathToJpegsFolder ''(My.Application.Info.DirectoryPath & "\Images\PictureExamples")
 
         For intTry As Integer = 1 To 2
 
