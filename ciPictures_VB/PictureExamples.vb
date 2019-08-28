@@ -18,11 +18,17 @@ Public Class PictureExamples
 
     Public Shared PathToFolderOfImages As String = "" ''Added 8/20/2019 td  
 
-    Public Shared Function GetImageByIndex(par_indexImage As Integer) As Image
+    Public Shared Function GetImageByIndex(par_indexImage As Integer, Optional ByRef pref_strErrorMessage As String = "") As Image
         ''
         ''Added 8/13/2019  
         ''
         ''8/20/2019 td''If (mod_images_Jpegs Is Nothing) Then mod_images_Jpegs = GetListOfImages_Jpegs()
+
+        ''Added 8/28/2019 thomas d
+        If ("" = PathToFolderOfImages) Then ''Added 8/28/2019 thomas d
+            pref_strErrorMessage = "Missing path to the folder of images."
+            Return Nothing
+        End If ''ENd of "If ("" = PathToFolderOfImages) Then"
 
         If (mod_images_Jpegs Is Nothing) Then mod_images_Jpegs = GetListOfImages_Jpegs(PathToFolderOfImages)
 
