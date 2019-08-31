@@ -159,7 +159,10 @@ namespace ciBadgeForWeb
                 //objBitmap.Save(ms, ImageFormat.Jpeg);
                 if (imagePic != null)
                 {
-                    imagePic.Save(msPic, ImageFormat.Jpeg);
+                    //imagePic.Save(msPic, ImageFormat.Jpeg);
+                    //((System.Drawing.Image)imagePic.Clone()).Save(msPic, ImageFormat.Jpeg);
+                    System.Drawing.Image imagePic_clone = (System.Drawing.Image)imagePic.Clone();
+                    imagePic_clone.Save(msPic, ImageFormat.Jpeg);
                     context.Response.BinaryWrite(msPic.GetBuffer());
                 }
             }

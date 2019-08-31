@@ -18,18 +18,17 @@ Public Class PictureExamples
 
     Public Shared PathToFolderOfImages As String = "" ''Added 8/20/2019 td  
 
-    Public Shared Function GetImageByIndex(par_indexImage As Integer,
-                                           ByRef par_strErrMessage As String) As Image
+    Public Shared Function GetImageByIndex(par_indexImage As Integer, Optional ByRef pref_strErrorMessage As String = "") As Image
         ''
         ''Added 8/13/2019  
         ''
         ''8/20/2019 td''If (mod_images_Jpegs Is Nothing) Then mod_images_Jpegs = GetListOfImages_Jpegs()
 
-        ''Added 8/22/2019 td
-        If ("" = PathToFolderOfImages) Then
-            par_strErrMessage = "Path to images is not specified."
-            Exit Function
-        End If ''End of "If ("" = PathToFolderOfImages) Then"
+        ''Added 8/28/2019 thomas d
+        If ("" = PathToFolderOfImages) Then ''Added 8/28/2019 thomas d
+            pref_strErrorMessage = "Missing path to the folder of images."
+            Return Nothing
+        End If ''ENd of "If ("" = PathToFolderOfImages) Then"
 
         If (mod_images_Jpegs Is Nothing) Then mod_images_Jpegs = GetListOfImages_Jpegs(PathToFolderOfImages)
 
@@ -38,16 +37,10 @@ Public Class PictureExamples
     End Function ''End of "Public Shared Function GetImageByIndex() As Image"
 
 
-    Public Shared Function GetExample(par_strErrMessage As String) As Image
+    Public Shared Function GetExample() As Image
         ''
         ''Added 7/9/2019  
         ''
-        ''Added 8/22/2019 td
-        If ("" = PathToFolderOfImages) Then
-            par_strErrMessage = "Path to images is not specified."
-            Exit Function
-        End If ''End of "If ("" = PathToFolderOfImages) Then"
-
         ''8/20/2019 td''Return GetExample_Jpeg()
         Return GetExample_Jpeg(PathToFolderOfImages)
 

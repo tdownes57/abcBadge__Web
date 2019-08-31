@@ -20,8 +20,9 @@ namespace ciBadgeForWeb.Controllers
         //
         //Customer
         //
-    
-        static IList<Models.CICustomer> mod_customerList = new List<Models.CICustomer>() {
+        public static string Customer_current = "CIS100"; //Needed for the future Steps1234 controller.  ----Added 7/17/2019 td 
+
+        public static IList<Models.CICustomer> mod_customerList = new List<Models.CICustomer>() {
                     new Models.CICustomer(){ CustomerCode="CIS100", CustomerName="CI Solutions" },
                     new Models.CICustomer(){ CustomerCode="ABC999", CustomerName="Good College" },
                     new Models.CICustomer(){ CustomerCode="XYZ999", CustomerName="XYZ High School"  },
@@ -33,7 +34,7 @@ namespace ciBadgeForWeb.Controllers
             //
             //  Index = No further specification was made.  Enact "parental"/default behavior.  
             //
-            const bool c_boolSpecifyViewName = true;    //Added 5/28/2019 td
+            const bool c_boolSpecifyViewName = false;    //Added 5/28/2019 td
             if (c_boolSpecifyViewName) return View("Index");  //A View, i.e. a webpage, is the most popular type of ActionResult !!
 
             return View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
