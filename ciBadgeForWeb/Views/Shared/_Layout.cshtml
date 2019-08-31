@@ -19,21 +19,26 @@
                 @Html.ActionLink("CI Badge", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Customers", "Index", "Customer")</li>
-                    <li>@Html.ActionLink("Personalities", "Index", "Personality")</li>
-                    <li>@Html.ActionLink("Badge Layout", "Index", "LayoutText1")</li>
 
-                    @*<li>@Html.ActionLink("Students/Employees", "Index", "Recipient")</li>*@
-                    <li>@Html.ActionLink("Students", "Index_Cfg1", "Recipient")</li>
-                    <li>@Html.ActionLink("Staff", "Index_Cfg2", "Recipient")</li>
+                @if (Session["UserName"] != null)   @*https://stackoverflow.com/questions/42506595/mvc5-razor-check-session-value*@
+                {
 
-                    <li>@Html.ActionLink("Example of Badge", "Example", "Home")</li>
-                    <li>@Html.ActionLink("Steps 1 and 2", "Edit", "Steps1and2")</li>
-                </ul>
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("Customers", "Index", "Customer")</li>
+                        <li>@Html.ActionLink("Personalities", "Index", "Personality")</li>
+                        <li>@Html.ActionLink("Badge Layout", "Index", "LayoutText1")</li>
+
+                        @*<li>@Html.ActionLink("Students/Employees", "Index", "Recipient")</li>*@
+                        <li>@Html.ActionLink("Students", "Index_Cfg1", "Recipient")</li>
+                        <li>@Html.ActionLink("Staff", "Index_Cfg2", "Recipient")</li>
+
+                        <li>@Html.ActionLink("Example of Badge", "Example", "Home")</li>
+                        <li>@Html.ActionLink("Steps 1 and 2", "Edit", "Steps1and2")</li>
+                    </ul>
+                }
             </div>
             <div>
                 @*@Html.Partial("_Menu")*@
