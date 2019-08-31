@@ -37,11 +37,18 @@ Public Class PictureExamples
     End Function ''End of "Public Shared Function GetImageByIndex() As Image"
 
 
-    Public Shared Function GetExample() As Image
+    Public Shared Function GetExample(Optional par_strErrMessage As String = "") As Image
         ''
         ''Added 7/9/2019  
         ''
         ''8/20/2019 td''Return GetExample_Jpeg()
+
+        ''Added 8/22/2019 td
+        If ("" = PathToFolderOfImages) Then
+            par_strErrMessage = "Path to images is not specified."
+            Return Nothing ''Exit Function
+        End If ''End of "If ("" = PathToFolderOfImages) Then"
+
         Return GetExample_Jpeg(PathToFolderOfImages)
 
     End Function ''End of "Public Shared Function GetExample() As Image"
