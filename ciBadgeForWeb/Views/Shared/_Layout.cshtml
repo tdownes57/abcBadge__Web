@@ -20,7 +20,9 @@
             </div>
             <div class="navbar-collapse collapse">
 
-                @if (Session["UserName"] != null)   @*https://stackoverflow.com/questions/42506595/mvc5-razor-check-session-value*@
+                @*https://stackoverflow.com/questions/42506595/mvc5-razor-check-session-value*@
+
+                @if (Session["UserName"] != null)  
                 {
 
                     <ul class="nav navbar-nav">
