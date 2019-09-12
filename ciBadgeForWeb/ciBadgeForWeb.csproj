@@ -523,7 +523,7 @@
     <Content Include="Views\Personality\Edit.cshtml" />
     <Content Include="Views\Shared\_Menu.cshtml" />
     <Content Include="Views\BatchPrint\Index.cshtml" />
-    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\Index_not_in_use.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\UserDashBoard.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
