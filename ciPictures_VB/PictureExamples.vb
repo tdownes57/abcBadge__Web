@@ -18,7 +18,8 @@ Public Class PictureExamples
 
     Public Shared PathToFolderOfImages As String = "" ''Added 8/20/2019 td  
 
-    Public Shared Function GetImageByIndex(par_indexImage As Integer) As Image
+    Public Shared Function GetImageByIndex(par_indexImage As Integer,
+                                           Optional pref_errMessage As String = "") As Image
         ''
         ''Added 8/13/2019  
         ''
