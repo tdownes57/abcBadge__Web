@@ -32,6 +32,14 @@ Public Class PictureExamples
 
         If (mod_images_Jpegs Is Nothing) Then mod_images_Jpegs = GetListOfImages_Jpegs(PathToFolderOfImages)
 
+        ''Added 9/24/2019 td
+        Dim boolIndexIsPastTheEnd As Boolean
+        boolIndexIsPastTheEnd = (par_indexImage > -1 + mod_images_Jpegs.Count)
+        If (boolIndexIsPastTheEnd) Then
+            ''We have to cycle back to the beginning of the set of Jpeg portraits. ---9/24/2019 td
+            par_indexImage -= mod_images_Jpegs.Count
+        End If
+
         Return mod_images_Jpegs(par_indexImage)
 
     End Function ''End of "Public Shared Function GetImageByIndex() As Image"
