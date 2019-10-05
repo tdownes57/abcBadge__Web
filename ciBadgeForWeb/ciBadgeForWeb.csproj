@@ -551,6 +551,10 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\ciLayout\ciBadgeDesigner\ciBadgeDesigner.vbproj">
+      <Project>{3a21a08c-c694-4f11-9838-91fff99a5d82}</Project>
+      <Name>ciBadgeDesigner</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\ciLayout\ciBadgeElements\ciBadgeElements.vbproj">
       <Project>{e7eb43c4-358c-4880-9c9b-206127b57722}</Project>
       <Name>ciBadgeElements</Name>
