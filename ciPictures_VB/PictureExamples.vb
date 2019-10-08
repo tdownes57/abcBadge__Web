@@ -32,6 +32,9 @@ Public Class PictureExamples
 
         If (mod_images_Jpegs Is Nothing) Then mod_images_Jpegs = GetListOfImages_Jpegs(PathToFolderOfImages)
 
+        ''Added 9/20/2019 td 
+        par_indexImage = (par_indexImage Mod mod_images_Jpegs.Count)
+
         Return mod_images_Jpegs(par_indexImage)
 
     End Function ''End of "Public Shared Function GetImageByIndex() As Image"
