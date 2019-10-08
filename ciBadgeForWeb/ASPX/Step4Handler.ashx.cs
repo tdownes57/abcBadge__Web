@@ -4,12 +4,15 @@ using System.Linq;
 using System.Web;               //Added 5/20/2019 thomas d. 
 using System.Drawing;           //Added 5/20/2019 thomas d. 
 using System.Drawing.Imaging;   //Added 5/20/2019 thomas d. 
-using System.IO;                //Added 5/20/2019 thomas d. 
+using System.IO;                //Added 5/20/2019 thomas d.
+using ciLayoutPrintLib;     //Added 10/5/2019 td
+using ciBadgeElements;       //Added 10/5/2019 td  
+using ciBadgeElemImage;     //Added 10/5/2019 td  
 
 namespace ciBadgeForWeb
 {
     /// <summary>
-    /// Summary description for ImageHandler
+    /// Utilizes advanced layout programming from CILayoutDesigner by CI Solutions/Thomas Downes. 10/5/2019 td
     /// </summary>
     public class Step4Handler : IHttpHandler
     {
@@ -43,50 +46,39 @@ namespace ciBadgeForWeb
                 //
                 Image image_ex = null;  // = recipient_by_id_onlyone.Picture;
 
-                //Added 6/20/2019 td
                 //
-                ciLayoutPrintLib.LayoutExample objLayoutEx = new ciLayoutPrintLib.LayoutExample();
-                ciLayoutPrintLib.FormLayoutEg objFormLayoutEg_MaybeUnused = new ciLayoutPrintLib.FormLayoutEg();
-                ciLayoutPrintLib.LayoutPrint objLayoutPrint_MaybeUnused = new ciLayoutPrintLib.LayoutPrint();
+                // objLayoutEx 
+                //
+                LayoutExample objLayoutEx = new ciLayoutPrintLib.LayoutExample();
 
-                //Added 6/28/2019 thomas downes
                 bool boolPlainBackgroundImage;//Added 6/28/2019 thomas downes 
                 boolPlainBackgroundImage = ("back" == context.Request.QueryString["id"]);
                 bool boolNoImages = false; //added 7/6/2019 td
 
-                //Added 7/7/2019 td
-                //
                 int intBackgroundImageIndex = -1;
                 if (!String.IsNullOrEmpty(context.Request.QueryString["backid"]))
                 {
                     intBackgroundImageIndex = int.Parse(context.Request.QueryString["backid"]);
                 }
 
-                //Added 7/06/2019 thomas downes
                 int intPixelsWidth = 0; //Added 7/06/2019 thomas downes 
                 try
                 {
-                    //Added 7/06/2019 thomas downes
                     intPixelsWidth = int.Parse(context.Request.QueryString["width"]);
                 }
                 catch
                 {
                     //Just try .......
+                    //    If it's missing we should assume that a print-ready badge is being prepared. 
+                    //   ------10/5/2019 td
                 }
 
                 if (boolPlainBackgroundImage)
                 {
-                    //Added 6/28/2019 thomas downes
-                    //image_ex = objLayoutEx.GenerateImage_BackgroundOnly(false, false);
-                    // 7/6/2019 td//image_ex = objLayoutEx.GenerateImage_BackgroundOnly(bHorizontalLarge, bHorizontalSmall);
-
-                    //Added 7/6/2019 td
+                    //
+                    //Plain Background Image 
+                    //
                     objLayoutEx.WidthInPixels_Land = intPixelsWidth;
-
-                    //A dded 7/6/2019 td
-                    // 7-6-2019 td//ciLayoutPrintLib.LayoutExample
-                    // 7-6-2019 td//    .RefreshChoiceOfBackground_Next();
-                    // 7-7-2019 td //if (-1 != intBackgroundImageIndex) objLayoutEx.BackgroundImageIndex = intBackgroundImageIndex;
 
                     if (-1 != intBackgroundImageIndex) ciLayoutPrintLib.LayoutExample.RefreshChoiceOfBackground_ByIndex(intBackgroundImageIndex);
 
@@ -106,6 +98,9 @@ namespace ciBadgeForWeb
                 }
                 else
                 {
+                    //
+                    //Full Badge Image 
+                    //
                     int recipient_id = Int32.Parse(context.Request.QueryString["id"]);
 
                     recipients_list = Controllers.RecipientController.mod_recipientList;
@@ -113,24 +108,11 @@ namespace ciBadgeForWeb
                     var recipients_by_id_list = recipients_list.Where(s => s.RecipientID == recipient_id.ToString());
                     var recipient_by_id_onlyone = recipients_by_id_list.FirstOrDefault();
 
-                    //Added 6/20/2019 td 
                     if (recipient_by_id_onlyone is null) return;
-
-
-                    //Moved to the top of this if-block. 6/28/2019 td //Image image_ex = null;  // = recipient_by_id_onlyone.Picture;
-
-
-                    //objLayout;
-                    //objFormLayoutEg;
-                    //objLayoutPrint.
 
                     objLayoutEx.RecipientID = "1234";
                     objLayoutEx.RecipientName = "Chanin Mountebank";
-                    //6/20 td// objLayoutEx.RecipientFaceImage = recipient_by_id_onlyone.Picture;
                     objLayoutEx.RecipientPhoto = recipient_by_id_onlyone.Picture;
-
-                    // 6/20/2019 td // image_ex = objLayoutEx.GenerateImage("1234", "Chanin Ferrin", 
-                    //    objLayoutEx.RecipientPhoto);
 
                     //
                     //Modify the placement of the Student/Employee's Full Name. ----6/27/2019 td
@@ -142,9 +124,20 @@ namespace ciBadgeForWeb
                     string strFirstName = recipient_by_id_onlyone.FirstName;
                     string strFullName = (strFirstName + " " + strLastName);
 
-                    image_ex = objLayoutEx.GenerateImage(strRecipID, strFullName,
-                         objLayoutEx.RecipientPhoto,
-                         bHorizontalLarge, bHorizontalSmall);
+                    //image_ex = objLayoutEx.GenerateImage(strRecipID, strFullName,
+                    //     objLayoutEx.RecipientPhoto,
+                    //     bHorizontalLarge, bHorizontalSmall);
+
+                    //ciBadgeElemImage.modGenerate mod_generate = new modGenerate();
+
+                    
+
+
+
+
+
+
+
 
                 }
 

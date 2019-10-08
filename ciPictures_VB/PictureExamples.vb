@@ -32,19 +32,31 @@ Public Class PictureExamples
 
         If (mod_images_Jpegs Is Nothing) Then mod_images_Jpegs = GetListOfImages_Jpegs(PathToFolderOfImages)
 
-        ''Added 9/20/2019 td 
-        par_indexImage = (par_indexImage Mod mod_images_Jpegs.Count)
+        ''Added 9/24/2019 td
+        Dim boolIndexIsPastTheEnd As Boolean
+        boolIndexIsPastTheEnd = (par_indexImage > -1 + mod_images_Jpegs.Count)
+        If (boolIndexIsPastTheEnd) Then
+            ''We have to cycle back to the beginning of the set of Jpeg portraits. ---9/24/2019 td
+            par_indexImage -= mod_images_Jpegs.Count
+        End If
 
         Return mod_images_Jpegs(par_indexImage)
 
     End Function ''End of "Public Shared Function GetImageByIndex() As Image"
 
 
-    Public Shared Function GetExample() As Image
+    Public Shared Function GetExample(Optional par_strErrMessage As String = "") As Image
         ''
         ''Added 7/9/2019  
         ''
         ''8/20/2019 td''Return GetExample_Jpeg()
+
+        ''Added 8/22/2019 td
+        If ("" = PathToFolderOfImages) Then
+            par_strErrMessage = "Path to images is not specified."
+            Return Nothing ''Exit Function
+        End If ''End of "If ("" = PathToFolderOfImages) Then"
+
         Return GetExample_Jpeg(PathToFolderOfImages)
 
     End Function ''End of "Public Shared Function GetExample() As Image"

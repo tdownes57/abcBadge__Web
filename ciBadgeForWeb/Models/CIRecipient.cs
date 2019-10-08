@@ -5,10 +5,11 @@ using System.Web;
 using System.Web.Mvc; //Added 5/28/2019 td
 using System.ComponentModel.DataAnnotations; //Added 5/28/2019 td
 using System.Drawing; //Added 6/13/2019 thomas d. 
+using ciBadgeInterfaces; //Added 10/4/2019 td  
 
 namespace ciBadgeForWeb.Models
 {
-    public class CIRecipient
+    public class CIRecipient : ciBadgeInterfaces.IRecipient
     {
         //public int Mystring { get; set; }
 
@@ -18,11 +19,56 @@ namespace ciBadgeForWeb.Models
 
         [Key]
         [Display(Name = "Config ID")]
-        public int ConfigID { get; set; }
+        public int idfConfigID { get; set; }
 
         [Key]
         [Display(Name = "ID")]
         public string RecipientID { get; set; }
+
+        string IRecipient.RecipientID()
+        {
+            return this.RecipientID;
+        }
+
+        public string fstrID //Added 10-4-2019 td 
+        {
+            get
+                {
+                return this.RecipientID;
+            }
+            set{
+                this.RecipientID = value;
+            }
+        }
+
+        public string fstrLastName //Added 10-4-2019 td 
+        {
+            get
+            {
+                return this.FirstName;
+            }
+            set
+            {
+                this.RecipientID = value;
+            }
+        }
+
+        public string fstrFirstName //Added 10-4-2019 td 
+        {
+            get
+            {
+                return this.FirstName;
+            }
+            set
+            {
+                this.FirstName = value;
+            } 
+        }
+
+        public string fstrMidName { get; set; }
+        public int intTimesPrinted { get; set; }
+        public int idsCardDataID { get; set; }
+
 
         [Display(Name = "Picture")]
         public Image Picture { get; set; }
@@ -45,6 +91,36 @@ namespace ciBadgeForWeb.Models
         //Added 7/14/2019 THOMAS DOWNES
         //
         public string RFIDValue { get; set; }
+
+        //
+        //
+        //Custom Fields
+        //
+        //
+        public DateTime DateField01 { get; set; }
+        public DateTime DateField02 { get; set; }
+        public DateTime DateField03 { get; set; }
+        public DateTime DateField04 { get; set; }
+        public DateTime DateField05 { get; set; }
+
+
+
+        public string TextField01 { get; set; }
+        public string TextField02 { get; set; }
+        public string TextField03 { get; set; }
+        public string TextField04 { get; set; }
+        public string TextField05 { get; set; }
+        public string TextField06 { get; set; }
+        public string TextField07 { get; set; }
+        public string TextField08 { get; set; }
+        public string TextField09 { get; set; }
+        public string TextField10 { get; set; }
+        public string TextField11 { get; set; }
+        public string TextField12 { get; set; }
+        public string TextField13 { get; set; }
+        public string TextField14 { get; set; }
+        public string TextField15 { get; set; }
+
 
         public DateTime EffectiveDate { get; set; }
         public DateTime ExpirationDate { get; set; }
@@ -69,7 +145,8 @@ namespace ciBadgeForWeb.Models
         public string ExpirationDate_Text
         {
             //Added 5/30/2019
-            get {
+            get
+            {
                 if (ExpirationDate.Year < 2000) return ""; //Added 7/8/2019 td 
                 return ExpirationDate.ToString("MM/dd/yyyy");
             }
@@ -88,7 +165,7 @@ namespace ciBadgeForWeb.Models
             //
             //Added 7-13-2019 thomas d.
             //
-            return Controllers.PersonalityController.mod_Personalities[this.ConfigID];
+            return Controllers.PersonalityController.mod_Personalities[this.idfConfigID];
         }
 
         //
@@ -136,9 +213,60 @@ namespace ciBadgeForWeb.Models
 
             string strOutput;
             strOutput = $"Student or Employee {this.FirstName} {this.LastName} has a big problem.";
-            return strOutput;  
+            return strOutput;
+        }
+
+        //
+        //Addeed 10/4/2019 thomas downes  
+        //
+        public string GetTextValue(EnumCIBFields par_enum)
+        {
+            switch (par_enum)
+            {
+                case EnumCIBFields.DateField01: return DateField01.ToString("MM/dd/yyyy"); break;
+                case EnumCIBFields.DateField02: return DateField02.ToString("MM/dd/yyyy"); break;
+                case EnumCIBFields.DateField03: return DateField03.ToString("MM/dd/yyyy"); break;
+                case EnumCIBFields.DateField04: return DateField04.ToString("MM/dd/yyyy"); break;
+                case EnumCIBFields.DateField05: return DateField05.ToString("MM/dd/yyyy"); break;
+
+                case EnumCIBFields.TextField01: return TextField01; break;
+                case EnumCIBFields.TextField02: return TextField02; break;
+                case EnumCIBFields.TextField03: return TextField03; break;
+                case EnumCIBFields.TextField04: return TextField04; break;
+                case EnumCIBFields.TextField05: return TextField05; break;
+                case EnumCIBFields.TextField06: return TextField06; break;
+                case EnumCIBFields.TextField07: return TextField07; break;
+                case EnumCIBFields.TextField08: return TextField08; break;
+                case EnumCIBFields.TextField09: return TextField09; break;
+                case EnumCIBFields.TextField10: return TextField10; break;
+                case EnumCIBFields.TextField11: return TextField11; break;
+                case EnumCIBFields.TextField12: return TextField12; break;
+                case EnumCIBFields.TextField13: return TextField13; break;
+                case EnumCIBFields.TextField14: return TextField14; break;
+                case EnumCIBFields.TextField15: return TextField15; break;
+                default: return "Undermined"; break;
+            }
+            return "Undetermined";
+        }
+
+        //
+        //Addeed 10/4/2019 thomas downes  
+        //
+        public DateTime GetDateValue(EnumCIBFields par_enum)
+        {
+            switch (par_enum)
+            {
+                case EnumCIBFields.DateField01: return DateField01; //break;
+                case EnumCIBFields.DateField02: return DateField02; //break;
+                case EnumCIBFields.DateField03: return DateField03; //break;
+                case EnumCIBFields.DateField04: return DateField04; //break;
+                case EnumCIBFields.DateField05: return DateField05; //break;
+            }
+            return DateTime.MinValue;
         }
 
     }
 }
- 
+
+
+

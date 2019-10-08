@@ -21,13 +21,13 @@ namespace ciBadgeForWeb.Controllers
         //Recipient = Student or Employee receiving the Badge. 
         //
         public static IList<Models.CIRecipient> mod_recipientList = new List<Models.CIRecipient>() {
-                    new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=1, RecipientID ="1", FirstName="Johnny", LastName = "Davidson", Picture = PictureExamples.GetExample()  },
-                    new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=1, RecipientID ="2", FirstName="Stevie", LastName = "Austin", Picture = PictureExamples.GetExample() },
-                    new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=1, RecipientID ="3", FirstName="Billy", LastName = "Clinton", Picture = PictureExamples.GetExample()   },
-                    new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=1, RecipientID ="4", FirstName="Ronny", LastName = "Thegot", Picture = PictureExamples.GetExample()   },
-                    new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=1, RecipientID ="5", FirstName="Dorothy" , LastName = "Wood", Picture = PictureExamples.GetExample()  },
-                    new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=1, RecipientID ="6", FirstName="Christy", LastName = "Forbes", Picture = PictureExamples.GetExample()   },
-                    new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=1, RecipientID = "7", FirstName="Tommy", LastName = "Forbes", Picture = PictureExamples.GetExample()   },
+                    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="1", FirstName="Johnny", LastName = "Davidson", Picture = PictureExamples.GetExample()  },
+                    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="2", FirstName="Stevie", LastName = "Austin", Picture = PictureExamples.GetExample() },
+                    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="3", FirstName="Billy", LastName = "Clinton", Picture = PictureExamples.GetExample()   },
+                    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="4", FirstName="Ronny", LastName = "Thegot", Picture = PictureExamples.GetExample()   },
+                    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="5", FirstName="Dorothy" , LastName = "Wood", Picture = PictureExamples.GetExample()  },
+                    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="6", FirstName="Christy", LastName = "Forbes", Picture = PictureExamples.GetExample()   },
+                    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID = "7", FirstName="Tommy", LastName = "Forbes", Picture = PictureExamples.GetExample()   },
 
             //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="1", FirstName="John", LastName = "Davidson", Picture = PictureExamples.GetExample()  },
             //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="2", FirstName="Steve", LastName = "Austin", Picture = PictureExamples.GetExample()  },
@@ -37,13 +37,13 @@ namespace ciBadgeForWeb.Controllers
             //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="6", FirstName="Christopher", LastName = "Forbes", Picture = PictureExamples.GetExample()   },
             //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID = "7", FirstName="Robin", LastName = "Forbes", Picture = PictureExamples.GetExample()   }
 
-                            new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=2, RecipientID ="1", FirstName="Jayce", LastName = "P.", Picture = PictureExamples.GetExample()  },
-                    new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=2, RecipientID ="2", FirstName="Chanin", LastName = "F.", Picture = PictureExamples.GetExample() },
-                    new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=2, RecipientID ="3", FirstName="Sammi", LastName = "F.", Picture = PictureExamples.GetExample()   },
-                    new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=2, RecipientID ="4", FirstName="Erick", LastName = "M.", Picture = PictureExamples.GetExample()   },
-                    new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=2, RecipientID ="5", FirstName="Erica" , LastName = "A.", Picture = PictureExamples.GetExample()  },
-                    new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=2, RecipientID ="6", FirstName="Jimmy", LastName = "A.", Picture = PictureExamples.GetExample()   },
-                    new Models.CIRecipient(){ CustomerID="CIS100", ConfigID=2, RecipientID = "7", FirstName="Thomas", LastName = "D.", Picture = PictureExamples.GetExample()   }
+                            new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="1", FirstName="Jayce", LastName = "P.", Picture = PictureExamples.GetExample()  },
+                    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="2", FirstName="Chanin", LastName = "F.", Picture = PictureExamples.GetExample() },
+                    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="3", FirstName="Sammi", LastName = "F.", Picture = PictureExamples.GetExample()   },
+                    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="4", FirstName="Erick", LastName = "M.", Picture = PictureExamples.GetExample()   },
+                    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="5", FirstName="Erica" , LastName = "A.", Picture = PictureExamples.GetExample()  },
+                    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="6", FirstName="Jimmy", LastName = "A.", Picture = PictureExamples.GetExample()   },
+                    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID = "7", FirstName="Thomas", LastName = "D.", Picture = PictureExamples.GetExample()   }
 };
 
         // GET: Recipient
@@ -57,7 +57,7 @@ namespace ciBadgeForWeb.Controllers
 
             //return View();  //A ViewResult, i.e. a webpage, is the most popular type of ActionResult !!
             //     7-12-2019 td//return (ViewResult)View(mod_recipientList);
-            return (ViewResult)View(mod_recipientList.Where(s => s.ConfigID == PersonalityConfigID_current));
+            return (ViewResult)View(mod_recipientList.Where(s => s.idfConfigID == PersonalityConfigID_current));
         }
 
         // GET: Recipient
@@ -68,7 +68,7 @@ namespace ciBadgeForWeb.Controllers
             //
             PersonalityConfigID_current = 1;  //Set Config #1 to be the Current Personality Config. 
             //return (ViewResult)View(mod_recipientList.Where(s => s.ConfigID == PersonalityConfigID_current));
-            return (ViewResult)View("Index", mod_recipientList.Where(s => s.ConfigID == PersonalityConfigID_current));
+            return (ViewResult)View("Index", mod_recipientList.Where(s => s.idfConfigID == PersonalityConfigID_current));
         }
 
         // GET: Recipient
@@ -79,7 +79,7 @@ namespace ciBadgeForWeb.Controllers
             //
             PersonalityConfigID_current = 2;  //Set Config #1 to be the Current Personality Config. 
             //return (ViewResult)View(mod_recipientList.Where(s => s.ConfigID == PersonalityConfigID_current));
-            return (ViewResult)View("Index", mod_recipientList.Where(s => s.ConfigID == PersonalityConfigID_current));
+            return (ViewResult)View("Index", mod_recipientList.Where(s => s.idfConfigID == PersonalityConfigID_current));
         }
 
         // GET: Recipient/Details/5
@@ -233,7 +233,7 @@ namespace ciBadgeForWeb.Controllers
             //
             //Added 7/12/2019 td 
             //
-            return mod_recipientList.Where(s => s.ConfigID == RecipientController.PersonalityConfigID_current);
+            return mod_recipientList.Where(s => s.idfConfigID == RecipientController.PersonalityConfigID_current);
 
         }
 
@@ -242,7 +242,7 @@ namespace ciBadgeForWeb.Controllers
             //
             //Added 7/12/2019 td 
             //
-            return mod_recipientList.Where(s => s.ConfigID == 1);
+            return mod_recipientList.Where(s => s.idfConfigID == 1);
 
         }
 
@@ -251,7 +251,7 @@ namespace ciBadgeForWeb.Controllers
             //
             //Added 7/12/2019 td 
             //
-            return mod_recipientList.Where(s => s.ConfigID == 2);
+            return mod_recipientList.Where(s => s.idfConfigID == 2);
 
         }
 

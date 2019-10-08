@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ciBadgeForWeb.Models; //Added 7/14/2019 Thomas DOWNES  
+using ciPictures_VB;  //Added 9/12/2019 td  
 
 namespace ciBadgeForWeb.Controllers
 {
