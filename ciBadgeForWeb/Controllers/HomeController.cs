@@ -25,8 +25,19 @@ namespace ciBadgeForWeb.Controllers
             //
             //  https://www.c-sharpcorner.com/article/simple-login-application-using-Asp-Net-mvc/ 
             //
-            ciPictures_VB.PictureExamples.PathToFolderOfImages = (HttpRuntime.AppDomainAppPath + "\\Images\\PictureExamples");
-            ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks = (HttpRuntime.AppDomainAppPath + "\\Images\\BackExamples");
+            ciPictures_VB.PictureExamples.PathToFolderOfImages = (HttpRuntime.AppDomainAppPath + "Images\\PictureExamples");
+            ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks = (HttpRuntime.AppDomainAppPath + "Images\\BackExamples");
+
+            return View();
+        }
+
+        public ActionResult LoginPlain()
+        {
+            //
+            //  https://www.c-sharpcorner.com/article/simple-login-application-using-Asp-Net-mvc/ 
+            //
+            ciPictures_VB.PictureExamples.PathToFolderOfImages = (HttpRuntime.AppDomainAppPath + "Images\\PictureExamples");
+            ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks = (HttpRuntime.AppDomainAppPath + "Images\\BackExamples");
 
             return View();
         }
@@ -38,8 +49,8 @@ namespace ciBadgeForWeb.Controllers
             //
             //  https://www.c-sharpcorner.com/article/simple-login-application-using-Asp-Net-mvc/ 
             //
-            ciPictures_VB.PictureExamples.PathToFolderOfImages = (HttpRuntime.AppDomainAppPath + "\\Images\\PictureExamples");
-            ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks = (HttpRuntime.AppDomainAppPath + "\\Images\\BackExamples");
+            ciPictures_VB.PictureExamples.PathToFolderOfImages = (HttpRuntime.AppDomainAppPath + "Images\\PictureExamples");
+            ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks = (HttpRuntime.AppDomainAppPath + "Images\\BackExamples");
 
             if (ModelState.IsValid)
             {
@@ -62,7 +73,37 @@ namespace ciBadgeForWeb.Controllers
                 {
                      Session["UserID"] = objUser.UserName.ToString();
                      Session["UserName"] = objUser.UserName.ToString();
-                     return RedirectToAction("UserDashBoard");
+                     //return RedirectToAction("UserDashBoard");
+                    return RedirectToAction("Index");
+                }
+
+            }
+            return View(objUser);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult LoginPlain(UserLogin objUser)
+        {
+            //
+            //  https://www.c-sharpcorner.com/article/simple-login-application-using-Asp-Net-mvc/ 
+            //
+            ciPictures_VB.PictureExamples.PathToFolderOfImages = (HttpRuntime.AppDomainAppPath + "Images\\PictureExamples");
+            ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks = (HttpRuntime.AppDomainAppPath + "Images\\BackExamples");
+
+            if (ModelState.IsValid)
+            {
+                bool boolUserSupport = ("support".Equals(objUser.UserName.ToLower()));
+                bool boolSupportPW = ("teal90720".Equals(objUser.Password));
+                bool boolSupportAuthenticated = (boolUserSupport && boolSupportPW);
+
+                if (boolSupportAuthenticated)
+                {
+                    Session["UserID"] = objUser.UserName.ToString();
+                    Session["UserName"] = objUser.UserName.ToString();
+                    //return RedirectToAction("UserDashBoard");
+                    return RedirectToAction("Index");
                 }
 
             }
@@ -91,8 +132,8 @@ namespace ciBadgeForWeb.Controllers
             //
             //   5-24-2019 td//public ActionResult Index(int id
             //
-            ciPictures_VB.PictureExamples.PathToFolderOfImages = (HttpRuntime.AppDomainAppPath + "\\Images\\PictureExamples");
-            ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks = (HttpRuntime.AppDomainAppPath + "\\Images\\BackExamples");
+            ciPictures_VB.PictureExamples.PathToFolderOfImages = (HttpRuntime.AppDomainAppPath + "Images\\PictureExamples");
+            ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks = (HttpRuntime.AppDomainAppPath + "Images\\BackExamples");
 
             return (ViewResult)View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         }

@@ -7,14 +7,15 @@
 
 <!--https://www.c-sharpcorner.com/article/simple-login-application-using-Asp-Net-mvc/ -->
 
-<div class="jumbotron">
-    @*<h1>CI Badge Web</h1>*@
-    <img src="~/Images/CIBadgeLogo.png" width="500" alt="CI Badge Web" />
-    <img src="~/Images/CISolutionsLogo.png" width="400" alt="CI Solutions" />
-    <h2>by CI Solutions</h2>
-    <p class="lead">CI Badge Web is a software service enabling you to create badges any group of people.</p>
-    <p><a href="https://www.cardintegrators.com/card-printing-software/" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+    <div class="jumbotron">
+        @*<h1>CI Badge Web</h1>*@
+        <img src="~/Images/CIBadgeLogo.png" width="500" alt="CI Badge Web" />
+        <img src="~/Images/CISolutionsLogo.png" width="400" alt="CI Solutions" />
+        <h2>by CI Solutions</h2>
+        <p class="lead">CI Badge Web is a software service enabling you to create badges any group of people.</p>
+        @*<p><a href="https://www.cardintegrators.com/card-printing-software/" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+        <p><a href="~/Home/LoginPlain" class="btn btn-primary btn-lg">Log in &raquo;</a></p>
+    </div>
 
 @using (Html.BeginForm("Login", "Home", FormMethod.Post))
 {

@@ -10,20 +10,8 @@
 
 <a href="https://www.dotnettricks.com/learn/mvc/how-to-upload-a-file-in-mvc4">https://www.dotnettricks.com/learn/mvc/how-to-upload-a-file-in-mvc4</a>
 
-@using (Html.BeginForm("FileUpload", "UploadBack", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-    @Html.ValidationSummary();
-    <ol>
-        <li class="lifile">
-            <input type="file" id="fileToUpload" name="file" />
-            <span class="field-validation-error" id="spanfile"></span>
-        </li>
-    </ol>
-    <input type="submit" id="btnSubmit" value="Upload" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-    <input type='file' id="imgInp" />
-    <img id="blah" src="#" alt="your image" />
-}
 
 <script type="text/jscript">
     //
@@ -125,21 +113,21 @@
     //Start of https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded
     //
 
-    //function readURL(input) {
-    //    if (input.files && input.files[0]) {
-    //        var reader = new FileReader();
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
 
-    //        reader.onload = function (e) {
-    //            $('#blah').attr('src', e.target.result);
-    //        }
+            reader.onload = function (e) {
+                $('#blah_preview').attr('src', e.target.result);
+            }
 
-    //        reader.readAsDataURL(input.files[0]);
-    //    }
-    //}
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
 
-    //$("#imgInp").change(function () {
-    //    readURL(this);
-    //});
+    $("#fileToUpload").change(function () {
+        readURL(this);
+    });
 
         //
     //End of https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded
@@ -150,33 +138,62 @@
 @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>*@
 
 
-     @*//        <body>
-    //
-    //    <h1>Super Upload Page</h1>
-    //
-    //    <p>Things to upload: </p>
-    //
-    //    <ol>
-        //
-        <li>Background Images for Badges</li>
-        //
-        <li>Portrait Images</li>
-        //
-        <li>Zipped collection of Images</li>
-        //
-        <li>XML files with Personality Configuration / Elements Cache</li>
-        //
-        <li>MDB files, especially CIBData83.mdb, for storage of data</li>
-        //
-        <li>Signature Image from the Topaz Signature Pad</li>
-        //
-        <li>Driver's License Data</li>
-        //
+
+
+
+<form runat="server">
+    <input type='file' id="imgInp" />
+    <img id="blah" src="#" alt="your image" />
+</form>
+
+@using (Html.BeginForm("FileUpload", "UploadBack", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary();
+    <ol>
+        <li class="lifile">
+            <input type="file" id="fileToUpload" name="file" />
+            <span class="field-validation-error" id="spanfile"></span>
+            <img id="blah_preview" src="#" alt="your image" />
+        </li>
     </ol>
-    //
-    //
-</body>
-        // </html>*@
+
+    <input type="submit" id="btnSubmit" value="Upload" />
+
+    @*<input type='file' id="imgInp" />
+    <img id="blah" src="#" alt="your image" />*@
+}
+
+
+
+
+
+@*//        <body>
+        //
+        //    <h1>Super Upload Page</h1>
+        //
+        //    <p>Things to upload: </p>
+        //
+        //    <ol>
+            //
+            <li>Background Images for Badges</li>
+            //
+            <li>Portrait Images</li>
+            //
+            <li>Zipped collection of Images</li>
+            //
+            <li>XML files with Personality Configuration / Elements Cache</li>
+            //
+            <li>MDB files, especially CIBData83.mdb, for storage of data</li>
+            //
+            <li>Signature Image from the Topaz Signature Pad</li>
+            //
+            <li>Driver's License Data</li>
+            //
+        </ol>
+        //
+        //
+    </body>
+            // </html>*@
 
 
 

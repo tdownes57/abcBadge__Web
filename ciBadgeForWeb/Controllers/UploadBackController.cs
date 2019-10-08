@@ -22,6 +22,12 @@ namespace ciBadgeForWeb.Controllers
         /// <returns></returns>
         /// 
 
+        public UploadBackController()
+        {
+            ciPictures_VB.PictureExamples.PathToFolderOfImages = (HttpRuntime.AppDomainAppPath + "Images\\PictureExamples");
+            ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks = (HttpRuntime.AppDomainAppPath + "Images\\BackExamples");
+        }
+
         //
         //Background Images
         //
@@ -34,6 +40,9 @@ namespace ciBadgeForWeb.Controllers
         // GET: UploadBack
         public ActionResult Index()
         {
+            ciPictures_VB.PictureExamples.PathToFolderOfImages = (HttpRuntime.AppDomainAppPath + "Images\\PictureExamples");
+            ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks = (HttpRuntime.AppDomainAppPath + "Images\\BackExamples");
+
             return View();
         }
 
@@ -127,7 +136,9 @@ namespace ciBadgeForWeb.Controllers
                 else if (file.ContentLength > 0)
                 {
                     int MaxContentLength = 1024 * 1024 * 3; //3 MB
-                    string[] AllowedFileExtensions = new string[] { ".jpg", ".gif", ".png", ".pdf" };
+
+                    // 10-7-2019 td //string[] AllowedFileExtensions = new string[] { ".jpg", ".gif", ".png", ".pdf" };
+                    string[] AllowedFileExtensions = new string[] { ".jpg", ".gif", ".png", ".JPG", ".GIF", ".PNG" };
 
                     if (!AllowedFileExtensions.Contains(file.FileName.Substring(file.FileName.LastIndexOf('.'))))
                     {
@@ -143,17 +154,31 @@ namespace ciBadgeForWeb.Controllers
                         //Save #1 of 2.  System.IO.Path.Combine !!
                         //
                         string fileName = Path.GetFileName(file.FileName);
-                        string path = Path.Combine(Server.MapPath("~/Content/Upload"), fileName);
-                        file.SaveAs(path);
+
+                        // 10/8/2019 td''string path = Path.Combine(Server.MapPath("~/Content/Upload"), fileName);
+                        // 10/8/2019 td''file.SaveAs(path);
 
                         //Save #2 of 2.  System.IO.Path.Combine !!
                         //
                         //path = Path.Combine("C:\\CI Solutions\\CI Badge Web\\ciPictures_VB\\BackExamples", fileName);
-                        path = Path.Combine("~/Images/BackExamples", fileName);
-                        file.SaveAs(path);
 
-                        ModelState.Clear();
-                        ViewBag.Message = "File uploaded successfully";
+                        //System.Web.HttpException: 'The SaveAs method is configured to require a rooted path, and the path '~/Images/BackExamples\1958.png' is not rooted.'
+                        //#1 10/7/2019 td//path = Path.Combine("~/Images/BackExamples", fileName);
+                        // #2 10/7/2019 td//path = Path.Combine("C:\\Users\\tdown\\source\\repos\\ciLayout\\ciLayoutPrintLib\\BackExamples", fileName);
+                        // #3 10/7/2019 td//path = Path.Combine(Server.MapPath("~/Images/BackExamples"), fileName);
+
+                        string path = Path.Combine(ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks, fileName);
+
+                        try
+                        {
+                            file.SaveAs(path);
+                            ModelState.Clear();
+                            ViewBag.Message = "File uploaded successfully";
+                        }
+                        catch (Exception ex_up)
+                        {
+                            ViewBag.Message = "File upload error, " + ex_up.Message;
+                        }
 
                         //Added 7/4/2019 thomas downes
                         //
@@ -164,7 +189,7 @@ namespace ciBadgeForWeb.Controllers
                 }
             }
             //return View();
-            return Redirect("~/LayoutText1");
+            return Redirect("~/LayoutText1/Index");
         }
 
         //        <body>
