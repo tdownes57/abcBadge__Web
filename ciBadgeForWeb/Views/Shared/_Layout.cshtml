@@ -25,21 +25,24 @@
                 @if (Session["UserName"] != null)  
                 {
 
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        <li>@Html.ActionLink("Customers", "Index", "Customer")</li>
-                        <li>@Html.ActionLink("Personalities", "Index", "Personality")</li>
-                        <li>@Html.ActionLink("Badge Layout", "Index", "LayoutText1")</li>
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Customers", "Index", "Customer")</li>
+                    <li>@Html.ActionLink("Personalities", "Index", "Personality")</li>
+                    <li>@Html.ActionLink("Badge Layout", "Index", "LayoutText1")</li>
 
-                        @*<li>@Html.ActionLink("Students/Employees", "Index", "Recipient")</li>*@
-                        <li>@Html.ActionLink("Students", "Index_Cfg1", "Recipient")</li>
-                        <li>@Html.ActionLink("Staff", "Index_Cfg2", "Recipient")</li>
+                    @*<li>@Html.ActionLink("Students/Employees", "Index", "Recipient")</li>*@
+                    <li>@Html.ActionLink("Students", "Index_Cfg1", "Recipient")</li>
+                    <li>@Html.ActionLink("Staff", "Index_Cfg2", "Recipient")</li>
 
-                        <li>@Html.ActionLink("Example of Badge", "Example", "Home")</li>
-                        <li>@Html.ActionLink("Steps 1 and 2", "Edit", "Steps1and2")</li>
-                    </ul>
+                    <li>@Html.ActionLink("Example of Badge", "Example", "Home")</li>
+                    <li>@Html.ActionLink("Steps 1 and 2", "Edit", "Steps1and2")</li>
+
+                    <li>@Html.ActionLink("Upload", "Index", "UploadBack")</li>
+
+                </ul>
                 }
             </div>
             <div>

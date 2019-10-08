@@ -167,6 +167,24 @@ namespace ciBadgeForWeb.Controllers
             return Redirect("~/LayoutText1");
         }
 
+        //        <body>
+        //
+        //    <h1>Super Upload Page</h1>
+        //
+        //    <p>Things to upload: </p>
+        //
+        //    <ol>
+        //        <li>Background Images for Badges</li>
+        //        <li>Portrait Images</li>
+        //        <li>Zipped collection of Images</li>
+        //        <li>XML files with Personality Configuration / Elements Cache</li>
+        //        <li>MDB files, especially CIBData83.mdb, for storage of data</li>
+        //        <li>Signature Image from the Topaz Signature Pad</li>
+        //        <li>Driver's License Data</li>
+        //    </ol>
+        //
+        // </body>
+        // </html>
 
     }
 }

@@ -25,7 +25,7 @@ namespace ciBadgeForWeb.Models
                 switch (each_field.FieldEnumValue)
                 {
                     case EnumCIBFields.fstrID:
-                        ID = par_recip.RecipientID;
+                        ID = par_recip.RecipientID();
                         ID_Show = true;
                         break;
                     case EnumCIBFields.fstrLastName:
@@ -36,7 +36,7 @@ namespace ciBadgeForWeb.Models
                         break;
                     case EnumCIBFields.fstrFirstName:
                         FirstNm = par_recip.fstrFirstName;
-                        FirtNm_Label = each_field.FieldLabelCaption;
+                        FirstNm_Label = each_field.FieldLabelCaption;
                         FirstNm_Edit = each_field.IsDisplayedForEdits;
                         FirstNm_Show = true;
                         break;
