@@ -71,7 +71,9 @@ Public Class PictureExamples
         Dim strPathToFolder As String
         Dim strPathToFile As String
 
+        ''10/18/2019 td''strPathToFoler = DiskFolder.PathToFolder_Images
         strPathToFolder = PathToFolderOfImages
+
         strPathToFile = IO.Path.Combine(strPathToFolder, pstrRecipientID & ".jpg")
         Return (New Bitmap(strPathToFile))
 
