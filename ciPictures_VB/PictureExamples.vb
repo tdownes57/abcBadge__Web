@@ -18,6 +18,22 @@ Public Class PictureExamples
 
     Public Shared PathToFolderOfImages As String = "" ''Added 8/20/2019 td  
 
+    Public Shared Function GetImageByRecipID(par_strRecipID As String) As Image
+        ''
+        ''Added 10/17/2019  
+        ''
+        Dim strPathToFolder As String
+        Dim strPathToFile As String
+        Dim existing_BMP As Bitmap
+
+        strPathToFolder = PictureExamples.PathToFolderOfImages
+        strPathToFile = System.IO.Path.Combine(strPathToFolder, (par_strRecipID & ".jpg"))
+
+        existing_BMP = New Bitmap(strPathToFile)
+        Return CType(existing_BMP, Image)
+
+    End Function ''eND OF "Public Shared Function GetImageByRecipID(par_strRecipID As String) As Image"
+
     Public Shared Function GetImageByIndex(par_indexImage As Integer, Optional ByRef pref_strErrorMessage As String = "") As Image
         ''
         ''Added 8/13/2019  
