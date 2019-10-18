@@ -3,7 +3,8 @@ Option Strict On
 ''
 ''Added 6/13/2019 td  
 ''
-Imports System.Drawing ''Added 6/13/2019 td  
+Imports System.Drawing ''Added 6/13/2019 td
+Imports System.Drawing.Text ''Added 10/16/2019 td 
 Imports System.Windows.Forms ''added 6/13 td
 
 Public Class PictureExamples
@@ -17,6 +18,64 @@ Public Class PictureExamples
     Private Shared mod_imageSusanSample As Image ''Added 7/10/2019 td 
 
     Public Shared PathToFolderOfImages As String = "" ''Added 8/20/2019 td  
+
+    Public Shared Sub CreateExamplePics_Numbered(par_intCountNeeded As Integer)
+        ''
+        ''Added 10/16/2019 Thomas Downes  
+        ''
+        Dim strPathToFolder As String
+        Dim strPathToFile As String
+        Dim font_scaled As System.Drawing.Font ''Added 9/8/2019 td
+
+        ''----font_scaled = New Font("Arial", 35, FontStyle.Regular)
+        font_scaled = New Font("Arial", 35, FontStyle.Regular)
+
+        strPathToFolder = PathToFolderOfImages
+        strPathToFile = IO.Path.Combine(strPathToFolder, "000.jpg")
+        ''Return (New Bitmap(strPathToFile))
+
+        For intIndex As Integer = 1 To par_intCountNeeded
+
+            strPathToFile = IO.Path.Combine(strPathToFolder, "000.jpg")
+
+            Dim obj_image_unnumbered As Image
+            obj_image_unnumbered = (New Bitmap(strPathToFile))
+
+            Dim gr_num As Graphics
+            Dim brush_white As Brush
+
+            gr_num = Graphics.FromImage(obj_image_unnumbered)
+
+            brush_white = New SolidBrush(Color.White)
+
+            gr_num.FillRectangle(brush_white,
+                  New Rectangle(22, 203, 127, 82))
+
+            gr_num.TextRenderingHint = TextRenderingHint.AntiAliasGridFit
+
+            ''Dim stringSize = New SizeF()
+
+            gr_num.DrawString(intIndex.ToString("000"), font_scaled, Brushes.Black, 30, 210)
+
+            strPathToFile = IO.Path.Combine(strPathToFolder, (intIndex.ToString("000") & ".jpg"))
+            obj_image_unnumbered.Save(strPathToFile)
+
+        Next intIndex
+
+    End Sub ''End of "Public Shared Sub CreateExamplePics_Numbered"
+
+    Public Shared Function GetImageByRecipID(pstrRecipientID As String) As Image
+        ''
+        ''Added 10/16/2019 thomas d.
+        ''
+        Dim strPathToFolder As String
+        Dim strPathToFile As String
+
+        strPathToFolder = PathToFolderOfImages
+        strPathToFile = IO.Path.Combine(strPathToFolder, pstrRecipientID & ".jpg")
+        Return (New Bitmap(strPathToFile))
+
+    End Function ''eND OF "Public Shared Function GetImageByRecipID(pstrRecipientID As String) As Image" 
 
     Public Shared Function GetImageByIndex(par_indexImage As Integer, Optional ByRef pref_strErrorMessage As String = "") As Image
         ''
