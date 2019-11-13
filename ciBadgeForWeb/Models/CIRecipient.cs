@@ -30,6 +30,12 @@ namespace ciBadgeForWeb.Models
             return this.RecipientID;
         }
 
+        public System.Drawing.Image GetPortraitImage()
+        {
+            // Added 11/13/2019 td 
+            return null; 
+        }
+
         public string fstrID //Added 10-4-2019 td 
         {
             get
@@ -91,6 +97,12 @@ namespace ciBadgeForWeb.Models
         //Added 7/14/2019 THOMAS DOWNES
         //
         public string RFIDValue { get; set; }
+
+        //
+        //Added 11/13/2019 THOMAS DOWNES
+        //
+        public string fstrBarcode { get; set; }
+        public string fstrRFID_Unique { get; set; }
 
         //
         //

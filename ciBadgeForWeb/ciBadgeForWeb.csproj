@@ -535,8 +535,10 @@
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Shared\_Layout_Login.cshtml" />
     <Content Include="Views\Home\LoginPlain.cshtml" />
-    <Content Include="Views\__Partials\ElementField.cshtml" />
-    <Content Include="Views\__Partials\Rudimentary.cshtml" />
+    <Content Include="Views\__Partials_Unused\ElementField.cshtml" />
+    <Content Include="Views\__Partials_Unused\Rudimentary.cshtml" />
+    <Content Include="Views\Shared\_ElementField.cshtml" />
+    <Content Include="Views\Shared\_Rudimentary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />
