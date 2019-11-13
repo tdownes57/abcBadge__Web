@@ -102,17 +102,17 @@
 
     <!--Added 11/12/2019 td -->
 
-    @for (int intIndex = 0; intIndex < 10; intIndex++)
+    for (int intIndex = 0; intIndex < 10; intIndex++)
     {
 
-        @*@displayPartialView("~/Views/__Partials/Rudimentary.cshtml");*@
+       // @*@displayPartialView("~/Views/__Partials/Rudimentary.cshtml");*@
 
-        @*@await Html.PartialAsync("_Rudimentary");
-        @Html("_Rudimentary");*@
+       // @*@await Html.PartialAsync("_Rudimentary");
+       // @Html("_Rudimentary");*@
 
-        @*@Html.Partial("_PartialViewTesting", Model.Comments)*@
+       // @*@Html.Partial("_PartialViewTesting", Model.Comments)*@
 
-        @{ Html.RenderPartial("_Rudimentary", Model); }
+       Html.RenderPartial("_Rudimentary", Model); 
             
     }
 

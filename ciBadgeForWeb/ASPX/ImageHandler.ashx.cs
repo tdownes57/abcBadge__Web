@@ -27,6 +27,7 @@ namespace ciBadgeForWeb
             // 8-21-2019 td//ciPictures_VB.PictureExamples.PathToFolderOfImages = "~/Images/PictureExamples";
 
             //Added 7/9/2019 td  
+            string strContextRequestQuery = context.Request.QueryString.ToString();
             string queryID_ofRecip = context.Request.QueryString["id"];
 
             //Added 7/06/2019 thomas downes
@@ -37,9 +38,11 @@ namespace ciBadgeForWeb
                 intPixelsWidth = int.Parse(context.Request.QueryString["width"]);
                 boolApplyWidth = (20 < intPixelsWidth);
             }
-            catch
+            catch (Exception ex)
             {
                 //Just try .......
+                string strMessage = ex.Message;
+                strMessage = ex.Message; 
             }
 
             //context.Response.ContentType = "text/plain";
@@ -159,11 +162,19 @@ namespace ciBadgeForWeb
                 //objBitmap.Save(ms, ImageFormat.Jpeg);
                 if (imagePic != null)
                 {
-                    //imagePic.Save(msPic, ImageFormat.Jpeg);
-                    //((System.Drawing.Image)imagePic.Clone()).Save(msPic, ImageFormat.Jpeg);
-                    System.Drawing.Image imagePic_clone = (System.Drawing.Image)imagePic.Clone();
-                    imagePic_clone.Save(msPic, ImageFormat.Jpeg);
-                    context.Response.BinaryWrite(msPic.GetBuffer());
+                    try //Added 11/13/2019 td
+                    {
+                        imagePic.Save(msPic, ImageFormat.Jpeg);
+                        context.Response.BinaryWrite(msPic.GetBuffer());
+                    }
+                    catch (Exception ex_memorystream)
+                    {
+                        string strErrorMsg = ex_memorystream.Message; //Added 11/13/2019 td
+                        //((System.Drawing.Image)imagePic.Clone()).Save(msPic, ImageFormat.Jpeg);
+                        System.Drawing.Image imagePic_clone = (System.Drawing.Image)imagePic.Clone();
+                        imagePic_clone.Save(msPic, ImageFormat.Jpeg);
+                        context.Response.BinaryWrite(msPic.GetBuffer());
+                    }
                 }
             }
             else
