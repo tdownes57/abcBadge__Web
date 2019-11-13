@@ -535,7 +535,8 @@
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Shared\_Layout_Login.cshtml" />
     <Content Include="Views\Home\LoginPlain.cshtml" />
-    <Content Include="Views\Recipient\ViewElement.cshtml" />
+    <Content Include="Views\__Partials\ElementField.cshtml" />
+    <Content Include="Views\__Partials\Rudimentary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />
