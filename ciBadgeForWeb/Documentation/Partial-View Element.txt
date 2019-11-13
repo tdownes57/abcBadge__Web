@@ -1,0 +1,18 @@
+﻿
+Attributes of an Element / Partial View (ASP.NET MVC) / CI Badge Main Data Entry field
+
+ Label Caption
+ Element & Field 
+ Position/Placement
+ Size
+ Appearance (Color, Font, size of textbox relative to element, appearance of textbox)  
+ Editability
+ Save-ability (updates a data-store)
+ Context (which overall UI format is applicable; Badge Layout vs. Data Entry)
+Move-ability
+ Combo box / drop-down values, if applicable.    
+
+I remembered the 10th item !!      Combo box / drop-down values!!
+
+Thomas
+
