@@ -535,11 +535,11 @@
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Shared\_Layout_Login.cshtml" />
     <Content Include="Views\Home\LoginPlain.cshtml" />
+    <Content Include="Views\Recipient\ViewElement.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />
     <Folder Include="LegacyPages\" />
-    <Folder Include="NewFolder1\" />
     <Folder Include="Views\CILayoutText\" />
     <Folder Include="Views\CustomField\" />
     <Folder Include="Views\LayoutTextboxes\" />
