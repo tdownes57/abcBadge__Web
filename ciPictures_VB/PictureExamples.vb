@@ -19,7 +19,7 @@ Public Class PictureExamples
 
     Public Shared PathToFolderOfImages As String = "" ''Added 8/20/2019 td  
 
-    Public Shared Sub CreateExamplePics_Numbered(par_intCountNeeded As Integer)
+    Public Shared Sub CreateExamplePics_Numbered(par_intCountNeeded As Integer, par_imageFormat As Imaging.ImageFormat)
         ''
         ''Added 10/16/2019 Thomas Downes  
         ''
@@ -31,15 +31,16 @@ Public Class PictureExamples
         font_scaled = New Font("Arial", 35, FontStyle.Regular)
 
         strPathToFolder = PathToFolderOfImages
-        strPathToFile = IO.Path.Combine(strPathToFolder, "000.jpg")
+
+        ''----10/18/2019 td----strPathToFile = IO.Path.Combine(strPathToFolder, "000.jpg")
+        strPathToFile = IO.Path.Combine(strPathToFolder, "000.bmp")
+
+        Dim obj_image_unnumbered As Image
+        obj_image_unnumbered = (New Bitmap(strPathToFile))
+
         ''Return (New Bitmap(strPathToFile))
 
         For intIndex As Integer = 1 To par_intCountNeeded
-
-            strPathToFile = IO.Path.Combine(strPathToFolder, "000.jpg")
-
-            Dim obj_image_unnumbered As Image
-            obj_image_unnumbered = (New Bitmap(strPathToFile))
 
             Dim gr_num As Graphics
             Dim brush_white As Brush
@@ -57,8 +58,19 @@ Public Class PictureExamples
 
             gr_num.DrawString(intIndex.ToString("000"), font_scaled, Brushes.Black, 30, 210)
 
-            strPathToFile = IO.Path.Combine(strPathToFolder, (intIndex.ToString("000") & ".jpg"))
-            obj_image_unnumbered.Save(strPathToFile)
+            ''----10/18 td''strPathToFile = IO.Path.Combine(strPathToFolder, (intIndex.ToString("000") & ".jpg"))
+            Select Case True ''par_imageFormat
+                Case (par_imageFormat.ToString = Imaging.ImageFormat.Bmp.ToString)
+                    strPathToFile = IO.Path.Combine(strPathToFolder, (intIndex.ToString("000") & ".bmp"))
+                Case (par_imageFormat.ToString = Imaging.ImageFormat.Bmp.ToString)
+                    strPathToFile = IO.Path.Combine(strPathToFolder, (intIndex.ToString("000") & ".jpg"))
+                Case (par_imageFormat.ToString = Imaging.ImageFormat.Bmp.ToString)
+                    strPathToFile = IO.Path.Combine(strPathToFolder, (intIndex.ToString("000") & ".png"))
+            End Select
+
+            ''#1 10/18/2019 td''obj_image_unnumbered.Save(strPathToFile)
+            '' #2 10/18/2019 td''obj_image_unnumbered.Save(strPathToFile, Imaging.ImageFormat.Bmp)
+            obj_image_unnumbered.Save(strPathToFile, par_imageFormat) ''10/18 td''Imaging.ImageFormat.Bmp)
 
         Next intIndex
 

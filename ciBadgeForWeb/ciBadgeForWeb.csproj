@@ -18,7 +18,8 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44349</IISExpressSSLPort>
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -422,6 +423,7 @@
     <Content Include="ASPX\PicHandler.ashx" />
     <Content Include="Connected Services\AzureStorage1\ConnectedService.json" />
     <Content Include="ASPX\Step4Handler.ashx" />
+    <Content Include="Documentation\Mock-Up Templates 11.13.pdf" />
     <None Include="Properties\PublishProfiles\CIS90720 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CIS90720 - Web Deploy1.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
