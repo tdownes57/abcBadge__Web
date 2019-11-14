@@ -298,6 +298,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Documentation\CIBCards83 - removing PD.mdb" />
+    <Content Include="Documentation\CIBCards83 - very complex.mdb" />
     <Content Include="Documentation\Partial-View Element.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -542,6 +544,7 @@
     <Content Include="Views\__Partials_Unused\Rudimentary.cshtml" />
     <Content Include="Views\Shared\_ElementField.cshtml" />
     <Content Include="Views\Shared\_Rudimentary.cshtml" />
+    <Content Include="Views\Recipient\TestPartialView_Rud.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />
