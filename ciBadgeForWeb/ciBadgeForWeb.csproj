@@ -298,6 +298,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Documentation\Partial-View Element.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -409,6 +410,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ASPX\ImageHandler.ashx" />
+    <Content Include="XML\ciLayoutDesignVB_Oct14.xml" />
     <EntityDeploy Include="Models\ModelEntity.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelEntity.Designer.cs</LastGenOutput>
@@ -536,11 +538,14 @@
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Shared\_Layout_Login.cshtml" />
     <Content Include="Views\Home\LoginPlain.cshtml" />
+    <Content Include="Views\__Partials_Unused\ElementField.cshtml" />
+    <Content Include="Views\__Partials_Unused\Rudimentary.cshtml" />
+    <Content Include="Views\Shared\_ElementField.cshtml" />
+    <Content Include="Views\Shared\_Rudimentary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />
     <Folder Include="LegacyPages\" />
-    <Folder Include="NewFolder1\" />
     <Folder Include="Views\CILayoutText\" />
     <Folder Include="Views\CustomField\" />
     <Folder Include="Views\LayoutTextboxes\" />
@@ -575,6 +580,10 @@
     <ProjectReference Include="..\..\ciLayout\ciBadgeFields\ciBadgeFields.vbproj">
       <Project>{ef9acec9-841e-4397-bfcb-917c814c4b8c}</Project>
       <Name>ciBadgeFields</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ciLayout\ciBadgeGenerator\ciBadgeGenerator.csproj">
+      <Project>{42468695-2856-4336-8bca-c5af2ea8178e}</Project>
+      <Name>ciBadgeGenerator</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\ciLayout\ciBadgeInterfaces\ciBadgeInterfaces.vbproj">
       <Project>{3d1acca6-585e-4c92-9a6d-9a51d2f72f5f}</Project>

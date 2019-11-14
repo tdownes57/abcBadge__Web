@@ -80,7 +80,7 @@
                 </div>
                 }
 
-             </td>
+            </td>
 
             <td>
 
@@ -94,10 +94,26 @@
 
         </tr>
 
-     </table>
+    </table>
 
     <div>
         @Html.ActionLink("Back to List", "Index")
     </div>
+
+    <!--Added 11/12/2019 td -->
+
+    for (int intIndex = 0; intIndex < 10; intIndex++)
+    {
+
+       // @*@displayPartialView("~/Views/__Partials/Rudimentary.cshtml");*@
+
+       // @*@await Html.PartialAsync("_Rudimentary");
+       // @Html("_Rudimentary");*@
+
+       // @*@Html.Partial("_PartialViewTesting", Model.Comments)*@
+
+       Html.RenderPartial("_Rudimentary", Model); 
+            
+    }
 
 }

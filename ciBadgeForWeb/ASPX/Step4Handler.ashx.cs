@@ -8,6 +8,7 @@ using System.IO;                //Added 5/20/2019 thomas d.
 using ciLayoutPrintLib;     //Added 10/5/2019 td
 using ciBadgeElements;       //Added 10/5/2019 td  
 using ciBadgeElemImage;     //Added 10/5/2019 td  
+using ciBadgeGenerator; //Added 11/13/2019 td
 
 namespace ciBadgeForWeb
 {
@@ -82,7 +83,8 @@ namespace ciBadgeForWeb
 
                     if (-1 != intBackgroundImageIndex) ciLayoutPrintLib.LayoutExample.RefreshChoiceOfBackground_ByIndex(intBackgroundImageIndex);
 
-                    image_ex = objLayoutEx.GenerateImage_BackgroundOnly(bHorizontalLarge, bHorizontalSmall, ref boolNoImages);
+                    image_ex = objLayoutEx.GenerateImage_BackgroundOnly(bHorizontalLarge, 
+                        bHorizontalSmall, ref boolNoImages);
 
 
                     //Added 7/6/2019 thomas d.
@@ -130,11 +132,9 @@ namespace ciBadgeForWeb
 
                     //ciBadgeElemImage.modGenerate mod_generate = new modGenerate();
 
-                    
-
-
-
-
+                    //Added 11/13/2019 td
+                    ciBadgeGenerator.ClassMakeBadge mod_generate = new ClassMakeBadge();
+                    mod_generate.MakeBadgeImage_ByRecipient();
 
 
 
