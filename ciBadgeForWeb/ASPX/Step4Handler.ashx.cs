@@ -63,9 +63,12 @@ namespace ciBadgeForWeb
                 }
 
                 int intPixelsWidth = 0; //Added 7/06/2019 thomas downes 
+                int intPixelsHeight = 0; //Added 11/14/2019 thomas downes  
                 try
                 {
                     intPixelsWidth = int.Parse(context.Request.QueryString["width"]);
+                    intPixelsHeight = (int)(intPixelsWidth / 
+                        ClassProportions.LongSideToShortRatio());
                 }
                 catch
                 {
@@ -132,9 +135,21 @@ namespace ciBadgeForWeb
 
                     //ciBadgeElemImage.modGenerate mod_generate = new modGenerate();
 
-                    //Added 11/13/2019 td
+                    //
+                     // Added 11/13/2019 td
+                    //
                     ciBadgeGenerator.ClassMakeBadge mod_generate = new ClassMakeBadge();
-                    mod_generate.MakeBadgeImage_ByRecipient();
+                    ciBadgeInterfaces.BadgeLayoutClass objLayout = 
+                        new ciBadgeInterfaces.BadgeLayoutClass();
+
+                    Image image_back = objLayoutEx.GenerateImage_BackgroundOnly(bHorizontalLarge,
+                        bHorizontalSmall, ref boolNoImages);
+                     
+                    mod_generate.MakeBadgeImage_ByRecipient(objLayout, 
+                                   image_back, elements_cache,
+                                   intPixelsWidth, intPixelsHeight, 
+                                   recipient_by_id_onlyone, 
+                                   recipient_by_id_onlyone.GetPortraitImage());
 
 
 
