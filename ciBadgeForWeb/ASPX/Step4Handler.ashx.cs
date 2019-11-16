@@ -145,10 +145,16 @@ namespace ciBadgeForWeb
                     Image image_back = objLayoutEx.GenerateImage_BackgroundOnly(bHorizontalLarge,
                         bHorizontalSmall, ref boolNoImages);
                      
-                    mod_generate.MakeBadgeImage_ByRecipient(objLayout, 
+                    //11-16-2019 td''mod_generate.MakeBadgeImage_ByRecipient(objLayout, 
+                    //         image_back, ClassElementsCache.Singleton,
+                    //         intPixelsWidth, intPixelsHeight, 
+                    //         recipient_by_id_onlyone, 
+                    //         recipient_by_id_onlyone.GetPortraitImage());
+
+                    mod_generate.MakeBadgeImage_ByIRecipient(objLayout,
                                    image_back, ClassElementsCache.Singleton,
-                                   intPixelsWidth, intPixelsHeight, 
-                                   recipient_by_id_onlyone, 
+                                   intPixelsWidth, intPixelsHeight,
+                                   recipient_by_id_onlyone,
                                    recipient_by_id_onlyone.GetPortraitImage());
 
 
