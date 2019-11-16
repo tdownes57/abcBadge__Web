@@ -6,6 +6,7 @@ using System.Drawing;           //Added 5/20/2019 thomas d.
 using System.Drawing.Imaging;   //Added 5/20/2019 thomas d. 
 using System.IO;                //Added 5/20/2019 thomas d.
 using ciLayoutPrintLib;     //Added 10/5/2019 td
+
 using ciBadgeElements;       //Added 10/5/2019 td  
 using ciBadgeElemImage;     //Added 10/5/2019 td  
 using ciBadgeGenerator; //Added 11/13/2019 td
@@ -15,7 +16,7 @@ namespace ciBadgeForWeb
     /// <summary>
     /// Utilizes advanced layout programming from CILayoutDesigner by CI Solutions/Thomas Downes. 10/5/2019 td
     /// </summary>
-    public class Step4Handler : IHttpHandler
+    public class  Step4Handler : IHttpHandler
     {
 
         public void ProcessRequest(HttpContext context)
