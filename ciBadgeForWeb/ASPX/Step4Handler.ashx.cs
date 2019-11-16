@@ -146,7 +146,7 @@ namespace ciBadgeForWeb
                         bHorizontalSmall, ref boolNoImages);
                      
                     mod_generate.MakeBadgeImage_ByRecipient(objLayout, 
-                                   image_back, elements_cache,
+                                   image_back, ClassElementsCache.Singleton,
                                    intPixelsWidth, intPixelsHeight, 
                                    recipient_by_id_onlyone, 
                                    recipient_by_id_onlyone.GetPortraitImage());
