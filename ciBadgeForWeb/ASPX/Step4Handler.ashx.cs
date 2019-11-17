@@ -140,8 +140,11 @@ namespace ciBadgeForWeb
                      // Added 11/13/2019 td
                     //
                     ciBadgeGenerator.ClassMakeBadge mod_generate = new ClassMakeBadge();
-                    ciBadgeInterfaces.BadgeLayoutClass objLayout = 
-                        new ciBadgeInterfaces.BadgeLayoutClass();
+                    ciBadgeInterfaces.BadgeLayoutClass objLayout;   // = 
+                    //    new ciBadgeInterfaces.BadgeLayoutClass();
+
+                    //Added 11/16/2019 td
+                    objLayout = ciBadgeElements.ClassElementsCache.Singleton.BadgeLayout;
 
                     Image image_back = objLayoutEx.GenerateImage_BackgroundOnly(bHorizontalLarge,
                         bHorizontalSmall, ref boolNoImages);
