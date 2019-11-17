@@ -33,7 +33,9 @@ namespace ciBadgeForWeb.Models
         public System.Drawing.Image GetPortraitImage()
         {
             // Added 11/13/2019 td 
-            return null; 
+            //11-16-2019 td//return null;
+            return this.Picture;
+
         }
 
         public string fstrID //Added 10-4-2019 td 
