@@ -22,7 +22,19 @@ namespace ciBadgeForWeb.App_Start
         {
             //Return My.Application.Info.DirectoryPath & "\Images\Signatures\Declaration_bmp.bmp"
 
-            return "";
+            return System.IO.Path.Combine("C:\\Users\\tdown\\source",
+                "repos\\ciLayout\\ciLayoutDesignVB\\bin\\Debug",
+                "Images\\Signatures\\Declaration_bmp.bmp");
+
+        }
+
+        public static string PathToFile_QRCode()
+        {
+            //Return My.Application.Info.DirectoryPath & "\Images\Signatures\Declaration_bmp.bmp"
+
+            return System.IO.Path.Combine("C:\\Users\\tdown\\source",
+                "repos\\ciLayout\\ciLayoutDesignVB\\bin\\Debug",
+                "Images\\QRCodes\\ExampleQR.png");
 
         }
 

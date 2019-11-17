@@ -148,21 +148,23 @@ namespace ciBadgeForWeb
 
                     Image image_back = objLayoutEx.GenerateImage_BackgroundOnly(bHorizontalLarge,
                         bHorizontalSmall, ref boolNoImages);
-                     
+
                     //11-16-2019 td''mod_generate.MakeBadgeImage_ByRecipient(objLayout, 
                     //         image_back, ClassElementsCache.Singleton,
                     //         intPixelsWidth, intPixelsHeight, 
                     //         recipient_by_id_onlyone, 
                     //         recipient_by_id_onlyone.GetPortraitImage());
 
+                    //11-17-2019 thomas d.
+                    mod_generate.PathToFile_Sig = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_Sig();
+                    mod_generate.ImageQRCode = new Bitmap(App_Start.DiskFiles.PathToFile_QRCode());
+
+                    image_ex =
                     mod_generate.MakeBadgeImage_ByIRecipient(objLayout,
                                    image_back, ClassElementsCache.Singleton,
                                    intPixelsWidth, intPixelsHeight,
                                    recipient_by_id_onlyone,
                                    recipient_by_id_onlyone.GetPortraitImage());
-
-
-
 
                 }
 
