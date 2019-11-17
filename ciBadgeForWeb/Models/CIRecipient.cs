@@ -237,6 +237,12 @@ namespace ciBadgeForWeb.Models
         {
             switch (par_enum)
             {
+                //Added 11/17/2019 td
+               case EnumCIBFields.fstrFirstName : return this.fstrFirstName;
+               case EnumCIBFields.fstrID : return this.fstrID;
+               case EnumCIBFields.fstrLastName : return this.fstrLastName;
+               case EnumCIBFields.fstrMidName : return this.fstrMidName;
+
                 case EnumCIBFields.DateField01: return DateField01.ToString("MM/dd/yyyy"); break;
                 case EnumCIBFields.DateField02: return DateField02.ToString("MM/dd/yyyy"); break;
                 case EnumCIBFields.DateField03: return DateField03.ToString("MM/dd/yyyy"); break;
@@ -258,7 +264,9 @@ namespace ciBadgeForWeb.Models
                 case EnumCIBFields.TextField13: return TextField13; break;
                 case EnumCIBFields.TextField14: return TextField14; break;
                 case EnumCIBFields.TextField15: return TextField15; break;
-                default: return "Undermined"; break;
+                default: 
+                    return "Undermined"; 
+                    break;
             }
             return "Undetermined";
         }
