@@ -53,7 +53,8 @@ namespace ciBadgeForWeb.Models
         {
             get
             {
-                return this.FirstName;
+                //11-18-2019 td//return this.FirstName;
+                return this.LastName;
             }
             set
             {
@@ -239,7 +240,7 @@ namespace ciBadgeForWeb.Models
             {
                 //Added 11/17/2019 td
                case EnumCIBFields.fstrFirstName : return this.fstrFirstName;
-               case EnumCIBFields.fstrID : return this.fstrID;
+               case EnumCIBFields.fstrID : return this.fstrID;  
                case EnumCIBFields.fstrLastName : return this.fstrLastName;
                case EnumCIBFields.fstrMidName : return this.fstrMidName;
 
@@ -265,7 +266,7 @@ namespace ciBadgeForWeb.Models
                 case EnumCIBFields.TextField14: return TextField14; break;
                 case EnumCIBFields.TextField15: return TextField15; break;
                 default: 
-                    return "Undermined"; 
+                    return "Undetermined#1"; 
                     break;
             }
             return "Undetermined";
