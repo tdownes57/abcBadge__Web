@@ -108,7 +108,7 @@ namespace ciBadgeForWeb
                 {
                     int recipient_id = Int32.Parse(context.Request.QueryString["id"]);
 
-                    recipients_list = Controllers.RecipientController.mod_recipientList;
+                    recipients_list = Controllers.RecipientController.mod_recipientList2;
 
                     var recipients_by_id_list = recipients_list.Where(s => s.RecipientID == recipient_id.ToString());
                     var recipient_by_id_onlyone = recipients_by_id_list.FirstOrDefault();
