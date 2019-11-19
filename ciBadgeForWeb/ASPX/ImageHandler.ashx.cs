@@ -121,7 +121,7 @@ namespace ciBadgeForWeb
                 } //End of "if (boolImageSample)"
 
                 //int recipient_id = Int32.Parse(context.Request.QueryString["id"]);
-                int recipient_id = Int32.Parse(queryID_ofRecip);
+                //11-19-2019 td//int recipient_id = Int32.Parse(queryID_ofRecip);
 
                 // Now you have the id, do what you want with it, to get the right image
                 // More than likely, just pass it to the method, that builds the image
@@ -131,7 +131,9 @@ namespace ciBadgeForWeb
 
                 recipients_list = Controllers.RecipientController.mod_recipientList2;
 
-                var recipients_by_id_list = recipients_list.Where(s => s.RecipientID == recipient_id.ToString());
+                // 11-19-2019 //var recipients_by_id_list = recipients_list.Where(s => s.RecipientID == recipient_id.ToString());
+                var recipients_by_id_list = recipients_list.Where(s => s.RecipientID == queryID_ofRecip);
+
                 var recipient_by_id_onlyone = recipients_by_id_list.FirstOrDefault();
 
                 //Added 6/20/2019 td 

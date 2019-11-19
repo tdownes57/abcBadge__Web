@@ -58,7 +58,8 @@ namespace ciBadgeForWeb.Models
             }
             set
             {
-                this.RecipientID = value;
+                //11-18-2019 td//this.RecipientID = value;
+                this.LastName = value;
             }
         }
 
