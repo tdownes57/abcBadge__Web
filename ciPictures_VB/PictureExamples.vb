@@ -4,8 +4,7 @@ Option Strict On
 ''Added 6/13/2019 td  
 ''
 Imports System.Drawing ''Added 6/13/2019 td
-Imports System.Drawing.Text ''Added 10/16/2019 td 
-Imports System.Windows.Forms ''added 6/13 td
+Imports System.Drawing.Text ''added 6/13 td
 
 Public Class PictureExamples
     ''
@@ -86,8 +85,19 @@ Public Class PictureExamples
         ''10/18/2019 td''strPathToFoler = DiskFolder.PathToFolder_Images
         strPathToFolder = PathToFolderOfImages
 
+        ''Added 11//21/2019 thomas downes
+        If ("" = PathToFolderOfImages) Then
+            PathToFolderOfImages = "C:\Users\tdown\source\repos\ciBadgeForWeb\ciBadgeForWeb\Images\PictureExamples"
+        End If ''End "If ("" = PathToFolderOfImages) Then"
+
         strPathToFile = IO.Path.Combine(strPathToFolder, pstrRecipientID & ".jpg")
-        Return (New Bitmap(strPathToFile))
+
+        Try
+            Return (New Bitmap(strPathToFile))
+        Catch ex_GetImageByID As Exception
+            ''aDDED 11/21/2019 TD
+            Return Nothing
+        End Try
 
     End Function ''eND OF "Public Shared Function GetImageByRecipID(pstrRecipientID As String) As Image" 
 

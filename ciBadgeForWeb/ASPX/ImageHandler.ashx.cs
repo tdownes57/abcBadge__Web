@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;// Added 5/20/2019 thomas d. 
-using System.Drawing; // Added 5/20/2019 thomas d. 
-using System.Drawing.Imaging;// Added 5/20/2019 thomas d. 
-using System.IO;// Added 5/20/2019 thomas d. 
+using System.Web;         // Added 5/20/2019 thomas d. 
+using System.Drawing;           // Added 5/20/2019 thomas d. 
+using System.Drawing.Imaging;   // Added 5/20/2019 thomas d. 
+using System.IO;        // Added 5/20/2019 thomas d. 
 using ciLayoutPrintLib; // Added 7/13/2019 td
 
 namespace ciBadgeForWeb
@@ -28,7 +28,7 @@ namespace ciBadgeForWeb
 
             //Added 7/9/2019 td  
             string strContextRequestQuery = context.Request.QueryString.ToString();
-            string queryID_ofRecip = context.Request.QueryString["id"];
+            var queryID_ofRecip = context.Request.QueryString["id"];
 
             //Added 7/06/2019 thomas downes
             int intPixelsWidth = 0; //Added 7/06/2019 thomas downes 
