@@ -108,10 +108,12 @@ namespace ciBadgeForWeb
                     //Full Badge Image 
                     //
                     int recipient_id = Int32.Parse(context.Request.QueryString["id"]);
+                    string str_recipient_id = context.Request.QueryString["id"];
 
                     recipients_list = Controllers.RecipientController.mod_recipientList2;
 
-                    var recipients_by_id_list = recipients_list.Where(s => s.RecipientID == recipient_id.ToString());
+                    //var recipients_by_id_list = recipients_list.Where(s => s.RecipientID == recipient_id.ToString());
+                    var recipients_by_id_list = recipients_list.Where(s => s.RecipientID == str_recipient_id);
                     var recipient_by_id_onlyone = recipients_by_id_list.FirstOrDefault();
 
                     if (recipient_by_id_onlyone is null) return;
@@ -160,7 +162,10 @@ namespace ciBadgeForWeb
                     //11-26-2019 mod_generate.ImageQRCode = new Bitmap(App_Start.DiskFiles.PathToFile_QRCode(true));
 
                     mod_generate.PathToFile_Sig = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_Sig(true);
-                    mod_generate.ImageQRCode = new Bitmap(App_Start.DiskFiles.PathToFile_QRCode(true));
+                    mod_generate.PathToFile_QR = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_QRCode(true);
+                    
+                    //mod_generate.ImageQRCode = new Bitmap(App_Start.DiskFiles.PathToFile_QRCode(true));
+                    mod_generate.ImageQRCode = new Bitmap(mod_generate.PathToFile_QR);
 
                     image_ex =
                     mod_generate.MakeBadgeImage_ByIRecipient(objLayout,

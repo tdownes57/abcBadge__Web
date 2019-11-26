@@ -7,15 +7,21 @@
 
 <script>
 
-    void WriteParagraph_@Model.RecipientID ()
-    {
+    //void WriteParagraph_@Model.RecipientID ()
+    //{
         //dom_object = doc.GetObject("@Model.RecipientID");
         //dom_object.context = "This is paragraph # @Model.RecipientID .";
 
         my_paragraph = document.getElementById("zz_@Model.RecipientID");
-        my_paragraph.content = 'This is for recipient # @Model.RecipientID. (Script function void WriteParagraph_...)';
-    }
-    WriteParagraph_@Model.RecipientID;
+
+        //my_paragraph.content = 'This is for recipient # @Model.RecipientID. (Script function void WriteParagraph_...)';
+        //
+        //  https://codingsync.com/javascript-change-html-paragraph-text/
+        //
+        my_paragraph.innerHTML = 'This is for recipient # @Model.RecipientID. (Script function void WriteParagraph_...)';
+
+    //}
+    //WriteParagraph_@Model.RecipientID ;
 
 </script>
 

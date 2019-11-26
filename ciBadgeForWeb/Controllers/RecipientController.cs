@@ -308,15 +308,21 @@ namespace ciBadgeForWeb.Controllers
 
         // POST: Recipient/Edit/5
         [HttpPost]
-        public ActionResult Edit(int parameter_id, FormCollection collection)
+        public ActionResult Edit(string str_parameter_id, FormCollection collection)
         {
+            //  public ActionResult Edit(int parameter_id, FormCollection collection)
             try
             {
                 // TODO: Add update logic here
                 //
                 //Get the student from studentList sample collection for demo purpose.
                 //Get the student from the database in the real application
-                var edited_recip = mod_recipientList2.Where(s => s.RecipientID == parameter_id.ToString()).FirstOrDefault();
+
+                //Added 11/26/2019 thomas d.
+                if (str_parameter_id == null) str_parameter_id = Request["RecipientID"];
+
+                //11/26/2019 td//var edited_recip = mod_recipientList2.Where(s => s.RecipientID == parameter_id.ToString()).FirstOrDefault();
+                var edited_recip = mod_recipientList2.Where(s => s.RecipientID == str_parameter_id).FirstOrDefault();
 
                 var name_first = Request["FirstName"];
                 var name_last = Request["LastName"];

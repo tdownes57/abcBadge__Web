@@ -682,7 +682,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\PureWhite.png" />
-    <Content Include="Images\QRCodes\QR Code Example.PNG">
+    <Content Include="Images\QRCodes\ExampleQR.PNG">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\RotatedLayout.png" />
