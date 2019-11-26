@@ -3,6 +3,8 @@
   ----------   string id_zz = "123";
 }*@
 
+<p id="zz_@Model.RecipientID">Thank you for visiting my Rudimentary Partial View!  ---11/12/2019 Thomas Downes</p>
+
 <script>
 
     void WriteParagraph_@Model.RecipientID ()
@@ -11,8 +13,10 @@
         //dom_object.context = "This is paragraph # @Model.RecipientID .";
 
         my_paragraph = document.getElementById("zz_@Model.RecipientID");
+        my_paragraph.content = 'This is for recipient # @Model.RecipientID. (Script function void WriteParagraph_...)';
     }
+    WriteParagraph_@Model.RecipientID;
 
 </script>
 
-<p id="zz_@Model.RecipientID">Thank you for visiting my Rudimentary Partial View!  ---11/12/2019 Thomas Downes</p>
+

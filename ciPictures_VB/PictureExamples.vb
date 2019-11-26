@@ -88,6 +88,7 @@ Public Class PictureExamples
         ''Added 11//21/2019 thomas downes
         If ("" = PathToFolderOfImages) Then
             PathToFolderOfImages = "C:\Users\tdown\source\repos\ciBadgeForWeb\ciBadgeForWeb\Images\PictureExamples"
+            strPathToFolder = PathToFolderOfImages
         End If ''End "If ("" = PathToFolderOfImages) Then"
 
         strPathToFile = IO.Path.Combine(strPathToFolder, pstrRecipientID & ".jpg")

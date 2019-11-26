@@ -156,8 +156,11 @@ namespace ciBadgeForWeb
                     //         recipient_by_id_onlyone.GetPortraitImage());
 
                     //11-17-2019 thomas d.
-                    mod_generate.PathToFile_Sig = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_Sig();
-                    mod_generate.ImageQRCode = new Bitmap(App_Start.DiskFiles.PathToFile_QRCode());
+                    //11-26-2019 mod_generate.PathToFile_Sig = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_Sig(true);
+                    //11-26-2019 mod_generate.ImageQRCode = new Bitmap(App_Start.DiskFiles.PathToFile_QRCode(true));
+
+                    mod_generate.PathToFile_Sig = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_Sig(true);
+                    mod_generate.ImageQRCode = new Bitmap(App_Start.DiskFiles.PathToFile_QRCode(true));
 
                     image_ex =
                     mod_generate.MakeBadgeImage_ByIRecipient(objLayout,
