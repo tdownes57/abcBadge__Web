@@ -37,10 +37,17 @@ namespace ciBadgeForWeb
             FormBadgeLayoutProto obj_form = new FormBadgeLayoutProto();
 
             //Added 11/16/2019 Thomas DOWNES  
-            ClassElementsCache.Singleton = 
-                ClassElementsCache.GetLoadedCache(path_toElementsCacheXML, 
-                boolNewFile,  obj_form.pictureBack.Image);
-
+            try
+            {
+                ClassElementsCache.Singleton =
+                    ClassElementsCache.GetLoadedCache(path_toElementsCacheXML,
+                    boolNewFile, obj_form.pictureBack.Image);
+            }
+            catch (Exception ex_Global_App_Start)
+            {
+                //Added 11/27/2019 td 
+                throw new Exception("Obviously, this is undesirable.", ex_Global_App_Start);
+            }
 
         }
 
