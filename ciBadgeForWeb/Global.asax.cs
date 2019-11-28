@@ -32,7 +32,7 @@ namespace ciBadgeForWeb
 
             //Added 11/16/2019 Thomas DOWNES  
             //11/27/2019 td//path_toElementsCacheXML = ConfigurationManager.AppSettings["pathToElementsCacheXML"];
-            path_toElementsCacheXML = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_XML(true);
+            path_toElementsCacheXML = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_XML_Current(true);
 
             //Added 11/16/2019 Thomas DOWNES  
             //11/27 td//bool boolNewFile = System.IO.File.Exists(path_toElementsCacheXML);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.IO;  //Added 11/28/2019 td
 using System.Web.Hosting; //Added 11/25/2019 td  
 
 namespace ciBadgeForWeb.App_Start
@@ -11,7 +12,74 @@ namespace ciBadgeForWeb.App_Start
         //
         //Added 11/15/2019 td  
         //
-        public static string PathToFile_XML(bool pboolAbsolute )
+        private static string mod_fileTitleXML_Current = ""; //Added 11/28/2019 td 
+
+        public static string PathToFile_XML_Current(bool pboolAbsolute)
+        {
+            //
+            //Added 11/28/2192
+            //
+            //return PathToFile_XML(pboolAbsolute);
+
+            bool boolNotYetDetermined = ("" == mod_fileTitleXML_Current);
+            string strPathToFileXML = "";
+            string strPathToFolderXML = DiskFolders.PathToFolder_XML(pboolAbsolute);
+
+            if (boolNotYetDetermined)
+            {
+                foreach (FileInfo file_Info in (new DirectoryInfo(strPathToFolderXML)))
+                {
+                    if (boolNotYetDetermined)
+                    {
+                        mod_fileTitleXML_Current = file_Info.Name;
+                        break;
+                    }
+                }
+            }
+            strPathToFileXML = Path.Combine(strPathToFolderXML, mod_fileTitleXML_Current);
+            return strPathToFileXML;
+        }
+
+        public static string PathToFile_XML_Next(bool pboolAbsolute)
+        {
+            //
+            //Added 11/28/2192
+            //
+            bool boolNotYetDetermined = ("" == mod_fileTitleXML_Current);
+            string strPathToFileXML = "";
+            string strPathToFolderXML = DiskFolders.PathToFolder_XML(pboolAbsolute);
+            bool boolMatchesCurrent = false;
+            bool boolGrabThisNextFile = false;
+            FileInfo obj_nextFileInfo; 
+
+            if (boolNotYetDetermined)
+            {
+                mod_fileTitleXML_Current = PathToFile_XML_Current(pboolAbsolute);
+            }
+
+            foreach (FileInfo each_file_Info in (new DirectoryInfo(strPathToFolderXML)))
+            {
+                if (boolGrabThisNextFile)
+                {
+                    obj_nextFileInfo = each_file_Info;
+                    break;
+                }
+                boolMatchesCurrent = (each_file_info.Name == mod_fileTitleXML_Current);
+                if (boolMatchesCurrent)
+                {
+                    //mod_fileTitleXML_Current = each_file_Info.Name;
+                    //break;
+                    //-----Prepare for the next interation. 
+                    boolGrabThisNextFile = true;
+                }
+            }
+
+            mod_fileTitleXML_Current = obj_nextFileInfo.Name;
+            strPathToFileXML = Path.Combine(strPathToFolderXML, mod_fileTitleXML_Current);
+            return strPathToFileXML;
+        }
+
+        public static string PathToFile_XML_NotInUse(bool pboolAbsolute )
         {
             //Return My.Application.Info.DirectoryPath & "\Images\Signatures\Declaration_bmp.bmp"
 
