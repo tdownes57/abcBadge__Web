@@ -39,5 +39,13 @@ namespace ciBadgeForWeb.Controllers
             ClassElementsCache.Singleton.SaveToXML();
         }
 
+        public ActionResult SaveToNewName()
+        {
+            //
+            //Added 11/28/2019 td
+            //
+
+        }
+
     }
 }
