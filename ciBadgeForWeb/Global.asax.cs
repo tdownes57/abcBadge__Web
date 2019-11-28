@@ -28,12 +28,15 @@ namespace ciBadgeForWeb
             //obj_cache.LoadFieldElements();
 
             string path_toElementsCacheXML;
+            int intSection = 0; //Added 11/27/2019 td
 
             //Added 11/16/2019 Thomas DOWNES  
-            path_toElementsCacheXML = ConfigurationManager.AppSettings["pathToElementsCacheXML"];
+            //11/27/2019 td//path_toElementsCacheXML = ConfigurationManager.AppSettings["pathToElementsCacheXML"];
+            path_toElementsCacheXML = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_XML(true);
 
             //Added 11/16/2019 Thomas DOWNES  
-            bool boolNewFile = System.IO.File.Exists(path_toElementsCacheXML);
+            //11/27 td//bool boolNewFile = System.IO.File.Exists(path_toElementsCacheXML);
+            bool boolNewFile = (! (System.IO.File.Exists(path_toElementsCacheXML)));
             FormBadgeLayoutProto obj_form = new FormBadgeLayoutProto();
 
             //Added 11/16/2019 Thomas DOWNES  
@@ -41,12 +44,13 @@ namespace ciBadgeForWeb
             {
                 ClassElementsCache.Singleton =
                     ClassElementsCache.GetLoadedCache(path_toElementsCacheXML,
-                    boolNewFile, obj_form.pictureBack.Image);
+                    boolNewFile, obj_form.pictureBack.Image, ref intSection);
             }
             catch (Exception ex_Global_App_Start)
             {
                 //Added 11/27/2019 td 
-                throw new Exception("Obviously, this is undesirable.", ex_Global_App_Start);
+                throw new Exception("Obviously, this is undesirable.  Section: " + 
+                    intSection.ToString(), ex_Global_App_Start);
             }
 
         }

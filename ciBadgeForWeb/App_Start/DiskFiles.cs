@@ -18,7 +18,7 @@ namespace ciBadgeForWeb.App_Start
             //return "";
             //return "~/XML/ciLayoutDesignVB.xml";
 
-            string strPathToFile_Virtual = "/XML/ciLayoutDesignVB.xml";
+            string strPathToFile_Virtual = "/XML/ciLayoutDesignVB_new.xml";
             string strPathToFile_Absolute = HostingEnvironment.MapPath(strPathToFile_Virtual);
 
             if (pboolAbsolute) return strPathToFile_Absolute;
