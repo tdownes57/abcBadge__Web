@@ -23,10 +23,12 @@ namespace ciBadgeForWeb.Controllers
             //Added 11/28/2019 thomas downes 
             //
             string strPathToNextFileXml = 
-            ciBadgeForWeb.App_Start.DiskFiles.PathToFile_XML_Next();
+                      ciBadgeForWeb.App_Start.DiskFiles.PathToFile_XML_Next(true);
             
-            //Refresh the cache with the next cache. 
-            ClassElementsCache.GetLoadedCache(strPathToNextFileXml, );
+            //
+            //Refresh the cache with the next cache.
+            //
+            ClassElementsCache.GetLoadedCache(strPathToNextFileXml, false );
 
             return new RedirectResult("Home");
         }
@@ -37,6 +39,9 @@ namespace ciBadgeForWeb.Controllers
             //Added 11/28/2019 td
             //
             ClassElementsCache.Singleton.SaveToXML();
+
+            return new EmptyResult();
+
         }
 
         public ActionResult SaveToNewName()
@@ -44,6 +49,8 @@ namespace ciBadgeForWeb.Controllers
             //
             //Added 11/28/2019 td
             //
+            ClassElementsCache.Singleton.SaveToXML();
+            return new EmptyResult();
 
         }
 
