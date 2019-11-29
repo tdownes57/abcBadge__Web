@@ -27,7 +27,7 @@ namespace ciBadgeForWeb.App_Start
 
             if (boolNotYetDetermined)
             {
-                foreach (FileInfo file_Info in (new DirectoryInfo(strPathToFolderXML)))
+                foreach (FileInfo file_Info in (new DirectoryInfo(strPathToFolderXML)).GetFiles("*.xml"))
                 {
                     if (boolNotYetDetermined)
                     {
@@ -50,31 +50,50 @@ namespace ciBadgeForWeb.App_Start
             string strPathToFolderXML = DiskFolders.PathToFolder_XML(pboolAbsolute);
             bool boolMatchesCurrent = false;
             bool boolGrabThisNextFile = false;
-            FileInfo obj_nextFileInfo; 
+            FileInfo obj_nextFileInfo = null;
+            bool boolTrySecondAttempt = false;
+            bool boolStartFromBeginningAgain = false; 
 
             if (boolNotYetDetermined)
             {
                 mod_fileTitleXML_Current = PathToFile_XML_Current(pboolAbsolute);
             }
 
-            foreach (FileInfo each_file_Info in (new DirectoryInfo(strPathToFolderXML)))
+            while (true)
             {
-                if (boolGrabThisNextFile)
+                foreach (FileInfo each_file_Info in (new DirectoryInfo(strPathToFolderXML)).GetFiles("*.xml"))
                 {
-                    obj_nextFileInfo = each_file_Info;
-                    break;
+                    if (boolGrabThisNextFile)
+                    {
+                        obj_nextFileInfo = each_file_Info;
+                        break;
+                    }
+                    boolMatchesCurrent = (each_file_Info.Name == mod_fileTitleXML_Current);
+                    if (boolMatchesCurrent)
+                    {
+                        //mod_fileTitleXML_Current = each_file_Info.Name;
+                        //break;
+                        //-----Prepare for the next interation. 
+                        boolGrabThisNextFile = true;
+                    }
+                    //If we've come full circle, grab the first XML file.
+                    if (boolStartFromBeginningAgain)
+                    {
+                        //We've come full circle, so grab the first XML file.
+                        obj_nextFileInfo = each_file_Info;
+                        break;
+                    }
                 }
-                boolMatchesCurrent = (each_file_info.Name == mod_fileTitleXML_Current);
-                if (boolMatchesCurrent)
-                {
-                    //mod_fileTitleXML_Current = each_file_Info.Name;
-                    //break;
-                    //-----Prepare for the next interation. 
-                    boolGrabThisNextFile = true;
-                }
+                if (obj_nextFileInfo != null) break; // = true;
+                //Let's avoid infinite loops!!
+                if (obj_nextFileInfo == null && boolTrySecondAttempt) break; // = true;
+                if (obj_nextFileInfo == null) boolTrySecondAttempt = true;
+                //Take the very first file. ---11/29/2019 td
+                if (obj_nextFileInfo == null) boolStartFromBeginningAgain = true;
             }
 
-            mod_fileTitleXML_Current = obj_nextFileInfo.Name;
+            if (obj_nextFileInfo == null) throw new Exception("We are unable to locate any additional XML files.");
+            if (obj_nextFileInfo != null) mod_fileTitleXML_Current = obj_nextFileInfo.Name;
             strPathToFileXML = Path.Combine(strPathToFolderXML, mod_fileTitleXML_Current);
             return strPathToFileXML;
         }
