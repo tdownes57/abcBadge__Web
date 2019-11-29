@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowSavedCaches</title>
+</head>
+<body>
+
+    @{ 
+        string strPathToFolderXML = ciBadgeForWeb.App_Start.DiskFolders.PathToFolder_XML(true);
+
+        foreach (FileInfo each_file_Info in (new DirectoryInfo(strPathToFolderXML)).GetFiles("*.xml"))
+        {
+                <div>
+                    <a href="~/XmlCache?XmlCacheFile=@each_file_Info.Name">@each_file_Info.Name</a>
+                </div>
+        }
+
+   }
+
+
+</body>
+</html>

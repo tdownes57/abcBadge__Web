@@ -23,6 +23,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ciBadgeFields", "..\ciLayou
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ciBadgeGenerator", "..\ciLayout\ciBadgeGenerator\ciBadgeGenerator.csproj", "{42468695-2856-4336-8BCA-C5AF2EA8178E}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ciBadgeSerialize", "..\ciLayout\ciBadgeSerialize\ciBadgeSerialize.vbproj", "{59D5B213-E44B-432A-8237-53D91EC9C04A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{42468695-2856-4336-8BCA-C5AF2EA8178E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42468695-2856-4336-8BCA-C5AF2EA8178E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42468695-2856-4336-8BCA-C5AF2EA8178E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59D5B213-E44B-432A-8237-53D91EC9C04A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59D5B213-E44B-432A-8237-53D91EC9C04A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59D5B213-E44B-432A-8237-53D91EC9C04A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59D5B213-E44B-432A-8237-53D91EC9C04A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

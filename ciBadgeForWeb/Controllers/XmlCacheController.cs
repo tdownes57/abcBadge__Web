@@ -24,11 +24,15 @@ namespace ciBadgeForWeb.Controllers
             //
             string strPathToNextFileXml = 
                       ciBadgeForWeb.App_Start.DiskFiles.PathToFile_XML_Next(true);
-            
+
             //
             //Refresh the cache with the next cache.
-            //
-            ClassElementsCache.GetLoadedCache(strPathToNextFileXml, false );
+            // 
+            // 11-29-2019 td//ClassElementsCache.GetLoadedCache(strPathToNextFileXml, false)
+
+            int intSection = 0;  //Added 11/29/2019 thomas d. 
+            ClassElementsCache.GetLoadedCache(strPathToNextFileXml, 
+                false, null, ref intSection );
 
             return new RedirectResult("Home");
         }
@@ -53,6 +57,17 @@ namespace ciBadgeForWeb.Controllers
             return new EmptyResult();
 
         }
+
+        public ActionResult ShowSavedCaches()
+        {
+            //
+            //Added 11/28/2019 td
+            //
+            return (ActionResult)View();
+
+        }
+
+
 
     }
 }

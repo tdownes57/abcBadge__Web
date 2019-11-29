@@ -864,6 +864,7 @@
     <Content Include="Views\Shared\_Rudimentary.cshtml" />
     <Content Include="Views\Recipient\TestPartialView_Rud.cshtml" />
     <Content Include="Views\XmlCache\Index.cshtml" />
+    <Content Include="Views\XmlCache\ShowSavedCaches.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />
@@ -910,6 +911,10 @@
     <ProjectReference Include="..\..\ciLayout\ciBadgeInterfaces\ciBadgeInterfaces.vbproj">
       <Project>{3d1acca6-585e-4c92-9a6d-9a51d2f72f5f}</Project>
       <Name>ciBadgeInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ciLayout\ciBadgeSerialize\ciBadgeSerialize.vbproj">
+      <Project>{59d5b213-e44b-432a-8237-53d91ec9c04a}</Project>
+      <Name>ciBadgeSerialize</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\ciLayout\ciLayoutPrintLib\ciLayoutPrintLib.vbproj">
       <Project>{f8271e6c-5c26-4cec-bd4c-ad3b10fef6b9}</Project>
