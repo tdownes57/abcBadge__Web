@@ -13,7 +13,8 @@ namespace ciBadgeForWeb.Controllers
         public ActionResult Index()
         {
             //return View();
-            return new RedirectResult("Home");
+            //return new RedirectResult("Home");
+            return new RedirectResult("ListAllSavedCaches");
         }
 
 
@@ -58,7 +59,7 @@ namespace ciBadgeForWeb.Controllers
 
         }
 
-        public ActionResult ShowSavedCaches()
+        public ActionResult ListAllSavedCaches()  // 11-29-2019 td----SavedCaches()
         {
             //
             //Added 11/28/2019 td
@@ -67,6 +68,35 @@ namespace ciBadgeForWeb.Controllers
 
         }
 
+        public ActionResult LoadOneSavedCache(string parameter_id)  // Added 11-29-2019 td 
+        {
+            //
+            //Added 11/29/2019 td
+            //
+            bool boolBrandNewFile = false; //Added 11/29/2019 thomas d.
+            int intSection = 0;  //Added 11/29/2019 thomas d. 
+
+            string strFileTitleXML = (parameter_id + ".xml");
+
+            //ciBadgeForWeb.App_Start.DiskFiles.SpecifyCurrent_XML(parameter_id);
+            ciBadgeForWeb.App_Start.DiskFiles.SpecifyCurrent_XML(strFileTitleXML);
+
+            string strPathToNewCurrentXML =
+                App_Start.DiskFiles.PathToFile_XML_Current(true);
+            
+            boolBrandNewFile = false; //False, because the XML file might have
+            //  been created a week or even a month ago. 
+
+            //
+            //Major call !! 
+            //
+            ClassElementsCache.Singleton =
+            ClassElementsCache.GetLoadedCache(strPathToNewCurrentXML,
+                boolBrandNewFile, null, ref intSection);
+
+            return (ActionResult)(new EmptyResult());
+
+        }
 
 
     }

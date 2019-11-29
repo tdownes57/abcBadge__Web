@@ -14,6 +14,12 @@ namespace ciBadgeForWeb.App_Start
         //
         private static string mod_fileTitleXML_Current = ""; //Added 11/28/2019 td 
 
+        public static void SpecifyCurrent_XML(string xmlDesiredCacheFile)
+        {
+            //Added 11/29/2019 td 
+            mod_fileTitleXML_Current = xmlDesiredCacheFile;
+        }
+
         public static string PathToFile_XML_Current(bool pboolAbsolute)
         {
             //
@@ -148,6 +154,8 @@ namespace ciBadgeForWeb.App_Start
             return strPathToFile_Virtual;
 
         }
+
+
 
     }
 }

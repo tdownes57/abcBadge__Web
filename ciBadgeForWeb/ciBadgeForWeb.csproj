@@ -731,6 +731,9 @@
     <Content Include="XML\ciLayoutDesignVB.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="XML\FieldsHaveTypos.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <EntityDeploy Include="Models\ModelEntity.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelEntity.Designer.cs</LastGenOutput>
@@ -864,7 +867,7 @@
     <Content Include="Views\Shared\_Rudimentary.cshtml" />
     <Content Include="Views\Recipient\TestPartialView_Rud.cshtml" />
     <Content Include="Views\XmlCache\Index.cshtml" />
-    <Content Include="Views\XmlCache\ShowSavedCaches.cshtml" />
+    <Content Include="Views\XmlCache\ListAllSavedCaches.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />
