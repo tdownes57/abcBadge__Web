@@ -868,6 +868,7 @@
     <Content Include="Views\Recipient\TestPartialView_Rud.cshtml" />
     <Content Include="Views\XmlCache\Index.cshtml" />
     <Content Include="Views\XmlCache\ListAllSavedCaches.cshtml" />
+    <Content Include="Views\Shared\_RecipEditField.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />
