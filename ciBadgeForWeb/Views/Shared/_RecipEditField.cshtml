@@ -49,7 +49,7 @@
                 //
                 // For customized fields.
                 //
-                if (Model_Custom.HasPresetValues)
+                @if (Model_Custom.HasPresetValues)
                 {
                     <div class="form-group">
                         @*@Html.LabelFor(model => model.DataEntryText, htmlAttributes: new { @class = "control-label col-md-2" })*@
