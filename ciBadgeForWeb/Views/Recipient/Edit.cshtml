@@ -48,6 +48,21 @@
                         </div>
                     </div>
 
+                    @*<p>
+                        //
+                       Added 12/1/2019 td
+                        //
+                    </p>*@
+
+                    @foreach (ciBadgeFields.ClassFieldAny each_field in Model.ParentCache.ListOfFields_Any(Model))
+                    {
+                        //
+                        //Added 12/01/2019 thomas downes
+                        //
+                        Html.RenderPartial("_RecipEditField", Model); 
+                    }
+
+
                     @*<div class="form-group">
                         @Html.LabelFor(model => model.MiddleName, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
