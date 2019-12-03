@@ -23,7 +23,7 @@
                     <!--      -->
                     <!--   Recipient's ID   -->
                     <!--      -->
-                    @if (true)
+                    @*@if (true)
                     {
                         <div class="form-group">
                             @Html.LabelFor(model => model.RecipientID, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -32,30 +32,30 @@
                                 @Html.ValidationMessageFor(model => model.RecipientID, "", new { @class = "text-danger" })
                             </div>
                         </div>
-                    }
+                    }*@
 
 
                     <!--      -->
                     <!--   Recipient's First Name   -->
                     <!--      -->
-                    <div class="form-group">
+                    @*<div class="form-group">
                         @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
                         </div>
-                    </div>
+                    </div>*@
 
                     <!--      -->
                     <!--   Recipient's Last Name   -->
                     <!--      -->
-                    <div class="form-group">
+                    @*<div class="form-group">
                         @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
                         </div>
-                    </div>
+                    </div>*@
 
                     @*<p>
             //
