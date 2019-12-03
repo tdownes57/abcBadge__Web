@@ -37,7 +37,7 @@ namespace ciBadgeForWeb.Controllers
             //
             //Added 7-14-2019 Thomas DOWNES 
             //
-            CIRecipient curr_recip = RecipientController.mod_recipientList[BP_RecipientID_Current]; 
+            CIRecipient curr_recip = RecipientController.mod_recipientList2[BP_RecipientID_Current]; 
             return View(curr_recip);
 
         }

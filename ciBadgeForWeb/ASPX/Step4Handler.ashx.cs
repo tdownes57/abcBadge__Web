@@ -6,6 +6,7 @@ using System.Drawing;           //Added 5/20/2019 thomas d.
 using System.Drawing.Imaging;   //Added 5/20/2019 thomas d. 
 using System.IO;                //Added 5/20/2019 thomas d.
 using ciLayoutPrintLib;     //Added 10/5/2019 td
+
 using ciBadgeElements;       //Added 10/5/2019 td  
 using ciBadgeElemImage;     //Added 10/5/2019 td  
 using ciBadgeGenerator; //Added 11/13/2019 td
@@ -15,7 +16,7 @@ namespace ciBadgeForWeb
     /// <summary>
     /// Utilizes advanced layout programming from CILayoutDesigner by CI Solutions/Thomas Downes. 10/5/2019 td
     /// </summary>
-    public class Step4Handler : IHttpHandler
+    public class  Step4Handler : IHttpHandler
     {
 
         public void ProcessRequest(HttpContext context)
@@ -107,10 +108,12 @@ namespace ciBadgeForWeb
                     //Full Badge Image 
                     //
                     int recipient_id = Int32.Parse(context.Request.QueryString["id"]);
+                    string str_recipient_id = context.Request.QueryString["id"];
 
-                    recipients_list = Controllers.RecipientController.mod_recipientList;
+                    recipients_list = Controllers.RecipientController.mod_recipientList2;
 
-                    var recipients_by_id_list = recipients_list.Where(s => s.RecipientID == recipient_id.ToString());
+                    //var recipients_by_id_list = recipients_list.Where(s => s.RecipientID == recipient_id.ToString());
+                    var recipients_by_id_list = recipients_list.Where(s => s.RecipientID == str_recipient_id);
                     var recipient_by_id_onlyone = recipients_by_id_list.FirstOrDefault();
 
                     if (recipient_by_id_onlyone is null) return;
@@ -139,20 +142,37 @@ namespace ciBadgeForWeb
                      // Added 11/13/2019 td
                     //
                     ciBadgeGenerator.ClassMakeBadge mod_generate = new ClassMakeBadge();
-                    ciBadgeInterfaces.BadgeLayoutClass objLayout = 
-                        new ciBadgeInterfaces.BadgeLayoutClass();
+                    ciBadgeInterfaces.BadgeLayoutClass objLayout;   // = 
+                    //    new ciBadgeInterfaces.BadgeLayoutClass();
+
+                     //Added 11/16/2019 td
+                    objLayout = ciBadgeElements.ClassElementsCache.Singleton.BadgeLayout;
 
                     Image image_back = objLayoutEx.GenerateImage_BackgroundOnly(bHorizontalLarge,
                         bHorizontalSmall, ref boolNoImages);
-                     
-                    mod_generate.MakeBadgeImage_ByRecipient(objLayout, 
-                                   image_back, elements_cache,
-                                   intPixelsWidth, intPixelsHeight, 
-                                   recipient_by_id_onlyone, 
+
+                    //11-16-2019 td''mod_generate.MakeBadgeImage_ByRecipient(objLayout, 
+                    //         image_back, ClassElementsCache.Singleton,
+                    //         intPixelsWidth, intPixelsHeight, 
+                    //         recipient_by_id_onlyone, 
+                    //         recipient_by_id_onlyone.GetPortraitImage());
+
+                    //11-17-2019 thomas d.
+                    //11-26-2019 mod_generate.PathToFile_Sig = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_Sig(true);
+                    //11-26-2019 mod_generate.ImageQRCode = new Bitmap(App_Start.DiskFiles.PathToFile_QRCode(true));
+
+                    mod_generate.PathToFile_Sig = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_Sig(true);
+                    mod_generate.PathToFile_QR = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_QRCode(true);
+                    
+                    //mod_generate.ImageQRCode = new Bitmap(App_Start.DiskFiles.PathToFile_QRCode(true));
+                    mod_generate.ImageQRCode = new Bitmap(mod_generate.PathToFile_QR);
+
+                    image_ex =
+                    mod_generate.MakeBadgeImage_ByIRecipient(objLayout,
+                                   image_back, ClassElementsCache.Singleton,
+                                   intPixelsWidth, intPixelsHeight,
+                                   recipient_by_id_onlyone,
                                    recipient_by_id_onlyone.GetPortraitImage());
-
-
-
 
                 }
 

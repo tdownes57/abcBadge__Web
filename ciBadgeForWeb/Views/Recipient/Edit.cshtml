@@ -20,9 +20,6 @@
                     <hr />
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                    <!--      -->
-                    <!--   Recipient's ID   -->
-                    <!--      -->
                     @if (true)
                     {
                         <div class="form-group">
@@ -35,9 +32,6 @@
                     }
 
 
-                    <!--      -->
-                    <!--   Recipient's First Name   -->
-                    <!--      -->
                     <div class="form-group">
                         @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
@@ -46,9 +40,6 @@
                         </div>
                     </div>
 
-                    <!--      -->
-                    <!--   Recipient's Last Name   -->
-                    <!--      -->
                     <div class="form-group">
                         @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
@@ -57,32 +48,44 @@
                         </div>
                     </div>
 
-                    <!--      -->
-                    <!--   Recipient's Middle Name   -->
-                    <!--      -->
-                    <div class="form-group">
+                    @*<p>
+                        //
+                       Added 12/1/2019 td
+                        //
+                    </p>*@
+
+                    @foreach (ciBadgeFields.ClassFieldAny each_field in Model.ParentCache.ListOfFields_Any(Model))
+                    {
+                        //
+                        //Added 12/01/2019 thomas downes
+                        //
+                        Html.RenderPartial("_RecipEditField", Model); 
+                    }
+
+
+                    @*<div class="form-group">
                         @Html.LabelFor(model => model.MiddleName, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.MiddleName, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.MiddleName, "", new { @class = "text-danger" })
                         </div>
-                    </div>
+                    </div>*@
 
-                    <div class="form-group">
+                    @*<div class="form-group">
                         @Html.LabelFor(model => model.EffectiveDate_Text, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.EffectiveDate_Text, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.EffectiveDate_Text, "", new { @class = "text-danger" })
                         </div>
-                    </div>
+                    </div>*@
 
-                    <div class="form-group">
+                    @*<div class="form-group">
                         @Html.LabelFor(model => model.ExpirationDate_Text, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.ExpirationDate_Text, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.ExpirationDate_Text, "", new { @class = "text-danger" })
                         </div>
-                    </div>
+                    </div>*@
 
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">

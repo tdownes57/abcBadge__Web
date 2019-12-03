@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;// Added 5/20/2019 thomas d. 
-using System.Drawing; // Added 5/20/2019 thomas d. 
-using System.Drawing.Imaging;// Added 5/20/2019 thomas d. 
-using System.IO;// Added 5/20/2019 thomas d. 
+using System.Web;         // Added 5/20/2019 thomas d. 
+using System.Drawing;           // Added 5/20/2019 thomas d. 
+using System.Drawing.Imaging;   // Added 5/20/2019 thomas d. 
+using System.IO;        // Added 5/20/2019 thomas d. 
 using ciLayoutPrintLib; // Added 7/13/2019 td
 
 namespace ciBadgeForWeb
@@ -28,7 +28,7 @@ namespace ciBadgeForWeb
 
             //Added 7/9/2019 td  
             string strContextRequestQuery = context.Request.QueryString.ToString();
-            string queryID_ofRecip = context.Request.QueryString["id"];
+            var queryID_ofRecip = context.Request.QueryString["id"];
 
             //Added 7/06/2019 thomas downes
             int intPixelsWidth = 0; //Added 7/06/2019 thomas downes 
@@ -121,7 +121,7 @@ namespace ciBadgeForWeb
                 } //End of "if (boolImageSample)"
 
                 //int recipient_id = Int32.Parse(context.Request.QueryString["id"]);
-                int recipient_id = Int32.Parse(queryID_ofRecip);
+                //11-19-2019 td//int recipient_id = Int32.Parse(queryID_ofRecip);
 
                 // Now you have the id, do what you want with it, to get the right image
                 // More than likely, just pass it to the method, that builds the image
@@ -129,9 +129,11 @@ namespace ciBadgeForWeb
                 //   6/16/2019 td //Image image = SusanSampletonPng();
                 //   6/16/2019 td //Image image = ciPictures_VB.PictureExamples.GetExample();
 
-                recipients_list = Controllers.RecipientController.mod_recipientList;
+                recipients_list = Controllers.RecipientController.mod_recipientList2;
 
-                var recipients_by_id_list = recipients_list.Where(s => s.RecipientID == recipient_id.ToString());
+                // 11-19-2019 //var recipients_by_id_list = recipients_list.Where(s => s.RecipientID == recipient_id.ToString());
+                var recipients_by_id_list = recipients_list.Where(s => s.RecipientID == queryID_ofRecip);
+
                 var recipient_by_id_onlyone = recipients_by_id_list.FirstOrDefault();
 
                 //Added 6/20/2019 td 

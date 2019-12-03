@@ -6,6 +6,7 @@ using System.Web.Mvc; //Added 5/28/2019 td
 using System.ComponentModel.DataAnnotations; //Added 5/28/2019 td
 using System.Drawing; //Added 6/13/2019 thomas d. 
 using ciBadgeInterfaces; //Added 10/4/2019 td  
+using ciBadgeElements; // Added 12/01/2019 thomas d. 
 
 namespace ciBadgeForWeb.Models
 {
@@ -30,10 +31,26 @@ namespace ciBadgeForWeb.Models
             return this.RecipientID;
         }
 
+        //Added 12/1/2019 thomas d.
+        public ciBadgeElements.ClassElementsCache ParentCache { get; set; }
+
+        //
+        //Fields
+        //
+        List<ciBadgeFields.ClassFieldAny> ListOfCIBFields()
+        {
+            //
+            //Added 12/1/2019 thomas d
+            //
+            return ((ClassElementsCache)ParentCache).ListOfFields_Any(this);
+        }
+
         public System.Drawing.Image GetPortraitImage()
         {
             // Added 11/13/2019 td 
-            return null; 
+            //11-16-2019 td//return null;
+            return this.Picture;
+
         }
 
         public string fstrID //Added 10-4-2019 td 
@@ -51,11 +68,13 @@ namespace ciBadgeForWeb.Models
         {
             get
             {
-                return this.FirstName;
+                //11-18-2019 td//return this.FirstName;
+                return this.LastName;
             }
             set
             {
-                this.RecipientID = value;
+                //11-18-2019 td//this.RecipientID = value;
+                this.LastName = value;
             }
         }
 
@@ -235,6 +254,12 @@ namespace ciBadgeForWeb.Models
         {
             switch (par_enum)
             {
+                //Added 11/17/2019 td
+               case EnumCIBFields.fstrFirstName : return this.fstrFirstName;
+               case EnumCIBFields.fstrID : return this.fstrID;  
+               case EnumCIBFields.fstrLastName : return this.fstrLastName;
+               case EnumCIBFields.fstrMidName : return this.fstrMidName;
+
                 case EnumCIBFields.DateField01: return DateField01.ToString("MM/dd/yyyy"); break;
                 case EnumCIBFields.DateField02: return DateField02.ToString("MM/dd/yyyy"); break;
                 case EnumCIBFields.DateField03: return DateField03.ToString("MM/dd/yyyy"); break;
@@ -256,7 +281,9 @@ namespace ciBadgeForWeb.Models
                 case EnumCIBFields.TextField13: return TextField13; break;
                 case EnumCIBFields.TextField14: return TextField14; break;
                 case EnumCIBFields.TextField15: return TextField15; break;
-                default: return "Undermined"; break;
+                default: 
+                    return "Undetermined#1"; 
+                    break;
             }
             return "Undetermined";
         }
