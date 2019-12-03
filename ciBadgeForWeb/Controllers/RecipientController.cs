@@ -288,6 +288,10 @@ namespace ciBadgeForWeb.Controllers
             var recipient_by_id_onlyone = recipients_by_id_list.FirstOrDefault();
             //return View(recipients_by_id);
             //return View("Index", recipients_by_id);
+
+            //Added 12/2/2019 td  
+            recipient_by_id_onlyone.ParentCache = ciBadgeElements.ClassElementsCache.Singleton; 
+
             return (ViewResult)View(recipient_by_id_onlyone);
 
         }

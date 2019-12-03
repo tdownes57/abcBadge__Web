@@ -42,6 +42,7 @@ namespace ciBadgeForWeb.Models
             //
             //Added 12/1/2019 thomas d
             //
+            // 12-02-2019 td''return ((ClassElementsCache)ParentCache).ListOfFields_Any();
             return ((ClassElementsCache)ParentCache).ListOfFields_Any(this);
         }
 
@@ -128,10 +129,19 @@ namespace ciBadgeForWeb.Models
         //Custom Fields
         //
         //
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime DateField01 { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime DateField02 { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime DateField03 { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime DateField04 { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime DateField05 { get; set; }
 
 

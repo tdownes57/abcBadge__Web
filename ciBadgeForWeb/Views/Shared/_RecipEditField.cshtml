@@ -47,7 +47,8 @@
             if (Model.IsDateField)
             {
                 <div class="form-group">
-                    @Model_Custom.FieldLabelCaption (Date)
+                    @*@Model_Custom.FieldLabelCaption (Date)*@
+                    @Model.FieldLabelCaption (Date Field)
                     <div class="col-md-10">
                         @Html.EditorFor(model => model.CurrentRecipValue_DateString(), new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.CurrentRecipValue_DateString(), "", new { @class = "text-danger" })
