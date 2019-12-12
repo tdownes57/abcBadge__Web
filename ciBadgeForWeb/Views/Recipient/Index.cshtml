@@ -4,11 +4,12 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-    int intNumLines = 0; //Added 12/11/2019 thomas d. 
+    int intNumLines = 0; //Added 12/11/2019 thomas d.
 
 }
 
-<h2>Index  (Only at most 25 Students are listed here)</h2>
+<h2>Index</h2>
+<h3>(Only at most 25 Students are listed here)</h3>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -19,8 +20,8 @@
             Picture
         </th>
         @*<th>
-            @Html.DisplayNameFor(model => model.Personality)
-        </th>*@
+                @Html.DisplayNameFor(model => model.Personality)
+            </th>*@
         <th>
             @Html.DisplayNameFor(model => model.RecipientID)
         </th>
@@ -43,45 +44,46 @@
     </tr>
 
 
-@foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
 
-    intNumLines++;   //Added 12/11/2019 thomas d. 
-    if (intNumLines > 25) { break; } //Added 12/11/2019 thomas d. 
+        intNumLines++;   //Added 12/11/2019 thomas d.
+        if (intNumLines > 25) { break; } //Added 12/11/2019 thomas d.
 
-<tr>
-    <td>
-        <img alt="Image Handler" width="60" src="~/ASPX/ImageHandler.ashx?id=@item.RecipientID" />
-    </td>
-    @*<td>
-        @Html.DisplayFor(modelItem => item.Personality)
-    </td>*@
-    <td>
-        @Html.DisplayFor(modelItem => item.RecipientID)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.FirstName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.LastName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.MiddleName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.EffectiveDate_Text)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.ExpirationDate_Text)
-    </td>
-    <td>
-        @*@Html.ActionLink("Edit", "Edit", new { /* id = item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id = item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id = item.PrimaryKey */ })*@
-        @Html.ActionLink("Edit", "Edit", new { parameter_id = item.RecipientID }) |
-        @Html.ActionLink("Cards Printed Log", "CardsPrintedLog", new { parameter_id = item.RecipientID }) |
-        @Html.ActionLink("Delete", "Delete", new { parameter_id = item.RecipientID })
-    </td>
-</tr>
-}
+        <tr>
+            <td>
+                <img alt="Image Handler" width="60" src="~/ASPX/ImageHandler.ashx?id=@item.RecipientID" />
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Personality)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.RecipientID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MiddleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EffectiveDate_Text)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpirationDate_Text)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", new { /* id = item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id = item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id = item.PrimaryKey */ })*@
+                @Html.ActionLink("Edit", "Edit", new { parameter_id = item.RecipientID }) |
+                @Html.ActionLink("Cards Printed Log", "CardsPrintedLog", new { parameter_id = item.RecipientID }) |
+                @Html.ActionLink("Delete", "Delete", new { parameter_id = item.RecipientID })
+            </td>
+        </tr>
+    }
 
 </table>

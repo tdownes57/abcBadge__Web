@@ -24,5 +24,19 @@ namespace ciBadgeForWeb.App_Start
 
         }
 
+        public static string PathToFolderWithBacks(bool pboolAbsolute)
+        {
+            //
+            //Added 12/11/2019 thomas downes 
+            //
+            //return (HttpRuntime.AppDomainAppPath + "Images\\BackExamples");
+            string strPathToFolder_Virtual = "/Images/BackExamples";
+            string strPathToFolder_Absolute = HostingEnvironment.MapPath(strPathToFolder_Virtual);
+
+            if (pboolAbsolute) return strPathToFolder_Absolute;
+            return strPathToFolder_Virtual;
+        }
+
+
     }
 }

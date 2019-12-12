@@ -148,6 +148,9 @@ namespace ciBadgeForWeb
                      //Added 11/16/2019 td
                     objLayout = ciBadgeElements.ClassElementsCache.Singleton.BadgeLayout;
 
+                    //Added 12/11/2019 td
+                    LayoutExample.PathToFolderWithBacks = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(true);
+
                     Image image_back = objLayoutEx.GenerateImage_BackgroundOnly(bHorizontalLarge,
                         bHorizontalSmall, ref boolNoImages);
 
