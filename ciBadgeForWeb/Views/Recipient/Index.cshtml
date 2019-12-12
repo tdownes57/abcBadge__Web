@@ -3,9 +3,12 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    int intNumLines = 0; //Added 12/11/2019 thomas d. 
+
 }
 
-<h2>Index</h2>
+<h2>Index  (Only at most 25 Students are listed here)</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -39,7 +42,12 @@
         <th></th>
     </tr>
 
+
 @foreach (var item in Model) {
+
+    intNumLines++;   //Added 12/11/2019 thomas d. 
+    if (intNumLines > 25) { break; } //Added 12/11/2019 thomas d. 
+
 <tr>
     <td>
         <img alt="Image Handler" width="60" src="~/ASPX/ImageHandler.ashx?id=@item.RecipientID" />

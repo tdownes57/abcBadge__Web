@@ -75,6 +75,14 @@ Public Class PictureExamples
 
     End Sub ''End of "Public Shared Sub CreateExamplePics_Numbered"
 
+    Public Shared Function GetImageByRecipID_Null(pstrRecipientID As String) As Image
+        ''
+        ''Added 12/11/2019 thomas d.
+        ''
+        Return Nothing
+
+    End Function ''End of "Public Shared Function GetImageByRecipID_Null(pstrRecipientID As String) As Image"
+
     Public Shared Function GetImageByRecipID(pstrRecipientID As String) As Image
         ''
         ''Added 10/16/2019 thomas d.

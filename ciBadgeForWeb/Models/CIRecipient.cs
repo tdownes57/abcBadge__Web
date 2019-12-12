@@ -7,6 +7,8 @@ using System.ComponentModel.DataAnnotations; //Added 5/28/2019 td
 using System.Drawing; //Added 6/13/2019 thomas d. 
 using ciBadgeInterfaces; //Added 10/4/2019 td  
 using ciBadgeElements; // Added 12/01/2019 thomas d. 
+using ciPictures_VB; //Added 12/11/2019 thomas d. 
+using ciBadgeForWeb.Controllers;  //Added 12/11/2019 thomas d.
 
 namespace ciBadgeForWeb.Models
 {
@@ -95,9 +97,25 @@ namespace ciBadgeForWeb.Models
         public int intTimesPrinted { get; set; }
         public int idsCardDataID { get; set; }
 
+        //Added 12/11/2019 td  
+        private Image mod_pictureImage = null;
 
         [Display(Name = "Picture")]
-        public Image Picture { get; set; }
+        public Image Picture {
+            get 
+            {
+                //12/11/2019 td 
+                //#1  12-11-2019 td //if (mod_pictureImage == null) mod_pictureImage = PictureExamples.GetExample();
+                // #2  12-11-2019 td //if (mod_pictureImage == null) mod_pictureImage = RecipientController.GetImageByRecipID_Null();
+                if (mod_pictureImage == null) mod_pictureImage = RecipientController.GetImageByRecipID(this.fstrID);
+                return mod_pictureImage;
+            }
+            set 
+            {
+                //12/11/2019 td 
+                mod_pictureImage = value;
+            }
+         }
 
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
