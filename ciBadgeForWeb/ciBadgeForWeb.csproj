@@ -198,6 +198,7 @@
     <Compile Include="Controllers\BadgeRecipientController_NotInUse.cs" />
     <Compile Include="Controllers\BatchPrintController.cs" />
     <Compile Include="Controllers\CustomTextFieldController.cs" />
+    <Compile Include="Controllers\FieldsController.cs" />
     <Compile Include="Controllers\LayoutPicController.cs" />
     <Compile Include="Controllers\LayoutText1Controller.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
@@ -875,6 +876,7 @@
     <Folder Include="LegacyPages\" />
     <Folder Include="Views\CILayoutText\" />
     <Folder Include="Views\CustomField\" />
+    <Folder Include="Views\Fields\" />
     <Folder Include="Views\LayoutTextboxes\" />
     <Folder Include="Views\Menu\" />
   </ItemGroup>
