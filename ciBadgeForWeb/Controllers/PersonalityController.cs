@@ -79,6 +79,17 @@ namespace ciBadgeForWeb.Controllers
 
         }
 
+
+        // GET: Personality/Select/5
+        public ActionResult Select(int? id)
+        {
+            //Added 12/13/2019 thomas d
+            //
+            Controllers.RecipientController.PersonalityConfigID_current = (int)id;
+            return RedirectToAction("Index");
+
+        }
+
         // POST: Personality/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)

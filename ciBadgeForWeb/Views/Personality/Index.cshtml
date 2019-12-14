@@ -3,6 +3,9 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    //Added 12/13/2019 td;
+    bool bCurrentPersonality = false;
 }
 
 <h2>Index</h2>
@@ -36,13 +39,22 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.ConfigID)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ConfigNameBrief)
+            <b> @Html.DisplayFor(modelItem => item.ConfigNameBrief); </b>
+            @{
+                bCurrentPersonality = (item.ConfigID == ciBadgeForWeb.Controllers.RecipientController.PersonalityConfigID_current);
+            }
+            @if (bCurrentPersonality)
+            {
+                //Added 12/13/2019 thomas d.
+                @Html.Raw("<br>This is currently selected.");
+            }
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ConfigNameFull)
@@ -60,9 +72,11 @@
             @Html.DisplayFor(modelItem => item.AutoIncrementedID)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ConfigID }) |
-            @Html.ActionLink("Fields", "Custom Fields", new { id = item.ConfigID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ConfigID })
+            @Html.ActionLink("Select", "Select", new { id = item.ConfigID }) |
+            @Html.ActionLink("Edit", "Edit", new { id = item.ConfigID }) |
+            @*@Html.ActionLink("Fields", "Custom Fields", new { id = item.ConfigID }) |*@
+            @Html.ActionLink("Fields", "Fields", new { id = item.ConfigID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ConfigID })
         </td>
     </tr>
 }

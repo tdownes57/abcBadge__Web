@@ -69,7 +69,10 @@
                         //Added 12/01/2019 thomas downes
                         //
                         //Html.RenderPartial("_RecipEditField", Model);
-                        Html.RenderPartial("_RecipEditField", each_field);
+
+                        string strfieldname = each_field.FieldLabelCaption;
+
+                         Html.RenderPartial("_RecipEditField", each_field);
                     }
 
 
