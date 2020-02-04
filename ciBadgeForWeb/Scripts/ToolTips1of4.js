@@ -16,6 +16,7 @@
 //    //  console.log(a);
 //} 
 
+"use strict";  //Suggested by my Orange Coast class. ---2/4/2020 thomas downes
 
 function createTip_ByPercentage(ev) {
     var title = this.title;

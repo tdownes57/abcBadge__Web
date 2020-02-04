@@ -12,6 +12,8 @@
 //
 //
 
+"use strict";  //Suggested by my Orange Coast class. ---2/4/2020 thomas downes
+
 
 
 

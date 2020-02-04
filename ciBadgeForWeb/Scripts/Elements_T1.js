@@ -3,6 +3,8 @@
 //
 //Added 7/9/2019 & 6/26/2019 thomas downes
 //
+"use strict";  //Suggested by my Orange Coast class. ---2/4/2020 thomas downes
+
 //var T1_moveable_text = document.getElementById("id__mydivheaderT1");
 
 //var T1_textbox_TopEdge = document.getElementsByName('T1.TopEdgePositionPixels')[0];

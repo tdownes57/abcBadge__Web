@@ -8,9 +8,12 @@
 //
 //         (Eventually this script will depend upon Scripts/Elements_T2.js)
 //
+"use strict";  //Suggested by my Orange Coast class. ---2/4/2020 thomas downes
 
-var aT2;
-aT2 = 5;
+//var aT2;
+//aT2 = 5;
+let aT2 = 5; 
+
 //alert("T2  This is TextMover1  !!");
 
 //Make the DIV element draggable:

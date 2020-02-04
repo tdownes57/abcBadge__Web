@@ -4,6 +4,8 @@
 //
 //Added 7/9/2019 & 6/26/2019 thomas downes
 //
+"use strict";  //Suggested by my Orange Coast class. ---2/4/2020 thomas downes
+
 //var EL_moveable_text = document.getElementById("id__mydivheader1");
 
 //var EL_textbox_TopEdge = document.getElementsByName('TopEdgePositionPixels')[0];

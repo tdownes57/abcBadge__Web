@@ -6,6 +6,8 @@
 //
 //A parameter variable is declared by being listed as a parameter.
 //
+"use strict";  //Suggested by my Orange Coast class. ---2/4/2020 thomas downes
+
 function dragElement(par_T99, parameter_element) {
 
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;

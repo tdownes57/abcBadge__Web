@@ -15,6 +15,8 @@
 //   C = Color  
 //
 
+"use strict";  //Suggested by my Orange Coast class. ---2/4/2020 thomas downes
+
 var adjustmentWHC = {
     adjustmentTypeWHC = "_",   /* W = Width, H = Height C = Color */          
     newColorRBG = "#000000",

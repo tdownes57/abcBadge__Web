@@ -11,6 +11,7 @@
 //         (Not to be confused with TextMover_T1.js  !!!!)
 //
 //
+"use strict";  //Suggested by my Orange Coast class. ---2/4/2020 thomas downes
 
 var a;
 a = 5;

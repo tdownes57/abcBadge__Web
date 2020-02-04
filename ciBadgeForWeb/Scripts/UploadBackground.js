@@ -2,6 +2,7 @@
 //
 //   https://www.dotnettricks.com/learn/mvc/how-to-upload-a-file-in-mvc4
 //
+"use strict";  //Suggested by my Orange Coast class. ---2/4/2020 thomas downes
 
 //get file size
 function GetFileSize(fileid) {

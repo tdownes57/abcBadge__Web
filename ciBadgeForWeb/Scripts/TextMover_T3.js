@@ -2,9 +2,10 @@
 //
 //CI Solutions, Thomas C. Downes..  ----6/22/2019 td  
 //
+"use strict";  //Suggested by my Orange Coast class. ---2/4/2020 thomas downes
 
-var a;
-a = 5;
+//var a;
+let a = 5;
 alert("This is TextMover1  !!");
 
 //Make the DIV element draggable:
