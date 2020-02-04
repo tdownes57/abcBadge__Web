@@ -5,10 +5,13 @@
     //Layout = "~/Views/Shared/_Layout_Login.cshtml";
 }
 
+@*<h2>Please log into ABC Badge Web.</h2>*@
+<h2>Please log into ABC Badge.</h2>
+
 @using (Html.BeginForm("LoginPlain", "Home", FormMethod.Post))
 {
     <fieldset>
-        <legend>Please log into CI Badge Web.</legend>
+        @*<legend>Please log into CI Badge Web.</legend>*@
 
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true)
@@ -39,6 +42,8 @@
                 <td></td>
                 <td>
                     <input type="submit" value="Login" />
+                    @*<br />
+                        To skip the login process: <input type="submit" value="Bypass" />*@
                 </td>
                 <td></td>
             </tr>
@@ -46,4 +51,10 @@
     </fieldset>
 }
 
+@using (Html.BeginForm("Bypass", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <p>To skip the login process: <input type="submit" value="Bypass" /></p>
+}
 

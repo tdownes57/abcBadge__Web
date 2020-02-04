@@ -52,7 +52,7 @@ namespace ciBadgeForWeb.Controllers
             ciPictures_VB.PictureExamples.PathToFolderOfImages = (HttpRuntime.AppDomainAppPath + "Images\\PictureExamples");
             ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks = (HttpRuntime.AppDomainAppPath + "Images\\BackExamples");
 
-            if (ModelState.IsValid)
+            if (ModelState != null && ModelState.IsValid)
             {
                 //  8/15/2019 td''using (DB_Entities db = new DB_Entities())
                 //{
@@ -65,8 +65,24 @@ namespace ciBadgeForWeb.Controllers
                 //    }
                 //  8/15/2019 td''}
 
-                bool boolUserSupport = ("support".Equals(objUser.UserName.ToLower()));
-                bool boolSupportPW = ("teal90720".Equals(objUser.Password));
+                //bool boolUserSupport = ("support".Equals(objUser.UserName.ToLower()));
+
+                bool boolUserSupport = false;  //Added 1/27/2020 thomas downes
+                bool boolSupportPW = false;    //Added 1/27/2020 thomas downes
+
+                if (objUser.UserName != null && objUser.Password != null)
+                {
+                    //
+                    //Conditioned 1/27/2020 thomas downes
+                    //
+                    boolUserSupport = ("support".Equals(objUser.UserName.ToLower()));
+                    boolSupportPW = ("teal90720".Equals(objUser.Password));
+
+                    boolSupportPW = boolSupportPW || ("support".Equals(objUser.Password));
+                    boolSupportPW = boolSupportPW || ("Support".Equals(objUser.Password));
+                    boolSupportPW = boolSupportPW || ("SUPPORT".Equals(objUser.Password));
+                }
+
                 bool boolSupportAuthenticated = (boolUserSupport && boolSupportPW); 
 
                 if (boolSupportAuthenticated)
@@ -81,6 +97,18 @@ namespace ciBadgeForWeb.Controllers
             return View(objUser);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Bypass(UserLogin objUser)
+        {
+            //
+            // Skip the login process. 
+            //
+            Session["UserID"] = "Support";
+            Session["UserName"] = "Support";
+            //return View(objUser);
+            return RedirectToAction("Index");
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -92,7 +120,7 @@ namespace ciBadgeForWeb.Controllers
             ciPictures_VB.PictureExamples.PathToFolderOfImages = (HttpRuntime.AppDomainAppPath + "Images\\PictureExamples");
             ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks = (HttpRuntime.AppDomainAppPath + "Images\\BackExamples");
 
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && objUser.UserName != null && objUser.Password != null)
             {
                 bool boolUserSupport = ("support".Equals(objUser.UserName.ToLower()));
                 bool boolSupportPW = ("teal90720".Equals(objUser.Password));
@@ -115,7 +143,7 @@ namespace ciBadgeForWeb.Controllers
             //
             //  https://www.c-sharpcorner.com/article/simple-login-application-using-Asp-Net-mvc/ 
             //
-            if (Session["UserID"] != null)
+            if (Session["UserID"] != null || Session["UserName"] != null)
             {
                 return View();
             }
@@ -165,7 +193,7 @@ namespace ciBadgeForWeb.Controllers
 
             return (ViewResult)View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         }
-
+        
         public ActionResult Example()
         {
             ViewBag.Message = "Example of a badge.";
@@ -178,7 +206,16 @@ namespace ciBadgeForWeb.Controllers
             //   is the a type of ActionResult which is good for debugging the RouteConfig!!  
             //  ----5/24 td
 
-            return (ViewResult)View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
+            //return (ViewResult)View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
+
+            return RedirectToRoute(new
+            {
+                controller = "Recipient",
+                action = "Edit"
+                //parameter_id = "001"
+                //userId = user.Id,
+                //applicantId = applicant.Id
+            });
 
         }
 
@@ -194,6 +231,16 @@ namespace ciBadgeForWeb.Controllers
             //   is the a type of ActionResult which is good for debugging the RouteConfig!!  
             //  ----5/24 td
 
+        }
+
+        public ActionResult Example_NotInUse()
+        {
+            //
+            //Example of Badge.  
+            //
+            ViewBag.Message = "Your application description page.";
+
+            return (ViewResult)View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         }
 
     }

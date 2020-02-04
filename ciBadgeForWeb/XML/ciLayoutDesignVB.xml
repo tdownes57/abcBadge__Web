@@ -1,7 +1,12 @@
 <?xml version="1.0"?>
-<ClassElementsCache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<ClassElementsCache_Deprecated xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Id_GUID>00000000-0000-0000-0000-000000000000</Id_GUID>
+
   <PathToXml_Saved>C:\Users\tdown\source\repos\ciLayout\ciLayoutDesignVB\bin\Debug\ciLayoutDesignVB_Saved.xml</PathToXml_Saved>
+
+ <BackgroundImage_Path></BackgroundImage_Path>
+ <BackgroundImage_FTitle></BackgroundImage_FTitle>
+
   <ElementQRCode>
     <BadgeLayout>
       <Width_Pixels>681</Width_Pixels>
@@ -1601,4 +1606,4 @@
       <SelectedHighlighting>false</SelectedHighlighting>
     </ClassElementStaticText>
   </ListOfElementTexts>
-</ClassElementsCache>
+</ClassElementsCache_Deprecated>

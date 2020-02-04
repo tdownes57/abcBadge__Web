@@ -1,0 +1,172 @@
+﻿@model IEnumerable<ciBadgeFields.ClassFieldAny>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    int intNumLines = 0; //Added 12/11/2019 thomas d.
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IsStandard)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsCustomizable)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsDateField)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Text_orDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CIBadgeField)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OtherDbField_Optional)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FieldLabelCaption)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FieldType_TD)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FieldIndex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsFieldForDates)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsLocked)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsDisplayedOnBadge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsDisplayedForEdits)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DefaultValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExampleValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HasPresetValues)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsAdditionalField)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsBarCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataEntryText)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsLinkedToSections)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentRecipValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentRecipValue_Date)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsStandard)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsCustomizable)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsDateField)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text_orDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CIBadgeField)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OtherDbField_Optional)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FieldLabelCaption)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FieldType_TD)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FieldIndex)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsFieldForDates)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsLocked)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsDisplayedOnBadge)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsDisplayedForEdits)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DefaultValue)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExampleValue)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HasPresetValues)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsAdditionalField)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsBarCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataEntryText)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsLinkedToSections)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CurrentRecipValue)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CurrentRecipValue_Date)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>

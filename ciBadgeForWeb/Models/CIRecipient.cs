@@ -34,7 +34,7 @@ namespace ciBadgeForWeb.Models
         }
 
         //Added 12/1/2019 thomas d.
-        public ciBadgeElements.ClassElementsCache ParentCache { get; set; }
+        public ciBadgeElements.ClassElementsCache_Deprecated ParentCache { get; set; }
 
         //
         //Fields
@@ -45,7 +45,7 @@ namespace ciBadgeForWeb.Models
             //Added 12/1/2019 thomas d
             //
             // 12-02-2019 td''return ((ClassElementsCache)ParentCache).ListOfFields_Any();
-            return ((ClassElementsCache)ParentCache).ListOfFields_Any(this);
+            return ((ClassElementsCache_Deprecated)ParentCache).ListOfFields_Any(this);
         }
 
         public System.Drawing.Image GetPortraitImage()

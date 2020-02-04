@@ -14,6 +14,31 @@ namespace ciBadgeForWeb.App_Start
         //
         private static string mod_fileTitleXML_Current = ""; //Added 11/28/2019 td 
 
+        public static string PathToFile_BackImage(string pstrFileTitle, bool pboolAbsolute)
+        {
+            //
+            //Added 1/14/2020
+            //
+            //bool boolNotYetDetermined = ("" == mod_fileTitleXML_Current);
+            string strPathToFileJpeg = "";
+            string strPathToFolderBackJpegs = DiskFolders.PathToFolderWithBacks(pboolAbsolute);
+            bool boolMatchOfTitle = false;
+
+            foreach (FileInfo file_Info in (new DirectoryInfo(strPathToFolderBackJpegs)).GetFiles(pstrFileTitle))
+            {
+                boolMatchOfTitle = (file_Info.Name.ToUpper() == pstrFileTitle.ToUpper());
+                
+                if (boolMatchOfTitle)
+                {
+                    strPathToFileJpeg = file_Info.FullName;
+                    break;
+                }
+            }
+            
+            //strPathToFileJpeg = Path.Combine(strPathToFolderBackJpegs, );
+            return strPathToFileJpeg;
+        }
+
         public static void SpecifyCurrent_XML(string xmlDesiredCacheFile)
         {
             //Added 11/29/2019 td 

@@ -32,7 +32,7 @@ namespace ciBadgeForWeb.Controllers
             // 11-29-2019 td//ClassElementsCache.GetLoadedCache(strPathToNextFileXml, false)
 
             int intSection = 0;  //Added 11/29/2019 thomas d. 
-            ClassElementsCache.GetLoadedCache(strPathToNextFileXml, 
+            ClassElementsCache_Deprecated.GetLoadedCache(strPathToNextFileXml, 
                 false, null, ref intSection );
 
             return new RedirectResult("Home");
@@ -43,7 +43,7 @@ namespace ciBadgeForWeb.Controllers
             //
             //Added 11/28/2019 td
             //
-            ClassElementsCache.Singleton.SaveToXML();
+            ClassElementsCache_Deprecated.Singleton.SaveToXML();
 
             return new EmptyResult();
 
@@ -54,7 +54,7 @@ namespace ciBadgeForWeb.Controllers
             //
             //Added 11/28/2019 td
             //
-            ClassElementsCache.Singleton.SaveToXML();
+            ClassElementsCache_Deprecated.Singleton.SaveToXML();
             return new EmptyResult();
 
         }
@@ -90,8 +90,8 @@ namespace ciBadgeForWeb.Controllers
             //
             //Major call !! 
             //
-            ClassElementsCache.Singleton =
-            ClassElementsCache.GetLoadedCache(strPathToNewCurrentXML,
+            ClassElementsCache_Deprecated.Singleton =
+            ClassElementsCache_Deprecated.GetLoadedCache(strPathToNewCurrentXML,
                 boolBrandNewFile, null, ref intSection);
 
             return (ActionResult)(new EmptyResult());

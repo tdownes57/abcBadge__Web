@@ -90,6 +90,26 @@ namespace ciBadgeForWeb.Controllers
 
         }
 
+        // GET: Personality/Fields
+        public ActionResult Fields()
+        {
+            //
+            //Added 1/19/2020 thomas d
+            //
+            //return View("Fields", "Index");
+            //return RedirectToRoute("~/Fields");
+            //return RedirectToRoute("Fields");
+
+            return RedirectToRoute(new
+            {
+                controller = "Fields",
+                action = "Index"
+                //userId = user.Id,
+                //applicantId = applicant.Id
+            });
+
+        }
+
         // POST: Personality/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)

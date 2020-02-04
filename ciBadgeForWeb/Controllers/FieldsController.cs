@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ciBadgeElements;  //Added 1/19/2020 thomas downes  
 
 namespace ciBadgeForWeb.Controllers
 {
@@ -11,7 +12,9 @@ namespace ciBadgeForWeb.Controllers
         // GET: Fields
         public ActionResult Index()
         {
-            return View();
+            //return View();
+            //return View(ClassElementsCache_Deprecated.Singleton.ListOfElementFields);
+            return View(ClassElementsCache_Deprecated.Singleton.ListOfFields_Any());
         }
 
         // GET: Fields/Details/5

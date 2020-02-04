@@ -23,7 +23,7 @@ namespace ciBadgeForWeb
             //
             //Added 11//14/2019 thomas downes
             //
-            ClassElementsCache obj_cache;
+            ClassElementsCache_Deprecated obj_cache;
             //obj_cache = new ClassElementsCache();
             //obj_cache.LoadFieldElements();
 
@@ -42,8 +42,8 @@ namespace ciBadgeForWeb
             //Added 11/16/2019 Thomas DOWNES  
             try
             {
-                ClassElementsCache.Singleton =
-                    ClassElementsCache.GetLoadedCache(path_toElementsCacheXML,
+                ClassElementsCache_Deprecated.Singleton =
+                    ClassElementsCache_Deprecated.GetLoadedCache(path_toElementsCacheXML,
                     boolNewFile, obj_form.pictureBack.Image, ref intSection);
             }
             catch (Exception ex_Global_App_Start)

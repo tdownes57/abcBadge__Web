@@ -9,18 +9,20 @@
 
     <div class="jumbotron">
         @*<h1>ABC Badge Web</h1>*@
-        <img src="~/Images/CIBadgeLogo.png" width="500" alt="ABC Badge Web" />
-        <img src="~/Images/CISolutionsLogo.png" width="400" alt="ABC Solutions" />
-        <h2>by ABC Solutions</h2>
-        <p class="lead">ABC Badge Web is a software service enabling you to create badges for any group of people.</p>
-        @*<p><a href="https://www.cardintegrators.com/card-printing-software/" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+        @*<img src="~/Images/ABCBadgeLogo.png" width="500" alt="ABC Badge Web" />
+        <img src="~/Images/ThomasDownesLogo.png" width="400" alt="ABC Solutions" />*@
+        <h2>by Thomas C. Downes <img src="~/Images/ThomasCDownes.png" width="70" /></h2>
+        @*<img src="~/Images/ThomasCDownes.png" width="100" />*@
+
+        <p class="lead">ABC Badge by Thomas C. Downes is a software service enabling you to create badges for any group of people.</p>
+        @*<p><a href="https://abcBadge.AzureWebsites.net/card-printing-software/" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
         <p><a href="~/Home/LoginPlain" class="btn btn-primary btn-lg">Log in &raquo;</a></p>
     </div>
 
 @using (Html.BeginForm("Login", "Home", FormMethod.Post))
 {
     <fieldset>
-        <legend>Please log into ABC Badge Web.</legend>
+        <legend>Please log into ABC Badge.</legend>
 
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true)
@@ -51,11 +53,21 @@
                 <td></td>
                 <td>
                     <input type="submit" value="Login" />
+                    @*<br />
+                    To skip the login process: <input type="submit" value="Bypass" />*@
                 </td>
                 <td></td>
             </tr>
         </table>
     </fieldset>
 }
+
+@using (Html.BeginForm("Bypass", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <p>To skip the login process: <input type="submit" value="Bypass" /></p>
+}
+
 
 

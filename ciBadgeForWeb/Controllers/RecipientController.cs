@@ -274,7 +274,7 @@ namespace ciBadgeForWeb.Controllers
         {
             //Added 7/9/2019 td
             //if (!(parameter_id.HasValue)) parameter_id = "001";  // = 5;
-            if (parameter_id == null) parameter_id = "001";
+             if (parameter_id == null) parameter_id = "001";
 
             const bool c_boolSpecifyViewName = false; //Added 5/28/2019 td
             if (c_boolSpecifyViewName) return View("Edit");  //A ViewResult, i.e. a webpage, is the most popular type of ActionResult !!
@@ -290,7 +290,7 @@ namespace ciBadgeForWeb.Controllers
             //return View("Index", recipients_by_id);
 
             //Added 12/2/2019 td  
-            recipient_by_id_onlyone.ParentCache = ciBadgeElements.ClassElementsCache.Singleton;
+            recipient_by_id_onlyone.ParentCache = ciBadgeElements.ClassElementsCache_Deprecated.Singleton;
 
             return (ViewResult)View(recipient_by_id_onlyone);
 
@@ -312,7 +312,7 @@ namespace ciBadgeForWeb.Controllers
 
         // POST: Recipient/Edit/5
         [HttpPost]
-        public ActionResult Edit(string str_parameter_id, FormCollection collection)
+        public ActionResult Edit(string id, FormCollection collection)
         {
             //  public ActionResult Edit(int parameter_id, FormCollection collection)
             try
@@ -322,8 +322,55 @@ namespace ciBadgeForWeb.Controllers
                 //Get the student from studentList sample collection for demo purpose.
                 //Get the student from the database in the real application
 
+                string str_parameter_id = id;   //Added 1-17-2020 thomas downes
+
                 //Added 11/26/2019 thomas d.
                 if (str_parameter_id == null) str_parameter_id = Request["RecipientID"];
+
+                //Added 1/17/2020 thomas d.
+                if (str_parameter_id == null) str_parameter_id = collection[1];
+
+                //11/26/2019 td//var edited_recip = mod_recipientList2.Where(s => s.RecipientID == parameter_id.ToString()).FirstOrDefault();
+                var edited_recip = mod_recipientList2.Where(s => s.RecipientID == str_parameter_id).FirstOrDefault();
+
+                var name_first = Request["FirstName"];
+                var name_last = Request["LastName"];
+
+                //edited_recip.FirstName = name_first;  // std.FirstName + "_Revised";
+                //edited_recip.LastName = name_last;  //  std.LastName + "_Revised";
+
+                 UpdateModel(edited_recip, collection);
+
+                //Index = "Nothing specified, go to the root page or action."  
+                return RedirectToAction("Index");  //A Redirect is a less-common ActionResult.  ----5/24 td
+            }
+            catch
+            {
+                return (ViewResult)View();  //A ViewResult, i.e. a webpage, is the most popular type of ActionResult !!
+            }
+        }
+
+        // POST: Recipient/Edit/5
+        [HttpPost]
+        public ActionResult Edit_NotInUse(int id, FormCollection collection)
+        {
+            //  public ActionResult Edit(int parameter_id, FormCollection collection)
+            try
+            {
+                // TODO: Add update logic here
+                //
+                //Get the student from studentList sample collection for demo purpose.
+                //Get the student from the database in the real application
+
+                string str_parameter_id; // as string ''Added 1/17/2019 Thomas Downes
+
+                str_parameter_id = id.ToString(); //Added 1-17-2019 thomas downes
+
+                //Added 11/26/2019 thomas d.
+                if (str_parameter_id == null) str_parameter_id = Request["RecipientID"];
+
+                //Added 1/17/2020 thomas d.
+                if (str_parameter_id == null) str_parameter_id = collection[1];
 
                 //11/26/2019 td//var edited_recip = mod_recipientList2.Where(s => s.RecipientID == parameter_id.ToString()).FirstOrDefault();
                 var edited_recip = mod_recipientList2.Where(s => s.RecipientID == str_parameter_id).FirstOrDefault();

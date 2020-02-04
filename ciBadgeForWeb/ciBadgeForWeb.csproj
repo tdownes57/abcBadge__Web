@@ -195,6 +195,9 @@
     <Compile Include="ASPX\Step4Handler.ashx.cs">
       <DependentUpon>Step4Handler.ashx</DependentUpon>
     </Compile>
+    <Compile Include="ASPX\UltraSimpleHandler.ashx.cs">
+      <DependentUpon>UltraSimpleHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\BadgeRecipientController_NotInUse.cs" />
     <Compile Include="Controllers\BatchPrintController.cs" />
     <Compile Include="Controllers\CustomTextFieldController.cs" />
@@ -321,6 +324,12 @@
     <Content Include="Images\1960.JPG" />
     <Content Include="Images\Adjust width &amp; height.jpg" />
     <Content Include="Images\AdjustWHColor_V101.jpg" />
+    <Content Include="Images\BackExamples\BackExample.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BackExamples\ExampleBack.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\BackExamples\ORO835 - OrovilleHS.PNG">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -698,6 +707,9 @@
     <Content Include="Images\The UI for v831 MD.JPG" />
     <Content Include="Images\The UI for v900.BAK.PNG" />
     <Content Include="Images\The UI for v900.PNG" />
+    <Content Include="Images\ThomasCDownes.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Width or Height Sizer.png" />
     <Content Include="Images\__UI for V831 w No Pic.JPG" />
     <Content Include="Images\__UI for V831 w No Pic.PNG" />
@@ -732,7 +744,7 @@
     <Content Include="XML\ciLayoutDesignVB.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="XML\FieldsHaveTypos.xml">
+    <Content Include="XML\ciLayoutDesignVB_Saved.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <EntityDeploy Include="Models\ModelEntity.edmx">
@@ -750,6 +762,8 @@
     <Content Include="Connected Services\AzureStorage1\ConnectedService.json" />
     <Content Include="ASPX\Step4Handler.ashx" />
     <Content Include="Documentation\Mock-Up Templates 11.13.pdf" />
+    <Content Include="ASPX\UltraSimpleHandler.ashx" />
+    <None Include="Properties\PublishProfiles\abcBadge - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CIS90720 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CIS90720 - Web Deploy1.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
@@ -870,13 +884,13 @@
     <Content Include="Views\XmlCache\Index.cshtml" />
     <Content Include="Views\XmlCache\ListAllSavedCaches.cshtml" />
     <Content Include="Views\Shared\_RecipEditField.cshtml" />
+    <Content Include="Views\Fields\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />
     <Folder Include="LegacyPages\" />
     <Folder Include="Views\CILayoutText\" />
     <Folder Include="Views\CustomField\" />
-    <Folder Include="Views\Fields\" />
     <Folder Include="Views\LayoutTextboxes\" />
     <Folder Include="Views\Menu\" />
   </ItemGroup>

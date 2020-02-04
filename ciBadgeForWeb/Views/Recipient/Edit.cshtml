@@ -23,7 +23,7 @@
                     <!--      -->
                     <!--   Recipient's ID   -->
                     <!--      -->
-                    @*@if (true)
+                    @if (true)
                     {
                         <div class="form-group">
                             @Html.LabelFor(model => model.RecipientID, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -32,36 +32,36 @@
                                 @Html.ValidationMessageFor(model => model.RecipientID, "", new { @class = "text-danger" })
                             </div>
                         </div>
-                    }*@
+                    }
 
 
                     <!--      -->
                     <!--   Recipient's First Name   -->
                     <!--      -->
-                    @*<div class="form-group">
+                    <div class="form-group">
                         @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
                         </div>
-                    </div>*@
+                    </div>
 
                     <!--      -->
                     <!--   Recipient's Last Name   -->
                     <!--      -->
-                    @*<div class="form-group">
+                    <div class="form-group">
                         @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
                         </div>
-                    </div>*@
+                    </div>
 
                     @*<p>
-            //
-           Added 12/1/2019 td
-            //
-        </p>*@
+                            //
+                           Added 12/1/2019 td
+                            //
+                        </p>*@
 
                     @foreach (ciBadgeFields.ClassFieldAny each_field in Model.ParentCache.ListOfFields_Any(Model))
                     {
@@ -70,50 +70,110 @@
                         //
                         //Html.RenderPartial("_RecipEditField", Model);
 
-                        string strfieldname = each_field.FieldLabelCaption;
+                        string strFieldLabelCaption = each_field.FieldLabelCaption;
+                        string strFieldName = each_field.CIBadgeField;
 
-                         Html.RenderPartial("_RecipEditField", each_field);
+                        //Added 1/19/2019 thomas downes
+                        switch (strFieldLabelCaption)
+                        {
+                            case "ID": continue;
+                            case "First Name": continue;
+                            case "Last Name": continue;
+                        }
+
+                        //Added 1/19/2019 thomas downes
+                        switch (strFieldName)
+                        {
+                            case "fstrID": continue;
+                            case "fstrFirstName": continue;
+                            case "fstrLastName": continue;
+                        }
+
+                        //1-17-2020 td //Html.RenderPartial("_RecipEditField", each_field);
+
+                        if (!(each_field.IsDisplayedForEdits))
+                        {
+                            continue;
+                        }
+
+                        <!--      -->
+                        <!--   Recipient's ______ value   -->
+                        <!--      -->
+                        <div class="form-group">
+
+                            @*@Html.Label(strFieldName, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                            @Html.Label(strFieldLabelCaption, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                            @switch (strFieldName)
+                            {
+                                case "TextField01":
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.TextField01, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.TextField02, "", new { @class = "text-danger" })
+                                    </div>
+                                    break;
+                                case "TextField02":
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.TextField02, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.TextField02, "", new { @class = "text-danger" })
+                                    </div>
+                                    break;
+                                case "DateField01":
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.DateField01, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.DateField02, "", new { @class = "text-danger" })
+                                    </div>
+                                    break;
+                                case "DateField02":
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.DateField02, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.DateField02, "", new { @class = "text-danger" })
+                                    </div>
+                                    break;
+                            }
+                        </div>
+
                     }
 
+                </div>
 
-                    @*<div class="form-group">
-            @Html.LabelFor(model => model.MiddleName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.MiddleName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MiddleName, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
+                @*<div class="form-group">
+                        @Html.LabelFor(model => model.MiddleName, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.MiddleName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.MiddleName, "", new { @class = "text-danger" })
+                        </div> 
+                    </div>*@
 
-                    @*<div class="form-group">
-            @Html.LabelFor(model => model.EffectiveDate_Text, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.EffectiveDate_Text, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.EffectiveDate_Text, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
-
-                    @*<div class="form-group">
-            @Html.LabelFor(model => model.ExpirationDate_Text, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ExpirationDate_Text, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ExpirationDate_Text, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
-
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Save" class="btn btn-default" />
+                @*<div class="form-group">
+                        @Html.LabelFor(model => model.EffectiveDate_Text, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.EffectiveDate_Text, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.EffectiveDate_Text, "", new { @class = "text-danger" })
                         </div>
+                    </div>*@
+
+                @*<div class="form-group">
+                        @Html.LabelFor(model => model.ExpirationDate_Text, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.ExpirationDate_Text, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ExpirationDate_Text, "", new { @class = "text-danger" })
+                        </div>
+                    </div>*@
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-default" />
                     </div>
                 </div>
-                }
 
             </td>
 
             <td>
 
+                <h2>Portrait and Badge</h2>
                 <img alt="Image Handler" width="100" src="~/ASPX/ImageHandler.ashx?id=@Model.RecipientID" />
-                <img alt="Step4 Handler" width="500" src="~/ASPX/Step4Handler.ashx?id=@Model.RecipientID&big=y&hor=y&width=500" />
+                <img alt="Step4 Handler" width="500" src="~/ASPX/Step4Handler.ashx?id=@Model.RecipientID&big=y&hor=y&width=500" style="border: 2px dotted black;" />
 
                 <!-- img alt="Image Handler" src="../ASPX/ImageHandler.ashx?id=<%= Request.QueryString[" id"] %>" -->
                 <!-- img alt="Step4 Handler" src="../ASPX/Step4Handler.ashx?id=<%= Request.QueryString[" id"] %>" -->
@@ -133,15 +193,15 @@
     for (int intIndex = 0; intIndex < 10; intIndex++)
     {
 
-       // @*@displayPartialView("~/Views/__Partials/Rudimentary.cshtml");*@
+        // @*@displayPartialView("~/Views/__Partials/Rudimentary.cshtml");*@
 
-       // @*@await Html.PartialAsync("_Rudimentary");
-       // @Html("_Rudimentary");*@
+        // @*@await Html.PartialAsync("_Rudimentary");
+        // @Html("_Rudimentary");*@
 
-       // @*@Html.Partial("_PartialViewTesting", Model.Comments)*@
+        // @*@Html.Partial("_PartialViewTesting", Model.Comments)*@
 
-       Html.RenderPartial("_Rudimentary", Model); 
-            
+        //Html.RenderPartial("_Rudimentary", Model);
+
     }
 
 }

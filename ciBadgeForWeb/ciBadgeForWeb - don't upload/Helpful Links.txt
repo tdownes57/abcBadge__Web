@@ -1,0 +1,181 @@
+﻿
+Helpful Links  
+
+
+
+
+Get started with ASP.NET on Azure    
+  Azure for .NET and .NET Core developers  
+  https://docs.microsoft.com/en-us/dotnet/azure/?utm_source=aspnet-start-page&utm_campaign=vside
+
+Publish your app to Azure 
+  Create an ASP.NET Framework web app in Azure
+  Launch the publish wizard
+  https://docs.microsoft.com/en-us/azure/app-service/app-service-web-get-started-dotnet-framework#launch-the-publish-wizard
+
+
+
+  ----5/18/2019 thomas d. 
+
+Login System w/ email confirmatation  
+
+https://docs.microsoft.com/en-us/aspnet/mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
+
+https://www.youtube.com/watch?v=EyrKUSwi4uI
+
+
+Microsoft Azure 
+    https://azure.microsoft.com/en-us/
+
+ASP.NET - File Uploading  
+     https://www.tutorialspoint.com/asp.net/asp.net_file_uploading.htm
+------------------------------------------------------------------------
+<asp:FileUpload ID= "Uploader" runat = "server" />
+-----------------------------------------------------------------------
+<body>
+   <form id="form1" runat="server">
+   
+      <div>
+         <h3> File Upload:</h3>
+         <br />
+         <asp:FileUpload ID="FileUpload1" runat="server" />
+         <br /><br />
+         <asp:Button ID="btnsave" runat="server" onclick="btnsave_Click"  Text="Save" style="width:85px" />
+         <br /><br />
+         <asp:Label ID="lblmessage" runat="server" />
+      </div>
+      
+   </form>
+</body>
+------------------------------------------------------------------------------
+protected void btnsave_Click(object sender, EventArgs e)
+{
+   StringBuilder sb = new StringBuilder();
+   
+   if (FileUpload1.HasFile)
+   {
+      try
+      {
+         sb.AppendFormat(" Uploading file: {0}", FileUpload1.FileName);
+         
+         //saving the file
+         FileUpload1.SaveAs("<c:\\SaveDirectory>" + FileUpload1.FileName);
+      
+         //Showing the file information
+         sb.AppendFormat("<br/> Save As: {0}",  FileUpload1.PostedFile.FileName);
+         sb.AppendFormat("<br/> File type: {0}",    FileUpload1.PostedFile.ContentType);
+         sb.AppendFormat("<br/> File length: {0}",  FileUpload1.PostedFile.ContentLength);
+         sb.AppendFormat("<br/> File name: {0}",  FileUpload1.PostedFile.FileName);
+         
+      }catch (Exception ex)
+      {
+         sb.Append("<br/> Error <br/>");
+         sb.AppendFormat("Unable to save file <br/> {0}", ex.Message);
+      }
+   }
+   else
+   {
+      lblmessage.Text = sb.ToString();
+   }
+}
+-------------------------------------------------------------------------------
+
+Can I leverage the following ASP.NET control property in order to pass the student's pic/image data to ciLayoutOutput?   
+
+         FileUpload1.FileBytes  
+
+What is the System.Drawing.Image commands which would convert an array of bytes into an image?  
+
+https://stackoverflow.com/questions/28638002/byte-conversion-back-to-image
+
+    Dim ms As New IO.MemoryStream(CType(plr.PlayerImage, Byte())) 'This is correct...
+    Dim returnImage As Image = Image.FromStream(ms)
+    pcbEditPlayer.Image = returnImage
+
+converts to:
+
+    Dim obj_memstream As New IO.MemoryStream(CType(FileUpload1.FileBytes, Byte())) 'This is correct...
+    Dim returnImage As Image = Image.FromStream(obj_memstream)
+    PictureBox.Image = returnImage
+
+I haven't ported any program code into ciLayoutPrint yet, but here is what it might look like:
+
+    imageBadge = ciLayoutPrint.ComposeImage(par_imagePersonPic As Image, 
+                      par_strID As String, 
+                      par_strLastName As String, 
+                      par_strFirstName As String, 
+                      par_TextField01 As String, 
+                      par_TextField02 As String, 
+                      par_TextField03 As String, 
+                      par_TextField04 As String, 
+                      par_TextField05 As String)  
+
+Next, I need to load an ASP.NET MVC page with the Image.  
+
+https://asp-net-example.blogspot.com/2008/10/image-control-example.html
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Asp.Net Image Control Example</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:Image
+             ID="Image1"
+             runat="server"
+             ImageUrl="~/Images/Bird1.jpg"
+             Width="400"
+             Height="400"
+             ToolTip="Beautiful Bird"
+             BorderWidth="3"
+             BorderStyle="Solid"
+             BorderColor="Crimson"
+             />
+    </div>
+    </form>
+</body>
+</html>
+
+-----------------------------------------------
+
+https://www.mindstick.com/Articles/478/dynamically-loading-image-in-image-control-in-asp-dot-net
+
+<div style="height: 486px; width: 872px">     
+        <asp:Image ID="Image1" runat="server" Height="432px" Width="866px" />
+        <br />
+        <asp:TextBox ID="TextBox1" runat="server"
+            style="margin-left: 26px; margin-top: 17px" Width="183px"></asp:TextBox>
+&nbsp;
+        <asp:Button ID="Button1" runat="server" onclick="Button1_Click"
+            style="margin-left: 21px; margin-top: 15px" Text="Enter Image URL"
+            Width="136px" />    
+    </div>
+
+protected void Page_Load(object sender, EventArgs e)
+        {
+               string path = Request.QueryString[0];
+               if (path != null)
+              {
+                     System.Drawing.Bitmap img = new System.Drawing.Bitmap(path);
+               img.Save(Response.OutputStream, System.Drawing.Imaging.ImageFormat.Jpeg);
+              }
+        }
+
+
+------
+------Monday 5/20/2019 td
+------
+ASP.NET MVC Routing Overview (C#)
+		https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-routing-overview-cs
+
+Creating a Controller (C#)
+		https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/controllers-and-routing/creating-a-controller-cs
+
+ASP.NET Scaffolding in Visual Studio 2013
+    https://docs.microsoft.com/en-us/aspnet/visual-studio/overview/2013/aspnet-scaffolding-overview
+
+
+
+
+

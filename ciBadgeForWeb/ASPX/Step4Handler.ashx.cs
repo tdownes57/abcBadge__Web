@@ -18,9 +18,36 @@ namespace ciBadgeForWeb
     /// </summary>
     public class  Step4Handler : IHttpHandler
     {
-
         public void ProcessRequest(HttpContext context)
         {
+            try 
+            {
+                //Encapsulated 1/15/2020 td  
+                ProcessRequest_noTryCatch(context);
+            }
+            catch (Exception ex)
+            {
+                //
+                //Added 1/15/2020 td
+                //
+                //return ex.ToString();
+                context.Response.ContentType = "text/html";
+                //context.Response.Write($"<p> {ex.ToString()} </p>");
+                context.Response.Write($"<p> {ex.Message} </p>");
+
+            }
+        }
+
+        private void ProcessRequest_noTryCatch(HttpContext context)
+        {
+            //
+            //Encapsulated 1-15-2020 td
+            //
+            //context.Response.Clear();
+            //context.Response.ContentType = "text/html";
+            //context.Response.Write("<p>No images were loaded, unfortunately.</p>");
+            //return;
+
             IList<Models.CIRecipient> recipients_list;
 
             bool bSizeLarge = false, bHorizontalLarge = false, bHorizontalSmall = false; //Added 6/20/2019 thomas downes 
@@ -146,13 +173,38 @@ namespace ciBadgeForWeb
                     //    new ciBadgeInterfaces.BadgeLayoutClass();
 
                      //Added 11/16/2019 td
-                    objLayout = ciBadgeElements.ClassElementsCache.Singleton.BadgeLayout;
+                    // 1/14/2019 td//objLayout = ciBadgeElements.ClassElementsCache.Singleton.BadgeLayout;
+                    objLayout = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.BadgeLayout;
 
-                    //Added 12/11/2019 td
+                    //Added 12/11/2019 td 
                     LayoutExample.PathToFolderWithBacks = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(true);
 
-                    Image image_back = objLayoutEx.GenerateImage_BackgroundOnly(bHorizontalLarge,
-                        bHorizontalSmall, ref boolNoImages);
+                    //Added 1/12/2020 thomas downes  
+                    Image image_back;
+                    const bool c_bUseOldMethodWhichFailsOnAzure = false;
+                    if (c_bUseOldMethodWhichFailsOnAzure)
+                    {
+                        image_back = objLayoutEx.GenerateImage_BackgroundOnly(bHorizontalLarge,
+                           bHorizontalSmall, ref boolNoImages);
+                    }
+                    else
+                    {
+                        //
+                        //Added 1/12/2020 thomas d. 
+                        //
+                        //string strPathToBackJpg = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_BackImg_Current;
+                        string strPathToBackImages = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(true);
+                        //bool boolNoImages;
+                        //image_back = ciLayoutPrintLib.BackImageExamples.GetCurrentImage(boolNoImages);
+                        int intBackWidth = objLayout.Width_Pixels;
+                        int intBackHeight = objLayout.Height_Pixels;
+
+                        //string strBackImageFileTitle = ClassElementsCache_Deprecated.Singleton.BackgroundImage_FTitle;
+                        //image_back = ClassElementsCache_Deprecated.Singleton.GetBackgroundImage(intBackWidth, intBackHeight);
+                        image_back = ClassElementsCache_Deprecated.Singleton.GetBackgroundImage(intBackWidth, intBackHeight,
+                                strPathToBackImages);
+
+                    }
 
                     //11-16-2019 td''mod_generate.MakeBadgeImage_ByRecipient(objLayout, 
                     //         image_back, ClassElementsCache.Singleton,
@@ -172,7 +224,7 @@ namespace ciBadgeForWeb
 
                     image_ex =
                     mod_generate.MakeBadgeImage_ByIRecipient(objLayout,
-                                   image_back, ClassElementsCache.Singleton,
+                                   image_back, ClassElementsCache_Deprecated.Singleton,
                                    intPixelsWidth, intPixelsHeight,
                                    recipient_by_id_onlyone,
                                    recipient_by_id_onlyone.GetPortraitImage());

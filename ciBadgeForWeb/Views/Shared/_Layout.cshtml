@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - ABC Badge by ABC Solutions</title>
+    <title>@ViewBag.Title - ABC Badge by Thomas C. Downes</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -22,7 +22,7 @@
 
                 @*https://stackoverflow.com/questions/42506595/mvc5-razor-check-session-value*@
 
-                @if (Session["UserName"] != null)  
+                @if (Session["UserName"] != null || Session["UserID"] != null)  
                 {
 
                 <ul class="nav navbar-nav">
@@ -55,7 +55,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - ABC Badge by ABC Solutions</p>
+            <p>&copy; @DateTime.Now.Year - ABC Badge by Thomas C. Downes</p>
         </footer>
     </div>
 
