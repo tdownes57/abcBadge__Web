@@ -2,6 +2,11 @@
 <ClassElementsCache_Deprecated xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Id_GUID>00000000-0000-0000-0000-000000000000</Id_GUID>
   <PathToXml_Saved>C:\Users\tdown\source\repos\ciLayout\ciLayoutDesignVB\bin\Debug\ciLayoutDesignVB_Saved.xml</PathToXml_Saved>
+
+  
+  
+  
+  
   <ElementQRCode>
     <BadgeLayout>
       <Width_Pixels>681</Width_Pixels>
@@ -535,7 +540,7 @@
       <Border_Displayed>true</Border_Displayed>
       <Border_Color>Black</Border_Color>
       <Back_Transparent>false</Back_Transparent>
-      <Back_Color>#80FF80</Back_Color>
+      <Back_Color>#00FF80</Back_Color>
       <SelectedHighlighting>false</SelectedHighlighting>
       <Visible>true</Visible>
     </ClassElementField>

@@ -357,6 +357,9 @@
     <Content Include="Images\CIBadgeLogo.png" />
     <Content Include="Images\CISolutionsLogo.jpg" />
     <Content Include="Images\CISolutionsLogo.png" />
+    <AdditionalFiles Include="Images\Downes_byFP.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AdditionalFiles>
     <Content Include="Images\ImageMetaData.xml" />
     <Content Include="Images\LayoutBack1of3.jpg" />
     <Content Include="Images\PictureExamples\000.jpg">
@@ -707,6 +710,9 @@
     <Content Include="Images\The UI for v831 MD.JPG" />
     <Content Include="Images\The UI for v900.BAK.PNG" />
     <Content Include="Images\The UI for v900.PNG" />
+    <Content Include="Images\ThomasCDownes.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\ThomasCDownes.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -741,9 +747,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ASPX\ImageHandler.ashx" />
-    <Content Include="XML\ciLayoutDesignVB.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="XML\ciLayoutDesignVB_GreenText.xml" />
+    <Content Include="XML\ciLayoutDesignVB_Plain.xml" />
     <Content Include="XML\ciLayoutDesignVB_Saved.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
