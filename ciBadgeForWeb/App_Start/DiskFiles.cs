@@ -27,14 +27,14 @@ namespace ciBadgeForWeb.App_Start
             foreach (FileInfo file_Info in (new DirectoryInfo(strPathToFolderBackJpegs)).GetFiles(pstrFileTitle))
             {
                 boolMatchOfTitle = (file_Info.Name.ToUpper() == pstrFileTitle.ToUpper());
-                
+
                 if (boolMatchOfTitle)
                 {
                     strPathToFileJpeg = file_Info.FullName;
                     break;
                 }
             }
-            
+
             //strPathToFileJpeg = Path.Combine(strPathToFolderBackJpegs, );
             return strPathToFileJpeg;
         }
@@ -58,7 +58,9 @@ namespace ciBadgeForWeb.App_Start
 
             if (boolNotYetDetermined)
             {
-                foreach (FileInfo file_Info in (new DirectoryInfo(strPathToFolderXML)).GetFiles("*.xml"))
+                // 2-4-2020 td //foreach (FileInfo file_Info in (new DirectoryInfo(strPathToFolderXML)).GetFiles("*.xml"))
+                FileInfo[] array_fileInfos = (new DirectoryInfo(strPathToFolderXML)).GetFiles("*.xml");  //Added 2/4/2020 thomas downes
+                foreach (FileInfo file_Info in array_fileInfos.OrderByDescending(n => n.LastWriteTime))
                 {
                     if (boolNotYetDetermined)
                     {
@@ -83,7 +85,7 @@ namespace ciBadgeForWeb.App_Start
             bool boolGrabThisNextFile = false;
             FileInfo obj_nextFileInfo = null;
             bool boolTrySecondAttempt = false;
-            bool boolStartFromBeginningAgain = false; 
+            bool boolStartFromBeginningAgain = false;
 
             if (boolNotYetDetermined)
             {
@@ -129,7 +131,7 @@ namespace ciBadgeForWeb.App_Start
             return strPathToFileXML;
         }
 
-        public static string PathToFile_XML_NotInUse(bool pboolAbsolute )
+        public static string PathToFile_XML_NotInUse(bool pboolAbsolute)
         {
             //Return My.Application.Info.DirectoryPath & "\Images\Signatures\Declaration_bmp.bmp"
 

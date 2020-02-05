@@ -1,6 +1,12 @@
 ﻿
 @{
-    Layout = null;
+    //Layout = null;
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    //Added 2/04/2020 td;
+    bool bCurrentXmlCache = false;
+    string sCurrentXmlFilename = "";
 }
 
 <!DOCTYPE html>
@@ -14,26 +20,43 @@
 
     <h1>List of Saved Cache Files</h1>
 
-    @{ 
+    @{
         string strPathToFolderXML = ciBadgeForWeb.App_Start.DiskFolders.PathToFolder_XML(true);
         int intFileNumber = 0;
 
         foreach (FileInfo each_file_Info in (new DirectoryInfo(strPathToFolderXML)).GetFiles("*.xml"))
         {
-            //We have to remove the file extension, first. 
+            //We have to remove the file extension, first.
             string strXmlFile_NoExt = each_file_Info.Name.Replace(".xml", "");
             intFileNumber += 1;
 
             <div>
-                 @*<a href="~/XmlCache?XmlCacheFile=@each_file_Info.Name">@each_file_Info.Name</a>*@
+                @*<a href="~/XmlCache?XmlCacheFile=@each_file_Info.Name">@each_file_Info.Name</a>*@
 
-                <p>XML File # @intFileNumber is:  
-                <a href="~/XmlCache/LoadOneSavedCache/@strXmlFile_NoExt">
-                      @each_file_Info.Name</a></p>
+                <p>
+                    XML File # @intFileNumber is:
+                    <a href="~/XmlCache/LoadOneSavedCache/@strXmlFile_NoExt">
+                        @each_file_Info.Name
+                    </a>
+ 
+                    @{
+                        //
+                        //Added 2/4/2020 thomas downes
+                        //
+                        //sCurrentXmlFilename = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.PathToXml_Saved;
+                        sCurrentXmlFilename = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.XmlFile_FTitle;
+                        bCurrentXmlCache = (each_file_Info.Name == sCurrentXmlFilename);
+                    }
+                    @if (bCurrentXmlCache)
+                    {
+                        //Added 02/04/2020 thomas d.
+                        @Html.Raw("<br>This is currently selected.");
+                    }
+                </p>
             </div>
         }
 
-   }
+    }
 
 
 </body>
