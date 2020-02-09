@@ -890,6 +890,7 @@
     <Content Include="Views\XmlCache\ListAllSavedCaches.cshtml" />
     <Content Include="Views\Shared\_RecipEditField.cshtml" />
     <Content Include="Views\Fields\Index.cshtml" />
+    <Content Include="Views\XmlCache\InformOfNewlyOpenedCache.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />

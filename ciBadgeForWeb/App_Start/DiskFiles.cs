@@ -64,6 +64,9 @@ namespace ciBadgeForWeb.App_Start
                 {
                     if (boolNotYetDetermined)
                     {
+                        //
+                        //We are selecting the most recently-edited file. 
+                        //
                         mod_fileTitleXML_Current = file_Info.Name;
                         break;
                     }

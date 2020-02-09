@@ -1,0 +1,42 @@
+﻿
+@{
+    //Layout = null;
+    ViewBag.Title = "ElementCache is Open";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+        //Added 2/04/2020 td;
+    string sCurrentXmlFilename = "";
+
+}
+
+@*<!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Inform Of Newly Opened Cache</title>
+    </head>*@
+@*<body>
+        <div>
+        </div>
+    </body>
+    </html>*@
+
+<div>
+    @*<a href="~/XmlCache?XmlCacheFile=@each_file_Info.Name">@each_file_Info.Name</a>*@
+
+    <p>
+        @*Currently-open XML File is:*@
+        @{
+            //
+            //Added 2/4/2020 thomas downes
+            //
+            //sCurrentXmlFilename = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.PathToXml_Saved;
+            sCurrentXmlFilename = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.XmlFile_FTitle;
+
+            //Added 02/04/2020 thomas d.
+            @Html.Raw("<h2>This following XML is currently active: </h2> <h3>" + sCurrentXmlFilename + "</h3>");
+        }
+    </p>
+</div>
+

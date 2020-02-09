@@ -68,6 +68,15 @@ namespace ciBadgeForWeb.Controllers
 
         }
 
+        public ActionResult InformOfNewlyOpenedCache()  // Added 2/04/2020 td
+        {
+            //
+            //Added 2/04/2020 td
+            //
+            return (ActionResult)View();
+
+        }
+
         public ActionResult LoadOneSavedCache(string parameter_id)  // Added 11-29-2019 td 
         {
             //
@@ -94,7 +103,9 @@ namespace ciBadgeForWeb.Controllers
             ClassElementsCache_Deprecated.GetLoadedCache(strPathToNewCurrentXML,
                 boolBrandNewFile, null, ref intSection);
 
-            return (ActionResult)(new EmptyResult());
+            //return (ActionResult)(new EmptyResult());
+            //return new RedirectResult("InformOfNewlyOpenedCache");
+            return View("InformOfNewlyOpenedCache");
 
         }
 
