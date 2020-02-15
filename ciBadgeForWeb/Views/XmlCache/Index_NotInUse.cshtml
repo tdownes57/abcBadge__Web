@@ -1,0 +1,63 @@
+﻿
+@{
+    //Layout = null;
+    ViewBag.Title = "Show Available ElementCaches";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    //Added 2/04/2020 td;
+    bool bCurrentXmlCache = false;
+    string sCurrentXmlFilename = "";
+}
+
+@*<!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>ShowSavedCaches</title>
+    </head>
+    <body>*@
+
+<h1>List of Saved Cache Files</h1>
+
+@{
+    string strPathToFolderXML = ciBadgeForWeb.App_Start.DiskFolders.PathToFolder_XML(true);
+    int intFileNumber = 0;
+
+    foreach (FileInfo each_file_Info in (new DirectoryInfo(strPathToFolderXML)).GetFiles("*.xml"))
+    {
+        //We have to remove the file extension, first.
+        string strXmlFile_NoExt = each_file_Info.Name.Replace(".xml", "");
+        intFileNumber += 1;
+
+        <div>
+            @*<a href="~/XmlCache?XmlCacheFile=@each_file_Info.Name">@each_file_Info.Name</a>*@
+
+            <p>
+                XML File # @intFileNumber is:
+                <a href="~/XmlCache/LoadOneSavedCache/@strXmlFile_NoExt">
+                    @each_file_Info.Name
+                </a>
+
+                @{
+                    //
+                    //Added 2/4/2020 thomas downes
+                    //
+                    //sCurrentXmlFilename = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.PathToXml_Saved;
+                    sCurrentXmlFilename = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.XmlFile_FTitle;
+                    bCurrentXmlCache = (each_file_Info.Name == sCurrentXmlFilename);
+                }
+                @if (bCurrentXmlCache)
+                {
+                    //Added 02/04/2020 thomas d.
+                    @Html.Raw("   << This one is currently selected.");
+                }
+            </p>
+        </div>
+    }
+
+}
+
+
+</body>
+</html>

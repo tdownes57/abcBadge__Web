@@ -38,7 +38,7 @@
                     <a href="~/XmlCache/LoadOneSavedCache/@strXmlFile_NoExt">
                         @each_file_Info.Name
                     </a>
- 
+
                     @{
                         //
                         //Added 2/4/2020 thomas downes
@@ -51,6 +51,11 @@
                     {
                         //Added 02/04/2020 thomas d.
                         @Html.Raw("   << This one is currently selected.");
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Save Config & Layout" class="btn btn-default" />
+                            </div>
+                        </div>
                     }
                 </p>
             </div>
