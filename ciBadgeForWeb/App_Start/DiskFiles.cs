@@ -13,6 +13,8 @@ namespace ciBadgeForWeb.App_Start
         //Added 11/15/2019 td  
         //
         private static string mod_fileTitleXML_Current = ""; //Added 11/28/2019 td 
+        private static bool mod_boolCorruptedFilename = false;  //Added 2/16/2020 td
+        private static string mod_strCorruptedFilename = "";  //Added 2/16/2020 td
 
         public static string PathToFile_BackImage(string pstrFileTitle, bool pboolAbsolute)
         {
@@ -53,6 +55,22 @@ namespace ciBadgeForWeb.App_Start
             //return PathToFile_XML(pboolAbsolute);
 
             bool boolNotYetDetermined = ("" == mod_fileTitleXML_Current);
+            bool boolExpectedFileType = false; // mod_fileTitleXML_Current.EndsWith(".xml");
+            bool boolPossiblyCorrupt = false;  //Added 216/2019 td
+
+            if (!(boolNotYetDetermined)) //Added 2/16/2020 thomas downes
+            {
+                boolExpectedFileType = mod_fileTitleXML_Current.EndsWith(".xml");
+                boolPossiblyCorrupt = (!(boolExpectedFileType));
+                if (boolPossiblyCorrupt)
+                {
+                    //Added 2/16/2020 thomas downes
+                    mod_boolCorruptedFilename = true;
+                    mod_strCorruptedFilename = mod_fileTitleXML_Current;
+                    mod_fileTitleXML_Current = "";
+                }
+            }
+
             string strPathToFileXML = "";
             string strPathToFolderXML = DiskFolders.PathToFolder_XML(pboolAbsolute);
 
@@ -62,6 +80,11 @@ namespace ciBadgeForWeb.App_Start
                 FileInfo[] array_fileInfos = (new DirectoryInfo(strPathToFolderXML)).GetFiles("*.xml");  //Added 2/4/2020 thomas downes
                 foreach (FileInfo file_Info in array_fileInfos.OrderByDescending(n => n.LastWriteTime))
                 {
+                    //Added 2/16/2020 thomas downes
+                    boolExpectedFileType = file_Info.Name.EndsWith(".xml");
+                    boolPossiblyCorrupt = (!(boolExpectedFileType));
+                    if (boolPossiblyCorrupt) continue;  //Skip this file!!
+
                     if (boolNotYetDetermined)
                     {
                         //
