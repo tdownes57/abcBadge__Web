@@ -2,12 +2,14 @@
 @{
     //Layout = null;
     ViewBag.Title = "Show Available ElementCaches";
-    //Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 
     //Added 2/04/2020 td;
-    bool bCurrentXmlCache = false;
-    string sCurrentXmlFilename = "";
+    //bool bCurrentXmlCache = false;
+    //string sCurrentXmlFilename = "";
 }
+
+<h2>List of Saved Cache Files</h2>
 
 @*<!DOCTYPE html>
 
@@ -22,7 +24,11 @@
 {
     @Html.AntiForgeryToken()
 
-    <h2>List of Saved Cache Files</h2>
+    //Added 2/04/2020 td;
+    bool bCurrentXmlCache = false;
+    string sCurrentXmlFilename = "";
+
+    @*<h2>List of Saved Cache Files</h2>*@
 
     {
         string strPathToFolderXML = ciBadgeForWeb.App_Start.DiskFolders.PathToFolder_XML(true);
