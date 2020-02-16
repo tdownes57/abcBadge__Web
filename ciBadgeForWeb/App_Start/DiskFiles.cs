@@ -112,6 +112,8 @@ namespace ciBadgeForWeb.App_Start
             FileInfo obj_nextFileInfo = null;
             bool boolTrySecondAttempt = false;
             bool boolStartFromBeginningAgain = false;
+            bool boolExpectedFileType = false; //Added 2/16/2019 td     mod_fileTitleXML_Current.EndsWith(".xml");
+            bool boolPossiblyCorrupt = false;  //Added 2/16/2019 td
 
             if (boolNotYetDetermined)
             {
@@ -122,6 +124,11 @@ namespace ciBadgeForWeb.App_Start
             {
                 foreach (FileInfo each_file_Info in (new DirectoryInfo(strPathToFolderXML)).GetFiles("*.xml"))
                 {
+                    //Added 2/16/2019 td
+                    boolExpectedFileType = each_file_Info.Name.EndsWith(".xml");  //Added 2/16/2019 td
+                    boolPossiblyCorrupt = (!(boolExpectedFileType));  //Added 2/16/2019 td
+                    if (boolPossiblyCorrupt) continue;  //Added 2/16/2019 td
+
                     if (boolGrabThisNextFile)
                     {
                         obj_nextFileInfo = each_file_Info;
