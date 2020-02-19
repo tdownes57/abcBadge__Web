@@ -6,6 +6,9 @@ using System.Web.Mvc; //Added 7/10/2019 td
 using System.ComponentModel.DataAnnotations; //Added 7/10/2019 td
 using System.Drawing; //Added 7/10/2019 thomas d. 
 
+using System.Linq.Expressions;  //Added 2-19-2020 thomas downes 
+using System.Web.Mvc.Html; //Added 2/19/2020 td
+
 namespace ciBadgeForWeb.Models
 {
     public class Personality
@@ -54,6 +57,23 @@ namespace ciBadgeForWeb.Models
         [Display(Name = "Auto-Increment ID?")]
         public bool AutoIncrementedID { get; set; }
 
+        //
+        // Added 2/19/2020 thomas downes
+        //
+        public Expression<Func<Personality, string>> GetExpression() // (EnumCIBFields par_enum)
+        {
+            //var temp_express = new Expression<Func<CIRecipient, string>>(i => i.); 
+            //return (model => model => model => model.fstrLastName); 
+
+            //return (model => model.fstrLastName);
+
+            //string strDateToString; //Added 2/19/2020 thomas d. 
+
+            //switch (par_enum)
+            //{
+            return model => model.ConfigNameBrief;
+            //}
+        }
 
     }
 }

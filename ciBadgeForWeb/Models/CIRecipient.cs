@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;  //Added 2-19-2020 thomas downes 
 using System.Web;
 using System.Web.Mvc; //Added 5/28/2019 td
 using System.ComponentModel.DataAnnotations; //Added 5/28/2019 td
-using System.Web.Mvc.Html; //Added 2/19/2020 td
 using System.Drawing; //Added 6/13/2019 thomas d. 
 using ciBadgeInterfaces; //Added 10/4/2019 td  
 using ciBadgeElements; // Added 12/01/2019 thomas d. 
 using ciPictures_VB; //Added 12/11/2019 thomas d. 
 using ciBadgeForWeb.Controllers;  //Added 12/11/2019 thomas d.
+
+using System.Linq.Expressions;  //Added 2-19-2020 thomas downes 
+using System.Web.Mvc.Html; //Added 2/19/2020 td
 
 namespace ciBadgeForWeb.Models
 {
@@ -145,6 +146,23 @@ namespace ciBadgeForWeb.Models
         //
         public string fstrBarcode { get; set; }
         public string fstrRFID_Unique { get; set; }
+
+        //
+        //Added 2/19/2020 THOMAS DOWNES
+        //
+        public string fstrAddress { get; set; }
+        public string fstrCity { get; set; }
+        public string fstrState { get; set; }
+        public string fstrZip { get; set; }
+
+        //
+        //Added 2/19/2020 thomas downes
+        //
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        public DateTime fdateRecDate { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        public DateTime fdatTimeStamp { get; set; }
 
         //
         //
@@ -339,13 +357,14 @@ namespace ciBadgeForWeb.Models
         //
         // Added 2/19/2020 thomas downes
         //
-        public Expression<Func<CIRecipient, string>>
-            GetExpressionOfField(EnumCIBFields par_enum)
+        public Expression<Func<CIRecipient, string>> GetExpressionOfField(EnumCIBFields par_enum)
         {
             //var temp_express = new Expression<Func<CIRecipient, string>>(i => i.);
             //return (model => model => model => model.fstrLastName); 
 
             //return (model => model.fstrLastName);
+
+            string strDateToString; //Added 2/19/2020 thomas d. 
 
             switch (par_enum)
             {
@@ -357,11 +376,36 @@ namespace ciBadgeForWeb.Models
                 case EnumCIBFields.fstrLastName: return model => model.fstrLastName;
                 case EnumCIBFields.fstrMidName: return model => model.fstrMidName;
 
-                case EnumCIBFields.DateField01: return model => model.DateField01.ToString("MM/dd/yyyy"); //break;
-                case EnumCIBFields.DateField02: return model => model.DateField02.ToString("MM/dd/yyyy"); //break;
-                case EnumCIBFields.DateField03: return model => model.DateField03.ToString("MM/dd/yyyy"); //break;
-                case EnumCIBFields.DateField04: return model => model.DateField04.ToString("MM/dd/yyyy"); //break;
-                case EnumCIBFields.DateField05: return model => model.DateField05.ToString("MM/dd/yyyy"); //break;
+                case EnumCIBFields.fdateRecDate:
+                    //return model => model.DateField01.ToString("MM/dd/yyyy"); //break;
+                    strDateToString = this.fdateRecDate.ToString("MM/dd/yyyy");
+                    return model => strDateToString; //break;
+                case EnumCIBFields.fdatTimeStamp:
+                    //return model => model.DateField01.ToString("MM/dd/yyyy"); //break;
+                    strDateToString = this.fdatTimeStamp.ToString("MM/dd/yyyy");
+                    return model => strDateToString; //break;
+
+
+                case EnumCIBFields.DateField01:
+                    //return model => model.DateField01.ToString("MM/dd/yyyy"); //break;
+                    strDateToString = this.DateField01.ToString("MM/dd/yyyy");
+                    return model => strDateToString; //break;
+                case EnumCIBFields.DateField02: 
+                    //return model => model.DateField02.ToString("MM/dd/yyyy"); //break;
+                    strDateToString = this.DateField02.ToString("MM/dd/yyyy");
+                    return model => strDateToString; //break;
+                case EnumCIBFields.DateField03: 
+                    //return model => model.DateField03.ToString("MM/dd/yyyy"); //break;
+                    strDateToString = this.DateField03.ToString("MM/dd/yyyy");
+                    return model => strDateToString; //break;
+                case EnumCIBFields.DateField04: 
+                    //return model => model.DateField04.ToString("MM/dd/yyyy"); //break;
+                    strDateToString = this.DateField04.ToString("MM/dd/yyyy");
+                    return model => strDateToString; //break;
+                case EnumCIBFields.DateField05: 
+                    //return model => model.DateField05.ToString("MM/dd/yyyy"); //break;
+                    strDateToString = this.DateField05.ToString("MM/dd/yyyy");
+                    return model => strDateToString; //break;
 
                 case EnumCIBFields.TextField01: return model => model.TextField01; //break;
                 case EnumCIBFields.TextField02: return model => model.TextField02; //break;
@@ -378,7 +422,21 @@ namespace ciBadgeForWeb.Models
                 case EnumCIBFields.TextField13: return model => model.TextField13; //break;
                 case EnumCIBFields.TextField14: return model => model.TextField14; //break;
                 case EnumCIBFields.TextField15: return model => model.TextField15; //break;
+
+                //
+                // Added 2/19/2020 thoamsd downes
+                //
+                case EnumCIBFields.fstrBarCode: return model => model.fstrBarcode;
+                case EnumCIBFields.fstrAddress: return model => model.fstrAddress;
+                case EnumCIBFields.fstrCity: return model => model.fstrCity;
+                case EnumCIBFields.fstrState: return model => model.fstrState;
+                case EnumCIBFields.fstrZip: return model => model.fstrZip;
+                case EnumCIBFields.fstrRFID_Unique: return model => model.fstrRFID_Unique;
+                     
+
             }
+
+            EnumCIBFields current_enum = par_enum; 
 
             return model => model.fstrID;
 
