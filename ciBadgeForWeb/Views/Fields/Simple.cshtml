@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ciBadgeFields.ClassFieldAny>
+
+@{
+    ViewBag.Title = "Simple";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>.</h2>
+<h2>Simple Listing of Fields</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+    @Html.ActionLink("Advanced View of Field Properties", "Advanced")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CIBadgeField)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FieldLabelCaption)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsDisplayedForEdits)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsDisplayedOnBadge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DefaultValue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExampleValue)
+        </th>
+        <th>
+            Links for further steps
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CIBadgeField)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FieldLabelCaption)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDisplayedForEdits)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDisplayedOnBadge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DefaultValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExampleValue)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>

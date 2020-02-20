@@ -14,6 +14,21 @@ namespace ciBadgeForWeb.Controllers
         {
             //return View();
             //return View(ClassElementsCache_Deprecated.Singleton.ListOfElementFields);
+            //return View(ClassElementsCache_Deprecated.Singleton.ListOfFields_Any());
+            return Advanced();
+        }
+
+        // GET: Fields
+        public ActionResult Simple()
+        {
+            //Added 2/20/2020 thomas downes 
+            return View(ClassElementsCache_Deprecated.Singleton.ListOfFields_Any());
+        }
+
+        // GET: Fields
+        public ActionResult Advanced()
+        {
+            //Added 2/20/2020 thomas downes 
             return View(ClassElementsCache_Deprecated.Singleton.ListOfFields_Any());
         }
 

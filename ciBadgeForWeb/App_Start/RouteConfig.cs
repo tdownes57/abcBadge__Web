@@ -69,6 +69,15 @@ namespace ciBadgeForWeb
             );
 
             //
+            // Added 2/20/2020 thomas DOWNES
+            //
+            //routes.MapRoute(
+            //    name: "Fields",
+            //    url: "Fields",
+            //    defaults: new { controller = "Fields", action = "Simple" }
+            //);
+
+            //
             // tcd = Thomas C. Downes
             //
             //routes.MapRoute(

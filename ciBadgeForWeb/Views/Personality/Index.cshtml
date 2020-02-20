@@ -8,7 +8,8 @@
     bool bCurrentPersonality = false;
 }
 
-<h2>Index</h2>
+<h2>.</h2>
+<h2>Personality Configuration</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -75,7 +76,10 @@
             @Html.ActionLink("Select", "Select", new { id = item.ConfigID }) |
             @Html.ActionLink("Edit", "Edit", new { id = item.ConfigID }) |
             @*@Html.ActionLink("Fields", "Custom Fields", new { id = item.ConfigID }) |*@
-            @Html.ActionLink("Fields", "Fields", new { id = item.ConfigID }) |
+            @Html.ActionLink(linkText: "Fields", actionName: "Simple", 
+                            controllerName: "Fields", 
+                            routeValues: new { id = item.ConfigID },
+                            htmlAttributes: null) |
             @Html.ActionLink("Delete", "Delete", new { id = item.ConfigID })
         </td>
     </tr>
