@@ -169,8 +169,12 @@ namespace ciBadgeForWeb.Controllers
         [HttpPost]
         public ActionResult Index(ciBadgeForWeb.Models.UserLogin objUserLogin)
         {
-            if (objUserLogin.UserName.ToLower() == "Support".ToLower() && 
-                objUserLogin.Password == "teal90720")
+            //Added 2/20/2020 thomas downes
+            bool bAuthenticateSupport = (objUserLogin.UserName.ToLower() == "Support".ToLower() &&
+                                        objUserLogin.Password == "teal90720");
+
+            if (bAuthenticateSupport)
+
                 return RedirectToAction("WelcomePage");
 
             else
@@ -182,14 +186,16 @@ namespace ciBadgeForWeb.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            // 2-20-2020 td//ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "ABC Badge (by Thomas Downes)";
 
             return (ViewResult)View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            // 2-20-2020 td//ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "How to Contact Me";
 
             return (ViewResult)View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         }

@@ -63,7 +63,7 @@
                             //
                         </p>*@
 
-                    @foreach (ciBadgeFields.ClassFieldAny each_field in Model.ParentCache.ListOfFields_Any(Model))
+                    @foreach (ciBadgeFields.ClassFieldAny each_field in Model.ParentCache.ListOfFields_ForEditing(Model))
                     {
                         //
                         //Added 12/01/2019 thomas downes
@@ -78,6 +78,13 @@
                             case "First Name": continue;
                             case "Last Name": continue;
                         }
+
+                        //Added 2/20/2020 thomas downes
+                        if (!(each_field.IsDisplayedForEdits))
+                        {
+                            continue;
+                        }
+
 
                         // Added 2/19/2020 thomas downes
                         var each_field_expression = Model.GetExpressionOfField(each_field.FieldEnumValue);
@@ -187,7 +194,7 @@
 
             </td>
 
-            <td>
+            <td valign="top">
 
                 <h2>Portrait and Badge</h2>
                 <img alt="Image Handler" width="100" src="~/ASPX/ImageHandler.ashx?id=@Model.RecipientID" />

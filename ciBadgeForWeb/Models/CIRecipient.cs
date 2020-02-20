@@ -59,6 +59,7 @@ namespace ciBadgeForWeb.Models
 
         }
 
+        [Display(Name = "ID")]
         public string fstrID //Added 10-4-2019 td 
         {
             get
@@ -71,6 +72,7 @@ namespace ciBadgeForWeb.Models
             }
         }
 
+        [Display(Name = "Last Name")]
         public string fstrLastName //Added 10-4-2019 td 
         {
             get
@@ -85,6 +87,7 @@ namespace ciBadgeForWeb.Models
             }
         }
 
+        [Display(Name = "First Name")]
         public string fstrFirstName //Added 10-4-2019 td 
         {
             get
@@ -97,9 +100,17 @@ namespace ciBadgeForWeb.Models
             }
         }
 
+        [Display(Name = "Middle Name")]
         public string fstrMidName { get; set; }
+        [Display(Name = "Times Printed")]
         public int intTimesPrinted { get; set; }
+        [Display(Name = "Card Data ID")]
         public int idsCardDataID { get; set; }
+
+        //Added 2/20/2020 thomas downes
+        //Already exists.//public int idfConfigID { get; set; }
+        [Display(Name = "Badge Layout ID")]
+        public int idfReportID { get; set; }
 
         //Added 12/11/2019 td  
         private Image mod_pictureImage = null;
@@ -144,15 +155,21 @@ namespace ciBadgeForWeb.Models
         //
         //Added 11/13/2019 THOMAS DOWNES
         //
+        [Display(Name = "Barcode")]
         public string fstrBarcode { get; set; }
+        [Display(Name = "RFID/UID")]
         public string fstrRFID_Unique { get; set; }
 
         //
         //Added 2/19/2020 THOMAS DOWNES
         //
+        [Display(Name = "Address")]
         public string fstrAddress { get; set; }
+        [Display(Name = "City")]
         public string fstrCity { get; set; }
+        [Display(Name = "State")]
         public string fstrState { get; set; }
+        [Display(Name = "Zip Code")]
         public string fstrZip { get; set; }
 
         //
@@ -163,6 +180,26 @@ namespace ciBadgeForWeb.Models
 
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime fdatTimeStamp { get; set; }
+
+        //
+        //Added 2/20/2020 THOMAS DOWNES
+        //
+        public bool fbooBatchPrint { get; set; }
+
+        public string BatchPrintIsQueued //Added 2/20/2020 td
+        { get { return fbooBatchPrint.ToString(); }
+          set { fbooBatchPrint = Boolean.Parse(value); }
+                }
+        public string ConfigID //Added 2/20/2020 td
+        {
+            get { return idfConfigID.ToString(); }
+            set { idfConfigID = int.Parse(value); }
+        }
+        public string ReportID //Added 2/20/2020 td
+        {
+            get { return idfReportID.ToString(); }
+            set { idfReportID = int.Parse(value); }
+        }
 
         //
         //
@@ -310,30 +347,30 @@ namespace ciBadgeForWeb.Models
                 case EnumCIBFields.fstrLastName: return this.fstrLastName;
                 case EnumCIBFields.fstrMidName: return this.fstrMidName;
 
-                case EnumCIBFields.DateField01: return DateField01.ToString("MM/dd/yyyy"); //break;
-                case EnumCIBFields.DateField02: return DateField02.ToString("MM/dd/yyyy"); //break;
-                case EnumCIBFields.DateField03: return DateField03.ToString("MM/dd/yyyy"); //break;
-                case EnumCIBFields.DateField04: return DateField04.ToString("MM/dd/yyyy"); //break;
-                case EnumCIBFields.DateField05: return DateField05.ToString("MM/dd/yyyy"); //break;
+                case EnumCIBFields.DateField01: return DateField01.ToString("MM/dd/yyyy"); // break;
+                case EnumCIBFields.DateField02: return DateField02.ToString("MM/dd/yyyy"); // break;
+                case EnumCIBFields.DateField03: return DateField03.ToString("MM/dd/yyyy"); // break;
+                case EnumCIBFields.DateField04: return DateField04.ToString("MM/dd/yyyy"); // break;
+                case EnumCIBFields.DateField05: return DateField05.ToString("MM/dd/yyyy"); // break;
 
-                case EnumCIBFields.TextField01: return TextField01; break;
-                case EnumCIBFields.TextField02: return TextField02; break;
-                case EnumCIBFields.TextField03: return TextField03; break;
-                case EnumCIBFields.TextField04: return TextField04; break;
-                case EnumCIBFields.TextField05: return TextField05; break;
-                case EnumCIBFields.TextField06: return TextField06; break;
-                case EnumCIBFields.TextField07: return TextField07; break;
-                case EnumCIBFields.TextField08: return TextField08; break;
-                case EnumCIBFields.TextField09: return TextField09; break;
-                case EnumCIBFields.TextField10: return TextField10; break;
-                case EnumCIBFields.TextField11: return TextField11; break;
-                case EnumCIBFields.TextField12: return TextField12; break;
-                case EnumCIBFields.TextField13: return TextField13; break;
-                case EnumCIBFields.TextField14: return TextField14; break;
-                case EnumCIBFields.TextField15: return TextField15; break;
+                case EnumCIBFields.TextField01: return TextField01; // break;
+                case EnumCIBFields.TextField02: return TextField02; // break;
+                case EnumCIBFields.TextField03: return TextField03; // break;
+                case EnumCIBFields.TextField04: return TextField04; // break;
+                case EnumCIBFields.TextField05: return TextField05; // break;
+                case EnumCIBFields.TextField06: return TextField06; // break;
+                case EnumCIBFields.TextField07: return TextField07; // break;
+                case EnumCIBFields.TextField08: return TextField08; // break;
+                case EnumCIBFields.TextField09: return TextField09; // break;
+                case EnumCIBFields.TextField10: return TextField10; // break;
+                case EnumCIBFields.TextField11: return TextField11; // break;
+                case EnumCIBFields.TextField12: return TextField12; // break;
+                case EnumCIBFields.TextField13: return TextField13; // break;
+                case EnumCIBFields.TextField14: return TextField14; // break;
+                case EnumCIBFields.TextField15: return TextField15; // break;
                 default:
                     return "Undetermined#1";
-                    break;
+                    //break;
             }
             return "Undetermined";
         }
@@ -359,6 +396,9 @@ namespace ciBadgeForWeb.Models
         //
         public Expression<Func<CIRecipient, string>> GetExpressionOfField(EnumCIBFields par_enum)
         {
+            //
+            //   https://stackoverflow.com/questions/21172443/how-do-the-mvc-html-helpers-use-expressions-to-get-an-objects-property
+            //
             //var temp_express = new Expression<Func<CIRecipient, string>>(i => i.);
             //return (model => model => model => model.fstrLastName); 
 
@@ -432,15 +472,46 @@ namespace ciBadgeForWeb.Models
                 case EnumCIBFields.fstrState: return model => model.fstrState;
                 case EnumCIBFields.fstrZip: return model => model.fstrZip;
                 case EnumCIBFields.fstrRFID_Unique: return model => model.fstrRFID_Unique;
-                     
+
+                //
+                //Added 2/20/2020 thomas downes
+                //
+                case EnumCIBFields.blnBatchPrint:
+                    //return model => model.blnBatchPrint;
+                    //string strBoolean = (this.fbooBatchPrint ? "True" : "False");
+                    return model => model.BatchPrintIsQueued;
+
+                case EnumCIBFields.idfConfigID:
+                    //Added 2/20/2020 thomas downes
+                    return model => model.ConfigID;
+
+                case EnumCIBFields.idfReportID:
+                    //Added 2/20/2020 thomas downes
+                    return model => model.ReportID;
 
             }
 
-            EnumCIBFields current_enum = par_enum; 
-
+            EnumCIBFields current_enum = par_enum;  //For debugging by programmer.--2/20/2020  
             return model => model.fstrID;
 
         }
+
+        public string GetFieldName(HtmlHelper<CIRecipient> par_html,
+                    Expression<Func<CIRecipient, string>> par_expression)
+        {
+            //
+            //   https://stackoverflow.com/questions/21172443/how-do-the-mvc-html-helpers-use-expressions-to-get-an-objects-property
+            //
+            //   Added 2/20/2020 thomas downes
+            //
+            var metadata = ModelMetadata.FromLambdaExpression(par_expression, par_html.ViewData);
+            string propName = metadata.PropertyName;
+            return propName;
+        }
+
+
+
+
     }
 }
 
