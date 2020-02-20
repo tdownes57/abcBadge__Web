@@ -892,6 +892,7 @@
     <Content Include="Views\Fields\Advanced.cshtml" />
     <Content Include="Views\XmlCache\InformOfNewlyOpenedCache.cshtml" />
     <Content Include="Views\Fields\Simple.cshtml" />
+    <Content Include="Views\Fields\EditSimple.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />

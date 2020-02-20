@@ -82,6 +82,25 @@ namespace ciBadgeForWeb.Controllers
             }
         }
 
+        // POST: Fields/Edit/5
+        [HttpPost]
+        public ActionResult EditSimple(int id, FormCollection collection)
+        {
+            try
+            {
+                // Added 2/20/2020 thomas downes 
+
+                var fields_list = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
+                var fields_onlyone = fields_list.Where(x => x.FieldIndex == id);
+                return (ViewResult)View(fields_onlyone);
+
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
         // GET: Fields/Delete/5
         public ActionResult Delete(int id)
         {
