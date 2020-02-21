@@ -392,6 +392,15 @@ namespace ciBadgeForWeb.Controllers
             }
         }
 
+        // GET: Recipient/UploadNewPic/5
+        public ActionResult UploadNewPic(string id)
+        {
+            //Added 2/20/2020 thomas downes
+            var edited_recip = mod_recipientList2.Where(s => s.RecipientID == id).FirstOrDefault();
+            return (ViewResult)View(edited_recip);
+        }
+
+
         // GET: Recipient/Delete/5
         public ActionResult Delete(int parameter_id)
         {

@@ -197,7 +197,13 @@
             <td valign="top">
 
                 <h2>Portrait and Badge</h2>
-                <img alt="Image Handler" width="100" src="~/ASPX/ImageHandler.ashx?id=@Model.RecipientID" />
+
+                <a href="~/Recipient/UploadNewPic?id=@Model.RecipientID">
+                    <img alt="Image Handler" width="100" src="~/ASPX/ImageHandler.ashx?id=@Model.RecipientID" />
+                    Upload New Photo
+                </a>
+                @*@Html.ActionLink("Upload New Photo", "UploadPic", new { id = Model.RecipientID })*@
+
                 <img alt="Step4 Handler" width="500" src="~/ASPX/Step4Handler.ashx?id=@Model.RecipientID&big=y&hor=y&width=500" style="border: 2px dotted black;" />
 
                 <!-- img alt="Image Handler" src="../ASPX/ImageHandler.ashx?id=<%= Request.QueryString[" id"] %>" -->
