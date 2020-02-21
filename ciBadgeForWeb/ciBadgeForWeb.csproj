@@ -769,6 +769,7 @@
     <Content Include="ASPX\Step4Handler.ashx" />
     <Content Include="Documentation\Mock-Up Templates 11.13.pdf" />
     <Content Include="ASPX\UltraSimpleHandler.ashx" />
+    <Content Include="Documentation\disabling-copy-of-empty-text-in-VS.url" />
     <None Include="Properties\PublishProfiles\abcBadge - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CIS90720 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CIS90720 - Web Deploy1.pubxml" />

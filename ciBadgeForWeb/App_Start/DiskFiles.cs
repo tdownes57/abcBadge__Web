@@ -216,6 +216,34 @@ namespace ciBadgeForWeb.App_Start
         }
 
 
+        public static string PathToFile_PortraitPic(string pstrRecipientID)
+        {
+            //
+            //Added 2/21/2020 td
+            //
+            //string strPathToFolder = "C:\\Users\\tdown\\source\\repos\\ciBadgeForWeb\\ciBadgeForWeb\\Images\\PictureExamples";
+            string strVirtualPathToFolder = "~/Images/PictureExamples";
+
+            //string strPathToFile = System.IO.Path.Combine(strPathToFolder, pstrRecipientID + ".jpg");
+            string strVirtualPathToFile = (strVirtualPathToFolder + "/" + (pstrRecipientID + ".jpg"));
+
+            try
+            {
+                //
+                //https://forums.asp.net/t/1839913.aspx?Convert+Relative+Path+to+Absolute+Path
+                //
+                //string AbsolutePath = Server.MapPath(RelativePath);
+                string strAbsolutePathToFile = HostingEnvironment.MapPath(strVirtualPathToFile);
+                return (strAbsolutePathToFile);
+            }
+            catch (Exception ex_GetImageByID) // As Exception
+            {
+                //''aDDED 11 / 21 / 2019 TD
+                string strErrMessage = ex_GetImageByID.Message;
+                return null;
+            }
+        }
+
 
     }
 }

@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using System.Drawing; //Added 11/25/2019 thomas d.
 //using System.Web.Abstractions; //Added 11/25/2019 td 
 using System.Web.Hosting;  //Added 11/25/2019 td  
+using System.Web;   //Added 2/21/2020 td
+using System.IO;   //Added 2/21/2020 td
 
 namespace ciBadgeForWeb.Controllers
 {
@@ -24,14 +26,14 @@ namespace ciBadgeForWeb.Controllers
         //
         //Recipient = Student or Employee receiving the Badge. 
         //
-        public static IList<Models.CIRecipient> mod_recipientList1 = new List<Models.CIRecipient>() {
-                    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="1", FirstName="Johnny", LastName = "Davidson", Picture = PictureExamples.GetExample()  },
-                    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="2", FirstName="Stevie", LastName = "Austin" , Picture = PictureExamples.GetExample() },
-                    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="3", FirstName="Billy", LastName = "Clinton" , Picture = PictureExamples.GetExample() },
-                    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="4", FirstName="Ronny", LastName = "Thegot" , Picture = PictureExamples.GetExample() },
-                    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="5", FirstName="Dorothy" , LastName = "Wood"  },
-                    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="6", FirstName="Christy", LastName = "Forbes"  },
-                    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID = "7", FirstName="Tommy", LastName = "Forbes"  },     
+        public static IList<Models.CIRecipient> mod_recipientList1;  //== = new List<Models.CIRecipient>() {
+                //==    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="1", FirstName="Johnny", LastName = "Davidson", Picture = PictureExamples.GetExample()  },
+                //==    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="2", FirstName="Stevie", LastName = "Austin" , Picture = PictureExamples.GetExample() },
+                //==    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="3", FirstName="Billy", LastName = "Clinton" , Picture = PictureExamples.GetExample() },
+                //==    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="4", FirstName="Ronny", LastName = "Thegot" , Picture = PictureExamples.GetExample() },
+                //==    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="5", FirstName="Dorothy" , LastName = "Wood"  },
+                //==    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="6", FirstName="Christy", LastName = "Forbes"  },
+                //==    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID = "7", FirstName="Tommy", LastName = "Forbes"  },     
 
             //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="1", FirstName="John", LastName = "Davidson", Picture = GetExample()  },
             //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="2", FirstName="Steve", LastName = "Austin", Picture = GetExample()  },
@@ -41,14 +43,14 @@ namespace ciBadgeForWeb.Controllers
             //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="6", FirstName="Christopher", LastName = "Forbes", Picture = GetExample()   },
             //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID = "7", FirstName="Robin", LastName = "Forbes", Picture = GetExample()   }
 
-                            new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="1", FirstName="Jayce", LastName = "P."  },
-                    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="2", FirstName="Chanin", LastName = "F."  },
-                    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="3", FirstName="Sammi", LastName = "F."  },
-                    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="4", FirstName="Erick", LastName = "M."  },
-                    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="5", FirstName="Erica" , LastName = "A."  },
-                    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="6", FirstName="Jimmy", LastName = "A."  },
-                    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID = "7", FirstName="Thomas", LastName = "D."  }
-};
+               //==             new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="1", FirstName="Jayce", LastName = "P."  },
+               //==     new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="2", FirstName="Chanin", LastName = "F."  },
+               //==     new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="3", FirstName="Sammi", LastName = "F."  },
+               //==     new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="4", FirstName="Erick", LastName = "M."  },
+               //==     new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="5", FirstName="Erica" , LastName = "A."  },
+               //==     new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="6", FirstName="Jimmy", LastName = "A."  },
+               //==     new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID = "7", FirstName="Thomas", LastName = "D."  }
+        //==};
 
         //
         //Recipient = Student Or Employee receiving the Badge. 
@@ -399,6 +401,70 @@ namespace ciBadgeForWeb.Controllers
             var edited_recip = mod_recipientList2.Where(s => s.RecipientID == id).FirstOrDefault();
             return (ViewResult)View(edited_recip);
         }
+
+
+        [HttpPost]
+        public ActionResult UploadNewPic(HttpPostedFileBase file)
+        {
+            if (ModelState.IsValid)
+            {
+                if (file == null)
+                {
+                    ModelState.AddModelError("File", "Please Upload Your file");
+                }
+                else if (file.ContentLength > 0)
+                {
+                    //int MaxContentLength = 1024 * 1024 * 3; //3 MB
+                    //string[] AllowedFileExtensions = new string[] { ".jpg", ".gif", ".png", ".pdf" };
+                    int MaxContentLength = 1024 * 1024 * 10; //10 MB
+                    string[] AllowedFileExtensions = new string[] { ".jpg", ".gif", ".png", ".JPG", 
+                        ".JPEG", ".PNG", ".bmp", ".BMP" };
+
+                    if (!AllowedFileExtensions.Contains(file.FileName.Substring(file.FileName.LastIndexOf('.'))))
+                    {
+                        ModelState.AddModelError("File", "Please file of type: " + string.Join(", ", AllowedFileExtensions));
+                    }
+
+                    else if (file.ContentLength > MaxContentLength)
+                    {
+                        ModelState.AddModelError("File", "Your file is too large, maximum allowed size is: " + MaxContentLength + " MB");
+                    }
+                    else
+                    {
+                        //
+                        //Modified 2/21/2020 td
+                        //
+                        var fileName_onUsersPC = Path.GetFileName(file.FileName);
+                        var fileName_NoExt = Path.GetFileNameWithoutExtension(file.FileName);
+                        var fileName_useRecipID = fileName_onUsersPC.Replace(fileName_NoExt, "001");
+
+                        //All images must be Disposed / dumped.
+                        //  ciBadgeElements.ClassElementsCache_Deprecated.Singleton.DisposePicImage_ByRecipID("001");
+                        DisposePicImage_ByRecipID("001");
+
+                        //var path = Path.Combine(Server.MapPath("~/Content/Upload"), fileName);
+                        var path = Path.Combine(App_Start.DiskFolders.PathToFolderOfPics(true), fileName_useRecipID);
+                        file.SaveAs(path);
+                        ModelState.Clear();
+                        ViewBag.Message = "File uploaded successfully";
+                    }
+                }
+            }
+            return View();
+        }
+
+
+        private void DisposePicImage_ByRecipID(string pstrRecipID)
+        {
+            //
+            //Added 2/21/2019 thomas d.
+            //
+            var objRecipient = RecipientController.mod_recipientList2.Where(i => i.RecipientID == pstrRecipID).FirstOrDefault();
+            objRecipient.Picture.Dispose();
+            objRecipient.Picture = null;
+
+        }
+
 
 
         // GET: Recipient/Delete/5

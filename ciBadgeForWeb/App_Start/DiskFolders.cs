@@ -16,7 +16,8 @@ namespace ciBadgeForWeb.App_Start
             //
             //Added 11/28/2019 thomas downes 
             //
-            string strPathToFolder_Virtual = "/XML";
+            //string strPathToFolder_Virtual = "/XML";
+            string strPathToFolder_Virtual = "~/XML";
             string strPathToFolder_Absolute = HostingEnvironment.MapPath(strPathToFolder_Virtual);
 
             if (pboolAbsolute) return strPathToFolder_Absolute;
@@ -30,7 +31,21 @@ namespace ciBadgeForWeb.App_Start
             //Added 12/11/2019 thomas downes 
             //
             //return (HttpRuntime.AppDomainAppPath + "Images\\BackExamples");
-            string strPathToFolder_Virtual = "/Images/BackExamples";
+            //string strPathToFolder_Virtual = "/Images/BackExamples";
+            string strPathToFolder_Virtual = "~/Images/BackExamples";
+            string strPathToFolder_Absolute = HostingEnvironment.MapPath(strPathToFolder_Virtual);
+
+            if (pboolAbsolute) return strPathToFolder_Absolute;
+            return strPathToFolder_Virtual;
+        }
+
+        public static string PathToFolderOfPics(bool pboolAbsolute)
+        {
+            //
+            //Added 2/21/2020 thomas downes 
+            //
+            //return (HttpRuntime.AppDomainAppPath + "Images\\BackExamples");
+            string strPathToFolder_Virtual = "~/Images/PictureExamples";
             string strPathToFolder_Absolute = HostingEnvironment.MapPath(strPathToFolder_Virtual);
 
             if (pboolAbsolute) return strPathToFolder_Absolute;
