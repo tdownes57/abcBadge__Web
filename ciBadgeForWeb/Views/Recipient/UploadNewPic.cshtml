@@ -44,7 +44,7 @@
             alert("Error is :" + e);
         }
     }
-     
+
     //get file path from client system
     function getNameFromPath(strFilepath) {
         var objRE = new RegExp(/([^\/\\]+)$/);
@@ -144,14 +144,24 @@
 
 
 @*<form runat="server">
-    <input type='file' id="imgInp" />
-    <img id="blah" src="#" alt="your image" />
-</form>*@
+        <input type='file' id="imgInp" />
+        <img id="blah" src="#" alt="your image" />
+    </form>*@
 
 
-@using (Html.BeginForm(actionName: "UploadNewPic", controllerName:"Recipient", method: FormMethod.Post, htmlAttributes: new { enctype = "multipart/form-data" }))
+
+@using (Html.BeginForm(actionName: "UploadNewPic",
+              controllerName: "Recipient",
+              routeValues: new { RecipientID = @Model.RecipientID },
+              method: FormMethod.Post,
+              htmlAttributes: new { enctype = "multipart/form-data" }))
 {
     @Html.ValidationSummary();
+
+    <h2>Recipient @Model.FirstName @Model.LastName (ID @Model.RecipientID)</h2>
+
+    <img alt="Image Handler" width="100" src="~/ASPX/ImageHandler.ashx?id=@Model.RecipientID" />
+
     <ol>
         <li class="lifile">
             @*<input type="file" id="fileToUpload" name="file" />*@
@@ -161,6 +171,8 @@
             <img id="blah" src="#" alt="your image" />
         </li>
     </ol>
+
+    <input type="hidden" id="RecipientID" name="RecipientID" value=@Model.RecipientID />
 
     <input type="submit" id="btnSubmit" value="Upload" />
 

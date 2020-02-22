@@ -404,8 +404,14 @@ namespace ciBadgeForWeb.Controllers
 
 
         [HttpPost]
-        public ActionResult UploadNewPic(HttpPostedFileBase file)
+        public ActionResult UploadNewPic(HttpPostedFileBase file, FormCollection forms)
         {
+            //
+            //Created 2/20/2020 td
+            //Modified 2/20 & 2/21/2020 td
+            //
+            string str_parameter_id = forms["RecipientID"]; //Added 2/21/2020 td 
+
             if (ModelState.IsValid)
             {
                 if (file == null)
@@ -417,6 +423,7 @@ namespace ciBadgeForWeb.Controllers
                     //int MaxContentLength = 1024 * 1024 * 3; //3 MB
                     //string[] AllowedFileExtensions = new string[] { ".jpg", ".gif", ".png", ".pdf" };
                     int MaxContentLength = 1024 * 1024 * 10; //10 MB
+
                     string[] AllowedFileExtensions = new string[] { ".jpg", ".gif", ".png", ".JPG", 
                         ".JPEG", ".PNG", ".bmp", ".BMP" };
 
@@ -434,13 +441,22 @@ namespace ciBadgeForWeb.Controllers
                         //
                         //Modified 2/21/2020 td
                         //
-                        var fileName_onUsersPC = Path.GetFileName(file.FileName);
-                        var fileName_NoExt = Path.GetFileNameWithoutExtension(file.FileName);
-                        var fileName_useRecipID = fileName_onUsersPC.Replace(fileName_NoExt, "001");
+                        //var fileName_onUsersPC = Path.GetFileName(file.FileName);
+                        //var fileName_NoExt = Path.GetFileNameWithoutExtension(file.FileName);
+                        //var fileName_useRecipID = fileName_onUsersPC.Replace(fileName_NoExt, "001");
+
+                        //Added 11/26/2019 thomas d.
+                        //string str_parameter_id = Request.QueryString["id"];
+                        //string str_parameter_id = forms["RecipientID"];
 
                         //All images must be Disposed / dumped.
                         //  ciBadgeElements.ClassElementsCache_Deprecated.Singleton.DisposePicImage_ByRecipID("001");
-                        DisposePicImage_ByRecipID("001");
+                        //DisposePicImage_ByRecipID("001");
+                        DisposePicImage_ByRecipID(str_parameter_id);
+
+                        var fileName_onUsersPC = Path.GetFileName(file.FileName);
+                        var fileName_NoExt = Path.GetFileNameWithoutExtension(file.FileName);
+                        var fileName_useRecipID = fileName_onUsersPC.Replace(fileName_NoExt, str_parameter_id);
 
                         //var path = Path.Combine(Server.MapPath("~/Content/Upload"), fileName);
                         var path = Path.Combine(App_Start.DiskFolders.PathToFolderOfPics(true), fileName_useRecipID);
@@ -450,7 +466,12 @@ namespace ciBadgeForWeb.Controllers
                     }
                 }
             }
-            return View();
+            //return View();
+            //Added 2/21/2020 thomas downes
+            //var edited_recip = mod_recipientList2.Where(s => s.RecipientID == str_parameter_id).FirstOrDefault();
+            //return (ViewResult)View(edited_recip);
+            //return Index();
+            return RedirectToAction("Index");
         }
 
 
@@ -556,7 +577,7 @@ namespace ciBadgeForWeb.Controllers
             try
             {
                 //
-                //https://forums.asp.net/t/1839913.aspx?Convert+Relative+Path+to+Absolute+Path
+                 //https://forums.asp.net/t/1839913.aspx?Convert+Relative+Path+to+Absolute+Path
                 //
                 //string AbsolutePath = Server.MapPath(RelativePath);
                 string strAbsolutePathToFile = HostingEnvironment.MapPath(strVirtualPathToFile);
