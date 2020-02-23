@@ -94,18 +94,18 @@ namespace ciBadgeForWeb.Controllers
                     //RecipientController.PersonalityConfigID_current = 1;
 
                     //Added 2/22/2020 thomas downes  
-                    int intConfigID_Initial = 
-                        PersonalityController.mod_Personalities
-                        .FirstOrDefault()
-                        .ConfigID;
+                    //2/23/2019 td//int intConfigID_Initial = PersonalityController.mod_Personalities
+                    //2/23/2019 td//    .FirstOrDefault()
+                    //2/23/2019 td//    .ConfigID;
 
                     //Added 2/22/2020 thomas downes  
                     //   Tell RecipientController to retain the current personality.
-                    RecipientController.PersonalityConfigID_current = intConfigID_Initial;
- 
+                    //2/23/2019 td//RecipientController.PersonalityConfigID_current = intConfigID_Initial;
+
                     //Added 2/22/2020 thomas downes  
                     //   Tell PersonalityController to retain the current personality.
-                    PersonalityController.SelectPersonality_ByConfigID(intConfigID_Initial);
+                    //2/23/2019 td//PersonalityController.SelectPersonality_ByConfigID(intConfigID_Initial);
+                    PersonalityController.SelectPersonality_Initialize();
 
                     //return RedirectToAction("UserDashBoard");
                     return RedirectToAction("Index");

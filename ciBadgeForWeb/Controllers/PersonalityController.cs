@@ -21,8 +21,8 @@ namespace ciBadgeForWeb.Controllers
         //Recipient = Student or Employee receiving the Badge. 
         //
         public static IList<Models.Personality> mod_Personalities = new List<Models.Personality>() {
-          new Models.Personality() { ConfigID = 1, ConfigNameBrief = "Students", ConfigNameFull = "Westmont High Students"  },
-          new Models.Personality() { ConfigID = 2, ConfigNameBrief = "Staff", ConfigNameFull = "Westmont High Staff"   }
+          new Models.Personality() { ConfigID = 11, ConfigNameBrief = "Students", ConfigNameFull = "Westmont High Students"  },
+          new Models.Personality() { ConfigID = 12, ConfigNameBrief = "Staff", ConfigNameFull = "Westmont High Staff"   }
         };
 
         //Added 2/22/2020 thomas downes 
@@ -33,6 +33,17 @@ namespace ciBadgeForWeb.Controllers
             //Added 2/22/2020 thomas downes 
             CurrentPersonality = mod_Personalities
                 .Where(x => (x.ConfigID == par_intPersConfigID)).FirstOrDefault();
+        }
+
+
+        public static void SelectPersonality_Initialize()
+        {
+            //Added 2/23/2020 thomas downes 
+            if (CurrentPersonality == null)
+            {
+                CurrentPersonality = mod_Personalities.FirstOrDefault();
+                RecipientController.PersonalityConfigID_current = CurrentPersonality.ConfigID;
+            }
         }
 
 

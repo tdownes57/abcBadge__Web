@@ -7,6 +7,15 @@
     string strRecipTypeName;  // Added 2/22/2020 td
     strRecipTypeName = ciBadgeForWeb.Controllers.PersonalityController.CurrentPersonality.ConfigNameBrief; 
 
+        //Added 2-23-2020 td
+    //   Change "Students" to "Student", but leave "Actress"
+    //   (or "Stewardess") alone.  
+    //
+    strRecipTypeName = (strRecipTypeName.EndsWith("ss") ? strRecipTypeName : 
+                         strRecipTypeName.EndsWith("s") ? strRecipTypeName
+                         .Substring(0, -1 + strRecipTypeName.Length) : 
+                         strRecipTypeName);
+
 }
 
 <h2>.</h2>

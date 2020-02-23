@@ -3,9 +3,24 @@
 @{
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    string strRecipTypeName;  // Added 2/22/2020 td
+    strRecipTypeName = ciBadgeForWeb.Controllers.PersonalityController.CurrentPersonality.ConfigNameBrief;
+
+    //Added 2-23-2020 td
+    //   Change "Students" to "Student", but leave "Actress"
+    //   (or "Stewardess") alone.
+    //
+    strRecipTypeName = (strRecipTypeName.EndsWith("ss") ? strRecipTypeName :
+                         strRecipTypeName.EndsWith("s") ? strRecipTypeName
+                         .Substring(0, -1 + strRecipTypeName.Length) :
+                         strRecipTypeName);
+
 }
 
 <h2>Edit</h2>
+@*<h2>Recipient @Model.FirstName @Model.LastName (ID @Model.RecipientID)</h2>*@
+<h2>@strRecipTypeName @Model.FirstName @Model.LastName (ID @Model.RecipientID)</h2>
 
 @using (Html.BeginForm())
 {
@@ -20,9 +35,9 @@
                     <hr />
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                    <!--      -->
-                    <!--   Recipient's ID   -->
-                    <!--      -->
+                    <!--                       -->
+                    <!--   Recipient's ID      -->
+                    <!--                       -->
                     @if (true)
                     {
                         <div class="form-group">
@@ -202,6 +217,7 @@
                     <img alt="Image Handler" width="100" src="~/ASPX/ImageHandler.ashx?id=@Model.RecipientID" />
                     Upload New Photo
                 </a>
+
                 @*@Html.ActionLink("Upload New Photo", "UploadPic", new { id = Model.RecipientID })*@
 
                 <img alt="Step4 Handler" width="500" src="~/ASPX/Step4Handler.ashx?id=@Model.RecipientID&big=y&hor=y&width=500" style="border: 2px dotted black;" />
