@@ -100,13 +100,12 @@ namespace ciBadgeForWeb.Controllers
                         .ConfigID;
 
                     //Added 2/22/2020 thomas downes  
+                    //   Tell RecipientController to retain the current personality.
                     RecipientController.PersonalityConfigID_current = intConfigID_Initial;
  
                     //Added 2/22/2020 thomas downes  
-                    PersonalityController.CurrentPersonality = 
-                        PersonalityController.mod_Personalities
-                    .Where(x_lambda => (x_lambda.ConfigID == intConfigID_Initial))
-                    .FirstOrDefault();
+                    //   Tell PersonalityController to retain the current personality.
+                    PersonalityController.SelectPersonality_ByConfigID(intConfigID_Initial);
 
                     //return RedirectToAction("UserDashBoard");
                     return RedirectToAction("Index");

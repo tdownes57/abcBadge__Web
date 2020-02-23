@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@{ 
+    //Added 2/22/2020 thomas downes
+    string strRecipTypeName;  // Added 2/22/2020 td
+    strRecipTypeName = ciBadgeForWeb.Controllers.PersonalityController.CurrentPersonality.ConfigNameBrief; 
+}
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -34,8 +40,9 @@
                     <li>@Html.ActionLink("Badge Layout", "Index", "LayoutText1")</li>
 
                     @*<li>@Html.ActionLink("Students/Employees", "Index", "Recipient")</li>*@
-                    <li>@Html.ActionLink("Students", "Index_Cfg1", "Recipient")</li>
-                    <li>@Html.ActionLink("Staff", "Index_Cfg2", "Recipient")</li>
+                    @*<li>@Html.ActionLink("Students", "Index_Cfg1", "Recipient")</li>
+                    <li>@Html.ActionLink("Staff", "Index_Cfg2", "Recipient")</li>*@
+                    <li>@Html.ActionLink(strRecipTypeName, "Index_CurrCfg", "Recipient")</li>
 
                     <li>@Html.ActionLink("Example of Badge", "Example", "Home")</li>
                     <li>@Html.ActionLink("Steps 1 and 2", "Edit", "Steps1and2")</li>
