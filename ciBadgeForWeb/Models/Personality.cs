@@ -17,7 +17,7 @@ namespace ciBadgeForWeb.Models
 
         //Long Name (e.g. Students at Fullbright High School, Teachers & Staff of Fullbright High School) 
 
-        //Short Name (e.g. Students, Staff) 
+        //Short Name (e.g. Cardholders, Students, Staff) 
 
         //Settings....
         //

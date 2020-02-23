@@ -25,6 +25,17 @@ namespace ciBadgeForWeb.Controllers
           new Models.Personality() { ConfigID = 2, ConfigNameBrief = "Staff", ConfigNameFull = "Westmont High Staff"   }
         };
 
+        //Added 2/22/2020 thomas downes 
+        public static Models.Personality CurrentPersonality;
+
+        public static void SelectPersonality_ByConfigID(int par_intPersConfigID)
+        {
+            //Added 2/22/2020 thomas downes 
+            CurrentPersonality = mod_Personalities
+                .Where(x => (x.ConfigID == par_intPersConfigID)).FirstOrDefault();
+        }
+
+
         // GET: Personality
         public ActionResult Index()
         {
@@ -86,6 +97,7 @@ namespace ciBadgeForWeb.Controllers
             //Added 12/13/2019 thomas d
             //
             Controllers.RecipientController.PersonalityConfigID_current = (int)id;
+            Controllers.PersonalityController.SelectPersonality_ByConfigID((int)id);  //Added 2/22/2020 td 
             return RedirectToAction("Index");
 
         }

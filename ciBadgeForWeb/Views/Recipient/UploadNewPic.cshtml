@@ -3,6 +3,10 @@
 @{
     ViewBag.Title = "UploadNewPic";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    string strRecipTypeName;  // Added 2/22/2020 td
+    strRecipTypeName = ciBadgeForWeb.Controllers.PersonalityController.CurrentPersonality.ConfigNameBrief; 
+
 }
 
 <h2>.</h2>
@@ -158,7 +162,8 @@
 {
     @Html.ValidationSummary();
 
-    <h2>Recipient @Model.FirstName @Model.LastName (ID @Model.RecipientID)</h2>
+    @*<h2>Recipient @Model.FirstName @Model.LastName (ID @Model.RecipientID)</h2>*@
+    <h2>@strRecipTypeName @Model.FirstName @Model.LastName (ID @Model.RecipientID)</h2>
 
     <img alt="Image Handler" width="100" src="~/ASPX/ImageHandler.ashx?id=@Model.RecipientID" />
 

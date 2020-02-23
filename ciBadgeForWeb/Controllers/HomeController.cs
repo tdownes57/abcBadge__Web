@@ -89,7 +89,26 @@ namespace ciBadgeForWeb.Controllers
                 {
                      Session["UserID"] = objUser.UserName.ToString();
                      Session["UserName"] = objUser.UserName.ToString();
-                     //return RedirectToAction("UserDashBoard");
+
+                    //Added 2/22/2020 thomas downes  
+                    //RecipientController.PersonalityConfigID_current = 1;
+
+                    //Added 2/22/2020 thomas downes  
+                    int intConfigID_Initial = 
+                        PersonalityController.mod_Personalities
+                        .FirstOrDefault()
+                        .ConfigID;
+
+                    //Added 2/22/2020 thomas downes  
+                    RecipientController.PersonalityConfigID_current = intConfigID_Initial;
+ 
+                    //Added 2/22/2020 thomas downes  
+                    PersonalityController.CurrentPersonality = 
+                        PersonalityController.mod_Personalities
+                    .Where(x_lambda => (x_lambda.ConfigID == intConfigID_Initial))
+                    .FirstOrDefault();
+
+                    //return RedirectToAction("UserDashBoard");
                     return RedirectToAction("Index");
                 }
 
