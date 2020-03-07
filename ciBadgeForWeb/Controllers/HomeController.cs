@@ -205,7 +205,7 @@ namespace ciBadgeForWeb.Controllers
         public ActionResult About()
         {
             // 2-20-2020 td//ViewBag.Message = "Your application description page.";
-            ViewBag.Message = "ABC Badge (by Thomas Downes)";
+            ViewBag.Message = "ABC ID Card (by Thomas Downes)";
 
             return (ViewResult)View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         }

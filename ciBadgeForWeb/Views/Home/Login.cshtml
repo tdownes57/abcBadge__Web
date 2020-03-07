@@ -8,21 +8,21 @@
 <!--https://www.c-sharpcorner.com/article/simple-login-application-using-Asp-Net-mvc/ -->
 
     <div class="jumbotron">
-        @*<h1>ABC Badge Web</h1>*@
-        @*<img src="~/Images/ABCBadgeLogo.png" width="500" alt="ABC Badge Web" />
+        @*<h1>ABC ID Card Web</h1>*@
+        @*<img src="~/Images/ABC IDCardLogo.png" width="500" alt="ABC ID Card Web" />
         <img src="~/Images/ThomasDownesLogo.png" width="400" alt="ABC Solutions" />*@
         <h2>by Thomas C. Downes <img src="~/Images/ThomasCDownes.png" width="70" /></h2>
         @*<img src="~/Images/ThomasCDownes.png" width="100" />*@
 
-        <p class="lead">ABC Badge by Thomas C. Downes is a software service enabling you to create badges for any group of people.</p>
-        @*<p><a href="https://abcBadge.AzureWebsites.net/card-printing-software/" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+        <p class="lead">ABC ID Card by Thomas C. Downes is a software service enabling you to create badges for any group of people.</p>
+        @*<p><a href="https://ABC IDCard.AzureWebsites.net/card-printing-software/" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
         <p><a href="~/Home/LoginPlain" class="btn btn-primary btn-lg">Log in &raquo;</a></p>
     </div>
 
 @using (Html.BeginForm("Login", "Home", FormMethod.Post))
 {
     <fieldset>
-        <legend>Please log into ABC Badge.</legend>
+        <legend>Please log into ABC ID Card.</legend>
 
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true)

@@ -4,12 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 //
-//   I think maybe I will put this into the abcBadge_Core solution,
+//   I think maybe I will put this into the ABC IDCard_Core solution,
 //   rather than having this in the ciBadgeForWeb solution.
 //    -----2/11/2020 thomas downes
 //
 
-namespace abcBadgeService
+namespace ABC IDCardService
 {
     static class Program
     {
@@ -20,7 +20,7 @@ namespace abcBadgeService
         static void Main()
         {
             //
-            //   I think maybe I will put this into the abcBadge_Core solution,
+            //   I think maybe I will put this into the ABC IDCard_Core solution,
             //   rather than having this in the ciBadgeForWeb solution.
             //    -----2/11/2020 thomas downes
             //
