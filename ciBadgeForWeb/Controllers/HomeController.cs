@@ -8,6 +8,14 @@ using ciBadgeForWeb.Models;  //Added 8/10/2019 thomas downes
 
 namespace ciBadgeForWeb.Controllers
 {
+    //
+    // For [HandleError], please make sure that CustomError mode is on in System.web section of web.config,  
+    //    in order for the Attribute [HandleError] (HandleErrorAttribute) work properly.
+    //    https://www.tutorialsteacher.com/mvc/filters-in-asp.net-mvc
+    //    -----3/7/2020 thomas d.
+    //
+
+    [HandleError]
     public class HomeController : Controller
     {
         //public ActionResult Index()
@@ -20,6 +28,7 @@ namespace ciBadgeForWeb.Controllers
         //    return View();  //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         //}
 
+        [HandleError]
         public ActionResult Login()
         {
             //
@@ -31,6 +40,7 @@ namespace ciBadgeForWeb.Controllers
             return View();
         }
 
+        [HandleError]
         public ActionResult LoginPlain()
         {
             //
@@ -42,6 +52,7 @@ namespace ciBadgeForWeb.Controllers
             return View();
         }
 
+        [HandleError]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(UserLogin objUser)
@@ -115,6 +126,7 @@ namespace ciBadgeForWeb.Controllers
             return View(objUser);
         }
 
+        [HandleError]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Bypass(UserLogin objUser)
@@ -128,6 +140,7 @@ namespace ciBadgeForWeb.Controllers
             return RedirectToAction("Index");
         }
 
+        [HandleError]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult LoginPlain(UserLogin objUser)
@@ -171,6 +184,7 @@ namespace ciBadgeForWeb.Controllers
             }
         }
 
+        [HandleError]
         public ActionResult Index(Nullable<int> parameter_id)
         {
             //

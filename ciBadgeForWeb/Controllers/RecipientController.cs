@@ -15,6 +15,14 @@ namespace ciBadgeForWeb.Controllers
     //Recipient = Student or Employee receiving the Badge. 
     //
 
+    //
+    // For [HandleError], please make sure that CustomError mode is on in System.web section of web.config,  
+    //    in order for the Attribute [HandleError] (HandleErrorAttribute) work properly.
+    //    https://www.tutorialsteacher.com/mvc/filters-in-asp.net-mvc
+    //    -----3/7/2020 thomas d.
+    //
+
+    [HandleError]
     public class RecipientController : Controller
     {
         //

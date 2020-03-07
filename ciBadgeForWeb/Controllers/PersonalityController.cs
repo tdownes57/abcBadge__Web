@@ -7,6 +7,14 @@ using ciBadgeForWeb.Models;  //Added 7/11/2019 Thomas DOWNES
 
 namespace ciBadgeForWeb.Controllers
 {
+    //
+    // For [HandleError], please make sure that CustomError mode is on in System.web section of web.config,  
+    //    in order for the Attribute [HandleError] (HandleErrorAttribute) work properly.
+    //    https://www.tutorialsteacher.com/mvc/filters-in-asp.net-mvc
+    //    -----3/7/2020 thomas d.
+    //
+
+    [HandleError]
     public class PersonalityController : Controller
     {
         /// <summary>

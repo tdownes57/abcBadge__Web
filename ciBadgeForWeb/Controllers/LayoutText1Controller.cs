@@ -11,6 +11,14 @@ using ciLayoutPrintLib;  //Added 6/27/2019 thomas downes
 //
 namespace ciBadgeForWeb.Controllers
 {
+    //
+    // For [HandleError], please make sure that CustomError mode is on in System.web section of web.config,  
+    //    in order for the Attribute [HandleError] (HandleErrorAttribute) work properly.
+    //    https://www.tutorialsteacher.com/mvc/filters-in-asp.net-mvc
+    //    -----3/7/2020 thomas d.
+    //
+
+    [HandleError]
     public class LayoutText1Controller : Controller
     {
         //Added 6/25/2019 thomas downes  
