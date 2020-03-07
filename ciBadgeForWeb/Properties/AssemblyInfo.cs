@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ciBadgeForWeb")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("ABCIDCardWeb")]
+[assembly: AssemblyDescription("a configurable interface for printing ID Cards for your membership group")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ciBadgeForWeb")]
+[assembly: AssemblyCompany("Thomas Downes / R Software Consulting")]
+[assembly: AssemblyProduct("ABCIDCardWeb")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
