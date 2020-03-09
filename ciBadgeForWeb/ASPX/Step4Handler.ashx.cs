@@ -112,11 +112,27 @@ namespace ciBadgeForWeb
                     //
                     objLayoutEx.WidthInPixels_Land = intPixelsWidth;
 
-                    if (-1 != intBackgroundImageIndex) ciLayoutPrintLib.LayoutExample.RefreshChoiceOfBackground_ByIndex(intBackgroundImageIndex);
+                    if (-1 != intBackgroundImageIndex) 
+                    {
+                        const bool c_boolToggleImage = false;  // Added 3/9/2020 thoams
+                        if (c_boolToggleImage)
+                           ciLayoutPrintLib.LayoutExample.RefreshChoiceOfBackground_ByIndex(intBackgroundImageIndex);
+                    }
 
                     image_ex = objLayoutEx.GenerateImage_BackgroundOnly(bHorizontalLarge, 
                         bHorizontalSmall, ref boolNoImages);
 
+                    // Added 3/9/2020 thomas downes
+                    //
+                    //    It's important that the correct background image be displayed.
+                    //
+                    ciBadgeInterfaces.BadgeLayoutClass objLayout_B;   // Added 3/9/2020 thomas downes 
+                    objLayout_B = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.BadgeLayout;
+                    string strPathToBackImages_B = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(true);
+                    int intBackWidth_B = objLayout_B.Width_Pixels;
+                    int intBackHeight_B = objLayout_B.Height_Pixels;
+                    image_ex = ClassElementsCache_Deprecated.Singleton.GetBackgroundImage(intBackWidth_B, intBackHeight_B,
+                            strPathToBackImages_B);
 
                     //Added 7/6/2019 thomas d.
                     //

@@ -21,7 +21,9 @@
 //
 //  https://stackoverflow.com/questions/7942398/nested-objects-in-javascript-best-practices
 //
-var EL = {
+//  var EL = {
+const EL_NotInUse = {
+
     moveable_text = document.getElementById("id__mydivheader1"),
 
     textbox_TopEdge = document.getElementsByName('TopEdgePositionPixels')[0],
@@ -41,7 +43,8 @@ var EL = {
 //
 
 //Added 7/10/2019 thomas downes
-var global_elementLastTouched = EL.moveable_text; //Default. 
+// 3-7-2020 td ---var global_elementLastTouched = EL.moveable_text; //Default. 
+// 3-7-2020 td ---let global_elementLastTouched = EL.moveable_text; //Default.
 
 
 
