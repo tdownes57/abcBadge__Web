@@ -746,6 +746,9 @@
     <Compile Include="Models\CIPersonalityConfig_Not in use.cs" />
     <Content Include="Models\CIRecipient..txt" />
     <Content Include="Models\CIRecipient.txt" />
+    <Content Include="OrangeCoast\BasicMemeApp.css" />
+    <Content Include="OrangeCoast\BasicMemeApp.html" />
+    <Content Include="OrangeCoast\BasicMemeApp.js" />
     <Content Include="Scripts\Adjustment_Click.js" />
     <Content Include="Scripts\Adjustment_Master.js" />
     <Content Include="Scripts\bootstrap.js" />
