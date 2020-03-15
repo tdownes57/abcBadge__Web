@@ -9,6 +9,7 @@
 //     Professor Alexandra Do.  
 //   ---3/14/2020 Thomas Downes  
 //
+//"use strict";
 
 // --------------------------------------------------------------
 // SETUP. DO NOT CHANGE THESE LINES. SEE EXERCISE SECTION BELOW.
@@ -60,42 +61,75 @@ class Meme {
 // --------------------------------------------------------------
 class MemeController {
     constructor(memes, currentMemeID) {
+
+        // "use strict"; //Added 3/14/2020 td 
+
         this._memes = memes;
         this._currentMeme = memes[currentMemeID];
         this.setCurrentMeme(memes[currentMemeID]);
         // Use self to capture the this object.
         // Otherwise, this will refer to the button object, not the controlle object! This is why knowing Scope & Closure is important!
-        self = this;
+        var self = this;
 
         // Set the handler for the Next button. It will go to the next meme.
-        $("#next-image-id").click(function () {
-            // If you use 'this' inside this function, it refers to the button "Next", not
-            // the MemeController instance when this function is called as the button is clicked. 
-            // Use 'self' instead because it already captures the MemeController instance before.
-            self.nextMeme();
-        });
+        if ($("#next-image-id").length) {
+            $("#next-image-id").click(function () {
+                // If you use 'this' inside this function, it refers to the button "Next", not
+                // the MemeController instance when this function is called as the button is clicked. 
+                // Use 'self' instead because it already captures the MemeController instance before.
+                self.nextMeme();
+            });
+        }
+        else {
+            // Added 3/14/2020 thomas downes
+            //throw "Click function has not been assigned!";
+            alert ("Click function has not been assigned!");
+        }
+            
 
         // ATTEMPTING: Add handler for previous meme. The element is the button 
         // with the ID "#prev-image-id". See the example above.
         // Set the handler for the Prev button. It will go to the previous meme.
-        $("#prev-image-id").click(function () {
-            // Use 'self' instead because it already captures the MemeController instance before.
-            self.previousMeme();
-        });
+        if ($("#prev-image-id").length) {
+            $("#prev-image-id").click(function () {
+                // Use 'self' instead because it already captures the MemeController instance before.
+                self.previousMeme();
+            });
+        }
+        else {
+            // Added 3/14/2020 thomas downes
+            //throw "Click function has not been assigned!";
+            alert("Click function has not been assigned!");
+        }
 
         // ATTEMPTING: Add handler for clicking Like button. The element is the button
         // with the ID "#like-button-id". See the example above.
         // Set the handler for the Like button. It will increment the Likes.
-        $("#like-button-id").click(function () {
-            // Use 'self' instead because it already captures the MemeController instance before.
-            self.like();
-        });
-        // TODO: Add handler for clicking dislike button. The element is the button
+        if ($("#like-button-id").length) {
+            $("#like-button-id").click(function () {
+                // Use 'self' instead because it already captures the MemeController instance before.
+                self.like();
+            });
+        }
+        else {
+            // Added 3/14/2020 thomas downes
+            //throw "Click function has not been assigned!";
+            alert("Click function has not been assigned!");
+        }
+
+        // ATTEMPTED: Add handler for clicking dislike button. The element is the button
         // with the ID "#dislike-button-id". See the example above.
-        $("#dislike-button-id").click(function () {
-            // Use 'self' instead because it already captures the MemeController instance before.
-            self.dislike();
-        });
+        if ($("#dislike-button-id").length) {
+            $("#dislike-button-id").click(function () {
+                // Use 'self' instead because it already captures the MemeController instance before.
+                self.dislike();
+            });
+        }
+        else {
+            // Added 3/14/2020 thomas downes
+            //throw "Click function has not been assigned!";
+            alert("Click function has not been assigned!");
+        }
 
     }
     // Set the current meme to the provided meme, and update the image to the meme's img
