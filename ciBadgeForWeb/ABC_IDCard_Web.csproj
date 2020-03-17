@@ -740,6 +740,16 @@
     <Content Include="Javascript - see Scripts\TextMover3.js" />
     <Content Include="Javascript - see Scripts\TextMover4.js" />
     <Compile Include="Models\CICustomField.cs" />
+    <Content Include="JS_Moveable_Divs_HTM\drag_elements - March17 #3.htm" />
+    <Content Include="JS_Moveable_Divs_HTM\drag_elements - March17 #4.htm" />
+    <Content Include="JS_Moveable_Divs_HTM\drag_elements - March17 #5.htm" />
+    <Content Include="JS_Moveable_Divs_HTM\drag_elements - March17.htm" />
+    <Content Include="JS_Moveable_Divs_HTM\drag_elements.htm" />
+    <Content Include="JS_Moveable_Divs_HTM\drag_elements_HelloWorld.htm" />
+    <Content Include="JS_Moveable_Divs_HTM\drag_elements_viaClosures.htm" />
+    <Content Include="JS_Moveable_Divs_HTM\drag_elements_WorksGood.htm" />
+    <Content Include="JS_Moveable_Divs_HTM\drag_simple_wTextArea - Copy.htm" />
+    <Content Include="JS_Moveable_Divs_HTM\drag_simple_wTextArea.htm" />
     <Content Include="Models\CILayoutBackgroundImg.txt" />
     <Content Include="Models\CILayoutPrint.txt" />
     <Compile Include="Models\CILayoutText.cs" />
@@ -907,6 +917,7 @@
   <ItemGroup>
     <Folder Include="Content\Upload\" />
     <Folder Include="LegacyPages\" />
+    <Folder Include="Scripts - 2020\" />
     <Folder Include="Views\CILayoutText\" />
     <Folder Include="Views\CustomField\" />
     <Folder Include="Views\LayoutTextboxes\" />
