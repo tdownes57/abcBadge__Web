@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+
+<!-- href="https://www.w3schools.com/howto/howto_js_draggable.asp" https://www.w3schools.com/howto/howto_js_draggable.asp  -->
+
+<!-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures -->
+
+<html>
+<head>
+<style>
+
+.mydiv_class {
+  position: absolute;
+  /*left: 5px;*/
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  border: 1px solid #d3d3d3;
+}
+
+.mydivheader_class {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #2196F3;
+  color: #fff;
+}
+
+#mydiv1 {
+  position: absolute;
+  left: 5px;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  border: 1px solid #d3d3d3;
+}
+
+#mydiv1header {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #2196F3;
+  color: #fff;
+}
+
+#mydiv2 {
+  position: absolute;
+  left: 50px;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  border: 1px solid #d3d3d3;
+}
+
+#mydiv2header {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #2196F3;
+  color: #fff;
+}
+
+
+</style>
+</head>
+
+<body>
+
+    <h1>Draggable DIV Element</h1>
+
+
+    <p><a href="https://www.w3schools.com/howto/howto_js_draggable.asp">https://www.w3schools.com/howto/howto_js_draggable.asp</a></p>
+
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures">Javascript Closures by Mozilla</a></p>
+
+    <!--a href="https://www.w3schools.com/howto/howto_js_draggable.asp" https://www.w3schools.com/howto/howto_js_draggable.asp-->
+
+    <p id="paragraphToggleMode" >Move Mode - Click and hold the mouse button down while moving the DIV element. <a >Click here to switch to Include Mode.</a> </p>
+
+    <div id="mydiv1" class="mydiv_class" style="position: absolute; top: 230px; left: 1px;">
+        <div id="mydiv1header">Click here to move</div>
+        <p>Move</p>
+        <p>this</p>
+        <p>DIV</p>
+    </div>
+
+    <div id="mydiv2" class="mydiv_class" style="position: absolute; top: 230px; left: 100px;">
+        <div id="mydiv2header">Click here to move</div>
+        <p>Move</p>
+        <p>this</p>
+        <p>DIV</p>
+    </div>
+
+    <div id="mydiv3" class="mydiv_class" style="position: absolute; top: 230px; left: 200px;">
+        <div id="mydiv3header" class="mydivheader_class">Click here to move</div>
+        <p>Move</p>
+        <p>this</p>
+        <p>DIV</p>
+    </div>
+
+    <div id="mydiv4" class="mydiv_class" style="position: absolute; top: 230px; left: 300px;">
+        <div id="mydiv4header" class="mydivheader_class">Click here to move</div>
+        <p>Move</p>
+        <p>this</p>
+        <p>DIV</p>
+    </div>
+
+    <div id="mydiv5" class="mydiv_class" style="position: absolute; top: 230px; left: 400px;">
+        <div id="mydiv5header" class="mydivheader_class">Click here to move</div>
+        <p>Move</p>
+        <p>this</p>
+        <p>DIV</p>
+    </div>
+
+    <div id="mydiv6" class="mydiv_class" style="position: absolute; top: 230px; left: 500px;">
+        <div id="mydiv6header" class="mydivheader_class">Click here to move</div>
+        <p>Move</p>
+        <p>this</p>
+        <p>DIV</p>
+    </div>
+
+    <div id="mydiv7" class="mydiv_class" style="position: absolute; top: 230px; left: 600px;">
+        <div id="mydiv7header" class="mydivheader_class">Click here to move</div>
+        <p>Move</p>
+        <p>this</p>
+        <p>DIV</p>
+    </div>
+
+    <div id="mydiv8" class="mydiv_class" style="position: absolute; top: 230px; left: 700px;">
+        <div id="mydiv8header" class="mydivheader_class">Click here to move</div>
+        <p>Move</p>
+        <p>this</p>
+        <p>DIV</p>
+    </div>
+
+
+
+
+    <div id="Element1" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; border-width: thick; ">
+        <img src="blue_star.jpg" width="200" height="30" />
+    </div>
+
+    <div id="Element2" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; border-width: thick; ">
+        <img src="blue_star.jpg" width="200" height="30" />
+    </div>
+
+    <div id="Element3" class="mydiv_class" style="position: absolute; top: 250px; left: 300px; ">
+        <img src="blue_star.jpg" width="200" height="30" />
+    </div>
+
+    <div id="Element4" class="mydiv_class" style="position: absolute; top: 250px; left: 400px; ">
+        <img src="blue_star.jpg" width="200" height="30" />
+    </div>
+
+    <div id="Element5" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; ">
+        <img src="blue_star.jpg" width="200" height="30" />
+    </div>
+
+    <div id="Element6" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; ">
+        <img src="blue_star.jpg" width="200" height="30" />
+    </div>
+
+    <div id="Element7" class="mydiv_class" style="position: absolute; top: 250px; left: 300px; ">
+        <img src="blue_star.jpg" width="200" height="30" />
+    </div>
+
+    <div id="Element8" class="mydiv_class" style="position: absolute; top: 250px; left: 400px; ">
+        <img src="blue_star.jpg" width="200" height="30" />
+    </div>
+
+    <div id="Element9" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; ">
+        <img src="blue_star.jpg" width="200" height="30" />
+    </div>
+
+    <div id="Element10" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; ">
+        <img src="blue_star.jpg" width="200" height="30" />
+    </div>
+
+    <div id="Element11" class="mydiv_class" style="position: absolute; top: 250px; left: 300px; ">
+        <img src="blue_star.jpg" width="200" height="30" />
+    </div>
+
+    <div id="Element12" class="mydiv_class" style="position: absolute; top: 250px; left: 400px; ">
+        <img src="blue_star.jpg" width="200" height="30" />
+    </div>
+
+
+
+    <p id="p_JSON">This is for the JSON data.</p>
+
+
+    <!-- href="https://www.w3schools.com/howto/howto_js_draggable.asp" https://www.w3schools.com/howto/howto_js_draggable.asp  -->
+
+
+
+    <script>
+
+        <!--href = "https://www.w3schools.com/howto/howto_js_draggable.asp"
+        https://www.w3schools.com/howto/howto_js_draggable.asp  -->
+
+        //
+        //Make the DIV element draggagle:
+        //
+
+        MakeClosure_dragElement(document.getElementById("mydiv1"));
+        MakeClosure_dragElement(document.getElementById("mydiv2"));
+
+        MakeClosure_dragElement(document.getElementById("mydiv3"));
+        MakeClosure_dragElement(document.getElementById("mydiv4"));
+
+        MakeClosure_dragElement(document.getElementById("mydiv5"));
+        MakeClosure_dragElement(document.getElementById("mydiv6"));
+
+        MakeClosure_dragElement(document.getElementById("mydiv7"));
+        MakeClosure_dragElement(document.getElementById("mydiv8"));
+
+        // Images - Move Mode
+        MakeClosure_dragElement(document.getElementById("Element1"));
+        MakeClosure_dragElement(document.getElementById("Element2"));
+        MakeClosure_dragElement(document.getElementById("Element3"));
+        MakeClosure_dragElement(document.getElementById("Element4"));
+
+        MakeClosure_dragElement(document.getElementById("Element5"));
+        MakeClosure_dragElement(document.getElementById("Element6"));
+        MakeClosure_dragElement(document.getElementById("Element7"));
+        MakeClosure_dragElement(document.getElementById("Element8"));
+
+        MakeClosure_dragElement(document.getElementById("Element9"));
+        MakeClosure_dragElement(document.getElementById("Element10"));
+        MakeClosure_dragElement(document.getElementById("Element11"));
+        MakeClosure_dragElement(document.getElementById("Element12"));
+
+        // Images - Include Mode
+        MakeClosure_clickElement(document.getElementById("Element1"));
+        MakeClosure_clickElement(document.getElementById("Element2"));
+        MakeClosure_clickElement(document.getElementById("Element3"));
+        MakeClosure_clickElement(document.getElementById("Element4"));
+
+        MakeClosure_clickElement(document.getElementById("Element5"));
+        MakeClosure_clickElement(document.getElementById("Element6"));
+        MakeClosure_clickElement(document.getElementById("Element7"));
+        MakeClosure_clickElement(document.getElementById("Element8"));
+
+        MakeClosure_clickElement(document.getElementById("Element9"));
+        MakeClosure_clickElement(document.getElementById("Element10"));
+        MakeClosure_clickElement(document.getElementById("Element11"));
+        MakeClosure_clickElement(document.getElementById("Element12"));
+
+
+        //
+        // Added 3/20/2020 thomas downes  
+        //
+        //----const mod_record_all_positions = {};
+
+        //----const my_JSON_string = '{"Element9_top":"421px","Element9_left":"92px","Element10_top":"419px","Element10_left":"334px","Element12_top":"419px","Element12_left":"552px","Element8_top":"479px","Element8_left":"95px","Element11_top":"477px","Element11_left":"337px","Element7_top":"477px","Element7_left":"558px"}';
+
+        const my_JSON_string = '{"Element4_top":"352px","Element4_left":"532px","Element3_top":"352px","Element3_left":"314px","Element6_top":"351px","Element6_left":"91px","Element5_top":"496px","Element5_left":"87px","Element2_top":"499px","Element2_left":"313px","Element1_top":"499px","Element1_left":"535px","Element9_top":"400px","Element9_left":"88px","Element8_top":"448px","Element8_left":"87px","Element10_top":"403px","Element10_left":"314px","Element11_top":"451px","Element11_left":"314px","Element12_top":"404px","Element12_left":"533px","Element7_top":"454px","Element7_left":"535px"}';
+        const my_JSON_object = JSON.parse(my_JSON_string)
+
+        // Added 3/20/2020 thomas downes  
+        document.getElementById("Element1").style.left = my_JSON_object["Element1_left"];
+        document.getElementById("Element2").style.left = my_JSON_object["Element2_left"];
+        document.getElementById("Element3").style.left = my_JSON_object["Element3_left"];
+        document.getElementById("Element4").style.left = my_JSON_object["Element4_left"];
+        document.getElementById("Element5").style.left = my_JSON_object["Element5_left"];
+        document.getElementById("Element6").style.left = my_JSON_object["Element6_left"];
+        document.getElementById("Element7").style.left = my_JSON_object["Element7_left"];
+        document.getElementById("Element8").style.left = my_JSON_object["Element8_left"];
+        document.getElementById("Element9").style.left = my_JSON_object["Element9_left"];
+        document.getElementById("Element10").style.left = my_JSON_object["Element10_left"];
+        document.getElementById("Element11").style.left = my_JSON_object["Element11_left"];
+        document.getElementById("Element12").style.left = my_JSON_object["Element12_left"];
+
+        // Added 3/20/2020 thomas downes  
+        document.getElementById("Element1").style.top = my_JSON_object["Element1_top"];
+        document.getElementById("Element2").style.top = my_JSON_object["Element2_top"];
+        document.getElementById("Element3").style.top = my_JSON_object["Element3_top"];
+        document.getElementById("Element4").style.top = my_JSON_object["Element4_top"];
+        document.getElementById("Element5").style.top = my_JSON_object["Element5_top"];
+        document.getElementById("Element6").style.top = my_JSON_object["Element6_top"];
+        document.getElementById("Element7").style.top = my_JSON_object["Element7_top"];
+        document.getElementById("Element8").style.top = my_JSON_object["Element8_top"];
+        document.getElementById("Element9").style.top = my_JSON_object["Element9_top"];
+        document.getElementById("Element10").style.top = my_JSON_object["Element10_top"];
+        document.getElementById("Element11").style.top = my_JSON_object["Element11_top"];
+        document.getElementById("Element12").style.top = my_JSON_object["Element12_top"];
+
+        //Added 3/20/2020 Thomas Downes  
+        document.getElementById("p_JSON").innerHTML = my_JSON_string;
+
+        //Added 3/20/2020 thomas downes
+        let mod_JS_mode = "Move"; // "drag"; //---"click";
+
+        //Connect the Click event to the function function_ToggleMode. 
+        //   ---3/20/2020
+        document.getElementById("paragraphToggleMode").click = function_ToggleMode; 
+
+        //
+        //Added 3/20/2020 thomas downes
+        //
+        function function_ToggleMode() {
+            //
+            // Switch from Click-to-Include to Click-and-Drag, and back again.
+            //  ----3/20/2020 thomas downes
+            //
+            if (mod_JS_mode = "Move") {
+                //Drag-to-Click  
+                mod_JS_mode = "Include";
+                document.getElementById("paragraphToggleMode").innerHTML = "Include Mode - Click and release, for selecting elements to include as a group.  <a> Click here to change to Drag Mode. </a>";
+            }
+            else if (mod_JS_mode = "Include") {
+                //Click-to-Drag
+                mod_JS_mode = "Move";
+                document.getElementById("paragraphToggleMode").innerHTML = "Move Mode - Click and hold the mouse button down while moving the DIV element. <a >Click here to switch to Include Mode.</a>";
+            }
+        }
+
+
+        //
+        // Added 3/20/2020 Thomas Downes
+        //       
+        function function_PropagateMoveToGroup(par_intLeftX, par_intTopY, par_omit_elmntDiv)
+        {
+            //
+            // Added 3/20/2020 thomas downes
+            //
+            // tempElem = document.getElementById("Element1"); if (tempElem != par_omit_elmntDiv) { tempElem.style.top = par_style_top; }
+            // tempElem = document.getElementById("Element2"); if (tempElem != par_omit_elmntDiv) { tempElem.style.top = par_style_top; }
+            // tempElem = document.getElementById("Element3"); if (tempElem != par_omit_elmntDiv) { tempElem.style.top = par_style_top; }
+
+            tempElem = document.getElementById("Element1");
+            if (tempElem != par_omit_elmntDiv) {
+                // 
+                // Set the element's new position:
+                //
+                //----tempElem.style.top = par_style_top;
+                //tempElem.style.left = (tempElem.offsetLeft - par_intLeftX) + "px";  // px = pixels
+                //tempDivElem.style.top = (tempElem.offsetTop - par_intTopY) + "px";  //  px = pixels
+
+                //Call the element-specific (as one of the group elements) encapsulation.
+                function_PropagateMoveToGroup_Item(par_intLeftX, par_intTopY, tempElem);
+
+            }
+
+            //tempElem = document.getElementById("Element1"); if (tempElem != par_omit_elmntDiv) { tempElem.style.top = par_style_top; }
+            //tempElem = document.getElementById("Element2"); if (tempElem != par_omit_elmntDiv) { tempElem.style.top = par_style_top; }
+            //tempElem = document.getElementById("Element3"); if (tempElem != par_omit_elmntDiv) { tempElem.style.top = par_style_top; }
+
+            // Element #2
+            tempElem = document.getElementById("Element2");
+            if (tempElem != par_omit_elmntDiv) {
+                //Call the element-specific (as one of the group elements) encapsulation.
+                function_PropagateMoveToGroup_Item(par_intLeftX, par_intTopY, tempElem);
+            }     
+
+            // Element #6
+            tempElem = document.getElementById("Element6");
+            if (tempElem != par_omit_elmntDiv) {
+                //Call the element-specific (as one of the group elements) encapsulation.
+                function_PropagateMoveToGroup_Item(par_intLeftX, par_intTopY, tempElem);
+            }
+
+            // Elements #3 to 12
+            //for (i_ElemIndex = 0; i_ElemIndex < 12; i_ElemIndex++) {
+            //    tempElem = document.getElementById("Element" + i_ElemIndex);
+            //    if (tempElem != par_omit_elmntDiv) {
+            //        //Call the element-specific (as one of the group elements) encapsulation.
+            //        function_PropagateMoveToGroup_Item(par_intLeftX, par_intTopY, tempElem);
+            //    }
+            //}
+
+            // Added 3/20/2020 thomas downes  
+            //---document.getElementById("Element1").style.left = par_style_left;
+            //---document.getElementById("Element2").style.left = par_style_left;
+            //---document.getElementById("Element3").style.left = par_style_left;
+
+        }
+
+        function function_PropagateMoveToGroup_Item(par_intLeftX, par_intTopY, par_elementDiv)
+        {
+            //
+            // Added 3/20/2020 thomas downes
+            //
+            // 
+            // Set the element's new position:
+            //
+            par_elementDiv.style.left = (par_elementDiv.offsetLeft - par_intLeftX) + "px";  // px = pixels
+            par_elementDiv.style.top = (par_elementDiv.offsetTop - par_intTopY) + "px";  //  px = pixels
+
+            //Added 3/20/2020 td
+            my_JSON_object[par_elementDiv.id + "_top"] = par_elementDiv.style.top;
+            my_JSON_object[par_elementDiv.id + "_left"] = par_elementDiv.style.left;
+
+        }
+
+        //
+        // Added 3/20/2020 Thomas Downes
+        //       
+        function function_PropagateMoveToGroup_NoUse(par_style_left, par_style_top, par_omit_elmntDiv) //(par_intLeft, par_intTop, par_omit_elmntDiv) {
+        {
+            //
+            // Added 3/20/2020 thomas downes  
+            //
+            // Property Top
+            //tempElem = document.getElementById("Element1"); if (tempElem != par_omit_elmntDiv) { tempElem.style.top = par_style_top; }
+            //tempElem = document.getElementById("Element2"); if (tempElem != par_omit_elmntDiv) { tempElem.style.top = par_style_top; }
+            //tempElem = document.getElementById("Element3"); if (tempElem != par_omit_elmntDiv) { tempElem.style.top = par_style_top; }
+
+            //// Property Left 
+            //tempElem = document.getElementById("Element1"); if (tempElem != par_omit_elmntDiv) { tempElem.style.left = par_style_left; }
+            //tempElem = document.getElementById("Element2"); if (tempElem != par_omit_elmntDiv) { tempElem.style.left = par_style_left; }
+            //tempElem = document.getElementById("Element3"); if (tempElem != par_omit_elmntDiv) { tempElem.style.left = par_style_left; }
+
+        }
+
+
+
+        //-------------------------------------------------------------------------------------------
+        // MakeClosure Function closure_clickElement
+        //-------------------------------------------------------------------------------------------
+        //
+        function MakeClosure_clickElement(par_elmntDiv) {
+            //
+            //This is a Javascript closure.  
+            //   ---3/20/2020 Thomas Downes
+            //
+
+            var closure_DivElement; // = par_elmntDiv; 
+
+            closure_DivElement = par_elmntDiv; 
+
+            closure_DivElement.onclick = subClosFun_click;
+
+            function subClosFun_click(par_e_EventMD) 
+            {
+                //
+                //Uses closure variables:  
+                //
+                if (mod_JS_mode != "Include") { return; }  // Exit if we are "out of mode".
+
+                closure_DivElement.style.BorderWidth = "thick"; 
+
+	    }
+	
+        }
+
+        //-------------------------------------------------------------------------------------------
+        // MakeClosure Function closure_dragElement
+        //-------------------------------------------------------------------------------------------
+        //
+        function MakeClosure_dragElement(par_elmntDiv) {
+            //
+            //This is a Javascript closure.  
+            //
+            var closure_DivElement; // = par_elmnt; 
+            var closure_pos1_x = 0;
+            var closure_pos2_y = 0;
+
+            var closure_pos3_xPrior = 0;
+            var closure_pos4_yPrior = 0;
+
+            //Added 3/20/2020
+            closure_DivElement = par_elmntDiv; 
+
+            // Added 3/17/2020 thomas downes
+            const c_useHeaderToMove = false; // Turn off the header functionality.
+
+            if (c_useHeaderToMove && document.getElementById(closure_DivElement.id + "header")) 
+            {
+                /* if present, the header is where you move the DIV from:*/
+                document.getElementById(closure_DivElement.id + "header").onmousedown = subClosFun_dragMouseDown;
+            } 
+            else {
+                /* otherwise, move the DIV from anywhere inside the DIV:*/
+                closure_DivElement.onmousedown = subClosFun_dragMouseDown;
+            }
+
+            function subClosFun_dragMouseDown(par_e_EventMD) {
+                //
+                //Uses closure variables:  
+                //
+                //    closure_pos1_x
+                //    closure_pos2_y
+                //    closure_pos3_xPrior
+                //    closure_pos4_yPrior
+                //    closure_DivElement
+                //
+                if (mod_JS_mode != "Move") { return; }  // Exit if we are "out of mode". 
+
+                par_e_EventMD = par_e_EventMD || window.event;
+                par_e_EventMD.preventDefault();
+
+                // get the "prior" mouse cursor position at startup:
+                //
+                closure_pos3_xPrior = par_e_EventMD.clientX;
+                closure_pos4_yPrior = par_e_EventMD.clientY;
+                
+                //
+                // Document-Level
+                //
+                document.onmouseup = subClosFun_closeDragElement;
+                
+                // call a function whenever the cursor moves:
+                //
+                document.onmousemove = subClosFun_elementDrag;
+            }
+
+            function subClosFun_elementDrag(par_e_EventDrag) {
+                //
+                //Uses closure variables:  
+                //    closure_pos1_x
+                //    closure_pos2_y
+                //    closure_pos3_xPrior
+                //    closure_pos4_yPrior
+                //    closure_DivElement
+                //
+                if (mod_JS_mode != "Move") { return; }  // Exit if we are "out of mode". 
+
+                par_e_EventDrag = par_e_EventDrag || window.event;
+                par_e_EventDrag.preventDefault();
+
+                // calculate the new cursor position:
+                closure_pos1_x = closure_pos3_xPrior - par_e_EventDrag.clientX;
+                closure_pos2_y = closure_pos4_yPrior - par_e_EventDrag.clientY;
+
+                // Prepare for next call.  
+                closure_pos3_xPrior = par_e_EventDrag.clientX;
+                closure_pos4_yPrior = par_e_EventDrag.clientY;
+
+                // Set the element's new position:
+                closure_DivElement.style.left = (closure_DivElement.offsetLeft - closure_pos1_x) + "px";  // px = pixels 
+                closure_DivElement.style.top = (closure_DivElement.offsetTop - closure_pos2_y) + "px";  //  px = pixels
+
+                // Added 3/20/2020 thomas downes
+                //----mod_record_all_positions[closure_DivElement.id + "_top"] = closure_DivElement.style.top;
+                //----mod_record_all_positions[closure_DivElement.id + "_left"] = closure_DivElement.style.left;
+                my_JSON_object[closure_DivElement.id + "_top"] = closure_DivElement.style.top;
+                my_JSON_object[closure_DivElement.id + "_left"] = closure_DivElement.style.left;
+
+                //Record the position.
+                if (document.getElementById(closure_DivElement.id + "header")) {
+                    /* if present, the header is where you move the DIV from:*/
+                    document.getElementById(closure_DivElement.id + "header").innerHTML = "Hello, " + closure_DivElement.id + "header";
+                }
+
+                //Propagate the move.
+                //function_PropagateMoveToGroup_NoUse(closure_DivElement.style.left, closure_DivElement.style.top, closure_DivElement);
+
+		        //Added 3/20/220 Thomas Downes	
+                function_PropagateMoveToGroup(closure_pos1_x, closure_pos2_y, closure_DivElement);
+
+            }
+
+            function subClosFun_closeDragElement() 
+            {
+                /* stop moving when mouse button is released:*/
+                document.onmouseup = null;
+                document.onmousemove = null;
+
+                //Added 3/20/2020 thomas downes
+                //---document.getElementById('p_JSON').innerHTML = JSON.stringify(mod_record_all_positions);
+                document.getElementById('p_JSON').innerHTML = JSON.stringify(my_JSON_object);
+            }
+        }
+    </script>
+
+</body>
+</html>

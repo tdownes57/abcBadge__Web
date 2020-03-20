@@ -749,6 +749,8 @@
     <Content Include="JS_Moveable_Divs_HTM\drag_elements_8divs.htm" />
     <Content Include="JS_Moveable_Divs_HTM\drag_elements_8divs_JSON.htm" />
     <Content Include="JS_Moveable_Divs_HTM\drag_elements_HelloWorld.htm" />
+    <Content Include="JS_Moveable_Divs_HTM\drag_elements_JSON_groups.htm" />
+    <Content Include="JS_Moveable_Divs_HTM\drag_elements_refactoring.htm" />
     <Content Include="JS_Moveable_Divs_HTM\drag_elements_viaClosures.htm" />
     <Content Include="JS_Moveable_Divs_HTM\drag_elements_WorksGood.htm" />
     <Content Include="JS_Moveable_Divs_HTM\drag_simple_wTextArea - Copy.htm" />
