@@ -1,0 +1,117 @@
+  
+      public static string PathToFile_JSON_Current(bool pboolAbsolute)
+        {
+            //
+            //Added 3/20/2020 Thomas Downes  
+            //
+            //return PathToFile_JSON(pboolAbsolute);
+
+            bool boolNotYetDetermined = ("" == mod_fileTitleJSON_Current);
+            bool boolExpectedFileType = false; // mod_fileTitleJSON_Current.EndsWith(".JSON");
+            bool boolPossiblyCorrupt = false;  //Added 216/2019 td
+
+            if (!(boolNotYetDetermined)) //Added 2/16/2020 thomas downes
+            {
+                boolExpectedFileType = mod_fileTitleJSON_Current.EndsWith(".JSON");
+                boolPossiblyCorrupt = (!(boolExpectedFileType));
+                if (boolPossiblyCorrupt)
+                {
+                    //Added 2/16/2020 thomas downes
+                    mod_boolCorruptedFilename = true;
+                    mod_strCorruptedFilename = mod_fileTitleJSON_Current;
+                    mod_fileTitleJSON_Current = "";
+                }
+            }
+
+            string strPathToFileJSON = "";
+            string strPathToFolderJSON = DiskFolders.PathToFolder_JSON(pboolAbsolute);
+
+            if (boolNotYetDetermined)
+            {
+                // 2-4-2020 td //foreach (FileInfo file_Info in (new DirectoryInfo(strPathToFolderJSON)).GetFiles("*.JSON"))
+                FileInfo[] array_fileInfos = (new DirectoryInfo(strPathToFolderJSON)).GetFiles("*.JSON");  //Added 2/4/2020 thomas downes
+                foreach (FileInfo file_Info in array_fileInfos.OrderByDescending(n => n.LastWriteTime))
+                {
+                    //Added 2/16/2020 thomas downes
+                    boolExpectedFileType = file_Info.Name.EndsWith(".JSON");
+                    boolPossiblyCorrupt = (!(boolExpectedFileType));
+                    if (boolPossiblyCorrupt) continue;  //Skip this file!!
+
+                    if (boolNotYetDetermined)
+                    {
+                        //
+                        //We are selecting the most recently-edited file. 
+                        //
+                        mod_fileTitleJSON_Current = file_Info.Name;
+                        break;
+                    }
+                }
+            }
+            strPathToFileJSON = Path.Combine(strPathToFolderJSON, mod_fileTitleJSON_Current);
+            return strPathToFileJSON;
+        }
+
+        public static string PathToFile_JSON_Next(bool pboolAbsolute)
+        {
+            //
+            //Added 11/28/2192
+            //
+            bool boolNotYetDetermined = ("" == mod_fileTitleJSON_Current);
+            string strPathToFileJSON = "";
+            string strPathToFolderJSON = DiskFolders.PathToFolder_JSON(pboolAbsolute);
+            bool boolMatchesCurrent = false;
+            bool boolGrabThisNextFile = false;
+            FileInfo obj_nextFileInfo = null;
+            bool boolTrySecondAttempt = false;
+            bool boolStartFromBeginningAgain = false;
+            bool boolExpectedFileType = false; //Added 2/16/2019 td     mod_fileTitleJSON_Current.EndsWith(".JSON");
+            bool boolPossiblyCorrupt = false;  //Added 2/16/2019 td
+
+            if (boolNotYetDetermined)
+            {
+                mod_fileTitleJSON_Current = PathToFile_JSON_Current(pboolAbsolute);
+            }
+
+            while (true)
+            {
+                foreach (FileInfo each_file_Info in (new DirectoryInfo(strPathToFolderJSON)).GetFiles("*.JSON"))
+                {
+                    //Added 2/16/2019 td
+                    boolExpectedFileType = each_file_Info.Name.EndsWith(".JSON");  //Added 2/16/2019 td
+                    boolPossiblyCorrupt = (!(boolExpectedFileType));  //Added 2/16/2019 td
+                    if (boolPossiblyCorrupt) continue;  //Added 2/16/2019 td
+
+                    if (boolGrabThisNextFile)
+                    {
+                        obj_nextFileInfo = each_file_Info;
+                        break;
+                    }
+                    boolMatchesCurrent = (each_file_Info.Name == mod_fileTitleJSON_Current);
+                    if (boolMatchesCurrent)
+                    {
+                        //mod_fileTitleJSON_Current = each_file_Info.Name;
+                        //break;
+                        //-----Prepare for the next interation. 
+                        boolGrabThisNextFile = true;
+                    }
+                    //If we've come full circle, grab the first JSON file.
+                    if (boolStartFromBeginningAgain)
+                    {
+                        //We've come full circle, so grab the first JSON file.
+                        obj_nextFileInfo = each_file_Info;
+                        break;
+                    }
+                }
+                if (obj_nextFileInfo != null) break; // = true;
+                //Let's avoid infinite loops!!
+                if (obj_nextFileInfo == null && boolTrySecondAttempt) break; // = true;
+                if (obj_nextFileInfo == null) boolTrySecondAttempt = true;
+                //Take the very first file. ---11/29/2019 td
+                if (obj_nextFileInfo == null) boolStartFromBeginningAgain = true;
+            }
+
+            if (obj_nextFileInfo == null) throw new Exception("We are unable to locate any additional JSON files.");
+            if (obj_nextFileInfo != null) mod_fileTitleJSON_Current = obj_nextFileInfo.Name;
+            strPathToFileJSON = Path.Combine(strPathToFolderJSON, mod_fileTitleJSON_Current);
+            return strPathToFileJSON;
+        }

@@ -792,6 +792,18 @@
     <Content Include="Documentation\Mock-Up Templates 11.13.pdf" />
     <Content Include="ASPX\UltraSimpleHandler.ashx" />
     <Content Include="Documentation\disabling-copy-of-empty-text-in-VS.url" />
+    <Content Include="JSON\JSON - March20 #1.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JSON\JSON - March20.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JSON\JSON - twelve elements _Left _Top.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JSON\JSON - twelve elements.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\PublishProfiles\abcBadge - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CIS90720 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CIS90720 - Web Deploy1.pubxml" />
