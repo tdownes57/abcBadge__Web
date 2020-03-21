@@ -9,6 +9,22 @@ namespace ciBadgeForWeb.App_Start
     public class DiskFolders
     {
         //
+        //Added 3/20/2020 td  
+        //
+        public static string PathToFolder_JSON(bool pboolAbsolute)
+        {
+            //
+            //Added 3/20/2020 thomas downes 
+            //
+            string strPathToFolder_Virtual = "~/JSON";
+            string strPathToFolder_Absolute = HostingEnvironment.MapPath(strPathToFolder_Virtual);
+
+            if (pboolAbsolute) return strPathToFolder_Absolute;
+            return strPathToFolder_Virtual;
+
+        }
+
+        //
         //Added 11/15/2019 td  
         //
         public static string PathToFolder_XML(bool pboolAbsolute)
