@@ -202,6 +202,7 @@
     <Compile Include="Controllers\BatchPrintController.cs" />
     <Compile Include="Controllers\CustomTextFieldController.cs" />
     <Compile Include="Controllers\FieldsController.cs" />
+    <Compile Include="Controllers\JsonFileController.cs" />
     <Compile Include="Controllers\LayoutPicController.cs" />
     <Compile Include="Controllers\LayoutText1Controller.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
@@ -239,6 +240,7 @@
     <Compile Include="Models\CustomDateField.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\CustomTextField.cs" />
+    <Compile Include="Models\JsonFile.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\MenuItem.cs" />
     <Compile Include="Models\ModelEntity.Designer.cs">
@@ -931,6 +933,8 @@
     <Content Include="Views\Fields\EditSimple.cshtml" />
     <Content Include="Views\Recipient\UploadNewPic.cshtml" />
     <Content Include="Views\Shared\_UploadFile.cshtml" />
+    <Content Include="Views\JsonFile\Index.cshtml" />
+    <Content Include="Views\Shared\_MoveableDivs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />
