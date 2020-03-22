@@ -278,10 +278,11 @@ namespace ciBadgeForWeb.App_Start
             {
                 // 2-4-2020 td //foreach (FileInfo file_Info in (new DirectoryInfo(strPathToFolderJSON)).GetFiles("*.JSON"))
                 FileInfo[] array_fileInfos = (new DirectoryInfo(strPathToFolderJSON)).GetFiles("*.JSON");  //Added 2/4/2020 thomas downes
+
                 foreach (FileInfo file_Info in array_fileInfos.OrderByDescending(n => n.LastWriteTime))
                 {
                     //Added 2/16/2020 thomas downes
-                    boolExpectedFileType = file_Info.Name.EndsWith(".JSON");
+                    boolExpectedFileType = file_Info.Name.EndsWith(".json");
                     boolPossiblyCorrupt = (!(boolExpectedFileType));
                     if (boolPossiblyCorrupt) continue;  //Skip this file!!
 

@@ -32,8 +32,15 @@ namespace ciBadgeForWeb.Controllers
         {
             try
             {
-                // TODO: Add update logic here
+                // Save the JSON string with the Left & Top positions of the elements. 
 
+                //Added 3/21/2020 thomas downes
+                JsonFile_MoveableDivs.JsonTextContent = collection["JsonTextContent"];
+
+                //
+                // Important.... save to disk. 
+                //
+                //JsonFile_MoveableDivs.Save();  
 
                 return RedirectToAction("Index");
             }

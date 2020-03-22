@@ -132,11 +132,11 @@
 
 
 
-    <div id="Element1" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; border-width: thick; ">
+    <div id="Element1" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; border-width: thin; ">
         <img src="blue_star.jpg" width="200" height="30" />
     </div>
 
-    <div id="Element2" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; border-width: thick; ">
+    <div id="Element2" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; border-width: thin; ">
         <img src="blue_star.jpg" width="200" height="30" />
     </div>
 
@@ -381,6 +381,10 @@
             //
             //for (each_ElementID in mod_array_elementIDs) {
             //mod_array_elementIDs.forEach(each_ElementID => {
+
+            let index_of_movedElement = mod_array_elementIDs.indexOf(par_omit_elmntDiv);
+            let boolHasItAlready = (0 <= index_of_element);
+
             mod_array_elementIDs.forEach(each_Element => {
                 // We are iterating through the selected Elements.
                 //-----tempElem = document.getElementById(each_ElementID);

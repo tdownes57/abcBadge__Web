@@ -19,6 +19,8 @@
 
     <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures">Javascript Closures by Mozilla</a></p>
 
+    <p><a href="~/JS_Moveable_Divs_HTM/drag_elements_JSON_groups.htm">my HTML work</a></p>
+
     <!--a href="https://www.w3schools.com/howto/howto_js_draggable.asp" https://www.w3schools.com/howto/howto_js_draggable.asp-->
 
     <h1 id="paragraphToggleMode">
@@ -81,52 +83,57 @@
 
 
 
-    <div id="Element1" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; border-width: thick; ">
-        <img src="blue_star.jpg" width="200" height="30" />
+    <div id="Element1" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; border-width: thin; ">
+        <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+        <p>Element 1</p>
     </div>
 
-    <div id="Element2" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; border-width: thick; ">
-        <img src="blue_star.jpg" width="200" height="30" />
+    <div id="Element2" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; border-width: thin; ">
+        <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+        <p>Element 2</p>
     </div>
 
     <div id="Element3" class="mydiv_class" style="position: absolute; top: 250px; left: 300px; ">
-        <img src="blue_star.jpg" width="200" height="30" />
+        <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+        <p>Element 3</p>
     </div>
 
     <div id="Element4" class="mydiv_class" style="position: absolute; top: 250px; left: 400px; ">
-        <img src="blue_star.jpg" width="200" height="30" />
+        <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+        <p>Element 4</p>
     </div>
 
     <div id="Element5" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; ">
-        <img src="blue_star.jpg" width="200" height="30" />
+        <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+        <p>Element 5</p>
     </div>
 
     <div id="Element6" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; ">
-        <img src="blue_star.jpg" width="200" height="30" />
+        <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
     </div>
 
     <div id="Element7" class="mydiv_class" style="position: absolute; top: 250px; left: 300px; ">
-        <img src="blue_star.jpg" width="200" height="30" />
+        <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
     </div>
 
     <div id="Element8" class="mydiv_class" style="position: absolute; top: 250px; left: 400px; ">
-        <img src="blue_star.jpg" width="200" height="30" />
+        <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="30" />
     </div>
 
     <div id="Element9" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; ">
-        <img src="blue_star.jpg" width="200" height="30" />
+        <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
     </div>
 
     <div id="Element10" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; ">
-        <img src="blue_star.jpg" width="200" height="30" />
+        <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
     </div>
 
     <div id="Element11" class="mydiv_class" style="position: absolute; top: 250px; left: 300px; ">
-        <img src="blue_star.jpg" width="200" height="30" />
+        <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
     </div>
 
     <div id="Element12" class="mydiv_class" style="position: absolute; top: 250px; left: 400px; ">
-        <img src="blue_star.jpg" width="200" height="30" />
+        <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
     </div>
 
 
@@ -140,10 +147,14 @@
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
-        @Html.HiddenFor(model => model.JsonTextContent)
-        <div class="form-group">
+
+        @*@Html.HiddenFor(model => model.JsonTextContent)*@
+        
+        <input type='hidden' id="JsonTextContent" name="JsonTextContent" value=' @Html.Raw( @Model.JsonTextContent ) ' />
+
+        <!--div class="form-group"-->
             <input type="submit" value="Save" class="btn btn-default" />
-        </div>
+        <!--div-->
     }
     <!-- href="https://www.w3schools.com/howto/howto_js_draggable.asp" https://www.w3schools.com/howto/howto_js_draggable.asp  -->
 
@@ -210,8 +221,14 @@
 
         //----const my_JSON_string = '{"Element9_top":"421px","Element9_left":"92px","Element10_top":"419px","Element10_left":"334px","Element12_top":"419px","Element12_left":"552px","Element8_top":"479px","Element8_left":"95px","Element11_top":"477px","Element11_left":"337px","Element7_top":"477px","Element7_left":"558px"}';
 
-        const my_JSON_string = '{"Element4_top":"352px","Element4_left":"532px","Element3_top":"352px","Element3_left":"314px","Element6_top":"351px","Element6_left":"91px","Element5_top":"496px","Element5_left":"87px","Element2_top":"499px","Element2_left":"313px","Element1_top":"499px","Element1_left":"535px","Element9_top":"400px","Element9_left":"88px","Element8_top":"448px","Element8_left":"87px","Element10_top":"403px","Element10_left":"314px","Element11_top":"451px","Element11_left":"314px","Element12_top":"404px","Element12_left":"533px","Element7_top":"454px","Element7_left":"535px"}';
-        const my_JSON_object = JSON.parse(my_JSON_string)
+        //const my_JSON_string = '{"Element4_top":"352px","Element4_left":"532px","Element3_top":"352px","Element3_left":"314px","Element6_top":"351px","Element6_left":"91px","Element5_top":"496px","Element5_left":"87px","Element2_top":"499px","Element2_left":"313px","Element1_top":"499px","Element1_left":"535px","Element9_top":"400px","Element9_left":"88px","Element8_top":"448px","Element8_left":"87px","Element10_top":"403px","Element10_left":"314px","Element11_top":"451px","Element11_left":"314px","Element12_top":"404px","Element12_left":"533px","Element7_top":"454px","Element7_left":"535px"}';
+    const my_JSON_string = '  @Html.Raw( @Model.JsonTextContent ) ';
+
+
+    //  Model.JsonTextContent
+
+
+    const my_JSON_object = JSON.parse(my_JSON_string)
 
         // Added 3/20/2020 thomas downes
         document.getElementById("Element1").style.left = my_JSON_object["Element1_left"];
@@ -305,7 +322,8 @@
             //
             //   https://forums.asp.net/t/2080584.aspx?Populate+mvc+model+field+using+Javascript+Jqeury
             //
-            document.getElementById('#@Html.IdFor(m => m.JsonTextContent)').val(v);
+            //document.getElementById('#@Html.IdFor(m => m.JsonTextContent)').val(v);
+            document.getElementById('#JsonTextContent').val(v);
 
             // Elements #3 to 12
             //for (i_ElemIndex = 0; i_ElemIndex < 12; i_ElemIndex++) {
