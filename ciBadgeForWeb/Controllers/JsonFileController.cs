@@ -40,9 +40,13 @@ namespace ciBadgeForWeb.Controllers
                 //
                 // Important.... save to disk. 
                 //
-                //JsonFile_MoveableDivs.Save();  
+                //----**---Not sure if this is needed right now.---- 3/22/2020 thomas d. 
+                //----*--JsonFile_MoveableDivs.Save();  
 
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                var objectJsonFile = JsonFileController.JsonFile_MoveableDivs;
+                return View(objectJsonFile);
+
             }
             catch
             {

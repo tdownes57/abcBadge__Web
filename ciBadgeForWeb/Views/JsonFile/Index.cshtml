@@ -13,150 +13,150 @@
 <!-- href="https://www.w3schools.com/howto/howto_js_draggable.asp" https://www.w3schools.com/howto/howto_js_draggable.asp  -->
 <!-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures -->
 
-    <h1>User-Moveable Division-Image Elements</h1>
+<h1>User-Moveable Division-Image Elements</h1>
 
-    <p><a href="https://www.w3schools.com/howto/howto_js_draggable.asp">https://www.w3schools.com/howto/howto_js_draggable.asp</a></p>
+<p><a href="https://www.w3schools.com/howto/howto_js_draggable.asp">https://www.w3schools.com/howto/howto_js_draggable.asp</a></p>
 
-    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures">Javascript Closures by Mozilla</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures">Javascript Closures by Mozilla</a></p>
 
-    <p><a href="~/JS_Moveable_Divs_HTM/drag_elements_JSON_groups.htm">my HTML work</a></p>
+<p><a href="~/JS_Moveable_Divs_HTM/drag_elements_JSON_groups.htm">my HTML work</a></p>
 
-    <!--a href="https://www.w3schools.com/howto/howto_js_draggable.asp" https://www.w3schools.com/howto/howto_js_draggable.asp-->
+<!--a href="https://www.w3schools.com/howto/howto_js_draggable.asp" https://www.w3schools.com/howto/howto_js_draggable.asp-->
 
-    <h1 id="paragraphToggleMode">
-        Move Mode - Click and hold the mouse button
-        down while moving the DIV element.
-    </h1>
-    <h2> <a id="hyperlinkToggleMode" href="">Click here to switch to Include Mode.</a> </h2>
+<h1 id="paragraphToggleMode">
+    Move Mode - Click and hold the mouse button
+    down while moving the DIV element.
+</h1>
+<h2> <a id="hyperlinkToggleMode" href="">Click here to switch to Include Mode.</a> </h2>
 
-    <!--<div id="mydiv1" class="mydiv_class" style="position: absolute; top: 230px; left: 1px;">
-        <div id="mydiv1header">Click here to move</div>
-        <p>Move</p>
-        <p>this</p>
-        <p>DIV</p>
-    </div>
-    <div id="mydiv2" class="mydiv_class" style="position: absolute; top: 230px; left: 100px;">
-        <div id="mydiv2header">Click here to move</div>
-        <p>Move</p>
-        <p>this</p>
-        <p>DIV</p>
-    </div>
-    <div id="mydiv3" class="mydiv_class" style="position: absolute; top: 230px; left: 200px;">
-        <div id="mydiv3header" class="mydivheader_class">Click here to move</div>
-        <p>Move</p>
-        <p>this</p>
-        <p>DIV</p>
-    </div>
-    <div id="mydiv4" class="mydiv_class" style="position: absolute; top: 230px; left: 300px;">
-        <div id="mydiv4header" class="mydivheader_class">Click here to move</div>
-        <p>Move</p>
-        <p>this</p>
-        <p>DIV</p>
-    </div>
-    <div id="mydiv5" class="mydiv_class" style="position: absolute; top: 230px; left: 400px;">
-        <div id="mydiv5header" class="mydivheader_class">Click here to move</div>
-        <p>Move</p>
-        <p>this</p>
-        <p>DIV</p>
-    </div>
-    <div id="mydiv6" class="mydiv_class" style="position: absolute; top: 230px; left: 500px;">
-        <div id="mydiv6header" class="mydivheader_class">Click here to move</div>
-        <p>Move</p>
-        <p>this</p>
-        <p>DIV</p>
-    </div>
-    <div id="mydiv7" class="mydiv_class" style="position: absolute; top: 230px; left: 600px;">
-        <div id="mydiv7header" class="mydivheader_class">Click here to move</div>
-        <p>Move</p>
-        <p>this</p>
-        <p>DIV</p>
-    </div>
-    <div id="mydiv8" class="mydiv_class" style="position: absolute; top: 230px; left: 700px;">
-        <div id="mydiv8header" class="mydivheader_class">Click here to move</div>
-        <p>Move</p>
-        <p>this</p>
-        <p>DIV</p>
-    </div>--------------------------
-        -------------------------------
-        --------------------------->
-
-
-
-
-    <div id="Element1" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; border-width: thin; ">
-        <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
-        <p>Element 1</p>
-    </div>
-
-    <div id="Element2" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; border-width: thin; ">
-        <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
-        <p>Element 2</p>
-    </div>
-
-    <div id="Element3" class="mydiv_class" style="position: absolute; top: 250px; left: 300px; ">
-        <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
-        <p>Element 3</p>
-    </div>
-
-    <div id="Element4" class="mydiv_class" style="position: absolute; top: 250px; left: 400px; ">
-        <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
-        <p>Element 4</p>
-    </div>
-
-    <div id="Element5" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; ">
-        <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
-        <p>Element 5</p>
-    </div>
-
-    <div id="Element6" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; ">
-        <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
-    </div>
-
-    <div id="Element7" class="mydiv_class" style="position: absolute; top: 250px; left: 300px; ">
-        <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
-    </div>
-
-    <div id="Element8" class="mydiv_class" style="position: absolute; top: 250px; left: 400px; ">
-        <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="30" />
-    </div>
-
-    <div id="Element9" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; ">
-        <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
-    </div>
-
-    <div id="Element10" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; ">
-        <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
-    </div>
-
-    <div id="Element11" class="mydiv_class" style="position: absolute; top: 250px; left: 300px; ">
-        <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
-    </div>
-
-    <div id="Element12" class="mydiv_class" style="position: absolute; top: 250px; left: 400px; ">
-        <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
-    </div>
+<!--<div id="mydiv1" class="mydiv_class" style="position: absolute; top: 230px; left: 1px;">
+    <div id="mydiv1header">Click here to move</div>
+    <p>Move</p>
+    <p>this</p>
+    <p>DIV</p>
+</div>
+<div id="mydiv2" class="mydiv_class" style="position: absolute; top: 230px; left: 100px;">
+    <div id="mydiv2header">Click here to move</div>
+    <p>Move</p>
+    <p>this</p>
+    <p>DIV</p>
+</div>
+<div id="mydiv3" class="mydiv_class" style="position: absolute; top: 230px; left: 200px;">
+    <div id="mydiv3header" class="mydivheader_class">Click here to move</div>
+    <p>Move</p>
+    <p>this</p>
+    <p>DIV</p>
+</div>
+<div id="mydiv4" class="mydiv_class" style="position: absolute; top: 230px; left: 300px;">
+    <div id="mydiv4header" class="mydivheader_class">Click here to move</div>
+    <p>Move</p>
+    <p>this</p>
+    <p>DIV</p>
+</div>
+<div id="mydiv5" class="mydiv_class" style="position: absolute; top: 230px; left: 400px;">
+    <div id="mydiv5header" class="mydivheader_class">Click here to move</div>
+    <p>Move</p>
+    <p>this</p>
+    <p>DIV</p>
+</div>
+<div id="mydiv6" class="mydiv_class" style="position: absolute; top: 230px; left: 500px;">
+    <div id="mydiv6header" class="mydivheader_class">Click here to move</div>
+    <p>Move</p>
+    <p>this</p>
+    <p>DIV</p>
+</div>
+<div id="mydiv7" class="mydiv_class" style="position: absolute; top: 230px; left: 600px;">
+    <div id="mydiv7header" class="mydivheader_class">Click here to move</div>
+    <p>Move</p>
+    <p>this</p>
+    <p>DIV</p>
+</div>
+<div id="mydiv8" class="mydiv_class" style="position: absolute; top: 230px; left: 700px;">
+    <div id="mydiv8header" class="mydivheader_class">Click here to move</div>
+    <p>Move</p>
+    <p>this</p>
+    <p>DIV</p>
+</div>--------------------------
+    -------------------------------
+    --------------------------->
 
 
 
-    <p id="p_JSON">This is for the JSON data.</p>
 
-    <!--<form>
-        <input type="hidden" id="form_JSON_string" name="form_JSON_string" value=Model.JSON_string />
-        <input type="button" />
-    </form>-->
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
+<div id="Element1" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; border-width: thin; ">
+    <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+    <p>Element 1</p>
+</div>
 
-        @*@Html.HiddenFor(model => model.JsonTextContent)*@
-        
-        <input type='hidden' id="JsonTextContent" name="JsonTextContent" value=' @Html.Raw( @Model.JsonTextContent ) ' />
+<div id="Element2" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; border-width: thin; ">
+    <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+    <p>Element 2</p>
+</div>
 
-        <!--div class="form-group"-->
-            <input type="submit" value="Save" class="btn btn-default" />
-        <!--div-->
-    }
-    <!-- href="https://www.w3schools.com/howto/howto_js_draggable.asp" https://www.w3schools.com/howto/howto_js_draggable.asp  -->
+<div id="Element3" class="mydiv_class" style="position: absolute; top: 250px; left: 300px; ">
+    <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+    <p>Element 3</p>
+</div>
+
+<div id="Element4" class="mydiv_class" style="position: absolute; top: 250px; left: 400px; ">
+    <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+    <p>Element 4</p>
+</div>
+
+<div id="Element5" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; ">
+    <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+    <p>Element 5</p>
+</div>
+
+<div id="Element6" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; ">
+    <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+</div>
+
+<div id="Element7" class="mydiv_class" style="position: absolute; top: 250px; left: 300px; ">
+    <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+</div>
+
+<div id="Element8" class="mydiv_class" style="position: absolute; top: 250px; left: 400px; ">
+    <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="30" />
+</div>
+
+<div id="Element9" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; ">
+    <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+</div>
+
+<div id="Element10" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; ">
+    <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+</div>
+
+<div id="Element11" class="mydiv_class" style="position: absolute; top: 250px; left: 300px; ">
+    <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+</div>
+
+<div id="Element12" class="mydiv_class" style="position: absolute; top: 250px; left: 400px; ">
+    <img src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+</div>
+
+
+
+<p id="p_JSON">This is for the JSON data.</p>
+
+<!--<form>
+    <input type="hidden" id="form_JSON_string" name="form_JSON_string" value=Model.JSON_string />
+    <input type="button" />
+</form>-->
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @*@Html.HiddenFor(model => model.JsonTextContent)*@
+
+    <input type='hidden' id="JsonTextContent" name="JsonTextContent" value=' @Html.Raw( @Model.JsonTextContent ) ' />
+
+    <!--div class="form-group"-->
+    <input type="submit" value="Save" class="btn btn-default" />
+    <!--div-->
+}
+<!-- href="https://www.w3schools.com/howto/howto_js_draggable.asp" https://www.w3schools.com/howto/howto_js_draggable.asp  -->
 
 
 
@@ -259,15 +259,31 @@
         document.getElementById("Element12").style.top = my_JSON_object["Element12_top"];
 
         //Added 3/20/2020 Thomas Downes
-        document.getElementById("p_JSON").innerHTML = my_JSON_string;
+        //document.getElementById("p_JSON").innerHTML = my_JSON_string;
+        document.getElementById("p_JSON").innerText = my_JSON_string;
 
         //Added 3/20/2020 thomas downes
         let mod_JS_mode = "Move"; // "drag"; //---"click";
         let mod_array_elementIDs = [];
+    let i_limitMessages = 0;  //Added 3/22/2020 td
 
         //Connect the Click event to the function function_ToggleMode.
         //   ---3/20/2020
         document.getElementById("hyperlinkToggleMode").onclick = function_ToggleMode;
+
+        //
+        //  Added 3 / 22 / 2020 thomas downes
+        //
+        //form.onsubmit = function (event) {
+        //   //
+        //   // Added 3/22/2020 thomas downes
+        //   //
+        //    document.getElementById("JsonTextContent").innerText =
+        //        document.getElementById("p_JSON").innerText;
+        //    event.preventDefault();
+        //    //----Suppress the Submit?----return false;
+        //    return true;
+        //}
 
         //
         //Added 3/20/2020 thomas downes
@@ -300,7 +316,7 @@
         //
         // Added 3/20/2020 Thomas Downes
         //
-        function function_PropagateMoveToGroup(par_intLeftX, par_intTopY, par_omit_elmntDiv) {
+        function function_PropagateMoveToGroup(par_intLeftX, par_intTopY, par_omit_elmntDiv, par_styleLeft) {
             //
             // Added 3/20/2020 thomas downes
             //
@@ -323,7 +339,20 @@
             //   https://forums.asp.net/t/2080584.aspx?Populate+mvc+model+field+using+Javascript+Jqeury
             //
             //document.getElementById('#@Html.IdFor(m => m.JsonTextContent)').val(v);
-            document.getElementById('#JsonTextContent').val(v);
+            //
+            //alert("Before: " + document.getElementById('JsonTextContent').innerText);
+
+            //document.getElementById("JsonTextContent").innerText =
+            //    document.getElementById("p_JSON").innerText;
+
+            //Added 3/22/2020 thomas downes
+            //if (i_limitMessages < 0) {
+            if (par_styleLeft == "1px" || par_styleLeft == "2px") {
+                i_limitMessages++; 
+                alert("Before: " + document.getElementById('JsonTextContent').innerText);
+                document.getElementById("JsonTextContent").innerText =
+                    document.getElementById("p_JSON").innerText;
+            }
 
             // Elements #3 to 12
             //for (i_ElemIndex = 0; i_ElemIndex < 12; i_ElemIndex++) {
@@ -544,7 +573,8 @@
                 //function_PropagateMoveToGroup_NoUse(closure_DivElement.style.left, closure_DivElement.style.top, closure_DivElement);
 
                 //Added 3/20/220 Thomas Downes
-                function_PropagateMoveToGroup(closure_pos1_x, closure_pos2_y, closure_DivElement);
+                function_PropagateMoveToGroup(closure_pos1_x, closure_pos2_y, closure_DivElement,
+                    closure_DivElement.style.left);
 
             }
 
@@ -555,7 +585,16 @@
 
                 //Added 3/20/2020 thomas downes
                 //---document.getElementById('p_JSON').innerHTML = JSON.stringify(mod_record_all_positions);
-                document.getElementById('p_JSON').innerHTML = JSON.stringify(my_JSON_object);
+                //document.getElementById('p_JSON').innerHTML = JSON.stringify(my_JSON_object);
+
+                // Added 3/22/2020 thomas downes  
+                let strCurrentJSON = JSON.stringify(my_JSON_object);
+
+                document.getElementById('p_JSON').innerText = strCurrentJSON;  // JSON.stringify(my_JSON_object);
+
+                document.getElementById("JsonTextContent").innerText = strCurrentJSON;
+                //  document.getElementById("p_JSON").innerText;
+
             }
         }
 </script>
