@@ -25,6 +25,11 @@ namespace ciBadgeForWeb.Models
         private string mod_JsonTextContent_Top = "{ \"Element4_top\":\"352px\",  \"Element3_top\":\"352px\",  \"Element6_top\":\"351px\",  \"Element5_top\":\"496px\",  \"Element2_top\":\"499px\",   \"Element1_top\":\"499px\",   \"Element9_top\":\"400px\",  \"Element8_top\":\"448px\",  \"Element10_top\":\"403px\",   \"Element11_top\":\"451px\",   \"Element12_top\":\"404px\",   \"Element7_top\":\"454px\"   }";
 
         public string JsonTextContent_Left {
+            //
+            // Suffixed/renamed from "JsonTextContent" on 3/22/2020 thomas downes
+            //
+            //
+            //
             get
             {
                 //Added 3/21/2020 thomas downes
@@ -39,6 +44,9 @@ namespace ciBadgeForWeb.Models
 
         public string JsonTextContent_Top
         {
+            //
+            // Added 3/22/2020 thomas downes
+            //
             get
             {
                 //Added 3/22/2020 thomas downes
@@ -51,7 +59,9 @@ namespace ciBadgeForWeb.Models
             }
         }
 
-        public string FullPathToFile { get; set; }
+        // 3-24-2020 td// public string FullPathToFile { get; set; }
+        public string FullPathToFile_Left { get; set; }
+        public string FullPathToFile_Top { get; set; }
 
         public string NameOfClassType { get; set;  }
 
@@ -60,11 +70,15 @@ namespace ciBadgeForWeb.Models
             //
             // Added 3/21/2020 Thomas Downes  
             //
-            string strFullPathToJsonFile;
+            // 3-24-2020 td//string strFullPathToJsonFile;
+            string strFullPathToJsonFile_Left;
+            string strFullPathToJsonFile_Top;
 
             // Get the JSON file.  
-            strFullPathToJsonFile = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_JSON_Current(true);
-            
+            // 3-24-2020 td//strFullPathToJsonFile = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_JSON_Current(true);
+            strFullPathToJsonFile_Left = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_JSON_Current(true, "_Left");
+            strFullPathToJsonFile_Top = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_JSON_Current(true, "_Top");
+
             // Added 3/21/2020 td
             if (Directory.Exists(strFullPathToJsonFile))
             {
@@ -76,7 +90,10 @@ namespace ciBadgeForWeb.Models
             }
 
             this.FullPathToFile = strFullPathToJsonFile;
-            this.JsonTextContent = File.ReadAllText(strFullPathToJsonFile);
+            
+            // 3-24-2020 td//this.JsonTextContent = File.ReadAllText(strFullPathToJsonFile);
+            this.JsonTextContent_Left = File.ReadAllText(strFullPathToJsonFile_Left);
+            this.JsonTextContent_Top = File.ReadAllText(strFullPathToJsonFile_Top);
 
             if (false)
             {  
@@ -89,7 +106,9 @@ namespace ciBadgeForWeb.Models
             //
             // Added 3/21/2020 Thomas Downes
             //
-            File.WriteAllText(this.FullPathToFile, this.JsonTextContent);
+            // 3-24-2020 td // File.WriteAllText(this.FullPathToFile, this.JsonTextContent);
+            File.WriteAllText(this.FullPathToFile_Left, this.JsonTextContent_Left);
+            File.WriteAllText(this.FullPathToFile_Top, this.JsonTextContent_Top);
 
         }
 
