@@ -80,17 +80,19 @@ namespace ciBadgeForWeb.Models
             strFullPathToJsonFile_Top = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_JSON_Current(true, "_Top");
 
             // Added 3/21/2020 td
-            if (Directory.Exists(strFullPathToJsonFile))
+            if (Directory.Exists(strFullPathToJsonFile_Left))
             {
-                if (false == File.Exists(strFullPathToJsonFile))
+                if (false == File.Exists(strFullPathToJsonFile_Left))
                 {
                     // Added 3/21/2020 td
                     throw new System.IO.FileNotFoundException("OOps... This is a folder, not a file.");
                 }
             }
 
-            this.FullPathToFile = strFullPathToJsonFile;
-            
+            //3-24-2020 td//this.FullPathToFile = strFullPathToJsonFile;
+            this.FullPathToFile_Left = strFullPathToJsonFile_Left;
+            this.FullPathToFile_Top = strFullPathToJsonFile_Top;
+
             // 3-24-2020 td//this.JsonTextContent = File.ReadAllText(strFullPathToJsonFile);
             this.JsonTextContent_Left = File.ReadAllText(strFullPathToJsonFile_Left);
             this.JsonTextContent_Top = File.ReadAllText(strFullPathToJsonFile_Top);

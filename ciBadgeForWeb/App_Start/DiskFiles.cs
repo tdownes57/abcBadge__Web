@@ -13,10 +13,17 @@ namespace ciBadgeForWeb.App_Start
         //Added 11/15/2019 td  
         //
         private static string mod_fileTitleXML_Current = ""; //Added 11/28/2019 td 
-        private static string mod_fileTitleJSON_Current = ""; //Added 3/20/2020 td 
+        // 3-24-2020 td//private static string mod_fileTitleJSON_Current = ""; //Added 3/20/2020 td 
 
         private static bool mod_boolCorruptedFilename = false;  //Added 2/16/2020 td
         private static string mod_strCorruptedFilename = "";  //Added 2/16/2020 td
+
+        // Added 3/24/2020 td
+        //
+        //   Here is a data structure to map the Left, Top, Width & Height properties
+        //   to the corresponding JSON file.   ---3/24/2020 td
+        //
+        private static Dictionary<string, string> mod_dictionary_fileTitleJSON; // Added 3/24/2020 
 
         public static string PathToFile_BackImage(string pstrFileTitle, bool pboolAbsolute)
         {
@@ -120,6 +127,14 @@ namespace ciBadgeForWeb.App_Start
             if (boolNotYetDetermined)
             {
                 mod_fileTitleXML_Current = PathToFile_XML_Current(pboolAbsolute);
+                //Added 3/24/2020 Thomas Downes
+                //    The Boolean var. boolNotYetDetermined is True, so we know that
+                //    the web application hasn't used this XML yet.  So there is a 
+                //    good case to be made that we can go ahead and return the 
+                //    XML path that was just located/found. 
+                //    ----3/24/2020 thomas downes  
+                return mod_fileTitleXML_Current;
+
             }
 
             while (true)
@@ -247,37 +262,79 @@ namespace ciBadgeForWeb.App_Start
         }
 
 
-        public static string PathToFile_JSON_Current(bool pboolAbsolute)
+        public static string PathToFile_JSON_Current(bool pboolAbsolute, string pstrFileSuffix = "")
         {
+            //-----public static string PathToFile_JSON_Current()
             //
             //Added 3/20/2020 Thomas Downes  
             //
+            //   Here we will reference a module-level static data structure (a Dictionary) to map
+            //   the Left, Top, Width & Height properties of the generated image element, 
+            //   to the corresponding JSON file.   ---3/24/2020 td
+            //
             //return PathToFile_JSON(pboolAbsolute);
 
-            bool boolNotYetDetermined = ("" == mod_fileTitleJSON_Current);
+            //bool boolNotYetDetermined = ("" == mod_fileTitleJSON_Current);
+
+            //Added 3/24/2020 td
+            if (null == mod_dictionary_fileTitleJSON)
+            {
+                //Added 3/24/2020 td
+                mod_dictionary_fileTitleJSON = new Dictionary<string, string>(); 
+            }
+            //Added 3/24/2020 td
+            //
+            //   Here we will reference a module-level static data structure (a Dictionary) to map
+            //   the Left, Top, Width & Height properties of the generated image element, 
+            //   to the corresponding JSON file.   ---3/24/2020 td
+            //
+            bool boolFileTitleFoundStored = (mod_dictionary_fileTitleJSON.ContainsKey(pstrFileSuffix));
+            bool booNotYetDetermined = (false == boolFileTitleFoundStored);
+
             bool boolExpectedFileType = false; // mod_fileTitleJSON_Current.EndsWith(".JSON");
             bool boolPossiblyCorrupt = false;  //Added 216/2019 td
+            string fileTitleJSON_Current = "-----1957------"; //Added 3/24 td  
 
-            if (!(boolNotYetDetermined)) //Added 2/16/2020 thomas downes
+            //if (!(boolNotYetDetermined)) //Added 2/16/2020 thomas downes
+            if (boolFileTitleFoundStored)
             {
-                boolExpectedFileType = mod_fileTitleJSON_Current.EndsWith(".JSON");
+                //
+                //   Here we will reference a module-level static data structure (a Dictionary) to map
+                //   the Left, Top, Width & Height properties of the generated image element, 
+                //   to the corresponding JSON file.   ---3/24/2020 td
+                //
+                fileTitleJSON_Current = mod_dictionary_fileTitleJSON[pstrFileSuffix];
+
+                boolExpectedFileType = (fileTitleJSON_Current.EndsWith(".json") ||
+                                        fileTitleJSON_Current.EndsWith(".JSON"));
+
                 boolPossiblyCorrupt = (!(boolExpectedFileType));
                 if (boolPossiblyCorrupt)
                 {
                     //Added 2/16/2020 thomas downes
                     mod_boolCorruptedFilename = true;
-                    mod_strCorruptedFilename = mod_fileTitleJSON_Current;
-                    mod_fileTitleJSON_Current = "";
+                    //mod_strCorruptedFilename = mod_fileTitleJSON_Current;
+                    mod_strCorruptedFilename = fileTitleJSON_Current;
+                    //mod_fileTitleJSON_Current = "";
+                    mod_dictionary_fileTitleJSON.Remove(pstrFileSuffix);
                 }
             }
 
             string strPathToFileJSON = "";
             string strPathToFolderJSON = DiskFolders.PathToFolder_JSON(pboolAbsolute);
+            var json_directory = new DirectoryInfo(strPathToFolderJSON); // Added 3/24/2020 td
 
-            if (boolNotYetDetermined)
+            if (booNotYetDetermined)
             {
+                //string strSearchPatter = "*.JSON" 
+                //
+                // Include a file-suffix, if requested via parameter. ---3-24-2020 thomas downes
+                //
+                string strSearchPattern = ("*" + pstrFileSuffix + ".json");  //Added 3-24-2020 thomas d.
+
                 // 2-4-2020 td //foreach (FileInfo file_Info in (new DirectoryInfo(strPathToFolderJSON)).GetFiles("*.JSON"))
-                FileInfo[] array_fileInfos = (new DirectoryInfo(strPathToFolderJSON)).GetFiles("*.JSON");  //Added 2/4/2020 thomas downes
+                // 3-24-2020 TD //FileInfo[] array_fileInfos = (new DirectoryInfo(strPathToFolderJSON)).GetFiles("*.JSON");  //Added 2/4/2020 thomas downes
+                FileInfo[] array_fileInfos = json_directory.GetFiles(strSearchPattern);  //Added 2/4/2020 thomas downes
 
                 foreach (FileInfo file_Info in array_fileInfos.OrderByDescending(n => n.LastWriteTime))
                 {
@@ -286,26 +343,42 @@ namespace ciBadgeForWeb.App_Start
                     boolPossiblyCorrupt = (!(boolExpectedFileType));
                     if (boolPossiblyCorrupt) continue;  //Skip this file!!
 
-                    if (boolNotYetDetermined)
+                    if (booNotYetDetermined)
                     {
                         //
                         //We are selecting the most recently-edited file. 
                         //
-                        mod_fileTitleJSON_Current = file_Info.Name;
+                        //---mod_fileTitleJSON_Current = file_Info.Name;  // Don't include the full path. 
+                        fileTitleJSON_Current = file_Info.Name;  // Don't include the full path.
+                        // Don't include the full path.
+                        mod_dictionary_fileTitleJSON.Add(pstrFileSuffix, file_Info.Name);
                         break;
                     }
                 }
             }
-            strPathToFileJSON = Path.Combine(strPathToFolderJSON, mod_fileTitleJSON_Current);
-            return strPathToFileJSON;
+
+            //3-24 td //strPathToFileJSON = Path.Combine(strPathToFolderJSON, mod_fileTitleJSON_Current);
+            bool bHasSlashAlready = (fileTitleJSON_Current.Contains("/") ||
+                                     fileTitleJSON_Current.Contains("\\"));
+            if (bHasSlashAlready)
+            {
+                return strPathToFileJSON;
+            }
+            else
+            {
+                strPathToFileJSON = Path.Combine(strPathToFolderJSON, fileTitleJSON_Current);
+                return strPathToFileJSON;
+            }
         }
 
-        public static string PathToFile_JSON_Next(bool pboolAbsolute)
+        public static string PathToFile_JSON_Next(bool pboolAbsolute, string pstrFileSuffix = "")
         {
             //
             //Added 11/28/2192
             //
-            bool boolNotYetDetermined = ("" == mod_fileTitleJSON_Current);
+            // 3-24-2020 td//bool boolNotYetDetermined = ("" == mod_fileTitleJSON_Current);
+            bool bFoundInDictionary = mod_dictionary_fileTitleJSON.ContainsKey(pstrFileSuffix);
+            bool boolNotYetDetermined = (false == bFoundInDictionary);  // Added 3/24/2020 td
             string strPathToFileJSON = "";
             string strPathToFolderJSON = DiskFolders.PathToFolder_JSON(pboolAbsolute);
             bool boolMatchesCurrent = false;
@@ -315,18 +388,35 @@ namespace ciBadgeForWeb.App_Start
             bool boolStartFromBeginningAgain = false;
             bool boolExpectedFileType = false; //Added 2/16/2019 td     mod_fileTitleJSON_Current.EndsWith(".JSON");
             bool boolPossiblyCorrupt = false;  //Added 2/16/2019 td
+            string fileTitleJSON_Current = "";  //Added 3/24/2020 td  
+            string fileTitleJSON_Next = "";  //Added 3/24/2020 td  
 
-            if (boolNotYetDetermined)
-            {
-                mod_fileTitleJSON_Current = PathToFile_JSON_Current(pboolAbsolute);
-            }
+            //Added 3/24/2020 td
+            fileTitleJSON_Current = PathToFile_JSON_Current(pboolAbsolute);
+            var json_directory = new DirectoryInfo(strPathToFolderJSON); // Added 3/24/2020 td
+
+            //Added 3/24/2020 td
+            //   If the file title didn't already exist in the Dictionary (prior to 
+            //   this ..._Next function being called), then the _Next file can simply 
+            //   be the newly-found "Current" file.
+            //(In other words, var. boolNotYetDetermined being True implies that the ..._Current 
+            //   function hasn't been called before, so we can return the file title
+            //   that the ..._Current function would have returned.)
+            //-----3/24/2020 td 
+            //
+            if (boolNotYetDetermined) return fileTitleJSON_Current; 
+            
+            string strSearchPattern = ("*" + pstrFileSuffix + ".json");  //Added 3-24-2020 thomas d.
 
             while (true)
             {
-                foreach (FileInfo each_file_Info in (new DirectoryInfo(strPathToFolderJSON)).GetFiles("*.JSON"))
+                // 3-24 td//foreach (FileInfo each_file_Info in (new DirectoryInfo(strPathToFolderJSON)).GetFiles("*.JSON"))
+                foreach (FileInfo each_file_Info in json_directory.GetFiles(strSearchPattern))
                 {
                     //Added 2/16/2019 td
-                    boolExpectedFileType = each_file_Info.Name.EndsWith(".JSON");  //Added 2/16/2019 td
+                    boolExpectedFileType = each_file_Info.Name.EndsWith(".json") ||
+                                           each_file_Info.Name.EndsWith(".JSON");  //Added 2/16/2019 td
+
                     boolPossiblyCorrupt = (!(boolExpectedFileType));  //Added 2/16/2019 td
                     if (boolPossiblyCorrupt) continue;  //Added 2/16/2019 td
 
@@ -335,7 +425,9 @@ namespace ciBadgeForWeb.App_Start
                         obj_nextFileInfo = each_file_Info;
                         break;
                     }
-                    boolMatchesCurrent = (each_file_Info.Name == mod_fileTitleJSON_Current);
+
+                    //boolMatchesCurrent = (each_file_Info.Name == mod_fileTitleJSON_Current);
+                    boolMatchesCurrent = (each_file_Info.Name == fileTitleJSON_Current);
                     if (boolMatchesCurrent)
                     {
                         //mod_fileTitleJSON_Current = each_file_Info.Name;
@@ -360,9 +452,19 @@ namespace ciBadgeForWeb.App_Start
             }
 
             if (obj_nextFileInfo == null) throw new Exception("We are unable to locate any additional JSON files.");
-            if (obj_nextFileInfo != null) mod_fileTitleJSON_Current = obj_nextFileInfo.Name;
-            strPathToFileJSON = Path.Combine(strPathToFolderJSON, mod_fileTitleJSON_Current);
-            return strPathToFileJSON;
+            //
+            // Use the new ("_Next") file we've found. 
+            //
+            if (obj_nextFileInfo != null)
+            {
+                fileTitleJSON_Next = obj_nextFileInfo.Name;
+                //Save this file title, probably replacing the one that's there already.
+                //      ---3/24/2020 thomas downes
+                mod_dictionary_fileTitleJSON[pstrFileSuffix] = fileTitleJSON_Next;
+                //Output the full path to the file. 
+                strPathToFileJSON = Path.Combine(strPathToFolderJSON, fileTitleJSON_Next);
+                return strPathToFileJSON;
+            }
         }
 
 
