@@ -894,7 +894,7 @@
     <Content Include="JSON\JSON - March20.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="JSON\JSON - twelve elements _Left _Top.json">
+    <Content Include="JSON\JSON - twelve elements _LT.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="JSON\JSON - twelve elements.json">
@@ -907,6 +907,12 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="JSON\JSON_Left.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JSON\JSON_Top.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\PublishProfiles\abcBadge - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CIS90720 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CIS90720 - Web Deploy1.pubxml" />

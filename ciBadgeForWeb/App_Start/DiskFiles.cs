@@ -465,6 +465,11 @@ namespace ciBadgeForWeb.App_Start
                 strPathToFileJSON = Path.Combine(strPathToFolderJSON, fileTitleJSON_Next);
                 return strPathToFileJSON;
             }
+            else
+            {
+                //Added 3/24/2020 thomas downes
+                return "----no file. JSON_Next-----";
+            }
         }
 
 

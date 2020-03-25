@@ -137,10 +137,10 @@
 
 
 
-<p id="p_JSON_left">This is for the JSON data, Left property.</p>
-<p id="p_JSON_top">This is for the JSON data, Top property.</p>
+<p id="p_JSON_Left">This is for the JSON data, Left property.</p>
+<p id="p_JSON_Top">This is for the JSON data, Top property.</p>
 @*<p id="p_JSON_Width">This is for the JSON data, Width property.</p>
-<p id="p_JSON_Height">This is for the JSON data, Height property.</p>*@
+    <p id="p_JSON_Height">This is for the JSON data, Height property.</p>*@
 
 <!--<form>
     <input type="hidden" id="form_JSON_string" name="form_JSON_string" value=Model.JSON_string />
@@ -152,7 +152,8 @@
 
     @*@Html.HiddenFor(model => model.JsonTextContent)*@
 
-    <input type='hidden' id="JsonTextContent" name="JsonTextContent" value=' @Html.Raw( @Model.JsonTextContent ) ' />
+    <input type='hidden' id="JsonTextContent_Left" name="JsonTextContent_Left" value=' @Html.Raw( @Model.JsonTextContent_Left ) ' />
+    <input type='hidden' id="JsonTextContent_Top" name="JsonTextContent_Top" value=' @Html.Raw( @Model.JsonTextContent_Top ) ' />
 
     <!--div class="form-group"-->
     <input type="submit" value="Save" class="btn btn-default" />
@@ -221,52 +222,54 @@
         //
         //----const mod_record_all_positions = {};
 
-        //----const my_JSON_string = '{"Element9_top":"421px","Element9_left":"92px","Element10_top":"419px","Element10_left":"334px","Element12_top":"419px","Element12_left":"552px","Element8_top":"479px","Element8_left":"95px","Element11_top":"477px","Element11_left":"337px","Element7_top":"477px","Element7_left":"558px"}';
+        //----const my_JSON_string = '{"Element9_Top":"421px","Element9_Left":"92px","Element10_Top":"419px","Element10_Left":"334px","Element12_Top":"419px","Element12_Left":"552px","Element8_Top":"479px","Element8_Left":"95px","Element11_Top":"477px","Element11_Left":"337px","Element7_Top":"477px","Element7_Left":"558px"}';
 
-        //const my_JSON_string = '{"Element4_top":"352px","Element4_left":"532px","Element3_top":"352px","Element3_left":"314px","Element6_top":"351px","Element6_left":"91px","Element5_top":"496px","Element5_left":"87px","Element2_top":"499px","Element2_left":"313px","Element1_top":"499px","Element1_left":"535px","Element9_top":"400px","Element9_left":"88px","Element8_top":"448px","Element8_left":"87px","Element10_top":"403px","Element10_left":"314px","Element11_top":"451px","Element11_left":"314px","Element12_top":"404px","Element12_left":"533px","Element7_top":"454px","Element7_left":"535px"}';
+        //const my_JSON_string = '{"Element4_Top":"352px","Element4_Left":"532px","Element3_Top":"352px","Element3_Left":"314px","Element6_Top":"351px","Element6_Left":"91px","Element5_Top":"496px","Element5_Left":"87px","Element2_Top":"499px","Element2_Left":"313px","Element1_Top":"499px","Element1_Left":"535px","Element9_Top":"400px","Element9_Left":"88px","Element8_Top":"448px","Element8_Left":"87px","Element10_Top":"403px","Element10_Left":"314px","Element11_Top":"451px","Element11_Left":"314px","Element12_Top":"404px","Element12_Left":"533px","Element7_Top":"454px","Element7_Left":"535px"}';
     //const my_JSON_string = '  @*@Html.Raw( @Model.JsonTextContent )*@ ';
-    const my_JSON_string_left = '  @Html.Raw( @Model.JsonTextContent_Left ) ';
-    const my_JSON_string_top = '  @Html.Raw( @Model.JsonTextContent_Top ) ';
+    const my_JSON_string_Left = '  @Html.Raw( @Model.JsonTextContent_Left ) ';
+    const my_JSON_string_Top = '  @Html.Raw( @Model.JsonTextContent_Top ) ';
 
 
     //  Model.JsonTextContent
 
 
     //const my_JSON_object = JSON.parse(my_JSON_string)
-    const my_JSON_object_left = JSON.parse(my_JSON_string_left)
-    const my_JSON_object_top = JSON.parse(my_JSON_string_top)
+    const my_JSON_object_Left = JSON.parse(my_JSON_string_Left);
+    const my_JSON_object_Top = JSON.parse(my_JSON_string_Top);
+
+    // Added 3/20/2020 thomas downes
+    document.getElementById("EL1").style.left = my_JSON_object_Left["EL1_Left"];
+    document.getElementById("EL2").style.left = my_JSON_object_Left["EL2_Left"];
+    document.getElementById("EL3").style.left = my_JSON_object_Left["EL3_Left"];
+    document.getElementById("EL4").style.left = my_JSON_object_Left["EL4_Left"];
+    document.getElementById("EL5").style.left = my_JSON_object_Left["EL5_Left"];
+    document.getElementById("EL6").style.left = my_JSON_object_Left["EL6_Left"];
+    document.getElementById("EL7").style.left = my_JSON_object_Left["EL7_Left"];
+    document.getElementById("EL8").style.left = my_JSON_object_Left["EL8_Left"];
+    document.getElementById("EL9").style.left = my_JSON_object_Left["EL9_Left"];
+    document.getElementById("EL10").style.left = my_JSON_object_Left["EL10_Left"];
+    document.getElementById("EL11").style.left = my_JSON_object_Left["EL11_Left"];
+    document.getElementById("EL12").style.left = my_JSON_object_Left["EL12_Left"];
 
         // Added 3/20/2020 thomas downes
-        document.getElementById("EL1").style.left = my_JSON_object["EL1_left"];
-        document.getElementById("EL2").style.left = my_JSON_object["EL2_left"];
-        document.getElementById("EL3").style.left = my_JSON_object["EL3_left"];
-        document.getElementById("EL4").style.left = my_JSON_object["EL4_left"];
-        document.getElementById("EL5").style.left = my_JSON_object["EL5_left"];
-        document.getElementById("EL6").style.left = my_JSON_object["EL6_left"];
-        document.getElementById("EL7").style.left = my_JSON_object["EL7_left"];
-        document.getElementById("EL8").style.left = my_JSON_object["EL8_left"];
-        document.getElementById("EL9").style.left = my_JSON_object["EL9_left"];
-        document.getElementById("EL10").style.left = my_JSON_object["EL10_left"];
-        document.getElementById("EL11").style.left = my_JSON_object["EL11_left"];
-        document.getElementById("EL12").style.left = my_JSON_object["EL12_left"];
-
-        // Added 3/20/2020 thomas downes
-        document.getElementById("EL1").style.top = my_JSON_object["EL1_top"];
-        document.getElementById("EL2").style.top = my_JSON_object["EL2_top"];
-        document.getElementById("EL3").style.top = my_JSON_object["EL3_top"];
-        document.getElementById("EL4").style.top = my_JSON_object["EL4_top"];
-        document.getElementById("EL5").style.top = my_JSON_object["EL5_top"];
-        document.getElementById("EL6").style.top = my_JSON_object["EL6_top"];
-        document.getElementById("EL7").style.top = my_JSON_object["EL7_top"];
-        document.getElementById("EL8").style.top = my_JSON_object["EL8_top"];
-        document.getElementById("EL9").style.top = my_JSON_object["EL9_top"];
-        document.getElementById("EL10").style.top = my_JSON_object["EL10_top"];
-        document.getElementById("EL11").style.top = my_JSON_object["EL11_top"];
-        document.getElementById("EL12").style.top = my_JSON_object["EL12_top"];
+        document.getElementById("EL1").style.top = my_JSON_object_Top["EL1_Top"];
+    document.getElementById("EL2").style.top = my_JSON_object_Top["EL2_Top"];
+    document.getElementById("EL3").style.top = my_JSON_object_Top["EL3_Top"];
+    document.getElementById("EL4").style.top = my_JSON_object_Top["EL4_Top"];
+    document.getElementById("EL5").style.top = my_JSON_object_Top["EL5_Top"];
+    document.getElementById("EL6").style.top = my_JSON_object_Top["EL6_Top"];
+    document.getElementById("EL7").style.top = my_JSON_object_Top["EL7_Top"];
+    document.getElementById("EL8").style.top = my_JSON_object_Top["EL8_Top"];
+    document.getElementById("EL9").style.top = my_JSON_object_Top["EL9_Top"];
+    document.getElementById("EL10").style.top = my_JSON_object_Top["EL10_Top"];
+    document.getElementById("EL11").style.top = my_JSON_object_Top["EL11_Top"];
+    document.getElementById("EL12").style.top = my_JSON_object_Top["EL12_Top"];
 
         //Added 3/20/2020 Thomas Downes
         //document.getElementById("p_JSON").innerHTML = my_JSON_string;
-        document.getElementById("p_JSON").innerText = my_JSON_string;
+        //document.getElementById("p_JSON").innerText = my_JSON_string;
+        document.getElementById("p_JSON_Left").innerText = my_JSON_string_Left;
+       document.getElementById("p_JSON_Top").innerText = my_JSON_string_Top;
 
         //Added 3/20/2020 thomas downes
         let mod_JS_mode = "Move"; // "drag"; //---"click";
@@ -351,7 +354,7 @@
             //
             //   https://forums.asp.net/t/2080584.aspx?Populate+mvc+model+field+using+Javascript+Jqeury
             //
-            //document.getElementById('#@Html.IdFor(m => m.JsonTextContent)').val(v);
+            //document.getElementById('#@*@Html.IdFor(m => m.JsonTextContent_Left*@)').val(v);
             //
             //alert("Before: " + document.getElementById('JsonTextContent').innerText);
 
@@ -367,12 +370,12 @@
                 //    document.getElementById("p_JSON").innerText;
 
                 //Left
-                document.getElementById("JsonTextContent_left").innerText =
-                    document.getElementById("p_JSON_left").innerText;
+                document.getElementById("JsonTextContent_Left").innerText =
+                    document.getElementById("p_JSON_Left").innerText;
 
                 //Top
-                document.getElementById("JsonTextContent_top").innerText =
-                    document.getElementById("p_JSON_top").innerText;
+                document.getElementById("JsonTextContent_Top").innerText =
+                    document.getElementById("p_JSON_Top").innerText;
             }
 
             // Elements #3 to 12
@@ -385,9 +388,9 @@
             //}
 
             // Added 3/20/2020 thomas downes
-            //---document.getElementById("Element1").style.left = par_style_left;
-            //---document.getElementById("Element2").style.left = par_style_left;
-            //---document.getElementById("Element3").style.left = par_style_left;
+            //---document.getElementById("Element1").style.left = par_style_Left;
+            //---document.getElementById("Element2").style.left = par_style_Left;
+            //---document.getElementById("Element3").style.left = par_style_Left;
 
         }
 
@@ -402,11 +405,13 @@
             par_elementDiv.style.top = (par_elementDiv.offsetTop - par_intTopY) + "px";  //  px = pixels
 
             //Added 3/20/2020 td
-            my_JSON_object[par_elementDiv.id + "_top"] = par_elementDiv.style.top;
-            my_JSON_object[par_elementDiv.id + "_left"] = par_elementDiv.style.left;
+            //---my_JSON_object[par_elementDiv.id + "_Left"] = par_elementDiv.style.left;
+            //---my_JSON_object[par_elementDiv.id + "_Top"] = par_elementDiv.style.top;
+            my_JSON_object_Left[par_elementDiv.id + "_Left"] = par_elementDiv.style.left;
+            my_JSON_object_Top[par_elementDiv.id + "_Top"] = par_elementDiv.style.top;
 
             //Added 3/22/2020 td
-            elementImage = document.getElementById(par_elementDiv + '_image');
+            elementImage = document.getElementById(par_elementDiv + '_i');
             //my_JSON_object[par_elementDiv.id + "_width"] = elementImage.width;
             //my_JSON_object[par_elementDiv.id + "_height"] = elementImage.height;
 
@@ -415,24 +420,24 @@
         //
         // Added 3/20/2020 Thomas Downes
         //
-        function function_PropagateMoveToGroup_NoUse(par_style_left, par_style_top, par_omit_elmntDiv) //(par_intLeft, par_intTop, par_omit_elmntDiv) {
+        function function_PropagateMoveToGroup_NoUse(par_style_Left, par_style_Top, par_omit_elmntDiv) //(par_intLeft, par_intTop, par_omit_elmntDiv) {
         {
             //
             // Added 3/20/2020 thomas downes
             //
             // Property Top
-            //tempElem = document.getElementById("Element1"); if (tempElem != par_omit_elmntDiv) { tempElem.style.top = par_style_top; }
-            //tempElem = document.getElementById("Element2"); if (tempElem != par_omit_elmntDiv) { tempElem.style.top = par_style_top; }
-            //tempElem = document.getElementById("Element3"); if (tempElem != par_omit_elmntDiv) { tempElem.style.top = par_style_top; }
+            //tempElem = document.getElementById("Element1"); if (tempElem != par_omit_elmntDiv) { tempElem.style.top = par_style_Top; }
+            //tempElem = document.getElementById("Element2"); if (tempElem != par_omit_elmntDiv) { tempElem.style.top = par_style_Top; }
+            //tempElem = document.getElementById("Element3"); if (tempElem != par_omit_elmntDiv) { tempElem.style.top = par_style_Top; }
 
             //// Property Left
-            //tempElem = document.getElementById("Element1"); if (tempElem != par_omit_elmntDiv) { tempElem.style.left = par_style_left; }
-            //tempElem = document.getElementById("Element2"); if (tempElem != par_omit_elmntDiv) { tempElem.style.left = par_style_left; }
-            //tempElem = document.getElementById("Element3"); if (tempElem != par_omit_elmntDiv) { tempElem.style.left = par_style_left; }
+            //tempElem = document.getElementById("Element1"); if (tempElem != par_omit_elmntDiv) { tempElem.style.left = par_style_Left; }
+            //tempElem = document.getElementById("Element2"); if (tempElem != par_omit_elmntDiv) { tempElem.style.left = par_style_Left; }
+            //tempElem = document.getElementById("Element3"); if (tempElem != par_omit_elmntDiv) { tempElem.style.left = par_style_Left; }
 
         }
 
-    function SaveJsonToForm(par_sJsonString_left, par_sJsonString_top) {
+    function SaveJsonToForm(par_sJsonString_Left, par_sJsonString_Top) {
         //
         //Added 3/22/2020 thomas downes
         //
@@ -444,8 +449,8 @@
         //---jQuery('JsonTextContent').value = par_sJsonString;
 
         //document.getElementById('JsonTextContent').value = par_sJsonString;
-        document.getElementById('JsonTextContent_left').value = par_sJsonString_left;
-        document.getElementById('JsonTextContent_top').value = par_sJsonString_top;
+        document.getElementById('JsonTextContent_Left').value = par_sJsonString_Left;
+        document.getElementById('JsonTextContent_Top').value = par_sJsonString_Top;
 
         //  document.getElementById("p_JSON").innerText;
 
@@ -602,10 +607,10 @@
                 closure_DivElement.style.top = (closure_DivElement.offsetTop - closure_pos2_y) + "px";  //  px = pixels
 
                 // Added 3/20/2020 thomas downes
-                //----mod_record_all_positions[closure_DivElement.id + "_top"] = closure_DivElement.style.top;
-                //----mod_record_all_positions[closure_DivElement.id + "_left"] = closure_DivElement.style.left;
-                my_JSON_object[closure_DivElement.id + "_top"] = closure_DivElement.style.top;
-                my_JSON_object[closure_DivElement.id + "_left"] = closure_DivElement.style.left;
+                //----mod_record_all_positions[closure_DivElement.id + "_Top"] = closure_DivElement.style.top;
+                //----mod_record_all_positions[closure_DivElement.id + "_Left"] = closure_DivElement.style.left;
+                my_JSON_object_Left[closure_DivElement.id + "_Top"] = closure_DivElement.style.top;
+                my_JSON_object_Top[closure_DivElement.id + "_Left"] = closure_DivElement.style.left;
 
                 //Record the position.
                 if (document.getElementById(closure_DivElement.id + "header")) {
@@ -633,12 +638,12 @@
 
                 // Added 3/22/2020 thomas downes
                 //let strCurrentJSON = JSON.stringify(my_JSON_object);
-                let strCurrentJSON_left = JSON.stringify(my_JSON_object_left);
-                let strCurrentJSON_top = JSON.stringify(my_JSON_object_top);
+                let strCurrentJSON_Left = JSON.stringify(my_JSON_object_Left);
+                let strCurrentJSON_Top = JSON.stringify(my_JSON_object_Top);
 
                 //document.getElementById('p_JSON').innerText = strCurrentJSON;  // JSON.stringify(my_JSON_object);
-                document.getElementById('p_JSON_left').innerText = strCurrentJSON_left;  // JSON.stringify(my_JSON_object);
-                document.getElementById('p_JSON_top').innerText = strCurrentJSON_top;  // JSON.stringify(my_JSON_object);
+                document.getElementById('p_JSON_Left').innerText = strCurrentJSON_Left;  // JSON.stringify(my_JSON_object);
+                document.getElementById('p_JSON_Top').innerText = strCurrentJSON_Top;  // JSON.stringify(my_JSON_object);
 
                 //document.getElementById("JsonTextContent").innerText = strCurrentJSON;
                 //document.getElementById("JsonTextContent")[0].innerText = strCurrentJSON;
@@ -650,7 +655,7 @@
 
                 //ADded 3/22/2020
                 //SaveJsonToForm(strCurrentJSON);  //Added 3/22/2020 td
-                SaveJsonToForm(strCurrentJSON_left, strCurrentJSON_top);  //Added 3/22/2020 td
+                SaveJsonToForm(strCurrentJSON_Left, strCurrentJSON_Top);  //Added 3/22/2020 td
 
             }
         }
