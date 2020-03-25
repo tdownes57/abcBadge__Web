@@ -411,7 +411,7 @@
             my_JSON_object_Top[par_elementDiv.id + "_Top"] = par_elementDiv.style.top;
 
             //Added 3/22/2020 td
-            elementImage = document.getElementById(par_elementDiv + '_i');
+            //elementImage = document.getElementById(par_elementDiv + '_i');
             //my_JSON_object[par_elementDiv.id + "_width"] = elementImage.width;
             //my_JSON_object[par_elementDiv.id + "_height"] = elementImage.height;
 
@@ -607,10 +607,10 @@
                 closure_DivElement.style.top = (closure_DivElement.offsetTop - closure_pos2_y) + "px";  //  px = pixels
 
                 // Added 3/20/2020 thomas downes
-                //----mod_record_all_positions[closure_DivElement.id + "_Top"] = closure_DivElement.style.top;
                 //----mod_record_all_positions[closure_DivElement.id + "_Left"] = closure_DivElement.style.left;
-                my_JSON_object_Left[closure_DivElement.id + "_Top"] = closure_DivElement.style.top;
-                my_JSON_object_Top[closure_DivElement.id + "_Left"] = closure_DivElement.style.left;
+                //----mod_record_all_positions[closure_DivElement.id + "_Top"] = closure_DivElement.style.top;
+                my_JSON_object_Left[closure_DivElement.id + "_Left"] = closure_DivElement.style.left;
+                my_JSON_object_Top[closure_DivElement.id + "_Top"] = closure_DivElement.style.top;
 
                 //Record the position.
                 if (document.getElementById(closure_DivElement.id + "header")) {
