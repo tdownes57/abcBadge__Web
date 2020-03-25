@@ -751,6 +751,9 @@
     <Content Include="JSON\blue_star.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="JS_Moveable_Divs_HTM\blue_star.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="JS_Moveable_Divs_HTM\drag_elements - March17 #3.htm" />
     <Content Include="JS_Moveable_Divs_HTM\drag_elements - March17 #4.htm" />
     <Content Include="JS_Moveable_Divs_HTM\drag_elements - March17 #5.htm" />
