@@ -25,6 +25,45 @@ namespace ciBadgeForWeb.Controllers
 
         }
 
+        // GET: JsonFile
+        public ActionResult Index()
+        {
+            //
+            // Added 3/21/2020 Thomas Downes  
+            //
+            //JsonFile objectJsonFile = new JsonFile();
+            var objectJsonFile = JsonFileController.JsonFile_MoveableDivs;
+
+            return View(objectJsonFile);
+
+        }
+
+        // GET: JsonFile
+        public ActionResult TestModeSwitching()
+        {
+            //
+            // Added 3/25/2020 Thomas Downes 
+            //
+            //   I want to test the mode-switching look & feel (& features,
+            //   such as alignment left-edge, top-edge, etc.)
+            //
+            return View();
+
+        }
+
+        // GET: JsonFile
+        public ActionResult TestExportFromModule()
+        {
+            //
+            // Added 3/25/2020 Thomas Downes 
+            //
+            //  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
+            //
+            //  https://stackoverflow.com/questions/15760462/why-does-typescript-use-the-keyword-export-to-make-classes-and-interfaces-publ
+            //
+            return View();
+
+        }
 
         // POST: JsonFile/Index/5
         [HttpPost]

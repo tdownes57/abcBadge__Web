@@ -18,7 +18,7 @@
 
 "use strict";  //Suggested by my Orange Coast class. ---2/4/2020 thomas downes
 
-function createTip_ByPercentage(ev) {
+export function createTip_ByPercentage(ev) {
     var title = this.title;
     var my_decimal = 0.15;
     var my_percent = 15;
@@ -28,13 +28,13 @@ function createTip_ByPercentage(ev) {
 
  
 
-function createTip(ev) {
+export function createTip(ev) {
     var title = this.title;
     this.title = '';
     this.setAttribute("tooltip", title);
 }
 
-function cancelTip(ev) {
+export function cancelTip(ev) {
     var title = this.getAttribute("tooltip");
     this.title = title;
     this.removeAttribute("tooltip");

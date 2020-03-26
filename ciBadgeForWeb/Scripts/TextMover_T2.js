@@ -23,12 +23,12 @@ let aT2 = 5;
 //
 //Added 6/26/2019 thomas downes
 //
-var moveable_textT2 = document.getElementById("id__mydivheaderT2");
+export var moveable_textT2 = document.getElementById("id__mydivheaderT2");
 
-var textbox_TopEdgeT2 = document.getElementsByName('T2.TopEdgePositionPixels')[0];
-var textbox_LeftEdgeT2 = document.getElementsByName('T2.LeftEdgePositionPixels')[0];
+export var textbox_TopEdgeT2 = document.getElementsByName('T2.TopEdgePositionPixels')[0];
+export var textbox_LeftEdgeT2 = document.getElementsByName('T2.LeftEdgePositionPixels')[0];
 
-var badge_backT2 = document.getElementsByName('badge_back')[0];
+export var badge_backT2 = document.getElementsByName('badge_back')[0];
 badge_backT2 = document.getElementById("badge_back");
 
 //

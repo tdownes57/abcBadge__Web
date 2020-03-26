@@ -21,7 +21,7 @@ a = 5;
 //
 // 6/26/2019 td//dragElement(document.getElementById("id__mydivheader1"));
 
-const EL1 = {
+export const EL1 = {
 
     moveable_text = document.getElementById("id__mydivheader1"),
 

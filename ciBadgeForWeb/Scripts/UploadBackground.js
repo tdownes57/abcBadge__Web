@@ -5,7 +5,7 @@
 "use strict";  //Suggested by my Orange Coast class. ---2/4/2020 thomas downes
 
 //get file size
-function GetFileSize(fileid) {
+export function GetFileSize(fileid) {
     try {
         var fileSize = 0;
         //for IE
@@ -30,7 +30,7 @@ function GetFileSize(fileid) {
 }
 
 //get file path from client system
-function getNameFromPath(strFilepath) {
+export function getNameFromPath(strFilepath) {
     var objRE = new RegExp(/([^\/\\]+)$/);
     var strName = objRE.exec(strFilepath);
 
@@ -52,7 +52,7 @@ $("#btnSubmit").live("click", function () {
     }
 });
 
-function checkfile() {
+export function checkfile() {
     var file = getNameFromPath($("#fileToUpload").val());
     if (file != null) {
         var extension = file.substr((file.lastIndexOf('.') + 1));

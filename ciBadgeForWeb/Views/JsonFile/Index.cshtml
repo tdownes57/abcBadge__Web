@@ -84,61 +84,65 @@
 
 
 <div id="EL1" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; border-width: thin; ">
-    E1 <img id="EL1_i" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+    E1 <img id="EL1_im" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
 </div>
 
 <div id="EL2" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; border-width: thin; ">
-    E2 <img id="EL2_i" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+    E2 <img id="EL2_im" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
     @*  <p>EL 2</p>*@
 </div>
 
 <div id="EL3" class="mydiv_class" style="position: absolute; top: 250px; left: 300px; ">
-    E3 <img id="EL3_i" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+    E3 <img id="EL3_im" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
     @* <p>EL 3</p>*@
 </div>
 
 <div id="EL4" class="mydiv_class" style="position: absolute; top: 250px; left: 400px; ">
-    E4 <img id="EL4_i" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+    E4 <img id="EL4_im" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
     @*  <p>EL 4</p>*@
 </div>
 
 <div id="EL5" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; ">
-    E5 <img id="EL5_i" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+    E5 <img id="EL5_im" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
     @*  <p>EL 5</p>*@
 </div>
 
 <div id="EL6" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; ">
-    E6 <img id="EL6_i" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+    E6 <img id="EL6_im" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
 </div>
 
 <div id="EL7" class="mydiv_class" style="position: absolute; top: 250px; left: 300px; ">
-    E7<img id="EL7_i" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+    E7<img id="EL7_im" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
 </div>
 
 <div id="EL8" class="mydiv_class" style="position: absolute; top: 250px; left: 400px; ">
-    E8 <img id="EL8_i" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="30" />
+    E8 <img id="EL8_im" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="30" />
 </div>
 
 <div id="EL9" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; ">
-    E9 <img id="EL9_i" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+    E9 <img id="EL9_im" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
 </div>
 
 <div id="EL10" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; ">
-    E10 <img id="EL10_i" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+    E10 <img id="EL10_im" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
 </div>
 
 <div id="EL11" class="mydiv_class" style="position: absolute; top: 250px; left: 300px; ">
-    E11 <img id="EL11_i" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+    E11 <img id="EL11_im" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
 </div>
 
 <div id="EL12" class="mydiv_class" style="position: absolute; top: 250px; left: 400px; ">
-    E12 <img id="EL12_i" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+    E12 <img id="EL12_im" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
 </div>
 
 
 
 <p id="p_JSON_Left">This is for the JSON data, Left property.</p>
 <p id="p_JSON_Top">This is for the JSON data, Top property.</p>
+
+<p id="p_JSON_Width">This is for the JSON data, Width property of the Image tags.</p>
+<p id="p_JSON_Height">This is for the JSON data, Height property of the Image tags..</p>
+
 @*<p id="p_JSON_Width">This is for the JSON data, Width property.</p>
     <p id="p_JSON_Height">This is for the JSON data, Height property.</p>*@
 
@@ -154,6 +158,9 @@
 
     <input type='hidden' id="JsonTextContent_Left" name="JsonTextContent_Left" value=' @Html.Raw( @Model.JsonTextContent_Left ) ' />
     <input type='hidden' id="JsonTextContent_Top" name="JsonTextContent_Top" value=' @Html.Raw( @Model.JsonTextContent_Top ) ' />
+
+    <input type='hidden' id="JsonTextContent_Width" name="JsonTextContent_Width" value=' @Html.Raw( @Model.JsonTextContent_Width ) ' />
+    <input type='hidden' id="JsonTextContent_Height" name="JsonTextContent_Height" value=' @Html.Raw( @Model.JsonTextContent_Height ) ' />
 
     <!--div class="form-group"-->
     <input type="submit" value="Save" class="btn btn-default" />
@@ -216,7 +223,6 @@
         MakeClosure_clickElement(document.getElementById("EL11"));
         MakeClosure_clickElement(document.getElementById("EL12"));
 
-
         //
         // Added 3/20/2020 thomas downes
         //
@@ -224,52 +230,167 @@
 
         //----const my_JSON_string = '{"Element9_Top":"421px","Element9_Left":"92px","Element10_Top":"419px","Element10_Left":"334px","Element12_Top":"419px","Element12_Left":"552px","Element8_Top":"479px","Element8_Left":"95px","Element11_Top":"477px","Element11_Left":"337px","Element7_Top":"477px","Element7_Left":"558px"}';
 
-        //const my_JSON_string = '{"Element4_Top":"352px","Element4_Left":"532px","Element3_Top":"352px","Element3_Left":"314px","Element6_Top":"351px","Element6_Left":"91px","Element5_Top":"496px","Element5_Left":"87px","Element2_Top":"499px","Element2_Left":"313px","Element1_Top":"499px","Element1_Left":"535px","Element9_Top":"400px","Element9_Left":"88px","Element8_Top":"448px","Element8_Left":"87px","Element10_Top":"403px","Element10_Left":"314px","Element11_Top":"451px","Element11_Left":"314px","Element12_Top":"404px","Element12_Left":"533px","Element7_Top":"454px","Element7_Left":"535px"}';
+    //const my_JSON_string = '{"Element4_Top":"352px","Element4_Left":"532px","Element3_Top":"352px","Element3_Left":"314px","Element6_Top":"351px","Element6_Left":"91px","Element5_Top":"496px","Element5_Left":"87px","Element2_Top":"499px","Element2_Left":"313px","Element1_Top":"499px","Element1_Left":"535px","Element9_Top":"400px","Element9_Left":"88px","Element8_Top":"448px","Element8_Left":"87px","Element10_Top":"403px","Element10_Left":"314px","Element11_Top":"451px","Element11_Left":"314px","Element12_Top":"404px","Element12_Left":"533px","Element7_Top":"454px","Element7_Left":"535px"}';
     //const my_JSON_string = '  @*@Html.Raw( @Model.JsonTextContent )*@ ';
+
     const my_JSON_string_Left = '  @Html.Raw( @Model.JsonTextContent_Left ) ';
     const my_JSON_string_Top = '  @Html.Raw( @Model.JsonTextContent_Top ) ';
 
+    // Added 3/26/2020 Thomas Downes
+    const my_JSON_string_Width = '  @Html.Raw( @Model.JsonTextContent_Width ) ';
+    const my_JSON_string_Height = '  @Html.Raw( @Model.JsonTextContent_Height ) ';
 
-    //  Model.JsonTextContent
+    // Model.JsonTextContent
 
 
     //const my_JSON_object = JSON.parse(my_JSON_string)
     const my_JSON_object_Left = JSON.parse(my_JSON_string_Left);
     const my_JSON_object_Top = JSON.parse(my_JSON_string_Top);
 
+    //Added 3/26/2020 thomas downes
+    const my_JSON_object_Width = JSON.parse(my_JSON_string_Width);
+    const my_JSON_object_Height = JSON.parse(my_JSON_string_Height);
+
     // Added 3/20/2020 thomas downes
-    document.getElementById("EL1").style.left = my_JSON_object_Left["EL1_Left"];
-    document.getElementById("EL2").style.left = my_JSON_object_Left["EL2_Left"];
-    document.getElementById("EL3").style.left = my_JSON_object_Left["EL3_Left"];
-    document.getElementById("EL4").style.left = my_JSON_object_Left["EL4_Left"];
-    document.getElementById("EL5").style.left = my_JSON_object_Left["EL5_Left"];
-    document.getElementById("EL6").style.left = my_JSON_object_Left["EL6_Left"];
-    document.getElementById("EL7").style.left = my_JSON_object_Left["EL7_Left"];
-    document.getElementById("EL8").style.left = my_JSON_object_Left["EL8_Left"];
-    document.getElementById("EL9").style.left = my_JSON_object_Left["EL9_Left"];
-    document.getElementById("EL10").style.left = my_JSON_object_Left["EL10_Left"];
-    document.getElementById("EL11").style.left = my_JSON_object_Left["EL11_Left"];
-    document.getElementById("EL12").style.left = my_JSON_object_Left["EL12_Left"];
+    const EL1 = document.getElementById("EL1"); //.style.left = my_JSON_object_Left["EL1_Left"];
+    const EL2 = document.getElementById("EL2"); //.style.left = my_JSON_object_Left["EL2_Left"];
+    const EL3 = document.getElementById("EL3"); //.style.left = my_JSON_object_Left["EL3_Left"];
+    const EL4 = document.getElementById("EL4"); //.style.left = my_JSON_object_Left["EL4_Left"];
+    const EL5 = document.getElementById("EL5"); //.style.left = my_JSON_object_Left["EL5_Left"];
+    const EL6 = document.getElementById("EL6"); //.style.left = my_JSON_object_Left["EL6_Left"];
+    const EL7 = document.getElementById("EL7"); //.style.left = my_JSON_object_Left["EL7_Left"];
+    const EL8 = document.getElementById("EL8"); //.style.left = my_JSON_object_Left["EL8_Left"];
+    const EL9 = document.getElementById("EL9"); //.style.left = my_JSON_object_Left["EL9_Left"];
+    const EL10 = document.getElementById("EL10"); //.style.left = my_JSON_object_Left["EL10_Left"];
+    const EL11 = document.getElementById("EL11"); //.style.left = my_JSON_object_Left["EL11_Left"];
+    const EL12 = document.getElementById("EL12"); //.style.left = my_JSON_object_Left["EL12_Left"];
+
+    // Added 3/20/2020 thomas downes
+    EL1.style.left = my_JSON_object_Left["EL1_Left"];
+    EL2.style.left = my_JSON_object_Left["EL2_Left"];
+    EL3.style.left = my_JSON_object_Left["EL3_Left"];
+    EL4.style.left = my_JSON_object_Left["EL4_Left"];
+    EL5.style.left = my_JSON_object_Left["EL5_Left"];
+    EL6.style.left = my_JSON_object_Left["EL6_Left"];
+    EL7.style.left = my_JSON_object_Left["EL7_Left"];
+    EL8.style.left = my_JSON_object_Left["EL8_Left"];
+    EL9.style.left = my_JSON_object_Left["EL9_Left"];
+    EL10.style.left = my_JSON_object_Left["EL10_Left"];
+    EL11.style.left = my_JSON_object_Left["EL11_Left"];
+    EL12.style.left = my_JSON_object_Left["EL12_Left"];
 
         // Added 3/20/2020 thomas downes
-        document.getElementById("EL1").style.top = my_JSON_object_Top["EL1_Top"];
-    document.getElementById("EL2").style.top = my_JSON_object_Top["EL2_Top"];
-    document.getElementById("EL3").style.top = my_JSON_object_Top["EL3_Top"];
-    document.getElementById("EL4").style.top = my_JSON_object_Top["EL4_Top"];
-    document.getElementById("EL5").style.top = my_JSON_object_Top["EL5_Top"];
-    document.getElementById("EL6").style.top = my_JSON_object_Top["EL6_Top"];
-    document.getElementById("EL7").style.top = my_JSON_object_Top["EL7_Top"];
-    document.getElementById("EL8").style.top = my_JSON_object_Top["EL8_Top"];
-    document.getElementById("EL9").style.top = my_JSON_object_Top["EL9_Top"];
-    document.getElementById("EL10").style.top = my_JSON_object_Top["EL10_Top"];
-    document.getElementById("EL11").style.top = my_JSON_object_Top["EL11_Top"];
-    document.getElementById("EL12").style.top = my_JSON_object_Top["EL12_Top"];
+    EL1.style.top = my_JSON_object_Top["EL1_Top"];
+    EL2.style.top = my_JSON_object_Top["EL2_Top"];
+    EL3.style.top = my_JSON_object_Top["EL3_Top"];
+    EL4.style.top = my_JSON_object_Top["EL4_Top"];
+    EL5.style.top = my_JSON_object_Top["EL5_Top"];
+    EL6.style.top = my_JSON_object_Top["EL6_Top"];
+    EL7.style.top = my_JSON_object_Top["EL7_Top"];
+    EL8.style.top = my_JSON_object_Top["EL8_Top"];
+    EL9.style.top = my_JSON_object_Top["EL9_Top"];
+    EL10.style.top = my_JSON_object_Top["EL10_Top"];
+    EL11.style.top = my_JSON_object_Top["EL11_Top"];
+    EL12.style.top = my_JSON_object_Top["EL12_Top"];
+
+    // Added 3/26/2020 thomas downes
+    //--&----Let's instead use the EL objects. ---3/26/2020 thomas downes 
+    //--&-Please note, we are targeting the image element.  
+    //--&-
+    //--&-document.getElementById("EL1_im").style.width = my_JSON_object_Width["EL1_Width"];
+    //--&-document.getElementById("EL2_im").style.width = my_JSON_object_Width["EL2_Width"];
+    //--&-document.getElementById("EL3_im").style.width = my_JSON_object_Width["EL3_Width"];
+    //--&-document.getElementById("EL4_im").style.width = my_JSON_object_Width["EL4_Width"];
+    //--&-document.getElementById("EL5_im").style.width = my_JSON_object_Width["EL5_Width"];
+    //--&-document.getElementById("EL6_im").style.width = my_JSON_object_Width["EL6_Width"];
+    //--&-document.getElementById("EL7_im").style.width = my_JSON_object_Width["EL7_Width"];
+    //--&-document.getElementById("EL8_im").style.width = my_JSON_object_Width["EL8_Width"];
+    //--&-document.getElementById("EL9_im").style.width = my_JSON_object_Width["EL9_Width"];
+    //--&-document.getElementById("EL10_im").style.width = my_JSON_object_Width["EL10_Width"];
+    //--&-document.getElementById("EL11_im").style.width = my_JSON_object_Width["EL11_Width"];
+    //--&-document.getElementById("EL12_im").style.width = my_JSON_object_Width["EL12_Width"];
+
+    // Added 3/26/2020 thomas downes
+    //   The DIV element does //NOT// have the Width & Height properties,
+    //   and so we must utilize the child image element 
+    //   for the Width & Height properties.
+    //   -----3/26/2020 thomas downes
+    //
+    if (EL1.childNodes[0]) {
+        //
+        //Good, our [0] syntax works for identifying the IMAGE element.
+        //
+        EL1.childNodes[0].style.width = my_JSON_object_Width["EL1_Width"];
+        EL2.childNodes[0].style.width = my_JSON_object_Width["EL2_Width"];
+        EL3.childNodes[0].style.width = my_JSON_object_Width["EL3_Width"];
+        EL4.childNodes[0].style.width = my_JSON_object_Width["EL4_Width"];
+        EL5.childNodes[0].style.width = my_JSON_object_Width["EL5_Width"];
+        EL6.childNodes[0].style.width = my_JSON_object_Width["EL6_Width"];
+        EL7.childNodes[0].style.width = my_JSON_object_Width["EL7_Width"];
+        EL8.childNodes[0].style.width = my_JSON_object_Width["EL8_Width"];
+        EL9.childNodes[0].style.width = my_JSON_object_Width["EL9_Width"];
+        EL10.childNodes[0].style.width = my_JSON_object_Width["EL10_Width"];
+        EL11.childNodes[0].style.width = my_JSON_object_Width["EL11_Width"];
+        EL12.childNodes[0].style.width = my_JSON_object_Width["EL12_Width"];
+    }
+    else {
+        //Unfortunately, our [0] syntax fails for identifying the IMAGE element.
+        alert("Cannot find the child node!! #1 of 2");
+    }
+
+    // Added 3/26/2020 thomas downes
+    //   The DIV element does //NOT// have the Width & Height properties,
+    //   and so we must utilize the child image element 
+    //   for the Width & Height properties.
+    //   -----3/26/2020 thomas downes
+    if (EL1.childNodes[0]) {
+        //
+        //Good, our [0] syntax works for identifying the IMAGE element.
+        //
+        EL1.childNodes[0].style.height = my_JSON_object_Height["EL1_Height"];
+        EL2.childNodes[0].style.height = my_JSON_object_Height["EL2_Height"];
+        EL3.childNodes[0].style.height = my_JSON_object_Height["EL3_Height"];
+        EL4.childNodes[0].style.height = my_JSON_object_Height["EL4_Height"];
+        EL5.childNodes[0].style.height = my_JSON_object_Height["EL5_Height"];
+        EL6.childNodes[0].style.height = my_JSON_object_Height["EL6_Height"];
+        EL7.childNodes[0].style.height = my_JSON_object_Height["EL7_Height"];
+        EL8.childNodes[0].style.height = my_JSON_object_Height["EL8_Height"];
+        EL9.childNodes[0].style.height = my_JSON_object_Height["EL9_Height"];
+        EL10.childNodes[0].style.height = my_JSON_object_Height["EL1_Height"];
+        EL11.childNodes[0].style.height = my_JSON_object_Height["EL1_Height"];
+        EL12.childNodes[0].style.height = my_JSON_object_Height["EL1_Height"];
+    }
+    else {
+        //Unfortunately, our [0] syntax fails for identifying the IMAGE element.
+        alert("Cannot find the child node!! #2 of 2");
+    }
+    
+    //Added  3/26/2020 thomas downes
+    const FormJson_Left = document.getElementById("JsonTextContent_Left");
+    const FormJson_Top = document.getElementById("JsonTextContent_Top");
+    const FormJson_Width = document.getElementById("JsonTextContent_Width");
+    const FormJson_Height = document.getElementById("JsonTextContent_Height");
+
+    //Added  3/26/2020 thomas downes
+    const ViewJson_Left = document.getElementById("p_JSON_Left");
+    const ViewJson_Top = document.getElementById("p_JSON_Top");
+    const ViewJson_Width = document.getElementById("p_JSON_Width");
+    const ViewJson_Height = document.getElementById("p_JSON_Height");
 
         //Added 3/20/2020 Thomas Downes
-        //document.getElementById("p_JSON").innerHTML = my_JSON_string;
-        //document.getElementById("p_JSON").innerText = my_JSON_string;
-        document.getElementById("p_JSON_Left").innerText = my_JSON_string_Left;
-       document.getElementById("p_JSON_Top").innerText = my_JSON_string_Top;
+        //---document.getElementById("p_JSON").innerHTML = my_JSON_string;
+        //---document.getElementById("p_JSON").innerText = my_JSON_string;
+     //   document.getElementById("p_JSON_Left").innerText = my_JSON_string_Left;
+    //document.getElementById("p_JSON_Top").innerText = my_JSON_string_Top;
+    //Added 3/26/2020 thomas downes 
+    //document.getElementById("p_JSON_Width").innerText = my_JSON_string_Width;
+    //document.getElementById("p_JSON_Height").innerText = my_JSON_string_Height;
+
+    //Added  3/26/2020 thomas downes
+    ViewJson_Left.innerText = my_JSON_string_Left;
+    ViewJson_Top.innerText = my_JSON_string_Top;
+    ViewJson_Width.innerText = my_JSON_string_Width;
+    ViewJson_Height.innerText = my_JSON_string_Height;
 
         //Added 3/20/2020 thomas downes
         let mod_JS_mode = "Move"; // "drag"; //---"click";
@@ -370,12 +491,21 @@
                 //    document.getElementById("p_JSON").innerText;
 
                 //Left
-                document.getElementById("JsonTextContent_Left").innerText =
-                    document.getElementById("p_JSON_Left").innerText;
+                //document.getElementById("JsonTextContent_Left").innerText =
+                //    document.getElementById("p_JSON_Left").innerText;
 
                 //Top
-                document.getElementById("JsonTextContent_Top").innerText =
-                    document.getElementById("p_JSON_Top").innerText;
+                //document.getElementById("JsonTextContent_Top").innerText =
+                //    document.getElementById("p_JSON_Top").innerText;
+
+                //Left, Top, Width, Height
+                //FormJson_Left.innerText = ViewJson_Left.innerText;
+                //FormJson_Top.innerText = ViewJson_Top.innerText;
+                //FormJson_Width.innerText = ViewJson_Width.innerText;
+                //FormJson_Height.innerText = ViewJson_Height.innerText;
+
+                SaveJsonToForm_objectsLeftTop(my_JSON_object_Left, my_JSON_object_Top);
+
             }
 
             // Elements #3 to 12
@@ -437,7 +567,7 @@
 
         }
 
-    function SaveJsonToForm(par_sJsonString_Left, par_sJsonString_Top) {
+    function SaveJsonToForm_stringsLeftTop(par_sJsonString_Left, par_sJsonString_Top) {
         //
         //Added 3/22/2020 thomas downes
         //
@@ -449,8 +579,28 @@
         //---jQuery('JsonTextContent').value = par_sJsonString;
 
         //document.getElementById('JsonTextContent').value = par_sJsonString;
-        document.getElementById('JsonTextContent_Left').value = par_sJsonString_Left;
-        document.getElementById('JsonTextContent_Top').value = par_sJsonString_Top;
+        //3-26-2020 td //document.getElementById('JsonTextContent_Left').value = par_sJsonString_Left;
+        //3-26-2020 td //document.getElementById('JsonTextContent_Top').value = par_sJsonString_Top;
+
+        FormJson_Left.value = par_sJsonString_Left;
+        FormJson_Top.value = par_sJsonString_Top;
+
+        ViewJson_Left.innerText = par_sJsonString_Left;
+        ViewJson_Top.innerText = par_sJsonString_Top;  
+
+        //  document.getElementById("p_JSON").innerText;
+
+    }
+
+    function SaveJsonToForm_objectsLeftTop(par_oJson_Left, par_oJson_Top) {
+
+        // let strCurrentJSON_Left = JSON.stringify(my_JSON_object_Left);
+        // let strCurrentJSON_Top = JSON.stringify(my_JSON_object_Top);
+        FormJson_Left.value = JSON.stringify(par_oJson_Left);
+        FormJson_Top.value = JSON.stringify(par_oJson_Top);
+
+        ViewJson_Left.innerText = FormJson_Left.value;
+        ViewJson_Top.innerText = FormJson_Top.value;
 
         //  document.getElementById("p_JSON").innerText;
 
@@ -642,8 +792,8 @@
                 let strCurrentJSON_Top = JSON.stringify(my_JSON_object_Top);
 
                 //document.getElementById('p_JSON').innerText = strCurrentJSON;  // JSON.stringify(my_JSON_object);
-                document.getElementById('p_JSON_Left').innerText = strCurrentJSON_Left;  // JSON.stringify(my_JSON_object);
-                document.getElementById('p_JSON_Top').innerText = strCurrentJSON_Top;  // JSON.stringify(my_JSON_object);
+                //document.getElementById('p_JSON_Left').innerText = strCurrentJSON_Left;  // JSON.stringify(my_JSON_object);
+                //document.getElementById('p_JSON_Top').innerText = strCurrentJSON_Top;  // JSON.stringify(my_JSON_object);
 
                 //document.getElementById("JsonTextContent").innerText = strCurrentJSON;
                 //document.getElementById("JsonTextContent")[0].innerText = strCurrentJSON;
@@ -655,7 +805,7 @@
 
                 //ADded 3/22/2020
                 //SaveJsonToForm(strCurrentJSON);  //Added 3/22/2020 td
-                SaveJsonToForm(strCurrentJSON_Left, strCurrentJSON_Top);  //Added 3/22/2020 td
+                SaveJsonToForm_stringsLeftTop(strCurrentJSON_Left, strCurrentJSON_Top);  //Added 3/22/2020 td
 
             }
         }

@@ -23,16 +23,16 @@ let a = 5;
 //
 //Added 6/26/2019 thomas downes
 //
-var moveable_text = document.getElementById("id__mydivheaderT1");
+export var moveable_text = document.getElementById("id__mydivheaderT1");
 
-var textbox_TopEdge = document.getElementsByName('T1.TopEdgePositionPixels')[0];
-var textbox_LeftEdge = document.getElementsByName('T1.LeftEdgePositionPixels')[0];
+export var textbox_TopEdge = document.getElementsByName('T1.TopEdgePositionPixels')[0];
+export var textbox_LeftEdge = document.getElementsByName('T1.LeftEdgePositionPixels')[0];
 
-var textbox_HeightPixels = document.getElementsByName('T1.HeightPixels')[0];
-var textbox_WidthLengthPixels = document.getElementsByName('T1.WidthLengthPixels')[0];
-var textbox_BackgroundColor = document.getElementsByName('T1.BackgroundColor')[0];
+export var textbox_HeightPixels = document.getElementsByName('T1.HeightPixels')[0];
+export var textbox_WidthLengthPixels = document.getElementsByName('T1.WidthLengthPixels')[0];
+export var textbox_BackgroundColor = document.getElementsByName('T1.BackgroundColor')[0];
 
-var badge_back = document.getElementsByName('badge_back')[0];
+export var badge_back = document.getElementsByName('badge_back')[0];
 badge_back = document.getElementById("badge_back");
 
 //

@@ -916,6 +916,9 @@
     <Content Include="JSON\JSON_Top.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="JSON\How to use Export modifier %28StackOver%29.docx" />
+    <Content Include="JS_Moveable_Divs_HTM\How to use Export modifier %28StackOver%29.docx" />
+    <Content Include="Javascript - see Scripts\How to use Export modifier %28StackOver%29.docx" />
     <None Include="Properties\PublishProfiles\abcBadge - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CIS90720 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CIS90720 - Web Deploy1.pubxml" />
@@ -933,6 +936,7 @@
     <Content Include="Scripts\bootstrap.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\How to use Export modifier %28StackOver%29.docx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\DragElement_T99.js" />
     <Content Include="Scripts\Elements1.js" />
@@ -1064,6 +1068,9 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\JsonFile\TestModeSwitching.cshtml" />
+    <Content Include="Scripts\__MoveableDivs\How to use Export modifier %28StackOver%29.docx" />
+    <Content Include="Views\JsonFile\__Export modifier %28StackOver%29.docx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />
