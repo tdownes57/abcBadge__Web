@@ -26,7 +26,7 @@ namespace ciBadgeForWeb.Controllers
         }
 
         // GET: JsonFile
-        public ActionResult Index()
+        public ActionResult IndexGroupWidth()
         {
             //
             // Added 3/21/2020 Thomas Downes  
@@ -38,6 +38,20 @@ namespace ciBadgeForWeb.Controllers
 
         }
 
+
+        //// GET: JsonFile
+        //public ActionResult Index()
+        //{
+        //    //
+        //    // Added 3/21/2020 Thomas Downes  
+        //    //
+        //    //JsonFile objectJsonFile = new JsonFile();
+        //    var objectJsonFile = JsonFileController.JsonFile_MoveableDivs;
+        //
+        //    return View(objectJsonFile);
+        //
+        //}
+
         // GET: JsonFile
         public ActionResult TestModeSwitching()
         {
@@ -48,7 +62,6 @@ namespace ciBadgeForWeb.Controllers
             //   such as alignment left-edge, top-edge, etc.)
             //
             return View();
-
         }
 
         // GET: JsonFile
@@ -62,7 +75,6 @@ namespace ciBadgeForWeb.Controllers
             //  https://stackoverflow.com/questions/15760462/why-does-typescript-use-the-keyword-export-to-make-classes-and-interfaces-publ
             //
             return View();
-
         }
 
         // POST: JsonFile/Index/5
