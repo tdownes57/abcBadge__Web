@@ -21,6 +21,8 @@ namespace ciBadgeForWeb.Controllers
             //JsonFile objectJsonFile = new JsonFile();
             var objectJsonFile = JsonFileController.JsonFile_MoveableDivs;
 
+            //return View(objectJsonFile);
+            //return IndexGroupWidth();
             return View(objectJsonFile);
 
         }

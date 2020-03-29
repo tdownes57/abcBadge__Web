@@ -919,6 +919,7 @@
     <Content Include="JSON\How to use Export modifier %28StackOver%29.docx" />
     <Content Include="JS_Moveable_Divs_HTM\How to use Export modifier %28StackOver%29.docx" />
     <Content Include="Javascript - see Scripts\How to use Export modifier %28StackOver%29.docx" />
+    <Content Include="JSON\JSON_Width.json" />
     <None Include="Properties\PublishProfiles\abcBadge - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CIS90720 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\CIS90720 - Web Deploy1.pubxml" />
