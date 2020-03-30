@@ -12,7 +12,16 @@
 
 
 <h1>User-Moveable Division-Image Elements</h1>
+<p><a href="https://www.w3schools.com/howto/howto_js_draggable.asp">https://www.w3schools.com/howto/howto_js_draggable.asp</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures">Javascript Closures by Mozilla</a></p>
+<p><a href="~/JS_Moveable_Divs_HTM/drag_elements_JSON_groups.htm">my HTML work</a></p>
 
+<h1 id="paragraphToggleMode">
+    Move Mode - Click and hold the mouse button
+    down while moving the DIV element.
+</h1>
+<h2> <a id="hyperlinkToggleMode" href="">Click here to switch to Include Mode.</a> </h2>
+<h3 id="width2x" style="visibility: hidden;"> <a href="">Click here to double the width of Included items.</a> </h3>
 
 <div id="EL1" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; border-width: thin; ">
     E1 <img id="EL1_im" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
@@ -153,6 +162,52 @@
     }
 
 
+    if (EL1) {
+        MakeClosure_dragElement(EL1);
+        MakeClosure_dragElement(EL2);
+        MakeClosure_dragElement(EL3);
+        MakeClosure_dragElement(EL4);
+
+        MakeClosure_dragElement(EL5);
+        MakeClosure_dragElement(EL6);
+        MakeClosure_dragElement(EL7);
+        MakeClosure_dragElement(EL8);
+
+        MakeClosure_dragElement(EL9);
+        MakeClosure_dragElement(EL10);
+        MakeClosure_dragElement(EL11);
+        MakeClosure_dragElement(EL12);
+    }
+    else {
+        //Unfortunately, our [0] syntax fails for identifying the IMAGE element.
+        alert("We could not find the Element #1....Sad!");
+    }
+
+
+    if (EL1) {
+        //
+        // Images - Include Mode      ---3/29/2020 thomas downes
+        //
+        MakeClosure_clickElement(EL1);
+        MakeClosure_clickElement(EL2);
+        MakeClosure_clickElement(EL3);
+        MakeClosure_clickElement(EL4);
+
+        MakeClosure_clickElement(EL5);
+        MakeClosure_clickElement(EL6);
+        MakeClosure_clickElement(EL7);
+        MakeClosure_clickElement(EL8);
+
+        MakeClosure_clickElement(EL9);
+        MakeClosure_clickElement(EL10);
+        MakeClosure_clickElement(EL11);
+        MakeClosure_clickElement(EL12);
+    }
+    else {
+        //Unfortunately, our [0] syntax fails for identifying the IMAGE element.
+        alert("We could not find the Element #1....Sad!");
+    }
+
     // Added 3/20/2020 thomas downes
     EL1.style.left = my_JSON_object_Left["EL1_Left"];
     EL2.style.left = my_JSON_object_Left["EL2_Left"];
@@ -241,6 +296,9 @@
         let mod_array_elementIDs = [];
     let i_limitMessages = 0;  //Added 3/22/2020 td
 
+    //Connect the Click event to the function function_ToggleMode.
+    //   ---3/20/2020
+    document.getElementById("hyperlinkToggleMode").onclick = function_ToggleMode;
 
         //
         //Added 3/20/2020 thomas downes
@@ -258,14 +316,16 @@
                 mod_JS_mode = "Include";
                 //document.getElementById("paragraphToggleMode").innerHTML = "Include Mode - Click and release, for selecting elements to include as a group.  <a> Click here to change to Drag Mode. </a>";
                 document.getElementById("paragraphToggleMode").innerText = "Include Mode - Click and release, for selecting elements to include as a group.";
-                document.getElementById("hyperlinkToggleMode").innerText = "Click here to change to Drag Mode.";
+                document.getElementById("hyperlinkToggleMode").innerText = "Click here to change to Click/Drag Mode.";
+                document.getElementById("width2x").style.visibility = "visible";
             }
             else if ("Include" == mod_JS_mode) {
                 //Click-to-Drag
                 mod_JS_mode = "Move";
                 //document.getElementById("paragraphToggleMode").innerHTML = "Move Mode - Click and hold the mouse button down while moving the DIV element. <a >Click here to switch to Include Mode.</a>";
-                document.getElementById("paragraphToggleMode").innerText = "Click-and-Drag Mode - Click, press, & move; to move the element.";
-                document.getElementById("hyperlinkToggleMode").innerText = "Click here to change to Click-And-Drag Mode.";
+                document.getElementById("paragraphToggleMode").innerText = "Click/Drag Mode - Click, press, & move; to move the element.";
+                document.getElementById("hyperlinkToggleMode").innerText = "Click here to change to Include Mode.";
+                document.getElementById("width2x").style.visibility = "hidden";
             }
         }
 
@@ -277,7 +337,36 @@
             //
             // Added 3/20/2020 thomas downes
             //
+            //
+            // Let's iterate through the selected Elements.
+            //
+            //for (each_ElementID in mod_array_elementIDs) {
+            //mod_array_elementIDs.forEach(each_ElementID => {
 
+            intElemIndex = mod_array_elementIDs.indexOf(par_omit_elmntDiv);
+
+            boolMovingGroup = (intElemIndex >= 0);
+
+            if (boolMovingGroup) {
+                mod_array_elementIDs.forEach(each_Element => {
+                    // We are iterating through the selected Elements.
+                    //-----tempElem = document.getElementById(each_ElementID);
+                    if (each_Element != par_omit_elmntDiv) {
+                        //Call the element-specific (as one of the group elements) encapsulation.
+                        function_PropagateMoveToGroup_Item(par_intLeftX, par_intTopY, each_Element);
+                    }
+                });
+            }
+
+            //
+            //   https://forums.asp.net/t/2080584.aspx?Populate+mvc+model+field+using+Javascript+Jqeury
+            //
+            //document.getElementById('#@*@Html.IdFor(m => m.JsonTextContent_Left*@)').val(v);
+            //
+            //alert("Before: " + document.getElementById('JsonTextContent').innerText);
+
+            //document.getElementById("JsonTextContent").innerText =
+            //    document.getElementById("p_JSON").innerText;
 
             //Added 3/22/2020 thomas downes
             //if (i_limitMessages < 0) {
@@ -510,10 +599,10 @@
                 my_JSON_object_Top[closure_DivElement.id + "_Top"] = closure_DivElement.style.top;
 
                 //Record the position.
-                if (document.getElementById(closure_DivElement.id + "header")) {
-                    /* if present, the header is where you move the DIV from:*/
-                    document.getElementById(closure_DivElement.id + "header").innerHTML = "Hello, " + closure_DivElement.id + "header";
-                }
+                //if (document.getElementById(closure_DivElement.id + "header")) {
+                //    /* if present, the header is where you move the DIV from:*/
+                //    document.getElementById(closure_DivElement.id + "header").innerHTML = "Hello, " + closure_DivElement.id + "header";
+                //}
 
                 //Propagate the move.
                 //function_PropagateMoveToGroup_NoUse(closure_DivElement.style.left, closure_DivElement.style.top, closure_DivElement);

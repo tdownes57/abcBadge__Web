@@ -1,0 +1,646 @@
+﻿@model ciBadgeForWeb.Models.JsonFile
+
+@{
+    ViewBag.Title = "Moveable Divs";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_MoveableDivs.cshtml";
+}
+
+@*<h2>Index</h2>*@
+
+@*<!DOCTYPE html>*@
+
+
+<h1>User-Moveable Division-Image Elements</h1>
+<p><a href="https://www.w3schools.com/howto/howto_js_draggable.asp">https://www.w3schools.com/howto/howto_js_draggable.asp</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures">Javascript Closures by Mozilla</a></p>
+<p><a href="~/JS_Moveable_Divs_HTM/drag_elements_JSON_groups.htm">my HTML work</a></p>
+
+<h1 id="paragraphToggleMode">
+    Move Mode - Click and hold the mouse button
+    down while moving the DIV element.
+</h1>
+<h2> <a id="hyperlinkToggleMode" href="">Click here to switch to Include Mode.</a> </h2>
+
+<div id="EL1" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; border-width: thin; ">
+    E1 <img id="EL1_im" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+</div>
+
+<div id="EL2" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; border-width: thin; ">
+    E2 <img id="EL2_im" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+</div>
+
+<div id="EL3" class="mydiv_class" style="position: absolute; top: 250px; left: 300px; ">
+    E3 <img id="EL3_im" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+</div>
+
+<div id="EL4" class="mydiv_class" style="position: absolute; top: 250px; left: 400px; ">
+    E4 <img id="EL4_im" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+</div>
+
+<div id="EL5" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; ">
+    E5 <img id="EL5_im" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+</div>
+
+<div id="EL6" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; ">
+    E6 <img id="EL6_im" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+</div>
+
+<div id="EL7" class="mydiv_class" style="position: absolute; top: 250px; left: 300px; ">
+    E7<img id="EL7_im" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+</div>
+
+<div id="EL8" class="mydiv_class" style="position: absolute; top: 250px; left: 400px; ">
+    E8 <img id="EL8_im" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="30" />
+</div>
+
+<div id="EL9" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; ">
+    E9 <img id="EL9_im" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+</div>
+
+<div id="EL10" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; ">
+    E10 <img id="EL10_im" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+</div>
+
+<div id="EL11" class="mydiv_class" style="position: absolute; top: 250px; left: 300px; ">
+    E11 <img id="EL11_im" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+</div>
+
+<div id="EL12" class="mydiv_class" style="position: absolute; top: 250px; left: 400px; ">
+    E12 <img id="EL12_im" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
+</div>
+
+
+
+<p id="p_JSON_Left">This is for the JSON data, Left property.</p>
+<p id="p_JSON_Top">This is for the JSON data, Top property.</p>
+
+<!--         -->
+<!--  WH #1  -->
+<!--         -->
+<p id="p_JSON_Width">This is for the JSON data, Width property.</p>
+<p id="p_JSON_Height">This is for the JSON data, Height property.</p>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <input type='hidden' id="JsonTextContent_Left" name="JsonTextContent_Left" value=' @Html.Raw( @Model.JsonTextContent_Left ) ' />
+    <input type='hidden' id="JsonTextContent_Top" name="JsonTextContent_Top" value=' @Html.Raw( @Model.JsonTextContent_Top ) ' />
+
+    <!--         -->
+    <!--  WH #2  -->
+    <!--         -->
+    <input type='hidden' id="JsonTextContent_Width" name="JsonTextContent_Width" value=' @Html.Raw( @Model.JsonTextContent_Width ) ' />
+    <input type='hidden' id="JsonTextContent_Height" name="JsonTextContent_Height" value=' @Html.Raw( @Model.JsonTextContent_Height ) ' />
+
+    <input type="submit" value="Save" class="btn btn-default" />
+}
+
+
+
+<script>
+
+    let my_JSON_string_Left = '  @Html.Raw( @Model.JsonTextContent_Left ) ';
+    let my_JSON_string_Top = '  @Html.Raw( @Model.JsonTextContent_Top ) ';
+
+    // Added 3/26/2020 Thomas Downes
+    //
+    //---------------------------
+    //  WH #3
+    //-------------------------------
+    //
+    let my_JSON_string_Width = '  @Html.Raw( @Model.JsonTextContent_Width ) ';
+    let my_JSON_string_Height = '  @Html.Raw( @Model.JsonTextContent_Height ) ';
+
+    const my_JSON_object_Left = JSON.parse(my_JSON_string_Left);
+    const my_JSON_object_Top = JSON.parse(my_JSON_string_Top);
+
+    //
+    //-----------------------------
+    //  WH #4
+    //-----------------------------
+    //
+    const my_JSON_object_Width = JSON.parse(my_JSON_string_Width);
+    const my_JSON_object_Height = JSON.parse(my_JSON_string_Height);
+
+    const EL1 = document.getElementById("EL1"); //.style.left = my_JSON_object_Left["EL1_Left"];
+    const EL2 = document.getElementById("EL2"); //.style.left = my_JSON_object_Left["EL2_Left"];
+    const EL3 = document.getElementById("EL3"); //.style.left = my_JSON_object_Left["EL3_Left"];
+    const EL4 = document.getElementById("EL4"); //.style.left = my_JSON_object_Left["EL4_Left"];
+    const EL5 = document.getElementById("EL5"); //.style.left = my_JSON_object_Left["EL5_Left"];
+    const EL6 = document.getElementById("EL6"); //.style.left = my_JSON_object_Left["EL6_Left"];
+    const EL7 = document.getElementById("EL7"); //.style.left = my_JSON_object_Left["EL7_Left"];
+    const EL8 = document.getElementById("EL8"); //.style.left = my_JSON_object_Left["EL8_Left"];
+    const EL9 = document.getElementById("EL9"); //.style.left = my_JSON_object_Left["EL9_Left"];
+    const EL10 = document.getElementById("EL10"); //.style.left = my_JSON_object_Left["EL10_Left"];
+    const EL11 = document.getElementById("EL11"); //.style.left = my_JSON_object_Left["EL11_Left"];
+    const EL12 = document.getElementById("EL12"); //.style.left = my_JSON_object_Left["EL12_Left"];
+
+    if (EL1) {
+        MakeClosure_dragElement(EL1);
+        MakeClosure_dragElement(EL2);
+        MakeClosure_dragElement(EL3);
+        MakeClosure_dragElement(EL4);
+
+        MakeClosure_dragElement(EL5);
+        MakeClosure_dragElement(EL6);
+        MakeClosure_dragElement(EL7);
+        MakeClosure_dragElement(EL8);
+
+        MakeClosure_dragElement(EL9);
+        MakeClosure_dragElement(EL10);
+        MakeClosure_dragElement(EL11);
+        MakeClosure_dragElement(EL12);
+    }
+    else {
+        //Unfortunately, our [0] syntax fails for identifying the IMAGE element.
+        alert("We could not find the Element #1....Sad!");
+    }
+
+
+    if (EL1) {
+        MakeClosure_dragElement(EL1);
+        MakeClosure_dragElement(EL2);
+        MakeClosure_dragElement(EL3);
+        MakeClosure_dragElement(EL4);
+
+        MakeClosure_dragElement(EL5);
+        MakeClosure_dragElement(EL6);
+        MakeClosure_dragElement(EL7);
+        MakeClosure_dragElement(EL8);
+
+        MakeClosure_dragElement(EL9);
+        MakeClosure_dragElement(EL10);
+        MakeClosure_dragElement(EL11);
+        MakeClosure_dragElement(EL12);
+    }
+    else {
+        //Unfortunately, our [0] syntax fails for identifying the IMAGE element.
+        alert("We could not find the Element #1....Sad!");
+    }
+
+
+    if (EL1) {
+        //
+        // Images - Include Mode      ---3/29/2020 thomas downes
+        //
+        MakeClosure_clickElement(EL1);
+        MakeClosure_clickElement(EL2);
+        MakeClosure_clickElement(EL3);
+        MakeClosure_clickElement(EL4);
+
+        MakeClosure_clickElement(EL5);
+        MakeClosure_clickElement(EL6);
+        MakeClosure_clickElement(EL7);
+        MakeClosure_clickElement(EL8);
+
+        MakeClosure_clickElement(EL9);
+        MakeClosure_clickElement(EL10);
+        MakeClosure_clickElement(EL11);
+        MakeClosure_clickElement(EL12);
+    }
+    else {
+        //Unfortunately, our [0] syntax fails for identifying the IMAGE element.
+        alert("We could not find the Element #1....Sad!");
+    }
+
+    // Added 3/20/2020 thomas downes
+    EL1.style.left = my_JSON_object_Left["EL1_Left"];
+    EL2.style.left = my_JSON_object_Left["EL2_Left"];
+    EL3.style.left = my_JSON_object_Left["EL3_Left"];
+    EL4.style.left = my_JSON_object_Left["EL4_Left"];
+    EL5.style.left = my_JSON_object_Left["EL5_Left"];
+    EL6.style.left = my_JSON_object_Left["EL6_Left"];
+    EL7.style.left = my_JSON_object_Left["EL7_Left"];
+    EL8.style.left = my_JSON_object_Left["EL8_Left"];
+    EL9.style.left = my_JSON_object_Left["EL9_Left"];
+    EL10.style.left = my_JSON_object_Left["EL10_Left"];
+    EL11.style.left = my_JSON_object_Left["EL11_Left"];
+    EL12.style.left = my_JSON_object_Left["EL12_Left"];
+
+        // Added 3/20/2020 thomas downes
+    EL1.style.top = my_JSON_object_Top["EL1_Top"];
+    EL2.style.top = my_JSON_object_Top["EL2_Top"];
+    EL3.style.top = my_JSON_object_Top["EL3_Top"];
+    EL4.style.top = my_JSON_object_Top["EL4_Top"];
+    EL5.style.top = my_JSON_object_Top["EL5_Top"];
+    EL6.style.top = my_JSON_object_Top["EL6_Top"];
+    EL7.style.top = my_JSON_object_Top["EL7_Top"];
+    EL8.style.top = my_JSON_object_Top["EL8_Top"];
+    EL9.style.top = my_JSON_object_Top["EL9_Top"];
+    EL10.style.top = my_JSON_object_Top["EL10_Top"];
+    EL11.style.top = my_JSON_object_Top["EL11_Top"];
+    EL12.style.top = my_JSON_object_Top["EL12_Top"];
+
+    // Added 3/29/2020 thomas downes
+    //
+    //-----------------------------
+    //  WH #4
+    //-----------------------------
+    //
+    EL1_im.width = my_JSON_object_Width["EL1_Width"];
+    EL2_im.width = my_JSON_object_Width["EL2_Width"];
+    EL3_im.width = my_JSON_object_Width["EL3_Width"];
+    EL4_im.width = my_JSON_object_Width["EL4_Width"];
+    //EL5_im.width = my_JSON_object_Width["EL5_Width"];
+    //EL6_im.width = my_JSON_object_Width["EL6_Width"];
+    //EL7_im.width = my_JSON_object_Width["EL7_Width"];
+    //EL8_im.width = my_JSON_object_Width["EL8_Width"];
+    //EL9_im.width = my_JSON_object_Width["EL9_Width"];
+    //EL10_im.width = my_JSON_object_Width["EL10_Width"];
+    //EL11_im.width = my_JSON_object_Width["EL11_Width"];
+    //EL12_im.width = my_JSON_object_Width["EL12_Width"];
+
+
+    //Added  3/26/2020 thomas downes
+    const FormJson_Left = document.getElementById("JsonTextContent_Left");
+    const FormJson_Top = document.getElementById("JsonTextContent_Top");
+
+    //
+    //-----------------------------
+    //  WH #5
+    //-----------------------------
+    //
+    const FormJson_Width = document.getElementById("JsonTextContent_Width");
+    const FormJson_Height = document.getElementById("JsonTextContent_Height");
+
+    //Added  3/26/2020 thomas downes
+    const ViewJson_Left = document.getElementById("p_JSON_Left");
+    const ViewJson_Top = document.getElementById("p_JSON_Top");
+
+    //
+    //-----------------------------
+    //  WH #6
+    //-----------------------------
+    //
+    const ViewJson_Width = document.getElementById("p_JSON_Width");
+    const ViewJson_Height = document.getElementById("p_JSON_Height");
+
+    //Added  3/26/2020 thomas downes
+    ViewJson_Left.innerText = my_JSON_string_Left;
+    ViewJson_Top.innerText = my_JSON_string_Top;
+
+    //-----------------------------
+    //  WH #7
+    //-----------------------------
+    //
+    ViewJson_Width.innerText = my_JSON_string_Width;
+    ViewJson_Height.innerText = my_JSON_string_Height;
+
+        //Added 3/20/2020 thomas downes
+        let mod_JS_mode = "Move"; // "drag"; //---"click";
+        let mod_array_elementIDs = [];
+    let i_limitMessages = 0;  //Added 3/22/2020 td
+
+    //Connect the Click event to the function function_ToggleMode.
+    //   ---3/20/2020
+    document.getElementById("hyperlinkToggleMode").onclick = function_ToggleMode;
+
+        //
+        //Added 3/20/2020 thomas downes
+        //
+        function function_ToggleMode(par_e_EventClick) {
+            //
+            // Switch from Click-to-Include to Click-and-Drag, and back again.
+            //  ----3/20/2020 thomas downes
+            //
+            par_e_EventClick = par_e_EventClick || window.event;
+            par_e_EventClick.preventDefault();
+
+            if ("Move" == mod_JS_mode) {
+                //Drag-to-Click
+                mod_JS_mode = "Include";
+                //document.getElementById("paragraphToggleMode").innerHTML = "Include Mode - Click and release, for selecting elements to include as a group.  <a> Click here to change to Drag Mode. </a>";
+                document.getElementById("paragraphToggleMode").innerText = "Include Mode - Click and release, for selecting elements to include as a group.";
+                document.getElementById("hyperlinkToggleMode").innerText = "Click here to change to Drag Mode.";
+            }
+            else if ("Include" == mod_JS_mode) {
+                //Click-to-Drag
+                mod_JS_mode = "Move";
+                //document.getElementById("paragraphToggleMode").innerHTML = "Move Mode - Click and hold the mouse button down while moving the DIV element. <a >Click here to switch to Include Mode.</a>";
+                document.getElementById("paragraphToggleMode").innerText = "Click-and-Drag Mode - Click, press, & move; to move the element.";
+                document.getElementById("hyperlinkToggleMode").innerText = "Click here to change to Click-And-Drag Mode.";
+            }
+        }
+
+
+        //
+        // Added 3/20/2020 Thomas Downes
+        //
+        function function_PropagateMoveToGroup(par_intLeftX, par_intTopY, par_omit_elmntDiv, par_styleLeft) {
+            //
+            // Added 3/20/2020 thomas downes
+            //
+            //
+            // Let's iterate through the selected Elements.
+            //
+            //for (each_ElementID in mod_array_elementIDs) {
+            //mod_array_elementIDs.forEach(each_ElementID => {
+
+            intElemIndex = mod_array_elementIDs.indexOf(par_omit_elmntDiv);
+
+            boolMovingGroup = (intElemIndex >= 0);
+
+            if (boolMovingGroup) {
+                mod_array_elementIDs.forEach(each_Element => {
+                    // We are iterating through the selected Elements.
+                    //-----tempElem = document.getElementById(each_ElementID);
+                    if (each_Element != par_omit_elmntDiv) {
+                        //Call the element-specific (as one of the group elements) encapsulation.
+                        function_PropagateMoveToGroup_Item(par_intLeftX, par_intTopY, each_Element);
+                    }
+                });
+            }
+
+            //
+            //   https://forums.asp.net/t/2080584.aspx?Populate+mvc+model+field+using+Javascript+Jqeury
+            //
+            //document.getElementById('#@*@Html.IdFor(m => m.JsonTextContent_Left*@)').val(v);
+            //
+            //alert("Before: " + document.getElementById('JsonTextContent').innerText);
+
+            //document.getElementById("JsonTextContent").innerText =
+            //    document.getElementById("p_JSON").innerText;
+
+            //Added 3/22/2020 thomas downes
+            //if (i_limitMessages < 0) {
+            if (par_styleLeft == "1px" || par_styleLeft == "2px") {
+                i_limitMessages++;
+                //
+                // Left & Top
+                //
+                SaveJsonToForm_objectsLeftTop(my_JSON_object_Left, my_JSON_object_Top);
+                //
+                //-----------------------------
+                //  WH #8
+                //-----------------------------
+                // Width & Height
+                //
+                SaveJsonToForm_objectsWidthHeight(my_JSON_object_Width, my_JSON_object_Height);
+            }
+
+        }
+
+        function function_PropagateMoveToGroup_Item(par_intLeftX, par_intTopY, par_elementDiv) {
+            //
+            // Added 3/20/2020 thomas downes
+            //
+            //
+            // Set the element's new position:
+            //
+            par_elementDiv.style.left = (par_elementDiv.offsetLeft - par_intLeftX) + "px";  // px = pixels
+            par_elementDiv.style.top = (par_elementDiv.offsetTop - par_intTopY) + "px";  //  px = pixels
+
+            //Added 3/20/2020 td
+            //---my_JSON_object[par_elementDiv.id + "_Left"] = par_elementDiv.style.left;
+            //---my_JSON_object[par_elementDiv.id + "_Top"] = par_elementDiv.style.top;
+            my_JSON_object_Left[par_elementDiv.id + "_Left"] = par_elementDiv.style.left;
+            my_JSON_object_Top[par_elementDiv.id + "_Top"] = par_elementDiv.style.top;
+
+            //Added 3/22/2020 td
+            //elementImage = document.getElementById(par_elementDiv + '_i');
+            //my_JSON_object[par_elementDiv.id + "_width"] = elementImage.width;
+            //my_JSON_object[par_elementDiv.id + "_height"] = elementImage.height;
+
+        }
+
+
+    function SaveJsonToForm_stringsLeftTop(par_sJsonString_Left, par_sJsonString_Top) {
+        //
+        //Added 3/22/2020 thomas downes
+        //
+        //document.getElementById("JsonTextContent").innerText = strCurrentJSON;
+        //document.getElementById("JsonTextContent")[0].innerText = strCurrentJSON;
+
+        //  http://javascript-coder.com/javascript-form/javascript-set-form-field.phtml
+
+        FormJson_Left.value = par_sJsonString_Left;
+        FormJson_Top.value = par_sJsonString_Top;
+
+        ViewJson_Left.innerText = par_sJsonString_Left;
+        ViewJson_Top.innerText = par_sJsonString_Top;
+
+    }
+
+    function SaveJsonToForm_objectsLeftTop(par_oJson_Left, par_oJson_Top) {
+
+        // let strCurrentJSON_Left = JSON.stringify(my_JSON_object_Left);
+        // let strCurrentJSON_Top = JSON.stringify(my_JSON_object_Top);
+        FormJson_Left.value = JSON.stringify(par_oJson_Left);
+        FormJson_Top.value = JSON.stringify(par_oJson_Top);
+
+        ViewJson_Left.innerText = FormJson_Left.value;
+        ViewJson_Top.innerText = FormJson_Top.value;
+
+        //  document.getElementById("p_JSON").innerText;
+
+    }
+
+
+        //-------------------------------------------------------------------------------------------
+        // MakeClosure Function closure_clickElement
+        //-------------------------------------------------------------------------------------------
+        //
+        function MakeClosure_clickElement(par_elmntDiv) {
+            //
+            //This is a Javascript closure.
+            //   ---3/20/2020 Thomas Downes
+            //
+
+            var closure_DivElement; // = par_elmntDiv;
+
+            closure_DivElement = par_elmntDiv;
+
+            //closure_DivElement.onclick = subClosFun_click;
+            //closure_DivElement.onclick = subClosFun_click;
+            closure_DivElement.addEventListener('click', event => {
+                subClosFun_click(event);
+            });
+
+            function subClosFun_click(par_e_EventC) {
+                //
+                //Uses closure variables:
+                //
+                par_e_EventC = par_e_EventC || window.event;
+                par_e_EventC.preventDefault();
+
+                if (mod_JS_mode != "Include") { return; }  // Exit if we are "out of mode".
+
+                //
+                // Is this element already in the group of elements?
+                //
+                //let strElementID = closure_DivElement.id;
+                //let index_of_element = mod_array_elementIDs.indexOf(strElementID);
+                let index_of_element = mod_array_elementIDs.indexOf(closure_DivElement);
+                let boolHasItAlready = (0 <= index_of_element);
+                if (boolHasItAlready) {
+                    //
+                    // Remove the Element ID from the selection group.
+                    //
+                    closure_DivElement.style.borderWidth = '';  // 'thin';
+                    closure_DivElement.style.color = '';
+                    closure_DivElement.style.backgroundColor = '';
+                    //mod_array_elementIDs.pop(closure_DivElement.id); // Pop = Remove
+                    mod_array_elementIDs.splice(index_of_element, 1);  // This will delete the element.
+                }
+                else {
+                    //
+                    // Add the closure element to the selection group.
+                    //
+                    closure_DivElement.style.borderWidth = '';  //'thick';
+                    closure_DivElement.style.color = 'blue';
+                    closure_DivElement.style.backgroundColor = 'blue';
+                    //mod_array_elementIDs.push(closure_DivElement.id); //Push = Insert
+                    mod_array_elementIDs.push(closure_DivElement); //Push = Insert
+                }
+
+
+
+            }
+
+        }
+
+        //-------------------------------------------------------------------------------------------
+        // MakeClosure Function closure_dragElement
+        //-------------------------------------------------------------------------------------------
+        //
+        function MakeClosure_dragElement(par_elmntDiv) {
+            //
+            //This is a Javascript closure.
+            //
+            var closure_DivElement; // = par_elmnt;
+            var closure_pos1_x = 0;
+            var closure_pos2_y = 0;
+
+            var closure_pos3_xPrior = 0;
+            var closure_pos4_yPrior = 0;
+
+            //Added 3/20/2020
+            closure_DivElement = par_elmntDiv;
+
+            // Added 3/17/2020 thomas downes
+            const c_useHeaderToMove = false; // Turn off the header functionality.
+
+            if (c_useHeaderToMove && document.getElementById(closure_DivElement.id + "header")) {
+                /* if present, the header is where you move the DIV from:*/
+                document.getElementById(closure_DivElement.id + "header").onmousedown = subClosFun_dragMouseDown;
+            }
+            else {
+                /* otherwise, move the DIV from anywhere inside the DIV:*/
+                closure_DivElement.onmousedown = subClosFun_dragMouseDown;
+            }
+
+            function subClosFun_dragMouseDown(par_e_EventMD) {
+                //
+                //Uses closure variables:
+                //
+                //    closure_pos1_x
+                //    closure_pos2_y
+                //    closure_pos3_xPrior
+                //    closure_pos4_yPrior
+                //    closure_DivElement
+                //
+                if (mod_JS_mode != "Move") { return; }  // Exit if we are "out of mode".
+
+                par_e_EventMD = par_e_EventMD || window.event;
+                par_e_EventMD.preventDefault();
+
+                // get the "prior" mouse cursor position at startup:
+                //
+                closure_pos3_xPrior = par_e_EventMD.clientX;
+                closure_pos4_yPrior = par_e_EventMD.clientY;
+
+                //
+                // Document-Level
+                //
+                document.onmouseup = subClosFun_closeDragElement;
+
+                // call a function whenever the cursor moves:
+                //
+                document.onmousemove = subClosFun_elementDrag;
+            }
+
+            function subClosFun_elementDrag(par_e_EventDrag) {
+                //
+                //Uses closure variables:
+                //    closure_pos1_x
+                //    closure_pos2_y
+                //    closure_pos3_xPrior
+                //    closure_pos4_yPrior
+                //    closure_DivElement
+                //
+                if (mod_JS_mode != "Move") { return; }  // Exit if we are "out of mode".
+
+                par_e_EventDrag = par_e_EventDrag || window.event;
+                par_e_EventDrag.preventDefault();
+
+                // calculate the new cursor position:
+                closure_pos1_x = closure_pos3_xPrior - par_e_EventDrag.clientX;
+                closure_pos2_y = closure_pos4_yPrior - par_e_EventDrag.clientY;
+
+                // Prepare for next call.
+                closure_pos3_xPrior = par_e_EventDrag.clientX;
+                closure_pos4_yPrior = par_e_EventDrag.clientY;
+
+                // Set the element's new position:
+                closure_DivElement.style.left = (closure_DivElement.offsetLeft - closure_pos1_x) + "px";  // px = pixels
+                closure_DivElement.style.top = (closure_DivElement.offsetTop - closure_pos2_y) + "px";  //  px = pixels
+
+                // Added 3/20/2020 thomas downes
+                //----mod_record_all_positions[closure_DivElement.id + "_Left"] = closure_DivElement.style.left;
+                //----mod_record_all_positions[closure_DivElement.id + "_Top"] = closure_DivElement.style.top;
+                my_JSON_object_Left[closure_DivElement.id + "_Left"] = closure_DivElement.style.left;
+                my_JSON_object_Top[closure_DivElement.id + "_Top"] = closure_DivElement.style.top;
+
+                //Record the position.
+                //if (document.getElementById(closure_DivElement.id + "header")) {
+                //    /* if present, the header is where you move the DIV from:*/
+                //    document.getElementById(closure_DivElement.id + "header").innerHTML = "Hello, " + closure_DivElement.id + "header";
+                //}
+
+                //Propagate the move.
+                //function_PropagateMoveToGroup_NoUse(closure_DivElement.style.left, closure_DivElement.style.top, closure_DivElement);
+
+                //Added 3/20/220 Thomas Downes
+                function_PropagateMoveToGroup(closure_pos1_x, closure_pos2_y, closure_DivElement,
+                    closure_DivElement.style.left);
+
+            }
+
+            function subClosFun_closeDragElement() {
+                /* stop moving when mouse button is released:*/
+                document.onmouseup = null;
+                document.onmousemove = null;
+
+                //Added 3/20/2020 thomas downes
+                //---document.getElementById('p_JSON').innerHTML = JSON.stringify(mod_record_all_positions);
+                //document.getElementById('p_JSON').innerHTML = JSON.stringify(my_JSON_object);
+
+                // Added 3/22/2020 thomas downes
+                //let strCurrentJSON = JSON.stringify(my_JSON_object);
+                let strCurrentJSON_Left = JSON.stringify(my_JSON_object_Left);
+                let strCurrentJSON_Top = JSON.stringify(my_JSON_object_Top);
+
+                //document.getElementById('p_JSON').innerText = strCurrentJSON;  // JSON.stringify(my_JSON_object);
+                //document.getElementById('p_JSON_Left').innerText = strCurrentJSON_Left;  // JSON.stringify(my_JSON_object);
+                //document.getElementById('p_JSON_Top').innerText = strCurrentJSON_Top;  // JSON.stringify(my_JSON_object);
+
+                //document.getElementById("JsonTextContent").innerText = strCurrentJSON;
+                //document.getElementById("JsonTextContent")[0].innerText = strCurrentJSON;
+
+                //  http://javascript-coder.com/javascript-form/javascript-set-form-field.phtml
+                //document.getElementById('JsonTextContent')[0].value = strCurrentJSON;
+                //jQuery('JsonTextContent').value = strCurrentJSON;
+                //  document.getElementById("p_JSON").innerText;
+
+                //ADded 3/22/2020
+                //SaveJsonToForm(strCurrentJSON);  //Added 3/22/2020 td
+                SaveJsonToForm_stringsLeftTop(strCurrentJSON_Left, strCurrentJSON_Top);  //Added 3/22/2020 td
+
+            }
+        }
+</script>
+

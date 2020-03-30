@@ -1078,6 +1078,7 @@
     <Content Include="Scripts\__MoveableDivs\How to use Export modifier %28StackOver%29.docx" />
     <Content Include="Views\JsonFile\__Export modifier %28StackOver%29.docx" />
     <Content Include="Views\JsonFile\IndexGroupWidth.cshtml" />
+    <Content Include="Views\JsonFile\Index - Works great.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />
