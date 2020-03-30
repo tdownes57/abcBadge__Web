@@ -73,14 +73,14 @@
 
 
 
-<p id="p_JSON_Left">This is for the JSON data, Left property.</p>
-<p id="p_JSON_Top">This is for the JSON data, Top property.</p>
+<p id="p_JSON_Left" style="visibility: hidden;">This is for the JSON data, Left property.</p>
+<p id="p_JSON_Top" style="visibility: hidden;">This is for the JSON data, Top property.</p>
 
 <!--         -->
 <!--  WH #1  -->
 <!--         -->
-<p id="p_JSON_Width">This is for the JSON data, Width property.</p>
-<p id="p_JSON_Height">This is for the JSON data, Height property.</p>
+<p id="p_JSON_Width" style="visibility: hidden;">This is for the JSON data, Width property.</p>
+<p id="p_JSON_Height" style="visibility: hidden;">This is for the JSON data, Height property.</p>
 
 
 @using (Html.BeginForm())
@@ -97,7 +97,7 @@
     <input type='hidden' id="JsonTextContent_Width" name="JsonTextContent_Width" value=' @Html.Raw( @Model.JsonTextContent_Width ) ' />
     <input type='hidden' id="JsonTextContent_Height" name="JsonTextContent_Height" value=' @Html.Raw( @Model.JsonTextContent_Height ) ' />
 
-    <input type="submit" value="Save" class="btn btn-default" />
+    <input type="submit" value="Save the element postions" class="btn btn-default" />
 }
 
 
