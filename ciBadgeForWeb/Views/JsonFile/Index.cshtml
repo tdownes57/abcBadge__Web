@@ -21,7 +21,10 @@
     down while moving the DIV element.
 </h1>
 <h2> <a id="hyperlinkToggleMode" href="">Click here to switch to Include Mode.</a> </h2>
-<h3 id="width2x" style="visibility: hidden;"> <a href="">Click here to double the width of Included items.</a> </h3>
+
+<div id="div_Width2x"  style="visibility: hidden; border: dotted;" >
+Click here to increase by 50% the width of Included items.
+</div>
 
 <div id="EL1" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; border-width: thin; ">
     E1 <img id="EL1_im" src="@Url.Content("~/Images/blue_star.jpg")" width="200" height="35" />
@@ -79,7 +82,7 @@
 <!--         -->
 <!--  WH #1  -->
 <!--         -->
-<p id="p_JSON_Width" style="visibility: hidden;">This is for the JSON data, Width property.</p>
+<p id="p_JSON_Width" style="visibility: visible;">This is for the JSON data, Width property.</p>
 <p id="p_JSON_Height" style="visibility: hidden;">This is for the JSON data, Height property.</p>
 
 
@@ -100,7 +103,7 @@
     <input type="submit" value="Save the element postions" class="btn btn-default" />
 }
 
-
+<!--script src="ExportClosures.js" script-->
 
 <script>
 
@@ -139,6 +142,34 @@
     const EL10 = document.getElementById("EL10"); //.style.left = my_JSON_object_Left["EL10_Left"];
     const EL11 = document.getElementById("EL11"); //.style.left = my_JSON_object_Left["EL11_Left"];
     const EL12 = document.getElementById("EL12"); //.style.left = my_JSON_object_Left["EL12_Left"];
+
+    const EL1_im = document.getElementById("EL1_im"); //.style.left = my_JSON_object_Left["EL1_Left"];
+    const EL2_im = document.getElementById("EL2_im"); //.style.left = my_JSON_object_Left["EL2_Left"];
+    const EL3_im = document.getElementById("EL3_im"); //.style.left = my_JSON_object_Left["EL3_Left"];
+    const EL4_im = document.getElementById("EL4_im"); //.style.left = my_JSON_object_Left["EL4_Left"];
+    const EL5_im = document.getElementById("EL5_im"); //.style.left = my_JSON_object_Left["EL5_Left"];
+    const EL6_im = document.getElementById("EL6_im"); //.style.left = my_JSON_object_Left["EL6_Left"];
+    const EL7_im = document.getElementById("EL7_im"); //.style.left = my_JSON_object_Left["EL7_Left"];
+    const EL8_im = document.getElementById("EL8_im"); //.style.left = my_JSON_object_Left["EL8_Left"];
+    const EL9_im = document.getElementById("EL9_im"); //.style.left = my_JSON_object_Left["EL9_Left"];
+    const EL10_im = document.getElementById("EL10_im"); //.style.left = my_JSON_object_Left["EL10_Left"];
+    const EL11_im = document.getElementById("EL11_im"); //.style.left = my_JSON_object_Left["EL11_Left"];
+    const EL12_im = document.getElementById("EL12_im"); //.style.left = my_JSON_object_Left["EL12_Left"];
+
+    //Can we invent element properties???
+    EL1.OnlyImage = EL1_im; // Let's create a new property (.OnlyImage)
+    EL2.OnlyImage = EL2_im; // Let's create a new property (.OnlyImage)
+    EL3.OnlyImage = EL3_im; // Let's create a new property (.OnlyImage)
+    EL4.OnlyImage = EL4_im; // Let's create a new property (.OnlyImage)
+    EL5.OnlyImage = EL5_im; // Let's create a new property (.OnlyImage)
+    EL6.OnlyImage = EL6_im; // Let's create a new property (.OnlyImage)
+    EL7.OnlyImage = EL7_im; // Let's create a new property (.OnlyImage)
+    EL8.OnlyImage = EL8_im; // Let's create a new property (.OnlyImage)
+    EL9.OnlyImage = EL9_im; // Let's create a new property (.OnlyImage)
+    EL10.OnlyImage = EL10_im; // Let's create a new property (.OnlyImage)
+    EL11.OnlyImage = EL11_im; // Let's create a new property (.OnlyImage)
+    EL12.OnlyImage = EL12_im; // Let's create a new property (.OnlyImage)
+
 
     if (EL1) {
         MakeClosure_dragElement(EL1);
@@ -246,15 +277,25 @@
     EL2_im.width = my_JSON_object_Width["EL2_Width"];
     EL3_im.width = my_JSON_object_Width["EL3_Width"];
     EL4_im.width = my_JSON_object_Width["EL4_Width"];
-    //EL5_im.width = my_JSON_object_Width["EL5_Width"];
-    //EL6_im.width = my_JSON_object_Width["EL6_Width"];
-    //EL7_im.width = my_JSON_object_Width["EL7_Width"];
-    //EL8_im.width = my_JSON_object_Width["EL8_Width"];
-    //EL9_im.width = my_JSON_object_Width["EL9_Width"];
-    //EL10_im.width = my_JSON_object_Width["EL10_Width"];
-    //EL11_im.width = my_JSON_object_Width["EL11_Width"];
-    //EL12_im.width = my_JSON_object_Width["EL12_Width"];
+    EL5_im.width = my_JSON_object_Width["EL5_Width"];
+    EL6_im.width = my_JSON_object_Width["EL6_Width"];
+    EL7_im.width = my_JSON_object_Width["EL7_Width"];
+    EL8_im.width = my_JSON_object_Width["EL8_Width"];
+    EL9_im.width = my_JSON_object_Width["EL9_Width"];
+    EL10_im.width = my_JSON_object_Width["EL10_Width"];
+    EL11_im.width = my_JSON_object_Width["EL11_Width"];
+    EL12_im.width = my_JSON_object_Width["EL12_Width"];
 
+    //Added 3/3/2020 td
+    if (document.getElementById("div_Width2x")) {
+        //Added 3/30/2020 thomas downes
+        document.getElementById("div_Width2x").addEventListener('click',
+            event => { makeElementWidth_2x(event) });
+    }
+    else {
+        //Added 3/30/2020 thomas downes
+        alert("We cannot find element div_Width2x.");
+    }
 
     //Added  3/26/2020 thomas downes
     const FormJson_Left = document.getElementById("JsonTextContent_Left");
@@ -320,7 +361,12 @@
                 //document.getElementById("paragraphToggleMode").innerHTML = "Include Mode - Click and release, for selecting elements to include as a group.  <a> Click here to change to Drag Mode. </a>";
                 document.getElementById("paragraphToggleMode").innerText = "Include Mode - Click and release, for selecting elements to include as a group.";
                 document.getElementById("hyperlinkToggleMode").innerText = "Click here to change to Click/Drag Mode.";
-                document.getElementById("width2x").style.visibility = "visible";
+                // 3/30/2020 thomas d.
+                document.getElementById("div_Width2x").style.visibility = "visible";
+                //----#1--document.getElementById("width2x").onclick = function_Width2x;
+                //document.getElementById("width2x").addEventListener('click', event => {
+                //    function_Width2x(event);
+                //  });
             }
             else if ("Include" == mod_JS_mode) {
                 //Click-to-Drag
@@ -328,10 +374,65 @@
                 //document.getElementById("paragraphToggleMode").innerHTML = "Move Mode - Click and hold the mouse button down while moving the DIV element. <a >Click here to switch to Include Mode.</a>";
                 document.getElementById("paragraphToggleMode").innerText = "Click/Drag Mode - Click, press, & move; to move the element.";
                 document.getElementById("hyperlinkToggleMode").innerText = "Click here to change to Include Mode.";
-                document.getElementById("width2x").style.visibility = "hidden";
+                // 3/30/2020 thomas d.
+                //document.getElementById("width2x").style.visibility = "hidden";
+                //document.getElementById("width2x").click = function_Width2x;
             }
         }
 
+
+    function makeElementWidth_2x(par_e_EventClick) {
+            //    //
+            //    // Double the width of all selected items.
+            //    //     ----3/30/2020 thomas downes
+            //    //
+        par_e_EventClick = par_e_EventClick || window.event;
+        par_e_EventClick.preventDefault();
+        //
+        //Iterate through the selected elements.  
+        //
+        mod_array_elementIDs.forEach(makeElementWidth_2x_each);
+
+    }
+
+    function makeElementWidth_2x_each(par_Element, index) {
+        //     //   
+        //     //Specify the child Image element.  Don't,  repeat
+        //     //   do //NOT// use the ".style" property. 
+        //        //
+        //       
+
+        //EL1_im.width = (2 * EL1_im.width);
+        //EL2_im.width = (2 * EL2_im.width);
+
+        //if (each_Element.hasChildNodes) {
+        //    //if (each_Element.childNodes[0]) {
+        //    //    each_Element.childNodes[0].width = (2 * each_Element.childNodes[0].width);
+        //    //}
+        //    let my_image = each_Element.getElementsByTagName('img')[0];
+        //    my_image.width = (2 * my_image.width);
+        //}
+        //else {
+        //    //Inform user of lack of 1st child node (Image).
+        //    alert(';;;;;;;;;;;;;;;;;;;;;;;; No child nodes ;;;;;;;;;;;');
+        //}
+
+        let my_image = par_Element.OnlyImage; //Let's leverage our made-up property ("OnlyImage").
+        //my_image.width = (2 * my_image.width);
+        my_image.width = (1.5 * my_image.width);
+
+        my_JSON_object_Width[par_Element.id + "_width"] = my_image.width;
+        my_JSON_object_Height[par_Element.id + "_height"] = my_image.height;
+
+        par_sJsonString_Width = JSON.stringify(my_JSON_object_Width);
+        //par_sJsonString_Height = JSON.stringify(my_JSON_object_Height);
+
+        if (ViewJson_Width.style != "hidden") {
+            ViewJson_Width.innerText = par_sJsonString_Width;
+            //ViewJson_Height.innerText = par_sJsonString_Height;
+        }
+
+    }
 
         //
         // Added 3/20/2020 Thomas Downes
@@ -453,6 +554,7 @@
         // MakeClosure Function closure_clickElement
         //-------------------------------------------------------------------------------------------
         //
+        //---import {MakeClosure_clickElement} from "ExportClosures.js";
         function MakeClosure_clickElement(par_elmntDiv) {
             //
             //This is a Javascript closure.
@@ -516,6 +618,7 @@
         // MakeClosure Function closure_dragElement
         //-------------------------------------------------------------------------------------------
         //
+        //---import {MakeClosure_dragElement} from "ExportClosures.js";
         function MakeClosure_dragElement(par_elmntDiv) {
             //
             //This is a Javascript closure.
