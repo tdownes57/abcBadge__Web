@@ -25,8 +25,10 @@ namespace ciBadgeForWeb.Models
         private string mod_JsonTextContent_Top = "{ \"EL1_Top\":\"352px\",  \"EL2_Top\":\"352px\",  \"EL3_Top\":\"351px\",  \"EL4_Top\":\"496px\",  \"EL5_Top\":\"499px\",   \"EL6_Top\":\"499px\",   \"EL7_Top\":\"400px\",  \"EL8_Top\":\"448px\",   \"EL9_Top\":\"403px\",   \"EL10_Top\":\"451px\",   \"EL11_Top\":\"404px\",   \"EL12_Top\":\"454px\"   }";
 
         //Added 3/26/2020 thomas downes
-        private string mod_JsonTextContent_Width =  "{ \"EL4_Width\":\"200px\",  \"EL3_Width\":\"200px\",  \"EL6_Width\":\"200px\",  \"EL5_Width\":\"200px\",  \"EL2_Width\":\"200px\",   \"EL1_Width\":\"200px\",   \"EL9_Width\":\"200px\",  \"EL8_Width\":\"200px\",  \"EL10_Width\":\"200px\",   \"EL11_Width\":\"200px\",   \"EL12_Width\":\"200px\",   \"EL7_Width\":\"200px\"  }";
-        private string mod_JsonTextContent_Height = "{ \"EL4_Height\":\"35px\",  \"EL3_Height\":\"35px\",  \"EL6_Height\":\"35px\",  \"EL5_Height\":\"35px\",  \"EL2_Height\":\"35px\",   \"EL1_Height\":\"35px\",   \"EL9_Height\":\"35px\",  \"EL8_Height\":\"35px\",  \"EL10_Height\":\"35px\",   \"EL11_Height\":\"35px\",   \"EL12_Height\":\"35px\",   \"EL7_Height\":\"35px\"  }";
+        //----private string mod_JsonTextContent_Width =  "{ \"EL4_Width\":\"200px\",  \"EL3_Width\":\"200px\",  \"EL6_Width\":\"200px\",  \"EL5_Width\":\"200px\",  \"EL2_Width\":\"200px\",   \"EL1_Width\":\"200px\",   \"EL9_Width\":\"200px\",  \"EL8_Width\":\"200px\",  \"EL10_Width\":\"200px\",   \"EL11_Width\":\"200px\",   \"EL12_Width\":\"200px\",   \"EL7_Width\":\"200px\"  }";
+        //---private string mod_JsonTextContent_Height = "{ \"EL4_Height\":\"35px\",  \"EL3_Height\":\"35px\",  \"EL6_Height\":\"35px\",  \"EL5_Height\":\"35px\",  \"EL2_Height\":\"35px\",   \"EL1_Height\":\"35px\",   \"EL9_Height\":\"35px\",  \"EL8_Height\":\"35px\",  \"EL10_Height\":\"35px\",   \"EL11_Height\":\"35px\",   \"EL12_Height\":\"35px\",   \"EL7_Height\":\"35px\"  }";
+        private string mod_JsonTextContent_Width = "{ \"EL1_Width\":\"150\",  \"EL2_Width\":\"150\",  \"EL3_Width\":\"200\",  \"EL4_Width\":\"200\",  \"EL5_Width\":\"200\",   \"EL6_Width\":\"200\",   \"EL7_Width\":\"200\",  \"EL8_Width\":\"200\",  \"EL9_Width\":\"200\",   \"EL10_Width\":\"200\",   \"EL11_Width\":\"200\",   \"EL12_Width\":\"200\"  }";
+        private string mod_JsonTextContent_Height = "{ \"EL1_Height\":\"35\",  \"EL2_Height\":\"35\",  \"EL3_Height\":\"35\",  \"EL4_Height\":\"35\",  \"EL5_Height\":\"35\",   \"EL6_Height\":\"35\",   \"EL7_Height\":\"35\",  \"EL8_Height\":\"35\",  \"EL9_Height\":\"35\",   \"EL10_Height\":\"35\",   \"EL11_Height\":\"35\",   \"EL12_Height\":\"35\"  }";
 
 
         public string JsonTextContent_Left {
@@ -164,8 +166,8 @@ namespace ciBadgeForWeb.Models
             this.JsonTextContent_Top = File.ReadAllText(strFullPathToJsonFile_Top);
 
             //Added 3/29/2020 thomas downes
-            this.JsonTextContent_Left = File.ReadAllText(strFullPathToJsonFile_Left);
-            this.JsonTextContent_Top = File.ReadAllText(strFullPathToJsonFile_Top);
+            this.JsonTextContent_Width = File.ReadAllText(strFullPathToJsonFile_Width);
+            this.JsonTextContent_Height = File.ReadAllText(strFullPathToJsonFile_Height);
 
             if (false)
             {  
