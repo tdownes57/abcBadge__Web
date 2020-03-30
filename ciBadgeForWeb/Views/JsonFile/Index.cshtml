@@ -281,15 +281,18 @@
     const ViewJson_Height = document.getElementById("p_JSON_Height");
 
     //Added  3/26/2020 thomas downes
-    ViewJson_Left.innerText = my_JSON_string_Left;
-    ViewJson_Top.innerText = my_JSON_string_Top;
-
+    if (ViewJson_Left.style != "hidden") {
+        ViewJson_Left.innerText = my_JSON_string_Left;
+        ViewJson_Top.innerText = my_JSON_string_Top;
+    }
     //-----------------------------
     //  WH #7
     //-----------------------------
     //
-    ViewJson_Width.innerText = my_JSON_string_Width;
-    ViewJson_Height.innerText = my_JSON_string_Height;
+    if (ViewJson_Width.style != "hidden") {
+        ViewJson_Width.innerText = my_JSON_string_Width;
+        ViewJson_Height.innerText = my_JSON_string_Height;
+    }
 
         //Added 3/20/2020 thomas downes
         let mod_JS_mode = "Move"; // "drag"; //---"click";
@@ -423,9 +426,10 @@
         FormJson_Left.value = par_sJsonString_Left;
         FormJson_Top.value = par_sJsonString_Top;
 
-        ViewJson_Left.innerText = par_sJsonString_Left;
-        ViewJson_Top.innerText = par_sJsonString_Top;
-
+        if (ViewJson_Left.style != "hidden") {
+            ViewJson_Left.innerText = par_sJsonString_Left;
+            ViewJson_Top.innerText = par_sJsonString_Top;
+        }
     }
 
     function SaveJsonToForm_objectsLeftTop(par_oJson_Left, par_oJson_Top) {
@@ -435,8 +439,10 @@
         FormJson_Left.value = JSON.stringify(par_oJson_Left);
         FormJson_Top.value = JSON.stringify(par_oJson_Top);
 
-        ViewJson_Left.innerText = FormJson_Left.value;
-        ViewJson_Top.innerText = FormJson_Top.value;
+        if (ViewJson_Left.style != "hidden") {
+            ViewJson_Left.innerText = FormJson_Left.value;
+            ViewJson_Top.innerText = FormJson_Top.value;
+        }
 
         //  document.getElementById("p_JSON").innerText;
 
