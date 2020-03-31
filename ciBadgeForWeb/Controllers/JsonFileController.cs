@@ -92,6 +92,10 @@ namespace ciBadgeForWeb.Controllers
                 JsonFile_MoveableDivs.JsonTextContent_Left = collection["JsonTextContent_Left"];
                 JsonFile_MoveableDivs.JsonTextContent_Top = collection["JsonTextContent_Top"];
 
+                //Added 3/30/2020 thomas downes
+                JsonFile_MoveableDivs.JsonTextContent_Width = collection["JsonTextContent_Width"];
+                JsonFile_MoveableDivs.JsonTextContent_Height = collection["JsonTextContent_Height"];
+
                 //
                 // Important.... save to disk. 
                 //

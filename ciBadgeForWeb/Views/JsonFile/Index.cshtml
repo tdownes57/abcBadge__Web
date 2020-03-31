@@ -393,6 +393,11 @@ Click here to increase by 50% the width of Included items.
         //
         mod_array_elementIDs.forEach(makeElementWidth_2x_each);
 
+        //
+        //Added 3/30/2020 td
+        //
+        SaveJsonToForm_objectsWidthHeight(my_JSON_object_Width, my_JSON_object_Height)
+
     }
 
     function makeElementWidth_2x_each(par_Element, index) {
@@ -421,13 +426,17 @@ Click here to increase by 50% the width of Included items.
         //my_image.width = (2 * my_image.width);
         my_image.width = (1.5 * my_image.width);
 
-        my_JSON_object_Width[par_Element.id + "_width"] = my_image.width;
-        my_JSON_object_Height[par_Element.id + "_height"] = my_image.height;
+        //---my_JSON_object_Width[par_Element.id + "_width"] = my_image.width;
+        //---my_JSON_object_Height[par_Element.id + "_height"] = my_image.height;
 
-        par_sJsonString_Width = JSON.stringify(my_JSON_object_Width);
+        my_JSON_object_Width[par_Element.id + "_Width"] = my_image.width;
+        my_JSON_object_Height[par_Element.id + "_Height"] = my_image.height;
+
+        //par_sJsonString_Width = JSON.stringify(my_JSON_object_Width);
         //par_sJsonString_Height = JSON.stringify(my_JSON_object_Height);
 
         if (ViewJson_Width.style != "hidden") {
+            par_sJsonString_Width = JSON.stringify(my_JSON_object_Width);
             ViewJson_Width.innerText = par_sJsonString_Width;
             //ViewJson_Height.innerText = par_sJsonString_Height;
         }
@@ -543,6 +552,22 @@ Click here to increase by 50% the width of Included items.
         if (ViewJson_Left.style != "hidden") {
             ViewJson_Left.innerText = FormJson_Left.value;
             ViewJson_Top.innerText = FormJson_Top.value;
+        }
+
+        //  document.getElementById("p_JSON").innerText;
+
+    }
+
+    function SaveJsonToForm_objectsWidthHeight(par_oJson_Width, par_oJson_Height) {
+        //
+        //Added 3/30/2020 Thomas Downes
+        //
+        FormJson_Width.value = JSON.stringify(par_oJson_Width);
+        FormJson_Height.value = JSON.stringify(par_oJson_Height);
+
+        if (ViewJson_Width.style != "hidden") {
+            ViewJson_Width.innerText = FormJson_Width.value;
+            ViewJson_Height.innerText = FormJson_Height.value;
         }
 
         //  document.getElementById("p_JSON").innerText;
