@@ -800,9 +800,12 @@
     <Compile Include="Models\CIPersonalityConfig_Not in use.cs" />
     <Content Include="Models\CIRecipient..txt" />
     <Content Include="Models\CIRecipient.txt" />
-    <Content Include="OrangeCoast\BasicMemeApp.css" />
-    <Content Include="OrangeCoast\BasicMemeApp.html" />
-    <Content Include="OrangeCoast\BasicMemeApp.js" />
+    <Content Include="OrangeCoast\Meme App - Basic\BasicMemeApp.css" />
+    <Content Include="OrangeCoast\Meme App - Basic\BasicMemeApp.html" />
+    <Content Include="OrangeCoast\Meme App - Basic\BasicMemeApp.js" />
+    <Content Include="OrangeCoast\Meme App - Final\MemeAppFinal.css" />
+    <Content Include="OrangeCoast\Meme App - Final\MemeAppFinal.html" />
+    <Content Include="OrangeCoast\Meme App - Final\MemeAppFinal.js" />
     <Content Include="Scripts\Adjustment_Click.js" />
     <Content Include="Scripts\Adjustment_Master.js" />
     <Content Include="ASPX\ImageHandler.ashx" />
