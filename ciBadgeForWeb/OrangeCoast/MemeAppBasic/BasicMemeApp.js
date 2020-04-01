@@ -145,7 +145,10 @@ class MemeController {
 
         // Call updateLikeNumberElement with the current meme's likeNumber.
         this.updateLikeNumberElement(this._currentMeme.likeNumber);
+
     }
+
+
     // Updates the Like Number DOM element with the provided likeNumber.
     updateLikeNumberElement(likeNumber) {
         // ATTEMPTING: Set the number of likes by updating the text of the element with the ID
@@ -153,6 +156,7 @@ class MemeController {
         //-----------$("#meme-likes-id").text(meme.likeNumber());
         $("#meme-likes-id").text(likeNumber);
     }
+
     // Sets the next meme.
     nextMeme() {
         // The next meme ID. It will go back to the first one if the
@@ -166,6 +170,7 @@ class MemeController {
             alert("this doesn't have a non-null meme");
         }
     }
+
     // Sets the previous meme.
     previousMeme() {
         // ATTEMPTING: Complete this function. It should be similar to the nextMeme() function above.

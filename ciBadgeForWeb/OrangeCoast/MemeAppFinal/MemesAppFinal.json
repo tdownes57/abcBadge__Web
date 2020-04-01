@@ -1,0 +1,17 @@
+﻿{
+  "meme1": {
+    "like_count": 1,
+    "title": "Always have pretty code!",
+    "url": "https://firebasestorage.googleapis.com/v0/b/javascriptclass-22d93.appspot.com/o/meme_1.jpg?alt=media&token=a275da62-3357-43f6-96bb-e7625a68a223"
+  },
+  "meme2": {
+    "like_count": -10,
+    "title": "Stages of Debugging",
+    "url": "https://firebasestorage.googleapis.com/v0/b/javascriptclass-22d93.appspot.com/o/meme_2.jpg?alt=media&token=fb753f2a-51c1-4170-9eb9-d0cf8fc0207c"
+  },
+  "meme3": {
+    "like_count": 100,
+    "title": "Philosoraptor",
+    "url": "https://firebasestorage.googleapis.com/v0/b/javascriptclass-22d93.appspot.com/o/meme_8.jpg?alt=media&token=c7e120d7-e83d-4bfa-bb87-85780b45b6f0"
+  }
+}
