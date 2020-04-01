@@ -237,7 +237,9 @@
     <Compile Include="Controllers\LegacyPagesController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\MoveableDivsController.cs" />
     <Compile Include="Controllers\MvcTestController.cs" />
+    <Compile Include="Controllers\OrangeCoastController.cs" />
     <Compile Include="Controllers\PersonalityController.cs" />
     <Compile Include="Controllers\PortraitImageController.cs" />
     <Compile Include="Controllers\RecipientController.cs" />
@@ -803,10 +805,18 @@
     <Content Include="OrangeCoast\MemeAppBasic\BasicMemeApp.css" />
     <Content Include="OrangeCoast\MemeAppBasic\BasicMemeApp.html" />
     <Content Include="OrangeCoast\MemeAppBasic\BasicMemeApp.js" />
-    <Content Include="OrangeCoast\MemeAppFinal\JS provided by Alexandra Do.js" />
-    <Content Include="OrangeCoast\MemeAppFinal\MemeAppFinal.css" />
-    <Content Include="OrangeCoast\MemeAppFinal\MemeAppFinal.html" />
-    <Content Include="OrangeCoast\MemeAppFinal\MemeAppFinal.js" />
+    <Content Include="OrangeCoast\MemeAppFinal\JS provided by Alexandra Do.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="OrangeCoast\MemeAppFinal\MemeAppFinal.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="OrangeCoast\MemeAppFinal\MemeAppFinal.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="OrangeCoast\MemeAppFinal\MemeAppFinal.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Scripts\Adjustment_Click.js" />
     <Content Include="Scripts\Adjustment_Master.js" />
     <Content Include="ASPX\ImageHandler.ashx" />
@@ -822,7 +832,9 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
-    <Content Include="OrangeCoast\MemeAppFinal\MemesAppFinal.json" />
+    <Content Include="OrangeCoast\MemeAppFinal\MemesAppFinal.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Scripts\jquery-3.4.1-vsdoc.js" />
     <None Include="Scripts\jquery-3.3.1-vsdoc.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -1123,6 +1135,8 @@
     <Folder Include="Views\CustomField\" />
     <Folder Include="Views\LayoutTextboxes\" />
     <Folder Include="Views\Menu\" />
+    <Folder Include="Views\MoveableDivs\" />
+    <Folder Include="Views\OrangeCoast\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
