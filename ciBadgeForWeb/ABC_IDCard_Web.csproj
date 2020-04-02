@@ -264,6 +264,7 @@
     <Compile Include="Models\CustomDateField.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\CustomTextField.cs" />
+    <Compile Include="Models\ElementDivs.cs" />
     <Compile Include="Models\JsonFile.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\MenuItem.cs" />
