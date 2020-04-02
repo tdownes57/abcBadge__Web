@@ -258,13 +258,14 @@
       <DependentUpon>ImageHandler.ashx</DependentUpon>
     </Compile>
     <Compile Include="JSON\MoveableDivImage.cs" />
+    <Compile Include="JSON\__MoveableDivImage.cs" />
     <Compile Include="Models\Background.cs" />
     <Compile Include="Models\CICustomer.cs" />
     <Compile Include="Models\CIRecipient.cs" />
     <Compile Include="Models\CustomDateField.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\CustomTextField.cs" />
-    <Compile Include="Models\ElementDivs.cs" />
+    <Compile Include="Models\MoveableElementDivs.cs" />
     <Compile Include="Models\JsonFile.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\MenuItem.cs" />
@@ -273,6 +274,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelEntity.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\MoveableDivImage.cs" />
     <Compile Include="Models\Personality.cs" />
     <Compile Include="Models\PortraitImage.cs" />
     <Compile Include="Models\PortraitImageModel.cs" />

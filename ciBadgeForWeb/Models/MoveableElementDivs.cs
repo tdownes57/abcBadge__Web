@@ -1,19 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using ciBadgeElements; // Added 4/2/2020 thomas downes 
-using System.Drawing; 
+﻿using ciBadgeElements; // Added 4/2/2020 thomas downes 
+using System.Drawing;
 
 namespace ciBadgeForWeb.Models
 {
     //
     // Added 4/2/2020 thomas downes 
     //
-    public class ElementDivs
+    // The class below has been moved to the folder Models. 
+    //     //   ---  So, see Models/MoveableElementDivs.cs.  -----4/2/2020 thomas d. 
+    //     //   ---  So, see Models/MoveableDivImage.cs.  -----4/2/2020 thomas d. 
+    //
+    //
+    public class MoveableElementDivs
     {
         //
         // Added 4/2/2020 thomas downes 
+        //
+        // The class below has been moved to the folder Models. 
+        //    //   ---  So, see Models/MoveableElementDivs.cs.  -----4/2/2020 thomas d. 
+        //    //   ---  So, see Models/MoveableDivImage.cs.  -----4/2/2020 thomas d. 
+        //    //
+        //     // See also, the CIBadgeElements Project, for JSON- & DIVs- related code. 
+        //     //   ---Actually, I wasn't able to find it, so maybe I didn't do it.
+        //     //   ---  So, see Models/ElementDivs.cs.  -----4/2/2020 thomas d. 
+        //
         //
         public Rectangle Div1 { get; set; }
         public Rectangle Div2 { get; set; }
@@ -28,7 +38,7 @@ namespace ciBadgeForWeb.Models
         public Rectangle Div11 { get; set; }
         public Rectangle Div12 { get; set; }
 
-        public ElementDivs(ClassElementsCache_Deprecated par_cache)
+        public MoveableElementDivs(ClassElementsCache_Deprecated par_cache)
         {
             //
             // Added 4/2/2020 thomas downes 
@@ -40,10 +50,13 @@ namespace ciBadgeForWeb.Models
                     //
                     //Get the coordinates. 
                     //
-                    Rectangle each_rectangle = new Rectangle( each_element.LeftEdge_Pixels,
+                    Rectangle each_rectangle = new Rectangle(each_element.LeftEdge_Pixels,
                         each_element.TopEdge_Pixels,
-                        each_element.Width_Pixels, 
+                        each_element.Width_Pixels,
                         each_element.Height_Pixels);
+
+
+
 
                 }
             }

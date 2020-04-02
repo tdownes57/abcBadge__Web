@@ -4,11 +4,21 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ciBadgeForWeb.Models;  // Added 3/21/2020 Thomas Downes 
+//
+//     // See also, the CIBadgeElements Project, for JSON- & DIVs- related code. 
+//     //   ---Actually, I wasn't able to find it, so maybe I didn't do it.
+//     //   ---  So, see Models/ElementDivs.cs.  -----4/2/2020 thomas d. 
+//
 
 namespace ciBadgeForWeb.Controllers
 {
     public class JsonFileController : Controller
     {
+        //
+        //     // See also, the CIBadgeElements Project, for JSON- & DIVs- related code. 
+        //     //   ---Actually, I wasn't able to find it, so maybe I didn't do it.
+        //     //   ---  So, see Models/ElementDivs.cs.  -----4/2/2020 thomas d. 
+        //
         //Added 3/21/2020 Thomas Downes
         public static JsonFile JsonFile_MoveableDivs = new JsonFile();
 
