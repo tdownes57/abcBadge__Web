@@ -41,6 +41,21 @@ namespace ciBadgeForWeb.Controllers
         }
 
 
+        // GET: JsonFile
+        public ActionResult LayoutOfElements()
+        {
+            //
+            // Added 4/02/2020 Thomas Downes  
+            //
+            var objectJsonFile = JsonFileController.JsonFile_MoveableDivs;
+            var objectJSON = new JsonFile();
+
+
+            return View(objectJsonFile);
+
+        }
+
+
         //// GET: JsonFile
         //public ActionResult Index()
         //{

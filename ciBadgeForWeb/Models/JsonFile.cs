@@ -11,10 +11,15 @@ namespace ciBadgeForWeb.Models
     //
     // Added 3/20/2020 thomas downes  
     //
+    //        // See also, the CIBadgeElements Project, for JSON- & DIVS- related code. 
+    //
     public class JsonFile
     {
         //
         // Added 3/20/2020 thomas downes  
+        //
+        //     // See also, the CIBadgeElements Project, for JSON- & DIVs- related code. 
+        //
         //
         [Key]
         public int JsonFileID { get; set; }
