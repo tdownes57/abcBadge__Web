@@ -8,14 +8,23 @@ using ciBadgeElements;  // Added 3/20/2020 thomas downes
 
 namespace ciBadgeForWeb.JSON
 {
-    //    //
-    // The class below has been moved to the folder Models. 
-    //    //   ---  So, see Models/MoveableElementDivs.cs.  -----4/2/2020 thomas d. 
-    //    //   ---  So, see Models/MoveableDivImage.cs.  -----4/2/2020 thomas d. 
+    //    
+    // The class below has been moved to the folder Models (from the folder JSON). 
+    //
+    //    ---  So, see Models/MoveableElementDivs.cs.  -----4/2/2020 thomas d. 
+    //    ---  So, see Models/MoveableDivImage.cs.  -----4/2/2020 thomas d. 
+    //
     //
     //  Example of JSON for moveable divs/Divs:  
     //
-    //  {"EL4_top":"352px","EL4_left":"532px","EL3_top":"352px","EL3_left":"314px","EL6_top":"351px","EL6_left":"91px","EL5_top":"496px","EL5_left":"87px","EL2_top":"499px","EL2_left":"313px","EL1_top":"499px","EL1_left":"535px","EL9_top":"400px","EL9_left":"88px","EL8_top":"448px","EL8_left":"87px","EL10_top":"403px","EL10_left":"314px","EL11_top":"451px","EL11_left":"314px","EL12_top":"404px","EL12_left":"533px","EL7_top":"454px","EL7_left":"535px"}
+    //  Left:
+    //      {"EL1_Left":"974px","EL2_Left":"1057px","EL3_Left":"343px","EL4_Left":"133px","EL5_Left":"1079px","EL6_Left":"894px","EL7_Left":"294px","EL8_Left":"396px","EL9_Left":"552px","EL10_Left":"819px","EL11_Left":"435px","EL12_Left":"771px"} 
+    //  Top:
+    //      {"EL1_Top":"120px","EL2_Top":"225px","EL3_Top":"523px","EL4_Top":"343px","EL5_Top":"392px","EL6_Top":"455px","EL7_Top":"128px","EL8_Top":"425px","EL9_Top":"133px","EL10_Top":"395px","EL11_Top":"299px","EL12_Top":"317px"} 
+    //  Width: 
+    //      {"EL4_Width":505,"EL3_Width":"150","EL6_Width":"200","EL5_Width":"200","EL2_Width":"150","EL1_Width":"150","EL9_Width":"200","EL8_Width":"200","EL10_Width":"200","EL11_Width":"200","EL12_Width":"200","EL7_Width":"200"}      
+    //  Height:  
+    //    {"EL4_Height":35,"EL3_Height":"35","EL6_Height":"35","EL5_Height":"35","EL2_Height":"35","EL1_Height":"35","EL9_Height":"35","EL8_Height":"35","EL10_Height":"35","EL11_Height":"35","EL12_Height":"35","EL7_Height":"35"}   
     //
     public class MoveableDivImage
     {
@@ -26,31 +35,59 @@ namespace ciBadgeForWeb.JSON
         //
         // Here below are the Div/Divs Element coordinates.  
         //
-        public string EL1_Left { get; set; }
-        public string EL2_Left { get; set; }
-        public string EL3_Left { get; set; }
-        public string EL4_Left { get; set; }
-        public string EL5_Left { get; set; }
-        public string EL6_Left { get; set; }
-        public string EL7_Left { get; set; }
-        public string EL8_Left { get; set; }
-        public string EL9_Left { get; set; }
-        public string EL10_Left { get; set; }
-        public string EL11_Left { get; set; }
-        public string EL12_Left { get; set; }
+        //public string EL1_Left { get; set; }
+        //public string EL2_Left { get; set; }
+        //public string EL3_Left { get; set; }
+        //public string EL4_Left { get; set; }
+        //public string EL5_Left { get; set; }
+        //public string EL6_Left { get; set; }
+        //public string EL7_Left { get; set; }
+        //public string EL8_Left { get; set; }
+        //public string EL9_Left { get; set; }
+        //public string EL10_Left { get; set; }
+        //public string EL11_Left { get; set; }
+        //public string EL12_Left { get; set; }
 
-        public string EL1_Top { get; set; }
-        public string EL2_Top { get; set; }
-        public string EL3_Top { get; set; }
-        public string EL4_Top { get; set; }
-        public string EL5_Top { get; set; }
-        public string EL6_Top { get; set; }
-        public string EL7_Top { get; set; }
-        public string EL8_Top { get; set; }
-        public string EL9_Top { get; set; }
-        public string EL10_Top { get; set; }
-        public string EL11_Top { get; set; }
-        public string EL12_Top { get; set; }
+        //public string EL1_Top { get; set; }
+        //public string EL2_Top { get; set; }
+        //public string EL3_Top { get; set; }
+        //public string EL4_Top { get; set; }
+        //public string EL5_Top { get; set; }
+        //public string EL6_Top { get; set; }
+        //public string EL7_Top { get; set; }
+        //public string EL8_Top { get; set; }
+        //public string EL9_Top { get; set; }
+        //public string EL10_Top { get; set; }
+        //public string EL11_Top { get; set; }
+        //public string EL12_Top { get; set; }
+
+        //public int EL1_Width { get; set; }
+        //public int EL2_Width { get; set; }
+        //public int EL3_Width { get; set; }
+        //public int EL4_Width { get; set; }
+        //public int EL5_Width { get; set; }
+        //public int EL6_Width { get; set; }
+        //public int EL7_Width { get; set; }
+        //public int EL8_Width { get; set; }
+        //public int EL9_Width { get; set; }
+        //public int EL10_Width { get; set; }
+        //public int EL11_Width { get; set; }
+        //public int EL12_Width { get; set; }
+
+        
+        //public int EL1_Height { get; set; }
+        //public int EL2_Height { get; set; }
+        //public int EL3_Height { get; set; }
+        //public int EL4_Height { get; set; }
+        //public int EL5_Height { get; set; }
+        //public int EL6_Height { get; set; }
+        //public int EL7_Height { get; set; }
+        //public int EL8_Height { get; set; }
+        //public int EL9_Height { get; set; }
+        //public int EL10_Height { get; set; }
+        //public int EL11_Height { get; set; }
+        //public int EL12_Height { get; set; }
+
 
         //private ClassElementField _Element1 = null;
         //private ClassElementField _Element2 = null;
@@ -67,6 +104,11 @@ namespace ciBadgeForWeb.JSON
 
         // Initializ the array. ---3/20/2020 thomas downes 
         private ClassElementField[] mod_arrayElements = new ClassElementField[12];
+
+        private Newtonsoft.Json.JsonConverter mod_converter_Left;
+        private Newtonsoft.Json.JsonConverter mod_converter_Top;
+        private Newtonsoft.Json.JsonConverter mod_converter_Width;
+        private Newtonsoft.Json.JsonConverter mod_converter_Height;
 
         //
         // Initialize. ---3/20/2020 thomas downes 
@@ -174,26 +216,41 @@ namespace ciBadgeForWeb.JSON
 
         }
 
-        public string JSON_Left()
+        public string GetJSON_Left()
         {
+            //
+            // Added 4/3/2020 thomas downes
+            //
+            //Newtonsoft.Json.JsonConverter new_converter; 
+
+            mod_converter_Left = JsonConvert.SerializeObject();
 
 
         }
 
-        public string JSON_Top()
+        public string GetJSON_Top()
         {
+            //
+            // Added 4/3/2020 thomas downes
+            //
 
 
         }
 
-        public string JSON_Width()
+        public string GetJSON_Width()
         {
+            //
+            // Added 4/3/2020 thomas downes
+            //
 
 
         }
 
-        public string JSON_Height()
+        public string GetJSON_Height()
         {
+            //
+            // Added 4/3/2020 thomas downes
+            //
 
 
         }

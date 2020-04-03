@@ -275,6 +275,10 @@
       <DependentUpon>ModelEntity.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\MoveableDivImage.cs" />
+    <Compile Include="Models\Moveable_Height.cs" />
+    <Compile Include="Models\Moveable_Left.cs" />
+    <Compile Include="Models\Moveable_Top.cs" />
+    <Compile Include="Models\Moveable_Width.cs" />
     <Compile Include="Models\Personality.cs" />
     <Compile Include="Models\PortraitImage.cs" />
     <Compile Include="Models\PortraitImageModel.cs" />

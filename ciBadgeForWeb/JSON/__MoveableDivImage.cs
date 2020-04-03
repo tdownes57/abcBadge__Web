@@ -6,9 +6,13 @@ using System.Web;
 using Newtonsoft.Json;   // Added 3/20/2020 thomas downes
 using ciBadgeElements;  // Added 3/20/2020 thomas downes  
 
+//
+//
 // The class below has been moved to the folder Models. 
 //    //   ---  So, see Models/MoveableElementDivs.cs.  -----4/2/2020 thomas d. 
 //    //   ---  So, see Models/MoveableDivImage.cs.  -----4/2/2020 thomas d. 
+//
+//
 
 namespace ciBadgeForWeb.JSON
 {
@@ -17,6 +21,12 @@ namespace ciBadgeForWeb.JSON
     //    ----4/2/2020 thomas downes  
     //    //   ---  So, see Models/MoveableElementDivs.cs.  -----4/2/2020 thomas d. 
     //    //   ---  So, see Models/MoveableDivImage.cs.  -----4/2/2020 thomas d. 
+    //
+    //
+    //
+    //
+    //
+    //
     //
     //
     //  Example of JSON for moveable divs/Divs:  
