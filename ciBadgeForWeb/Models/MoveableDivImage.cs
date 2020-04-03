@@ -174,5 +174,29 @@ namespace ciBadgeForWeb.JSON
 
         }
 
+        public string JSON_Left()
+        {
+
+
+        }
+
+        public string JSON_Top()
+        {
+
+
+        }
+
+        public string JSON_Width()
+        {
+
+
+        }
+
+        public string JSON_Height()
+        {
+
+
+        }
+
     }
 }
