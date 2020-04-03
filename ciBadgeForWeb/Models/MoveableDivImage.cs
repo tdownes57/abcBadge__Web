@@ -6,7 +6,7 @@ using System.Web;
 using Newtonsoft.Json;   // Added 3/20/2020 thomas downes
 using ciBadgeElements;  // Added 3/20/2020 thomas downes  
 
-namespace ciBadgeForWeb.JSON
+namespace ciBadgeForWeb.Models
 {
     //    
     // The class below has been moved to the folder Models (from the folder JSON). 
@@ -103,12 +103,18 @@ namespace ciBadgeForWeb.JSON
         //private ClassElementField _Element13 = null;
 
         // Initializ the array. ---3/20/2020 thomas downes 
+        //----4/3/2020 td---
         private ClassElementField[] mod_arrayElements = new ClassElementField[12];
 
         private Newtonsoft.Json.JsonConverter mod_converter_Left;
         private Newtonsoft.Json.JsonConverter mod_converter_Top;
         private Newtonsoft.Json.JsonConverter mod_converter_Width;
         private Newtonsoft.Json.JsonConverter mod_converter_Height;
+
+        public Moveable_Left MoveLeft;
+        public Moveable_Top MoveTop;
+        public Moveable_Width MoveWidth;
+        public Moveable_Height MoveHeight;
 
         //
         // Initialize. ---3/20/2020 thomas downes 
@@ -129,31 +135,31 @@ namespace ciBadgeForWeb.JSON
                 }
             }
 
-            this.EL1_Left = (mod_arrayElements[1].LeftEdge_Pixels.ToString() + "px");
-            this.EL2_Left = (mod_arrayElements[2].LeftEdge_Pixels.ToString() + "px");
-            this.EL3_Left = (mod_arrayElements[3].LeftEdge_Pixels.ToString() + "px");
-            this.EL4_Left = (mod_arrayElements[4].LeftEdge_Pixels.ToString() + "px");
-            this.EL5_Left = (mod_arrayElements[5].LeftEdge_Pixels.ToString() + "px");
-            this.EL6_Left = (mod_arrayElements[6].LeftEdge_Pixels.ToString() + "px");
-            this.EL7_Left = (mod_arrayElements[7].LeftEdge_Pixels.ToString() + "px");
-            this.EL8_Left = (mod_arrayElements[8].LeftEdge_Pixels.ToString() + "px");
-            this.EL9_Left = (mod_arrayElements[9].LeftEdge_Pixels.ToString() + "px");
-            this.EL10_Left = (mod_arrayElements[10].LeftEdge_Pixels.ToString() + "px");
-            this.EL11_Left = (mod_arrayElements[11].LeftEdge_Pixels.ToString() + "px");
-            this.EL12_Left = (mod_arrayElements[12].LeftEdge_Pixels.ToString() + "px");
+            //this.EL1_Left = (mod_arrayElements[1].LeftEdge_Pixels.ToString() + "px");
+            //this.EL2_Left = (mod_arrayElements[2].LeftEdge_Pixels.ToString() + "px");
+            //this.EL3_Left = (mod_arrayElements[3].LeftEdge_Pixels.ToString() + "px");
+            //this.EL4_Left = (mod_arrayElements[4].LeftEdge_Pixels.ToString() + "px");
+            //this.EL5_Left = (mod_arrayElements[5].LeftEdge_Pixels.ToString() + "px");
+            //this.EL6_Left = (mod_arrayElements[6].LeftEdge_Pixels.ToString() + "px");
+            //this.EL7_Left = (mod_arrayElements[7].LeftEdge_Pixels.ToString() + "px");
+            //this.EL8_Left = (mod_arrayElements[8].LeftEdge_Pixels.ToString() + "px");
+            //this.EL9_Left = (mod_arrayElements[9].LeftEdge_Pixels.ToString() + "px");
+            //this.EL10_Left = (mod_arrayElements[10].LeftEdge_Pixels.ToString() + "px");
+            //this.EL11_Left = (mod_arrayElements[11].LeftEdge_Pixels.ToString() + "px");
+            //this.EL12_Left = (mod_arrayElements[12].LeftEdge_Pixels.ToString() + "px");
 
-            this.EL1_Top = (mod_arrayElements[1].TopEdge_Pixels.ToString() + "px");
-            this.EL2_Top = (mod_arrayElements[2].TopEdge_Pixels.ToString() + "px");
-            this.EL3_Top = (mod_arrayElements[3].TopEdge_Pixels.ToString() + "px");
-            this.EL4_Top = (mod_arrayElements[4].TopEdge_Pixels.ToString() + "px");
-            this.EL5_Top = (mod_arrayElements[5].TopEdge_Pixels.ToString() + "px");
-            this.EL6_Top = (mod_arrayElements[6].TopEdge_Pixels.ToString() + "px");
-            this.EL7_Top = (mod_arrayElements[7].TopEdge_Pixels.ToString() + "px");
-            this.EL8_Top = (mod_arrayElements[8].TopEdge_Pixels.ToString() + "px");
-            this.EL9_Top = (mod_arrayElements[9].TopEdge_Pixels.ToString() + "px");
-            this.EL10_Top = (mod_arrayElements[10].TopEdge_Pixels.ToString() + "px");
-            this.EL11_Top = (mod_arrayElements[11].TopEdge_Pixels.ToString() + "px");
-            this.EL12_Top = (mod_arrayElements[12].TopEdge_Pixels.ToString() + "px");
+            //this.EL1_Top = (mod_arrayElements[1].TopEdge_Pixels.ToString() + "px");
+            //this.EL2_Top = (mod_arrayElements[2].TopEdge_Pixels.ToString() + "px");
+            //this.EL3_Top = (mod_arrayElements[3].TopEdge_Pixels.ToString() + "px");
+            //this.EL4_Top = (mod_arrayElements[4].TopEdge_Pixels.ToString() + "px");
+            //this.EL5_Top = (mod_arrayElements[5].TopEdge_Pixels.ToString() + "px");
+            //this.EL6_Top = (mod_arrayElements[6].TopEdge_Pixels.ToString() + "px");
+            //this.EL7_Top = (mod_arrayElements[7].TopEdge_Pixels.ToString() + "px");
+            //this.EL8_Top = (mod_arrayElements[8].TopEdge_Pixels.ToString() + "px");
+            //this.EL9_Top = (mod_arrayElements[9].TopEdge_Pixels.ToString() + "px");
+            //this.EL10_Top = (mod_arrayElements[10].TopEdge_Pixels.ToString() + "px");
+            //this.EL11_Top = (mod_arrayElements[11].TopEdge_Pixels.ToString() + "px");
+            //this.EL12_Top = (mod_arrayElements[12].TopEdge_Pixels.ToString() + "px");
 
         }
 
@@ -162,57 +168,70 @@ namespace ciBadgeForWeb.JSON
             //
             // Added 3/20/2020 thomas downes  
             //
-            this.EL1_Left = (par_moveable.EL1_Left);
-            this.EL2_Left = (par_moveable.EL2_Left);
-            this.EL3_Left = (par_moveable.EL3_Left);
-            this.EL4_Left = (par_moveable.EL4_Left);
-            this.EL5_Left = (par_moveable.EL5_Left);
-            this.EL6_Left = (par_moveable.EL6_Left);
-            this.EL7_Left = (par_moveable.EL7_Left);
-            this.EL8_Left = (par_moveable.EL8_Left);
-            this.EL9_Left = (par_moveable.EL9_Left);
-            this.EL10_Left = (par_moveable.EL10_Left);
-            this.EL11_Left = (par_moveable.EL11_Left);
-            this.EL12_Left = (par_moveable.EL12_Left);
+            //---this.EL1_Left = (par_moveable.EL1_Left);
+            //---this.EL2_Left = (par_moveable.EL2_Left);
+            //---this.EL3_Left = (par_moveable.EL3_Left);
+            //---this.EL4_Left = (par_moveable.EL4_Left);
+            //---this.EL5_Left = (par_moveable.EL5_Left);
+            //---this.EL6_Left = (par_moveable.EL6_Left);
+            //---this.EL7_Left = (par_moveable.EL7_Left);
+            //---this.EL8_Left = (par_moveable.EL8_Left);
+            //---this.EL9_Left = (par_moveable.EL9_Left);
+            //---this.EL10_Left = (par_moveable.EL10_Left);
+            //---this.EL11_Left = (par_moveable.EL11_Left);
+            //---this.EL12_Left = (par_moveable.EL12_Left);
 
-            this.EL1_Top = (par_moveable.EL1_Top);
-            this.EL2_Top = (par_moveable.EL2_Top);
-            this.EL3_Top = (par_moveable.EL3_Top);
-            this.EL4_Top = (par_moveable.EL4_Top);
-            this.EL5_Top = (par_moveable.EL5_Top);
-            this.EL6_Top = (par_moveable.EL6_Top);
-            this.EL7_Top = (par_moveable.EL7_Top);
-            this.EL8_Top = (par_moveable.EL8_Top);
-            this.EL9_Top = (par_moveable.EL9_Top);
-            this.EL10_Top = (par_moveable.EL10_Top);
-            this.EL11_Top = (par_moveable.EL11_Top);
-            this.EL12_Top = (par_moveable.EL12_Top);
+            this.MoveLeft.EL1_Left = (par_moveable.MoveLeft.EL1_Left);
+            this.MoveLeft.EL2_Left = (par_moveable.MoveLeft.EL2_Left);
+            this.MoveLeft.EL3_Left = (par_moveable.MoveLeft.EL3_Left);
+            this.MoveLeft.EL4_Left = (par_moveable.MoveLeft.EL4_Left);
+            this.MoveLeft.EL5_Left = (par_moveable.MoveLeft.EL5_Left);
+            this.MoveLeft.EL6_Left = (par_moveable.MoveLeft.EL6_Left);
+            this.MoveLeft.EL7_Left = (par_moveable.MoveLeft.EL7_Left);
+            this.MoveLeft.EL8_Left = (par_moveable.MoveLeft.EL8_Left);
+            this.MoveLeft.EL9_Left = (par_moveable.MoveLeft.EL9_Left);
+            this.MoveLeft.EL10_Left = (par_moveable.MoveLeft.EL10_Left);
+            this.MoveLeft.EL11_Left = (par_moveable.MoveLeft.EL11_Left);
+            this.MoveLeft.EL12_Left = (par_moveable.MoveLeft.EL12_Left);
 
-            mod_arrayElements[1].LeftEdge_Pixels = int.Parse(this.EL1_Left.Replace("px", "")); 
-            mod_arrayElements[2].LeftEdge_Pixels = int.Parse(this.EL2_Left.Replace("px", ""));
-            mod_arrayElements[3].LeftEdge_Pixels = int.Parse(this.EL3_Left.Replace("px", ""));
-            mod_arrayElements[4].LeftEdge_Pixels = int.Parse(this.EL4_Left.Replace("px", ""));
-            mod_arrayElements[5].LeftEdge_Pixels = int.Parse(this.EL5_Left.Replace("px", ""));
-            mod_arrayElements[6].LeftEdge_Pixels = int.Parse(this.EL6_Left.Replace("px", ""));
-            mod_arrayElements[7].LeftEdge_Pixels = int.Parse(this.EL7_Left.Replace("px", ""));
-            mod_arrayElements[8].LeftEdge_Pixels = int.Parse(this.EL8_Left.Replace("px", ""));
-            mod_arrayElements[9].LeftEdge_Pixels = int.Parse(this.EL9_Left.Replace("px", ""));
-            mod_arrayElements[10].LeftEdge_Pixels = int.Parse(this.EL10_Left.Replace("px", ""));
-            mod_arrayElements[11].LeftEdge_Pixels = int.Parse(this.EL11_Left.Replace("px", ""));
-            mod_arrayElements[12].LeftEdge_Pixels = int.Parse(this.EL12_Left.Replace("px", ""));
+            this.MoveTop.EL1_Top = (par_moveable.MoveTop.EL1_Top);
+            this.MoveTop.EL2_Top = (par_moveable.MoveTop.EL2_Top);
+            this.MoveTop.EL3_Top = (par_moveable.MoveTop.EL3_Top);
+            this.MoveTop.EL4_Top = (par_moveable.MoveTop.EL4_Top);
+            this.MoveTop.EL5_Top = (par_moveable.MoveTop.EL5_Top);
+            this.MoveTop.EL6_Top = (par_moveable.MoveTop.EL6_Top);
+            this.MoveTop.EL7_Top = (par_moveable.MoveTop.EL7_Top);
+            this.MoveTop.EL8_Top = (par_moveable.MoveTop.EL8_Top);
+            this.MoveTop.EL9_Top = (par_moveable.MoveTop.EL9_Top);
+            this.MoveTop.EL10_Top = (par_moveable.MoveTop.EL10_Top);
+            this.MoveTop.EL11_Top = (par_moveable.MoveTop.EL11_Top);
+            this.MoveTop.EL12_Top = (par_moveable.MoveTop.EL12_Top);
 
-            mod_arrayElements[1].TopEdge_Pixels = int.Parse(this.EL1_Top.Replace("px", ""));
-            mod_arrayElements[2].TopEdge_Pixels = int.Parse(this.EL2_Top.Replace("px", ""));
-            mod_arrayElements[3].TopEdge_Pixels = int.Parse(this.EL3_Top.Replace("px", ""));
-            mod_arrayElements[4].TopEdge_Pixels = int.Parse(this.EL4_Top.Replace("px", ""));
-            mod_arrayElements[5].TopEdge_Pixels = int.Parse(this.EL5_Top.Replace("px", ""));
-            mod_arrayElements[6].TopEdge_Pixels = int.Parse(this.EL6_Top.Replace("px", ""));
-            mod_arrayElements[7].TopEdge_Pixels = int.Parse(this.EL7_Top.Replace("px", ""));
-            mod_arrayElements[8].TopEdge_Pixels = int.Parse(this.EL8_Top.Replace("px", ""));
-            mod_arrayElements[9].TopEdge_Pixels = int.Parse(this.EL9_Top.Replace("px", ""));
-            mod_arrayElements[10].TopEdge_Pixels = int.Parse(this.EL10_Top.Replace("px", ""));
-            mod_arrayElements[11].TopEdge_Pixels = int.Parse(this.EL11_Top.Replace("px", ""));
-            mod_arrayElements[12].TopEdge_Pixels = int.Parse(this.EL12_Top.Replace("px", ""));
+            //---mod_arrayElements[1].LeftEdge_Pixels = int.Parse(this.EL1_Left.Replace("px", "")); 
+            //---mod_arrayElements[2].LeftEdge_Pixels = int.Parse(this.EL2_Left.Replace("px", ""));
+            //---mod_arrayElements[3].LeftEdge_Pixels = int.Parse(this.EL3_Left.Replace("px", ""));
+            //---mod_arrayElements[4].LeftEdge_Pixels = int.Parse(this.EL4_Left.Replace("px", ""));
+            //---mod_arrayElements[5].LeftEdge_Pixels = int.Parse(this.EL5_Left.Replace("px", ""));
+            //---mod_arrayElements[6].LeftEdge_Pixels = int.Parse(this.EL6_Left.Replace("px", ""));
+            //---mod_arrayElements[7].LeftEdge_Pixels = int.Parse(this.EL7_Left.Replace("px", ""));
+            //---mod_arrayElements[8].LeftEdge_Pixels = int.Parse(this.EL8_Left.Replace("px", ""));
+            //---mod_arrayElements[9].LeftEdge_Pixels = int.Parse(this.EL9_Left.Replace("px", ""));
+            //---mod_arrayElements[10].LeftEdge_Pixels = int.Parse(this.EL10_Left.Replace("px", ""));
+            //---mod_arrayElements[11].LeftEdge_Pixels = int.Parse(this.EL11_Left.Replace("px", ""));
+            //---mod_arrayElements[12].LeftEdge_Pixels = int.Parse(this.EL12_Left.Replace("px", ""));
+
+            //---mod_arrayElements[1].TopEdge_Pixels = int.Parse(this.EL1_Top.Replace("px", ""));
+            //---mod_arrayElements[2].TopEdge_Pixels = int.Parse(this.EL2_Top.Replace("px", ""));
+            //---mod_arrayElements[3].TopEdge_Pixels = int.Parse(this.EL3_Top.Replace("px", ""));
+            //---mod_arrayElements[4].TopEdge_Pixels = int.Parse(this.EL4_Top.Replace("px", ""));
+            //---mod_arrayElements[5].TopEdge_Pixels = int.Parse(this.EL5_Top.Replace("px", ""));
+            //---mod_arrayElements[6].TopEdge_Pixels = int.Parse(this.EL6_Top.Replace("px", ""));
+            //---mod_arrayElements[7].TopEdge_Pixels = int.Parse(this.EL7_Top.Replace("px", ""));
+            //---mod_arrayElements[8].TopEdge_Pixels = int.Parse(this.EL8_Top.Replace("px", ""));
+            //---mod_arrayElements[9].TopEdge_Pixels = int.Parse(this.EL9_Top.Replace("px", ""));
+            //---mod_arrayElements[10].TopEdge_Pixels = int.Parse(this.EL10_Top.Replace("px", ""));
+            //---mod_arrayElements[11].TopEdge_Pixels = int.Parse(this.EL11_Top.Replace("px", ""));
+            //---mod_arrayElements[12].TopEdge_Pixels = int.Parse(this.EL12_Top.Replace("px", ""));
 
         }
 
@@ -223,8 +242,17 @@ namespace ciBadgeForWeb.JSON
             //
             //Newtonsoft.Json.JsonConverter new_converter; 
 
-            mod_converter_Left = JsonConvert.SerializeObject();
+            //mod_converter_Left = JsonConvert.SerializeObject();
 
+            JsonSerializerSettings json_options = new JsonSerializerSettings();
+
+            json_options.Formatting = Formatting.Indented;
+            mod_converter_Left = JsonConvert.SerializeObject(this.MoveLeft, this.MoveLeft.GetType(), json_options );
+
+
+
+
+            return ""; 
 
         }
 
