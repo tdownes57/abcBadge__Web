@@ -259,3 +259,7 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/ciBadgeForWeb/Views/JsonFile/DP1 w Omkar p1.bmp
+/ciBadgeForWeb/Views/JsonFile/DP w Omkar p2.bmp
+/ciBadgeForWeb/Views/JsonFile/DP w Omkar p2.BAK.bmp
+/ciBadgeForWeb/Views/JsonFile/DP w Omkar p1.bmp

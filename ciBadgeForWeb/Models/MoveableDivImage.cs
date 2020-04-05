@@ -247,12 +247,14 @@ namespace ciBadgeForWeb.Models
             JsonSerializerSettings json_options = new JsonSerializerSettings();
 
             json_options.Formatting = Formatting.Indented;
-            mod_converter_Left = JsonConvert.SerializeObject(this.MoveLeft, this.MoveLeft.GetType(), json_options );
 
+            // 4-5-2020 TD//mod_converter_Left = JsonConvert.SerializeObject(this.MoveLeft, this.MoveLeft.GetType(), json_options );
+            // 4-5-2020 TD//mod_converter_Left = new JsonConverter<Moveable_Left>()
+            // 4-5-2020 TD//string strOutput = JsonConvert.SerializeObject(this.MoveLeft, this.MoveLeft.GetType(), json_options);
 
+            string strOutput = JsonConvert.SerializeObject(this.MoveLeft);
 
-
-            return ""; 
+            return strOutput; 
 
         }
 
@@ -261,7 +263,12 @@ namespace ciBadgeForWeb.Models
             //
             // Added 4/3/2020 thomas downes
             //
+            JsonSerializerSettings json_options = new JsonSerializerSettings();
+            json_options.Formatting = Formatting.Indented;
 
+            string strOutput = JsonConvert.SerializeObject(this.MoveTop, this.MoveTop.GetType(), json_options);
+
+            return strOutput;
 
         }
 
@@ -270,7 +277,10 @@ namespace ciBadgeForWeb.Models
             //
             // Added 4/3/2020 thomas downes
             //
-
+            JsonSerializerSettings json_options = new JsonSerializerSettings();
+            json_options.Formatting = Formatting.Indented;
+            string strOutput = JsonConvert.SerializeObject(this.MoveWidth, this.MoveWidth.GetType(), json_options);
+            return strOutput;
 
         }
 
@@ -279,9 +289,76 @@ namespace ciBadgeForWeb.Models
             //
             // Added 4/3/2020 thomas downes
             //
+            JsonSerializerSettings json_options = new JsonSerializerSettings();
+            json_options.Formatting = Formatting.Indented;
+            string strOutput = JsonConvert.SerializeObject(this.MoveHeight, this.MoveHeight.GetType(), json_options);
+            return strOutput;
+
+        }
+
+        public void SavePositions_Left(string par_JSON_Left)
+        {
+            //
+            // Added 4/5/2020 thomas downes 
+            //
+            //---Movie m = JsonConvert.DeserializeObject<Movie>(json);
+
+            this.MoveLeft = JsonConvert.DeserializeObject<Moveable_Left>(par_JSON_Left);
+
+        }
+
+        public void SavePositions_Top(string par_JSON_Top)
+        {
+            //
+            // Added 4/5/2020 thomas downes 
+            //
+            //---Movie m = JsonConvert.DeserializeObject<Movie>(json);
+
+            this.MoveTop = JsonConvert.DeserializeObject<Moveable_Top>(par_JSON_Top);
+
+        }
+
+        public void SavePositions_Width(string par_JSON_Width)
+        {
+            //
+            // Added 4/5/2020 thomas downes 
+            //
+            //---Movie m = JsonConvert.DeserializeObject<Movie>(json);
+            this.MoveWidth = JsonConvert.DeserializeObject<Moveable_Width>(par_JSON_Width);
+
+        }
+
+        public void SavePositions_Height(string par_JSON_Height)
+        {
+            //
+            // Added 4/5/2020 thomas downes 
+            //
+            //---Movie m = JsonConvert.DeserializeObject<Movie>(json);
+            this.MoveHeight = JsonConvert.DeserializeObject<Moveable_Height>(par_JSON_Height);
+
+        }
+
+        public void SavePositions_All(string par_JSON_Left, string par_JSON_Top, 
+            string par_JSON_Height, string par_JSON_Width)
+        {
+            //
+            //Added 4/5/2020 thomas downes  
+            //
+            SavePositions_Left(par_JSON_Left);   // , par_JSON_Top,
+            //    par_JSON_width, par_JSON_Height);
+            SavePositions_Top(par_JSON_Top);   // , par_JSON_Top,
+            SavePositions_Width(par_JSON_Width);   // , par_JSON_Top,
+            SavePositions_Height(par_JSON_Height);   // , par_JSON_Top,
+
+
 
 
         }
+
+
+
+
+
 
     }
 }
