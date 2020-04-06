@@ -111,6 +111,14 @@ namespace ciBadgeForWeb.Models
         private Newtonsoft.Json.JsonConverter mod_converter_Width;
         private Newtonsoft.Json.JsonConverter mod_converter_Height;
 
+        //
+        // Added 4/6/2020 Thomas DOWNES
+        //
+        public string JSON_Left { get; set; }
+        public string JSON_Top { get; set; }
+        public string JSON_Width { get; set; }
+        public string JSON_Height { get; set; }
+
         public Moveable_Left MoveLeft;
         public Moveable_Top MoveTop;
         public Moveable_Width MoveWidth;

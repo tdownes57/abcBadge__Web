@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ciBadgeForWeb.Models;  // Added 3/21/2020 Thomas Downes 
+using ciBadgeElements;  // Added 4/6/2020 Thomas Downes   
 //
 //     // See also, the CIBadgeElements Project, for JSON- & DIVs- related code. 
 //     //   ---Actually, I wasn't able to find it, so maybe I didn't do it.
@@ -49,6 +50,21 @@ namespace ciBadgeForWeb.Controllers
             return View(objectJsonFile);
 
         }
+
+        // GET: JsonFile
+        public ActionResult MoveableDivImage()
+        {
+            //
+            // Added 4/06/2020 Thomas Downes  
+            //
+            var objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
+
+            return View(objectMoveableDivs);
+
+        }
+
+
+
 
 
         // GET: JsonFile
