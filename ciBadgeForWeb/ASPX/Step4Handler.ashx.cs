@@ -119,6 +119,9 @@ namespace ciBadgeForWeb
                            ciLayoutPrintLib.LayoutExample.RefreshChoiceOfBackground_ByIndex(intBackgroundImageIndex);
                     }
 
+                    //Added 4/9/2020 td
+                    LayoutExample.PathToFolderWithBacks = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(true);
+
                     image_ex = objLayoutEx.GenerateImage_BackgroundOnly(bHorizontalLarge, 
                         bHorizontalSmall, ref boolNoImages);
 
