@@ -34,7 +34,10 @@ namespace ciBadgeForWeb.Controllers
 
             //return View(objectJsonFile);
             //return IndexGroupWidth();
-            return View(objectJsonFile);
+            
+            //---   4/13/2020  ---//return View(objectJsonFile);
+            var objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
+            return View(objectMoveableDivs);
 
         }
 

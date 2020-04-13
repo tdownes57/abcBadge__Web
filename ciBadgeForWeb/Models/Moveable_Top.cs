@@ -34,5 +34,43 @@ namespace ciBadgeForWeb.Models
         public string EL10_Top { get; set; }
         public string EL11_Top { get; set; }
         public string EL12_Top { get; set; }
+
+
+        public string this[int i]
+        {
+            get
+            {
+                if (i == 1) return this.EL1_Top;
+                if (i == 2) return this.EL2_Top;
+                if (i == 3) return this.EL3_Top;
+                if (i == 4) return this.EL4_Top;
+                if (i == 5) return this.EL5_Top;
+                if (i == 6) return this.EL6_Top;
+                if (i == 7) return this.EL7_Top;
+                if (i == 8) return this.EL8_Top;
+                if (i == 9) return this.EL9_Top;
+                if (i == 10) return this.EL10_Top;
+                if (i == 11) return this.EL11_Top;
+                if (i == 12) return this.EL12_Top;
+                else return "sdfg";
+            }
+            set
+            {
+                if (i == 1) this.EL1_Top = value;
+                if (i == 2) this.EL2_Top = value;
+                if (i == 3) this.EL3_Top = value;
+                if (i == 4) this.EL4_Top = value;
+                if (i == 5) this.EL5_Top = value;
+                if (i == 6) this.EL6_Top = value;
+                if (i == 7) this.EL7_Top = value;
+                if (i == 8) this.EL8_Top = value;
+                if (i == 9) this.EL9_Top = value;
+                if (i == 10) this.EL10_Top = value;
+                if (i == 11) this.EL11_Top = value;
+                if (i == 12) this.EL12_Top = value;
+                //else ;
+            }
+        }
+
     }
 }

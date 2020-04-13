@@ -119,6 +119,9 @@ namespace ciBadgeForWeb.Models
         public string JSON_Width { get; set; }
         public string JSON_Height { get; set; }
 
+        //Number of displayable elements.
+        public int ElementCount = 12; //Default value is 12. ----4/13/2020 thomas downes
+
         public Moveable_Left MoveLeft;
         public Moveable_Top MoveTop;
         public Moveable_Width MoveWidth;
@@ -134,14 +137,58 @@ namespace ciBadgeForWeb.Models
             //
             int indexElement = 0;
 
+            //Added 4/13/2020 thomas downes
+            this.MoveTop = new Moveable_Top();
+            this.MoveLeft = new Moveable_Left();
+            this.MoveWidth = new Moveable_Width();
+            this.MoveHeight = new Moveable_Height();
+
+            //Added 4/13/2020 thomas downes
+            this.ElementCount = 0;  // Reinitialize. ---4/13/2020 thomas downes
+
             foreach (ClassElementField each_element in par_cache.ListOfElementFields)
             {
                 if (each_element.IsDisplayedOnBadge_Visibly())
                 {
                     indexElement++;
+                    
                     mod_arrayElements[indexElement] = each_element;
+
+                    //Added 4/13/2020 thomas downes
+                    this.MoveLeft[indexElement] = each_element.LeftEdge_Pixels.ToString() + "px";
+                    this.MoveTop[indexElement] = each_element.TopEdge_Pixels.ToString() + "px";
+
+                    //Integers are fine, strings not needed. 
+                    this.MoveWidth[indexElement] = each_element.Width_Pixels;   //.ToString() + "px";
+                    this.MoveHeight[indexElement] = each_element.Height_Pixels;  //.ToString() + "px";
+
+                    //Added 4/13/2020 thomas downes
+                    this.ElementCount += 1;  // Increment. ---4/13/2020 thomas downes
+
                 }
             }
+
+            //
+            // Fill in the unused values, if needed. 
+            //
+            if (this.ElementCount < 12)
+            {
+                for (int intEachUnused = +1 + this.ElementCount; intEachUnused <= 12; intEachUnused++)
+                {
+                    // Added 4/13/2020 thomas downes  
+                    this.MoveLeft[indexElement] = "[not applicable]";
+                    this.MoveTop[indexElement] = "[not applicable]";
+                    this.MoveHeight[indexElement] = 0;
+                    this.MoveWidth[indexElement] = 0;
+                }
+            }
+
+
+            //Added 4/13/2020 thomas downes
+            this.JSON_Left = this.GetJSON_Left();
+            this.JSON_Top = this.GetJSON_Top();
+            this.JSON_Height = this.GetJSON_Height();
+            this.JSON_Width = this.GetJSON_Width();
 
             //this.EL1_Left = (mod_arrayElements[1].LeftEdge_Pixels.ToString() + "px");
             //this.EL2_Left = (mod_arrayElements[2].LeftEdge_Pixels.ToString() + "px");

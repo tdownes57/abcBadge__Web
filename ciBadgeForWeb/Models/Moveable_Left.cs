@@ -33,5 +33,42 @@ namespace ciBadgeForWeb.Models
         public string EL10_Left { get; set; }  //E.g. "200px"
         public string EL11_Left { get; set; }  //E.g. "200px"
         public string EL12_Left { get; set; }  //E.g. "200px"
+
+        public string this[int i]
+        {
+            get
+            {
+                if (i == 1) return this.EL1_Left;
+                if (i == 2) return this.EL2_Left;
+                if (i == 3) return this.EL3_Left;
+                if (i == 4) return this.EL4_Left;
+                if (i == 5) return this.EL5_Left;
+                if (i == 6) return this.EL6_Left;
+                if (i == 7) return this.EL7_Left;
+                if (i == 8) return this.EL8_Left;
+                if (i == 9) return this.EL9_Left;
+                if (i == 10) return this.EL10_Left;
+                if (i == 11) return this.EL11_Left;
+                if (i == 12) return this.EL12_Left;
+                else return "sdfg";
+            }
+            set
+            {
+                if (i == 1) this.EL1_Left = value;
+                if (i == 2) this.EL2_Left = value;
+                if (i == 3) this.EL3_Left = value;
+                if (i == 4) this.EL4_Left = value;
+                if (i == 5) this.EL5_Left = value;
+                if (i == 6) this.EL6_Left = value;
+                if (i == 7) this.EL7_Left = value;
+                if (i == 8) this.EL8_Left = value;
+                if (i == 9) this.EL9_Left = value;
+                if (i == 10) this.EL10_Left = value;
+                if (i == 11) this.EL11_Left = value;
+                if (i == 12) this.EL12_Left = value;
+                //else ;
+            }
+        }
+
     }
 }
