@@ -176,8 +176,8 @@ namespace ciBadgeForWeb.Models
                 for (int intEachUnused = +1 + this.ElementCount; intEachUnused <= 12; intEachUnused++)
                 {
                     // Added 4/13/2020 thomas downes  
-                    this.MoveLeft[indexElement] = "[not applicable]";
-                    this.MoveTop[indexElement] = "[not applicable]";
+                    this.MoveLeft[indexElement] = "0px";  //  "[not applicable]";
+                    this.MoveTop[indexElement] = "0px";  // "[not applicable]";
                     this.MoveHeight[indexElement] = 0;
                     this.MoveWidth[indexElement] = 0;
                 }
@@ -301,11 +301,26 @@ namespace ciBadgeForWeb.Models
 
             JsonSerializerSettings json_options = new JsonSerializerSettings();
 
-            json_options.Formatting = Formatting.Indented;
+            //json_options.Formatting = Formatting.Indented;
+            json_options.Formatting = Formatting.None;
 
             // 4-5-2020 TD//mod_converter_Left = JsonConvert.SerializeObject(this.MoveLeft, this.MoveLeft.GetType(), json_options );
             // 4-5-2020 TD//mod_converter_Left = new JsonConverter<Moveable_Left>()
             // 4-5-2020 TD//string strOutput = JsonConvert.SerializeObject(this.MoveLeft, this.MoveLeft.GetType(), json_options);
+
+            //ADded 4/16/2020 tdownes
+            if (this.MoveLeft.EL1_Left == null) this.MoveLeft.EL1_Left = "0px";
+            if (this.MoveLeft.EL2_Left == null) this.MoveLeft.EL2_Left = "0px";
+            if (this.MoveLeft.EL3_Left == null) this.MoveLeft.EL3_Left = "0px";
+            if (this.MoveLeft.EL4_Left == null) this.MoveLeft.EL4_Left = "0px";
+            if (this.MoveLeft.EL5_Left == null) this.MoveLeft.EL5_Left = "0px";
+            if (this.MoveLeft.EL6_Left == null) this.MoveLeft.EL6_Left = "0px";
+            if (this.MoveLeft.EL7_Left == null) this.MoveLeft.EL7_Left = "0px";
+            if (this.MoveLeft.EL8_Left == null) this.MoveLeft.EL8_Left = "0px";
+            if (this.MoveLeft.EL9_Left == null) this.MoveLeft.EL9_Left = "0px";
+            if (this.MoveLeft.EL10_Left == null) this.MoveLeft.EL10_Left = "0px";
+            if (this.MoveLeft.EL11_Left == null) this.MoveLeft.EL11_Left = "0px";
+            if (this.MoveLeft.EL12_Left == null) this.MoveLeft.EL12_Left = "0px";
 
             string strOutput = JsonConvert.SerializeObject(this.MoveLeft);
 
@@ -319,7 +334,22 @@ namespace ciBadgeForWeb.Models
             // Added 4/3/2020 thomas downes
             //
             JsonSerializerSettings json_options = new JsonSerializerSettings();
-            json_options.Formatting = Formatting.Indented;
+            //json_options.Formatting = Formatting.Indented;
+            json_options.Formatting = Formatting.None;
+
+            //ADded 4/16/2020 tdownes
+            if (this.MoveTop.EL1_Top == null) this.MoveTop.EL1_Top = "0px";
+            if (this.MoveTop.EL2_Top == null) this.MoveTop.EL2_Top = "0px";
+            if (this.MoveTop.EL3_Top == null) this.MoveTop.EL3_Top = "0px";
+            if (this.MoveTop.EL4_Top == null) this.MoveTop.EL4_Top = "0px";
+            if (this.MoveTop.EL5_Top == null) this.MoveTop.EL5_Top = "0px";
+            if (this.MoveTop.EL6_Top == null) this.MoveTop.EL6_Top = "0px";
+            if (this.MoveTop.EL7_Top == null) this.MoveTop.EL7_Top = "0px";
+            if (this.MoveTop.EL8_Top == null) this.MoveTop.EL8_Top = "0px";
+            if (this.MoveTop.EL9_Top == null) this.MoveTop.EL9_Top = "0px";
+            if (this.MoveTop.EL10_Top == null) this.MoveTop.EL10_Top = "0px";
+            if (this.MoveTop.EL11_Top == null) this.MoveTop.EL11_Top = "0px";
+            if (this.MoveTop.EL12_Top == null) this.MoveTop.EL12_Top = "0px";
 
             string strOutput = JsonConvert.SerializeObject(this.MoveTop, this.MoveTop.GetType(), json_options);
 
@@ -333,7 +363,9 @@ namespace ciBadgeForWeb.Models
             // Added 4/3/2020 thomas downes
             //
             JsonSerializerSettings json_options = new JsonSerializerSettings();
-            json_options.Formatting = Formatting.Indented;
+            //json_options.Formatting = Formatting.Indented;
+            json_options.Formatting = Formatting.None;
+
             string strOutput = JsonConvert.SerializeObject(this.MoveWidth, this.MoveWidth.GetType(), json_options);
             return strOutput;
 
@@ -345,7 +377,8 @@ namespace ciBadgeForWeb.Models
             // Added 4/3/2020 thomas downes
             //
             JsonSerializerSettings json_options = new JsonSerializerSettings();
-            json_options.Formatting = Formatting.Indented;
+            //---json_options.Formatting = Formatting.Indented;
+            json_options.Formatting = Formatting.None;
             string strOutput = JsonConvert.SerializeObject(this.MoveHeight, this.MoveHeight.GetType(), json_options);
             return strOutput;
 
