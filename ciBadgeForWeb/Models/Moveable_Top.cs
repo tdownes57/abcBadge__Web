@@ -40,6 +40,10 @@ namespace ciBadgeForWeb.Models
         {
             get
             {
+                //Added 4/17/2020 td
+                //-----if (i == 0) return "We are not using index 0.";
+                if (i == 0) throw new ArgumentException("We are not using index 0.");
+
                 if (i == 1) return this.EL1_Top;
                 if (i == 2) return this.EL2_Top;
                 if (i == 3) return this.EL3_Top;
@@ -56,6 +60,9 @@ namespace ciBadgeForWeb.Models
             }
             set
             {
+                //Added 4/17/2020 td
+                //---if (i == 0) return "We are not using index 0.";
+
                 if (i == 1) this.EL1_Top = value;
                 if (i == 2) this.EL2_Top = value;
                 if (i == 3) this.EL3_Top = value;

@@ -36,8 +36,15 @@ namespace ciBadgeForWeb.Models
 
         public string this[int i]
         {
+            //
+            //  4/3/2020 thomas downes 
+            //
             get
             {
+                //Added 4/17/2020 td
+                //----if (i == 0) return "We are not using index 0.";
+                if (i == 0) throw new ArgumentException("We are not using index 0.");
+
                 if (i == 1) return this.EL1_Left;
                 if (i == 2) return this.EL2_Left;
                 if (i == 3) return this.EL3_Left;
@@ -50,10 +57,12 @@ namespace ciBadgeForWeb.Models
                 if (i == 10) return this.EL10_Left;
                 if (i == 11) return this.EL11_Left;
                 if (i == 12) return this.EL12_Left;
-                else return "sdfg";
+                //----else return "sdfg";
+                else throw new ArgumentException("The index exceeds 12, which is our current limit.");
             }
             set
             {
+                //-----if (i == 0) return "We are not using index 0.";
                 if (i == 1) this.EL1_Left = value;
                 if (i == 2) this.EL2_Left = value;
                 if (i == 3) this.EL3_Left = value;

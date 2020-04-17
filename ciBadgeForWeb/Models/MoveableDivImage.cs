@@ -74,7 +74,7 @@ namespace ciBadgeForWeb.Models
         //public int EL11_Width { get; set; }
         //public int EL12_Width { get; set; }
 
-        
+
         //public int EL1_Height { get; set; }
         //public int EL2_Height { get; set; }
         //public int EL3_Height { get; set; }
@@ -88,7 +88,6 @@ namespace ciBadgeForWeb.Models
         //public int EL11_Height { get; set; }
         //public int EL12_Height { get; set; }
 
-
         //private ClassElementField _Element1 = null;
         //private ClassElementField _Element2 = null;
         //private ClassElementField _Element3 = null;
@@ -100,7 +99,6 @@ namespace ciBadgeForWeb.Models
         //private ClassElementField _Element10 = null;
         //private ClassElementField _Element11 = null;
         //private ClassElementField _Element12 = null;
-        //private ClassElementField _Element13 = null;
 
         // Initializ the array. ---3/20/2020 thomas downes 
         //----4/3/2020 td---
@@ -151,7 +149,7 @@ namespace ciBadgeForWeb.Models
                 if (each_element.IsDisplayedOnBadge_Visibly())
                 {
                     indexElement++;
-                    
+
                     mod_arrayElements[indexElement] = each_element;
 
                     //Added 4/13/2020 thomas downes
@@ -324,7 +322,7 @@ namespace ciBadgeForWeb.Models
 
             string strOutput = JsonConvert.SerializeObject(this.MoveLeft);
 
-            return strOutput; 
+            return strOutput;
 
         }
 
@@ -426,7 +424,7 @@ namespace ciBadgeForWeb.Models
 
         }
 
-        public void SavePositions_All(string par_JSON_Left, string par_JSON_Top, 
+        public void SavePositions_All(string par_JSON_Left, string par_JSON_Top,
             string par_JSON_Height, string par_JSON_Width)
         {
             //
@@ -438,13 +436,39 @@ namespace ciBadgeForWeb.Models
             SavePositions_Width(par_JSON_Width);   // , par_JSON_Top,
             SavePositions_Height(par_JSON_Height);   // , par_JSON_Top,
 
-
-
-
         }
 
+        public void SavePositions_ToCache()
+        {
+            //
+            // Added 4/16/2020 thomas downes
+            //
+            //-----for (int i_indexElement = 0; i_indexElement < 12; i_indexElement++)
+            for (int i_indexElement = 1; i_indexElement <= 12; i_indexElement++)
+            {
+                //
+                // We will check to see if the Element has a positive (non-zero) width,
+                //   in order to know that the Element is a viable & needed Element
+                //   which is important to the Badge. ----4/16/2020 td
+                //
+                if (this.MoveWidth[i_indexElement] > 0)
+                {
+                    try
+                    {
+                        mod_arrayElements[i_indexElement].LeftEdge_Pixels = int.Parse(this.MoveLeft[i_indexElement].Replace("px", ""));
+                        mod_arrayElements[i_indexElement].TopEdge_Pixels = int.Parse(this.MoveTop[i_indexElement].Replace("px", ""));
+                        mod_arrayElements[i_indexElement].Width_Pixels = this.MoveWidth[i_indexElement];
+                        mod_arrayElements[i_indexElement].Height_Pixels = this.MoveHeight[i_indexElement];
+                    }
+                    catch (Exception ex)
+                    {
+                        //Added 4/16/2020 td 
+                        throw;
+                    }
+                }
+            }
 
-
+        }
 
 
 

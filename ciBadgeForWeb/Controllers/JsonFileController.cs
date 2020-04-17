@@ -22,6 +22,8 @@ namespace ciBadgeForWeb.Controllers
         //
         //Added 3/21/2020 Thomas Downes
         public static JsonFile JsonFile_MoveableDivs = new JsonFile();
+        //Added 4/16/2020 Thomas Downes
+        public static MoveableDivImage MoveableDivs;  //--- = new JsonFile();
 
         // GET: JsonFile
         public ActionResult Index()
@@ -34,9 +36,18 @@ namespace ciBadgeForWeb.Controllers
 
             //return View(objectJsonFile);
             //return IndexGroupWidth();
-            
+
             //---   4/13/2020  ---//return View(objectJsonFile);
-            var objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
+            //---   4/16/2020  ---//var objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
+
+            //Added 4/16/2020 thomas downes 
+            MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs; 
+            if (JsonFileController.MoveableDivs == null)
+            {
+                objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
+                JsonFileController.MoveableDivs = objectMoveableDivs;
+            }
+
             return View(objectMoveableDivs);
 
         }
@@ -133,28 +144,70 @@ namespace ciBadgeForWeb.Controllers
 
                 //Added 3/21/2020 thomas downes
                 // 3/24/2020 td//JsonFile_MoveableDivs.JsonTextContent = collection["JsonTextContent"];
-                JsonFile_MoveableDivs.JsonTextContent_Left = collection["JsonTextContent_Left"];
-                JsonFile_MoveableDivs.JsonTextContent_Top = collection["JsonTextContent_Top"];
 
-                //Added 3/30/2020 thomas downes
-                JsonFile_MoveableDivs.JsonTextContent_Width = collection["JsonTextContent_Width"];
-                JsonFile_MoveableDivs.JsonTextContent_Height = collection["JsonTextContent_Height"];
+                //Added 4/16/2020 thomas downes 
+                const bool c_boolJsonFileObject = false;
+                const bool c_boolMoveableDivs = true;
 
-                //
-                // Important.... save to disk. 
-                //
-                //----**---Not sure if this is needed right now.---- 3/22/2020 thomas d. 
-                //----*--
-                JsonFile_MoveableDivs.Save();  
+                if (c_boolMoveableDivs)
+                {
+                    //
+                    //Added 4/16/2020 thomas downes
+                    //
+                    var objectMoveableDivs = JsonFileController.MoveableDivs;
+                    objectMoveableDivs.SavePositions_Left(collection["JsonTextContent_Left"]);
+                    objectMoveableDivs.SavePositions_Top(collection["JsonTextContent_Top"]);
+                    objectMoveableDivs.SavePositions_Width(collection["JsonTextContent_Width"]);
+                    objectMoveableDivs.SavePositions_Height(collection["JsonTextContent_Height"]);
 
-                //return RedirectToAction("Index");
-                var objectJsonFile = JsonFileController.JsonFile_MoveableDivs;
-                return View(objectJsonFile);
+                    //Added 4/16/2020 td
+                    //
+                    //  Transfer the positions to the element-fields stored in the cache. 
+                    //
+                    objectMoveableDivs.SavePositions_ToCache();
+
+                    //Added 4/16/2020 td
+                    //  We need to refresh the four(4) JSON-string properties. 
+                    objectMoveableDivs.JSON_Left = collection["JsonTextContent_Left"];
+                    objectMoveableDivs.JSON_Top = collection["JsonTextContent_Top"];
+                    objectMoveableDivs.JSON_Width = collection["JsonTextContent_Width"];
+                    objectMoveableDivs.JSON_Height = collection["JsonTextContent_Height"];
+
+                    return View(objectMoveableDivs);
+
+                }
+
+                if (c_boolJsonFileObject)
+                {
+                    //Conditioned 4/16/2020 thomas downes 
+                    JsonFile_MoveableDivs.JsonTextContent_Left = collection["JsonTextContent_Left"];
+                    JsonFile_MoveableDivs.JsonTextContent_Top = collection["JsonTextContent_Top"];
+
+                    //Added 3/30/2020 thomas downes
+                    JsonFile_MoveableDivs.JsonTextContent_Width = collection["JsonTextContent_Width"];
+                    JsonFile_MoveableDivs.JsonTextContent_Height = collection["JsonTextContent_Height"];
+
+                    //
+                    // Important.... save to disk. 
+                    //
+                    //----**---Not sure if this is needed right now.---- 3/22/2020 thomas d. 
+                    //----*--
+                    JsonFile_MoveableDivs.Save();
+
+                    //return RedirectToAction("Index");
+                    var objectJsonFile = JsonFileController.JsonFile_MoveableDivs;
+                    return View(objectJsonFile);
+                }
 
             }
-            catch
+            catch (Exception ex_Index)
             {
-                return View();
+                //return View();
+                var objContent = new ContentResult(); // "Unfortunately, the save failed." + ex_Index.Message);
+
+                //Added 4/16/2020 thomas downes 
+                objContent.Content = ("Unfortunately, the save failed." + ex_Index.Message);
+                return objContent; 
             }
         }
 
