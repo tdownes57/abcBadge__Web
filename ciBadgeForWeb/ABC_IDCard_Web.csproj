@@ -1189,6 +1189,11 @@
     <Content Include="Views\JsonFile\Index_Awesome.cshtml" />
     <Content Include="Views\JsonFile\MoveableDivImage.cshtml" />
     <Content Include="Views\JsonFile\Index.cshtml" />
+    <Content Include="Views\JsonFile\TableEdit.cshtml" />
+    <Content Include="Views\JsonFile\TableDivsTop.cshtml" />
+    <Content Include="Views\JsonFile\TableDivsLeft.cshtml" />
+    <Content Include="Views\JsonFile\TableDivsWidth.cshtml" />
+    <Content Include="Views\JsonFile\TableDivsHeight.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />

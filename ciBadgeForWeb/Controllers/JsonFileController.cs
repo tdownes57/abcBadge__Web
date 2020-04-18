@@ -52,6 +52,67 @@ namespace ciBadgeForWeb.Controllers
 
         }
 
+       // GET:
+        public ActionResult TableEdit()
+        {
+            //
+            // Added 4/18/2020 Thomas Downes  
+            //
+            MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
+            if (JsonFileController.MoveableDivs == null)
+            {
+                objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
+                JsonFileController.MoveableDivs = objectMoveableDivs;
+            }
+
+            return View(objectMoveableDivs);
+
+        }
+
+        // GET:
+        public ActionResult TableDivsLeft()
+        {
+            //
+            // Added 4/18/2020 Thomas Downes  
+            //
+            Moveable_Left objectMoveLeft = JsonFileController.MoveableDivs.MoveLeft;
+            return View(objectMoveLeft);
+
+        }
+
+        // GET:
+        public ActionResult TableDivsTop()
+        {
+            //
+            // Added 4/18/2020  Thomas Downes  
+            //
+            Moveable_Top objectMoveTop = JsonFileController.MoveableDivs.MoveTop;
+            return View(objectMoveTop);
+
+        }
+
+        // GET:
+        public ActionResult TableDivsWidth()
+        {
+            //
+            // Added 4/18/2020  Thomas Downes  
+            //
+            Moveable_Width objectMoveWidth = JsonFileController.MoveableDivs.MoveWidth;
+            return View(objectMoveWidth);
+        }
+
+        // GET:
+        public ActionResult TableDivsHeight()
+        {
+            //
+            // Added 4/18/2020  Thomas Downes  
+            //
+            Moveable_Height objectMoveHeight = JsonFileController.MoveableDivs.MoveHeight;
+            return View(objectMoveHeight);
+        }
+
+
+
         // GET: JsonFile
         public ActionResult IndexGroupWidth()
         {
@@ -211,6 +272,77 @@ namespace ciBadgeForWeb.Controllers
             }
         }
 
-     
+
+        // POST: JsonFile/TableEdit/5
+        [HttpPost]
+        public ActionResult TableEdit(FormCollection collection) // Added 4/18/2020 thomas downes
+        {
+            try
+            {
+                // Save the JSON string with the Left & Top positions of the elements. 
+
+                const bool c_boolJsonFileObject = false;
+                const bool c_boolMoveableDivs = true;
+
+                if (c_boolMoveableDivs)
+                {
+                    //
+                    //Added 4/16/2020 thomas downes
+                    //
+                    var objectMoveableDivs = JsonFileController.MoveableDivs;
+                    objectMoveableDivs.SavePositions_Left(collection["JsonTextContent_Left"]);
+                    objectMoveableDivs.SavePositions_Top(collection["JsonTextContent_Top"]);
+                    objectMoveableDivs.SavePositions_Width(collection["JsonTextContent_Width"]);
+                    objectMoveableDivs.SavePositions_Height(collection["JsonTextContent_Height"]);
+
+                    //Added 4/16/2020 td
+                    //
+                    //  Transfer the positions to the element-fields stored in the cache. 
+                    //
+                    objectMoveableDivs.SavePositions_ToCache();
+
+                    //Added 4/16/2020 td
+                    //  We need to refresh the four(4) JSON-string properties. 
+                    objectMoveableDivs.JSON_Left = collection["JsonTextContent_Left"];
+                    objectMoveableDivs.JSON_Top = collection["JsonTextContent_Top"];
+                    objectMoveableDivs.JSON_Width = collection["JsonTextContent_Width"];
+                    objectMoveableDivs.JSON_Height = collection["JsonTextContent_Height"];
+
+                    return View(objectMoveableDivs);
+
+                }
+
+                if (c_boolJsonFileObject)
+                {
+                    //Conditioned 4/16/2020 thomas downes 
+                    JsonFile_MoveableDivs.JsonTextContent_Left = collection["JsonTextContent_Left"];
+                    JsonFile_MoveableDivs.JsonTextContent_Top = collection["JsonTextContent_Top"];
+
+                    //Added 3/30/2020 thomas downes
+                    JsonFile_MoveableDivs.JsonTextContent_Width = collection["JsonTextContent_Width"];
+                    JsonFile_MoveableDivs.JsonTextContent_Height = collection["JsonTextContent_Height"];
+
+                    JsonFile_MoveableDivs.Save();
+
+                    var objectJsonFile = JsonFileController.JsonFile_MoveableDivs;
+                    return View(objectJsonFile);
+                }
+
+            }
+            catch (Exception ex_Index)
+            {
+                //return View();
+                var objContent = new ContentResult(); // "Unfortunately, the save failed." + ex_Index.Message);
+
+                //Added 4/16/2020 thomas downes 
+                objContent.Content = ("Unfortunately, the save failed." + ex_Index.Message);
+                return objContent;
+            }
+        }
+
+
+
+
+
     }
 }
