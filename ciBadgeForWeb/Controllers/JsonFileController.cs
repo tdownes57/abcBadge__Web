@@ -75,6 +75,13 @@ namespace ciBadgeForWeb.Controllers
             //
             // Added 4/18/2020 Thomas Downes  
             //
+            //Added 4/16/2020 thomas downes 
+            MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
+            if (JsonFileController.MoveableDivs == null)
+            {
+                objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
+                JsonFileController.MoveableDivs = objectMoveableDivs;
+            }
             Moveable_Left objectMoveLeft = JsonFileController.MoveableDivs.MoveLeft;
             return View(objectMoveLeft);
 
@@ -86,6 +93,13 @@ namespace ciBadgeForWeb.Controllers
             //
             // Added 4/18/2020  Thomas Downes  
             //
+            //Added 4/16/2020 thomas downes 
+            MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
+            if (JsonFileController.MoveableDivs == null)
+            {
+                objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
+                JsonFileController.MoveableDivs = objectMoveableDivs;
+            }
             Moveable_Top objectMoveTop = JsonFileController.MoveableDivs.MoveTop;
             return View(objectMoveTop);
 
@@ -97,6 +111,13 @@ namespace ciBadgeForWeb.Controllers
             //
             // Added 4/18/2020  Thomas Downes  
             //
+            //Added 4/16/2020 thomas downes 
+            MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
+            if (JsonFileController.MoveableDivs == null)
+            {
+                objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
+                JsonFileController.MoveableDivs = objectMoveableDivs;
+            }
             Moveable_Width objectMoveWidth = JsonFileController.MoveableDivs.MoveWidth;
             return View(objectMoveWidth);
         }
@@ -107,6 +128,13 @@ namespace ciBadgeForWeb.Controllers
             //
             // Added 4/18/2020  Thomas Downes  
             //
+            //Added 4/16/2020 thomas downes 
+            MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
+            if (JsonFileController.MoveableDivs == null)
+            {
+                objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
+                JsonFileController.MoveableDivs = objectMoveableDivs;
+            }
             Moveable_Height objectMoveHeight = JsonFileController.MoveableDivs.MoveHeight;
             return View(objectMoveHeight);
         }
@@ -290,6 +318,7 @@ namespace ciBadgeForWeb.Controllers
                     //Added 4/16/2020 thomas downes
                     //
                     var objectMoveableDivs = JsonFileController.MoveableDivs;
+
                     objectMoveableDivs.SavePositions_Left(collection["JsonTextContent_Left"]);
                     objectMoveableDivs.SavePositions_Top(collection["JsonTextContent_Top"]);
                     objectMoveableDivs.SavePositions_Width(collection["JsonTextContent_Width"]);
@@ -341,8 +370,77 @@ namespace ciBadgeForWeb.Controllers
         }
 
 
+        // POST: JsonFile/TableDivsLeft/5
+        [HttpPost]
+        public ActionResult TableDivsLeft(FormCollection collection) // Added 4/19/2020 thomas downes
+        {
+            //
+            //Added 4/16/2020 thomas downes
+            //
+            var objectMoveableDivs = JsonFileController.MoveableDivs;
 
+            objectMoveableDivs.MoveLeft.EL1_Left =  collection["EL1_Left"];
+            objectMoveableDivs.MoveLeft.EL2_Left =  collection["EL2_Left"];
+            objectMoveableDivs.MoveLeft.EL3_Left =  collection["EL3_Left"];
+            objectMoveableDivs.MoveLeft.EL4_Left =  collection["EL4_Left"];
+            objectMoveableDivs.MoveLeft.EL5_Left =  collection["EL5_Left"];
+            objectMoveableDivs.MoveLeft.EL6_Left =  collection["EL6_Left"];
+            objectMoveableDivs.MoveLeft.EL7_Left =  collection["EL7_Left"];
+            objectMoveableDivs.MoveLeft.EL8_Left =  collection["EL8_Left"];
+            objectMoveableDivs.MoveLeft.EL9_Left =  collection["EL9_Left"];
+            objectMoveableDivs.MoveLeft.EL10_Left = collection["EL10_Left"];
+            objectMoveableDivs.MoveLeft.EL11_Left = collection["EL11_Left"];
+            objectMoveableDivs.MoveLeft.EL12_Left = collection["EL12_Left"];
 
+            //Added 4/16/2020 td
+            //
+            //  Transfer the positions to the element-fields stored in the cache. 
+            //
+            objectMoveableDivs.SavePositions_ToCache();
+
+            //Added 4/16/2020 td
+            //  We need to refresh the four(4) JSON-string properties. 
+            //objectMoveableDivs.JSON_Left = collection["JsonTextContent_Left"];
+
+            return View(objectMoveableDivs.MoveLeft);
+
+        }
+
+        // POST: JsonFile/TableDivsTop/5
+        [HttpPost]
+        public ActionResult TableDivsTop(FormCollection collection) // Added 4/19/2020 thomas downes
+        {
+            //
+            //Added 4/16/2020 thomas downes
+            //
+            var objectMoveableDivs = JsonFileController.MoveableDivs;
+
+            objectMoveableDivs.MoveTop.EL1_Top = collection["EL1_Top"];
+            objectMoveableDivs.MoveTop.EL2_Top = collection["EL2_Top"];
+            objectMoveableDivs.MoveTop.EL3_Top = collection["EL3_Top"];
+            objectMoveableDivs.MoveTop.EL4_Top = collection["EL4_Top"];
+            objectMoveableDivs.MoveTop.EL5_Top = collection["EL5_Top"];
+            objectMoveableDivs.MoveTop.EL6_Top = collection["EL6_Top"];
+            objectMoveableDivs.MoveTop.EL7_Top = collection["EL7_Top"];
+            objectMoveableDivs.MoveTop.EL8_Top = collection["EL8_Top"];
+            objectMoveableDivs.MoveTop.EL9_Top = collection["EL9_Top"];
+            objectMoveableDivs.MoveTop.EL10_Top = collection["EL10_Top"];
+            objectMoveableDivs.MoveTop.EL11_Top = collection["EL11_Top"];
+            objectMoveableDivs.MoveTop.EL12_Top = collection["EL12_Top"];
+
+            //Added 4/16/2020 td
+            //
+            //  Transfer the positions to the element-fields stored in the cache. 
+            //
+            objectMoveableDivs.SavePositions_ToCache();
+
+            //Added 4/16/2020 td
+            //  We need to refresh the four(4) JSON-string properties. 
+            //objectMoveableDivs.JSON_Top = collection["JsonTextContent_Left"];
+
+            return View(objectMoveableDivs.MoveTop);
+
+        }
 
     }
 }
