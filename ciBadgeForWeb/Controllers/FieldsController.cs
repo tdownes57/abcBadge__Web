@@ -63,8 +63,23 @@ namespace ciBadgeForWeb.Controllers
         // GET: Fields/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            //return View();
+            //return View("EditSimple");
+            var fields_list = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
+            var fields_onlyone = fields_list.Where(x => x.FieldIndex == id);
+            return (ViewResult)View("EditSimple", fields_onlyone);
         }
+
+        // GET: Fields/Advanced/5
+        public ActionResult Advanced(int id)
+        {
+            //return View();
+            //return View("EditSimple");
+            var fields_list = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
+            var fields_onlyone = fields_list.Where(x => x.FieldIndex == id);
+            return (ViewResult)View("Advanced", fields_onlyone);
+        }
+
 
         // POST: Fields/Edit/5
         [HttpPost]

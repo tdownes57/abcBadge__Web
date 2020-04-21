@@ -140,6 +140,52 @@ namespace ciBadgeForWeb.Controllers
         }
 
 
+        // GET:
+        public ActionResult TableDivsDisplayed()
+        {
+            //
+            // Added 4/20/2020  Thomas Downes  
+            //
+            MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
+            if (JsonFileController.MoveableDivs == null)
+            {
+                objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
+                JsonFileController.MoveableDivs = objectMoveableDivs;
+            }
+            Moveable_Displayed objectMoveDisplayed = JsonFileController.MoveableDivs.MoveDisplayed;
+            return View(objectMoveDisplayed);
+        }
+
+        // GET:
+        public ActionResult TableDivsHasField()
+        {
+            //
+            // Added 4/20/2020  Thomas Downes  
+            //
+            MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
+            if (JsonFileController.MoveableDivs == null)
+            {
+                objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
+                JsonFileController.MoveableDivs = objectMoveableDivs;
+            }
+            Moveable_HasField objectMoveHasField = JsonFileController.MoveableDivs.MoveHasField;
+            return View(objectMoveHasField);
+        }
+
+        // GET:
+        public ActionResult TableDivsFieldName()
+        {
+            // Added 4/20/2020  Thomas Downes  
+            MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
+            if (JsonFileController.MoveableDivs == null)
+            {
+                objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
+                JsonFileController.MoveableDivs = objectMoveableDivs;
+            }
+            Moveable_FieldNm objectMoveFieldNm = JsonFileController.MoveableDivs.MoveFieldName;
+            return View(objectMoveFieldNm);
+        }
+
 
         // GET: JsonFile
         public ActionResult IndexGroupWidth()

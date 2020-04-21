@@ -275,6 +275,9 @@
       <DependentUpon>ModelEntity.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\MoveableDivImage.cs" />
+    <Compile Include="Models\Moveable_Displayed.cs" />
+    <Compile Include="Models\Moveable_FieldNm.cs" />
+    <Compile Include="Models\Moveable_HasField.cs" />
     <Compile Include="Models\Moveable_Height.cs" />
     <Compile Include="Models\Moveable_Left.cs" />
     <Compile Include="Models\Moveable_Top.cs" />
@@ -980,7 +983,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Views\JsonFile\blue_star3.jpg" />
-    <Content Include="Views\JsonFile\blue_star4.jpg" />
+    <Content Include="Views\JsonFile\blue_star4.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Views\JsonFile\blue_star5.jpg" />
     <Content Include="Views\JsonFile\blue_star6.jpg" />
     <Content Include="Views\JsonFile\blue_star7.jpg" />
@@ -1194,6 +1199,9 @@
     <Content Include="Views\JsonFile\TableDivsLeft.cshtml" />
     <Content Include="Views\JsonFile\TableDivsWidth.cshtml" />
     <Content Include="Views\JsonFile\TableDivsHeight.cshtml" />
+    <Content Include="Views\JsonFile\TableDivsDisplayed.cshtml" />
+    <Content Include="Views\JsonFile\TableDivsHasField.cshtml" />
+    <Content Include="Views\JsonFile\TableDivsFieldName.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />

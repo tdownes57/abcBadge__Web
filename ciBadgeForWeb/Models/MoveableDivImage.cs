@@ -109,6 +109,11 @@ namespace ciBadgeForWeb.Models
         private Newtonsoft.Json.JsonConverter mod_converter_Width;
         private Newtonsoft.Json.JsonConverter mod_converter_Height;
 
+        //Added 4/20/2020 thomas downes
+        private Newtonsoft.Json.JsonConverter mod_converter_HasField;
+        private Newtonsoft.Json.JsonConverter mod_converter_Displayed;
+        private Newtonsoft.Json.JsonConverter mod_converter_FieldNm;
+
         //
         // Added 4/6/2020 Thomas DOWNES
         //
@@ -117,6 +122,11 @@ namespace ciBadgeForWeb.Models
         public string JSON_Width { get; set; }
         public string JSON_Height { get; set; }
 
+        //Added 4/20/2020 thomas downes  
+        public string JSON_HasField { get; set; }
+        public string JSON_Displayed { get; set; }
+        public string JSON_FieldNm { get; set; }
+
         //Number of displayable elements.
         public int ElementCount = 12; //Default value is 12. ----4/13/2020 thomas downes
 
@@ -124,6 +134,11 @@ namespace ciBadgeForWeb.Models
         public Moveable_Top MoveTop;
         public Moveable_Width MoveWidth;
         public Moveable_Height MoveHeight;
+
+        //Added 4/20/2020 Thomas Downes 
+        public Moveable_HasField MoveHasField;
+        public Moveable_Displayed MoveDisplayed;
+        public Moveable_FieldNm MoveFieldName;
 
         //
         // Initialize. ---3/20/2020 thomas downes 
@@ -134,6 +149,8 @@ namespace ciBadgeForWeb.Models
             // Added 3/20/2020 thomas downes 
             //
             int indexElement = 0;
+            bool bElementHasField = false;   //Added 4/20/2020 thomas downees 
+            bool bElementIsVisible = false;  //Added 4/20/2020 thomas downes 
 
             //Added 4/13/2020 thomas downes
             this.MoveTop = new Moveable_Top();
@@ -141,12 +158,22 @@ namespace ciBadgeForWeb.Models
             this.MoveWidth = new Moveable_Width();
             this.MoveHeight = new Moveable_Height();
 
+            //Added 4/20/2020 Thomas Downes
+            this.MoveHasField = new Moveable_HasField();
+            this.MoveDisplayed = new Moveable_Displayed();
+            this.MoveFieldName = new Moveable_FieldNm();
+
             //Added 4/13/2020 thomas downes
             this.ElementCount = 0;  // Reinitialize. ---4/13/2020 thomas downes
 
             foreach (ClassElementField each_element in par_cache.ListOfElementFields)
             {
-                if (each_element.IsDisplayedOnBadge_Visibly())
+                bElementHasField = true;  //Added 4/20/2020 thomas d.  
+                //Added 4/20/2020 thomas d.  
+                bElementIsVisible = each_element.IsDisplayedOnBadge_Visibly(); 
+
+                //---if (each_element.IsDisplayedOnBadge_Visibly())
+                if (bElementIsVisible)
                 {
                     indexElement++;
 
@@ -159,6 +186,11 @@ namespace ciBadgeForWeb.Models
                     //Integers are fine, strings not needed. 
                     this.MoveWidth[indexElement] = each_element.Width_Pixels;   //.ToString() + "px";
                     this.MoveHeight[indexElement] = each_element.Height_Pixels;  //.ToString() + "px";
+
+                    //Added 4/20/2020 thomas downes
+                    this.MoveDisplayed[indexElement] = bElementIsVisible; // each_element.IsDisplayedOnBadge_Visibly();
+                    this.MoveHasField[indexElement] = bElementHasField;  // true;  // each_element.IsDisplayedOnBadge_Visibly();
+                    this.MoveFieldName[indexElement] = each_element.FieldInfo.FieldLabelCaption ;
 
                     //Added 4/13/2020 thomas downes
                     this.ElementCount += 1;  // Increment. ---4/13/2020 thomas downes
@@ -178,6 +210,11 @@ namespace ciBadgeForWeb.Models
                     this.MoveTop[indexElement] = "0px";  // "[not applicable]";
                     this.MoveHeight[indexElement] = 0;
                     this.MoveWidth[indexElement] = 0;
+
+                    // Added 4/20/2020 thomas downes
+                    this.MoveHasField[indexElement] = false;
+                    this.MoveDisplayed[indexElement] = false;
+                    this.MoveFieldName[indexElement] = "";
                 }
             }
 
@@ -187,6 +224,11 @@ namespace ciBadgeForWeb.Models
             this.JSON_Top = this.GetJSON_Top();
             this.JSON_Height = this.GetJSON_Height();
             this.JSON_Width = this.GetJSON_Width();
+
+            //Added 4/20/2020 thomas downes
+            this.JSON_Displayed = this.GetJSON_Displayed();
+            this.JSON_HasField = this.GetJSON_HasField();
+            this.JSON_FieldNm = this.GetJSON_FieldName();
 
             //this.EL1_Left = (mod_arrayElements[1].LeftEdge_Pixels.ToString() + "px");
             //this.EL2_Left = (mod_arrayElements[2].LeftEdge_Pixels.ToString() + "px");
@@ -259,6 +301,76 @@ namespace ciBadgeForWeb.Models
             this.MoveTop.EL10_Top = (par_moveable.MoveTop.EL10_Top);
             this.MoveTop.EL11_Top = (par_moveable.MoveTop.EL11_Top);
             this.MoveTop.EL12_Top = (par_moveable.MoveTop.EL12_Top);
+
+            //Added 4/20/2020 thomas downes
+            this.MoveWidth.EL1_Width = (par_moveable.MoveWidth.EL1_Width);
+            this.MoveWidth.EL2_Width = (par_moveable.MoveWidth.EL2_Width);
+            this.MoveWidth.EL3_Width = (par_moveable.MoveWidth.EL3_Width);
+            this.MoveWidth.EL4_Width = (par_moveable.MoveWidth.EL4_Width);
+            this.MoveWidth.EL5_Width = (par_moveable.MoveWidth.EL5_Width);
+            this.MoveWidth.EL6_Width = (par_moveable.MoveWidth.EL6_Width);
+            this.MoveWidth.EL7_Width = (par_moveable.MoveWidth.EL7_Width);
+            this.MoveWidth.EL8_Width = (par_moveable.MoveWidth.EL8_Width);
+            this.MoveWidth.EL9_Width = (par_moveable.MoveWidth.EL9_Width);
+            this.MoveWidth.EL10_Width = (par_moveable.MoveWidth.EL10_Width);
+            this.MoveWidth.EL11_Width = (par_moveable.MoveWidth.EL11_Width);
+            this.MoveWidth.EL12_Width = (par_moveable.MoveWidth.EL12_Width);
+
+            //Added 4/20/2020 thomas downes
+            this.MoveHeight.EL1_Height = (par_moveable.MoveHeight.EL1_Height);
+            this.MoveHeight.EL2_Height = (par_moveable.MoveHeight.EL2_Height);
+            this.MoveHeight.EL3_Height = (par_moveable.MoveHeight.EL3_Height);
+            this.MoveHeight.EL4_Height = (par_moveable.MoveHeight.EL4_Height);
+            this.MoveHeight.EL5_Height = (par_moveable.MoveHeight.EL5_Height);
+            this.MoveHeight.EL6_Height = (par_moveable.MoveHeight.EL6_Height);
+            this.MoveHeight.EL7_Height = (par_moveable.MoveHeight.EL7_Height);
+            this.MoveHeight.EL8_Height = (par_moveable.MoveHeight.EL8_Height);
+            this.MoveHeight.EL9_Height = (par_moveable.MoveHeight.EL9_Height);
+            this.MoveHeight.EL10_Height = (par_moveable.MoveHeight.EL10_Height);
+            this.MoveHeight.EL11_Height = (par_moveable.MoveHeight.EL11_Height);
+            this.MoveHeight.EL12_Height = (par_moveable.MoveHeight.EL12_Height);
+
+            //Added 4/20/2020 thomas downes
+            this.MoveDisplayed.EL1_Displayed = (par_moveable.MoveDisplayed.EL1_Displayed);
+            this.MoveDisplayed.EL2_Displayed = (par_moveable.MoveDisplayed.EL2_Displayed);
+            this.MoveDisplayed.EL3_Displayed = (par_moveable.MoveDisplayed.EL3_Displayed);
+            this.MoveDisplayed.EL4_Displayed = (par_moveable.MoveDisplayed.EL4_Displayed);
+            this.MoveDisplayed.EL5_Displayed = (par_moveable.MoveDisplayed.EL5_Displayed);
+            this.MoveDisplayed.EL6_Displayed = (par_moveable.MoveDisplayed.EL6_Displayed);
+            this.MoveDisplayed.EL7_Displayed = (par_moveable.MoveDisplayed.EL7_Displayed);
+            this.MoveDisplayed.EL8_Displayed = (par_moveable.MoveDisplayed.EL8_Displayed);
+            this.MoveDisplayed.EL9_Displayed = (par_moveable.MoveDisplayed.EL9_Displayed);
+            this.MoveDisplayed.EL10_Displayed = (par_moveable.MoveDisplayed.EL10_Displayed);
+            this.MoveDisplayed.EL11_Displayed = (par_moveable.MoveDisplayed.EL11_Displayed);
+            this.MoveDisplayed.EL12_Displayed = (par_moveable.MoveDisplayed.EL12_Displayed);
+
+            //Added 4/20/2020 thomas downes
+            this.MoveHasField.EL1_HasField = (par_moveable.MoveHasField.EL1_HasField);
+            this.MoveHasField.EL2_HasField = (par_moveable.MoveHasField.EL2_HasField);
+            this.MoveHasField.EL3_HasField = (par_moveable.MoveHasField.EL3_HasField);
+            this.MoveHasField.EL4_HasField = (par_moveable.MoveHasField.EL4_HasField);
+            this.MoveHasField.EL5_HasField = (par_moveable.MoveHasField.EL5_HasField);
+            this.MoveHasField.EL6_HasField = (par_moveable.MoveHasField.EL6_HasField);
+            this.MoveHasField.EL7_HasField = (par_moveable.MoveHasField.EL7_HasField);
+            this.MoveHasField.EL8_HasField = (par_moveable.MoveHasField.EL8_HasField);
+            this.MoveHasField.EL9_HasField = (par_moveable.MoveHasField.EL9_HasField);
+            this.MoveHasField.EL10_HasField = (par_moveable.MoveHasField.EL10_HasField);
+            this.MoveHasField.EL11_HasField = (par_moveable.MoveHasField.EL11_HasField);
+            this.MoveHasField.EL12_HasField = (par_moveable.MoveHasField.EL12_HasField);
+
+            //Added 4/20/2020 thomas downes
+            this.MoveFieldName.EL1_FieldNm = (par_moveable.MoveFieldName.EL1_FieldNm);
+            this.MoveFieldName.EL2_FieldNm = (par_moveable.MoveFieldName.EL2_FieldNm);
+            this.MoveFieldName.EL3_FieldNm = (par_moveable.MoveFieldName.EL3_FieldNm);
+            this.MoveFieldName.EL4_FieldNm = (par_moveable.MoveFieldName.EL4_FieldNm);
+            this.MoveFieldName.EL5_FieldNm = (par_moveable.MoveFieldName.EL5_FieldNm);
+            this.MoveFieldName.EL6_FieldNm = (par_moveable.MoveFieldName.EL6_FieldNm);
+            this.MoveFieldName.EL7_FieldNm = (par_moveable.MoveFieldName.EL7_FieldNm);
+            this.MoveFieldName.EL8_FieldNm = (par_moveable.MoveFieldName.EL8_FieldNm);
+            this.MoveFieldName.EL9_FieldNm = (par_moveable.MoveFieldName.EL9_FieldNm);
+            this.MoveFieldName.EL10_FieldNm = (par_moveable.MoveFieldName.EL10_FieldNm);
+            this.MoveFieldName.EL11_FieldNm = (par_moveable.MoveFieldName.EL11_FieldNm);
+            this.MoveFieldName.EL12_FieldNm = (par_moveable.MoveFieldName.EL12_FieldNm);
 
             //---mod_arrayElements[1].LeftEdge_Pixels = int.Parse(this.EL1_Left.Replace("px", "")); 
             //---mod_arrayElements[2].LeftEdge_Pixels = int.Parse(this.EL2_Left.Replace("px", ""));
@@ -378,6 +490,43 @@ namespace ciBadgeForWeb.Models
             //---json_options.Formatting = Formatting.Indented;
             json_options.Formatting = Formatting.None;
             string strOutput = JsonConvert.SerializeObject(this.MoveHeight, this.MoveHeight.GetType(), json_options);
+            return strOutput;
+
+        }
+
+        public string GetJSON_Displayed()
+        {
+            //
+            // Added 4/20/2020 thomas downes
+            //
+            JsonSerializerSettings json_options = new JsonSerializerSettings();
+            //json_options.Formatting = Formatting.Indented;
+            json_options.Formatting = Formatting.None;
+            string strOutput = JsonConvert.SerializeObject(this.MoveDisplayed, this.MoveDisplayed.GetType(), json_options);
+            return strOutput;
+
+        }
+
+        public string GetJSON_HasField()
+        {
+            //
+            // Added 4/20/2020 thomas downes
+            //
+            JsonSerializerSettings json_options = new JsonSerializerSettings();
+            //json_options.Formatting = Formatting.Indented;
+            json_options.Formatting = Formatting.None;
+            string strOutput = JsonConvert.SerializeObject(this.MoveHasField, this.MoveHasField.GetType(), json_options);
+            return strOutput;
+
+        }
+
+        public string GetJSON_FieldName()
+        {
+            // Added 4/20/2020 thomas downes
+            JsonSerializerSettings json_options = new JsonSerializerSettings();
+            //json_options.Formatting = Formatting.Indented;
+            json_options.Formatting = Formatting.None;
+            string strOutput = JsonConvert.SerializeObject(this.MoveHasField, this.MoveHasField.GetType(), json_options);
             return strOutput;
 
         }
