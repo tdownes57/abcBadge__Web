@@ -1,12 +1,10 @@
 <?xml version="1.0"?>
 <ClassElementsCache_Deprecated xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Id_GUID>00000000-0000-0000-0000-000000000000</Id_GUID>
-  <PathToXml_Saved>C:\Users\tdown\source\repos\ciLayout\ciLayoutDesignVB\bin\Debug\ciLayoutDesignVB_Saved.xml</PathToXml_Saved>
-
-  
-  
-  
-  
+  <PathToXml_Saved>C:\Users\tdown\source\repos\ciBadgeForWeb - Framework\ciBadgeForWeb\XML\ciLayoutDesignVB_GreenText.xml</PathToXml_Saved>
+  <XmlFile_Path>C:\Users\tdown\source\repos\ciBadgeForWeb - Framework\ciBadgeForWeb\XML\ciLayoutDesignVB_GreenText.xml</XmlFile_Path>
+  <XmlFile_FTitle>ciLayoutDesignVB_GreenText.xml</XmlFile_FTitle>
+  <BackgroundImage_FTitle>BackExample.jpg</BackgroundImage_FTitle>
   <ElementQRCode>
     <BadgeLayout>
       <Width_Pixels>681</Width_Pixels>
@@ -46,6 +44,10 @@
     <OrientationInDegrees>0</OrientationInDegrees>
     <Visible>false</Visible>
   </ElementSignature>
+  <BadgeLayout>
+    <Width_Pixels>675</Width_Pixels>
+    <Height_Pixels>425</Height_Pixels>
+  </BadgeLayout>
   <ListOfFields_Standard>
     <ClassFieldStandard>
       <IsStandard>false</IsStandard>
@@ -61,13 +63,15 @@
       <IsLocked>true</IsLocked>
       <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
       <IsDisplayedForEdits>true</IsDisplayedForEdits>
+      <DefaultValue />
       <ExampleValue>12345</ExampleValue>
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
+      <DataEntryText>Undetermined value, for Field #0</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>0</CurrentRecipValue>
-      <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+      <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+      <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
     </ClassFieldStandard>
     <ClassFieldStandard>
       <IsStandard>false</IsStandard>
@@ -83,12 +87,15 @@
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
       <IsDisplayedForEdits>true</IsDisplayedForEdits>
+      <DefaultValue />
+      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
+      <DataEntryText>Undetermined value, for Field #0</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>0</CurrentRecipValue>
-      <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+      <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+      <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
     </ClassFieldStandard>
     <ClassFieldStandard>
       <IsStandard>false</IsStandard>
@@ -104,12 +111,15 @@
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
       <IsDisplayedForEdits>true</IsDisplayedForEdits>
+      <DefaultValue />
+      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
+      <DataEntryText>Undetermined value, for Field #0</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>0</CurrentRecipValue>
-      <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+      <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+      <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
     </ClassFieldStandard>
     <ClassFieldStandard>
       <IsStandard>false</IsStandard>
@@ -125,12 +135,15 @@
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
       <IsDisplayedForEdits>false</IsDisplayedForEdits>
+      <DefaultValue />
+      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
+      <DataEntryText>Undetermined value, for Field #0</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>0</CurrentRecipValue>
-      <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+      <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+      <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
     </ClassFieldStandard>
     <ClassFieldStandard>
       <IsStandard>false</IsStandard>
@@ -146,13 +159,15 @@
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
       <IsDisplayedForEdits>false</IsDisplayedForEdits>
+      <DefaultValue />
       <ExampleValue>1234567890</ExampleValue>
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
+      <DataEntryText>Undetermined value, for Field #0</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>0</CurrentRecipValue>
-      <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+      <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+      <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
     </ClassFieldStandard>
     <ClassFieldStandard>
       <IsStandard>false</IsStandard>
@@ -168,12 +183,15 @@
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
       <IsDisplayedForEdits>false</IsDisplayedForEdits>
+      <DefaultValue />
+      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
+      <DataEntryText>Undetermined value, for Field #0</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>0</CurrentRecipValue>
-      <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+      <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+      <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
     </ClassFieldStandard>
     <ClassFieldStandard>
       <IsStandard>false</IsStandard>
@@ -189,12 +207,15 @@
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
       <IsDisplayedForEdits>false</IsDisplayedForEdits>
+      <DefaultValue />
+      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
+      <DataEntryText>Undetermined value, for Field #0</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>0</CurrentRecipValue>
-      <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+      <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+      <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
     </ClassFieldStandard>
     <ClassFieldStandard>
       <IsStandard>false</IsStandard>
@@ -210,12 +231,15 @@
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
       <IsDisplayedForEdits>false</IsDisplayedForEdits>
+      <DefaultValue />
+      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
+      <DataEntryText>Undetermined value, for Field #0</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>0</CurrentRecipValue>
-      <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+      <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+      <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
     </ClassFieldStandard>
     <ClassFieldStandard>
       <IsStandard>false</IsStandard>
@@ -231,12 +255,15 @@
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
       <IsDisplayedForEdits>false</IsDisplayedForEdits>
+      <DefaultValue />
+      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
+      <DataEntryText>Undetermined value, for Field #0</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>0</CurrentRecipValue>
-      <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+      <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+      <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
     </ClassFieldStandard>
     <ClassFieldStandard>
       <IsStandard>false</IsStandard>
@@ -252,12 +279,15 @@
       <IsLocked>true</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
       <IsDisplayedForEdits>false</IsDisplayedForEdits>
+      <DefaultValue />
+      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
+      <DataEntryText>Undetermined value, for Field #0</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>0</CurrentRecipValue>
-      <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+      <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+      <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
     </ClassFieldStandard>
     <ClassFieldStandard>
       <IsStandard>false</IsStandard>
@@ -273,12 +303,15 @@
       <IsLocked>true</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
       <IsDisplayedForEdits>false</IsDisplayedForEdits>
+      <DefaultValue />
+      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
+      <DataEntryText>Undetermined value, for Field #0</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>0</CurrentRecipValue>
-      <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+      <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+      <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
     </ClassFieldStandard>
     <ClassFieldStandard>
       <IsStandard>false</IsStandard>
@@ -294,12 +327,15 @@
       <IsLocked>true</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
       <IsDisplayedForEdits>false</IsDisplayedForEdits>
+      <DefaultValue />
+      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
+      <DataEntryText>Undetermined value, for Field #0</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>0</CurrentRecipValue>
-      <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+      <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+      <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
     </ClassFieldStandard>
     <ClassFieldStandard>
       <IsStandard>false</IsStandard>
@@ -315,12 +351,15 @@
       <IsLocked>true</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
       <IsDisplayedForEdits>false</IsDisplayedForEdits>
+      <DefaultValue />
+      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
+      <DataEntryText>Undetermined value, for Field #0</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>0</CurrentRecipValue>
-      <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+      <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+      <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
     </ClassFieldStandard>
     <ClassFieldStandard>
       <IsStandard>false</IsStandard>
@@ -336,12 +375,15 @@
       <IsLocked>true</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
       <IsDisplayedForEdits>false</IsDisplayedForEdits>
+      <DefaultValue />
+      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
+      <DataEntryText>Undetermined value, for Field #0</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>0</CurrentRecipValue>
-      <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+      <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+      <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
     </ClassFieldStandard>
     <ClassFieldStandard>
       <IsStandard>false</IsStandard>
@@ -357,12 +399,15 @@
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
       <IsDisplayedForEdits>false</IsDisplayedForEdits>
+      <DefaultValue />
+      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
+      <DataEntryText>Undetermined value, for Field #0</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>0</CurrentRecipValue>
-      <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+      <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+      <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
     </ClassFieldStandard>
   </ListOfFields_Standard>
   <ListOfFields_Custom>
@@ -380,13 +425,15 @@
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
       <IsDisplayedForEdits>false</IsDisplayedForEdits>
+      <DefaultValue />
       <ExampleValue>Willcrest School</ExampleValue>
       <HasPresetValues>true</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
+      <DataEntryText>Undetermined value, for Field #0</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>0</CurrentRecipValue>
-      <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+      <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+      <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
       <ArrayOfValues>
         <string>Willcrest School</string>
         <string>Woodbridge School</string>
@@ -406,12 +453,15 @@
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
       <IsDisplayedForEdits>false</IsDisplayedForEdits>
+      <DefaultValue />
+      <ExampleValue />
       <HasPresetValues>true</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
+      <DataEntryText>Undetermined value, for Field #0</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>0</CurrentRecipValue>
-      <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+      <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+      <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
       <ArrayOfValues>
         <string>Mrs. Ross</string>
         <string>Mr. Smudge</string>
@@ -432,12 +482,15 @@
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
       <IsDisplayedForEdits>false</IsDisplayedForEdits>
+      <DefaultValue />
+      <ExampleValue />
       <HasPresetValues>true</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
+      <DataEntryText>Undetermined value, for Field #0</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>0</CurrentRecipValue>
-      <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+      <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+      <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
       <ArrayOfValues>
         <string>9th</string>
         <string>10th</string>
@@ -459,12 +512,15 @@
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
       <IsDisplayedForEdits>true</IsDisplayedForEdits>
+      <DefaultValue />
+      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
+      <DataEntryText>Undetermined value, for Field #0</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>0</CurrentRecipValue>
-      <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+      <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+      <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
     </ClassFieldCustomized>
     <ClassFieldCustomized>
       <IsStandard>false</IsStandard>
@@ -480,12 +536,15 @@
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
       <IsDisplayedForEdits>false</IsDisplayedForEdits>
+      <DefaultValue />
+      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
+      <DataEntryText>Undetermined value, for Field #0</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>0</CurrentRecipValue>
-      <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+      <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+      <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
     </ClassFieldCustomized>
   </ListOfFields_Custom>
   <ListOfElementFields>
@@ -516,13 +575,15 @@
         <IsLocked>true</IsLocked>
         <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
         <IsDisplayedForEdits>true</IsDisplayedForEdits>
+        <DefaultValue />
         <ExampleValue>12345</ExampleValue>
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
+        <DataEntryText>Undetermined value, for Field #0</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>0</CurrentRecipValue>
-        <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+        <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+        <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>fstrID</FieldEnum>
       <TextAlignment>Left</TextAlignment>
@@ -532,8 +593,8 @@
         <Width_Pixels>675</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>66</TopEdge_Pixels>
-      <LeftEdge_Pixels>66</LeftEdge_Pixels>
+      <TopEdge_Pixels>278</TopEdge_Pixels>
+      <LeftEdge_Pixels>491</LeftEdge_Pixels>
       <Width_Pixels>225</Width_Pixels>
       <Height_Pixels>49</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
@@ -571,12 +632,15 @@
         <IsLocked>false</IsLocked>
         <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
         <IsDisplayedForEdits>true</IsDisplayedForEdits>
+        <DefaultValue />
+        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
+        <DataEntryText>Undetermined value, for Field #0</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>0</CurrentRecipValue>
-        <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+        <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+        <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>fstrFirstName</FieldEnum>
       <TextAlignment>Left</TextAlignment>
@@ -586,8 +650,8 @@
         <Width_Pixels>675</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>168</TopEdge_Pixels>
-      <LeftEdge_Pixels>131</LeftEdge_Pixels>
+      <TopEdge_Pixels>206</TopEdge_Pixels>
+      <LeftEdge_Pixels>106</LeftEdge_Pixels>
       <Width_Pixels>370</Width_Pixels>
       <Height_Pixels>71</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
@@ -625,12 +689,15 @@
         <IsLocked>false</IsLocked>
         <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
         <IsDisplayedForEdits>true</IsDisplayedForEdits>
+        <DefaultValue />
+        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
+        <DataEntryText>Undetermined value, for Field #0</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>0</CurrentRecipValue>
-        <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+        <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+        <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>fstrLastName</FieldEnum>
       <TextAlignment>Left</TextAlignment>
@@ -640,8 +707,8 @@
         <Width_Pixels>675</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>120</TopEdge_Pixels>
-      <LeftEdge_Pixels>120</LeftEdge_Pixels>
+      <TopEdge_Pixels>243</TopEdge_Pixels>
+      <LeftEdge_Pixels>466</LeftEdge_Pixels>
       <Width_Pixels>253</Width_Pixels>
       <Height_Pixels>30</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
@@ -678,12 +745,15 @@
         <IsLocked>false</IsLocked>
         <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
         <IsDisplayedForEdits>false</IsDisplayedForEdits>
+        <DefaultValue />
+        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
+        <DataEntryText>Undetermined value, for Field #0</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>0</CurrentRecipValue>
-        <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+        <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+        <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>fstrMidName</FieldEnum>
       <TextAlignment>Left</TextAlignment>
@@ -731,13 +801,15 @@
         <IsLocked>false</IsLocked>
         <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
         <IsDisplayedForEdits>false</IsDisplayedForEdits>
+        <DefaultValue />
         <ExampleValue>1234567890</ExampleValue>
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
+        <DataEntryText>Undetermined value, for Field #0</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>0</CurrentRecipValue>
-        <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+        <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+        <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>fstrBarCode</FieldEnum>
       <TextAlignment>Left</TextAlignment>
@@ -785,12 +857,15 @@
         <IsLocked>false</IsLocked>
         <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
         <IsDisplayedForEdits>false</IsDisplayedForEdits>
+        <DefaultValue />
+        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
+        <DataEntryText>Undetermined value, for Field #0</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>0</CurrentRecipValue>
-        <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+        <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+        <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>fstrAddress</FieldEnum>
       <TextAlignment>Left</TextAlignment>
@@ -838,12 +913,15 @@
         <IsLocked>false</IsLocked>
         <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
         <IsDisplayedForEdits>false</IsDisplayedForEdits>
+        <DefaultValue />
+        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
+        <DataEntryText>Undetermined value, for Field #0</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>0</CurrentRecipValue>
-        <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+        <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+        <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>fstrCity</FieldEnum>
       <TextAlignment>Left</TextAlignment>
@@ -891,12 +969,15 @@
         <IsLocked>false</IsLocked>
         <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
         <IsDisplayedForEdits>false</IsDisplayedForEdits>
+        <DefaultValue />
+        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
+        <DataEntryText>Undetermined value, for Field #0</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>0</CurrentRecipValue>
-        <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+        <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+        <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>fstrState</FieldEnum>
       <TextAlignment>Left</TextAlignment>
@@ -944,12 +1025,15 @@
         <IsLocked>false</IsLocked>
         <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
         <IsDisplayedForEdits>false</IsDisplayedForEdits>
+        <DefaultValue />
+        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
+        <DataEntryText>Undetermined value, for Field #0</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>0</CurrentRecipValue>
-        <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+        <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+        <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>fstrZip</FieldEnum>
       <TextAlignment>Left</TextAlignment>
@@ -997,12 +1081,15 @@
         <IsLocked>true</IsLocked>
         <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
         <IsDisplayedForEdits>false</IsDisplayedForEdits>
+        <DefaultValue />
+        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
+        <DataEntryText>Undetermined value, for Field #0</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>0</CurrentRecipValue>
-        <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+        <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+        <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>blnBatchPrint</FieldEnum>
       <TextAlignment>Left</TextAlignment>
@@ -1050,12 +1137,15 @@
         <IsLocked>true</IsLocked>
         <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
         <IsDisplayedForEdits>false</IsDisplayedForEdits>
+        <DefaultValue />
+        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
+        <DataEntryText>Undetermined value, for Field #0</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>0</CurrentRecipValue>
-        <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+        <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+        <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>idfConfigID</FieldEnum>
       <TextAlignment>Left</TextAlignment>
@@ -1103,12 +1193,15 @@
         <IsLocked>true</IsLocked>
         <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
         <IsDisplayedForEdits>false</IsDisplayedForEdits>
+        <DefaultValue />
+        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
+        <DataEntryText>Undetermined value, for Field #0</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>0</CurrentRecipValue>
-        <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+        <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+        <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>idfReportID</FieldEnum>
       <TextAlignment>Left</TextAlignment>
@@ -1156,12 +1249,15 @@
         <IsLocked>true</IsLocked>
         <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
         <IsDisplayedForEdits>false</IsDisplayedForEdits>
+        <DefaultValue />
+        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
+        <DataEntryText>Undetermined value, for Field #0</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>0</CurrentRecipValue>
-        <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+        <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+        <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>fdateRecDate</FieldEnum>
       <TextAlignment>Left</TextAlignment>
@@ -1209,12 +1305,15 @@
         <IsLocked>true</IsLocked>
         <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
         <IsDisplayedForEdits>false</IsDisplayedForEdits>
+        <DefaultValue />
+        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
+        <DataEntryText>Undetermined value, for Field #0</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>0</CurrentRecipValue>
-        <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+        <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+        <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>fdatTimeStamp</FieldEnum>
       <TextAlignment>Left</TextAlignment>
@@ -1262,12 +1361,15 @@
         <IsLocked>false</IsLocked>
         <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
         <IsDisplayedForEdits>false</IsDisplayedForEdits>
+        <DefaultValue />
+        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
+        <DataEntryText>Undetermined value, for Field #0</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>0</CurrentRecipValue>
-        <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+        <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+        <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>fstrRFID_Unique</FieldEnum>
       <TextAlignment>Left</TextAlignment>
@@ -1316,13 +1418,15 @@
         <IsLocked>false</IsLocked>
         <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
         <IsDisplayedForEdits>false</IsDisplayedForEdits>
+        <DefaultValue />
         <ExampleValue>Willcrest School</ExampleValue>
         <HasPresetValues>true</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
+        <DataEntryText>Undetermined value, for Field #0</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>0</CurrentRecipValue>
-        <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+        <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+        <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
         <ArrayOfValues>
           <string>Willcrest School</string>
           <string>Woodbridge School</string>
@@ -1336,8 +1440,8 @@
         <Width_Pixels>675</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>20</TopEdge_Pixels>
-      <LeftEdge_Pixels>64</LeftEdge_Pixels>
+      <TopEdge_Pixels>208</TopEdge_Pixels>
+      <LeftEdge_Pixels>430</LeftEdge_Pixels>
       <Width_Pixels>225</Width_Pixels>
       <Height_Pixels>33</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
@@ -1374,12 +1478,15 @@
         <IsLocked>false</IsLocked>
         <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
         <IsDisplayedForEdits>false</IsDisplayedForEdits>
+        <DefaultValue />
+        <ExampleValue />
         <HasPresetValues>true</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
+        <DataEntryText>Undetermined value, for Field #0</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>0</CurrentRecipValue>
-        <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+        <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+        <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
         <ArrayOfValues>
           <string>Mrs. Ross</string>
           <string>Mr. Smudge</string>
@@ -1432,12 +1539,15 @@
         <IsLocked>false</IsLocked>
         <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
         <IsDisplayedForEdits>false</IsDisplayedForEdits>
+        <DefaultValue />
+        <ExampleValue />
         <HasPresetValues>true</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
+        <DataEntryText>Undetermined value, for Field #0</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>0</CurrentRecipValue>
-        <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+        <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+        <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
         <ArrayOfValues>
           <string>9th</string>
           <string>10th</string>
@@ -1492,12 +1602,15 @@
         <IsLocked>false</IsLocked>
         <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
         <IsDisplayedForEdits>true</IsDisplayedForEdits>
+        <DefaultValue />
+        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
+        <DataEntryText>Undetermined value, for Field #0</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>0</CurrentRecipValue>
-        <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+        <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+        <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>DateField01</FieldEnum>
       <TextAlignment>Left</TextAlignment>
@@ -1545,12 +1658,15 @@
         <IsLocked>false</IsLocked>
         <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
         <IsDisplayedForEdits>false</IsDisplayedForEdits>
+        <DefaultValue />
+        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
+        <DataEntryText>Undetermined value, for Field #0</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>0</CurrentRecipValue>
-        <CurrentRecipValue_Date>0</CurrentRecipValue_Date>
+        <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+        <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>DateField02</FieldEnum>
       <TextAlignment>Left</TextAlignment>

@@ -617,6 +617,13 @@ namespace ciBadgeForWeb.Models
                 }
             }
 
+            //
+            // Execute a general save operation on the cache's 
+            //    XML file. 
+            //
+            //--Controllers.PersonalityController.CurrentPersonality.Cache.Save(); 
+            ClassElementsCache_Deprecated.Singleton.SaveToXML();
+
         }
 
 
