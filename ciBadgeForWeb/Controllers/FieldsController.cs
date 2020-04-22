@@ -66,7 +66,7 @@ namespace ciBadgeForWeb.Controllers
             //return View();
             //return View("EditSimple");
             var fields_list = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
-            var fields_onlyone = fields_list.Where(x => x.FieldIndex == id);
+            var fields_onlyone = fields_list.Where(x => x.FieldIndex == id).FirstOrDefault();
             return (ViewResult)View("EditSimple", fields_onlyone);
         }
 
@@ -76,7 +76,7 @@ namespace ciBadgeForWeb.Controllers
             //return View();
             //return View("EditSimple");
             var fields_list = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
-            var fields_onlyone = fields_list.Where(x => x.FieldIndex == id);
+            var fields_onlyone = fields_list.Where(x => x.FieldIndex == id).FirstOrDefault();
             return (ViewResult)View("Advanced", fields_onlyone);
         }
 

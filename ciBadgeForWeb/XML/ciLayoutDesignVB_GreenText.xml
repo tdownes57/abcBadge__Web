@@ -82,7 +82,7 @@
       <FieldLabelCaption>First Name</FieldLabelCaption>
       <FieldType_TD>84</FieldType_TD>
       <FieldEnumValue>fstrFirstName</FieldEnumValue>
-      <FieldIndex>0</FieldIndex>
+      <FieldIndex>1</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
@@ -106,7 +106,7 @@
       <FieldLabelCaption>Last Name</FieldLabelCaption>
       <FieldType_TD>84</FieldType_TD>
       <FieldEnumValue>fstrLastName</FieldEnumValue>
-      <FieldIndex>0</FieldIndex>
+      <FieldIndex>2</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
@@ -130,7 +130,7 @@
       <FieldLabelCaption>Middle Name</FieldLabelCaption>
       <FieldType_TD>84</FieldType_TD>
       <FieldEnumValue>fstrMidName</FieldEnumValue>
-      <FieldIndex>0</FieldIndex>
+      <FieldIndex>3</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
@@ -154,7 +154,7 @@
       <FieldLabelCaption>Barcode Value</FieldLabelCaption>
       <FieldType_TD>84</FieldType_TD>
       <FieldEnumValue>fstrBarCode</FieldEnumValue>
-      <FieldIndex>0</FieldIndex>
+      <FieldIndex>4</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
@@ -178,7 +178,7 @@
       <FieldLabelCaption>Address</FieldLabelCaption>
       <FieldType_TD>84</FieldType_TD>
       <FieldEnumValue>fstrAddress</FieldEnumValue>
-      <FieldIndex>0</FieldIndex>
+      <FieldIndex>5</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
@@ -202,7 +202,7 @@
       <FieldLabelCaption>City</FieldLabelCaption>
       <FieldType_TD>84</FieldType_TD>
       <FieldEnumValue>fstrCity</FieldEnumValue>
-      <FieldIndex>0</FieldIndex>
+      <FieldIndex>6</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
@@ -226,7 +226,7 @@
       <FieldLabelCaption>State</FieldLabelCaption>
       <FieldType_TD>84</FieldType_TD>
       <FieldEnumValue>fstrState</FieldEnumValue>
-      <FieldIndex>0</FieldIndex>
+      <FieldIndex>7</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
@@ -250,7 +250,7 @@
       <FieldLabelCaption>Zipcode</FieldLabelCaption>
       <FieldType_TD>84</FieldType_TD>
       <FieldEnumValue>fstrZip</FieldEnumValue>
-      <FieldIndex>0</FieldIndex>
+      <FieldIndex>8</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
@@ -274,7 +274,7 @@
       <FieldLabelCaption>Printed by Batch</FieldLabelCaption>
       <FieldType_TD>66</FieldType_TD>
       <FieldEnumValue>blnBatchPrint</FieldEnumValue>
-      <FieldIndex>0</FieldIndex>
+      <FieldIndex>9</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>true</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
@@ -298,7 +298,7 @@
       <FieldLabelCaption>Personality ID</FieldLabelCaption>
       <FieldType_TD>73</FieldType_TD>
       <FieldEnumValue>idfConfigID</FieldEnumValue>
-      <FieldIndex>0</FieldIndex>
+      <FieldIndex>10</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>true</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
@@ -322,7 +322,7 @@
       <FieldLabelCaption>Badge Layout ID</FieldLabelCaption>
       <FieldType_TD>73</FieldType_TD>
       <FieldEnumValue>idfReportID</FieldEnumValue>
-      <FieldIndex>0</FieldIndex>
+      <FieldIndex>11</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>true</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
@@ -346,7 +346,7 @@
       <FieldLabelCaption>Record Created</FieldLabelCaption>
       <FieldType_TD>68</FieldType_TD>
       <FieldEnumValue>fdateRecDate</FieldEnumValue>
-      <FieldIndex>0</FieldIndex>
+      <FieldIndex>12</FieldIndex>
       <IsFieldForDates>true</IsFieldForDates>
       <IsLocked>true</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
@@ -370,7 +370,7 @@
       <FieldLabelCaption>Record Updated</FieldLabelCaption>
       <FieldType_TD>68</FieldType_TD>
       <FieldEnumValue>fdatTimeStamp</FieldEnumValue>
-      <FieldIndex>0</FieldIndex>
+      <FieldIndex>13</FieldIndex>
       <IsFieldForDates>true</IsFieldForDates>
       <IsLocked>true</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
@@ -394,7 +394,7 @@
       <FieldLabelCaption>RFID/UID Value</FieldLabelCaption>
       <FieldType_TD>84</FieldType_TD>
       <FieldEnumValue>fstrRFID_Unique</FieldEnumValue>
-      <FieldIndex>0</FieldIndex>
+      <FieldIndex>14</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
@@ -420,7 +420,7 @@
       <FieldLabelCaption>School Name</FieldLabelCaption>
       <FieldType_TD>84</FieldType_TD>
       <FieldEnumValue>TextField01</FieldEnumValue>
-      <FieldIndex>0</FieldIndex>
+      <FieldIndex>15</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
@@ -448,7 +448,7 @@
       <FieldLabelCaption>Teacher Name</FieldLabelCaption>
       <FieldType_TD>84</FieldType_TD>
       <FieldEnumValue>TextField02</FieldEnumValue>
-      <FieldIndex>0</FieldIndex>
+      <FieldIndex>16</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
@@ -477,7 +477,7 @@
       <FieldLabelCaption>Grade Level</FieldLabelCaption>
       <FieldType_TD>84</FieldType_TD>
       <FieldEnumValue>TextField03</FieldEnumValue>
-      <FieldIndex>0</FieldIndex>
+      <FieldIndex>17</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
@@ -507,7 +507,7 @@
       <FieldLabelCaption>Date of Birth</FieldLabelCaption>
       <FieldType_TD>68</FieldType_TD>
       <FieldEnumValue>DateField01</FieldEnumValue>
-      <FieldIndex>0</FieldIndex>
+      <FieldIndex>18</FieldIndex>
       <IsFieldForDates>true</IsFieldForDates>
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
@@ -531,7 +531,7 @@
       <FieldLabelCaption>ExpirationDate</FieldLabelCaption>
       <FieldType_TD>68</FieldType_TD>
       <FieldEnumValue>DateField02</FieldEnumValue>
-      <FieldIndex>0</FieldIndex>
+      <FieldIndex>19</FieldIndex>
       <IsFieldForDates>true</IsFieldForDates>
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
