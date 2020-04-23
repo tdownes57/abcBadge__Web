@@ -11,7 +11,7 @@ using ciPictures_VB; //Added 12/11/2019 thomas d.
 using ciBadgeForWeb.Controllers;  //Added 12/11/2019 thomas d.
 
 using System.Linq.Expressions;  //Added 2-19-2020 thomas downes 
-using System.Web.Mvc.Html; //Added 2/19/2020 td
+//using System.Web.Mvc.Html; //Added 2/19/2020 td
 
 namespace ciBadgeForWeb.Models
 {

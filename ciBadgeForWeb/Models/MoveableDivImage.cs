@@ -1,10 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Web;
 //using System.Text.JSON;  // Added 3/20/2020 thomas downes
 using Newtonsoft.Json;   // Added 3/20/2020 thomas downes
 using ciBadgeElements;  // Added 3/20/2020 thomas downes  
+using System.Drawing;  // Added 4/22/2020 thomas downese 
 
 namespace ciBadgeForWeb.Models
 {
@@ -143,8 +144,10 @@ namespace ciBadgeForWeb.Models
         //
         // Initialize. ---3/20/2020 thomas downes 
         //
-        public MoveableDivImage(ciBadgeElements.ClassElementsCache_Deprecated par_cache)
+        public MoveableDivImage(ciBadgeElements.ClassElementsCache_Deprecated par_cache, 
+                                  System.Drawing.Point par_offsetPoint)
         {
+            //---April 22, 2020---public MoveableDivImage(ciBadgeElements.ClassElementsCache_Deprecated par_cache)
             //
             // Added 3/20/2020 thomas downes 
             //
@@ -179,9 +182,19 @@ namespace ciBadgeForWeb.Models
 
                     mod_arrayElements[indexElement] = each_element;
 
-                    //Added 4/13/2020 thomas downes
-                    this.MoveLeft[indexElement] = each_element.LeftEdge_Pixels.ToString() + "px";
-                    this.MoveTop[indexElement] = each_element.TopEdge_Pixels.ToString() + "px";
+                    //Added 4/22/2020 thomas downes
+                    const bool c_boolIncludeOffset = true;  //Added 4/22/2020 thomas d.
+                    if (c_boolIncludeOffset)
+                    {
+                        this.MoveLeft[indexElement] = (par_offsetPoint.X + each_element.LeftEdge_Pixels).ToString() + "px";
+                        this.MoveTop[indexElement] = (par_offsetPoint.Y + each_element.TopEdge_Pixels).ToString() + "px";
+                    }
+                    else
+                    {
+                        //Added 4/13/2020 thomas downes
+                        this.MoveLeft[indexElement] = each_element.LeftEdge_Pixels.ToString() + "px";
+                        this.MoveTop[indexElement] = each_element.TopEdge_Pixels.ToString() + "px";
+                    }
 
                     //Integers are fine, strings not needed. 
                     this.MoveWidth[indexElement] = each_element.Width_Pixels;   //.ToString() + "px";

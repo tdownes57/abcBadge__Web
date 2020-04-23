@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using ciBadgeForWeb.Models;  // Added 3/21/2020 Thomas Downes 
 using ciBadgeElements;  // Added 4/6/2020 Thomas Downes   
+using System.Drawing;   // Added 4/22/2020 thomas downes  
 //
 //     // See also, the CIBadgeElements Project, for JSON- & DIVs- related code. 
 //     //   ---Actually, I wasn't able to find it, so maybe I didn't do it.
@@ -25,8 +26,26 @@ namespace ciBadgeForWeb.Controllers
         //Added 4/16/2020 Thomas Downes
         public static MoveableDivImage MoveableDivs;  //--- = new JsonFile();
 
-        // GET: JsonFile
-        public ActionResult Index()
+        //Added 4/22/2020 thomas downes 
+        public static Point OffsetPoint = new Point(100, 100);
+
+        public static MoveableDivImage GetMoveableDivs()
+        {
+            //
+            // Added 4/22/2020 td 
+            //
+            MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
+            if (JsonFileController.MoveableDivs == null)
+            {
+                // 4-22-2020 td //objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
+                objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton, OffsetPoint);
+                JsonFileController.MoveableDivs = objectMoveableDivs;
+            }
+            return objectMoveableDivs;
+        }
+
+    // GET: JsonFile
+    public ActionResult Index()
         {
             //
             // Added 3/21/2020 Thomas Downes  
@@ -41,14 +60,17 @@ namespace ciBadgeForWeb.Controllers
             //---   4/16/2020  ---//var objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
 
             //Added 4/16/2020 thomas downes 
-            MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs; 
-            if (JsonFileController.MoveableDivs == null)
-            {
-                objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
-                JsonFileController.MoveableDivs = objectMoveableDivs;
-            }
+            //MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs; 
+            //if (JsonFileController.MoveableDivs == null)
+            //{
+            //    // 4-22-2020 td //objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
+            //    objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton, OffsetPoint);
+            //    JsonFileController.MoveableDivs = objectMoveableDivs;
+            //}
+            //return View(objectMoveableDivs);
 
-            return View(objectMoveableDivs);
+            //Modified 4/22/2020 td
+            return View(GetMoveableDivs());
 
         }
 
@@ -58,14 +80,17 @@ namespace ciBadgeForWeb.Controllers
             //
             // Added 4/18/2020 Thomas Downes  
             //
-            MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
-            if (JsonFileController.MoveableDivs == null)
-            {
-                objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
-                JsonFileController.MoveableDivs = objectMoveableDivs;
-            }
+            //MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
+            //if (JsonFileController.MoveableDivs == null)
+            //{
+            //    // 4-22-2020 td //objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
+            //    objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton, OffsetPoint);
+            //    JsonFileController.MoveableDivs = objectMoveableDivs;
+            //}
+            //return View(objectMoveableDivs);
 
-            return View(objectMoveableDivs);
+            //Modified 4/22/2020 td
+            return View(GetMoveableDivs());
 
         }
 
@@ -76,13 +101,15 @@ namespace ciBadgeForWeb.Controllers
             // Added 4/18/2020 Thomas Downes  
             //
             //Added 4/16/2020 thomas downes 
-            MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
-            if (JsonFileController.MoveableDivs == null)
-            {
-                objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
-                JsonFileController.MoveableDivs = objectMoveableDivs;
-            }
-            Moveable_Left objectMoveLeft = JsonFileController.MoveableDivs.MoveLeft;
+            //MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
+            //if (JsonFileController.MoveableDivs == null)
+            //{
+            //    // 4-22-2020 td //objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
+            //    objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton, OffsetPoint);
+            //    JsonFileController.MoveableDivs = objectMoveableDivs;
+            //}
+            //Moveable_Left objectMoveLeft = JsonFileController.MoveableDivs.MoveLeft;
+            Moveable_Left objectMoveLeft = JsonFileController.GetMoveableDivs().MoveLeft;
             return View(objectMoveLeft);
 
         }
@@ -94,13 +121,17 @@ namespace ciBadgeForWeb.Controllers
             // Added 4/18/2020  Thomas Downes  
             //
             //Added 4/16/2020 thomas downes 
-            MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
-            if (JsonFileController.MoveableDivs == null)
-            {
-                objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
-                JsonFileController.MoveableDivs = objectMoveableDivs;
-            }
-            Moveable_Top objectMoveTop = JsonFileController.MoveableDivs.MoveTop;
+
+            //MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
+            //if (JsonFileController.MoveableDivs == null)
+            //{
+            //    // 4-22-2020 td //objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
+            //    objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton, OffsetPoint);
+            //    JsonFileController.MoveableDivs = objectMoveableDivs;
+            //}
+            //Moveable_Top objectMoveTop = JsonFileController.MoveableDivs.MoveTop;
+            //return View(objectMoveTop);
+            Moveable_Top objectMoveTop = JsonFileController.GetMoveableDivs().MoveTop;
             return View(objectMoveTop);
 
         }
@@ -111,15 +142,20 @@ namespace ciBadgeForWeb.Controllers
             //
             // Added 4/18/2020  Thomas Downes  
             //
-            //Added 4/16/2020 thomas downes 
-            MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
-            if (JsonFileController.MoveableDivs == null)
-            {
-                objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
-                JsonFileController.MoveableDivs = objectMoveableDivs;
-            }
-            Moveable_Width objectMoveWidth = JsonFileController.MoveableDivs.MoveWidth;
+
+            ////Added 4/16/2020 thomas downes 
+            //MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
+            //if (JsonFileController.MoveableDivs == null)
+            //{
+            //    // 4-22-2020 td //objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
+            //    objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton, OffsetPoint);
+            //    JsonFileController.MoveableDivs = objectMoveableDivs;
+            //}
+            //Moveable_Width objectMoveWidth = JsonFileController.MoveableDivs.MoveWidth;
+
+            Moveable_Width objectMoveWidth = JsonFileController.GetMoveableDivs().MoveWidth;
             return View(objectMoveWidth);
+
         }
 
         // GET:
@@ -128,15 +164,18 @@ namespace ciBadgeForWeb.Controllers
             //
             // Added 4/18/2020  Thomas Downes  
             //
+
             //Added 4/16/2020 thomas downes 
-            MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
-            if (JsonFileController.MoveableDivs == null)
-            {
-                objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
-                JsonFileController.MoveableDivs = objectMoveableDivs;
-            }
-            Moveable_Height objectMoveHeight = JsonFileController.MoveableDivs.MoveHeight;
+            //MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
+            //if (JsonFileController.MoveableDivs == null)
+            //{
+            //    // 4-22-2020 td //objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
+            //    objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton, OffsetPoint);
+            //    JsonFileController.MoveableDivs = objectMoveableDivs;
+            //}
+            Moveable_Height objectMoveHeight = JsonFileController.GetMoveableDivs().MoveHeight;
             return View(objectMoveHeight);
+
         }
 
 
@@ -146,14 +185,17 @@ namespace ciBadgeForWeb.Controllers
             //
             // Added 4/20/2020  Thomas Downes  
             //
-            MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
-            if (JsonFileController.MoveableDivs == null)
-            {
-                objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
-                JsonFileController.MoveableDivs = objectMoveableDivs;
-            }
-            Moveable_Displayed objectMoveDisplayed = JsonFileController.MoveableDivs.MoveDisplayed;
+            //MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
+            //if (JsonFileController.MoveableDivs == null)
+            //{
+            //    // 4-22-2020 td //objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
+            //    objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton, OffsetPoint);
+            //    JsonFileController.MoveableDivs = objectMoveableDivs;
+            //}
+            //Moveable_Displayed objectMoveDisplayed = JsonFileController.MoveableDivs.MoveDisplayed;
+            Moveable_Displayed objectMoveDisplayed = JsonFileController.GetMoveableDivs().MoveDisplayed;
             return View(objectMoveDisplayed);
+
         }
 
         // GET:
@@ -162,28 +204,34 @@ namespace ciBadgeForWeb.Controllers
             //
             // Added 4/20/2020  Thomas Downes  
             //
-            MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
-            if (JsonFileController.MoveableDivs == null)
-            {
-                objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
-                JsonFileController.MoveableDivs = objectMoveableDivs;
-            }
-            Moveable_HasField objectMoveHasField = JsonFileController.MoveableDivs.MoveHasField;
+            //MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
+            //if (JsonFileController.MoveableDivs == null)
+            //{
+            //    // 4-22-2020 td //objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
+            //    objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton, OffsetPoint);
+            //    JsonFileController.MoveableDivs = objectMoveableDivs;
+            //}
+            //Moveable_HasField objectMoveHasField = JsonFileController.MoveableDivs.MoveHasField;
+            Moveable_HasField objectMoveHasField = JsonFileController.GetMoveableDivs().MoveHasField;
             return View(objectMoveHasField);
+
         }
 
         // GET:
         public ActionResult TableDivsFieldName()
         {
             // Added 4/20/2020  Thomas Downes  
-            MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
-            if (JsonFileController.MoveableDivs == null)
-            {
-                objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
-                JsonFileController.MoveableDivs = objectMoveableDivs;
-            }
-            Moveable_FieldNm objectMoveFieldNm = JsonFileController.MoveableDivs.MoveFieldName;
+            //MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
+            //if (JsonFileController.MoveableDivs == null)
+            //{
+            //    // 4-22-2020 td //objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
+            //    objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton, OffsetPoint);
+            //    JsonFileController.MoveableDivs = objectMoveableDivs;
+            //}
+            //Moveable_FieldNm objectMoveFieldNm = JsonFileController.MoveableDivs.MoveFieldName;
+            Moveable_FieldNm objectMoveFieldNm = JsonFileController.GetMoveableDivs().MoveFieldName;
             return View(objectMoveFieldNm);
+
         }
 
 
@@ -206,7 +254,9 @@ namespace ciBadgeForWeb.Controllers
             //
             // Added 4/06/2020 Thomas Downes  
             //
-            var objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
+            //----4-22-2020 td //var objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
+            var objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton, 
+                Controllers.JsonFileController.OffsetPoint);
 
             return View(objectMoveableDivs);
 
@@ -444,6 +494,9 @@ namespace ciBadgeForWeb.Controllers
             //
             objectMoveableDivs.SavePositions_ToCache();
 
+            //Added 4/22/2020 td
+            objectMoveableDivs.JSON_Left = objectMoveableDivs.GetJSON_Left();
+
             //Added 4/16/2020 td
             //  We need to refresh the four(4) JSON-string properties. 
             //objectMoveableDivs.JSON_Left = collection["JsonTextContent_Left"];
@@ -479,6 +532,9 @@ namespace ciBadgeForWeb.Controllers
             //  Transfer the positions to the element-fields stored in the cache. 
             //
             objectMoveableDivs.SavePositions_ToCache();
+
+            //Added 4/22/2020 td
+            objectMoveableDivs.JSON_Top = objectMoveableDivs.GetJSON_Top();
 
             //Added 4/16/2020 td
             //  We need to refresh the four(4) JSON-string properties. 

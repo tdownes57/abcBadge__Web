@@ -67,7 +67,8 @@ namespace ciBadgeForWeb.Controllers
             //return View("EditSimple");
             var fields_list = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
             var fields_onlyone = fields_list.Where(x => x.FieldIndex == id).FirstOrDefault();
-            return (ViewResult)View("EditSimple", fields_onlyone);
+            //---return (ViewResult)View("EditSimple", fields_onlyone);
+            return (ViewResult)View(fields_onlyone);
         }
 
         // GET: Fields/Advanced/5
@@ -88,8 +89,20 @@ namespace ciBadgeForWeb.Controllers
             try
             {
                 // TODO: Add update logic here
+                //--- 4/22/2020 td //return RedirectToAction("Index");
+                var fields_list = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
+                var field_edited = fields_list.Where(x => x.FieldIndex == id).FirstOrDefault();
+                UpdateModel(field_edited, collection);
 
-                return RedirectToAction("Index");
+                //Added 4/22/2020 thomas downes
+                ciBadgeElements.ClassElementsCache_Deprecated.Singleton.SaveToXML();
+
+                //return RedirectToAction("Edit", id);
+                //return RedirectToAction("Index");
+                //return Index();
+                var objContent = new ContentResult();
+                objContent.Content = "Your edit has been saved.";
+                return objContent;
             }
             catch
             {

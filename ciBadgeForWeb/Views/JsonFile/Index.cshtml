@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "MoveableDivImage";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    //---Layout = "";   
+    //---Layout = "";
 }
 
 <h1>User-Moveable Division-Image Elements</h1>
@@ -21,6 +21,11 @@
     Click here to increase by 50% the width of Included items.
 </div>
 
+<!-- Added 4/22/2020 -->
+<div style="position: absolute; top: 100px; left: 100px; border-width: thick; ">
+    <img src="@Url.Content("~/Images/BackExamples/ExampleBack.jpg")" width="900" height="567" />
+</div>
+
 <div id="EL1" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; border-width: thin; ">
     <img id="EL1_im" src="@Url.Content("~/Images/blue_star1.jpg")" width="200" height="35" />
 </div>
@@ -34,7 +39,7 @@
 </div>
 
 <div id="EL4" class="mydiv_class" style="position: absolute; top: 250px; left: 250px; ">
-    EL # 4 <img id="EL4_im" src="@Url.Content("~/Images/blue_star4.jpg")" width="200" height="35" />
+    <img id="EL4_im" src="@Url.Content("~/Images/blue_star4.jpg")" width="200" height="35" />
 </div>
 
 <div id="EL5" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; ">
@@ -94,9 +99,9 @@
         @Html.EditorFor(model => model.JSON_Height, new { htmlAttributes = new { @class = "form-control" } })*@
 
     @*<input type='hidden' id="JsonTextContent_Left" name="JsonTextContent_Left" value=' @Html.Raw( @Model.JsonTextContent_Left ) ' />
-    <input type='hidden' id="JsonTextContent_Top" name="JsonTextContent_Top" value=' @Html.Raw( @Model.JsonTextContent_Top ) ' />
-    <input type='hidden' id="JsonTextContent_Width" name="JsonTextContent_Width" value=' @Html.Raw( @Model.JsonTextContent_Width ) ' />
-    <input type='hidden' id="JsonTextContent_Height" name="JsonTextContent_Height" value=' @Html.Raw( @Model.JsonTextContent_Height ) ' />*@
+        <input type='hidden' id="JsonTextContent_Top" name="JsonTextContent_Top" value=' @Html.Raw( @Model.JsonTextContent_Top ) ' />
+        <input type='hidden' id="JsonTextContent_Width" name="JsonTextContent_Width" value=' @Html.Raw( @Model.JsonTextContent_Width ) ' />
+        <input type='hidden' id="JsonTextContent_Height" name="JsonTextContent_Height" value=' @Html.Raw( @Model.JsonTextContent_Height ) ' />*@
 
     <input type='hidden' id="JsonTextContent_Left" name="JsonTextContent_Left" value=' @Html.Raw( @Model.JSON_Left ) ' />
     <input type='hidden' id="JsonTextContent_Top" name="JsonTextContent_Top" value=' @Html.Raw( @Model.JSON_Top ) ' />

@@ -1171,7 +1171,7 @@
     <Content Include="Views\Fields\Advanced.cshtml" />
     <Content Include="Views\XmlCache\InformOfNewlyOpenedCache.cshtml" />
     <Content Include="Views\Fields\Simple.cshtml" />
-    <Content Include="Views\Fields\EditSimple.cshtml" />
+    <Content Include="Views\Fields\EditSimple_backup.cshtml" />
     <Content Include="Views\Recipient\UploadNewPic.cshtml" />
     <Content Include="Views\Shared\_UploadFile.cshtml" />
     <Content Include="Views\JsonFile\Index_JsonFile.cshtml" />
@@ -1202,6 +1202,9 @@
     <Content Include="Views\JsonFile\TableDivsDisplayed.cshtml" />
     <Content Include="Views\JsonFile\TableDivsHasField.cshtml" />
     <Content Include="Views\JsonFile\TableDivsFieldName.cshtml" />
+    <Content Include="Views\Personality\DisplayTemplates\How Display Templates work.url" />
+    <Content Include="Views\Customer\DisplayTemplates\How Display Templates work.url" />
+    <Content Include="Views\Fields\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />
