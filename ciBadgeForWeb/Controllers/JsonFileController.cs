@@ -334,14 +334,20 @@ namespace ciBadgeForWeb.Controllers
                 const bool c_boolJsonFileObject = false;
                 const bool c_boolMoveableDivs = true;
 
+                const bool c_boolHasOffsets = true; //Added 4-22-2020 thomas downes  
+
                 if (c_boolMoveableDivs)
                 {
                     //
                     //Added 4/16/2020 thomas downes
                     //
                     var objectMoveableDivs = JsonFileController.MoveableDivs;
-                    objectMoveableDivs.SavePositions_Left(collection["JsonTextContent_Left"]);
-                    objectMoveableDivs.SavePositions_Top(collection["JsonTextContent_Top"]);
+                    //4-22-2020//objectMoveableDivs.SavePositions_Left(collection["JsonTextContent_Left"]);
+                    //4-22-2020//objectMoveableDivs.SavePositions_Top(collection["JsonTextContent_Top"]);
+                    
+                    objectMoveableDivs.SavePositions_Left(collection["JsonTextContent_Left"], c_boolHasOffsets);
+                    objectMoveableDivs.SavePositions_Top(collection["JsonTextContent_Top"], c_boolHasOffsets);
+                    
                     objectMoveableDivs.SavePositions_Width(collection["JsonTextContent_Width"]);
                     objectMoveableDivs.SavePositions_Height(collection["JsonTextContent_Height"]);
 
@@ -353,8 +359,18 @@ namespace ciBadgeForWeb.Controllers
 
                     //Added 4/16/2020 td
                     //  We need to refresh the four(4) JSON-string properties. 
-                    objectMoveableDivs.JSON_Left = collection["JsonTextContent_Left"];
-                    objectMoveableDivs.JSON_Top = collection["JsonTextContent_Top"];
+                    if (c_boolHasOffsets)
+                    {
+                        //Updathe the offset strings.   ---4/20/2020 thomas d. 
+                        objectMoveableDivs.JSON_Offset_Left = collection["JsonTextContent_Left"];
+                        objectMoveableDivs.JSON_Offset_Top = collection["JsonTextContent_Top"];
+                    }
+                    else
+                    {
+                        objectMoveableDivs.JSON_Left = collection["JsonTextContent_Left"];
+                        objectMoveableDivs.JSON_Top = collection["JsonTextContent_Top"];
+                    }
+
                     objectMoveableDivs.JSON_Width = collection["JsonTextContent_Width"];
                     objectMoveableDivs.JSON_Height = collection["JsonTextContent_Height"];
 
@@ -365,9 +381,17 @@ namespace ciBadgeForWeb.Controllers
                 if (c_boolJsonFileObject)
                 {
                     //Conditioned 4/16/2020 thomas downes 
-                    JsonFile_MoveableDivs.JsonTextContent_Left = collection["JsonTextContent_Left"];
-                    JsonFile_MoveableDivs.JsonTextContent_Top = collection["JsonTextContent_Top"];
-
+                    if (c_boolHasOffsets)
+                    {
+                        //Updathe the offset strings.   ---4/20/2020 thomas d. 
+                        JsonFile_MoveableDivs.JsonTextContent_Left = collection["JsonTextContent_Left"];
+                        JsonFile_MoveableDivs.JsonTextContent_Top = collection["JsonTextContent_Top"];
+                    }
+                    else
+                    {
+                        JsonFile_MoveableDivs.JsonTextContent_Left = collection["JsonTextContent_Left"];
+                        JsonFile_MoveableDivs.JsonTextContent_Top = collection["JsonTextContent_Top"];
+                    }
                     //Added 3/30/2020 thomas downes
                     JsonFile_MoveableDivs.JsonTextContent_Width = collection["JsonTextContent_Width"];
                     JsonFile_MoveableDivs.JsonTextContent_Height = collection["JsonTextContent_Height"];

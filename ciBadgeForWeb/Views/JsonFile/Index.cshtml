@@ -103,8 +103,11 @@
         <input type='hidden' id="JsonTextContent_Width" name="JsonTextContent_Width" value=' @Html.Raw( @Model.JsonTextContent_Width ) ' />
         <input type='hidden' id="JsonTextContent_Height" name="JsonTextContent_Height" value=' @Html.Raw( @Model.JsonTextContent_Height ) ' />*@
 
-    <input type='hidden' id="JsonTextContent_Left" name="JsonTextContent_Left" value=' @Html.Raw( @Model.JSON_Left ) ' />
-    <input type='hidden' id="JsonTextContent_Top" name="JsonTextContent_Top" value=' @Html.Raw( @Model.JSON_Top ) ' />
+    @*<input type='hidden' id="JsonTextContent_Left" name="JsonTextContent_Left" value=' @Html.Raw( @Model.JSON_Left ) ' />
+        <input type='hidden' id="JsonTextContent_Top" name="JsonTextContent_Top" value=' @Html.Raw( @Model.JSON_Top ) ' />*@
+    <input type='hidden' id="JsonTextContent_Left" name="JsonTextContent_Left" value=' @Html.Raw( @Model.JSON_Offset_Left ) ' />
+        <input type='hidden' id="JsonTextContent_Top" name="JsonTextContent_Top" value=' @Html.Raw( @Model.JSON_Offset_Top ) ' />
+
     <input type='hidden' id="JsonTextContent_Width" name="JsonTextContent_Width" value=' @Html.Raw( @Model.JSON_Width ) ' />
     <input type='hidden' id="JsonTextContent_Height" name="JsonTextContent_Height" value=' @Html.Raw( @Model.JSON_Height ) ' />
 
@@ -137,8 +140,10 @@
 
     @*let my_JSON_string_Left = '  @Html.Raw( @Model.JsonTextContent_Left ) ';
     let my_JSON_string_Top = '  @Html.Raw( @Model.JsonTextContent_Top ) ';*@
-    let my_JSON_string_Left = '  @Html.Raw( @Model.JSON_Left ) ';
-    let my_JSON_string_Top = '  @Html.Raw( @Model.JSON_Top ) ';
+    @*let my_JSON_string_Left = '  @Html.Raw( @Model.JSON_Left ) ';
+    let my_JSON_string_Top = '  @Html.Raw( @Model.JSON_Top ) ';*@
+    let my_JSON_string_Left = '  @Html.Raw( @Model.JSON_Offset_Left ) ';
+    let my_JSON_string_Top = '  @Html.Raw( @Model.JSON_Offset_Top ) ';
 
     // Added 3/26/2020 Thomas Downes
     //

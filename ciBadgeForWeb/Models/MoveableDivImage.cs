@@ -124,6 +124,10 @@ namespace ciBadgeForWeb.Models
         public string JSON_Height { get; set; }
 
         //Added 4/20/2020 thomas downes  
+        public string JSON_Offset_Left { get; set; }
+        public string JSON_Offset_Top { get; set; }
+
+        //Added 4/20/2020 thomas downes  
         public string JSON_HasField { get; set; }
         public string JSON_Displayed { get; set; }
         public string JSON_FieldNm { get; set; }
@@ -133,6 +137,11 @@ namespace ciBadgeForWeb.Models
 
         public Moveable_Left MoveLeft;
         public Moveable_Top MoveTop;
+
+        //Added 4/22/2020 thomas downes
+        public Moveable_Left MoveLeft_Offset;
+        public Moveable_Top MoveTop_Offset;
+
         public Moveable_Width MoveWidth;
         public Moveable_Height MoveHeight;
 
@@ -184,17 +193,16 @@ namespace ciBadgeForWeb.Models
 
                     //Added 4/22/2020 thomas downes
                     const bool c_boolIncludeOffset = true;  //Added 4/22/2020 thomas d.
-                    if (c_boolIncludeOffset)
+                    if (c_boolIncludeOffset) //Added 4/22/2020 thomas d.
                     {
-                        this.MoveLeft[indexElement] = (par_offsetPoint.X + each_element.LeftEdge_Pixels).ToString() + "px";
-                        this.MoveTop[indexElement] = (par_offsetPoint.Y + each_element.TopEdge_Pixels).ToString() + "px";
+                        //Added 4/22/2020 thomas d.
+                        this.MoveLeft_Offset[indexElement] = (par_offsetPoint.X + each_element.LeftEdge_Pixels).ToString() + "px";
+                        this.MoveTop_Offset[indexElement] = (par_offsetPoint.Y + each_element.TopEdge_Pixels).ToString() + "px";
                     }
-                    else
-                    {
-                        //Added 4/13/2020 thomas downes
-                        this.MoveLeft[indexElement] = each_element.LeftEdge_Pixels.ToString() + "px";
-                        this.MoveTop[indexElement] = each_element.TopEdge_Pixels.ToString() + "px";
-                    }
+
+                    //Added 4/13/2020 thomas downes
+                    this.MoveLeft[indexElement] = each_element.LeftEdge_Pixels.ToString() + "px";
+                    this.MoveTop[indexElement] = each_element.TopEdge_Pixels.ToString() + "px";
 
                     //Integers are fine, strings not needed. 
                     this.MoveWidth[indexElement] = each_element.Width_Pixels;   //.ToString() + "px";
@@ -480,6 +488,64 @@ namespace ciBadgeForWeb.Models
 
         }
 
+        public string GetJSON_Offset_Left()
+        {
+            //
+            // Added 4/3/2020 thomas downes
+            //
+            JsonSerializerSettings json_options = new JsonSerializerSettings();
+
+            json_options.Formatting = Formatting.None;
+
+            if (this.MoveLeft_Offset.EL1_Left == null) this.MoveLeft_Offset.EL1_Left = "0px";
+            if (this.MoveLeft_Offset.EL2_Left == null) this.MoveLeft_Offset.EL2_Left = "0px";
+            if (this.MoveLeft_Offset.EL3_Left == null) this.MoveLeft_Offset.EL3_Left = "0px";
+            if (this.MoveLeft_Offset.EL4_Left == null) this.MoveLeft_Offset.EL4_Left = "0px";
+            if (this.MoveLeft_Offset.EL5_Left == null) this.MoveLeft_Offset.EL5_Left = "0px";
+            if (this.MoveLeft_Offset.EL6_Left == null) this.MoveLeft_Offset.EL6_Left = "0px";
+            if (this.MoveLeft_Offset.EL7_Left == null) this.MoveLeft_Offset.EL7_Left = "0px";
+            if (this.MoveLeft_Offset.EL8_Left == null) this.MoveLeft_Offset.EL8_Left = "0px";
+            if (this.MoveLeft_Offset.EL9_Left == null) this.MoveLeft_Offset.EL9_Left = "0px";
+            if (this.MoveLeft_Offset.EL10_Left == null) this.MoveLeft_Offset.EL10_Left = "0px";
+            if (this.MoveLeft_Offset.EL11_Left == null) this.MoveLeft_Offset.EL11_Left = "0px";
+            if (this.MoveLeft_Offset.EL12_Left == null) this.MoveLeft_Offset.EL12_Left = "0px";
+
+            // 4-22-2020 td//string strOutput = JsonConvert.SerializeObject(this.MoveLeft_Offset);
+            string strOutput = JsonConvert.SerializeObject(this.MoveLeft_Offset, this.MoveLeft_Offset.GetType(), json_options);
+
+            return strOutput;
+
+        }
+
+        public string GetJSON_Offset_Top()
+        {
+            //
+            // Added 4/22/2020 thomas downes
+            //
+            JsonSerializerSettings json_options = new JsonSerializerSettings();
+            //json_options.Formatting = Formatting.Indented;
+            json_options.Formatting = Formatting.None;
+
+            //ADded 4/16/2020 tdownes
+            if (this.MoveTop_Offset.EL1_Top == null) this.MoveTop_Offset.EL1_Top = "0px";
+            if (this.MoveTop_Offset.EL2_Top == null) this.MoveTop_Offset.EL2_Top = "0px";
+            if (this.MoveTop_Offset.EL3_Top == null) this.MoveTop_Offset.EL3_Top = "0px";
+            if (this.MoveTop_Offset.EL4_Top == null) this.MoveTop_Offset.EL4_Top = "0px";
+            if (this.MoveTop_Offset.EL5_Top == null) this.MoveTop_Offset.EL5_Top = "0px";
+            if (this.MoveTop_Offset.EL6_Top == null) this.MoveTop_Offset.EL6_Top = "0px";
+            if (this.MoveTop_Offset.EL7_Top == null) this.MoveTop_Offset.EL7_Top = "0px";
+            if (this.MoveTop_Offset.EL8_Top == null) this.MoveTop_Offset.EL8_Top = "0px";
+            if (this.MoveTop_Offset.EL9_Top == null) this.MoveTop_Offset.EL9_Top = "0px";
+            if (this.MoveTop_Offset.EL10_Top == null) this.MoveTop_Offset.EL10_Top = "0px";
+            if (this.MoveTop_Offset.EL11_Top == null) this.MoveTop_Offset.EL11_Top = "0px";
+            if (this.MoveTop_Offset.EL12_Top == null) this.MoveTop_Offset.EL12_Top = "0px";
+
+            string strOutput = JsonConvert.SerializeObject(this.MoveTop_Offset, this.MoveTop_Offset.GetType(), json_options);
+
+            return strOutput;
+
+        }
+
         public string GetJSON_Width()
         {
             //
@@ -544,25 +610,44 @@ namespace ciBadgeForWeb.Models
 
         }
 
-        public void SavePositions_Left(string par_JSON_Left)
+        public void SavePositions_Left(string par_JSON_Left, bool par_bHasOffsets)
         {
             //
             // Added 4/5/2020 thomas downes 
             //
             //---Movie m = JsonConvert.DeserializeObject<Movie>(json);
 
-            this.MoveLeft = JsonConvert.DeserializeObject<Moveable_Left>(par_JSON_Left);
+            if (par_bHasOffsets)
+            {
+                this.MoveLeft_Offset = JsonConvert.DeserializeObject<Moveable_Left>(par_JSON_Left);
+                //Added 4/22/2020 thomas d.
+                this.MoveLeft.Refresh_MinusOffsets(this.MoveLeft_Offset);
+            }
+            else
+            {
+                this.MoveLeft = JsonConvert.DeserializeObject<Moveable_Left>(par_JSON_Left);
+            }
 
         }
 
-        public void SavePositions_Top(string par_JSON_Top)
+        public void SavePositions_Top(string par_JSON_Top, bool par_bHasOffsets)
         {
             //
             // Added 4/5/2020 thomas downes 
             //
             //---Movie m = JsonConvert.DeserializeObject<Movie>(json);
 
-            this.MoveTop = JsonConvert.DeserializeObject<Moveable_Top>(par_JSON_Top);
+            // 4-22/2020 td //this.MoveTop = JsonConvert.DeserializeObject<Moveable_Top>(par_JSON_Top);
+            if (par_bHasOffsets)
+            {
+                this.MoveTop_Offset = JsonConvert.DeserializeObject<Moveable_Top>(par_JSON_Top);
+                //Added 4/22/2020 thomas d.
+                this.MoveTop.Refresh_MinusOffsets(this.MoveTop_Offset);
+            }
+            else
+            {
+                this.MoveTop = JsonConvert.DeserializeObject<Moveable_Top>(par_JSON_Top);
+            }
 
         }
 
