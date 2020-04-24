@@ -21,8 +21,15 @@
     Click here to increase by 50% the width of Included items.
 </div>
 
+<!--                 -->
+<!--                 -->
 <!-- Added 4/22/2020 -->
-<div style="position: absolute; top: 100px; left: 100px; border-width: thick; ">
+<!--                 -->
+<!--                 -->
+@*<div style="position: absolute; top: 100px; left: 100px; border-width: thick; ">*@
+<div style="position: absolute; top: @Model.GetOffsetPixels_Top() ;
+                                left: @Model.GetOffsetPixels_Left() ; 
+                                border-width: thick; ">
     <img src="@Url.Content("~/Images/BackExamples/ExampleBack.jpg")" width="900" height="567" />
 </div>
 
@@ -106,7 +113,7 @@
     @*<input type='hidden' id="JsonTextContent_Left" name="JsonTextContent_Left" value=' @Html.Raw( @Model.JSON_Left ) ' />
         <input type='hidden' id="JsonTextContent_Top" name="JsonTextContent_Top" value=' @Html.Raw( @Model.JSON_Top ) ' />*@
     <input type='hidden' id="JsonTextContent_Left" name="JsonTextContent_Left" value=' @Html.Raw( @Model.JSON_Offset_Left ) ' />
-        <input type='hidden' id="JsonTextContent_Top" name="JsonTextContent_Top" value=' @Html.Raw( @Model.JSON_Offset_Top ) ' />
+    <input type='hidden' id="JsonTextContent_Top" name="JsonTextContent_Top" value=' @Html.Raw( @Model.JSON_Offset_Top ) ' />
 
     <input type='hidden' id="JsonTextContent_Width" name="JsonTextContent_Width" value=' @Html.Raw( @Model.JSON_Width ) ' />
     <input type='hidden' id="JsonTextContent_Height" name="JsonTextContent_Height" value=' @Html.Raw( @Model.JSON_Height ) ' />
