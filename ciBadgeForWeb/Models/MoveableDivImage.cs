@@ -734,6 +734,19 @@ namespace ciBadgeForWeb.Models
 
         }
 
+        public string GetOffsetPixels_Left()
+        {
+            //Added 4/24/2020 thomas downes
+            return (Controllers.JsonFileController.OffsetPoint.X.ToString() + "px");
+
+        }
+
+        public string GetOffsetPixels_Top()
+        {
+            //Added 4/24/2020 thomas downes
+            return (Controllers.JsonFileController.OffsetPoint.Y.ToString() + "px");
+
+        }
 
 
     }
