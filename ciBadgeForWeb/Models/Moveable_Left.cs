@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Drawing;  //Added 4/24/2020 thomas d.
 
 namespace ciBadgeForWeb.Models
 {
@@ -77,6 +78,42 @@ namespace ciBadgeForWeb.Models
                 if (i == 12) this.EL12_Left = value;
                 //else ;
             }
+        }
+
+
+        public void RefreshMe_MinusOffsets(Moveable_Left par_oMoveLeft, Point par_offset)
+        {
+            //
+            //Added 4/24/2020 thomas downes 
+            //
+            this.EL1_Left = AddPixelSuffix(GetNumber(par_oMoveLeft.EL1_Left) - par_offset.X);
+            this.EL2_Left = AddPixelSuffix(GetNumber(par_oMoveLeft.EL2_Left) - par_offset.X);
+            this.EL3_Left = AddPixelSuffix(GetNumber(par_oMoveLeft.EL3_Left) - par_offset.X);
+            this.EL4_Left = AddPixelSuffix(GetNumber(par_oMoveLeft.EL4_Left) - par_offset.X);
+            this.EL5_Left = AddPixelSuffix(GetNumber(par_oMoveLeft.EL5_Left) - par_offset.X);
+            this.EL6_Left = AddPixelSuffix(GetNumber(par_oMoveLeft.EL6_Left) - par_offset.X);
+            this.EL7_Left = AddPixelSuffix(GetNumber(par_oMoveLeft.EL7_Left) - par_offset.X);
+            this.EL8_Left = AddPixelSuffix(GetNumber(par_oMoveLeft.EL8_Left) - par_offset.X);
+            this.EL9_Left = AddPixelSuffix(GetNumber(par_oMoveLeft.EL9_Left) - par_offset.X);
+
+            this.EL10_Left = AddPixelSuffix(GetNumber(par_oMoveLeft.EL10_Left) - par_offset.X);
+            this.EL11_Left = AddPixelSuffix(GetNumber(par_oMoveLeft.EL11_Left) - par_offset.X);
+            this.EL12_Left = AddPixelSuffix(GetNumber(par_oMoveLeft.EL12_Left) - par_offset.X);
+
+        }
+
+        private string AddPixelSuffix(int par_input)
+        {
+            // Added 4/24/2020 thomas downes
+            return (par_input.ToString() + "px");
+
+        }
+
+
+        private int GetNumber(string par_num)
+        {
+            //Added 4/24/2020 thomas downes
+            return int.Parse(par_num.Replace("px", ""));
         }
 
     }

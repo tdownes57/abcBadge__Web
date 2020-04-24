@@ -621,7 +621,8 @@ namespace ciBadgeForWeb.Models
             {
                 this.MoveLeft_Offset = JsonConvert.DeserializeObject<Moveable_Left>(par_JSON_Left);
                 //Added 4/22/2020 thomas d.
-                this.MoveLeft.Refresh_MinusOffsets(this.MoveLeft_Offset);
+                //-----this.MoveLeft.Refresh_MinusOffsets(this.MoveLeft_Offset);
+                this.MoveLeft.RefreshMe_MinusOffsets(this.MoveLeft_Offset, Controllers.JsonFileController.OffsetPoint);
             }
             else
             {
@@ -642,7 +643,8 @@ namespace ciBadgeForWeb.Models
             {
                 this.MoveTop_Offset = JsonConvert.DeserializeObject<Moveable_Top>(par_JSON_Top);
                 //Added 4/22/2020 thomas d.
-                this.MoveTop.Refresh_MinusOffsets(this.MoveTop_Offset);
+                //-----this.MoveTop.Refresh_MinusOffsets(this.MoveTop_Offset, OffsetPoint);
+                this.MoveTop.RefreshMe_MinusOffsets(this.MoveTop_Offset, Controllers.JsonFileController.OffsetPoint);
             }
             else
             {
@@ -672,14 +674,14 @@ namespace ciBadgeForWeb.Models
         }
 
         public void SavePositions_All(string par_JSON_Left, string par_JSON_Top,
-            string par_JSON_Height, string par_JSON_Width)
+            string par_JSON_Height, string par_JSON_Width, bool par_bAccountForOffsets)
         {
             //
             //Added 4/5/2020 thomas downes  
             //
-            SavePositions_Left(par_JSON_Left);   // , par_JSON_Top,
+            SavePositions_Left(par_JSON_Left, par_bAccountForOffsets);   // , par_JSON_Top,
             //    par_JSON_width, par_JSON_Height);
-            SavePositions_Top(par_JSON_Top);   // , par_JSON_Top,
+            SavePositions_Top(par_JSON_Top, par_bAccountForOffsets);   // , par_JSON_Top,
             SavePositions_Width(par_JSON_Width);   // , par_JSON_Top,
             SavePositions_Height(par_JSON_Height);   // , par_JSON_Top,
 

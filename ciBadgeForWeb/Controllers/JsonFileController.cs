@@ -439,10 +439,12 @@ namespace ciBadgeForWeb.Controllers
                     //
                     var objectMoveableDivs = JsonFileController.MoveableDivs;
 
-                    objectMoveableDivs.SavePositions_Left(collection["JsonTextContent_Left"]);
-                    objectMoveableDivs.SavePositions_Top(collection["JsonTextContent_Top"]);
-                    objectMoveableDivs.SavePositions_Width(collection["JsonTextContent_Width"]);
-                    objectMoveableDivs.SavePositions_Height(collection["JsonTextContent_Height"]);
+                    const bool c_bHasOffsets = true;  //Added 4/24/2020 thomas downes
+
+                    objectMoveableDivs.SavePositions_Left(collection["JsonTextContent_Left"], c_bHasOffsets);
+                    objectMoveableDivs.SavePositions_Top(collection["JsonTextContent_Top"], c_bHasOffsets);
+                    objectMoveableDivs.SavePositions_Width(collection["JsonTextContent_Width"]);  //, c_bHasOffsets);
+                    objectMoveableDivs.SavePositions_Height(collection["JsonTextContent_Height"]);  // , c_bHasOffsets);
 
                     //Added 4/16/2020 td
                     //
