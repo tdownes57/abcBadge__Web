@@ -175,6 +175,10 @@ namespace ciBadgeForWeb.Models
             this.MoveDisplayed = new Moveable_Displayed();
             this.MoveFieldName = new Moveable_FieldNm();
 
+            //Added 4/24/2020 thomas downes
+            this.MoveTop_Offset = new Moveable_Top();
+            this.MoveLeft_Offset = new Moveable_Left();
+
             //Added 4/13/2020 thomas downes
             this.ElementCount = 0;  // Reinitialize. ---4/13/2020 thomas downes
 
@@ -236,6 +240,11 @@ namespace ciBadgeForWeb.Models
                     this.MoveHasField[indexElement] = false;
                     this.MoveDisplayed[indexElement] = false;
                     this.MoveFieldName[indexElement] = "";
+
+                    // Added 4/24/2020 thomas downes  
+                    this.MoveLeft_Offset[indexElement] = "0px";  //  "[not applicable]";
+                    this.MoveTop_Offset[indexElement] = "0px";  // "[not applicable]";
+
                 }
             }
 
@@ -245,6 +254,10 @@ namespace ciBadgeForWeb.Models
             this.JSON_Top = this.GetJSON_Top();
             this.JSON_Height = this.GetJSON_Height();
             this.JSON_Width = this.GetJSON_Width();
+
+            //Added 4/24/2020 thomas downes
+            this.JSON_Offset_Left = this.GetJSON_Offset_Left();
+            this.JSON_Offset_Top = this.GetJSON_Offset_Top();
 
             //Added 4/20/2020 thomas downes
             this.JSON_Displayed = this.GetJSON_Displayed();
