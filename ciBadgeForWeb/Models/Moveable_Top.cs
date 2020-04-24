@@ -101,6 +101,26 @@ namespace ciBadgeForWeb.Models
 
         }
 
+        public void RefreshMe_AddOffsets(Moveable_Top par_oMoveTop, Point par_offset)
+        {
+            //
+            //Added 4/24/2020 thomas downes 
+            //
+            this.EL1_Top = AddPixelSuffix(GetNumber(par_oMoveTop.EL1_Top) + par_offset.Y);
+            this.EL2_Top = AddPixelSuffix(GetNumber(par_oMoveTop.EL2_Top) + par_offset.Y);
+            this.EL3_Top = AddPixelSuffix(GetNumber(par_oMoveTop.EL3_Top) + par_offset.Y);
+            this.EL4_Top = AddPixelSuffix(GetNumber(par_oMoveTop.EL4_Top) + par_offset.Y);
+            this.EL5_Top = AddPixelSuffix(GetNumber(par_oMoveTop.EL5_Top) + par_offset.Y);
+            this.EL6_Top = AddPixelSuffix(GetNumber(par_oMoveTop.EL6_Top) + par_offset.Y);
+            this.EL7_Top = AddPixelSuffix(GetNumber(par_oMoveTop.EL7_Top) + par_offset.Y);
+            this.EL8_Top = AddPixelSuffix(GetNumber(par_oMoveTop.EL8_Top) + par_offset.Y);
+            this.EL9_Top = AddPixelSuffix(GetNumber(par_oMoveTop.EL9_Top) + par_offset.Y);
+
+            this.EL10_Top = AddPixelSuffix(GetNumber(par_oMoveTop.EL10_Top) + par_offset.Y);
+            this.EL11_Top = AddPixelSuffix(GetNumber(par_oMoveTop.EL11_Top) + par_offset.Y);
+            this.EL12_Top = AddPixelSuffix(GetNumber(par_oMoveTop.EL12_Top) + par_offset.Y);
+
+        }
         private string AddPixelSuffix(int par_input)
         {
             // Added 4/24/2020 thomas downes
