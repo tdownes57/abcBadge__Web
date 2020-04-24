@@ -727,6 +727,14 @@ namespace ciBadgeForWeb.Models
         }
 
 
+        public Point GetOffsetPoint()
+        {
+            //Added 4/24/2020 thomas downes
+            return Controllers.JsonFileController.OffsetPoint;
+
+        }
+
+
 
     }
 }
