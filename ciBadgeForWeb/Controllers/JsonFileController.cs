@@ -27,7 +27,7 @@ namespace ciBadgeForWeb.Controllers
         public static MoveableDivImage MoveableDivs;  //--- = new JsonFile();
 
         //Added 4/22/2020 thomas downes 
-        public static Point OffsetPoint = new Point(100, 100);
+        public static Point OffsetPoint = new Point(200, 100);
 
         public static MoveableDivImage GetMoveableDivs()
         {

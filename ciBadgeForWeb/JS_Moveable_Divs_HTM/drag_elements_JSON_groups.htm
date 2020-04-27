@@ -383,17 +383,18 @@
             //mod_array_elementIDs.forEach(each_ElementID => {
 
             let index_of_movedElement = mod_array_elementIDs.indexOf(par_omit_elmntDiv);
-            let boolHasItAlready = (0 <= index_of_element);
+            let boolHasItAlready = (0 <= index_of_movedElement);
 
-            mod_array_elementIDs.forEach(each_Element => {
-                // We are iterating through the selected Elements.
-                //-----tempElem = document.getElementById(each_ElementID);
-                if (each_Element != par_omit_elmntDiv) {
-                    //Call the element-specific (as one of the group elements) encapsulation.
-                    function_PropagateMoveToGroup_Item(par_intLeftX, par_intTopY, each_Element);
-                }
-            });
-
+            if (boolHasItAlready) {
+                mod_array_elementIDs.forEach(each_Element => {
+                    // We are iterating through the selected Elements.
+                    //-----tempElem = document.getElementById(each_ElementID);
+                    if (each_Element != par_omit_elmntDiv) {
+                        //Call the element-specific (as one of the group elements) encapsulation.
+                        function_PropagateMoveToGroup_Item(par_intLeftX, par_intTopY, each_Element);
+                    }
+                });
+            }
 
             // Elements #3 to 12
             //for (i_ElemIndex = 0; i_ElemIndex < 12; i_ElemIndex++) {
@@ -489,7 +490,7 @@
                     //
                     // Remove the Element ID from the selection group.
                     //
-                    closure_DivElement.style.borderWidth = '';  // 'thin';
+                    closure_DivElement.style.borderWidth = 'thin';  // 'thin';
                     closure_DivElement.style.color = '';
                     closure_DivElement.style.backgroundColor = '';
                     //mod_array_elementIDs.pop(closure_DivElement.id); // Pop = Remove
@@ -499,7 +500,7 @@
                     //
                     // Add the closure element to the selection group.
                     //
-                    closure_DivElement.style.borderWidth = '';  //'thick';
+                    closure_DivElement.style.borderWidth = 'thick';  //'thick';
                     closure_DivElement.style.color = 'blue';
                     closure_DivElement.style.backgroundColor = 'blue';
                     //mod_array_elementIDs.push(closure_DivElement.id); //Push = Insert
