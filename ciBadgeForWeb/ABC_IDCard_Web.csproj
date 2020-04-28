@@ -867,6 +867,16 @@
     <Content Include="ASPX\ImageHandler.ashx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <AdditionalFiles Include="Scripts\Closures\ClickClosure.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AdditionalFiles>
+    <AdditionalFiles Include="Scripts\Closures\DragClosure.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AdditionalFiles>
+    <Content Include="Scripts\Closures\DragDivE99.js" />
+    <AdditionalFiles Include="Scripts\Closures\LinkUpClosures.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AdditionalFiles>
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
@@ -991,6 +1001,7 @@
     <Content Include="Views\JsonFile\blue_star7.jpg" />
     <Content Include="Views\JsonFile\blue_star8.jpg" />
     <Content Include="Views\JsonFile\blue_star9.jpg" />
+    <Content Include="Views\JsonFile\DragDiv_E99.js" />
     <Content Include="Views\JsonFile\ExportClosures.js" />
     <Content Include="XML\ciLayoutDesignVB_GreenText.xml" />
     <Content Include="XML\ciLayoutDesignVB_Plain.xml" />
@@ -1205,10 +1216,12 @@
     <Content Include="Views\Personality\DisplayTemplates\How Display Templates work.url" />
     <Content Include="Views\Customer\DisplayTemplates\How Display Templates work.url" />
     <Content Include="Views\Fields\Edit.cshtml" />
+    <Content Include="Views\Shared\_LayoutClosures.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />
     <Folder Include="LegacyPages\" />
+    <Folder Include="REST_API\" />
     <Folder Include="Scripts - 2020\" />
     <Folder Include="Views\CILayoutText\" />
     <Folder Include="Views\CustomField\" />
@@ -1264,6 +1277,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\Closures\TypeScript1.ts" />
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>

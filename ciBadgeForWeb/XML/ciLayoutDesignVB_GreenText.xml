@@ -593,8 +593,8 @@
         <Width_Pixels>675</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>415</TopEdge_Pixels>
-      <LeftEdge_Pixels>4</LeftEdge_Pixels>
+      <TopEdge_Pixels>411</TopEdge_Pixels>
+      <LeftEdge_Pixels>95</LeftEdge_Pixels>
       <Width_Pixels>757</Width_Pixels>
       <Height_Pixels>35</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
@@ -650,8 +650,8 @@
         <Width_Pixels>675</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>369</TopEdge_Pixels>
-      <LeftEdge_Pixels>3</LeftEdge_Pixels>
+      <TopEdge_Pixels>291</TopEdge_Pixels>
+      <LeftEdge_Pixels>6</LeftEdge_Pixels>
       <Width_Pixels>1248</Width_Pixels>
       <Height_Pixels>35</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
@@ -707,8 +707,8 @@
         <Width_Pixels>675</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>242</TopEdge_Pixels>
-      <LeftEdge_Pixels>262</LeftEdge_Pixels>
+      <TopEdge_Pixels>134</TopEdge_Pixels>
+      <LeftEdge_Pixels>253</LeftEdge_Pixels>
       <Width_Pixels>253</Width_Pixels>
       <Height_Pixels>30</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
@@ -1440,8 +1440,8 @@
         <Width_Pixels>675</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>201</TopEdge_Pixels>
-      <LeftEdge_Pixels>247</LeftEdge_Pixels>
+      <TopEdge_Pixels>6</TopEdge_Pixels>
+      <LeftEdge_Pixels>248</LeftEdge_Pixels>
       <Width_Pixels>225</Width_Pixels>
       <Height_Pixels>33</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
@@ -1501,7 +1501,7 @@
         <Width_Pixels>681</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>327</TopEdge_Pixels>
+      <TopEdge_Pixels>249</TopEdge_Pixels>
       <LeftEdge_Pixels>6</LeftEdge_Pixels>
       <Width_Pixels>852</Width_Pixels>
       <Height_Pixels>35</Height_Pixels>
@@ -1563,8 +1563,8 @@
         <Width_Pixels>681</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>241</TopEdge_Pixels>
-      <LeftEdge_Pixels>526</LeftEdge_Pixels>
+      <TopEdge_Pixels>46</TopEdge_Pixels>
+      <LeftEdge_Pixels>527</LeftEdge_Pixels>
       <Width_Pixels>253</Width_Pixels>
       <Height_Pixels>30</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
