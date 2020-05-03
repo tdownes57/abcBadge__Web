@@ -150,6 +150,9 @@ namespace ciBadgeForWeb.Models
         public Moveable_Displayed MoveDisplayed;
         public Moveable_FieldNm MoveFieldName;
 
+        //Added 5/3/2020 thomas downes
+        public Image[] ImageForElement;
+
         //
         // Initialize. ---3/20/2020 thomas downes 
         //
@@ -181,6 +184,10 @@ namespace ciBadgeForWeb.Models
 
             //Added 4/13/2020 thomas downes
             this.ElementCount = 0;  // Reinitialize. ---4/13/2020 thomas downes
+
+            //Added 5/3/2020 thomas downes
+            var objImageGen = new ciBadgeGenerator.ClassMakeBadge();
+            ImageForElement = new Image[12];
 
             foreach (ClassElementField each_element in par_cache.ListOfElementFields)
             {
@@ -216,6 +223,9 @@ namespace ciBadgeForWeb.Models
                     this.MoveDisplayed[indexElement] = bElementIsVisible; // each_element.IsDisplayedOnBadge_Visibly();
                     this.MoveHasField[indexElement] = bElementHasField;  // true;  // each_element.IsDisplayedOnBadge_Visibly();
                     this.MoveFieldName[indexElement] = each_element.FieldInfo.FieldLabelCaption ;
+
+                    //Added 5/3/2020 thomas downes 
+                    this.ImageFor_Element[indexElement] = objImageGen.ElementFieldToImage(each_element, par_cache.BadgeLayout);
 
                     //Added 4/13/2020 thomas downes
                     this.ElementCount += 1;  // Increment. ---4/13/2020 thomas downes

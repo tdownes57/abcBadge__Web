@@ -30,6 +30,7 @@ namespace ciBadgeForWeb.Controllers
         //---public static Point OffsetPoint = new Point(100, 100);
         //--- 5/2/2020 td ---//public static Point OffsetPoint = new Point(200, 100);
         public static Point OffsetPoint = new Point(300, 200);
+        public static Point LayoutSize = new Point(650, 410);
 
         public static MoveableDivImage GetMoveableDivs()
         {
@@ -52,8 +53,9 @@ namespace ciBadgeForWeb.Controllers
             //
             // Added 3/21/2020 Thomas Downes  
             //
+
             //JsonFile objectJsonFile = new JsonFile();
-            var objectJsonFile = JsonFileController.JsonFile_MoveableDivs;
+            // 5/2/2020 thomas downes //---var objectJsonFile = JsonFileController.JsonFile_MoveableDivs;
 
             //return View(objectJsonFile);
             //return IndexGroupWidth();
@@ -70,6 +72,12 @@ namespace ciBadgeForWeb.Controllers
             //    JsonFileController.MoveableDivs = objectMoveableDivs;
             //}
             //return View(objectMoveableDivs);
+
+            //Added 5/2/2020 thomas downes  
+            ViewBag.LayoutWidthPixels = ClassElementsCache_Deprecated.Singleton.BadgeLayout.Width_Pixels;
+            ViewBag.LayoutHeightPixels = ClassElementsCache_Deprecated.Singleton.BadgeLayout.Height_Pixels;
+            ViewBag.OffsetLeftPixels = OffsetPoint.X;
+            ViewBag.OffsetTopPixels = OffsetPoint.Y;
 
             //Modified 4/22/2020 td
             return View(GetMoveableDivs());

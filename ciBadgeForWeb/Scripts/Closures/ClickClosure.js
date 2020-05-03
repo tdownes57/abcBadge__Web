@@ -7,7 +7,18 @@
 //    on 4/28/2020 thomas downes 
 //
 //---import {MakeClosure_clickElement} from "ExportClosures.js";
-
+//
+    // Search the Views\Shared\_LayoutClosures.cshtml document for the following: 
+    //    (!!!! near the top of the document !!!)
+    //
+    //    @Scripts.Render("~/Scripts/Closures/ClickClosure.js")
+    //    @Scripts.Render("~/Scripts/Closures/DragClosure.js")
+    //
+    // Search the Views\Shared\_LayoutClosures.cshtml document for the following: 
+    //    (!!!! near the bottom of the document !!!)
+    //
+    //     @Scripts.Render("~/Scripts/Closures/LinkUpClosures.js")
+    //
 function MakeClosure_clickElement(par_elmntDiv) {
     //
     //This is a Javascript closure.

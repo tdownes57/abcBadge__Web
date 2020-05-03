@@ -650,8 +650,8 @@
         <Width_Pixels>675</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>337</TopEdge_Pixels>
-      <LeftEdge_Pixels>24</LeftEdge_Pixels>
+      <TopEdge_Pixels>254</TopEdge_Pixels>
+      <LeftEdge_Pixels>-194</LeftEdge_Pixels>
       <Width_Pixels>1248</Width_Pixels>
       <Height_Pixels>35</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
@@ -707,8 +707,8 @@
         <Width_Pixels>675</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>238</TopEdge_Pixels>
-      <LeftEdge_Pixels>98</LeftEdge_Pixels>
+      <TopEdge_Pixels>87</TopEdge_Pixels>
+      <LeftEdge_Pixels>59</LeftEdge_Pixels>
       <Width_Pixels>253</Width_Pixels>
       <Height_Pixels>30</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
@@ -1440,8 +1440,8 @@
         <Width_Pixels>675</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>133</TopEdge_Pixels>
-      <LeftEdge_Pixels>88</LeftEdge_Pixels>
+      <TopEdge_Pixels>145</TopEdge_Pixels>
+      <LeftEdge_Pixels>77</LeftEdge_Pixels>
       <Width_Pixels>225</Width_Pixels>
       <Height_Pixels>33</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
@@ -1501,8 +1501,8 @@
         <Width_Pixels>681</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>281</TopEdge_Pixels>
-      <LeftEdge_Pixels>23</LeftEdge_Pixels>
+      <TopEdge_Pixels>207</TopEdge_Pixels>
+      <LeftEdge_Pixels>-192</LeftEdge_Pixels>
       <Width_Pixels>852</Width_Pixels>
       <Height_Pixels>35</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
@@ -1563,8 +1563,8 @@
         <Width_Pixels>681</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>180</TopEdge_Pixels>
-      <LeftEdge_Pixels>96</LeftEdge_Pixels>
+      <TopEdge_Pixels>40</TopEdge_Pixels>
+      <LeftEdge_Pixels>60</LeftEdge_Pixels>
       <Width_Pixels>253</Width_Pixels>
       <Height_Pixels>30</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>

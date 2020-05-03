@@ -29,127 +29,133 @@
 <!--                 -->
 <!--                 -->
 @*<div style="position: absolute; top: 100px; left: 100px; border-width: thick; ">*@
-<div style="position: absolute; top: @Model.GetOffsetPixels_Top() ;
-                                left: @Model.GetOffsetPixels_Left() ;
+@*<div style="position: absolute; top: @Model.GetOffsetPixels_Left() ;
+                                left: @Model.GetOffsetPixels_Top() ;
+                                border-width: thick;  z-index:-1;">*@
+    <div style="position: absolute; top: @ViewBag.OffsetLeftPixels ;
+                                left: @ViewBag.OffsetRightPixels ;
                                 border-width: thick;  z-index:-1;">
-    <img src="@Url.Content("~/Images/BackExamples/ExampleBack.jpg")" width="650" height="410" />
-</div>
+        @*<img src="@Url.Content("~/Images/BackExamples/ExampleBack.jpg")" width="650" height="410" />*@
+        <img src="@Url.Content("~/Images/BackExamples/ExampleBack.jpg")"
+             width="@ViewBag.LayoutWidthPixels"
+             height="@ViewBag.LayoutHeightPixels" />
+    </div>
 
-<div id="EL1" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; border-width: thick; ">
-    <img id="EL1_im" src="@Url.Content("~/Images/blue_star1.jpg")" width="200" height="35" />
-</div>
+    <div id="EL1" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; border-width: thick; ">
+        <img id="EL1_im" src="@Url.Content("~/Images/blue_star1.jpg")" width="200" height="35" />
+    </div>
 
-<div id="EL2" class="mydiv_class" style="position: absolute; top: 250px; left: 150px; border-width: thick;">
-    <img id="EL2_im" src="@Url.Content("~/Images/blue_star2.jpg")" width="200" height="35" />
-</div>
+    <div id="EL2" class="mydiv_class" style="position: absolute; top: 250px; left: 150px; border-width: thick;">
+        <img id="EL2_im" src="@Url.Content("~/Images/blue_star2.jpg")" width="200" height="35" />
+    </div>
 
-<div id="EL3" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; border-width: thick; ">
-    <img id="EL3_im" src="@Url.Content("~/Images/blue_star3.jpg")" width="200" height="35" />
-</div>
+    <div id="EL3" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; border-width: thick; ">
+        <img id="EL3_im" src="@Url.Content("~/Images/blue_star3.jpg")" width="200" height="35" />
+    </div>
 
-<div id="EL4" class="mydiv_class" style="position: absolute; top: 250px; left: 250px; border-width: thick; ">
-    <img id="EL4_im" src="@Url.Content("~/Images/blue_star4.jpg")" width="200" height="35" />
-</div>
+    <div id="EL4" class="mydiv_class" style="position: absolute; top: 250px; left: 250px; border-width: thick; ">
+        <img id="EL4_im" src="@Url.Content("~/Images/blue_star4.jpg")" width="200" height="35" />
+    </div>
 
-<div id="EL5" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; border-width: thick;">
-    <img id="EL5_im" src="@Url.Content("~/Images/blue_star5.jpg")" width="200" height="35" />
-</div>
+    <div id="EL5" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; border-width: thick;">
+        <img id="EL5_im" src="@Url.Content("~/Images/blue_star5.jpg")" width="200" height="35" />
+    </div>
 
-<div id="EL6" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; border-width: thick;">
-    <img id="EL6_im" src="@Url.Content("~/Images/blue_star6.jpg")" width="200" height="35" />
-</div>
+    <div id="EL6" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; border-width: thick;">
+        <img id="EL6_im" src="@Url.Content("~/Images/blue_star6.jpg")" width="200" height="35" />
+    </div>
 
-<div id="EL7" class="mydiv_class" style="position: absolute; top: 250px; left: 300px; border-width: thick;">
-    <img id="EL7_im" src="@Url.Content("~/Images/blue_star7.jpg")" width="200" height="35" />
-</div>
+    <div id="EL7" class="mydiv_class" style="position: absolute; top: 250px; left: 300px; border-width: thick;">
+        <img id="EL7_im" src="@Url.Content("~/Images/blue_star7.jpg")" width="200" height="35" />
+    </div>
 
-<div id="EL8" class="mydiv_class" style="position: absolute; top: 250px; left: 400px; border-width: thick;">
-    <img id="EL8_im" src="@Url.Content("~/Images/blue_star8.jpg")" width="200" height="30" />
-</div>
+    <div id="EL8" class="mydiv_class" style="position: absolute; top: 250px; left: 400px; border-width: thick;">
+        <img id="EL8_im" src="@Url.Content("~/Images/blue_star8.jpg")" width="200" height="30" />
+    </div>
 
-<div id="EL9" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; border-width: thick;">
-    <img id="EL9_im" src="@Url.Content("~/Images/blue_star9.jpg")" width="200" height="35" />
-</div>
+    <div id="EL9" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; border-width: thick;">
+        <img id="EL9_im" src="@Url.Content("~/Images/blue_star9.jpg")" width="200" height="35" />
+    </div>
 
-<div id="EL10" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; border-width: thick;">
-    <img id="EL10_im" src="@Url.Content("~/Images/blue_star10.jpg")" width="200" height="35" />
-</div>
+    <div id="EL10" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; border-width: thick;">
+        <img id="EL10_im" src="@Url.Content("~/Images/blue_star10.jpg")" width="200" height="35" />
+    </div>
 
-<div id="EL11" class="mydiv_class" style="position: absolute; top: 250px; left: 300px; border-width: thick;">
-    <img id="EL11_im" src="@Url.Content("~/Images/blue_star11.jpg")" width="200" height="35" />
-</div>
+    <div id="EL11" class="mydiv_class" style="position: absolute; top: 250px; left: 300px; border-width: thick;">
+        <img id="EL11_im" src="@Url.Content("~/Images/blue_star11.jpg")" width="200" height="35" />
+    </div>
 
-<div id="EL12" class="mydiv_class" style="position: absolute; top: 250px; left: 400px; border-width: thick;">
-    <img id="EL12_im" src="@Url.Content("~/Images/blue_star12.jpg")" width="200" height="35" />
-</div>
-
-
-
-<p id="p_JSON_Left" style="visibility: hidden;">This is for the JSON data, Left property.</p>
-<p id="p_JSON_Top" style="visibility: hidden;">This is for the JSON data, Top property.</p>
-
-<!--         -->
-<!--  WH #1  -->
-<!--         -->
-<p id="p_JSON_Width" style="visibility: hidden;">This is for the JSON data, Width property.</p>
-<p id="p_JSON_Height" style="visibility: hidden;">This is for the JSON data, Height property.</p>
+    <div id="EL12" class="mydiv_class" style="position: absolute; top: 250px; left: 400px; border-width: thick;">
+        <img id="EL12_im" src="@Url.Content("~/Images/blue_star12.jpg")" width="200" height="35" />
+    </div>
 
 
-@*<h2>MoveableDivImage</h2>*@
 
-@using (Html.BeginForm())
-{
-    //
-    // Added 4/6/2020 thomas downes
-    //
-    @*@Html.EditorFor(model => model.JSON_Left, new { htmlAttributes = new { @class = "form-control" } })
-        @Html.EditorFor(model => model.JSON_Top, new { htmlAttributes = new { @class = "form-control" } })
-        @Html.EditorFor(model => model.JSON_Width, new { htmlAttributes = new { @class = "form-control" } })
-        @Html.EditorFor(model => model.JSON_Height, new { htmlAttributes = new { @class = "form-control" } })*@
+    <p id="p_JSON_Left" style="visibility: hidden;">This is for the JSON data, Left property.</p>
+    <p id="p_JSON_Top" style="visibility: hidden;">This is for the JSON data, Top property.</p>
 
-    @*<input type='hidden' id="JsonTextContent_Left" name="JsonTextContent_Left" value=' @Html.Raw( @Model.JsonTextContent_Left ) ' />
-        <input type='hidden' id="JsonTextContent_Top" name="JsonTextContent_Top" value=' @Html.Raw( @Model.JsonTextContent_Top ) ' />
-        <input type='hidden' id="JsonTextContent_Width" name="JsonTextContent_Width" value=' @Html.Raw( @Model.JsonTextContent_Width ) ' />
-        <input type='hidden' id="JsonTextContent_Height" name="JsonTextContent_Height" value=' @Html.Raw( @Model.JsonTextContent_Height ) ' />*@
-
-    @*<input type='hidden' id="JsonTextContent_Left" name="JsonTextContent_Left" value=' @Html.Raw( @Model.JSON_Left ) ' />
-        <input type='hidden' id="JsonTextContent_Top" name="JsonTextContent_Top" value=' @Html.Raw( @Model.JSON_Top ) ' />*@
-    <input type='hidden' id="JsonTextContent_Left" name="JsonTextContent_Left" value=' @Html.Raw( @Model.JSON_Offset_Left ) ' />
-    <input type='hidden' id="JsonTextContent_Top" name="JsonTextContent_Top" value=' @Html.Raw( @Model.JSON_Offset_Top ) ' />
-
-    <input type='hidden' id="JsonTextContent_Width" name="JsonTextContent_Width" value=' @Html.Raw( @Model.JSON_Width ) ' />
-    <input type='hidden' id="JsonTextContent_Height" name="JsonTextContent_Height" value=' @Html.Raw( @Model.JSON_Height ) ' />
+    <!--         -->
+    <!--  WH #1  -->
+    <!--         -->
+    <p id="p_JSON_Width" style="visibility: hidden;">This is for the JSON data, Width property.</p>
+    <p id="p_JSON_Height" style="visibility: hidden;">This is for the JSON data, Height property.</p>
 
 
-    @Html.AntiForgeryToken()
+    @*<h2>MoveableDivImage</h2>*@
 
-    <div class="form-horizontal">
-        <h4>MoveableDivImage</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+    @using (Html.BeginForm())
+    {
+        //
+        // Added 4/6/2020 thomas downes
+        //
+        @*@Html.EditorFor(model => model.JSON_Left, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.JSON_Top, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.JSON_Width, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.JSON_Height, new { htmlAttributes = new { @class = "form-control" } })*@
+
+        @*<input type='hidden' id="JsonTextContent_Left" name="JsonTextContent_Left" value=' @Html.Raw( @Model.JsonTextContent_Left ) ' />
+            <input type='hidden' id="JsonTextContent_Top" name="JsonTextContent_Top" value=' @Html.Raw( @Model.JsonTextContent_Top ) ' />
+            <input type='hidden' id="JsonTextContent_Width" name="JsonTextContent_Width" value=' @Html.Raw( @Model.JsonTextContent_Width ) ' />
+            <input type='hidden' id="JsonTextContent_Height" name="JsonTextContent_Height" value=' @Html.Raw( @Model.JsonTextContent_Height ) ' />*@
+
+        @*<input type='hidden' id="JsonTextContent_Left" name="JsonTextContent_Left" value=' @Html.Raw( @Model.JSON_Left ) ' />
+            <input type='hidden' id="JsonTextContent_Top" name="JsonTextContent_Top" value=' @Html.Raw( @Model.JSON_Top ) ' />*@
+        <input type='hidden' id="JsonTextContent_Left" name="JsonTextContent_Left" value=' @Html.Raw( @Model.JSON_Offset_Left ) ' />
+        <input type='hidden' id="JsonTextContent_Top" name="JsonTextContent_Top" value=' @Html.Raw( @Model.JSON_Offset_Top ) ' />
+
+        <input type='hidden' id="JsonTextContent_Width" name="JsonTextContent_Width" value=' @Html.Raw( @Model.JSON_Width ) ' />
+        <input type='hidden' id="JsonTextContent_Height" name="JsonTextContent_Height" value=' @Html.Raw( @Model.JSON_Height ) ' />
+
+
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>MoveableDivImage</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
             </div>
         </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 
 
 
 
-<!--script src="ExportClosures.js" script-->
-@*<script src="~/Scripts/Closures/ClickClosure.js"></script>*@
+    <!--script src="ExportClosures.js" script-->
+    @*<script src="~/Scripts/Closures/ClickClosure.js"></script>*@
 
-@*<script src="//code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>*@
+    @*<script src="//code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>*@
 
 
-<script>
+    <script>
 
         @*let my_JSON_string_Left = '  @Html.Raw( @Model.JsonTextContent_Left ) ';
     let my_JSON_string_Top = '  @Html.Raw( @Model.JsonTextContent_Top ) ';*@
@@ -453,7 +459,7 @@
 
     }
     }
-</script>
+    </script>
 
 
 
