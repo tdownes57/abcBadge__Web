@@ -225,7 +225,7 @@ namespace ciBadgeForWeb.Models
                     this.MoveFieldName[indexElement] = each_element.FieldInfo.FieldLabelCaption ;
 
                     //Added 5/3/2020 thomas downes 
-                    this.ImageFor_Element[indexElement] = objImageGen.ElementFieldToImage(each_element, par_cache.BadgeLayout);
+                    this.ImageForElement[indexElement] = objImageGen.ElementFieldToImage(each_element, par_cache.BadgeLayout);
 
                     //Added 4/13/2020 thomas downes
                     this.ElementCount += 1;  // Increment. ---4/13/2020 thomas downes
@@ -768,6 +768,45 @@ namespace ciBadgeForWeb.Models
         {
             //Added 4/24/2020 thomas downes
             return (Controllers.JsonFileController.OffsetPoint.Y.ToString() + "px");
+
+        }
+
+        public string GetImageString_Base64(int par_index)
+        {
+            //
+            //Added 5/3/2 020 thomas downes  
+            //
+            Image imageByIndex = this.ImageForElement[par_index];
+            return GetBase64(imageByIndex);
+
+        }
+
+        private string GetBase64(Image par_image)
+        {
+            //
+            // How to convert image to byte array
+            //  https://stackoverflow.com/questions/3801275/how-to-convert-image-to-byte-array
+            //
+            ImageConverter _imageConverter = new ImageConverter();
+            byte[] bytearrayOfImage = (byte[])_imageConverter.ConvertTo(par_image, typeof(byte[]));
+            //return xByte;
+            return Convert.ToBase64String(bytearrayOfImage);
+        }
+
+        private string GetBase64_PresentationCore(Image par_image)
+        {
+            //
+            //   Conversion from image to base64, System.drawing.image
+            //   https://stackoverflow.com/questions/23707033/conversion-from-image-to-base64-system-drawing-image
+            //  
+            byte[] bytearrayOfImage = null;
+            using (System.IO.MemoryStream ms_MemoryStream = new System.IO.MemoryStream())
+            {
+                //var wb_Bitmap = new WriteableBitmap((BitmapImage)par_image.Source);
+                //wb_Bitmap.SaveJpeg(ms_MemoryStream, wb_Bitmap.PixelWidth, wb_Bitmap.PixelHeight, 0, 100);
+                //bytearrayOfImage = ms_MemoryStream.ToArray();
+            }
+            return Convert.ToBase64String(bytearrayOfImage);
 
         }
 
