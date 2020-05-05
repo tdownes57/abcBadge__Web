@@ -103,7 +103,7 @@ namespace ciBadgeForWeb.Models
 
         // Initializ the array. ---3/20/2020 thomas downes 
         //----4/3/2020 td---
-        private ClassElementField[] mod_arrayElements = new ClassElementField[12];
+        private ClassElementField[] mod_arrayElements = new ClassElementField[12 + 1];   // [12];
 
         private Newtonsoft.Json.JsonConverter mod_converter_Left;
         private Newtonsoft.Json.JsonConverter mod_converter_Top;
@@ -187,7 +187,8 @@ namespace ciBadgeForWeb.Models
 
             //Added 5/3/2020 thomas downes
             var objImageGen = new ciBadgeGenerator.ClassMakeBadge();
-            ImageForElement = new Image[12];
+            // 5/4/2020 td //ImageForElement = new Image[12];
+            ImageForElement = new Image[12 + 1]; // We will use 1, 2, ... 12 as the indices. The element # 0 will be ignored. 
 
             foreach (ClassElementField each_element in par_cache.ListOfElementFields)
             {
@@ -777,7 +778,14 @@ namespace ciBadgeForWeb.Models
             //Added 5/3/2 020 thomas downes  
             //
             Image imageByIndex = this.ImageForElement[par_index];
-            return GetBase64(imageByIndex);
+
+            //
+            //  https://stackoverflow.com/questions/8499633/how-to-display-base64-images-in-html
+            //
+            const string SRC_PREFIX_FOR_BASE64_1 = "data:image/png;base64, ";
+            const string SRC_PREFIX_FOR_BASE64_2 = "data: image / jpeg; base64,";
+
+            return (SRC_PREFIX_FOR_BASE64_2 + GetBase64(imageByIndex));
 
         }
 
