@@ -1094,7 +1094,7 @@
     <Content Include="Scripts\TextMover_T4.js" />
     <Content Include="Scripts\TextMover_T99.js" />
     <Content Include="Scripts\ToolTips1of4.js" />
-    <Content Include="Scripts\UploadBackground.js" />
+    <Content Include="Scripts\UploadPicOrBack.js" />
     <Content Include="SQL\CreateTables - Just 5 + 1 tables.sql" />
     <Content Include="SQL\CreateTables - Just 6 tables.sql" />
     <Content Include="SQL\CreateTables - Mar29.sql" />
@@ -1217,6 +1217,9 @@
     <Content Include="Views\Customer\DisplayTemplates\How Display Templates work.url" />
     <Content Include="Views\Fields\Edit.cshtml" />
     <Content Include="Views\Shared\_LayoutClosures.cshtml" />
+    <Content Include="Views\UploadBack\ElementCacheXML.cshtml" />
+    <Content Include="Views\Shared\_LayoutUpload.cshtml" />
+    <Content Include="Views\UploadBack\UploadPic.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />

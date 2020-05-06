@@ -40,9 +40,31 @@ namespace ciBadgeForWeb.Controllers
         // GET: UploadBack
         public ActionResult Index()
         {
-            ciPictures_VB.PictureExamples.PathToFolderOfImages = (HttpRuntime.AppDomainAppPath + "Images\\PictureExamples");
-            ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks = (HttpRuntime.AppDomainAppPath + "Images\\BackExamples");
+            //----ciPictures_VB.PictureExamples.PathToFolderOfImages = (HttpRuntime.AppDomainAppPath + "Images\\PictureExamples");
+            //---ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks = (HttpRuntime.AppDomainAppPath + "Images\\BackExamples");
+            ciPictures_VB.PictureExamples.PathToFolderOfImages = (App_Start.DiskFolders.PathToFolderOfPics(true));
+            ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks = (App_Start.DiskFolders.PathToFolderWithBacks(true));
 
+            return View();
+        }
+
+        // GET: UploadPic
+        public ActionResult UploadPic()
+        {
+            //Added 5/5/2020 thomas downes
+            ciPictures_VB.PictureExamples.PathToFolderOfImages = (App_Start.DiskFolders.PathToFolderOfPics(true));
+            ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks = (App_Start.DiskFolders.PathToFolderWithBacks(true));
+
+            return View();
+        }
+
+        // GET: ElementCacheXML
+        public ActionResult ElementCacheXML()
+        {
+            //ciPictures_VB.PictureExamples.PathToFolderOfImages = (HttpRuntime.AppDomainAppPath + "Images\\PictureExamples");
+            //ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks = (HttpRuntime.AppDomainAppPath + "Images\\BackExamples");
+
+            //Added 5/5/2020 thomas downes
             return View();
         }
 

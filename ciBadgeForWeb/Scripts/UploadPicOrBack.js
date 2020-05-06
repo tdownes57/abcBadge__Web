@@ -5,7 +5,8 @@
 "use strict";  //Suggested by my Orange Coast class. ---2/4/2020 thomas downes
 
 //get file size
-export function GetFileSize(fileid) {
+ //-----export function GetFileSize(fileid) {
+function GetFileSize(fileid) {
     try {
         var fileSize = 0;
         //for IE
@@ -25,7 +26,7 @@ export function GetFileSize(fileid) {
         return fileSize;
     }
     catch (e) {
-        alert("Error is :" + e);
+        alert("Error from function GetFileSize() is :" + e);
     }
 }
 
@@ -61,7 +62,8 @@ export function checkfile() {
             case 'jpg':
             case 'png':
             case 'gif':
-            case 'pdf':
+            //case 'pdf':
+            case 'bmp':
                 flag = true;
                 break;
             default:
@@ -80,6 +82,16 @@ export function checkfile() {
         }
         else {
             $("#spanfile").text("");
+
+            //
+            // Added 5/5/2020 thomas downes 
+            //
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#blah_preview').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+
         }
     }
 }
