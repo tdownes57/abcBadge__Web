@@ -36,6 +36,14 @@ namespace ciBadgeForWeb.Models
         [Display(Name = "Brief Name (e.g. Cardholders/Staff/Students)")]
         public string ConfigNameBrief { get; set; }
 
+        //Added 5/5/2020 td
+        [Display(Name = "Personality Singular e.g. Member")]
+        public string ConfigSingular { get; set; }
+
+        //Added 5/5/2020 td
+        [Display(Name = "Personality Plural e.g. Members")]
+        public string ConfigNamePlural { get; set; }
+
         [Display(Name = "Name in Full (Optional)")]
         public string ConfigNameFull { get; set; }
 

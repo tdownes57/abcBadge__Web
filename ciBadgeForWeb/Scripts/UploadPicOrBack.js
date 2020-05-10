@@ -7,6 +7,9 @@
 //get file size
  //-----export function GetFileSize(fileid) {
 function GetFileSize(fileid) {
+    //
+    // Get the file-size of the file. 
+    //
     try {
         var fileSize = 0;
         //for IE
@@ -31,7 +34,7 @@ function GetFileSize(fileid) {
 }
 
 //get file path from client system
-export function getNameFromPath(strFilepath) {
+function getNameFromPath(strFilepath) {
     var objRE = new RegExp(/([^\/\\]+)$/);
     var strName = objRE.exec(strFilepath);
 
@@ -53,7 +56,7 @@ $("#btnSubmit").live("click", function () {
     }
 });
 
-export function checkfile() {
+function checkfile() {
     var file = getNameFromPath($("#fileToUpload").val());
     if (file != null) {
         var extension = file.substr((file.lastIndexOf('.') + 1));

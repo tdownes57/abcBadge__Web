@@ -24,8 +24,10 @@ namespace ciBadgeForWeb.Controllers
 
         public UploadBackController()
         {
-            ciPictures_VB.PictureExamples.PathToFolderOfImages = (HttpRuntime.AppDomainAppPath + "Images\\PictureExamples");
-            ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks = (HttpRuntime.AppDomainAppPath + "Images\\BackExamples");
+            //---May 10--ciPictures_VB.PictureExamples.PathToFolderOfImages = (HttpRuntime.AppDomainAppPath + "Images\\PictureExamples");
+            //---May 10--ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks = (HttpRuntime.AppDomainAppPath + "Images\\BackExamples");
+            ciPictures_VB.PictureExamples.PathToFolderOfImages = (App_Start.DiskFolders.PathToFolderOfPics(true));
+            ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks = (App_Start.DiskFolders.PathToFolderWithBacks(true));
         }
 
         //
@@ -72,6 +74,12 @@ namespace ciBadgeForWeb.Controllers
         public ActionResult ShowAll()
         {
             //return View();
+
+            //
+            //Refresh the background images, since someone may have just uploaded a new
+            //   background image.  -----5/10/2020 thomas downes   
+            //
+            mod_backgrounds = RefreshBackgroundList();
 
             return View(mod_backgrounds);
 
@@ -213,6 +221,55 @@ namespace ciBadgeForWeb.Controllers
             //return View();
             return Redirect("~/LayoutText1/Index");
         }
+
+
+        public List<Models.Background> RefreshBackgroundList()
+        {
+            //
+            //Added 5/10/2020 thomas downes 
+            //
+            //  Copied from XmlCacheController, 5/10/2020
+            //
+            string strPath = (App_Start.DiskFolders.PathToFolderWithBacks(true));
+
+            //
+            // To do: adapt from XML to background images. 
+            //
+            foreach (FileInfo each_file_Info in (new DirectoryInfo(strPathToFolderXML)).GetFiles("*.xml"))
+            {
+                //Added 2/16/2019 td
+                boolExpectedFileType = each_file_Info.Name.EndsWith(".xml");  //Added 2/16/2019 td
+                boolPossiblyCorrupt = (!(boolExpectedFileType));  //Added 2/16/2019 td
+                if (boolPossiblyCorrupt) continue;  //Added 2/16/2019 td
+
+                if (boolGrabThisNextFile)
+                {
+                    obj_nextFileInfo = each_file_Info;
+                    break;
+                }
+                boolMatchesCurrent = (each_file_Info.Name == mod_fileTitleXML_Current);
+                if (boolMatchesCurrent)
+                {
+                    //mod_fileTitleXML_Current = each_file_Info.Name;
+                    //break;
+                    //-----Prepare for the next interation. 
+                    boolGrabThisNextFile = true;
+                }
+                //If we've come full circle, grab the first XML file.
+                if (boolStartFromBeginningAgain)
+                {
+                    //We've come full circle, so grab the first XML file.
+                    obj_nextFileInfo = each_file_Info;
+                    break;
+                }
+            }
+
+
+
+
+        }
+
+
 
         //        <body>
         //

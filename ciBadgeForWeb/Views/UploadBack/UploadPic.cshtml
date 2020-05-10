@@ -12,10 +12,10 @@
 
 <h2>Upload Picture of @strRecipTypeName </h2>
 
-<form runat="server">
+@*<form runat="server">
     <input type='file' id="imgInp" />
     <img id="blah" src="#" alt="your image" />
-</form>
+</form>*@
 
 @using (Html.BeginForm("FileUpload", "UploadBack", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {

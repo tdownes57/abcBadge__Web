@@ -60,8 +60,11 @@ namespace ciBadgeForWeb.Controllers
             //
             //  https://www.c-sharpcorner.com/article/simple-login-application-using-Asp-Net-mvc/ 
             //
-            ciPictures_VB.PictureExamples.PathToFolderOfImages = (HttpRuntime.AppDomainAppPath + "Images\\PictureExamples");
-            ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks = (HttpRuntime.AppDomainAppPath + "Images\\BackExamples");
+            //--- 5/9/220 td----ciPictures_VB.PictureExamples.PathToFolderOfImages = (HttpRuntime.AppDomainAppPath + "Images\\PictureExamples");
+            //----5/9/2020 td---ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks = (HttpRuntime.AppDomainAppPath + "Images\\BackExamples");
+            
+            ciPictures_VB.PictureExamples.PathToFolderOfImages = (App_Start.DiskFolders.PathToFolderOfPics(true));
+            ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks = (App_Start.DiskFolders.PathToFolderWithBacks(true));
 
             if (ModelState != null && ModelState.IsValid)
             {
