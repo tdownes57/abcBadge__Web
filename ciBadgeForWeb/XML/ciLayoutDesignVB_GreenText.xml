@@ -4,6 +4,7 @@
   <PathToXml_Saved>C:\Users\tdown\source\repos\ciBadgeForWeb - Framework\ciBadgeForWeb\XML\ciLayoutDesignVB_GreenText.xml</PathToXml_Saved>
   <XmlFile_Path>C:\Users\tdown\source\repos\ciBadgeForWeb - Framework\ciBadgeForWeb\XML\ciLayoutDesignVB_GreenText.xml</XmlFile_Path>
   <XmlFile_FTitle>ciLayoutDesignVB_GreenText.xml</XmlFile_FTitle>
+  <BackgroundImage_Path>C:\Users\tdown\source\repos\ciBadgeForWeb - Framework\ciBadgeForWeb\Images\BackExamples\BackExample.jpg</BackgroundImage_Path>
   <BackgroundImage_FTitle>BackExample.jpg</BackgroundImage_FTitle>
   <ElementQRCode>
     <BadgeLayout>
@@ -70,8 +71,8 @@
       <IsBarCode>false</IsBarCode>
       <DataEntryText>Undetermined value, for Field #0</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
-      <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
+      <CurrentRecipValue>006</CurrentRecipValue>
+      <CurrentRecipValue_Date>01/01/0001</CurrentRecipValue_Date>
     </ClassFieldStandard>
     <ClassFieldStandard>
       <IsStandard>false</IsStandard>
@@ -94,8 +95,8 @@
       <IsBarCode>false</IsBarCode>
       <DataEntryText>Undetermined value, for Field #1</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>Undetermined value, for Field #1</CurrentRecipValue>
-      <CurrentRecipValue_Date>Undetermined value, for Field #1</CurrentRecipValue_Date>
+      <CurrentRecipValue>Christy</CurrentRecipValue>
+      <CurrentRecipValue_Date>01/01/0001</CurrentRecipValue_Date>
     </ClassFieldStandard>
     <ClassFieldStandard>
       <IsStandard>false</IsStandard>
@@ -118,8 +119,8 @@
       <IsBarCode>false</IsBarCode>
       <DataEntryText>Undetermined value, for Field #2</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>Undetermined value, for Field #2</CurrentRecipValue>
-      <CurrentRecipValue_Date>Undetermined value, for Field #2</CurrentRecipValue_Date>
+      <CurrentRecipValue>Forbes</CurrentRecipValue>
+      <CurrentRecipValue_Date>01/01/0001</CurrentRecipValue_Date>
     </ClassFieldStandard>
     <ClassFieldStandard>
       <IsStandard>false</IsStandard>
@@ -424,8 +425,7 @@
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>false</IsLocked>
       <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
-      <IsDisplayedForEdits>false</IsDisplayedForEdits>
-      <DefaultValue />
+      <IsDisplayedForEdits>true</IsDisplayedForEdits>
       <ExampleValue>Willcrest School</ExampleValue>
       <HasPresetValues>true</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
@@ -460,8 +460,8 @@
       <IsBarCode>false</IsBarCode>
       <DataEntryText>Undetermined value, for Field #16</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>Undetermined value, for Field #16</CurrentRecipValue>
-      <CurrentRecipValue_Date>Undetermined value, for Field #16</CurrentRecipValue_Date>
+      <CurrentRecipValue>Mr. Shikovsky</CurrentRecipValue>
+      <CurrentRecipValue_Date>01/01/0001</CurrentRecipValue_Date>
       <ArrayOfValues>
         <string>Mrs. Ross</string>
         <string>Mr. Smudge</string>
@@ -489,8 +489,8 @@
       <IsBarCode>false</IsBarCode>
       <DataEntryText>Undetermined value, for Field #17</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>Undetermined value, for Field #17</CurrentRecipValue>
-      <CurrentRecipValue_Date>Undetermined value, for Field #17</CurrentRecipValue_Date>
+      <CurrentRecipValue>4TH</CurrentRecipValue>
+      <CurrentRecipValue_Date>01/01/0001</CurrentRecipValue_Date>
       <ArrayOfValues>
         <string>9th</string>
         <string>10th</string>
@@ -519,8 +519,8 @@
       <IsBarCode>false</IsBarCode>
       <DataEntryText>Undetermined value, for Field #18</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>Undetermined value, for Field #18</CurrentRecipValue>
-      <CurrentRecipValue_Date>Undetermined value, for Field #18</CurrentRecipValue_Date>
+      <CurrentRecipValue>07/21/2003</CurrentRecipValue>
+      <CurrentRecipValue_Date>07/21/2003</CurrentRecipValue_Date>
     </ClassFieldCustomized>
     <ClassFieldCustomized>
       <IsStandard>false</IsStandard>
@@ -582,8 +582,8 @@
         <IsBarCode>false</IsBarCode>
         <DataEntryText>Undetermined value, for Field #0</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
-        <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
+        <CurrentRecipValue>006</CurrentRecipValue>
+        <CurrentRecipValue_Date>01/01/0001</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>fstrID</FieldEnum>
       <TextAlignment>Left</TextAlignment>
@@ -593,9 +593,9 @@
         <Width_Pixels>675</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>456</TopEdge_Pixels>
-      <LeftEdge_Pixels>403</LeftEdge_Pixels>
-      <Width_Pixels>757</Width_Pixels>
+      <TopEdge_Pixels>306</TopEdge_Pixels>
+      <LeftEdge_Pixels>-163</LeftEdge_Pixels>
+      <Width_Pixels>300</Width_Pixels>
       <Height_Pixels>35</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
       <Border_Displayed>true</Border_Displayed>
@@ -639,8 +639,8 @@
         <IsBarCode>false</IsBarCode>
         <DataEntryText>Undetermined value, for Field #1</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>Undetermined value, for Field #1</CurrentRecipValue>
-        <CurrentRecipValue_Date>Undetermined value, for Field #1</CurrentRecipValue_Date>
+        <CurrentRecipValue>Christy</CurrentRecipValue>
+        <CurrentRecipValue_Date>01/01/0001</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>fstrFirstName</FieldEnum>
       <TextAlignment>Left</TextAlignment>
@@ -650,9 +650,9 @@
         <Width_Pixels>675</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>254</TopEdge_Pixels>
-      <LeftEdge_Pixels>-194</LeftEdge_Pixels>
-      <Width_Pixels>1248</Width_Pixels>
+      <TopEdge_Pixels>269</TopEdge_Pixels>
+      <LeftEdge_Pixels>-166</LeftEdge_Pixels>
+      <Width_Pixels>300</Width_Pixels>
       <Height_Pixels>35</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
       <Border_Displayed>true</Border_Displayed>
@@ -696,8 +696,8 @@
         <IsBarCode>false</IsBarCode>
         <DataEntryText>Undetermined value, for Field #2</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>Undetermined value, for Field #2</CurrentRecipValue>
-        <CurrentRecipValue_Date>Undetermined value, for Field #2</CurrentRecipValue_Date>
+        <CurrentRecipValue>Forbes</CurrentRecipValue>
+        <CurrentRecipValue_Date>01/01/0001</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>fstrLastName</FieldEnum>
       <TextAlignment>Left</TextAlignment>
@@ -1417,8 +1417,7 @@
         <IsFieldForDates>false</IsFieldForDates>
         <IsLocked>false</IsLocked>
         <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
-        <IsDisplayedForEdits>false</IsDisplayedForEdits>
-        <DefaultValue />
+        <IsDisplayedForEdits>true</IsDisplayedForEdits>
         <ExampleValue>Willcrest School</ExampleValue>
         <HasPresetValues>true</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
@@ -1485,8 +1484,8 @@
         <IsBarCode>false</IsBarCode>
         <DataEntryText>Undetermined value, for Field #16</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>Undetermined value, for Field #16</CurrentRecipValue>
-        <CurrentRecipValue_Date>Undetermined value, for Field #16</CurrentRecipValue_Date>
+        <CurrentRecipValue>Mr. Shikovsky</CurrentRecipValue>
+        <CurrentRecipValue_Date>01/01/0001</CurrentRecipValue_Date>
         <ArrayOfValues>
           <string>Mrs. Ross</string>
           <string>Mr. Smudge</string>
@@ -1501,9 +1500,9 @@
         <Width_Pixels>681</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>207</TopEdge_Pixels>
-      <LeftEdge_Pixels>-192</LeftEdge_Pixels>
-      <Width_Pixels>852</Width_Pixels>
+      <TopEdge_Pixels>214</TopEdge_Pixels>
+      <LeftEdge_Pixels>-165</LeftEdge_Pixels>
+      <Width_Pixels>300</Width_Pixels>
       <Height_Pixels>35</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
       <Border_Displayed>true</Border_Displayed>
@@ -1546,8 +1545,8 @@
         <IsBarCode>false</IsBarCode>
         <DataEntryText>Undetermined value, for Field #17</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>Undetermined value, for Field #17</CurrentRecipValue>
-        <CurrentRecipValue_Date>Undetermined value, for Field #17</CurrentRecipValue_Date>
+        <CurrentRecipValue>4TH</CurrentRecipValue>
+        <CurrentRecipValue_Date>01/01/0001</CurrentRecipValue_Date>
         <ArrayOfValues>
           <string>9th</string>
           <string>10th</string>
@@ -1609,8 +1608,8 @@
         <IsBarCode>false</IsBarCode>
         <DataEntryText>Undetermined value, for Field #18</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>Undetermined value, for Field #18</CurrentRecipValue>
-        <CurrentRecipValue_Date>Undetermined value, for Field #18</CurrentRecipValue_Date>
+        <CurrentRecipValue>07/21/2003</CurrentRecipValue>
+        <CurrentRecipValue_Date>07/21/2003</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>DateField01</FieldEnum>
       <TextAlignment>Left</TextAlignment>

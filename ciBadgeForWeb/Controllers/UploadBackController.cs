@@ -21,6 +21,7 @@ namespace ciBadgeForWeb.Controllers
         /// </summary>
         /// <returns></returns>
         /// 
+        private static string mod_fileTitle_Current = ""; 
 
         public UploadBackController()
         {
@@ -33,11 +34,12 @@ namespace ciBadgeForWeb.Controllers
         //
         //Background Images
         //
-        public static IList<Models.Background> mod_backgrounds = new List<Models.Background>() {
-                    new Models.Background(){ Index = 0, FileName = "..", Description = "..", BackgroundImage = BackImageExamples.Item(0)  },
-                    new Models.Background(){ Index = 1, FileName = "..", Description = "..", BackgroundImage = BackImageExamples.Item(1) },
-                    new Models.Background(){ Index = 2, FileName = "..", Description ="..", BackgroundImage = BackImageExamples.Item(2)   },
-                    new Models.Background(){ Index = 3, FileName = "..", Description = "..", BackgroundImage = BackImageExamples.Item(3) } };
+        // 5-10-2020 td //public static IList<Models.Background> mod_backgrounds = new List<Models.Background>() {
+        //        new Models.Background(){ Index = 0, FileName = "..", Description = "..", BackgroundImage = BackImageExamples.Item(0)  },
+        //        new Models.Background(){ Index = 1, FileName = "..", Description = "..", BackgroundImage = BackImageExamples.Item(1) },
+        //        new Models.Background(){ Index = 2, FileName = "..", Description ="..", BackgroundImage = BackImageExamples.Item(2)   },
+        //        new Models.Background(){ Index = 3, FileName = "..", Description = "..", BackgroundImage = BackImageExamples.Item(3) } };
+        public static IList<Models.Background> mod_backgrounds = new List<Models.Background>();
 
         // GET: UploadBack
         public ActionResult Index()
@@ -230,42 +232,70 @@ namespace ciBadgeForWeb.Controllers
             //
             //  Copied from XmlCacheController, 5/10/2020
             //
-            string strPath = (App_Start.DiskFolders.PathToFolderWithBacks(true));
+            string strPathToFolderBacks = (App_Start.DiskFolders.PathToFolderWithBacks(true));
+
+            //bool boolNotYetDetermined = ("" == mod_fileTitle_Current);
+            bool boolExpectedFileType = false; // mod_fileTitleXML_Current.EndsWith(".xml");
+            bool boolPossiblyCorrupt = false;  //Added 216/2019 td
+            //bool boolMatchesCurrent = false;  //Added 5/10/2020 thomas downes
+            var list_output = new List<Models.Background>();
 
             //
             // To do: adapt from XML to background images. 
             //
-            foreach (FileInfo each_file_Info in (new DirectoryInfo(strPathToFolderXML)).GetFiles("*.xml"))
+            foreach (FileInfo each_file_Info in (new DirectoryInfo(strPathToFolderBacks)).GetFiles())
             {
-                //Added 2/16/2019 td
-                boolExpectedFileType = each_file_Info.Name.EndsWith(".xml");  //Added 2/16/2019 td
+                //Modified 2/16/2019 td
+                boolExpectedFileType = boolExpectedFileType || each_file_Info.Name.EndsWith(".jpg");
+                boolExpectedFileType = boolExpectedFileType || each_file_Info.Name.EndsWith(".jpeg");
+                boolExpectedFileType = boolExpectedFileType || each_file_Info.Name.EndsWith(".png");
+                boolExpectedFileType = boolExpectedFileType || each_file_Info.Name.EndsWith(".gif");
+                boolExpectedFileType = boolExpectedFileType || each_file_Info.Name.EndsWith(".bmp");
+
+                boolExpectedFileType = boolExpectedFileType || each_file_Info.Name.EndsWith(".JPG");
+                boolExpectedFileType = boolExpectedFileType || each_file_Info.Name.EndsWith(".JPEG");
+                boolExpectedFileType = boolExpectedFileType || each_file_Info.Name.EndsWith(".PNG");
+                boolExpectedFileType = boolExpectedFileType || each_file_Info.Name.EndsWith(".GIF");
+                boolExpectedFileType = boolExpectedFileType || each_file_Info.Name.EndsWith(".BMP");
+
                 boolPossiblyCorrupt = (!(boolExpectedFileType));  //Added 2/16/2019 td
                 if (boolPossiblyCorrupt) continue;  //Added 2/16/2019 td
 
-                if (boolGrabThisNextFile)
+                //if (boolGrabThisNextFile)
+                //{
+                //    obj_nextFileInfo = each_file_Info;
+                //    break;
+                //}
+                //boolMatchesCurrent = (each_file_Info.Name == mod_fileTitle_Current);
+                //if (boolMatchesCurrent)
+                //{
+                //    //mod_fileTitleXML_Current = each_file_Info.Name;
+                //    //break;
+                //    //-----Prepare for the next interation. 
+                //    boolGrabThisNextFile = true;
+                //}
+                ////If we've come full circle, grab the first XML file.
+                //if (boolStartFromBeginningAgain)
+                //{
+                //    //We've come full circle, so grab the first XML file.
+                //    obj_nextFileInfo = each_file_Info;
+                //    break;
+                //}
+
+                var objNewBack = new Models.Background()
                 {
-                    obj_nextFileInfo = each_file_Info;
-                    break;
-                }
-                boolMatchesCurrent = (each_file_Info.Name == mod_fileTitleXML_Current);
-                if (boolMatchesCurrent)
-                {
-                    //mod_fileTitleXML_Current = each_file_Info.Name;
-                    //break;
-                    //-----Prepare for the next interation. 
-                    boolGrabThisNextFile = true;
-                }
-                //If we've come full circle, grab the first XML file.
-                if (boolStartFromBeginningAgain)
-                {
-                    //We've come full circle, so grab the first XML file.
-                    obj_nextFileInfo = each_file_Info;
-                    break;
-                }
+                    BackgroundImage = null,
+                    Description = "A beautiful background!",
+                    FileName = each_file_Info.Name,
+                    FullPathToFile = each_file_Info.FullName,
+                    UploadDate = each_file_Info.CreationTime
+                };
+
+                list_output.Add(objNewBack);
+
             }
 
-
-
+            return list_output; 
 
         }
 

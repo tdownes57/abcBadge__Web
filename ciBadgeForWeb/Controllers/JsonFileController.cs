@@ -541,6 +541,7 @@ namespace ciBadgeForWeb.Controllers
 
         }
 
+
         // POST: JsonFile/TableDivsTop/5
         [HttpPost]
         public ActionResult TableDivsTop(FormCollection collection) // Added 4/19/2020 thomas downes
@@ -579,6 +580,47 @@ namespace ciBadgeForWeb.Controllers
             return View(objectMoveableDivs.MoveTop);
 
         }
+
+
+        // POST: JsonFile/TableDivsWidth/5
+        [HttpPost]
+        public ActionResult TableDivsWidth(FormCollection collection) // Added 8/22/2020 thomas downes
+        {
+            //
+            //Added 8/22/2020 thomas downes
+            //
+            var objectMoveableDivs = JsonFileController.MoveableDivs;
+
+            objectMoveableDivs.MoveWidth.EL1_Width = int.Parse(collection["EL1_Width"]);
+            objectMoveableDivs.MoveWidth.EL2_Width = int.Parse(collection["EL2_Width"]);
+            objectMoveableDivs.MoveWidth.EL3_Width = int.Parse(collection["EL3_Width"]);
+            objectMoveableDivs.MoveWidth.EL4_Width = int.Parse(collection["EL4_Width"]);
+            objectMoveableDivs.MoveWidth.EL5_Width = int.Parse(collection["EL5_Width"]);
+            objectMoveableDivs.MoveWidth.EL6_Width = int.Parse(collection["EL6_Width"]);
+            objectMoveableDivs.MoveWidth.EL7_Width = int.Parse(collection["EL7_Width"]);
+            objectMoveableDivs.MoveWidth.EL8_Width = int.Parse(collection["EL8_Width"]);
+            objectMoveableDivs.MoveWidth.EL9_Width = int.Parse(collection["EL9_Width"]);
+            objectMoveableDivs.MoveWidth.EL10_Width = int.Parse(collection["EL10_Width"]);
+            objectMoveableDivs.MoveWidth.EL11_Width = int.Parse(collection["EL11_Width"]);
+            objectMoveableDivs.MoveWidth.EL12_Width = int.Parse(collection["EL12_Width"]);
+
+            //Added 8/22/2020 td
+            //
+            //  Transfer the positions to the element-fields stored in the cache. 
+            //
+            objectMoveableDivs.SavePositions_ToCache();
+
+            //Added 8/22/2020 td
+            objectMoveableDivs.JSON_Width = objectMoveableDivs.GetJSON_Width();
+
+            //Added 8/22/2020 td
+            //  We need to refresh the four(4) JSON-string properties. 
+            //   
+
+            return View(objectMoveableDivs.MoveWidth);
+
+        }
+
 
     }
 }
