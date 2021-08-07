@@ -53,6 +53,7 @@
         <tr>
             <td>
                 <img alt="Image Handler" width="60" src="~/ASPX/ImageHandler.ashx?id=@item.RecipientID" />
+                @Html.ActionLink("Edit", "Edit", new { parameter_id = item.RecipientID })
             </td>
             @*<td>
                     @Html.DisplayFor(modelItem => item.Personality)

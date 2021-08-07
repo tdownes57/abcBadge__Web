@@ -89,12 +89,16 @@ namespace ciBadgeForWeb.Controllers
                     //
                     //Conditioned 1/27/2020 thomas downes
                     //
-                    boolUserSupport = ("support".Equals(objUser.UserName.ToLower()));
+                    //---boolUserSupport = ("support".Equals(objUser.UserName.ToLower()));
+                    boolUserSupport = ("support1957".Equals(objUser.UserName.ToLower()));
                     boolSupportPW = ("teal90720".Equals(objUser.Password));
 
-                    boolSupportPW = boolSupportPW || ("support".Equals(objUser.Password));
-                    boolSupportPW = boolSupportPW || ("Support".Equals(objUser.Password));
-                    boolSupportPW = boolSupportPW || ("SUPPORT".Equals(objUser.Password));
+                    //boolSupportPW = boolSupportPW || ("support".Equals(objUser.Password));
+                    //boolSupportPW = boolSupportPW || ("Support".Equals(objUser.Password));
+                    //boolSupportPW = boolSupportPW || ("SUPPORT".Equals(objUser.Password));
+                    boolSupportPW = boolSupportPW || ("support1957".Equals(objUser.Password));
+                    boolSupportPW = boolSupportPW || ("Support1957".Equals(objUser.Password));
+                    boolSupportPW = boolSupportPW || ("SUPPORT1957".Equals(objUser.Password));
                 }
 
                 bool boolSupportAuthenticated = (boolUserSupport && boolSupportPW); 

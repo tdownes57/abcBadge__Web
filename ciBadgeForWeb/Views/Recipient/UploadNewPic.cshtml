@@ -1,20 +1,20 @@
 ﻿@model ciBadgeForWeb.Models.CIRecipient
- 
+
 @{
     ViewBag.Title = "UploadNewPic";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
     string strRecipTypeName;  // Added 2/22/2020 td
     ciBadgeForWeb.Controllers.PersonalityController.SelectPersonality_Initialize();
-    strRecipTypeName = ciBadgeForWeb.Controllers.PersonalityController.CurrentPersonality.ConfigNameBrief; 
+    strRecipTypeName = ciBadgeForWeb.Controllers.PersonalityController.CurrentPersonality.ConfigNameBrief;
 
-        //Added 2-23-2020 td
+    //Added 2-23-2020 td
     //   Change "Students" to "Student", but leave "Actress"
-    //   (or "Stewardess") alone.  
+    //   (or "Stewardess") alone.
     //
-    strRecipTypeName = (strRecipTypeName.EndsWith("ss") ? strRecipTypeName : 
+    strRecipTypeName = (strRecipTypeName.EndsWith("ss") ? strRecipTypeName :
                          strRecipTypeName.EndsWith("s") ? strRecipTypeName
-                         .Substring(0, -1 + strRecipTypeName.Length) : 
+                         .Substring(0, -1 + strRecipTypeName.Length) :
                          strRecipTypeName);
 
 }
@@ -26,7 +26,7 @@
 
 <a href="https://www.dotnettricks.com/learn/mvc/how-to-upload-a-file-in-mvc4">https://www.dotnettricks.com/learn/mvc/how-to-upload-a-file-in-mvc4</a>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+@*<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>*@
 
 
 @*<script type="text/jscript">*@
@@ -36,98 +36,98 @@
     //
 
     //get file size
-    function GetFileSize(fileid) {
-        try {
-            var fileSize = 0;
-            //for IE
-            // 2-23-2020 thomas downes//if ($.browser.msie) {
-            //
-            // https://stackoverflow.com/questions/14892095/browser-msie-error-after-update-to-jquery-1-9-1
-            //
-            if (navigator.userAgent.toLowerCase().indexOf('msie 6') != -1) {
-                //before making an object of ActiveXObject,
-                //please make sure ActiveX is enabled in your IE browser
-                var objFSO = new ActiveXObject("Scripting.FileSystemObject"); var filePath = $("#" + fileid)[0].value;
-                var objFile = objFSO.getFile(filePath);
-                var fileSize = objFile.size; //size in kb
-                fileSize = fileSize / 1048576; //size in mb
-            }
-            //for FF, Safari, Opeara and Others
-            else {
-                fileSize = $("#" + fileid)[0].files[0].size //size in kb
-                fileSize = fileSize / 1048576; //size in mb
-            }
-            return fileSize;
-        }
-        catch (e) {
-            alert("Error is :" + e);
-        }
-    }
+    //function GetFileSize(fileid) {
+    //    try {
+    //        var fileSize = 0;
+    //        //for IE
+    //        // 2-23-2020 thomas downes//if ($.browser.msie) {
+    //        //
+    //        // https://stackoverflow.com/questions/14892095/browser-msie-error-after-update-to-jquery-1-9-1
+    //        //
+    //        if (navigator.userAgent.toLowerCase().indexOf('msie 6') != -1) {
+    //            //before making an object of ActiveXObject,
+    //            //please make sure ActiveX is enabled in your IE browser
+    //            var objFSO = new ActiveXObject("Scripting.FileSystemObject"); var filePath = $("#" + fileid)[0].value;
+    //            var objFile = objFSO.getFile(filePath);
+    //            var fileSize = objFile.size; //size in kb
+    //            fileSize = fileSize / 1048576; //size in mb
+    //        }
+    //        //for FF, Safari, Opeara and Others
+    //        else {
+    //            fileSize = $("#" + fileid)[0].files[0].size //size in kb
+    //            fileSize = fileSize / 1048576; //size in mb
+    //        }
+    //        return fileSize;
+    //    }
+    //    catch (e) {
+    //        alert("Error is :" + e);
+    //    }
+    //}
 
-    //get file path from client system
-    function getNameFromPath(strFilepath) {
-        var objRE = new RegExp(/([^\/\\]+)$/);
-        var strName = objRE.exec(strFilepath);
+    ////get file path from client system
+    //function getNameFromPath(strFilepath) {
+    //    var objRE = new RegExp(/([^\/\\]+)$/);
+    //    var strName = objRE.exec(strFilepath);
 
-        if (strName == null) {
-            return null;
-        }
-        else {
-            return strName[0];
-        }
-    }
+    //    if (strName == null) {
+    //        return null;
+    //    }
+    //    else {
+    //        return strName[0];
+    //    }
+    //}
 
-    $("#btnSubmit").on("click", function () {
-        if ($('#fileToUpload').val() == "") {
-            $("#spanfile").html("Please upload file");
-            return false;
-        }
-        else {
-            return checkfile();
-        }
-    });
+    //$("#btnSubmit").on("click", function () {
+    //    if ($('#fileToUpload').val() == "") {
+    //        $("#spanfile").html("Please upload file");
+    //        return false;
+    //    }
+    //    else {
+    //        return checkfile();
+    //    }
+    //});
 
-    function checkfile() {
-        var file = getNameFromPath($("#fileToUpload").val());
-        if (file != null) {
-            var extension = file.substr((file.lastIndexOf('.') + 1));
-            // alert(extension);
-            switch (extension) {
-                case 'JPG':
-                case 'PNG':
-                case 'GIF':
-                case 'BMP':
-                case 'jpg':
-                case 'png':
-                case 'gif':
-                case 'bmp':
-                    flag = true;
-                    break;
-                default:
-                    flag = false;
-            }
-        }
-        if (flag == false) {
-            $("#spanfile").text("You can upload only jpg,png,gif,pdf extension file");
-            return false;
-        }
-        else {
-            var size = GetFileSize('fileToUpload');
-            if (size > 3) {
-                $("#spanfile").text("You can upload file up to 3 MB");
-                return false;
-            }
-            else {
-                $("#spanfile").text("");
-            }
-        }
-    }
+    //function checkfile() {
+    //    var file = getNameFromPath($("#fileToUpload").val());
+    //    if (file != null) {
+    //        var extension = file.substr((file.lastIndexOf('.') + 1));
+    //        // alert(extension);
+    //        switch (extension) {
+    //            case 'JPG':
+    //            case 'PNG':
+    //            case 'GIF':
+    //            case 'BMP':
+    //            case 'jpg':
+    //            case 'png':
+    //            case 'gif':
+    //            case 'bmp':
+    //                flag = true;
+    //                break;
+    //            default:
+    //                flag = false;
+    //        }
+    //    }
+    //    if (flag == false) {
+    //        $("#spanfile").text("You can upload only jpg,png,gif,pdf extension file");
+    //        return false;
+    //    }
+    //    else {
+    //        var size = GetFileSize('fileToUpload');
+    //        if (size > 3) {
+    //            $("#spanfile").text("You can upload file up to 3 MB");
+    //            return false;
+    //        }
+    //        else {
+    //            $("#spanfile").text("");
+    //        }
+    //    }
+    //}
 
-    $(function () {
-        $("#fileToUpload").change(function () {
-            checkfile();
-        });
-    });
+    //$(function () {
+    //    $("#fileToUpload").change(function () {
+    //        checkfile();
+    //    });
+    //});
 
     //
     //  End of https://www.dotnettricks.com/learn/mvc/how-to-upload-a-file-in-mvc4
@@ -138,23 +138,30 @@
     //Start of https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded
     //
 
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
+    //
+    // The following function ("readURL") is called by the following:
+    //        $("#fileToUpload").change
+    //
+    //function readURL(input) {
+    //    if (input.files && input.files[0]) {
+    //        var reader = new FileReader();
 
-            reader.onload = function (e) {
-                $('#blah_preview').attr('src', e.target.result);
-            }
+    //        reader.onload = function (e) {
+    //            $('#blah_preview').attr('src', e.target.result);
+    //        }
 
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
+    //        reader.readAsDataURL(input.files[0]);
+    //    }
+    //}
 
-    $("#fileToUpload").change(function () {
-        readURL(this);
-    });
+    //$("#fileToUpload").change(function () {
+    //    //
+    //    // What is "this" in this context?  ----8/7/2021
+    //    //
+    //    readURL(this);
+    //});
 
-        //
+    //
     //End of https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded
     //
 
@@ -182,15 +189,34 @@
 
     <img alt="Image Handler" width="100" src="~/ASPX/ImageHandler.ashx?id=@Model.RecipientID" />
 
-    <ol>
-        <li class="lifile">
+    <!--<ol>
+        <li class="lifile">-->
+            @*         [[[ button "Choose File" ]]]   "No file chosen"  *@
+            @*         icon   "your image"    icon "your image"     *@
+
             @*<input type="file" id="fileToUpload" name="file" />*@
-            <input type="file" id="fileToUpload" name="file" />
-            <span class="field-validation-error" id="spanfile"></span>
-            <img id="blah_preview" src="#" alt="your image" />
-            <img id="blah" src="#" alt="your image" />
-        </li>
-    </ol>
+            <!--<input type="file" id="fileToUpload_deprecated" name="file_deprecated" />--> @*         [[[ button "Choose File" ]]]   *@
+            <!--<span class="field-validation-error" id="spanfile"></span>-->  @*message:  "No file chosen"     *@
+            <!--<img id="blah_preview" src="#" alt="your image" />-->    @*message:  "your image"     *@
+            <!--<img id="blah" src="#" alt="your image" />-->    @*message:  "your image"       *@
+        <!--</li>
+    </ol>-->
+
+    @*//   August 7, 2021 
+    //     https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded
+    //     There are a couple ways you can do this. The most efficient way would be to use.....
+    // *@
+    <input type="file" accept="image/*" id="fileToUpload" name="file" onchange="loadFile(event)">
+    <img id="output" width="200" class="border" />   @* See CSS <style>.border ....</style> at the top of _Layout.cshtml *@ 
+    <script>
+        var loadFile = function (event) {
+            var output = document.getElementById('output');
+            output.src = URL.createObjectURL(event.target.files[0]);
+            output.onload = function () {
+                URL.revokeObjectURL(output.src) // free memory
+            }
+        };
+    </script>
 
     <input type="hidden" id="RecipientID" name="RecipientID" value=@Model.RecipientID />
 
