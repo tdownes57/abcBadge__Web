@@ -352,6 +352,7 @@
     </Content>
     <Content Include="Documentation\CIBCards83 - removing PD.mdb" />
     <Content Include="Documentation\CIBCards83 - very complex.mdb" />
+    <Content Include="Documentation\Notes.html" />
     <Content Include="Documentation\Partial-View Element.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
