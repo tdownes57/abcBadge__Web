@@ -36,7 +36,24 @@ namespace ciBadgeForWeb.Controllers
             // ADDED 7/6/2019 TD
             // 7-6-2019 td//ciLayoutPrintLib.LayoutExample.RefreshChoiceOfBackground_Next();
 
-            return View(mod_objLayoutText);
+            const bool b_UseCodePriorToApril2020 = false;  // Added 8/17/2021 Thomas downes
+            if (b_UseCodePriorToApril2020)  // Added 8/17/2021 Thomas downes
+            {
+                return View(mod_objLayoutText);
+            }
+
+            //
+            //Added 8/17/2020 td
+            //
+            //---return View(JsonFileController.GetMoveableDivs());
+            //;;;;return JsonFileController.GetMoveableDivs();
+            //[[[[return JsonFileController.Index();
+            //????return (new JsonFileController()).Index();
+
+            // See http://www.binaryintellect.net/articles/8e64d05b-ab2e-45f6-b7f5-b8a90168915e.aspx 
+            //  ---8/17/2021 td
+            return RedirectToAction("Index", "JsonFile");
+
         }
 
         // GET: CILayoutText/Details/5
