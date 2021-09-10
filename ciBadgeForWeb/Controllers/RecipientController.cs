@@ -8,6 +8,7 @@ using System.Drawing; //Added 11/25/2019 thomas d.
 using System.Web.Hosting;  //Added 11/25/2019 td  
 using System.Web;   //Added 2/21/2020 td
 using System.IO;   //Added 2/21/2020 td
+using EmailingFilesViaGmail_Framework;  //Added 9/10/2021 thomas downes
 
 namespace ciBadgeForWeb.Controllers
 {
@@ -539,6 +540,29 @@ namespace ciBadgeForWeb.Controllers
         }
 
 
+        // GET: Recipient/EmailBadge/5
+        public ActionResult EmailBadge(int parameter_id)
+        {
+            //
+            // Added 8/18/2021 Thomas Downes  
+            //
+            var recipient_whoseBadgeIsToBeEmailed = mod_recipientList2.Where(s => s.RecipientID == parameter_id.ToString()).FirstOrDefault();
+
+            //
+            // How do I create the image as a JPEG file?   I think I did that
+            //   for the presentation with Mark.  ----8/18/2021 thomas downes 
+            //
+            string strPathToGeneratedImageFile = "";  +++((())))))))*****
+
+            //
+            // Email the file.  9/10/2021  
+            //
+            EmailingFilesViaGmail_Framework.EmailingFiles.SendViaEmail_OneFile("", strPathToGeneratedImageFile,
+                   "Here is the badge you requested");
+
+            //return View("Index");
+            return RedirectToAction("Index");
+        }
 
 
         public static IEnumerable<ciBadgeForWeb.Models.CIRecipient> GetRecipents_CurrentPC()

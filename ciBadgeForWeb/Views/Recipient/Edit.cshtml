@@ -221,6 +221,8 @@
 
                 @*@Html.ActionLink("Upload New Photo", "UploadPic", new { id = Model.RecipientID })*@
 
+                @Html.ActionLink("Email Badge", "EmailBadge", new { parameter_id = @Model.RecipientID })
+
                 <img alt="Step4 Handler" width="500" src="~/ASPX/Step4Handler.ashx?id=@Model.RecipientID&big=y&hor=y&width=500" style="border: 2px dotted black;" />
 
                 <!-- img alt="Image Handler" src="../ASPX/ImageHandler.ashx?id=<%= Request.QueryString[" id"] %>" -->

@@ -14,6 +14,10 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+<p>
+    @Html.ActionLink("Email All Badges in Zip File", "EmailAllBadges")
+</p>
+
 <table class="table">
     <tr>
         <th>
@@ -78,11 +82,12 @@
             </td>
             <td>
                 @*@Html.ActionLink("Edit", "Edit", new { /* id = item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id = item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id = item.PrimaryKey */ })*@
+                   @Html.ActionLink("Details", "Details", new { /* id = item.PrimaryKey */ }) |
+                   @Html.ActionLink("Delete", "Delete", new { /* id = item.PrimaryKey */ })*@ 
                 @Html.ActionLink("Edit", "Edit", new { parameter_id = item.RecipientID }) |
                 @Html.ActionLink("Cards Printed Log", "CardsPrintedLog", new { parameter_id = item.RecipientID }) |
-                @Html.ActionLink("Delete", "Delete", new { parameter_id = item.RecipientID })
+                @Html.ActionLink("Delete", "Delete", new { parameter_id = item.RecipientID }) |
+                @Html.ActionLink("Email Badge", "EmailBadge", new { parameter_id = item.RecipientID }) 
             </td>
         </tr>
     }
