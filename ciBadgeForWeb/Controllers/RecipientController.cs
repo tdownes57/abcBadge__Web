@@ -552,13 +552,19 @@ namespace ciBadgeForWeb.Controllers
             // How do I create the image as a JPEG file?   I think I did that
             //   for the presentation with Mark.  ----8/18/2021 thomas downes 
             //
-            string strPathToGeneratedImageFile = "";  +++((())))))))*****
+            string strPathToGeneratedImageFile = "";  //+++((())))))))*****
 
             //
             // Email the file.  9/10/2021  
             //
+            EmailingFilesViaGmail_Framework.EmailingFiles.SmtpUsername = "tomdownes1@gmail.com";
+            EmailingFilesViaGmail_Framework.EmailingFiles.SmtpSpaghetti = "999search" + "#1957Bb".Substring(3);
+
             EmailingFilesViaGmail_Framework.EmailingFiles.SendViaEmail_OneFile("", strPathToGeneratedImageFile,
-                   "Here is the badge you requested");
+                   "Here is the badge you requested", 
+                   "Here (attached) is the badge you requested.  See attached image file. \r\n \r\n " +
+                   "To print the badge... Save the file to your PC (optional (?)), right-click the file, and select Print." +
+                   "\r\n \r\n Then specify the ID-Card printer which you should have connected to your PC. ");
 
             //return View("Index");
             return RedirectToAction("Index");
