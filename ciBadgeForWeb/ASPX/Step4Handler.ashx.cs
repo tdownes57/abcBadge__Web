@@ -153,7 +153,7 @@ namespace ciBadgeForWeb
                     //
                     //Full Badge Image 
                     //
-                    int recipient_id = Int32.Parse(context.Request.QueryString["id"]);
+                    // Not needed. 9/15/2021 td //int recipient_id = Int32.Parse(context.Request.QueryString["id"]);
                     string str_recipient_id = context.Request.QueryString["id"];
 
                     recipients_list = Controllers.RecipientController.mod_recipientList2;
@@ -173,7 +173,8 @@ namespace ciBadgeForWeb
                     //
                     objLayoutEx.UpdateLabelPositions(Controllers.LayoutText1Controller.mod_objLayoutText);
 
-                    string strRecipID = recipient_id.ToString();
+                    // 9-15-2021 td //string strRecipID = recipient_id.ToString();
+                    string strRecipID = str_recipient_id;  // Modified 9/15/2021 td
                     string strLastName = recipient_by_id_onlyone.LastName;
                     string strFirstName = recipient_by_id_onlyone.FirstName;
                     string strFullName = (strFirstName + " " + strLastName);
@@ -248,6 +249,38 @@ namespace ciBadgeForWeb
                                    recipient_by_id_onlyone,
                                    recipient_by_id_onlyone.GetPortraitImage());
 
+                    //
+                    // Refactored 9/15/2021 td 
+                    //
+                    //    We are trying to encapsulate the call to mod_generate.MakeBadgeImage_ByIRecipient(...)
+                    //    along with other program code, so that we can have a branching condition
+                    //    related to creating a disk file which contains the image of the badge
+                    //    (and which can be emailed to the user).  ---9/15/2021 thomas downes
+                    //
+                    //    We are trying to encapsulate the badge-layout & image processing from the 
+                    //    code which pertains to understanding the user's choices & state-related context. 
+                    //
+                    const bool c_boolEncapsulateMuchOfCodeAbove = true;  // Added 9/15/2021 thomas downes
+                    if (c_boolEncapsulateMuchOfCodeAbove)
+                    {
+                        //image_ex =
+                        //        mod_generate.MakeBadgeImage_ByIRecipient(objLayout,
+                        //                       image_back, ClassElementsCache_Deprecated.Singleton,
+                        //                       intPixelsWidth, intPixelsHeight,
+                        //                       recipient_by_id_onlyone,
+                        //                       recipient_by_id_onlyone.GetPortraitImage());
+
+                        //Call a local function, rather than a function in another class or module.
+                        //    ----9/15/2021 td
+                        image_ex = Step4Handler_MakeBadgeImage(recipient_by_id_onlyone,
+                                       objLayout,
+                                       image_back,     //ClassElementsCache_Deprecated.Singleton,
+                                       intPixelsWidth, intPixelsHeight,
+                                       recipient_by_id_onlyone,
+                                       recipient_by_id_onlyone.GetPortraitImage(),
+                                       objLayoutEx, intPixelsWidth, intPixelsHeight);
+                    }
+
                 }
 
                 //if (boolPlainBackgroundImage)
@@ -280,6 +313,109 @@ namespace ciBadgeForWeb
             }
         }
 
+
+        public Image Step4Handler_MakeBadgeImage(Models.CIRecipient par_recipient_by_id, 
+                            ciBadgeInterfaces.BadgeLayoutClass par_layout,
+                            Image par_backgroundImage,
+                            //ClassElementsCache_Deprecated par_cache,
+                            int par_badge_width_pixels,
+                            int par_badge_height_pixels,
+                            ciBadgeInterfaces.IRecipient par_recipient,
+                            Image par_recipientPic, 
+                            LayoutExample par_objLayoutEx, 
+                            int par_intPixelsWidth, int par_intPixelsHeight)
+        {
+            //
+            // Encapsulated 9/15/2021 Thomas downes
+            //
+            //    We are trying to encapsulate the call to mod_generate.MakeBadgeImage_ByIRecipient(...)
+            //    along with other program code, so that we can have a branching condition
+            //    related to creating a disk file which contains the image of the badge
+            //    (and which can be emailed to the user).  ---9/15/2021 thomas downes
+            //
+            //    We are trying to encapsulate the badge-layout & image processing from the 
+            //    code which pertains to understanding the user's choices & state-related HTTP context. 
+            //
+
+            //Added 9/15/2021 thomas downes  
+            Image image_badge;
+
+            //image_ex = objLayoutEx.GenerateImage(strRecipID, strFullName,
+            //     objLayoutEx.RecipientPhoto,
+            //     bHorizontalLarge, bHorizontalSmall);
+
+            //ciBadgeElemImage.modGenerate mod_generate = new modGenerate();
+
+            //
+            // Added 11/13/2019 td
+            //
+            ciBadgeGenerator.ClassMakeBadge mod_generate = new ClassMakeBadge();
+            ciBadgeInterfaces.BadgeLayoutClass objLayout;   // = 
+                                                            //    new ciBadgeInterfaces.BadgeLayoutClass();
+
+            //Added 11/16/2019 td
+            // 1/14/2019 td//objLayout = ciBadgeElements.ClassElementsCache.Singleton.BadgeLayout;
+            objLayout = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.BadgeLayout;
+
+            //Added 12/11/2019 td 
+            LayoutExample.PathToFolderWithBacks = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(true);
+
+            //Added 1/12/2020 thomas downes  
+            Image image_back;
+            const bool c_bUseOldMethodWhichFailsOnAzure = false;
+            if (c_bUseOldMethodWhichFailsOnAzure)
+            {
+                //image_back = par_objLayoutEx.GenerateImage_BackgroundOnly(bHorizontalLarge,
+                //   bHorizontalSmall, ref boolNoImages);
+            }
+            else
+            {
+                //
+                //Added 1/12/2020 thomas d. 
+                //
+                //string strPathToBackJpg = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_BackImg_Current;
+                string strPathToBackImages = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(true);
+                //bool boolNoImages;
+                //image_back = ciLayoutPrintLib.BackImageExamples.GetCurrentImage(boolNoImages);
+                int intBackWidth = objLayout.Width_Pixels;
+                int intBackHeight = objLayout.Height_Pixels;
+
+                //string strBackImageFileTitle = ClassElementsCache_Deprecated.Singleton.BackgroundImage_FTitle;
+                //image_back = ClassElementsCache_Deprecated.Singleton.GetBackgroundImage(intBackWidth, intBackHeight);
+                image_back = ClassElementsCache_Deprecated.Singleton.GetBackgroundImage(intBackWidth, intBackHeight,
+                        strPathToBackImages);
+
+            }
+
+            //11-16-2019 td''mod_generate.MakeBadgeImage_ByRecipient(objLayout, 
+            //         image_back, ClassElementsCache.Singleton,
+            //         intPixelsWidth, intPixelsHeight, 
+            //         recipient_by_id_onlyone, 
+            //         recipient_by_id_onlyone.GetPortraitImage());
+
+            //11-17-2019 thomas d.
+            //11-26-2019 mod_generate.PathToFile_Sig = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_Sig(true);
+            //11-26-2019 mod_generate.ImageQRCode = new Bitmap(App_Start.DiskFiles.PathToFile_QRCode(true));
+
+            mod_generate.PathToFile_Sig = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_Sig(true);
+            mod_generate.PathToFile_QR = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_QRCode(true);
+            //mod_generate.ImageQRCode = new Bitmap(App_Start.DiskFiles.PathToFile_QRCode(true));
+            mod_generate.ImageQRCode = new Bitmap(mod_generate.PathToFile_QR);
+
+            image_badge =
+            mod_generate.MakeBadgeImage_ByIRecipient(objLayout,
+                           image_back, ClassElementsCache_Deprecated.Singleton,
+                           par_intPixelsWidth, par_intPixelsHeight,
+                           par_recipient_by_id,
+                           par_recipient_by_id.GetPortraitImage());
+
+            return image_badge; 
+
+        }
+
+
+
+
         public bool IsReusable
         {
             get
@@ -287,6 +423,7 @@ namespace ciBadgeForWeb
                 return false;
             }
         }
+
 
         private Image GetImage(string customer_id, int config_id, string recipient_id)
         {
@@ -302,6 +439,7 @@ namespace ciBadgeForWeb
             return newImage;
         }
 
+
         private Image GetImage(int id)
         {
             var newImage = new Bitmap(800, 250);
@@ -312,6 +450,7 @@ namespace ciBadgeForWeb
             //My drawing code
             return newImage;
         }
+
 
         private Image SusanSampletonPng()
         {
