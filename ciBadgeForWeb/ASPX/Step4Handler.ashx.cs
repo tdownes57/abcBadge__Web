@@ -73,12 +73,13 @@ namespace ciBadgeForWeb
                 //
                 //Added 6/20/2019 thomas downes  
                 //
-                Image image_ex = null;  // = recipient_by_id_onlyone.Picture;
+                Image image_badge_exampleBackgroundOnly = null;  // = recipient_by_id_onlyone.Picture;
+                Image image_badge_output = null;   // Added 9/17/2021 thomas downes
 
                 //
                 // objLayoutEx 
                 //
-                LayoutExample objLayoutEx = new ciLayoutPrintLib.LayoutExample();
+                LayoutExample objLayoutExample = new ciLayoutPrintLib.LayoutExample();
 
                 bool boolPlainBackgroundImage;//Added 6/28/2019 thomas downes 
                 boolPlainBackgroundImage = ("back" == context.Request.QueryString["id"]);
@@ -110,7 +111,7 @@ namespace ciBadgeForWeb
                     //
                     //Plain Background Image 
                     //
-                    objLayoutEx.WidthInPixels_Land = intPixelsWidth;
+                    objLayoutExample.WidthInPixels_Land = intPixelsWidth;
 
                     if (-1 != intBackgroundImageIndex) 
                     {
@@ -122,7 +123,7 @@ namespace ciBadgeForWeb
                     //Added 4/9/2020 td
                     LayoutExample.PathToFolderWithBacks = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(true);
 
-                    image_ex = objLayoutEx.GenerateImage_BackgroundOnly(bHorizontalLarge, 
+                    image_badge_exampleBackgroundOnly = objLayoutExample.GenerateImage_BackgroundOnly(bHorizontalLarge, 
                         bHorizontalSmall, ref boolNoImages);
 
                     // Added 3/9/2020 thomas downes
@@ -134,7 +135,8 @@ namespace ciBadgeForWeb
                     string strPathToBackImages_B = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(true);
                     int intBackWidth_B = objLayout_B.Width_Pixels;
                     int intBackHeight_B = objLayout_B.Height_Pixels;
-                    image_ex = ClassElementsCache_Deprecated.Singleton.GetBackgroundImage(intBackWidth_B, intBackHeight_B,
+                    image_badge_exampleBackgroundOnly = 
+                        ClassElementsCache_Deprecated.Singleton.GetBackgroundImage(intBackWidth_B, intBackHeight_B,
                             strPathToBackImages_B);
 
                     //Added 7/6/2019 thomas d.
@@ -164,90 +166,119 @@ namespace ciBadgeForWeb
 
                     if (recipient_by_id_onlyone is null) return;
 
-                    objLayoutEx.RecipientID = "1234";
-                    objLayoutEx.RecipientName = "Chanin Mountebank";
-                    objLayoutEx.RecipientPhoto = recipient_by_id_onlyone.Picture;
+                    objLayoutExample.RecipientID = "1234";
+                    objLayoutExample.RecipientName = "Chanin Mountebank";
+                    objLayoutExample.RecipientPhoto = recipient_by_id_onlyone.Picture;
 
-                    //
-                    //Modify the placement of the Student/Employee's Full Name. ----6/27/2019 td
-                    //
-                    objLayoutEx.UpdateLabelPositions(Controllers.LayoutText1Controller.mod_objLayoutText);
 
-                    // 9-15-2021 td //string strRecipID = recipient_id.ToString();
-                    string strRecipID = str_recipient_id;  // Modified 9/15/2021 td
-                    string strLastName = recipient_by_id_onlyone.LastName;
-                    string strFirstName = recipient_by_id_onlyone.FirstName;
-                    string strFullName = (strFirstName + " " + strLastName);
-
-                    //image_ex = objLayoutEx.GenerateImage(strRecipID, strFullName,
-                    //     objLayoutEx.RecipientPhoto,
-                    //     bHorizontalLarge, bHorizontalSmall);
-
-                    //ciBadgeElemImage.modGenerate mod_generate = new modGenerate();
-
-                    //
-                     // Added 11/13/2019 td
-                    //
-                    ciBadgeGenerator.ClassMakeBadge mod_generate = new ClassMakeBadge();
-                    ciBadgeInterfaces.BadgeLayoutClass objLayout;   // = 
-                    //    new ciBadgeInterfaces.BadgeLayoutClass();
-
-                     //Added 11/16/2019 td
-                    // 1/14/2019 td//objLayout = ciBadgeElements.ClassElementsCache.Singleton.BadgeLayout;
-                    objLayout = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.BadgeLayout;
-
-                    //Added 12/11/2019 td 
-                    LayoutExample.PathToFolderWithBacks = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(true);
-
-                    //Added 1/12/2020 thomas downes  
-                    Image image_back;
-                    const bool c_bUseOldMethodWhichFailsOnAzure = false;
-                    if (c_bUseOldMethodWhichFailsOnAzure)
+                    const bool c_boolEncapsulateMuchOfCode_Below = true;  // Added 9/17/2021 thomas downes
+                    if (c_boolEncapsulateMuchOfCode_Below)    // Added 9/17/2021 thomas downes
                     {
-                        image_back = objLayoutEx.GenerateImage_BackgroundOnly(bHorizontalLarge,
-                           bHorizontalSmall, ref boolNoImages);
+                        //image_ex =
+                        //        mod_generate.MakeBadgeImage_ByIRecipient(objLayout,
+                        //                       image_back, ClassElementsCache_Deprecated.Singleton,
+                        //                       intPixelsWidth, intPixelsHeight,
+                        //                       recipient_by_id_onlyone,
+                        //                       recipient_by_id_onlyone.GetPortraitImage());
+
+                        //Prior to the call to Step4Handler_MakeBadgeImage, set the image to an example
+                        //   badge.  Is this needed?  ---9/17/2021 thomas downes
+                        image_badge_output = image_badge_exampleBackgroundOnly;
+
+                        //Call a local function, rather than a function in another class or module.
+                        //    ----9/15/2021 td
+                        image_badge_output = Step4Handler_MakeBadgeImage(recipient_by_id_onlyone,
+                                       //|| objLayout,
+                                       //|| image_back,     //ClassElementsCache_Deprecated.Singleton,
+                                       intPixelsWidth, intPixelsHeight,
+                                       recipient_by_id_onlyone,
+                                       //|| recipient_by_id_onlyone.GetPortraitImage(),
+                                       objLayoutExample);
                     }
+
                     else
                     {
                         //
-                        //Added 1/12/2020 thomas d. 
+                        //Modify the placement of the Student/Employee's Full Name. ----6/27/2019 td
                         //
-                        //string strPathToBackJpg = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_BackImg_Current;
-                        string strPathToBackImages = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(true);
-                        //bool boolNoImages;
-                        //image_back = ciLayoutPrintLib.BackImageExamples.GetCurrentImage(boolNoImages);
-                        int intBackWidth = objLayout.Width_Pixels;
-                        int intBackHeight = objLayout.Height_Pixels;
+                        objLayoutExample.UpdateLabelPositions(Controllers.LayoutText1Controller.mod_objLayoutText);
 
-                        //string strBackImageFileTitle = ClassElementsCache_Deprecated.Singleton.BackgroundImage_FTitle;
-                        //image_back = ClassElementsCache_Deprecated.Singleton.GetBackgroundImage(intBackWidth, intBackHeight);
-                        image_back = ClassElementsCache_Deprecated.Singleton.GetBackgroundImage(intBackWidth, intBackHeight,
-                                strPathToBackImages);
+                        // 9-15-2021 td //string strRecipID = recipient_id.ToString();
+                        string strRecipID = str_recipient_id;  // Modified 9/15/2021 td
+                        string strLastName = recipient_by_id_onlyone.LastName;
+                        string strFirstName = recipient_by_id_onlyone.FirstName;
+                        string strFullName = (strFirstName + " " + strLastName);
 
+                        //image_ex = objLayoutEx.GenerateImage(strRecipID, strFullName,
+                        //     objLayoutEx.RecipientPhoto,
+                        //     bHorizontalLarge, bHorizontalSmall);
+
+                        //ciBadgeElemImage.modGenerate mod_generate = new modGenerate();
+
+                        //
+                        // Added 11/13/2019 td
+                        //
+                        ciBadgeGenerator.ClassMakeBadge mod_generate = new ClassMakeBadge();
+                        ciBadgeInterfaces.BadgeLayoutClass objBadgeLayout;   // = 
+                                                                        //    new ciBadgeInterfaces.BadgeLayoutClass();
+
+                        //Added 11/16/2019 td
+                        // 1/14/2019 td//objLayout = ciBadgeElements.ClassElementsCache.Singleton.BadgeLayout;
+                        objBadgeLayout = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.BadgeLayout;
+
+                        //Added 12/11/2019 td 
+                        LayoutExample.PathToFolderWithBacks = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(true);
+
+                        //Added 1/12/2020 thomas downes  
+                        Image image_back;
+                        const bool c_bUseOldMethodWhichFailsOnAzure = false;
+                        if (c_bUseOldMethodWhichFailsOnAzure)
+                        {
+                            image_back = objLayoutExample.GenerateImage_BackgroundOnly(bHorizontalLarge,
+                               bHorizontalSmall, ref boolNoImages);
+                        }
+                        else
+                        {
+                            //
+                            //Added 1/12/2020 thomas d. 
+                            //
+                            //string strPathToBackJpg = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_BackImg_Current;
+                            string strPathToBackImages = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(true);
+                            //bool boolNoImages;
+                            //image_back = ciLayoutPrintLib.BackImageExamples.GetCurrentImage(boolNoImages);
+                            int intBackWidth = objBadgeLayout.Width_Pixels;
+                            int intBackHeight = objBadgeLayout.Height_Pixels;
+
+                            //string strBackImageFileTitle = ClassElementsCache_Deprecated.Singleton.BackgroundImage_FTitle;
+                            //image_back = ClassElementsCache_Deprecated.Singleton.GetBackgroundImage(intBackWidth, intBackHeight);
+                            image_back = ClassElementsCache_Deprecated.Singleton.GetBackgroundImage(intBackWidth, intBackHeight,
+                                    strPathToBackImages);
+
+                        }
+
+                        //11-16-2019 td''mod_generate.MakeBadgeImage_ByRecipient(objLayout, 
+                        //         image_back, ClassElementsCache.Singleton,
+                        //         intPixelsWidth, intPixelsHeight, 
+                        //         recipient_by_id_onlyone, 
+                        //         recipient_by_id_onlyone.GetPortraitImage());
+
+                        //11-17-2019 thomas d.
+                        //11-26-2019 mod_generate.PathToFile_Sig = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_Sig(true);
+                        //11-26-2019 mod_generate.ImageQRCode = new Bitmap(App_Start.DiskFiles.PathToFile_QRCode(true));
+
+                        mod_generate.PathToFile_Sig = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_Sig(true);
+                        mod_generate.PathToFile_QR = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_QRCode(true);
+
+                        //mod_generate.ImageQRCode = new Bitmap(App_Start.DiskFiles.PathToFile_QRCode(true));
+                        mod_generate.ImageQRCode = new Bitmap(mod_generate.PathToFile_QR);
+
+                        image_badge_output =
+                        mod_generate.MakeBadgeImage_ByIRecipient(objBadgeLayout,
+                                       image_back, ClassElementsCache_Deprecated.Singleton,
+                                       intPixelsWidth, intPixelsHeight,
+                                       recipient_by_id_onlyone,
+                                       recipient_by_id_onlyone.GetPortraitImage());
                     }
-
-                    //11-16-2019 td''mod_generate.MakeBadgeImage_ByRecipient(objLayout, 
-                    //         image_back, ClassElementsCache.Singleton,
-                    //         intPixelsWidth, intPixelsHeight, 
-                    //         recipient_by_id_onlyone, 
-                    //         recipient_by_id_onlyone.GetPortraitImage());
-
-                    //11-17-2019 thomas d.
-                    //11-26-2019 mod_generate.PathToFile_Sig = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_Sig(true);
-                    //11-26-2019 mod_generate.ImageQRCode = new Bitmap(App_Start.DiskFiles.PathToFile_QRCode(true));
-
-                    mod_generate.PathToFile_Sig = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_Sig(true);
-                    mod_generate.PathToFile_QR = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_QRCode(true);
-                    
-                    //mod_generate.ImageQRCode = new Bitmap(App_Start.DiskFiles.PathToFile_QRCode(true));
-                    mod_generate.ImageQRCode = new Bitmap(mod_generate.PathToFile_QR);
-
-                    image_ex =
-                    mod_generate.MakeBadgeImage_ByIRecipient(objLayout,
-                                   image_back, ClassElementsCache_Deprecated.Singleton,
-                                   intPixelsWidth, intPixelsHeight,
-                                   recipient_by_id_onlyone,
-                                   recipient_by_id_onlyone.GetPortraitImage());
 
                     //
                     // Refactored 9/15/2021 td 
@@ -260,8 +291,8 @@ namespace ciBadgeForWeb
                     //    We are trying to encapsulate the badge-layout & image processing from the 
                     //    code which pertains to understanding the user's choices & state-related context. 
                     //
-                    const bool c_boolEncapsulateMuchOfCodeAbove = true;  // Added 9/15/2021 thomas downes
-                    if (c_boolEncapsulateMuchOfCodeAbove)
+                    const bool c_boolEncapsulateMuchOfCode_Above = false;  // true;  // Added 9/15/2021 thomas downes
+                    if (c_boolEncapsulateMuchOfCode_Above)
                     {
                         //image_ex =
                         //        mod_generate.MakeBadgeImage_ByIRecipient(objLayout,
@@ -272,13 +303,13 @@ namespace ciBadgeForWeb
 
                         //Call a local function, rather than a function in another class or module.
                         //    ----9/15/2021 td
-                        image_ex = Step4Handler_MakeBadgeImage(recipient_by_id_onlyone,
-                                       objLayout,
-                                       image_back,     //ClassElementsCache_Deprecated.Singleton,
+                        image_badge_output = Step4Handler_MakeBadgeImage(recipient_by_id_onlyone,
+                                       //|| objLayout,
+                                       //|| image_back,     //ClassElementsCache_Deprecated.Singleton,
                                        intPixelsWidth, intPixelsHeight,
                                        recipient_by_id_onlyone,
-                                       recipient_by_id_onlyone.GetPortraitImage(),
-                                       objLayoutEx, intPixelsWidth, intPixelsHeight);
+                                       //|| recipient_by_id_onlyone.GetPortraitImage(),
+                                       objLayoutExample);
                     }
 
                 }
@@ -301,9 +332,9 @@ namespace ciBadgeForWeb
 
                 // Save the image to the OutputStream
 
-                MemoryStream obj_ms = new MemoryStream();
-                image_ex.Save(obj_ms, ImageFormat.Jpeg);
-                context.Response.BinaryWrite(obj_ms.GetBuffer());
+                MemoryStream obj_ms_output = new MemoryStream();
+                image_badge_output.Save(obj_ms_output, ImageFormat.Jpeg);
+                context.Response.BinaryWrite(obj_ms_output.GetBuffer());
 
             }
             else
@@ -314,16 +345,16 @@ namespace ciBadgeForWeb
         }
 
 
-        public Image Step4Handler_MakeBadgeImage(Models.CIRecipient par_recipient_by_id, 
-                            ciBadgeInterfaces.BadgeLayoutClass par_layout,
-                            Image par_backgroundImage,
+        public Image Step4Handler_MakeBadgeImage(Models.CIRecipient par_recipient_by_id,
+                            //|| ciBadgeInterfaces.BadgeLayoutClass par_layout,
+                            //|| Image par_backgroundImage,
                             //ClassElementsCache_Deprecated par_cache,
                             int par_badge_width_pixels,
                             int par_badge_height_pixels,
                             ciBadgeInterfaces.IRecipient par_recipient,
-                            Image par_recipientPic, 
-                            LayoutExample par_objLayoutEx, 
-                            int par_intPixelsWidth, int par_intPixelsHeight)
+                            //|| Image par_recipientPic, 
+                            LayoutExample par_objLayoutExample) // , 
+                            // int par_intPixelsWidth, int par_intPixelsHeight)
         {
             //
             // Encapsulated 9/15/2021 Thomas downes
@@ -350,12 +381,17 @@ namespace ciBadgeForWeb
             // Added 11/13/2019 td
             //
             ciBadgeGenerator.ClassMakeBadge mod_generate = new ClassMakeBadge();
-            ciBadgeInterfaces.BadgeLayoutClass objLayout;   // = 
+            ciBadgeInterfaces.BadgeLayoutClass objBadgeLayout;   // = 
                                                             //    new ciBadgeInterfaces.BadgeLayoutClass();
 
             //Added 11/16/2019 td
             // 1/14/2019 td//objLayout = ciBadgeElements.ClassElementsCache.Singleton.BadgeLayout;
-            objLayout = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.BadgeLayout;
+            objBadgeLayout = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.BadgeLayout;
+
+            //
+            //Modify the placement of the Student/Employee's Full Name. ----6/27/2019 td
+            //
+            par_objLayoutExample.UpdateLabelPositions(Controllers.LayoutText1Controller.mod_objLayoutText);
 
             //Added 12/11/2019 td 
             LayoutExample.PathToFolderWithBacks = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(true);
@@ -377,8 +413,8 @@ namespace ciBadgeForWeb
                 string strPathToBackImages = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(true);
                 //bool boolNoImages;
                 //image_back = ciLayoutPrintLib.BackImageExamples.GetCurrentImage(boolNoImages);
-                int intBackWidth = objLayout.Width_Pixels;
-                int intBackHeight = objLayout.Height_Pixels;
+                int intBackWidth = objBadgeLayout.Width_Pixels;
+                int intBackHeight = objBadgeLayout.Height_Pixels;
 
                 //string strBackImageFileTitle = ClassElementsCache_Deprecated.Singleton.BackgroundImage_FTitle;
                 //image_back = ClassElementsCache_Deprecated.Singleton.GetBackgroundImage(intBackWidth, intBackHeight);
@@ -403,9 +439,10 @@ namespace ciBadgeForWeb
             mod_generate.ImageQRCode = new Bitmap(mod_generate.PathToFile_QR);
 
             image_badge =
-            mod_generate.MakeBadgeImage_ByIRecipient(objLayout,
+            mod_generate.MakeBadgeImage_ByIRecipient(objBadgeLayout,
                            image_back, ClassElementsCache_Deprecated.Singleton,
-                           par_intPixelsWidth, par_intPixelsHeight,
+                           //par_intPixelsWidth, par_intPixelsHeight,
+                           par_badge_width_pixels, par_badge_height_pixels,
                            par_recipient_by_id,
                            par_recipient_by_id.GetPortraitImage());
 
