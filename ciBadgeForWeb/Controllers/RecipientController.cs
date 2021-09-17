@@ -555,6 +555,23 @@ namespace ciBadgeForWeb.Controllers
             string strPathToGeneratedImageFile = "";  //+++((())))))))*****
 
             //
+            // objLayoutExample  
+            //
+            ciLayoutPrintLib.LayoutExample objLayoutExample = new ciLayoutPrintLib.LayoutExample();
+
+            //Added 9/17/2021 thomas downes
+            //
+            //   Create the badge in the dimensions 438 pixels by 276 pixels.  
+            //
+            const int c_intPixelsWidth = 438;
+            const int c_intPixelsHeight = 276;
+
+            Step4Handler.Step4Handler_MakeBadgeFile(recipient_whoseBadgeIsToBeEmailed,
+                           c_intPixelsWidth, c_intPixelsHeight, 
+                           recipient_whoseBadgeIsToBeEmailed, objLayoutExample,
+                           out strPathToGeneratedImageFile); 
+
+            //
             // Email the file.  9/10/2021  
             //
             EmailingFilesViaGmail_Framework.EmailingFiles.SmtpUsername = "tomdownes1@gmail.com";

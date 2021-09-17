@@ -77,7 +77,7 @@ namespace ciBadgeForWeb
                 Image image_badge_output = null;   // Added 9/17/2021 thomas downes
 
                 //
-                // objLayoutEx 
+                // objLayoutExample 
                 //
                 LayoutExample objLayoutExample = new ciLayoutPrintLib.LayoutExample();
 
@@ -194,6 +194,11 @@ namespace ciBadgeForWeb
                                        recipient_by_id_onlyone,
                                        //|| recipient_by_id_onlyone.GetPortraitImage(),
                                        objLayoutExample);
+
+                        //If the image is null, set the image to an example badge.
+                        //     ---9/17/2021 thomas downes
+                        if (null == image_badge_output) image_badge_output = image_badge_exampleBackgroundOnly;
+
                     }
 
                     else
@@ -345,7 +350,35 @@ namespace ciBadgeForWeb
         }
 
 
-        public Image Step4Handler_MakeBadgeImage(Models.CIRecipient par_recipient_by_id,
+
+        public static void Step4Handler_MakeBadgeFile(Models.CIRecipient par_recipient_by_id,
+                            int par_badge_width_pixels,
+                            int par_badge_height_pixels,
+                            ciBadgeInterfaces.IRecipient par_recipient,
+                            LayoutExample par_objLayoutExample, 
+                            out string pout_strPathToNewFile) 
+        {
+            //
+            // Added 9/17/2021 Thomas Downes
+            //
+            Image image_badge = Step4Handler_MakeBadgeImage(par_recipient_by_id,
+                                     par_badge_width_pixels, par_badge_height_pixels,
+                                     par_recipient,
+                                     par_objLayoutExample);
+
+            //--pout_strPathToNewFile = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_QRCode(true);
+            pout_strPathToNewFile = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_TempBadges(true, 
+                par_recipient_by_id.RecipientID);
+
+            image_badge.Save(pout_strPathToNewFile, ImageFormat.Jpeg);
+            
+            //
+            // End of procedure. 
+            //
+        }
+
+
+        public static Image Step4Handler_MakeBadgeImage(Models.CIRecipient par_recipient_by_id,
                             //|| ciBadgeInterfaces.BadgeLayoutClass par_layout,
                             //|| Image par_backgroundImage,
                             //ClassElementsCache_Deprecated par_cache,

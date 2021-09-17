@@ -1254,6 +1254,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />
+    <Folder Include="Images\TempBadges\" />
     <Folder Include="LegacyPages\" />
     <Folder Include="REST_API\" />
     <Folder Include="Scripts - 2020\" />

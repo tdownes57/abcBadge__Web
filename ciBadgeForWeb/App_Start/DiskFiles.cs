@@ -214,6 +214,7 @@ namespace ciBadgeForWeb.App_Start
 
         }
 
+
         public static string PathToFile_QRCode(bool pboolAbsolute)
         {
             //Return My.Application.Info.DirectoryPath & "\Images\Signatures\Declaration_bmp.bmp"
@@ -471,6 +472,30 @@ namespace ciBadgeForWeb.App_Start
                 return "----no file. JSON_Next-----";
             }
         }
+
+
+        public static string PathToFile_TempBadges(bool pboolAbsolute, string pstrRecipientID)
+        {
+            //
+            //Added 9/17/2021 td
+            //
+            //string strPathToFolder = "C:\\Users\\tdown\\source\\repos\\ciBadgeForWeb\\ciBadgeForWeb\\Images\\PictureExamples";
+            string strPathToFolder_Virtual = "~/Images/TempBadges";
+
+            //string strPathToFile = System.IO.Path.Combine(strPathToFolder, pstrRecipientID + ".jpg");
+            string strPathToFile_Virtual = (strPathToFolder_Virtual + "/" + (pstrRecipientID + ".jpg"));
+
+            //string strPathToFile_Virtual = "~/Images/QRCodes/ExampleQR.png";
+            //
+            //https://forums.asp.net/t/1839913.aspx?Convert+Relative+Path+to+Absolute+Path
+            //
+            string strPathToFile_Absolute = HostingEnvironment.MapPath(strPathToFile_Virtual);
+
+            if (pboolAbsolute) return strPathToFile_Absolute;
+            return strPathToFile_Virtual;
+
+        }
+
 
 
     }
