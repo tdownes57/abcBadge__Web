@@ -541,12 +541,13 @@ namespace ciBadgeForWeb.Controllers
 
 
         // GET: Recipient/EmailBadge/5
-        public ActionResult EmailBadge(int parameter_id)
+        public ActionResult EmailBadge(string parameter_id)   // (int parameter_id)
         {
             //
             // Added 8/18/2021 Thomas Downes  
             //
-            var recipient_whoseBadgeIsToBeEmailed = mod_recipientList2.Where(s => s.RecipientID == parameter_id.ToString()).FirstOrDefault();
+            //var recipient_whoseBadgeIsToBeEmailed = mod_recipientList2.Where(s => s.RecipientID == parameter_id.ToString()).FirstOrDefault();
+            var recipient_whoseBadgeIsToBeEmailed = mod_recipientList2.Where(s => s.RecipientID == parameter_id).FirstOrDefault();
 
             //
             // How do I create the image as a JPEG file?   I think I did that

@@ -51,7 +51,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\ciLayout\ciBadgeRecipients\bin\Debug\ciBadgeRecipients.dll</HintPath>
     </Reference>
-    <Reference Include="EmailingFilesViaGmail_Framework">
+    <Reference Include="EmailingFilesViaGmail_Framework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Framework_EmailingFiles\Framework_EmailingFiles_CS\bin\Debug\EmailingFilesViaGmail_Framework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
