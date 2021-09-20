@@ -55,6 +55,7 @@ namespace ciBadgeForWeb.App_Start
             return strPathToFolder_Virtual;
         }
 
+
         public static string PathToFolderOfPics(bool pboolAbsolute)
         {
             //
@@ -67,6 +68,25 @@ namespace ciBadgeForWeb.App_Start
             if (pboolAbsolute) return strPathToFolder_Absolute;
             return strPathToFolder_Virtual;
         }
+
+
+        public static System.IO.FileInfo PathToFolderOfPics_Example001()
+        {
+            //
+            //Added 9/19/2020 thomas downes 
+            //
+            string strPathToFolder = PathToFolderOfPics(true);
+
+            string strPathToPicture001 =  System.IO.Directory.GetFiles("001.jpg")[0];
+
+            bool bExists = System.IO.File.Exists(strPathToPicture001);
+
+            //if (bExists) return strPathToPicture001;
+            if (bExists) return new System.IO.FileInfo(strPathToPicture001);
+            return null; 
+
+        }
+
 
 
     }

@@ -16,11 +16,11 @@ namespace ciBadgeForWeb
     /// <summary>
     /// Utilizes advanced layout programming from CILayoutDesigner by CI Solutions/Thomas Downes. 10/5/2019 td
     /// </summary>
-    public class  Step4Handler : IHttpHandler
+    public class Step4Handler : IHttpHandler
     {
         public void ProcessRequest(HttpContext context)
         {
-            try 
+            try
             {
                 //Encapsulated 1/15/2020 td  
                 ProcessRequest_noTryCatch(context);
@@ -96,7 +96,7 @@ namespace ciBadgeForWeb
                 try
                 {
                     intPixelsWidth = int.Parse(context.Request.QueryString["width"]);
-                    intPixelsHeight = (int)(intPixelsWidth / 
+                    intPixelsHeight = (int)(intPixelsWidth /
                         ClassProportions.LongSideToShortRatio());
                 }
                 catch
@@ -113,17 +113,17 @@ namespace ciBadgeForWeb
                     //
                     objLayoutExample.WidthInPixels_Land = intPixelsWidth;
 
-                    if (-1 != intBackgroundImageIndex) 
+                    if (-1 != intBackgroundImageIndex)
                     {
                         const bool c_boolToggleImage = false;  // Added 3/9/2020 thoams
                         if (c_boolToggleImage)
-                           ciLayoutPrintLib.LayoutExample.RefreshChoiceOfBackground_ByIndex(intBackgroundImageIndex);
+                            ciLayoutPrintLib.LayoutExample.RefreshChoiceOfBackground_ByIndex(intBackgroundImageIndex);
                     }
 
                     //Added 4/9/2020 td
                     LayoutExample.PathToFolderWithBacks = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(true);
 
-                    image_badge_exampleBackgroundOnly = objLayoutExample.GenerateImage_BackgroundOnly(bHorizontalLarge, 
+                    image_badge_exampleBackgroundOnly = objLayoutExample.GenerateImage_BackgroundOnly(bHorizontalLarge,
                         bHorizontalSmall, ref boolNoImages);
 
                     // Added 3/9/2020 thomas downes
@@ -135,7 +135,7 @@ namespace ciBadgeForWeb
                     string strPathToBackImages_B = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(true);
                     int intBackWidth_B = objLayout_B.Width_Pixels;
                     int intBackHeight_B = objLayout_B.Height_Pixels;
-                    image_badge_exampleBackgroundOnly = 
+                    image_badge_exampleBackgroundOnly =
                         ClassElementsCache_Deprecated.Singleton.GetBackgroundImage(intBackWidth_B, intBackHeight_B,
                             strPathToBackImages_B);
 
@@ -225,7 +225,7 @@ namespace ciBadgeForWeb
                         //
                         ciBadgeGenerator.ClassMakeBadge mod_generate = new ClassMakeBadge();
                         ciBadgeInterfaces.BadgeLayoutClass objBadgeLayout;   // = 
-                                                                        //    new ciBadgeInterfaces.BadgeLayoutClass();
+                                                                             //    new ciBadgeInterfaces.BadgeLayoutClass();
 
                         //Added 11/16/2019 td
                         // 1/14/2019 td//objLayout = ciBadgeElements.ClassElementsCache.Singleton.BadgeLayout;
@@ -351,6 +351,20 @@ namespace ciBadgeForWeb
 
 
 
+        public static void TestFileWritePermissions()
+        {
+            //
+            // Added 9/19/2021 thomas downes 
+            //
+            //string strPathToPhotoFile = ""; 
+            //strPathToPhotoFile = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_SigExample();
+
+            var examplePic = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderOfPics_Example001();
+            string secs_suffix_dot = (System.DateTime.Now.Second.ToString() + ".");
+            examplePic.CopyTo(examplePic.FullName.Replace(".", secs_suffix_dot));
+
+        }
+
         public static void Step4Handler_MakeBadgeFile(Models.CIRecipient par_recipient_by_id,
                             int par_badge_width_pixels,
                             int par_badge_height_pixels,
@@ -361,6 +375,11 @@ namespace ciBadgeForWeb
             //
             // Added 9/17/2021 Thomas Downes
             //
+            TestFileWritePermissions();    // Added 9/19/2021 td
+            const bool c_bExitEarly = true;  // Added 9/19/2021 td
+            pout_strPathToNewFile = "";   // Added 9/19/2021 td
+            if (c_bExitEarly) return;  // Added 9/19/2021 td
+
             Image image_badge = Step4Handler_MakeBadgeImage(par_recipient_by_id,
                                      par_badge_width_pixels, par_badge_height_pixels,
                                      par_recipient,
