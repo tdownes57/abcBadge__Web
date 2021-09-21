@@ -5,38 +5,42 @@
 
 
 
-    <div class="jumbotron">
-        @*<h1>CI Badge for the Web</h1>*@
-        @*<img src="~/Images/ABC IDCardLogo.png" width="500" alt="ABC ID Card for the Web" />
+<div class="jumbotron">
+    @*<h1>CI Badge for the Web</h1>*@
+    @*<img src="~/Images/ABC IDCardLogo.png" width="500" alt="ABC ID Card for the Web" />
         <img src="~/Images/ABCSolutionsLogo.png" width="400" alt="ABC Solutions" />*@
-        <h2>ABC ID Card</h2>
-        @*<img src="~/Images/ThomasCDownes.png" width="100"/>*@
-        <p>Welcome to ABC ID Card by Thomas C. Downes!</p>
-        @*<img src="~/Images/ThomasCDownes.png" width="70" alt="Thomas C. Downes"  />*@
-        <p class="lead">ABC ID Card is a software service enabling you to create badge-cards for any group of people.</p>
-        @*<p><a href="https://ABC IDCard.AzureWebsites.net/card-printing-software/" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+    <h2>ABC ID Card</h2>
+    @*<img src="~/Images/ThomasCDownes.png" width="100"/>*@
+    <p>Welcome to ABC ID Card by Thomas C. Downes!</p>
+    @*<img src="~/Images/ThomasCDownes.png" width="70" alt="Thomas C. Downes"  />*@
+    <p class="lead">ABC ID Card is a software service enabling you to create badge-cards for any group of people.</p>
+    @*<p><a href="https://ABC IDCard.AzureWebsites.net/card-printing-software/" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+    <p>
+        <a href="http://abcBadge.azurewebsites.net">abcBadge.azurewebsites.net</a>
+    </p>
+</div>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
         <p>
-            <a href="http://abcBadge.azurewebsites.net">abcBadge.azurewebsites.net</a>
+            @*<img src="~/Images/CIBadgeLogo.png" />*@
+            @*<img src="~/Images/ThomasCDownes.png" width="100"/>*@
+            ABC ID Card by Thomas C. Downes is a service enabling you to create badges for any group of people, e.g. your employees or students.
+            Design a layout, confirm the individuals have their correct data and picture,
+            and print the badge!
         </p>
+        <p>
+            Here is a link to the published website: <a href="http://abcBadge.azurewebsites.net">abcBadge.azurewebsites.net</a>
+        </p>
+        <p>
+            Here is our privacy policy:   @Html.ActionLink("Privacy Policy", "PrivacyPolicy", "Home")
+        </p>
+
+        @* <p><a class="btn btn-default" href="https://abcBadge.azurewebsites.net/card-printing-software/">Learn more &raquo;</a></p>*@
     </div>
-
-
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                @*<img src="~/Images/CIBadgeLogo.png" />*@
-                @*<img src="~/Images/ThomasCDownes.png" width="100"/>*@
-                ABC ID Card by Thomas C. Downes is a service enabling you to create badges for any group of people, e.g. your employees or students.
-                Design a layout, confirm the individuals have their correct data and picture,
-                and print the badge!
-            </p>
-            <p>
-               Here is a link to the published website: <a href="http://abcBadge.azurewebsites.net">abcBadge.azurewebsites.net</a>
-            </p>       
-            @* <p><a class="btn btn-default" href="https://abcBadge.azurewebsites.net/card-printing-software/">Learn more &raquo;</a></p>*@
-        </div>
-        @*<div class="col-md-4">
+    @*<div class="col-md-4">
             <h2>Card Printing Services</h2>
             <p>We provide great card-printing services.</p>
             <p><a class="btn btn-default" href="https://abcBadge.azurewebsites.net/services/card-printing-design/">Learn more &raquo;</a></p>
@@ -56,7 +60,8 @@
             <p>Let's combine searching and editing in one page, as in Steps 1 and 2 on Main Data Entry.</p>
             <p><a class="btn btn-default" href="../Steps1and2/Edit">Learn more &raquo;</a></p>
         </div>*@
-    </div>
+</div>
+
 
 
 
