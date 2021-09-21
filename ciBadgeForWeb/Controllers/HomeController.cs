@@ -231,6 +231,7 @@ namespace ciBadgeForWeb.Controllers
             return (ViewResult)View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         }
 
+
         public ActionResult Contact()
         {
             // 2-20-2020 td//ViewBag.Message = "Your contact page.";
@@ -238,7 +239,17 @@ namespace ciBadgeForWeb.Controllers
 
             return (ViewResult)View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
         }
-        
+
+
+        public ActionResult PrivacyPolicy()
+        {
+            // Added 9/20/2021 Thomas Downes
+            ViewBag.Message = "Our Company's Privacy Policy";
+
+            return (ViewResult)View(); //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!  ----5/24 td
+        }
+
+
         public ActionResult Example()
         {
             ViewBag.Message = "Example of a badge.";
