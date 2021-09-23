@@ -38,7 +38,8 @@ namespace ciBadgeForWeb
             }
         }
 
-        private void ProcessRequest_noTryCatch(HttpContext context)
+
+        private void ProcessRequest_noTryCatch(HttpContext par_context)
         {
             //
             //Encapsulated 1-15-2020 td
@@ -52,23 +53,23 @@ namespace ciBadgeForWeb
 
             bool bSizeLarge = false, bHorizontalLarge = false, bHorizontalSmall = false; //Added 6/20/2019 thomas downes 
 
-            context.Response.Clear();
+            par_context.Response.Clear();
 
             //Added 6/20/2019 td
             //
-            if (!String.IsNullOrEmpty(context.Request.QueryString["big"])) // ....["size"]))
+            if (!String.IsNullOrEmpty(par_context.Request.QueryString["big"])) // ....["size"]))
             {
                 //Added 6/20/2019 td
-                if (!String.IsNullOrEmpty(context.Request.QueryString["hor"]))
+                if (!String.IsNullOrEmpty(par_context.Request.QueryString["hor"]))
                 {
                     //Added 6/20/2019 td
-                    bSizeLarge = ("y" == context.Request.QueryString["big"]);  // ["size"]);
-                    bHorizontalLarge = (bSizeLarge && ("y" == context.Request.QueryString["hor"]));
-                    bHorizontalSmall = (!(bSizeLarge) && ("y" == context.Request.QueryString["hor"]));
+                    bSizeLarge = ("y" == par_context.Request.QueryString["big"]);  // ["size"]);
+                    bHorizontalLarge = (bSizeLarge && ("y" == par_context.Request.QueryString["hor"]));
+                    bHorizontalSmall = (!(bSizeLarge) && ("y" == par_context.Request.QueryString["hor"]));
                 }
             }
 
-            if (!String.IsNullOrEmpty(context.Request.QueryString["id"]))
+            if (!String.IsNullOrEmpty(par_context.Request.QueryString["id"]))
             {
                 //
                 //Added 6/20/2019 thomas downes  
@@ -82,20 +83,20 @@ namespace ciBadgeForWeb
                 LayoutExample objLayoutExample = new ciLayoutPrintLib.LayoutExample();
 
                 bool boolPlainBackgroundImage;//Added 6/28/2019 thomas downes 
-                boolPlainBackgroundImage = ("back" == context.Request.QueryString["id"]);
+                boolPlainBackgroundImage = ("back" == par_context.Request.QueryString["id"]);
                 bool boolNoImages = false; //added 7/6/2019 td
 
                 int intBackgroundImageIndex = -1;
-                if (!String.IsNullOrEmpty(context.Request.QueryString["backid"]))
+                if (!String.IsNullOrEmpty(par_context.Request.QueryString["backid"]))
                 {
-                    intBackgroundImageIndex = int.Parse(context.Request.QueryString["backid"]);
+                    intBackgroundImageIndex = int.Parse(par_context.Request.QueryString["backid"]);
                 }
 
                 int intPixelsWidth = 0; //Added 7/06/2019 thomas downes 
                 int intPixelsHeight = 0; //Added 11/14/2019 thomas downes  
                 try
                 {
-                    intPixelsWidth = int.Parse(context.Request.QueryString["width"]);
+                    intPixelsWidth = int.Parse(par_context.Request.QueryString["width"]);
                     intPixelsHeight = (int)(intPixelsWidth /
                         ClassProportions.LongSideToShortRatio());
                 }
@@ -143,8 +144,8 @@ namespace ciBadgeForWeb
                     //
                     if (boolNoImages)
                     {
-                        context.Response.ContentType = "text/html";
-                        context.Response.Write("<p>No images were loaded, unfortunately.</p>");
+                        par_context.Response.ContentType = "text/html";
+                        par_context.Response.Write("<p>No images were loaded, unfortunately.</p>");
                         return;
 
                     }
@@ -156,7 +157,7 @@ namespace ciBadgeForWeb
                     //Full Badge Image 
                     //
                     // Not needed. 9/15/2021 td //int recipient_id = Int32.Parse(context.Request.QueryString["id"]);
-                    string str_recipient_id = context.Request.QueryString["id"];
+                    string str_recipient_id = par_context.Request.QueryString["id"];
 
                     recipients_list = Controllers.RecipientController.mod_recipientList2;
 
@@ -333,25 +334,25 @@ namespace ciBadgeForWeb
 
                 // Of course set this to whatever your format is of the image
                 //context.Response.ContentType = "image/png";
-                context.Response.ContentType = "image/Jpeg";
+                par_context.Response.ContentType = "image/Jpeg";
 
                 // Save the image to the OutputStream
 
                 MemoryStream obj_ms_output = new MemoryStream();
                 image_badge_output.Save(obj_ms_output, ImageFormat.Jpeg);
-                context.Response.BinaryWrite(obj_ms_output.GetBuffer());
+                par_context.Response.BinaryWrite(obj_ms_output.GetBuffer());
 
             }
             else
             {
-                context.Response.ContentType = "text/html";
-                context.Response.Write("<p>Need a valid id</p>");
+                par_context.Response.ContentType = "text/html";
+                par_context.Response.Write("<p>Need a valid id</p>");
             }
         }
 
 
 
-        public static void TestFileWritePermissions()
+        public static bool TestFileWritePermissions_IsPermitted()
         {
             //
             // Added 9/19/2021 thomas downes 
@@ -359,9 +360,22 @@ namespace ciBadgeForWeb
             //string strPathToPhotoFile = ""; 
             //strPathToPhotoFile = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_SigExample();
 
-            var examplePic = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderOfPics_Example001();
-            string secs_suffix_dot = (System.DateTime.Now.Second.ToString() + ".");
-            examplePic.CopyTo(examplePic.FullName.Replace(".", secs_suffix_dot));
+            string strPathToFolderOfPics = App_Start.DiskFolders.PathToFolderOfPics(true);
+
+            const bool c_bUseAccessSecurityCheck = true; 
+            if (c_bUseAccessSecurityCheck)
+            {
+                bool bAccessible = App_Start.DiskFolders.HasWritePermissionOnDir(strPathToFolderOfPics);
+                return bAccessible;
+
+            }
+            else
+            {
+                var examplePic = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderOfPics_Example001();
+                string secs_suffix_dot = (System.DateTime.Now.Second.ToString() + ".");
+                examplePic.CopyTo(examplePic.FullName.Replace(".", secs_suffix_dot));
+                return true;
+            }
 
         }
 
@@ -375,8 +389,17 @@ namespace ciBadgeForWeb
             //
             // Added 9/17/2021 Thomas Downes
             //
-            TestFileWritePermissions();    // Added 9/19/2021 td
-            const bool c_bExitEarly = true;  // Added 9/19/2021 td
+            //----TestFileWritePermissions();    // Added 9/19/2021 td
+            bool bIsPermitted = TestFileWritePermissions_IsPermitted();    // Added 9/19/2021 td
+            if (!bIsPermitted)
+            {
+                //context.Response.ContentType = "text/html";
+                //context.Response.Write("<p>No file write permissions.</p>");
+                pout_strPathToNewFile = "<p>No file write permissions.</p>";
+                return;
+            }
+
+            const bool c_bExitEarly = false;  // true;  // Added 9/19/2021 td
             pout_strPathToNewFile = "";   // Added 9/19/2021 td
             if (c_bExitEarly) return;  // Added 9/19/2021 td
 

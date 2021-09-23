@@ -88,6 +88,54 @@ namespace ciBadgeForWeb.App_Start
         }
 
 
+        public static bool HasWritePermissionOnDir(string par_pathToDirectory)
+        {
+            //
+            // https://stackoverflow.com/questions/1281620/checking-for-directory-and-file-write-permissions-in-net
+            //
+            bool bValidDirectory = System.IO.Directory.Exists(par_pathToDirectory);
+            if (!bValidDirectory) throw new ArgumentException("The passed directory is not found or is not confirmed as valid.");
+
+            var writeAllow = false;
+            var writeDeny = false;
+            var accessControlList = System.IO.Directory.GetAccessControl(par_pathToDirectory);
+            if (accessControlList == null)
+                return false;
+
+            var accessRules = accessControlList.GetAccessRules(true, true,
+                                        typeof(System.Security.Principal.SecurityIdentifier));
+            if (accessRules == null)
+                return false;
+
+            // Added 9/23/2021 Thomas Downes
+            var enumRightToWrite = System.Security.AccessControl.FileSystemRights.Write;
+            var enumAccessAllow = System.Security.AccessControl.AccessControlType.Allow;
+            var enumAccess_Deny = System.Security.AccessControl.AccessControlType.Deny;
+
+            foreach (System.Security.AccessControl.FileSystemAccessRule rule in accessRules)
+            {
+                //if ((FileSystemRights.Write & rule.FileSystemRights) != FileSystemRights.Write)
+                if ((enumRightToWrite & rule.FileSystemRights) != enumRightToWrite)
+                        continue;
+
+                //if (rule.AccessControlType == System.Security.AccessControl.AccessControlType.Allow)
+                //    writeAllow = true;
+                //else if (rule.AccessControlType == System.Security.AccessControl.AccessControlType.Deny)
+                //    writeDeny = true;
+
+                if (rule.AccessControlType == enumAccessAllow) writeAllow = true;
+                else if (rule.AccessControlType == enumAccess_Deny) writeDeny = true;
+            }
+
+            //return (writeAllow && !writeDeny);
+            bool bHasWritePermission = (writeAllow && !writeDeny);
+            return bHasWritePermission;
+
+        }
+
+
+
+
 
     }
 }

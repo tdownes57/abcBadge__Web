@@ -570,13 +570,33 @@ namespace ciBadgeForWeb.Controllers
             Step4Handler.Step4Handler_MakeBadgeFile(recipient_whoseBadgeIsToBeEmailed,
                            c_intPixelsWidth, c_intPixelsHeight, 
                            recipient_whoseBadgeIsToBeEmailed, objLayoutExample,
-                           out strPathToGeneratedImageFile); 
+                           out strPathToGeneratedImageFile);
+
+            //
+            // Added 9/23/2021 td
+            //
+            bool bShowMessageWithFileIOError = (strPathToGeneratedImageFile.StartsWith("<p>"));
+            if (bShowMessageWithFileIOError)
+            {
+                //return ContentResult(strPathToGeneratedImageFile);
+                //return Microsoft.AspNet.Mvc.Content(strPathToGeneratedImageFile);
+                //return System.Web.MVC.Controller.Content(strPathToGeneratedImageFile);
+                return this.Content(strPathToGeneratedImageFile);
+            }
+            else if ("" == strPathToGeneratedImageFile)
+            {
+                // Added 9/23/2021 thomas downes
+                return this.Content("The path to the file is blank or missing.");
+
+            }
+
 
             //
             // Email the file.  9/10/2021  
             //
             EmailingFilesViaGmail_Framework.EmailingFiles.SmtpUsername = "tomdownes1@gmail.com";
-            EmailingFilesViaGmail_Framework.EmailingFiles.SmtpSpaghetti = "999search" + "#1957Bb".Substring(3);
+            //---EmailingFilesViaGmail_Framework.EmailingFiles.SmtpSpaghetti = "999search" + "#1969Ee".Substring(3);
+            EmailingFilesViaGmail_Framework.EmailingFiles.SmtpSpaghetti = "999search" + "#1969Ee".Substring(3);
 
             EmailingFilesViaGmail_Framework.EmailingFiles.SendViaEmail_OneFile("", strPathToGeneratedImageFile,
                    "Here is the badge you requested", 
