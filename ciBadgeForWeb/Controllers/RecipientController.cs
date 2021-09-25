@@ -36,29 +36,29 @@ namespace ciBadgeForWeb.Controllers
         //Recipient = Student or Employee receiving the Badge. 
         //
         public static IList<Models.CIRecipient> mod_recipientList1;  //== = new List<Models.CIRecipient>() {
-                //==    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="1", FirstName="Johnny", LastName = "Davidson", Picture = PictureExamples.GetExample()  },
-                //==    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="2", FirstName="Stevie", LastName = "Austin" , Picture = PictureExamples.GetExample() },
-                //==    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="3", FirstName="Billy", LastName = "Clinton" , Picture = PictureExamples.GetExample() },
-                //==    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="4", FirstName="Ronny", LastName = "Thegot" , Picture = PictureExamples.GetExample() },
-                //==    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="5", FirstName="Dorothy" , LastName = "Wood"  },
-                //==    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="6", FirstName="Christy", LastName = "Forbes"  },
-                //==    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID = "7", FirstName="Tommy", LastName = "Forbes"  },     
+                                                                     //==    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="1", FirstName="Johnny", LastName = "Davidson", Picture = PictureExamples.GetExample()  },
+                                                                     //==    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="2", FirstName="Stevie", LastName = "Austin" , Picture = PictureExamples.GetExample() },
+                                                                     //==    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="3", FirstName="Billy", LastName = "Clinton" , Picture = PictureExamples.GetExample() },
+                                                                     //==    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="4", FirstName="Ronny", LastName = "Thegot" , Picture = PictureExamples.GetExample() },
+                                                                     //==    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="5", FirstName="Dorothy" , LastName = "Wood"  },
+                                                                     //==    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID ="6", FirstName="Christy", LastName = "Forbes"  },
+                                                                     //==    new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=1, RecipientID = "7", FirstName="Tommy", LastName = "Forbes"  },     
 
-            //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="1", FirstName="John", LastName = "Davidson", Picture = GetExample()  },
-            //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="2", FirstName="Steve", LastName = "Austin", Picture = GetExample()  },
-            //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="3", FirstName="Bill", LastName = "Clinton", Picture = GetExample()   },
-            //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="4", FirstName="Ram", LastName = "Thegot", Picture = GetExample()   },
-            //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="5", FirstName="Ron" , LastName = "Wood", Picture = GetExample()  },
-            //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="6", FirstName="Christopher", LastName = "Forbes", Picture = GetExample()   },
-            //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID = "7", FirstName="Robin", LastName = "Forbes", Picture = GetExample()   }
+        //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="1", FirstName="John", LastName = "Davidson", Picture = GetExample()  },
+        //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="2", FirstName="Steve", LastName = "Austin", Picture = GetExample()  },
+        //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="3", FirstName="Bill", LastName = "Clinton", Picture = GetExample()   },
+        //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="4", FirstName="Ram", LastName = "Thegot", Picture = GetExample()   },
+        //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="5", FirstName="Ron" , LastName = "Wood", Picture = GetExample()  },
+        //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID ="6", FirstName="Christopher", LastName = "Forbes", Picture = GetExample()   },
+        //new Models.CIRecipient(){ CustomerID="XYZ999", Personality="Student", RecipientID = "7", FirstName="Robin", LastName = "Forbes", Picture = GetExample()   }
 
-               //==             new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="1", FirstName="Jayce", LastName = "P."  },
-               //==     new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="2", FirstName="Chanin", LastName = "F."  },
-               //==     new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="3", FirstName="Sammi", LastName = "F."  },
-               //==     new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="4", FirstName="Erick", LastName = "M."  },
-               //==     new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="5", FirstName="Erica" , LastName = "A."  },
-               //==     new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="6", FirstName="Jimmy", LastName = "A."  },
-               //==     new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID = "7", FirstName="Thomas", LastName = "D."  }
+        //==             new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="1", FirstName="Jayce", LastName = "P."  },
+        //==     new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="2", FirstName="Chanin", LastName = "F."  },
+        //==     new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="3", FirstName="Sammi", LastName = "F."  },
+        //==     new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="4", FirstName="Erick", LastName = "M."  },
+        //==     new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="5", FirstName="Erica" , LastName = "A."  },
+        //==     new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID ="6", FirstName="Jimmy", LastName = "A."  },
+        //==     new Models.CIRecipient(){ CustomerID="CIS100", idfConfigID=2, RecipientID = "7", FirstName="Thomas", LastName = "D."  }
         //==};
 
         //
@@ -233,6 +233,7 @@ namespace ciBadgeForWeb.Controllers
             return (ViewResult)View("Index", mod_recipientList2.Where(s => s.idfConfigID == PersonalityConfigID_current));
         }
 
+
         // GET: Recipient
         public ActionResult Index_Cfg2()
         {
@@ -244,6 +245,7 @@ namespace ciBadgeForWeb.Controllers
             return (ViewResult)View("Index", mod_recipientList2.Where(s => s.idfConfigID == PersonalityConfigID_current));
         }
 
+
         // GET: Recipient/Details/5
         public ActionResult Details(int parameter_id)
         {
@@ -252,6 +254,7 @@ namespace ciBadgeForWeb.Controllers
 
             return (ViewResult)View();  //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!
         }
+
 
         // GET: Recipient/Create
         public ActionResult Create()
@@ -266,8 +269,10 @@ namespace ciBadgeForWeb.Controllers
         public ActionResult ShowSearchResults(IList<Models.CIRecipient> par_results) => View("Index", par_results);
 
         //const bool c_boolSpecifyViewName = false;    / /Added 5/28/2019 td
-        //if (c_boolSpecifyViewName) return View("Create");  //A View, i.e. a webpage, is the most popular type of ActionResult !!
+        //if (c_boolSpecifyV1   QiewName) return View("Create");  //A View, i.e. a webpage, is the most popular type of ActionResult !!
         //return (ViewResult)View();   //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!
+
+
 
 
 
@@ -291,12 +296,13 @@ namespace ciBadgeForWeb.Controllers
             }
         }
 
+
         // GET: Recipient/Edit/5
         public ActionResult Edit(string parameter_id) // (int? parameter_id)
         {
             //Added 7/9/2019 td
             //if (!(parameter_id.HasValue)) parameter_id = "001";  // = 5;
-             if (parameter_id == null) parameter_id = "001";
+            if (parameter_id == null) parameter_id = "001";
 
             const bool c_boolSpecifyViewName = false; //Added 5/28/2019 td
             if (c_boolSpecifyViewName) return View("Edit");  //A ViewResult, i.e. a webpage, is the most popular type of ActionResult !!
@@ -318,6 +324,7 @@ namespace ciBadgeForWeb.Controllers
 
         }
 
+
         // GET: Recipient/CardsPrintedLog/5
         public ActionResult CardsPrintedLog(int parameter_id)
         {
@@ -331,6 +338,7 @@ namespace ciBadgeForWeb.Controllers
             return (ViewResult)View(printLog_by_id_list);
 
         }
+
 
         // POST: Recipient/Edit/5
         [HttpPost]
@@ -361,7 +369,7 @@ namespace ciBadgeForWeb.Controllers
                 //edited_recip.FirstName = name_first;  // std.FirstName + "_Revised";
                 //edited_recip.LastName = name_last;  //  std.LastName + "_Revised";
 
-                 UpdateModel(edited_recip, collection);
+                UpdateModel(edited_recip, collection);
 
                 //Index = "Nothing specified, go to the root page or action."  
                 return RedirectToAction("Index");  //A Redirect is a less-common ActionResult.  ----5/24 td
@@ -371,6 +379,7 @@ namespace ciBadgeForWeb.Controllers
                 return (ViewResult)View();  //A ViewResult, i.e. a webpage, is the most popular type of ActionResult !!
             }
         }
+
 
         // POST: Recipient/Edit/5
         [HttpPost]
@@ -414,6 +423,7 @@ namespace ciBadgeForWeb.Controllers
             }
         }
 
+
         // GET: Recipient/UploadNewPic/5
         public ActionResult UploadNewPic(string id)
         {
@@ -444,7 +454,7 @@ namespace ciBadgeForWeb.Controllers
                     //string[] AllowedFileExtensions = new string[] { ".jpg", ".gif", ".png", ".pdf" };
                     int MaxContentLength = 1024 * 1024 * 10; //10 MB
 
-                    string[] AllowedFileExtensions = new string[] { ".jpg", ".gif", ".png", ".JPG", 
+                    string[] AllowedFileExtensions = new string[] { ".jpg", ".gif", ".png", ".JPG",
                         ".JPEG", ".PNG", ".bmp", ".BMP" };
 
                     if (!AllowedFileExtensions.Contains(file.FileName.Substring(file.FileName.LastIndexOf('.'))))
@@ -567,28 +577,67 @@ namespace ciBadgeForWeb.Controllers
             const int c_intPixelsWidth = 438;
             const int c_intPixelsHeight = 276;
 
-            Step4Handler.Step4Handler_MakeBadgeFile(recipient_whoseBadgeIsToBeEmailed,
-                           c_intPixelsWidth, c_intPixelsHeight, 
+            const bool c_bCreateFileForAttachment = false;
+            const bool c_bCreateEmailAttachmentViaStream = true;
+
+            if (c_bCreateFileForAttachment)
+            {
+                Step4Handler.Step4Handler_MakeBadgeFile(recipient_whoseBadgeIsToBeEmailed,
+                               c_intPixelsWidth, c_intPixelsHeight,
+                               recipient_whoseBadgeIsToBeEmailed, objLayoutExample,
+                               out strPathToGeneratedImageFile);
+
+                //
+                // Added 9/23/2021 td
+                //
+                bool bShowMessageWithFileIOError = (strPathToGeneratedImageFile.StartsWith("<p>"));
+                if (bShowMessageWithFileIOError)
+                {
+                    //return ContentResult(strPathToGeneratedImageFile);
+                    //return Microsoft.AspNet.Mvc.Content(strPathToGeneratedImageFile);
+                    //return System.Web.MVC.Controller.Content(strPathToGeneratedImageFile);
+                    return this.Content(strPathToGeneratedImageFile);
+                }
+                else if ("" == strPathToGeneratedImageFile)
+                {
+                    // Added 9/23/2021 thomas downes
+                    return this.Content("The path to the file is blank or missing.");
+
+                }
+
+            }
+            else if (c_bCreateEmailAttachmentViaStream)
+            {
+                //
+                //  https://stackoverflow.com/questions/5336239/attach-a-file-from-memorystream-to-a-mailmessage-in-c-sharp
+                //
+                //       //System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                //       //System.IO.StreamWriter writer = new System.IO.StreamWriter(ms);
+                //       //writer.Write("Hello its my sample file");
+                //       //writer.Flush();
+                //       //writer.Dispose();
+                //       //ms.Position = 0;
+
+                //       //System.Net.Mime.ContentType ct = new System.Net.Mime.ContentType(System.Net.Mime.MediaTypeNames.Text.Plain);
+                //       //System.Net.Mail.Attachment attach = new System.Net.Mail.Attachment(ms, ct);
+                //       //attach.ContentDisposition.FileName = "myFile.txt";
+
+                //       //// I guess you know how to send email with an attachment
+                //       //// after sending email
+                //       //ms.Close();
+
+                System.IO.MemoryStream objMemoryStream;  
+                System.Net.Mail.Attachment objAttachment;
+
+                Step4Handler.Step4Handler_MakeAttachment(recipient_whoseBadgeIsToBeEmailed,
+                           c_intPixelsWidth, c_intPixelsHeight,
                            recipient_whoseBadgeIsToBeEmailed, objLayoutExample,
-                           out strPathToGeneratedImageFile);
-
-            //
-            // Added 9/23/2021 td
-            //
-            bool bShowMessageWithFileIOError = (strPathToGeneratedImageFile.StartsWith("<p>"));
-            if (bShowMessageWithFileIOError)
-            {
-                //return ContentResult(strPathToGeneratedImageFile);
-                //return Microsoft.AspNet.Mvc.Content(strPathToGeneratedImageFile);
-                //return System.Web.MVC.Controller.Content(strPathToGeneratedImageFile);
-                return this.Content(strPathToGeneratedImageFile);
-            }
-            else if ("" == strPathToGeneratedImageFile)
-            {
-                // Added 9/23/2021 thomas downes
-                return this.Content("The path to the file is blank or missing.");
+                           out objMemoryStream,
+                           out objAttachment);
 
             }
+
+
 
 
             //
@@ -599,7 +648,7 @@ namespace ciBadgeForWeb.Controllers
             EmailingFilesViaGmail_Framework.EmailingFiles.SmtpSpaghetti = "999search" + "#1969Ee".Substring(3);
 
             EmailingFilesViaGmail_Framework.EmailingFiles.SendViaEmail_OneFile("", strPathToGeneratedImageFile,
-                   "Here is the badge you requested", 
+                   "Here is the badge you requested",
                    "Here (attached) is the badge you requested.  See attached image file. \r\n \r\n " +
                    "To print the badge... Save the file to your PC (optional (?)), right-click the file, and select Print." +
                    "\r\n \r\n Then specify the ID-Card printer which you should have connected to your PC. ");
@@ -619,6 +668,7 @@ namespace ciBadgeForWeb.Controllers
 
         }
 
+
         public static IEnumerable<ciBadgeForWeb.Models.CIRecipient> GetStudents()
         {
             //
@@ -628,6 +678,7 @@ namespace ciBadgeForWeb.Controllers
             return mod_recipientList2.Where(s => s.idfConfigID == 1);
 
         }
+
 
         public static IEnumerable<ciBadgeForWeb.Models.CIRecipient> GetStaff()
         {
@@ -645,10 +696,10 @@ namespace ciBadgeForWeb.Controllers
             //
             //Added 12/11/2019 td
             //
-            return null; 
+            return null;
 
         }
-        
+
 
         public static Image GetImageByRecipID(string pstrRecipientID)
         {
@@ -664,11 +715,11 @@ namespace ciBadgeForWeb.Controllers
             try
             {
                 //
-                 //https://forums.asp.net/t/1839913.aspx?Convert+Relative+Path+to+Absolute+Path
+                //https://forums.asp.net/t/1839913.aspx?Convert+Relative+Path+to+Absolute+Path
                 //
                 //string AbsolutePath = Server.MapPath(RelativePath);
                 string strAbsolutePathToFile = HostingEnvironment.MapPath(strVirtualPathToFile);
-                return (new Bitmap(strAbsolutePathToFile)); 
+                return (new Bitmap(strAbsolutePathToFile));
             }
             catch (Exception ex_GetImageByID) // As Exception
             {
@@ -677,6 +728,16 @@ namespace ciBadgeForWeb.Controllers
                 return null;
             }
         }
+
+
+
+        //public static void AddAttachmentViaBitstream ()
+        //    {
+        ////
+        //// Added 9/24/2021 Thomas Downes   
+        ////
+        //
+        //    }
 
 
 

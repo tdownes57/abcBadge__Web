@@ -420,6 +420,47 @@ namespace ciBadgeForWeb
         }
 
 
+        public static void Step4Handler_MakeAttachment(Models.CIRecipient par_recipient_by_id,
+                            int par_badge_width_pixels,
+                            int par_badge_height_pixels,
+                            ciBadgeInterfaces.IRecipient par_recipient,
+                            LayoutExample par_objLayoutExample,
+                            out MemoryStream out_ms,
+                            out System.Net.Mail.Attachment out_attachment)
+        {
+            //
+            // Added 9/24/2021 thomas downes  
+            //
+            //
+            //  https://stackoverflow.com/questions/5336239/attach-a-file-from-memorystream-to-a-mailmessage-in-c-sharp
+            //
+            //System.IO.MemoryStream ms = new System.IO.MemoryStream();
+            out_ms = new System.IO.MemoryStream();
+            System.IO.StreamWriter writer = new System.IO.StreamWriter(out_ms);
+
+            writer.Write("Hello its my sample file");  ????????
+            writer.Flush();
+            writer.Dispose();
+            out_ms.Position = 0;
+
+            System.Net.Mime.ContentType ct1 = new System.Net.Mime.ContentType(System.Net.Mime.MediaTypeNames.Text.Plain);
+            var ct2 = new System.Net.Mime.ContentType(System.Net.Mime.MediaTypeNames.Application.Pdf);
+            var ct3 = new System.Net.Mime.ContentType(System.Net.Mime.MediaTypeNames.Image.Jpeg);
+
+            //System.Net.Mail.Attachment attach = new System.Net.Mail.Attachment(out_ms, ct);
+            out_attachment = new System.Net.Mail.Attachment(out_ms, ct3);
+
+            ????????
+            out_attachment.ContentDisposition.FileName = "myFile.txt";  ??????
+
+            // I guess you know how to send email with an attachment.....
+
+            // Let's close the memorystream, after sending email
+            //ms.Close();
+
+        }
+
+
         public static Image Step4Handler_MakeBadgeImage(Models.CIRecipient par_recipient_by_id,
                             //|| ciBadgeInterfaces.BadgeLayoutClass par_layout,
                             //|| Image par_backgroundImage,
