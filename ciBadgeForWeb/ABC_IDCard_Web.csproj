@@ -340,6 +340,9 @@
     <Content Include="App_Data\CIBadgeWeb.xml" />
     <Content Include="ASPX\BadgeLayout.aspx" />
     <Content Include="ASPX\SuperUploadPage.html" />
+    <Content Include="Azure Managed Identity\Managed Identities p1.BK3.png" />
+    <Content Include="Azure Managed Identity\Managed Identities p1.jpg" />
+    <Content Include="Azure Managed Identity\Managed Identities p1.png" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
