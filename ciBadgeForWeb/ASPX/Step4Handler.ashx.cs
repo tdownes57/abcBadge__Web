@@ -434,24 +434,34 @@ namespace ciBadgeForWeb
             //
             //  https://stackoverflow.com/questions/5336239/attach-a-file-from-memorystream-to-a-mailmessage-in-c-sharp
             //
+            Image image_badge = Step4Handler_MakeBadgeImage(par_recipient_by_id,
+                         par_badge_width_pixels, par_badge_height_pixels,
+                         par_recipient,
+                         par_objLayoutExample);
+
             //System.IO.MemoryStream ms = new System.IO.MemoryStream();
             out_ms = new System.IO.MemoryStream();
-            System.IO.StreamWriter writer = new System.IO.StreamWriter(out_ms);
 
-            writer.Write("Hello its my sample file");  ????????
-            writer.Flush();
-            writer.Dispose();
+            //System.IO.StreamWriter writer = new System.IO.StreamWriter(out_ms);
+            //writer.Write("Hello its my sample file");  // ????????
+            //writer.Write();
+            //writer.Flush();
+            //writer.Dispose();
+
+            //image_badge.Save(out_ms, image_badge.RawFormat);     // ImageFormat.Jpeg);
+            image_badge.Save(out_ms, ImageFormat.Jpeg);
             out_ms.Position = 0;
 
-            System.Net.Mime.ContentType ct1 = new System.Net.Mime.ContentType(System.Net.Mime.MediaTypeNames.Text.Plain);
-            var ct2 = new System.Net.Mime.ContentType(System.Net.Mime.MediaTypeNames.Application.Pdf);
+            //System.Net.Mime.ContentType ct1 = new System.Net.Mime.ContentType(System.Net.Mime.MediaTypeNames.Text.Plain);
+            //var ct2 = new System.Net.Mime.ContentType(System.Net.Mime.MediaTypeNames.Application.Pdf);
             var ct3 = new System.Net.Mime.ContentType(System.Net.Mime.MediaTypeNames.Image.Jpeg);
 
             //System.Net.Mail.Attachment attach = new System.Net.Mail.Attachment(out_ms, ct);
             out_attachment = new System.Net.Mail.Attachment(out_ms, ct3);
 
-            ????????
-            out_attachment.ContentDisposition.FileName = "myFile.txt";  ??????
+            // ????????
+            //out_attachment.ContentDisposition.FileName = "myFile.txt";  // ??????
+            out_attachment.ContentDisposition.FileName = (par_recipient.fstrID + ".jpg");  // ??????
 
             // I guess you know how to send email with an attachment.....
 

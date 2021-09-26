@@ -577,11 +577,18 @@ namespace ciBadgeForWeb.Controllers
             const int c_intPixelsWidth = 438;
             const int c_intPixelsHeight = 276;
 
-            const bool c_bCreateFileForAttachment = false;
+            const bool c_bCreateImageFile_ForAttachment = false;
             const bool c_bCreateEmailAttachmentViaStream = true;
 
-            if (c_bCreateFileForAttachment)
+            // Moved here from an "else if" nest below.   ---9/26/2021 Thomas Downes
+            System.IO.MemoryStream objMemoryStream;
+            System.Net.Mail.Attachment objAttachment;
+
+            if (c_bCreateImageFile_ForAttachment)
             {
+                //
+                // This will require security impersonation in order to write to the harddisk. 
+                //
                 Step4Handler.Step4Handler_MakeBadgeFile(recipient_whoseBadgeIsToBeEmailed,
                                c_intPixelsWidth, c_intPixelsHeight,
                                recipient_whoseBadgeIsToBeEmailed, objLayoutExample,
@@ -625,9 +632,11 @@ namespace ciBadgeForWeb.Controllers
                 //       //// I guess you know how to send email with an attachment
                 //       //// after sending email
                 //       //ms.Close();
+                //
+                //     ----9/24/2021 Thomas Downes
 
-                System.IO.MemoryStream objMemoryStream;  
-                System.Net.Mail.Attachment objAttachment;
+                //System.IO.MemoryStream objMemoryStream;     //Moved up 9/26.  --9/24/2021 Thomas Downes  
+                //System.Net.Mail.Attachment objAttachment;   //Moved up 9/26.  --9/24/2021 Thomas Downes
 
                 Step4Handler.Step4Handler_MakeAttachment(recipient_whoseBadgeIsToBeEmailed,
                            c_intPixelsWidth, c_intPixelsHeight,
@@ -636,9 +645,6 @@ namespace ciBadgeForWeb.Controllers
                            out objAttachment);
 
             }
-
-
-
 
             //
             // Email the file.  9/10/2021  
@@ -651,7 +657,13 @@ namespace ciBadgeForWeb.Controllers
                    "Here is the badge you requested",
                    "Here (attached) is the badge you requested.  See attached image file. \r\n \r\n " +
                    "To print the badge... Save the file to your PC (optional (?)), right-click the file, and select Print." +
-                   "\r\n \r\n Then specify the ID-Card printer which you should have connected to your PC. ");
+                   "\r\n \r\n Then specify the ID-Card printer which you should have connected to your PC. ", 
+                   "", objAttachment);
+
+            //
+            // Clean up......  9/26/2021
+            //
+            if (objMemoryStream != null) objMemoryStream.Close();
 
             //return View("Index");
             return RedirectToAction("Index");
