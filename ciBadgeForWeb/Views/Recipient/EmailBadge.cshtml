@@ -1,0 +1,57 @@
+﻿@model ciBadgeForWeb.Models.CIRecipient
+
+@{
+    ViewBag.Title = "EmailBadge";
+    Layout = "~/Views/Shared/_LayoutUpload.cshtml";
+}
+
+<h2>EmailBadge</h2>
+
+<div>
+    <h4>CIRecipient</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fstrID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fstrID)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fstrLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fstrLastName)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fstrFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fstrFirstName)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BadgeImage)
+        </dt>
+
+        <dd>
+            @*  @Html.DisplayFor(model => model.fstrFirstName)*@
+            <img src='@Url.Action("ImageOfBadgeAsResult", "Recipient", model, Request.Url.Scheme)' %> alt="" />
+        </dd>
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

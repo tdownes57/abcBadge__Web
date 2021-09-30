@@ -434,21 +434,21 @@ namespace ciBadgeForWeb.Controllers
 
 
         [HttpPost]
-        public ActionResult UploadNewPic(HttpPostedFileBase file, FormCollection forms)
+        public ActionResult UploadNewPic(HttpPostedFileBase par_file, FormCollection par_forms)
         {
             //
             //Created 2/20/2020 td
             //Modified 2/20 & 2/21/2020 td
             //
-            string str_parameter_id = forms["RecipientID"]; //Added 2/21/2020 td 
+            string str_parameter_id = par_forms["RecipientID"]; //Added 2/21/2020 td 
 
             if (ModelState.IsValid)
             {
-                if (file == null)
+                if (par_file == null)
                 {
                     ModelState.AddModelError("File", "Please Upload Your file");
                 }
-                else if (file.ContentLength > 0)
+                else if (par_file.ContentLength > 0)
                 {
                     //int MaxContentLength = 1024 * 1024 * 3; //3 MB
                     //string[] AllowedFileExtensions = new string[] { ".jpg", ".gif", ".png", ".pdf" };
@@ -457,12 +457,12 @@ namespace ciBadgeForWeb.Controllers
                     string[] AllowedFileExtensions = new string[] { ".jpg", ".gif", ".png", ".JPG",
                         ".JPEG", ".PNG", ".bmp", ".BMP" };
 
-                    if (!AllowedFileExtensions.Contains(file.FileName.Substring(file.FileName.LastIndexOf('.'))))
+                    if (!AllowedFileExtensions.Contains(par_file.FileName.Substring(par_file.FileName.LastIndexOf('.'))))
                     {
                         ModelState.AddModelError("File", "Please file of type: " + string.Join(", ", AllowedFileExtensions));
                     }
 
-                    else if (file.ContentLength > MaxContentLength)
+                    else if (par_file.ContentLength > MaxContentLength)
                     {
                         ModelState.AddModelError("File", "Your file is too large, maximum allowed size is: " + MaxContentLength + " MB");
                     }
@@ -484,13 +484,13 @@ namespace ciBadgeForWeb.Controllers
                         //DisposePicImage_ByRecipID("001");
                         DisposePicImage_ByRecipID(str_parameter_id);
 
-                        var fileName_onUsersPC = Path.GetFileName(file.FileName);
-                        var fileName_NoExt = Path.GetFileNameWithoutExtension(file.FileName);
+                        var fileName_onUsersPC = Path.GetFileName(par_file.FileName);
+                        var fileName_NoExt = Path.GetFileNameWithoutExtension(par_file.FileName);
                         var fileName_useRecipID = fileName_onUsersPC.Replace(fileName_NoExt, str_parameter_id);
 
                         //var path = Path.Combine(Server.MapPath("~/Content/Upload"), fileName);
                         var path = Path.Combine(App_Start.DiskFolders.PathToFolderOfPics(true), fileName_useRecipID);
-                        file.SaveAs(path);
+                        par_file.SaveAs(path);
                         ModelState.Clear();
                         ViewBag.Message = "File uploaded successfully";
                     }
@@ -666,7 +666,9 @@ namespace ciBadgeForWeb.Controllers
             if (objMemoryStream != null) objMemoryStream.Close();
 
             //return View("Index");
-            return RedirectToAction("Index");
+            //---return RedirectToAction("Index");
+            return (ViewResult)View(recipient_whoseBadgeIsToBeEmailed); 
+
         }
 
 
@@ -742,6 +744,22 @@ namespace ciBadgeForWeb.Controllers
         }
 
 
+        public ActionResult ImageOfBadgeAsResult(Models.CIRecipient par_recip)
+        {
+            //
+            //  https://forums.asp.net/t/1469358.aspx?How+to+display+an+image+property+of+a+model+in+a+view+
+            //
+            //byte[] image = GenerateImage();
+            //return File(image, "image/png");
+            //return (FileContentResult)File(par_recip.BadgeImage, "image/jpeg");
+
+            //ImageConverter Class convert Image object to Byte array.
+            //  https://www.aspsnippets.com/Articles/Convert-SystemDrawingImage-to-Byte-Array-using-C-and-VBNet.aspx
+            //
+            byte[] array_bytes = (byte[])(new ImageConverter()).ConvertTo(par_recip.BadgeImage, typeof(byte[]));
+            return (FileContentResult)File(array_bytes, "image/jpeg");
+
+        }
 
         //public static void AddAttachmentViaBitstream ()
         //    {
