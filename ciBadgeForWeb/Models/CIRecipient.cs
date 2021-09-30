@@ -113,7 +113,9 @@ namespace ciBadgeForWeb.Models
         public int idfReportID { get; set; }
 
         //Added 12/11/2019 td  
-        private Image mod_pictureImage = null;
+        private Image mod_imagePicture = null;
+        //Added 9/30/2021 td  
+        private Image mod_imageBadge = null;
 
         [Display(Name = "Picture")]
         public Image Picture
@@ -123,15 +125,32 @@ namespace ciBadgeForWeb.Models
                 //12/11/2019 td 
                 //#1  12-11-2019 td //if (mod_pictureImage == null) mod_pictureImage = PictureExamples.GetExample();
                 // #2  12-11-2019 td //if (mod_pictureImage == null) mod_pictureImage = RecipientController.GetImageByRecipID_Null();
-                if (mod_pictureImage == null) mod_pictureImage = RecipientController.GetImageByRecipID(this.fstrID);
-                return mod_pictureImage;
+                if (mod_imagePicture == null) mod_imagePicture = RecipientController.GetImageByRecipID(this.fstrID);
+                return mod_imagePicture;
             }
             set
             {
                 //12/11/2019 td 
-                mod_pictureImage = value;
+                mod_imagePicture = value;
             }
         }
+
+
+        [Display(Name = "BadgeImage")]
+        public Image BadgeImage
+        {
+            get
+            {
+                // 9-30-2021 td 
+                return mod_imageBadge;
+            }
+            set
+            {
+                // 9-30-2021 td 
+                mod_imageBadge = value;
+            }
+        }
+
 
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
