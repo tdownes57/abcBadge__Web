@@ -201,6 +201,9 @@
     <Compile Include="App_Start\DiskFolders.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="ASPX\BadgeImageHandler.ashx.cs">
+      <DependentUpon>BadgeImageHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="ASPX\BadgeLayout.aspx.cs">
       <DependentUpon>BadgeLayout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -934,6 +937,7 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="ASPX\BadgeImageHandler.ashx" />
     <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <None Include="Properties\PublishProfiles\registry.hub.docker.com_tomdownes1.pubxml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
