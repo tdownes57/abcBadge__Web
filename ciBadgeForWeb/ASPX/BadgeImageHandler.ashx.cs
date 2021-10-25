@@ -95,8 +95,8 @@ namespace ciBadgeForWeb.ASPX
                     catch (Exception ex_memorystream)
                     {
                         string strErrorMsg = ex_memorystream.Message; //Added 11/13/2019 td
-                        System.Drawing.Image imagePic_clone = (System.Drawing.Image)imageBadge.Clone();
-                        imagePic_clone.Save(msBadgeImage, ImageFormat.Jpeg);
+                        System.Drawing.Image imageBadge_clone = (System.Drawing.Image)imageBadge.Clone();
+                        imageBadge_clone.Save(msBadgeImage, ImageFormat.Jpeg);
                         context.Response.BinaryWrite(msBadgeImage.GetBuffer());
                     }
                 }

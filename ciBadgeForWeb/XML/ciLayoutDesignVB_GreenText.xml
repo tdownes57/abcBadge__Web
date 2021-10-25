@@ -431,7 +431,7 @@
       <HasPresetValues>true</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
-      <DataEntryText>Undetermined value, for Field #15</DataEntryText>
+      <DataEntryText>01/01/0001</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
       <CurrentRecipValue>Willcrest School</CurrentRecipValue>
       <CurrentRecipValue_Date>01/01/0001</CurrentRecipValue_Date>
@@ -594,8 +594,8 @@
         <Width_Pixels>675</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>244</TopEdge_Pixels>
-      <LeftEdge_Pixels>323</LeftEdge_Pixels>
+      <TopEdge_Pixels>328</TopEdge_Pixels>
+      <LeftEdge_Pixels>-89</LeftEdge_Pixels>
       <Width_Pixels>300</Width_Pixels>
       <Height_Pixels>35</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
@@ -651,8 +651,8 @@
         <Width_Pixels>675</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>196</TopEdge_Pixels>
-      <LeftEdge_Pixels>318</LeftEdge_Pixels>
+      <TopEdge_Pixels>278</TopEdge_Pixels>
+      <LeftEdge_Pixels>340</LeftEdge_Pixels>
       <Width_Pixels>300</Width_Pixels>
       <Height_Pixels>35</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
@@ -708,8 +708,8 @@
         <Width_Pixels>675</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>35</TopEdge_Pixels>
-      <LeftEdge_Pixels>300</LeftEdge_Pixels>
+      <TopEdge_Pixels>235</TopEdge_Pixels>
+      <LeftEdge_Pixels>338</LeftEdge_Pixels>
       <Width_Pixels>253</Width_Pixels>
       <Height_Pixels>30</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
@@ -1424,7 +1424,7 @@
         <HasPresetValues>true</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
-        <DataEntryText>Undetermined value, for Field #15</DataEntryText>
+        <DataEntryText>01/01/0001</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
         <CurrentRecipValue>Willcrest School</CurrentRecipValue>
         <CurrentRecipValue_Date>01/01/0001</CurrentRecipValue_Date>
@@ -1564,8 +1564,8 @@
         <Width_Pixels>681</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>-13</TopEdge_Pixels>
-      <LeftEdge_Pixels>301</LeftEdge_Pixels>
+      <TopEdge_Pixels>281</TopEdge_Pixels>
+      <LeftEdge_Pixels>-88</LeftEdge_Pixels>
       <Width_Pixels>253</Width_Pixels>
       <Height_Pixels>30</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
