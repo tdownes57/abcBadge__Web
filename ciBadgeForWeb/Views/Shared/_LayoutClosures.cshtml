@@ -34,60 +34,100 @@
                 @if (Session["UserName"] != null || Session["UserID"] != null)
                 {
 
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        <li>@Html.ActionLink("Customers", "Index", "Customer")</li>
-                        <li>@Html.ActionLink("Personalities", "Index", "Personality")</li>
-                        <li>@Html.ActionLink("Badge Layout", "Index", "LayoutText1")</li>
+                <ul class="nav navbar-nav">
+                    @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
+                    @*     <li>@Html.ActionLink("About", "About", "Home")</li>*@
+                    @*     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+                    @*<li>@Html.ActionLink("Customers", "Index", "Customer")</li>*@
+                    @*<li>@Html.ActionLink("Personalities", "Index", "Personality")</li>*@
+                    @*<li>@Html.ActionLink("Badge Layout", "Index", "LayoutText1")</li>*@
 
-                        @*<li>@Html.ActionLink("Students/Employees", "Index", "Recipient")</li>*@
-                        @*<li>@Html.ActionLink("Students", "Index_Cfg1", "Recipient")</li>
-                            <li>@Html.ActionLink("Staff", "Index_Cfg2", "Recipient")</li>*@
-                        <li>@Html.ActionLink(strRecipTypeName, "Index_CurrCfg", "Recipient")</li>
+                    @* <li>@Html.ActionLink("Home", "Index", "Home", new { @class = "btn btn-primary dropdown-toggle" })</li>*@
+                    <li>
+                        <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/Home'">Home</button>
+                    </li>
 
-                        <li>@Html.ActionLink("Example of Badge", "Example", "Home")</li>
-                        @*<li>@Html.ActionLink("Steps 1 and 2", "Edit", "Steps1and2")</li>*@
+                    @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
 
-                        @*                    <li>@Html.ActionLink("Moveable Divs", "Index", "JsonFile")</li>*@
+                    @* <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>*@
+                    <li>
+                        @*<a class="btn btn-primary" href="google.com">Testing</a>*@
+                        @*                            <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = 'https://code-boxx.com'">Testing</button>*@
+                        <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/Home/Contact'">Contact Me</button>
+                    </li>
 
-                        <li>
-                            <!-- https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp -->
-                            <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                                    Moveable Divs
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li>@Html.ActionLink("Proof of Concept", "Index", "JsonFile")</li>
-                                    <li>@Html.ActionLink("JSON strings", "TableEdit", "JsonFile")</li>
-                                    <li>@Html.ActionLink("Element-Location - Left", "TableDivsLeft", "JsonFile")</li>
-                                    <li>@Html.ActionLink("Element-Location - Top", "TableDivsTop", "JsonFile")</li>
-                                    <li>@Html.ActionLink("Element-Location - Width", "TableDivsWidth", "JsonFile")</li>
-                                    <li>@Html.ActionLink("Element-Location - Height", "TableDivsHeight", "JsonFile")</li>
-                                    <li>@Html.ActionLink("Element-Location - HasField", "TableDivsHasField", "JsonFile")</li>
-                                    <li>@Html.ActionLink("Element-Location - Displayed", "TableDivsDisplayed", "JsonFile")</li>
-                                    <li>@Html.ActionLink("Element-Location - Fieldname", "TableDivsFieldName", "JsonFile")</li>
-                                </ul>
-                            </div>
-                        </li>
+                    @* <li>@Html.ActionLink("Customers", "Index", "Customer")</li>*@
+                    <li>
+                        <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/Customer/Index'">Customers</button>
+                    </li>
 
-                        <li>
-                            <!-- https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp -->
-                            <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                                    Miscellaneous
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li>@Html.ActionLink("Upload", "Index", "UploadBack")</li>
-                                    <li>@Html.ActionLink("Xml Caching", "Index", "XmlCache")</li>
-                                    <li>@Html.ActionLink("Orange Coast", "Index", "OrangeCoast")</li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
+                    @* <li>@Html.ActionLink("Personalities", "Index", "Personality")</li>*@
+                    <li>
+                        <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/Personality/Index'">Personalities</button>
+                    </li>
+
+                    @* <li>@Html.ActionLink("Badge Layout", "Index", "LayoutText1")</li>*@
+                    <li>
+                        <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/LayoutText1/Index'">Badge Layout</button>
+                    </li>
+
+                    @*<li>@Html.ActionLink("Students/Employees", "Index", "Recipient")</li>*@
+                    @*<li>@Html.ActionLink("Students", "Index_Cfg1", "Recipient")</li>
+        <li>@Html.ActionLink("Staff", "Index_Cfg2", "Recipient")</li>*@
+
+                    @*  <li>@Html.ActionLink(strRecipTypeName, "Index_CurrCfg", "Recipient")</li>*@
+                    <li>
+                        <button class="btn btn-primary dropdown-toggle" type="button"
+                                onclick="location = '/Recipient/Index_CurrCfg'">
+                            @strRecipTypeName
+                        </button>
+                    </li>
+
+                    @*<li>@Html.ActionLink("Example of Badge", "Example", "Home")</li>*@
+                    <li>
+                        <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/Home/Example'">Example of Badge</button>
+                    </li>
+
+                    @*<li>@Html.ActionLink("Steps 1 and 2", "Edit", "Steps1and2")</li>*@
+
+                    @*                    <li>@Html.ActionLink("Moveable Divs", "Index", "JsonFile")</li>*@
+
+                    <li>
+                        <!-- https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp -->
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                                Moveable Divs
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Proof of Concept", "Index", "JsonFile")</li>
+                                <li>@Html.ActionLink("JSON strings", "TableEdit", "JsonFile")</li>
+                                <li>@Html.ActionLink("Element-Location - Left", "TableDivsLeft", "JsonFile")</li>
+                                <li>@Html.ActionLink("Element-Location - Top", "TableDivsTop", "JsonFile")</li>
+                                <li>@Html.ActionLink("Element-Location - Width", "TableDivsWidth", "JsonFile")</li>
+                                <li>@Html.ActionLink("Element-Location - Height", "TableDivsHeight", "JsonFile")</li>
+                                <li>@Html.ActionLink("Element-Location - HasField", "TableDivsHasField", "JsonFile")</li>
+                                <li>@Html.ActionLink("Element-Location - Displayed", "TableDivsDisplayed", "JsonFile")</li>
+                                <li>@Html.ActionLink("Element-Location - Fieldname", "TableDivsFieldName", "JsonFile")</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li>
+                        <!-- https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp -->
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                                Miscellaneous
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Upload", "Index", "UploadBack")</li>
+                                <li>@Html.ActionLink("Xml Caching", "Index", "XmlCache")</li>
+                                <li>@Html.ActionLink("Orange Coast", "Index", "OrangeCoast")</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
                 }
 
             </div>
