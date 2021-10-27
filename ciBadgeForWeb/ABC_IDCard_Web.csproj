@@ -367,10 +367,10 @@
     <Content Include="Content\smallPic.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Documentation\CIBCards83 - removing PD.mdb" />
-    <Content Include="Documentation\CIBCards83 - very complex.mdb" />
-    <Content Include="Documentation\Notes.html" />
-    <Content Include="Documentation\Partial-View Element.txt" />
+    <Content Include="__Documentation - Notes\CIBCards83 - removing PD.mdb" />
+    <Content Include="__Documentation - Notes\CIBCards83 - very complex.mdb" />
+    <Content Include="__Documentation - Notes\Notes.html" />
+    <Content Include="__Documentation - Notes\Partial-View Element.txt" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -1068,16 +1068,16 @@
     <Content Include="Models\ModelEntity.edmx.diagram">
       <DependentUpon>ModelEntity.edmx</DependentUpon>
     </Content>
-    <Content Include="Documentation\Possibilities and Challenges for CI Badge Web.docx" />
-    <Content Include="Documentation\CI Web - Proposed Features.docx" />
-    <Content Include="Documentation\Product Specifications - CI Web Secure Share v1.docx" />
+    <Content Include="__Documentation - Notes\Possibilities and Challenges for CI Badge Web.docx" />
+    <Content Include="__Documentation - Notes\CI Web - Proposed Features.docx" />
+    <Content Include="__Documentation - Notes\Product Specifications - CI Web Secure Share v1.docx" />
     <Content Include="ApplicationInsights.config" />
     <Content Include="ASPX\PicHandler.ashx" />
     <Content Include="Connected Services\AzureStorage1\ConnectedService.json" />
     <Content Include="ASPX\Step4Handler.ashx" />
-    <Content Include="Documentation\Mock-Up Templates 11.13.pdf" />
+    <Content Include="__Documentation - Notes\Mock-Up Templates 11.13.pdf" />
     <Content Include="ASPX\UltraSimpleHandler.ashx" />
-    <Content Include="Documentation\disabling-copy-of-empty-text-in-VS.url" />
+    <Content Include="__Documentation - Notes\disabling-copy-of-empty-text-in-VS.url" />
     <Content Include="JSON\JSON - March20 #1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
