@@ -29,7 +29,13 @@ namespace ciBadgeForWeb.Models
 
         //Custom Fields....
 
+        // Added 10/26/2021 thomas downes
+        //   This will provide secure 6-character identification,
+        //   using a randomly-generated 6-character identifier. 
         [Key]
+        public string Guid6Chars { get; set; }
+
+        //----[Key]
         [Display(Name = "Personality Configuration ID")]
         public int ConfigID { get; set; }
 

@@ -12,22 +12,48 @@
 
     <div>
         <!--//   Please see the following StackOverflow link https://bit.ly/3gdg6nT
-    //   Title of StackOverflow article:
-    //        Update From Bootstrap 3.7 to 5.0.2 in .net mvc producing Error- System.NullReferenceException
-    //    Look for the answer which starts, "We replaced the following" and gives the code in BundleConfig.cs
-    //    for replacing "ScriptBundle" with simply the parent class "Bundle".
-    //
-    //    https://stackoverflow.com/questions/68251763/update-from-bootstrap-3-7-to-5-0-2-in-net-mvc-producing-error-system-nullrefer
-    //-->
+        //   Title of StackOverflow article:
+        //        Update From Bootstrap 3.7 to 5.0.2 in .net mvc producing Error- System.NullReferenceException
+        //    Look for the answer which starts, "We replaced the following" and gives the code in BundleConfig.cs
+        //    for replacing "ScriptBundle" with simply the parent class "Bundle".
+        //
+        //    https://stackoverflow.com/questions/68251763/update-from-bootstrap-3-7-to-5-0-2-in-net-mvc-producing-error-system-nullrefer
+        //-->
         Dad,
         I have made a fix to #1...... http://abcbadge.azurewebsites.net/Home/Index
         Thomas
         P.S.    Bug fixes suggested by Clif, as follows:
-        1.   Make all heading buttons (top horizontal menu) same color and horizontal alignment. -- Completed 10/25/2021. 
-        2.   Fix the Upload Background feature.
+        1.   Make all heading buttons (top horizontal menu) same color and horizontal alignment. -- Completed 10/25/2021.
+        2.   Fix the Upload Background feature, to work as well as the Upload Pic feature does.
         3.   Fix the Badge Layout page
-        4.   After the "Email Badge" link has been clicked, the emailed badge image should appear correctly.'''
+        4.   After the "Email Badge" link has been clicked, the emailed badge image
+        should appear correctly.'''
+        5.   The ID field is not displayed on the badge.
+        6.   Add a "Are they logged in?"" check for nearly every page.
+        7.   Select and implement one of the following:
+        a) Include Customer Code and Configuration ID with virtually every query string.
+        b) Implement a randomly-generated 6-character-GUID (substring) identifier for almost
+        every type of data record (i.e. every object, e.g. Recipient objects).
+        8.   Remove "Moveable Divs" from the main navigation bar. 
     </div>
+
+    @*//   August 7, 2021
+    //     https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded
+    //     There are a couple ways you can do this. The most efficient way would be to use.....
+    // *@
+    <input type="file" accept="image/*" id="fileToUpload" name="file" onchange="loadFile(event)">
+    <img id="output" width="200" class="border" />   @* See CSS <style> .border ... </style> at the top of _Layout.cshtml *@
+    <script>
+        var loadFile = function (event) {
+            var output = document.getElementById('output');
+            output.src = URL.createObjectURL(event.target.files[0]);
+            output.onload = function () {
+                URL.revokeObjectURL(output.src) // free memory
+            }
+        };
+    </script>
+
+
 
 </body>
 </html>

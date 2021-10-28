@@ -17,7 +17,11 @@ namespace ciBadgeForWeb.Models
         [Display(Name = "Name")]
         public string CustomerName { get; set; }
 
-
+        // Added 10/26/2021 thomas downes
+        //   This will provide secure 6-character identification,
+        //   using a randomly-generated 6-character identifier. 
+        [Key]
+        public string Guid6Chars { get; set; }
 
 
     }

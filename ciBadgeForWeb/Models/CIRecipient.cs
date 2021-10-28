@@ -19,17 +19,24 @@ namespace ciBadgeForWeb.Models
     {
         //public int Mystring { get; set; }
 
-        [Key]
+        //+++[Key]
+        // Denigrated. Use field "Guid6Chars" instead. ---10/28/2021 td 
         [Display(Name = "Customer ID")]
-        public string CustomerID { get; set; }
+        public string CustomerID_Denigrated { get; set; }
 
-        [Key]
+        //+++[Key]
         [Display(Name = "Config ID")]
         public int idfConfigID { get; set; }
 
-        [Key]
+        //+++[Key]
         [Display(Name = "ID")]
         public string RecipientID { get; set; }
+
+        // Added 10/26/2021 thomas downes
+        //   This will provide secure 6-character identification,
+        //   using a randomly-generated 6-character identifier. 
+        [Key]
+        public string Guid6Chars { get; set; }
 
         string IRecipient.RecipientID()
         {
