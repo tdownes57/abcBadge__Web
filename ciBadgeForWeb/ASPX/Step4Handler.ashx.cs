@@ -93,7 +93,9 @@ namespace ciBadgeForWeb
                 }
 
                 int intPixelsWidth = 0; //Added 7/06/2019 thomas downes 
-                int intPixelsHeight = 0; //Added 11/14/2019 thomas downes  
+                int intPixelsHeight = 0; //Added 11/14/2019 thomas downes
+                bool bExceptionThrown = false;  //Added 10/30/2021 thomas downes 
+
                 try
                 {
                     intPixelsWidth = int.Parse(par_context.Request.QueryString["width"]);
@@ -105,6 +107,7 @@ namespace ciBadgeForWeb
                     //Just try .......
                     //    If it's missing we should assume that a print-ready badge is being prepared. 
                     //   ------10/5/2019 td
+                    bExceptionThrown = true; 
                 }
 
                 if (boolPlainBackgroundImage)
@@ -139,6 +142,9 @@ namespace ciBadgeForWeb
                     image_badge_exampleBackgroundOnly =
                         ClassElementsCache_Deprecated.Singleton.GetBackgroundImage(intBackWidth_B, intBackHeight_B,
                             strPathToBackImages_B);
+
+                    // Added 10/30/2021 Thomas Downes
+                    image_badge_output = image_badge_exampleBackgroundOnly;
 
                     //Added 7/6/2019 thomas d.
                     //
@@ -261,6 +267,9 @@ namespace ciBadgeForWeb
                                     strPathToBackImages);
 
                         }
+
+                        // Added 10/30/2021 Thomas Downes
+                        image_badge_output = image_back; 
 
                         //11-16-2019 td''mod_generate.MakeBadgeImage_ByRecipient(objLayout, 
                         //         image_back, ClassElementsCache.Singleton,
