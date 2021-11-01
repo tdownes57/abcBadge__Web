@@ -201,6 +201,9 @@
     <Compile Include="App_Start\DiskFolders.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="ASPX\BackHandler.ashx.cs">
+      <DependentUpon>BackHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="ASPX\BadgeImageHandler.ashx.cs">
       <DependentUpon>BadgeImageHandler.ashx</DependentUpon>
     </Compile>
@@ -938,6 +941,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="ASPX\BadgeImageHandler.ashx" />
+    <Content Include="ASPX\BackHandler.ashx" />
     <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <None Include="Properties\PublishProfiles\registry.hub.docker.com_tomdownes1.pubxml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />

@@ -240,11 +240,16 @@ namespace ciBadgeForWeb.Controllers
             //bool boolMatchesCurrent = false;  //Added 5/10/2020 thomas downes
             var list_output = new List<Models.Background>();
 
+            // Added 11/1/2021 thomas downes
+            int intCountingIndex = 0;  // Added 11/1/2021 thomas downes
+
             //
             // To do: adapt from XML to background images. 
             //
             foreach (FileInfo each_file_Info in (new DirectoryInfo(strPathToFolderBacks)).GetFiles())
             {
+                intCountingIndex++;  // Added 11/1/2021 thomas downes
+
                 //Modified 2/16/2019 td
                 boolExpectedFileType = boolExpectedFileType || each_file_Info.Name.EndsWith(".jpg");
                 boolExpectedFileType = boolExpectedFileType || each_file_Info.Name.EndsWith(".jpeg");
@@ -284,6 +289,7 @@ namespace ciBadgeForWeb.Controllers
 
                 var objNewBack = new Models.Background()
                 {
+                    Index = intCountingIndex,
                     BackgroundImage = null,
                     Description = "A beautiful background!",
                     FileName = each_file_Info.Name,

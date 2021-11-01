@@ -34,8 +34,12 @@
                 <p>Displaying the raw image, with no modification to the size.<br />
                     <img src="@item.FullPathToFile" />
                 </p>
-                <p>Using the Step4Handler.ashx to generate the background, with a width of 400 pixels.<br />
-                    <img src="~/ASPX/Step4Handler.ashx?id=back&big=y&hor=y&width=400&backid=@item.Index" width="400" />
+                <p>
+                    Using the Step4Handler.ashx to generate the background, with a width of 400 pixels.<br />
+                    <img src="~/ASPX/Step4Handler.ashx?id=back&big=y&hor=y&width=400&backid=@item.Index"
+                         width="400" />
+                    <img src="~/ASPX/BackHandler.ashx?big=y&hor=y&width=400&backid=@item.Index"
+                         width="400" />
                 </p>
             </td>
             <td>
