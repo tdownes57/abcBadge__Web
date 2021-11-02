@@ -25,7 +25,8 @@ namespace ciBadgeForWeb.App_Start
         //
         private static Dictionary<string, string> mod_dictionary_fileTitleJSON; // Added 3/24/2020 
 
-        public static string PathToFile_BackImage(string pstrFileTitle, bool pboolAbsolute)
+        public static string PathToFile_BackImage(string pstrFileTitle, bool pboolAbsolute,
+                  bool pboolResolve = false)
         {
             //
             //Added 1/14/2020
@@ -48,6 +49,7 @@ namespace ciBadgeForWeb.App_Start
 
             //strPathToFileJpeg = Path.Combine(strPathToFolderBackJpegs, );
             return strPathToFileJpeg;
+
         }
 
         public static void SpecifyCurrent_XML(string xmlDesiredCacheFile)
@@ -196,7 +198,7 @@ namespace ciBadgeForWeb.App_Start
 
         }
 
-        public static string PathToFile_Sig(bool pboolAbsolute)
+        public static string PathToFile_Sig(bool pboolAbsolute, bool pboolResolveURL = false)
         {
             //Return My.Application.Info.DirectoryPath & "\Images\Signatures\Declaration_bmp.bmp"
 
@@ -210,12 +212,19 @@ namespace ciBadgeForWeb.App_Start
             string strPathToFile_Absolute = HostingEnvironment.MapPath(strPathToFile_Virtual);
 
             if (pboolAbsolute) return strPathToFile_Absolute;
+
+            // Added 11/2/2021 td
+            // ResolveUrl() without Page
+            //    https://weblog.west-wind.com/posts/2007/Sep/18/ResolveUrl-without-Page
+            //
+            if (pboolResolveURL) return ResolveUrl(strPathToFile_Virtual);
+            
             return strPathToFile_Virtual;
 
         }
 
 
-        public static string PathToFile_QRCode(bool pboolAbsolute)
+        public static string PathToFile_QRCode(bool pboolAbsolute, bool pboolResolve = false)
         {
             //Return My.Application.Info.DirectoryPath & "\Images\Signatures\Declaration_bmp.bmp"
 
@@ -229,6 +238,13 @@ namespace ciBadgeForWeb.App_Start
             string strPathToFile_Absolute = HostingEnvironment.MapPath(strPathToFile_Virtual);
 
             if (pboolAbsolute) return strPathToFile_Absolute;
+
+            // Added 11/2/2021 td
+            // ResolveUrl() without Page
+            //    https://weblog.west-wind.com/posts/2007/Sep/18/ResolveUrl-without-Page
+            //
+            if (pboolResolve) return ResolveUrl(strPathToFile_Virtual);
+
             return strPathToFile_Virtual;
 
         }
@@ -474,8 +490,9 @@ namespace ciBadgeForWeb.App_Start
         }
 
 
-        public static string PathToFile_TempBadges(bool pboolAbsolute, string pstrRecipientID)
+        public static string PathToFile_TempBadges(bool pboolAbsolute, string pstrRecipientID, bool pboolResolve = false)
         {
+            //---public static string PathToFile_TempBadges(bool pboolAbsolute, string pstrRecipientID)
             //
             //Added 9/17/2021 td
             //
@@ -492,9 +509,61 @@ namespace ciBadgeForWeb.App_Start
             string strPathToFile_Absolute = HostingEnvironment.MapPath(strPathToFile_Virtual);
 
             if (pboolAbsolute) return strPathToFile_Absolute;
+
+            // Added 11/2/2021 td
+            // ResolveUrl() without Page
+            //    https://weblog.west-wind.com/posts/2007/Sep/18/ResolveUrl-without-Page
+            //
+            if (pboolResolve) return ResolveUrl(strPathToFile_Virtual);
+
             return strPathToFile_Virtual;
 
         }
+
+
+        // <summary>
+        // ResolveUrl() without Page
+        //    https://weblog.west-wind.com/posts/2007/Sep/18/ResolveUrl-without-Page
+        // Returns a site relative HTTP path from a partial path starting out with a ~.
+        // Same syntax that ASP.Net internally supports but this method can be used
+        // outside of the Page framework.
+        // 
+        // Works like Control.ResolveUrl including support for ~syntax
+        // but returns an absolute URL.
+        // </summary>
+        // <param name = "par_originalUrl" > Any Url including those starting with ~</param>
+        // <returns>relative url</returns>
+        // https://weblog.west-wind.com/posts/2007/Sep/18/ResolveUrl-without-Page
+        public static string ResolveUrl(string par_originalUrl)
+        {
+            //  ResolveUrl() without Page
+            //  https://weblog.west-wind.com/posts/2007/Sep/18/ResolveUrl-without-Page
+            //
+            if (par_originalUrl == null)
+                return null;
+
+            // *** Absolute path - just return
+            if (par_originalUrl.IndexOf("://") != -1)
+                return par_originalUrl;
+
+            // *** Fix up image path for ~ root app dir directory
+            if (par_originalUrl.StartsWith("~"))
+            {
+                string newUrl = "";
+                if (HttpContext.Current != null)
+                    newUrl = HttpContext.Current.Request.ApplicationPath +
+                          par_originalUrl.Substring(1).Replace("//", "/");
+                else
+                    // *** Not context: assume current directory is the base directory
+                    throw new ArgumentException("Invalid URL: Relative URL not allowed.");
+
+                // *** Just to be sure fix up any double slashes
+                return newUrl;
+            }
+
+            return par_originalUrl;
+        }
+
 
 
 

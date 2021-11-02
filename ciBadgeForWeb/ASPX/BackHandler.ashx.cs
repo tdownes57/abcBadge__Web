@@ -278,6 +278,8 @@ namespace ciBadgeForWeb
                 if (c_boolUseLocalFun)
                 {
                     // Added 11/2/2021 thomas downes
+                    //   Let's use a new local function for pulling the 
+                    //   image object from the disk-IO system. 
                     image_background_output = GetBackgroundImage(par_intBackWidth_Pixels,
                           par_intBackHeight_Pixels,
                           strPathToBackImages_B, strFileTitle);
@@ -315,6 +317,14 @@ namespace ciBadgeForWeb
             // Added 11/2/2021 thomas d. 
             //
             string strFullPathToImageFile = System.IO.Path.Combine(pstrPathToLikelyFolder, pstrFileTitle);
+
+            // Added 11/2/2021 td
+            //    
+            //  Good page:   https://stackoverflow.com/questions/28330257/get-relative-url-in-asp-net-mvc-view
+            //  Even better: https://weblog.west-wind.com/posts/2007/Sep/18/ResolveUrl-without-Page
+            //      
+            strFullPathToImageFile = App_Start.DiskFiles.ResolveUrl(strFullPathToImageFile);
+
             //Graphics g = new Graphics
             Image imageCreated1 = new Bitmap(strFullPathToImageFile);
             //''imageCreated.Dispose()
