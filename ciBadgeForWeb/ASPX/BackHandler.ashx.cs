@@ -11,6 +11,7 @@ using ciBadgeElements;       //Added 10/5/2019 td
 using ciBadgeElemImage;     //Added 10/5/2019 td  
 using ciBadgeGenerator; //Added 11/13/2019 td
 using ciBadgeForWeb.Controllers; //Added 10/31/2021 thomas d. 
+using System.Web.Mvc;               //Added 11/2/2021 thomas d. 
 
 //
 // public class "BackHandler"  
@@ -71,6 +72,8 @@ namespace ciBadgeForWeb
             //===-IList<Models.CIRecipient> recipients_list;
 
             bool bSizeLarge = false, bHorizontalLarge = false, bHorizontalSmall = false; //Added 6/20/2019 thomas downes 
+            bool bNoImagesAvailable = false;  //Added 11/1/2021 thomas downes
+            bool bExceptionThrown = false;   //Added 11/1/2021 thomas downes
 
             par_context.Response.Clear();
 
@@ -81,7 +84,7 @@ namespace ciBadgeForWeb
                 //Added 6/20/2019 td
                 if (!String.IsNullOrEmpty(par_context.Request.QueryString["hor"]))
                 {
-                    //Added 6/20/2019 td
+                    //Adde d 6/20/2019 td
                     bSizeLarge = ("y" == par_context.Request.QueryString["big"]);  // ["size"]);
                     bHorizontalLarge = (bSizeLarge && ("y" == par_context.Request.QueryString["hor"]));
                     bHorizontalSmall = (!(bSizeLarge) && ("y" == par_context.Request.QueryString["hor"]));
@@ -123,25 +126,12 @@ namespace ciBadgeForWeb
             //---if (!String.IsNullOrEmpty(par_context.Request.QueryString["id"]))
             if (boolIsAnIDValueSupplied)
             {
-                //
-                //Added 6/20/2019 thomas downes  
-                //
-                Image image_exampleBackgroundOnly = null;  // = recipient_by_id_onlyone.Picture;
-                Image image_background_output = null;   // Added 9/17/2021 thomas downes
+                int intPixelsWidth = 0;
+                int intPixelsHeight = 0; 
 
                 //
-                // objLayoutExample 
+                // Check the desired displayed width of the background image.  
                 //
-                LayoutExample objLayoutExample = new ciLayoutPrintLib.LayoutExample();
-
-                //+++bool boolPlainBackgroundImage;//Added 6/28/2019 thomas downes 
-                //+++boolPlainBackgroundImage = ("back" == par_context.Request.QueryString["id"]);
-                bool boolNoImagesAreAvailable = false; //added 7/6/2019 td
-
-                int intPixelsWidth = 0; //Added 7/06/2019 thomas downes 
-                int intPixelsHeight = 0; //Added 11/14/2019 thomas downes
-                bool bExceptionThrown = false;  //Added 10/30/2021 thomas downes 
-
                 try
                 {
                     intPixelsWidth = int.Parse(par_context.Request.QueryString["width"]);
@@ -159,71 +149,28 @@ namespace ciBadgeForWeb
                     return;
                 }
 
-                //+++if (boolPlainBackgroundImage)
-                const bool c_boolPlainBackgroundImage = true;  // True, since we are only showing
-                                                               //   background images through this 
-                                                               //   handler. ---10/31/2021 td 
-                if (c_boolPlainBackgroundImage)
+                //
+                // Major function!!
+                //
+                //Encapsulated 11/1/2021
+                //
+                Image image_background_output = null;
+
+                try
                 {
                     //
-                    //Plain Background Image 
+                    //Encapsulated 11/1/2021
                     //
-                    objLayoutExample.WidthInPixels_Land = intPixelsWidth;
-
-                    if (-1 != intBackgroundImageIndex)
-                    {
-                        const bool c_boolToggleImage = false;  // Added 3/9/2020 thoams
-                        if (c_boolToggleImage)
-                            ciLayoutPrintLib.LayoutExample
-                                .RefreshChoiceOfBackground_ByIndex(intBackgroundImageIndex);
-                    }
-
-                    //Added 4/9/2020 td
-                    LayoutExample.PathToFolderWithBacks = ciBadgeForWeb.App_Start.DiskFolders
-                        .PathToFolderWithBacks(true);
-
-                    //image_exampleBackgroundOnly = objLayoutExample
-                    //    .GenerateImage_BackgroundOnly(bHorizontalLarge,
-                    //         bHorizontalSmall, ref boolNoImagesAreAvailable);
-
-                    // Added 3/9/2020 thomas downes
-                    //
-                    //    It's important that the correct background image be displayed.
-                    //
-                    ciBadgeInterfaces.BadgeLayoutClass objLayout_B;   // Added 3/9/2020 thomas downes 
-                    objLayout_B = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.BadgeLayout;
-                    string strPathToBackImages_B = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(true);
-                    int intBackWidth_B = objLayout_B.Width_Pixels;
-                    int intBackHeight_B = objLayout_B.Height_Pixels;
-
-                    // Added 10/31/2021 Thomas Downes
-                    var backgrounds_by_id_list = UploadBackController.mod_backgrounds
-                        .Where(s => s.Index == intBackgroundImageIndex);
-                    var background_by_id_onlyone = backgrounds_by_id_list.FirstOrDefault();
-                    string strFileTitle = background_by_id_onlyone.FileName;
-
-                    ClassElementsCache_Deprecated.Singleton.BackgroundImage_Path =
-                           System.IO.Path.Combine(strPathToBackImages_B, strFileTitle);  // ==========
-
-                    image_exampleBackgroundOnly =
-                        ClassElementsCache_Deprecated.Singleton.GetBackgroundImage(intBackWidth_B, intBackHeight_B,
-                            strPathToBackImages_B);
-
-                    // Added 10/30/2021 Thomas Downes
-                    //image_badge_output = image_badge_exampleBackgroundOnly;
-                    image_background_output = ClassElementsCache_Deprecated.Singleton
-                        .GetBackgroundImage(intBackWidth_B, intBackHeight_B,
-                           strPathToBackImages_B);
-
-                    //Added 7/6/2019 thomas d.
-                    //
-                    if (boolNoImagesAreAvailable)
-                    {
-                        par_context.Response.ContentType = "text/html";
-                        par_context.Response.Write("<p>No images were loaded, unfortunately.</p>");
-                        return;
-
-                    }
+                    image_background_output = GetBackImage_ByIndexAndWidth(par_context,
+                        intBackgroundImageIndex, intPixelsWidth, intPixelsHeight,
+                        ref bNoImagesAvailable);
+                }
+                catch (Exception ex_get_image)
+                {
+                    //Added 11/1/2021 td
+                    par_context.Response.ContentType = "text/html";
+                    par_context.Response.Write($"<p> {ex_get_image.Message} </p>");
+                    return;
                 }
 
                 //if (boolPlainBackgroundImage)
@@ -248,6 +195,133 @@ namespace ciBadgeForWeb
                 par_context.Response.ContentType = "text/html";
                 par_context.Response.Write("<p>Need a valid id</p>");
             }
+
+        }
+
+
+        private Image GetBackImage_ByIndexAndWidth(HttpContext par_context,
+            int par_intBackgroundImageIndex, 
+            int par_intBackWidth_Pixels,
+            int par_intBackHeight_Pixels, 
+            ref bool pref_bNoImagesAvailable)
+        {
+            //
+            // Encapsulated 11/1/2021 td
+            //
+            //
+            //Added 6/20/2019 thomas downes  
+            //
+            Image image_exampleBackgroundOnly = null;  // = recipient_by_id_onlyone.Picture;
+            Image image_background_output = null;   // Added 9/17/2021 thomas downes
+
+            //
+            // objLayoutExample 
+            //
+            LayoutExample objLayoutExample = new ciLayoutPrintLib.LayoutExample();
+
+            //+++bool boolPlainBackgroundImage;//Added 6/28/2019 thomas downes 
+            //+++boolPlainBackgroundImage = ("back" == par_context.Request.QueryString["id"]);
+            //===bool boolNoImagesAreAvailable = false; //added 7/6/2019 td
+
+            int intPixelsWidth = 0; //Added 7/06/2019 thomas downes 
+            int intPixelsHeight = 0; //Added 11/14/2019 thomas downes
+            bool bExceptionThrown = false;  //Added 10/30/2021 thomas downes 
+
+
+            //+++if (boolPlainBackgroundImage)
+            const bool c_boolPlainBackgroundImage = true;  // True, since we are only showing
+                                                           //   background images through this 
+                                                           //   handler. ---10/31/2021 td 
+            if (c_boolPlainBackgroundImage)
+            {
+                //
+                //Plain Background Image 
+                //
+                objLayoutExample.WidthInPixels_Land = intPixelsWidth;
+
+                if (-1 != par_intBackgroundImageIndex)
+                {
+                    const bool c_boolToggleImage = false;  // Added 3/9/2020 thoams
+                    if (c_boolToggleImage)
+                        ciLayoutPrintLib.LayoutExample
+                            .RefreshChoiceOfBackground_ByIndex(par_intBackgroundImageIndex);
+                }
+
+                //Added 4/9/2020 td
+                LayoutExample.PathToFolderWithBacks = ciBadgeForWeb.App_Start.DiskFolders
+                    .PathToFolderWithBacks(true);
+
+                //image_exampleBackgroundOnly = objLayoutExample
+                //    .GenerateImage_BackgroundOnly(bHorizontalLarge,
+                //         bHorizontalSmall, ref boolNoImagesAreAvailable);
+
+                // Added 3/9/2020 thomas downes
+                //
+                //    It's important that the correct background image be displayed.
+                //
+                ciBadgeInterfaces.BadgeLayoutClass objLayout_B;   // Added 3/9/2020 thomas downes 
+                objLayout_B = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.BadgeLayout;
+                string strPathToBackImages_B = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(true);
+                
+                // Deprecated 11/1/2021 thomas downes
+                int intBackWidth_B_deprecated = objLayout_B.Width_Pixels;
+                int intBackHeight_B_deprecated = objLayout_B.Height_Pixels;
+
+                // Added 10/31/2021 Thomas Downes
+                var backgrounds_by_id_list = UploadBackController.mod_backgrounds
+                    .Where(s => s.Index == par_intBackgroundImageIndex);
+                var background_by_id_onlyone = backgrounds_by_id_list.FirstOrDefault();
+                string strFileTitle = background_by_id_onlyone.FileName;
+
+                const bool c_boolUseLocalFun = true;
+
+                if (c_boolUseLocalFun)
+                {
+                    // Added 11/2/2021 thomas downes
+                    image_background_output = GetBackgroundImage(par_intBackWidth_Pixels,
+                          par_intBackHeight_Pixels,
+                          strPathToBackImages_B, strFileTitle);
+                }
+                else
+                {
+                    // Added 11/2/2021 thomas downes
+                    ClassElementsCache_Deprecated.Singleton.BackgroundImage_FTitle = strFileTitle;
+
+                    ClassElementsCache_Deprecated.Singleton.BackgroundImage_Path =
+                           System.IO.Path.Combine(strPathToBackImages_B, strFileTitle);  // ==========
+
+                    // Added 10/30/2021 Thomas Downes
+                    //image_badge_output = image_badge_exampleBackgroundOnly;
+                    //22image_background_output = ClassElementsCache_Deprecated.Singleton
+                    //22    .GetBackgroundImage(intBackWidth_B, intBackHeight_B,
+                    //22       strPathToBackImages_B);
+                    image_background_output = ClassElementsCache_Deprecated.Singleton
+                        .GetBackgroundImage(par_intBackWidth_Pixels, par_intBackHeight_Pixels,
+                           strPathToBackImages_B);
+                }
+
+                return image_background_output;  
+
+            }
+
+        }
+
+
+        private Image GetBackgroundImage(int pintWidth, int pintHeight,
+                                          string pstrPathToLikelyFolder,
+                                          string pstrFileTitle)
+        {
+            //
+            // Added 11/2/2021 thomas d. 
+            //
+            string strFullPathToImageFile = System.IO.Path.Combine(pstrPathToLikelyFolder, pstrFileTitle);
+            //Graphics g = new Graphics
+            Image imageCreated1 = new Bitmap(strFullPathToImageFile);
+            //''imageCreated.Dispose()
+            Image imageCreated2 = new Bitmap(imageCreated1, new Size(pintWidth, pintHeight));
+            //mod_dictionaryBackImages.Add(structCurrent, imageCreated2)
+            imageCreated1.Dispose();
+            return imageCreated2;
 
         }
 
