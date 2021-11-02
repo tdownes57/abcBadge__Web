@@ -3,6 +3,13 @@
 @{
     ViewBag.Title = "ShowAll";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    // Added 11/2/2021 td 
+    //  )) string PathToFolder_Backs =
+    //  ))   Html.Resolve(ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(false));
+    string PathToFolder_Backs =
+        Url.Content(ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(false));
+
 }
 
 <h2>ShowAll</h2>
@@ -31,9 +38,14 @@
     {
         <tr>
             <td>
-                <p>Displaying the raw image, with no modification to the size.<br />
+                <p>
+                    Displaying the raw image, with no modification to the size.<br />
                     [[img src="@item.FullPathToFile" ]] <br />
-                    <img src="/Images/@item.FileName" />
+                    [[img src="@PathToFolder_Backs/@item.FileName" ]]  <br />
+
+                    @*<img src="/Images/@item.FileName" />*@
+                    <img src="@PathToFolder_Backs/@item.FileName" />
+
                 </p>
                 <p>
                     Using the Step4Handler.ashx to generate the background, with a width of 400 pixels.<br />
