@@ -112,6 +112,7 @@ namespace ciBadgeForWeb.Controllers
             var background_by_id_onlyone = backgrounds_by_id_list.FirstOrDefault();
 
             ciLayoutPrintLib.BackImageExamples.CurrentIndex = id;
+            Models.Background.CurrentlySelectedBackIndex = id;  //Added 11/2/2021 Thomas Downes 
 
             return RedirectToAction("Index", "LayoutText1");
 

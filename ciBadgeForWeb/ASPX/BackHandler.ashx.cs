@@ -287,10 +287,11 @@ namespace ciBadgeForWeb
                 else
                 {
                     // Added 11/2/2021 thomas downes
+                    bool bTwoPropertiesRefreshed = false; // We haven't refreshed the 2 properties. --11/2/2021 
                     ClassElementsCache_Deprecated.Singleton.BackgroundImage_FTitle = strFileTitle;
-
                     ClassElementsCache_Deprecated.Singleton.BackgroundImage_Path =
                            System.IO.Path.Combine(strPathToBackImages_B, strFileTitle);  // ==========
+                    bTwoPropertiesRefreshed = true; // We just refreshed the 2 properties. --11/2/2021 
 
                     // Added 10/30/2021 Thomas Downes
                     //image_badge_output = image_badge_exampleBackgroundOnly;
@@ -299,7 +300,7 @@ namespace ciBadgeForWeb
                     //22       strPathToBackImages_B);
                     image_background_output = ClassElementsCache_Deprecated.Singleton
                         .GetBackgroundImage(par_intBackWidth_Pixels, par_intBackHeight_Pixels,
-                           strPathToBackImages_B);
+                           strPathToBackImages_B, bTwoPropertiesRefreshed);
                 }
 
                 return image_background_output;  

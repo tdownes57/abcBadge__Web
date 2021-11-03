@@ -4,7 +4,7 @@
     ViewBag.Title = "ShowAll";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-    // Added 11/2/2021 td 
+    // Added 11/2/2021 td
     //  )) string PathToFolder_Backs =
     //  ))   Html.Resolve(ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(false));
     string PathToFolder_Backs =
@@ -31,6 +31,14 @@
         <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
+        <th>
+            @*<p>Show checkbox for selection as badge-layout background.</p>*@
+            @Html.DisplayNameFor(model => model.IsSelectedForBadge)
+        </th>
+        <th>
+            @*<p>Show checkbox for hiding/preventing selection as badge-layout background.</p>*@
+            @Html.DisplayNameFor(model => model.IsSuppressedFromSelection)
+        </th>
         <th></th>
     </tr>
 
@@ -38,21 +46,24 @@
     {
         <tr>
             <td>
-                <p>
-                    Displaying the raw image, with no modification to the size.<br />
-                    [[img src="@item.FullPathToFile" ]] <br />
-                    [[img src="@PathToFolder_Backs/@item.FileName" ]]  <br />
+                @if (false == true)
+                {
+                    <p>
+                        Displaying the raw image, with no modification to the size.<br />
+                        [[img src="@item.FullPathToFile" ]] <br />
+                        [[img src="@PathToFolder_Backs/@item.FileName" ]]  <br />
 
-                    @*<img src="/Images/@item.FileName" />*@
-                    <img src="@PathToFolder_Backs/@item.FileName" />
+                        @*<img src="/Images/@item.FileName" />*@
+                        <img src="@PathToFolder_Backs/@item.FileName" />
 
-                </p>
+                    </p>
+                }
                 <p>
                     Using the Step4Handler.ashx to generate the background, with a width of 400 pixels.<br />
                     @*<img src="~/ASPX/Step4Handler.ashx?id=back&big=y&hor=y&width=400&backid=@item.Index"
-        width="400" />*@
+                        width="400" />*@
                     [[img src="~/ASPX/BackHandler.ashx?big=y&hor=y&width=400&backid=@item.Index"
-                         width="400" ]] <br />
+                    width="400" ]] <br />
                     <img src="~/ASPX/BackHandler.ashx?big=y&hor=y&width=400&backid=@item.Index"
                          width="400" />
                 </p>
@@ -67,6 +78,14 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
+                @*<p>Show checkbox for selection as badge-layout background.</p>*@
+                @Html.DisplayFor(modelItem => item.IsSelectedForBadge)
+            </td>
+            <td>
+                @*<p>Show checkbox for hiding/preventing selection as badge-layout background.</p>*@
+                @Html.DisplayFor(modelItem => item.IsSuppressedFromSelection)
+            </td>
+            <td>
                 @Html.ActionLink("Select Background", "Select", new { id = item.Index })
                 @Html.ActionLink("Edit", "Edit", new { id = item.Index })
                 @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ })*@ |
@@ -78,33 +97,33 @@
 </table>
 
 
-   @*//        <body>
-    //
-    //    <h1>Super Upload Page</h1>
-    //
-    //    <p>Things to upload: </p>
-    //
-    //    <ol>
+@*//        <body>
         //
-        <li>Background Images for Badges</li>
+        //    <h1>Super Upload Page</h1>
         //
-        <li>Portrait Images</li>
+        //    <p>Things to upload: </p>
         //
-        <li>Zipped collection of Images</li>
+        //    <ol>
+            //
+            <li>Background Images for Badges</li>
+            //
+            <li>Portrait Images</li>
+            //
+            <li>Zipped collection of Images</li>
+            //
+            <li>XML files with Personality Configuration / Elements Cache</li>
+            //
+            <li>MDB files, especially CIBData83.mdb, for storage of data</li>
+            //
+            <li>Signature Image from the Topaz Signature Pad</li>
+            //
+            <li>Driver's License Data</li>
+            //
+        </ol>
         //
-        <li>XML files with Personality Configuration / Elements Cache</li>
         //
-        <li>MDB files, especially CIBData83.mdb, for storage of data</li>
-        //
-        <li>Signature Image from the Topaz Signature Pad</li>
-        //
-        <li>Driver's License Data</li>
-        //
-    </ol>
-    //
-    //
-</body>
-        // </html>*@
+    </body>
+            // </html>*@
 
 
 

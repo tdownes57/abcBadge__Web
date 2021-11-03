@@ -52,6 +52,7 @@ namespace ciBadgeForWeb
             IList<Models.CIRecipient> recipients_list;
 
             bool bSizeLarge = false, bHorizontalLarge = false, bHorizontalSmall = false; //Added 6/20/2019 thomas downes 
+            bool bWereTwoPropertiesRefreshed = false; //Added 11/2/2021 td
 
             par_context.Response.Clear();
 
@@ -139,9 +140,16 @@ namespace ciBadgeForWeb
                     string strPathToBackImages_B = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(true);
                     int intBackWidth_B = objLayout_B.Width_Pixels;
                     int intBackHeight_B = objLayout_B.Height_Pixels;
+
+                    // Added 11/2/2021 thomas downes
+                    bWereTwoPropertiesRefreshed = false; // Added 11/2/2021 thomas downes
+                    ClassElementsCache_Deprecated.Singleton.BackgroundImage_FTitle = "";
+                    ClassElementsCache_Deprecated.Singleton.BackgroundImage_Path = "";
+                    //bWereTwoPropertiesRefreshed = true; // Added 11/2/2021 thomas downes
+
                     image_badge_exampleBackgroundOnly =
                         ClassElementsCache_Deprecated.Singleton.GetBackgroundImage(intBackWidth_B, intBackHeight_B,
-                            strPathToBackImages_B);
+                            strPathToBackImages_B, bWereTwoPropertiesRefreshed);
 
                     // Added 10/30/2021 Thomas Downes
                     image_badge_output = image_badge_exampleBackgroundOnly;
@@ -254,6 +262,12 @@ namespace ciBadgeForWeb
                             //
                             //Added 1/12/2020 thomas d. 
                             //
+                            // Added 11/2/2021 thomas downes
+                            bWereTwoPropertiesRefreshed = false; // Added 11/2/2021 thomas downes
+                            ClassElementsCache_Deprecated.Singleton.BackgroundImage_FTitle = "";
+                            ClassElementsCache_Deprecated.Singleton.BackgroundImage_Path = "";
+                            //bWereTwoPropertiesRefreshed = true; // Added 11/2/2021 thomas downes
+
                             //string strPathToBackJpg = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_BackImg_Current;
                             string strPathToBackImages = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(true);
                             //bool boolNoImages;
@@ -264,7 +278,7 @@ namespace ciBadgeForWeb
                             //string strBackImageFileTitle = ClassElementsCache_Deprecated.Singleton.BackgroundImage_FTitle;
                             //image_back = ClassElementsCache_Deprecated.Singleton.GetBackgroundImage(intBackWidth, intBackHeight);
                             image_back = ClassElementsCache_Deprecated.Singleton.GetBackgroundImage(intBackWidth, intBackHeight,
-                                    strPathToBackImages);
+                                    strPathToBackImages, bWereTwoPropertiesRefreshed);
 
                         }
 
@@ -502,6 +516,10 @@ namespace ciBadgeForWeb
             //    We are trying to encapsulate the badge-layout & image processing from the 
             //    code which pertains to understanding the user's choices & state-related HTTP context. 
             //
+            bool bWereTwoPropertiesRefreshed = false; //Added 11/2/2021 td
+            ClassElementsCache_Deprecated.Singleton.BackgroundImage_FTitle = Models.Background.Get_FileTitle();
+            ClassElementsCache_Deprecated.Singleton.BackgroundImage_Path = Models.Background.Get_FullPath();
+            //bWereTwoPropertiesRefreshed = true; // Added 11/2/2021 thomas downes
 
             //Added 9/15/2021 thomas downes  
             Image image_badge;
@@ -554,7 +572,7 @@ namespace ciBadgeForWeb
                 //string strBackImageFileTitle = ClassElementsCache_Deprecated.Singleton.BackgroundImage_FTitle;
                 //image_back = ClassElementsCache_Deprecated.Singleton.GetBackgroundImage(intBackWidth, intBackHeight);
                 image_back = ClassElementsCache_Deprecated.Singleton.GetBackgroundImage(intBackWidth, intBackHeight,
-                        strPathToBackImages);
+                        strPathToBackImages, bWereTwoPropertiesRefreshed);
 
             }
 
