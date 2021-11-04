@@ -328,8 +328,13 @@ namespace ciBadgeForWeb
 
             //Graphics g = new Graphics
             Image imageCreated1 = new Bitmap(strFullPathToImageFile);
+
+            //Added 11/3/2021 thomas downes
+            bool boolLikelyDoubleSided = ClassProportions.BackgroundIsDoubleSided(imageCreated1);
+            int intWidth_MaybeDoubleSided = (boolLikelyDoubleSided ? (pintWidth * 2) : pintWidth);
+
             //''imageCreated.Dispose()
-            Image imageCreated2 = new Bitmap(imageCreated1, new Size(pintWidth, pintHeight));
+            Image imageCreated2 = new Bitmap(imageCreated1, new Size(intWidth_MaybeDoubleSided, pintHeight));
             //mod_dictionaryBackImages.Add(structCurrent, imageCreated2)
             imageCreated1.Dispose();
             return imageCreated2;
