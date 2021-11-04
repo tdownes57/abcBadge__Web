@@ -91,8 +91,10 @@
                     <ul class="dropdown-menu">
                         <li>@Html.ActionLink("Modify Badge Layout", "Index", "LayoutText1")</li>
                         @*<li>@Html.ActionLink("Select Background", "ChooseWhich", "UploadBack")</li>*@
-                        <li>@Html.ActionLink("Select Background", "ShowAll", "UploadBack")</li>
-                        <li>@Html.ActionLink("Upload Background", "Index", "UploadBack")</li>
+                        @*<li>@Html.ActionLink("Select Background", "ShowAll", "UploadBack")</li>*@
+                        <li>@Html.ActionLink("Show Current Background", "ShowCurrent", "Background")</li>
+                        <li>@Html.ActionLink("Select Background", "ShowAll", "Background")</li>
+                        <li>@Html.ActionLink("Upload Background", "UploadBack", "Background")</li>
                     </ul>
                 </li>
 
@@ -152,10 +154,10 @@
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li>@Html.ActionLink("Upload Background", "Index", "UploadBack")</li>
-                                    <li>@Html.ActionLink("Upload Picture", "UploadPic", "UploadBack")</li>
+                                    <li>@Html.ActionLink("Upload Background", "UploadBack", "Background")</li>
+                                    <li>@Html.ActionLink("Upload Picture", "UploadPic", "Background")</li>
                                     <li>@Html.ActionLink("Xml Caching", "Index", "XmlCache")</li>
-                                    <li>@Html.ActionLink("Upload Cache XML", "ElementCacheXML", "UploadBack")</li>
+                                    <li>@Html.ActionLink("Upload Cache XML", "ElementCacheXML", "Background")</li>
                                     <li>@Html.ActionLink("Orange Coast", "Index", "OrangeCoast")</li>
                                 </ul>
                             </div>

@@ -1,0 +1,97 @@
+﻿@model ciBadgeForWeb.Models.Background
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    // Added 11/2/2021 td 
+    //  )) string PathToFolder_Backs =
+    //  ))   Html.Resolve(ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(false));
+    string PathToFolder_Backs =
+        Url.Content(ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(false));
+    
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Background Image for Badges</h4>
+    <hr />
+    
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    
+    <div class="form-group">
+        @Html.LabelFor(model => model.Index, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Guid6Chars, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Guid6Chars, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Index, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Index, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Index, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.FileName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.FileName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FileName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+        </div>
+
+        @if (false == true)
+        {
+            //Lets give some developer-friendly context (a.k.a. test code...).
+            <p>
+                Displaying the raw image, with no modification to the size.<br />
+                [[img src="@Model.FullPathToFile" ]] <br />
+                [[img src="@PathToFolder_Backs/@Model.FileName" ]]
+                @* <img src="@Model.FullPathToFile" />*@
+                @*<img src="/Images/BackExamples/@Model.FileName" />*@
+                @*<img src="@PathToFolder_Backs/@Model.FileName" />*@
+                @*<asp:Image runat="server" ID="BackImage"
+                    ImageUrl="@PathToFolder_Backs/@Model.FileName" Width="400" />*@
+                <img src="@PathToFolder_Backs/@Model.FileName" />
+
+            </p>
+        }
+
+        <p>
+            Using the Step4Handler.ashx to generate the background, with a width of 400 pixels.<br />
+            @*<img src="~/ASPX/Step4Handler.ashx?id=back&big=y&hor=y&width=400&backid=@item.Index"
+                width="400" />*@
+            [[img src="~/ASPX/BackHandler.ashx?big=y&hor=y&width=400&backid=@Model.Index"
+            width="400" ]] <br />
+            <img src="~/ASPX/BackHandler.ashx?big=y&hor=y&width=400&backid=@Model.Index"
+                 width="400" />
+        </p>
+
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

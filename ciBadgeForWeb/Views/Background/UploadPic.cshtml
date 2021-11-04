@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "UploadPic";
+    Layout = "~/Views/Shared/_LayoutUpload.cshtml";
+
+    //Added 5/5/2020 & 2/22/2020 thomas downes
+    string strRecipTypeName;  // Added 2/22/2020 td
+    ciBadgeForWeb.Controllers.PersonalityController.SelectPersonality_Initialize();
+    strRecipTypeName = ciBadgeForWeb.Controllers.PersonalityController.CurrentPersonality.ConfigNameBrief;
+
+}
+
+<h2>Upload Picture of @strRecipTypeName </h2>
+
+@*<form runat="server">
+    <input type='file' id="imgInp" />
+    <img id="blah" src="#" alt="your image" />
+</form>*@
+
+@using (Html.BeginForm("FileUpload", "Background", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary();
+    <ol>
+        <li class="lifile">
+            <input type="file" id="fileToUpload" name="file" />
+            <span class="field-validation-error" id="spanfile"></span>
+            <img id="blah_preview" src="#" alt="your image" />
+        </li>
+    </ol>
+
+    <input type="submit" id="btnSubmit" value="Upload" />
+
+    @*<input type='file' id="imgInp" />
+        <img id="blah" src="#" alt="your image" />*@
+}

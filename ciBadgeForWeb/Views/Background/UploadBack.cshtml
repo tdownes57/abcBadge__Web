@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "UploadBack";
     //Layout = "~/Views/Shared/_LayoutUploadPic.cshtml";
     Layout = "~/Views/Shared/_LayoutUpload.cshtml";
 }
@@ -147,7 +147,7 @@
         <img id="blah" src="#" alt="your image" />
     </form>*@
 
-@using (Html.BeginForm("FileUpload", "UploadBack", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("FileUpload", "Background", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.ValidationSummary();
     @*<ol>

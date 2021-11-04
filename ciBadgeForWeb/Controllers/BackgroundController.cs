@@ -14,16 +14,16 @@ using ciLayoutPrintLib; // Added 7/7/2019 thomas downes
 
 namespace ciBadgeForWeb.Controllers
 {
-    public class UploadBackController : Controller
+    public class BackgroundController : Controller
     {
         /// <summary>
         /// https://theburningmonk.com/2010/02/converting-hex-to-int-in-csharp/
         /// </summary>
         /// <returns></returns>
         /// 
-        private static string mod_fileTitle_Current = ""; 
+        private static string mod_fileTitle_Current = "";
 
-        public UploadBackController()
+        public BackgroundController()
         {
             //---May 10--ciPictures_VB.PictureExamples.PathToFolderOfImages = (HttpRuntime.AppDomainAppPath + "Images\\PictureExamples");
             //---May 10--ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks = (HttpRuntime.AppDomainAppPath + "Images\\BackExamples");
@@ -41,8 +41,41 @@ namespace ciBadgeForWeb.Controllers
         //        new Models.Background(){ Index = 3, FileName = "..", Description = "..", BackgroundImage = BackImageExamples.Item(3) } };
         public static IList<Models.Background> mod_backgrounds = new List<Models.Background>();
 
-        // GET: UploadBack
+
+        public static string Get_BackgroundFileTitle(string pstrConfig_Guid6 = "")
+        {
+            //
+            // Added 11/04/2021 tdownes
+            //
+            return Models.Background.Get_FileTitle(pstrConfig_Guid6);
+
+        }
+
+        public static string Get_BackgroundFullPath(string pstrConfig_Guid6 = "")
+        {
+            //
+            // Added 11/04/2021 tdownes
+            //
+            return Models.Background.Get_FullPath(pstrConfig_Guid6);
+
+        }
+
+
+        // GET: Background
         public ActionResult Index()
+        {
+            //----ciPictures_VB.PictureExamples.PathToFolderOfImages = (HttpRuntime.AppDomainAppPath + "Images\\PictureExamples");
+            //---ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks = (HttpRuntime.AppDomainAppPath + "Images\\BackExamples");
+            //____ciPictures_VB.PictureExamples.PathToFolderOfImages = (App_Start.DiskFolders.PathToFolderOfPics(true));
+            //____ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks = (App_Start.DiskFolders.PathToFolderWithBacks(true));
+            //____
+            //____return View();
+            return UploadBack();
+        }
+
+
+        // GET: Background/UploadBack
+        public ActionResult UploadBack()
         {
             //----ciPictures_VB.PictureExamples.PathToFolderOfImages = (HttpRuntime.AppDomainAppPath + "Images\\PictureExamples");
             //---ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks = (HttpRuntime.AppDomainAppPath + "Images\\BackExamples");
@@ -51,6 +84,7 @@ namespace ciBadgeForWeb.Controllers
 
             return View();
         }
+
 
         // GET: UploadPic
         public ActionResult UploadPic()
@@ -72,7 +106,7 @@ namespace ciBadgeForWeb.Controllers
             return View();
         }
 
-        // GET: UploadBack
+        // GET: Background
         public ActionResult ShowAll()
         {
             //return View();
@@ -87,16 +121,36 @@ namespace ciBadgeForWeb.Controllers
 
         }
 
-        // GET: Recipient/Edit/5
+        // GET: Background/Edit/5
         public ActionResult Edit(int id)
         {
-            var backgrounds_by_id_list = mod_backgrounds.Where(s => s.Index == id );
+            var backgrounds_by_id_list = mod_backgrounds.Where(s => s.Index == id);
             var background_by_id_onlyone = backgrounds_by_id_list.FirstOrDefault();
             return (ViewResult)View(background_by_id_onlyone);
 
         }
 
-        // GET: Recipient/Create
+
+        // GET: Background/ShowCurrent
+        public ActionResult ShowCurrent()
+        {
+            // Added 11/4/2021 td
+            int intCurrentIndex = Models.Background.CurrentIndex_RunChecks();
+            if (intCurrentIndex == 0)
+            {
+                // Added 11/4/2021 td
+                intCurrentIndex = ciLayoutPrintLib.BackImageExamples.CurrentIndex;
+                Models.Background.CurrentlySelectedBackIndex = intCurrentIndex;
+            }
+
+            var backgrounds_by_id_list = mod_backgrounds.Where(s => s.Index == intCurrentIndex);
+            var background_by_id_onlyone = backgrounds_by_id_list.FirstOrDefault();
+            return (ViewResult)View(background_by_id_onlyone);
+
+        }
+
+
+        // GET: Background/Create
         public ActionResult Create()
         {
             const bool c_boolSpecifyViewName = false;    //Added 5/28/2019 td
@@ -105,7 +159,7 @@ namespace ciBadgeForWeb.Controllers
             return (ViewResult)View();   //A ViewResult, i.e. a webpage,  is the most popular type of ActionResult !!
         }
 
-        // GET: Recipient/Select/5
+        // GET: Background/Select/5
         public ActionResult Select(int id)
         {
             var backgrounds_by_id_list = mod_backgrounds.Where(s => s.Index == id);
@@ -114,11 +168,12 @@ namespace ciBadgeForWeb.Controllers
             ciLayoutPrintLib.BackImageExamples.CurrentIndex = id;
             Models.Background.CurrentlySelectedBackIndex = id;  //Added 11/2/2021 Thomas Downes 
 
-            return RedirectToAction("Index", "LayoutText1");
+            //return RedirectToAction("Index", "LayoutText1");
+            return RedirectToAction("ShowCurrent", "Background");
 
         }
 
-        // GET: Recipient/Delete/5
+        // GET: Background/Delete/5
         public ActionResult Delete(int id)
         {
             var backgrounds_by_id_list = mod_backgrounds.Where(s => s.Index == id);
@@ -132,7 +187,7 @@ namespace ciBadgeForWeb.Controllers
 
         }
 
-        // POST: Recipient/Edit/5
+        // POST: Background/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -218,15 +273,30 @@ namespace ciBadgeForWeb.Controllers
                         System.Drawing.Image myImg = System.Drawing.Image.FromFile(path);
                         //(new ciLayoutPrintLib.BackImageExamples())
 
+                        //Added 11/4/2021 thomas downes
+                        //
+                        //  A couple of calls to methods that aren't written yet as of 11/4/2021.
+                        //  The idea is to go from the UploadBack page to the ShowCurrent page,
+                        //  with the just-uploaded Background displayed as the current badge-layout
+                        //  background.  ---11/4/2021 td
+                        //
+                        int intNewIndex = 
+                           Controllers.BackgroundController.AddNewBackgroundObject(path);
+                        Controllers.BackgroundController.SkipRefresh = true;
+                        Models.Background.SetCurrentIndex(intNewIndex);
+
                     }
                 }
             }
+            
             //return View();
-            return Redirect("~/LayoutText1/Index");
+            //----return Redirect("~/LayoutText1/Index");
+            return Redirect("~/Background/ShowCurrent");
+
         }
 
 
-        public List<Models.Background> RefreshBackgroundList()
+        public static List<Models.Background> RefreshBackgroundList()
         {
             //
             //Added 5/10/2020 thomas downes 
@@ -302,9 +372,22 @@ namespace ciBadgeForWeb.Controllers
 
             }
 
-            return list_output; 
+            return list_output;
 
         }
+
+
+        public static int GetHighestIndex()
+        {
+            //
+            // Added 11/4/2021 thomas downes
+            //
+            if (mod_backgrounds.Count == 0) RefreshBackgroundList();
+            if (mod_backgrounds.Count == 0) throw new Exception("No background images exist.");
+            return mod_backgrounds.OrderByDescending(s => s.Index).FirstOrDefault().Index;
+
+        }
+
 
 
 

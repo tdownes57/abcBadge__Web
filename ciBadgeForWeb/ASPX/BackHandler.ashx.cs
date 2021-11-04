@@ -127,16 +127,32 @@ namespace ciBadgeForWeb
             if (boolIsAnIDValueSupplied)
             {
                 int intPixelsWidth = 0;
-                int intPixelsHeight = 0; 
+                int intPixelsHeight = 0;
+                bool boolHeightSpecified = false; // Added 11/4/2021 td
+
+                // Added 11/4/2021 td
+                boolHeightSpecified = !String.IsNullOrEmpty(par_context.Request.QueryString["height"]);
 
                 //
                 // Check the desired displayed width of the background image.  
                 //
                 try
                 {
-                    intPixelsWidth = int.Parse(par_context.Request.QueryString["width"]);
-                    intPixelsHeight = (int)(intPixelsWidth /
-                        ClassProportions.LongSideToShortRatio());
+                    if (boolHeightSpecified)
+                    {
+                        // Added 11/4/2021 td 
+                        intPixelsHeight = int.Parse(par_context.Request.QueryString["height"]);
+                        intPixelsWidth = (int)(intPixelsHeight *
+                            ClassProportions.LongSideToShortRatio());
+                    }
+                    else
+                    {
+                        // Originally (pre-11/4/2021), only Width was specified.
+                        //    (Height was not specified.)  ---11/4/2021 td
+                        intPixelsWidth = int.Parse(par_context.Request.QueryString["width"]);
+                        intPixelsHeight = (int)(intPixelsWidth /
+                            ClassProportions.LongSideToShortRatio());
+                    }
                 }
                 catch
                 {
@@ -155,6 +171,7 @@ namespace ciBadgeForWeb
                 //Encapsulated 11/1/2021
                 //
                 Image image_background_output = null;
+                const bool c_allowDoublewidths = true;  // Added 11/4/2021 td
 
                 try
                 {
@@ -163,7 +180,8 @@ namespace ciBadgeForWeb
                     //
                     image_background_output = GetBackImage_ByIndexAndWidth(par_context,
                         intBackgroundImageIndex, intPixelsWidth, intPixelsHeight,
-                        ref bNoImagesAvailable);
+                        ref bNoImagesAvailable,
+                        c_allowDoublewidths);
                 }
                 catch (Exception ex_get_image)
                 {
@@ -203,7 +221,8 @@ namespace ciBadgeForWeb
             int par_intBackgroundImageIndex, 
             int par_intBackWidth_Pixels,
             int par_intBackHeight_Pixels, 
-            ref bool pref_bNoImagesAvailable)
+            ref bool pref_bNoImagesAvailable,
+            bool pbAllowDoublewidthsIfDoublesided)
         {
             //
             // Encapsulated 11/1/2021 td
@@ -223,9 +242,9 @@ namespace ciBadgeForWeb
             //+++boolPlainBackgroundImage = ("back" == par_context.Request.QueryString["id"]);
             //===bool boolNoImagesAreAvailable = false; //added 7/6/2019 td
 
-            int intPixelsWidth = 0; //Added 7/06/2019 thomas downes 
-            int intPixelsHeight = 0; //Added 11/14/2019 thomas downes
-            bool bExceptionThrown = false;  //Added 10/30/2021 thomas downes 
+            //----int intPixelsWidth = 0; //Added 7/06/2019 thomas downes 
+            //----int intPixelsHeight = 0; //Added 11/14/2019 thomas downes
+            //----bool bExceptionThrown = false;  //Added 10/30/2021 thomas downes 
 
 
             //+++if (boolPlainBackgroundImage)
@@ -237,7 +256,8 @@ namespace ciBadgeForWeb
                 //
                 //Plain Background Image 
                 //
-                objLayoutExample.WidthInPixels_Land = intPixelsWidth;
+                //----objLayoutExample.WidthInPixels_Land = intPixelsWidth;
+                objLayoutExample.WidthInPixels_Land = par_intBackWidth_Pixels; // intPixelsWidth;
 
                 if (-1 != par_intBackgroundImageIndex)
                 {
@@ -268,7 +288,7 @@ namespace ciBadgeForWeb
                 int intBackHeight_B_deprecated = objLayout_B.Height_Pixels;
 
                 // Added 10/31/2021 Thomas Downes
-                var backgrounds_by_id_list = UploadBackController.mod_backgrounds
+                var backgrounds_by_id_list = BackgroundController.mod_backgrounds
                     .Where(s => s.Index == par_intBackgroundImageIndex);
                 var background_by_id_onlyone = backgrounds_by_id_list.FirstOrDefault();
                 string strFileTitle = background_by_id_onlyone.FileName;
@@ -282,7 +302,8 @@ namespace ciBadgeForWeb
                     //   image object from the disk-IO system. 
                     image_background_output = GetBackgroundImage(par_intBackWidth_Pixels,
                           par_intBackHeight_Pixels,
-                          strPathToBackImages_B, strFileTitle);
+                          strPathToBackImages_B, strFileTitle,
+                          pbAllowDoublewidthsIfDoublesided);
                 }
                 else
                 {
@@ -312,7 +333,8 @@ namespace ciBadgeForWeb
 
         private Image GetBackgroundImage(int pintWidth, int pintHeight,
                                           string pstrPathToLikelyFolder,
-                                          string pstrFileTitle)
+                                          string pstrFileTitle,
+                                          bool pbAllowDoublewidthsIfTwoSided)
         {
             //
             // Added 11/2/2021 thomas d. 
@@ -331,7 +353,9 @@ namespace ciBadgeForWeb
 
             //Added 11/3/2021 thomas downes
             bool boolLikelyDoubleSided = ClassProportions.BackgroundIsDoubleSided(imageCreated1);
-            int intWidth_MaybeDoubleSided = (boolLikelyDoubleSided ? (pintWidth * 2) : pintWidth);
+            //---int intWidth_MaybeDoubleSided = (boolLikelyDoubleSided ? (pintWidth * 2) : pintWidth);
+            bool boolDoubleTheWidth = (boolLikelyDoubleSided && pbAllowDoublewidthsIfTwoSided);
+            int intWidth_MaybeDoubleSided = (boolDoubleTheWidth ? (pintWidth * 2) : pintWidth);
 
             //''imageCreated.Dispose()
             Image imageCreated2 = new Bitmap(imageCreated1, new Size(intWidth_MaybeDoubleSided, pintHeight));

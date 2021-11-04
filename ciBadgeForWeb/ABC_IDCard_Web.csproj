@@ -196,6 +196,7 @@
     <Compile Include="App_Start\DiskFiles.cs" />
     <Compile Include="App_Start\DiskFolders.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\Guid6.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="ASPX\BackHandler.ashx.cs">
       <DependentUpon>BackHandler.ashx</DependentUpon>
@@ -246,7 +247,7 @@
     <Compile Include="Controllers\Steps1and2Controller.cs" />
     <Compile Include="Controllers\TestingParamsController.cs" />
     <Compile Include="Controllers\TrackPrintsController.cs" />
-    <Compile Include="Controllers\UploadBackController.cs" />
+    <Compile Include="Controllers\BackgroundController.cs" />
     <Compile Include="Controllers\ValuesController1.cs" />
     <Compile Include="Controllers\XmlCacheController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1192,15 +1193,15 @@
     <Content Include="ASPX\Step4Handler_Old.ashx" />
     <Content Include="Views\LayoutText1\Index.cshtml" />
     <Content Include="Views\LayoutText2\Index.cshtml" />
-    <Content Include="Views\UploadBack\Index.cshtml" />
+    <Content Include="Views\UploadBack\Deprecated\Index.cshtml" />
     <Content Include="Views\CILayoutLists\Index.cshtml" />
     <Content Include="Views\CILayoutLists\CILayoutText.cshtml" />
     <Content Include="Views\CILayoutLists\CILayoutPicture.cshtml" />
     <Content Include="Views\LayoutText2\ToolTips.cshtml" />
     <Content Include="Views\LayoutText99\Index.cshtml" />
-    <Content Include="Views\UploadBack\ShowAll.cshtml" />
-    <Content Include="Views\UploadBack\Edit.cshtml" />
-    <Content Include="Views\UploadBack\Create.cshtml" />
+    <Content Include="Views\UploadBack\Deprecated\ShowAll.cshtml" />
+    <Content Include="Views\UploadBack\Deprecated\Edit.cshtml" />
+    <Content Include="Views\UploadBack\Deprecated\Create.cshtml" />
     <Content Include="Views\TrackPrints\Index.cshtml" />
     <Content Include="Views\LayoutText4\Index.cshtml" />
     <Content Include="Views\LayoutPic\Index.cshtml" />
@@ -1250,9 +1251,9 @@
     <Content Include="Views\Customer\DisplayTemplates\How Display Templates work.url" />
     <Content Include="Views\Fields\Edit.cshtml" />
     <Content Include="Views\Shared\_LayoutClosures.cshtml" />
-    <Content Include="Views\UploadBack\ElementCacheXML.cshtml" />
+    <Content Include="Views\UploadBack\Deprecated\ElementCacheXML.cshtml" />
     <Content Include="Views\Shared\_LayoutUpload.cshtml" />
-    <Content Include="Views\UploadBack\UploadPic.cshtml" />
+    <Content Include="Views\UploadBack\Deprecated\UploadPic.cshtml" />
     <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.6.0.min.map" />
     <Content Include="Scripts\umd\popper.min.js.map" />
@@ -1267,6 +1268,13 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\PrivacyPolicy.cshtml" />
     <Content Include="Views\Recipient\EmailBadge.cshtml" />
+    <Content Include="Views\Background\ShowCurrent.cshtml" />
+    <Content Include="Views\Background\Create.cshtml" />
+    <Content Include="Views\Background\Edit.cshtml" />
+    <Content Include="Views\Background\ElementCacheXML.cshtml" />
+    <Content Include="Views\Background\UploadBack.cshtml" />
+    <Content Include="Views\Background\ShowAll.cshtml" />
+    <Content Include="Views\Background\UploadPic.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />

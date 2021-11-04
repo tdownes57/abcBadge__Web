@@ -108,7 +108,7 @@ namespace ciBadgeForWeb
                     //Just try .......
                     //    If it's missing we should assume that a print-ready badge is being prepared. 
                     //   ------10/5/2019 td
-                    bExceptionThrown = true; 
+                    bExceptionThrown = true;
                 }
 
                 if (boolPlainBackgroundImage)
@@ -143,9 +143,10 @@ namespace ciBadgeForWeb
 
                     // Added 11/2/2021 thomas downes
                     bWereTwoPropertiesRefreshed = false; // Added 11/2/2021 thomas downes
-                    ClassElementsCache_Deprecated.Singleton.BackgroundImage_FTitle = "";
-                    ClassElementsCache_Deprecated.Singleton.BackgroundImage_Path = "";
-                    //bWereTwoPropertiesRefreshed = true; // Added 11/2/2021 thomas downes
+                    // Modified 11/4/2021 thomas downes
+                    ClassElementsCache_Deprecated.Singleton.BackgroundImage_FTitle = Models.Background.Get_FileTitle();
+                    ClassElementsCache_Deprecated.Singleton.BackgroundImage_Path = Models.Background.Get_FullPath();
+                    bWereTwoPropertiesRefreshed = true; // Modifieded 11/4/2021 thomas downes
 
                     image_badge_exampleBackgroundOnly =
                         ClassElementsCache_Deprecated.Singleton.GetBackgroundImage(intBackWidth_B, intBackHeight_B,
@@ -264,9 +265,10 @@ namespace ciBadgeForWeb
                             //
                             // Added 11/2/2021 thomas downes
                             bWereTwoPropertiesRefreshed = false; // Added 11/2/2021 thomas downes
-                            ClassElementsCache_Deprecated.Singleton.BackgroundImage_FTitle = "";
-                            ClassElementsCache_Deprecated.Singleton.BackgroundImage_Path = "";
-                            //bWereTwoPropertiesRefreshed = true; // Added 11/2/2021 thomas downes
+                            // Modified 11/4/2021 thomas downes
+                            ClassElementsCache_Deprecated.Singleton.BackgroundImage_FTitle = Models.Background.Get_FileTitle();
+                            ClassElementsCache_Deprecated.Singleton.BackgroundImage_Path = Models.Background.Get_FullPath();
+                            bWereTwoPropertiesRefreshed = true; // Modifieded 11/4/2021 thomas downes
 
                             //string strPathToBackJpg = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_BackImg_Current;
                             string strPathToBackImages = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(true);
@@ -283,7 +285,7 @@ namespace ciBadgeForWeb
                         }
 
                         // Added 10/30/2021 Thomas Downes
-                        image_badge_output = image_back; 
+                        image_badge_output = image_back;
 
                         //11-16-2019 td''mod_generate.MakeBadgeImage_ByRecipient(objLayout, 
                         //         image_back, ClassElementsCache.Singleton,
@@ -385,7 +387,7 @@ namespace ciBadgeForWeb
 
             string strPathToFolderOfPics = App_Start.DiskFolders.PathToFolderOfPics(true);
 
-            const bool c_bUseAccessSecurityCheck = true; 
+            const bool c_bUseAccessSecurityCheck = true;
             if (c_bUseAccessSecurityCheck)
             {
                 bool bAccessible = App_Start.DiskFolders.HasWritePermissionOnDir(strPathToFolderOfPics);
@@ -406,8 +408,8 @@ namespace ciBadgeForWeb
                             int par_badge_width_pixels,
                             int par_badge_height_pixels,
                             ciBadgeInterfaces.IRecipient par_recipient,
-                            LayoutExample par_objLayoutExample, 
-                            out string pout_strPathToNewFile) 
+                            LayoutExample par_objLayoutExample,
+                            out string pout_strPathToNewFile)
         {
             //
             // Added 9/17/2021 Thomas Downes
@@ -432,11 +434,11 @@ namespace ciBadgeForWeb
                                      par_objLayoutExample);
 
             //--pout_strPathToNewFile = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_QRCode(true);
-            pout_strPathToNewFile = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_TempBadges(true, 
+            pout_strPathToNewFile = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_TempBadges(true,
                 par_recipient_by_id.RecipientID);
 
             image_badge.Save(pout_strPathToNewFile, ImageFormat.Jpeg);
-            
+
             //
             // End of procedure. 
             //
@@ -503,7 +505,7 @@ namespace ciBadgeForWeb
                             ciBadgeInterfaces.IRecipient par_recipient,
                             //|| Image par_recipientPic, 
                             LayoutExample par_objLayoutExample) // , 
-                            // int par_intPixelsWidth, int par_intPixelsHeight)
+                                                                // int par_intPixelsWidth, int par_intPixelsHeight)
         {
             //
             // Encapsulated 9/15/2021 Thomas downes
@@ -535,7 +537,7 @@ namespace ciBadgeForWeb
             //
             ciBadgeGenerator.ClassMakeBadge mod_generate = new ClassMakeBadge();
             ciBadgeInterfaces.BadgeLayoutClass objBadgeLayout;   // = 
-                                                            //    new ciBadgeInterfaces.BadgeLayoutClass();
+                                                                 //    new ciBadgeInterfaces.BadgeLayoutClass();
 
             //Added 11/16/2019 td
             // 1/14/2019 td//objLayout = ciBadgeElements.ClassElementsCache.Singleton.BadgeLayout;
@@ -569,6 +571,12 @@ namespace ciBadgeForWeb
                 int intBackWidth = objBadgeLayout.Width_Pixels;
                 int intBackHeight = objBadgeLayout.Height_Pixels;
 
+                //Added 11/04/2021 td
+                bWereTwoPropertiesRefreshed = false; //Added 11/2/2021 td
+                ClassElementsCache_Deprecated.Singleton.BackgroundImage_FTitle = Models.Background.Get_FileTitle();
+                ClassElementsCache_Deprecated.Singleton.BackgroundImage_Path = Models.Background.Get_FullPath();
+                bWereTwoPropertiesRefreshed = true; // Added 11/2/2021 thomas downes
+
                 //string strBackImageFileTitle = ClassElementsCache_Deprecated.Singleton.BackgroundImage_FTitle;
                 //image_back = ClassElementsCache_Deprecated.Singleton.GetBackgroundImage(intBackWidth, intBackHeight);
                 image_back = ClassElementsCache_Deprecated.Singleton.GetBackgroundImage(intBackWidth, intBackHeight,
@@ -599,7 +607,7 @@ namespace ciBadgeForWeb
                            par_recipient_by_id,
                            par_recipient_by_id.GetPortraitImage());
 
-            return image_badge; 
+            return image_badge;
 
         }
 

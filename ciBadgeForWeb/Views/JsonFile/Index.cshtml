@@ -4,6 +4,8 @@
     ViewBag.Title = "MoveableDivImage";
     Layout = "~/Views/Shared/_LayoutClosures.cshtml";
     //---Layout = "";
+    // Added 11/4/2021 thomas downes
+    int intCurrBackIndex = ciBadgeForWeb.Models.Background.CurrentIndex_RunChecks();
 }
 
 @*<script src="//code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>*@
@@ -36,7 +38,8 @@
                                 left: @ViewBag.OffsetRightPixels ;
                                 border-width: thick;  z-index:-1;">
         @*<img src="@Url.Content("~/Images/BackExamples/ExampleBack.jpg")" width="650" height="410" />*@
-        <img src="@Url.Content("~/Images/BackExamples/ExampleBack.jpg")"
+        @*<img src="@Url.Content("~/Images/BackExamples/ExampleBack.jpg")"*@
+        <img src="~/ASPX/BackHandler.ashx?big=y&hor=y&width=400&backid=@intCurrBackIndex" 
              width="@ViewBag.LayoutWidthPixels"
              height="@ViewBag.LayoutHeightPixels" />
     </div>

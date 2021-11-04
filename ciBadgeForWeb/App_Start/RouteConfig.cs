@@ -82,9 +82,9 @@ namespace ciBadgeForWeb
             // Added 7/3/2019 thomas DOWNES
             //
             routes.MapRoute(
-               name: "UploadBack",
-                    url: "UploadBack",
-                    defaults: new { controller = "UploadBack", action = "Index" }
+               name: "Background",
+                    url: "Background",
+                    defaults: new { controller = "Background", action = "ShowCurrent" }
                 );
 
             //
@@ -93,7 +93,7 @@ namespace ciBadgeForWeb
             routes.MapRoute(
                 name: "Backgrounds",
                 url: "Backgrounds",
-                defaults: new { controller = "UploadBack", action = "ShowAll" }
+                defaults: new { controller = "Background", action = "ShowAll" }
             );
 
             //

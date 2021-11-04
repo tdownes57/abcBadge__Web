@@ -1,0 +1,102 @@
+﻿@model ciBadgeForWeb.Models.Background
+
+@{
+    ViewBag.Title = "ShowCurrent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Show Current Background</h2>
+
+<div>
+    <h4>Background</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @*<dt>
+            @Html.DisplayNameFor(model => model.CurrentlySelectedBackIndex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrentlySelectedBackIndex)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Index)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Index)
+        </dd>
+
+
+        <dt>
+            Background
+        </dt>
+        <dd>
+            <img src="~/ASPX/BackHandler.ashx?big=y&hor=y&width=400&backid=@Model.Index" />
+        </dd>
+
+
+
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.Guid6Chars)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Guid6Chars)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FileName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FileName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.FullPathToFile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullPathToFile)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UploadDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UploadDate)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.IsSelectedForBadge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsSelectedForBadge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsSuppressedFromSelection)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsSuppressedFromSelection)
+        </dd>*@
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

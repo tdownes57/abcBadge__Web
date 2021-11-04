@@ -58,15 +58,16 @@
 
                     </p>
                 }
-                <p>
-                    Using the Step4Handler.ashx to generate the background, with a width of 400 pixels.<br />
-                    @*<img src="~/ASPX/Step4Handler.ashx?id=back&big=y&hor=y&width=400&backid=@item.Index"
-                        width="400" />*@
-                    [[img src="~/ASPX/BackHandler.ashx?big=y&hor=y&width=400&backid=@item.Index"
-                    width="400" ]] <br />
-                    <img src="~/ASPX/BackHandler.ashx?big=y&hor=y&width=400&backid=@item.Index"
-                         width="400" />
-                </p>
+            <p>
+                Using the Step4Handler.ashx to generate the background, with a width of 400 pixels.<br />
+                @*<img src="~/ASPX/Step4Handler.ashx?id=back&big=y&hor=y&width=400&backid=@item.Index"
+        width="400" />*@
+                @*[[img src="~/ASPX/BackHandler.ashx?big=y&hor=y&width=400&backid=@item.Index"
+                width="400" ]] <br />*@
+                @*<img src="~/ASPX/BackHandler.ashx?big=y&hor=y&width=400&backid=@item.Index"
+                     width="400" />*@
+                <img src="~/ASPX/BackHandler.ashx?big=y&hor=y&width=400&backid=@item.Index" />
+            </p>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Index)
