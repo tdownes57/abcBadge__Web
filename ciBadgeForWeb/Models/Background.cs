@@ -18,6 +18,13 @@ namespace ciBadgeForWeb.Models
         }
 
 
+        public static void SetCurrentIndex(int par_newIndex)
+        {
+            // Added 11/4/2021 thomas downes
+            CurrentlySelectedBackIndex = par_newIndex;
+        }
+
+
         //Added 11/2/2021 thomas downes
         public static int UsedIndexByConfigGuid6(string par_guid6Config)
         {

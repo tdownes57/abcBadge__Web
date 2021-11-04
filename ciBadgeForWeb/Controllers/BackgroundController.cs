@@ -41,6 +41,7 @@ namespace ciBadgeForWeb.Controllers
         //        new Models.Background(){ Index = 3, FileName = "..", Description = "..", BackgroundImage = BackImageExamples.Item(3) } };
         public static IList<Models.Background> mod_backgrounds = new List<Models.Background>();
 
+        public static bool SkipRefresh = false;  // Added 11/4/2021 thomas downes
 
         public static string Get_BackgroundFileTitle(string pstrConfig_Guid6 = "")
         {
@@ -115,7 +116,8 @@ namespace ciBadgeForWeb.Controllers
             //Refresh the background images, since someone may have just uploaded a new
             //   background image.  -----5/10/2020 thomas downes   
             //
-            mod_backgrounds = RefreshBackgroundList();
+            //====mod_backgrounds = RefreshBackgroundList();
+            if (!BackgroundController.SkipRefresh) mod_backgrounds = RefreshBackgroundList();
 
             return View(mod_backgrounds);
 
@@ -281,7 +283,7 @@ namespace ciBadgeForWeb.Controllers
                         //  background.  ---11/4/2021 td
                         //
                         int intNewIndex = 
-                           Controllers.BackgroundController.AddNewBackgroundObject(path);
+                           Controllers.BackgroundController.AddNewBackgroundObject_ByPath(path);
                         Controllers.BackgroundController.SkipRefresh = true;
                         Models.Background.SetCurrentIndex(intNewIndex);
 
@@ -388,6 +390,28 @@ namespace ciBadgeForWeb.Controllers
 
         }
 
+
+        public static int AddNewBackgroundObject_ByPath(string par_pathToUploadedBack)
+        {
+            //
+            // Added 11/4/2021 thomas downes
+            //
+            System.IO.FileInfo obj_file_Info = new System.IO.FileInfo(par_pathToUploadedBack);
+
+            var objNewBack = new Models.Background()
+            {
+                Index = (1 + GetHighestIndex()),
+                BackgroundImage = null,
+                Description = "A beautiful background!",
+                FileName = obj_file_Info.Name,
+                FullPathToFile = obj_file_Info.FullName,
+                UploadDate = obj_file_Info.CreationTime
+            };
+
+            mod_backgrounds.Add(objNewBack);
+            return objNewBack.Index;  
+
+        }
 
 
 
