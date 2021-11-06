@@ -147,16 +147,21 @@
         <img id="blah" src="#" alt="your image" />
     </form>*@
 
-@using (Html.BeginForm("FileUpload", "Background", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@*@using (Html.BeginForm("FileUpload", "UploadBack", FormMethod.Post, new { enctype = "multipart/form-data" }))*@
+@*@using (Html.BeginForm("FileUpload", "Background", FormMethod.Post, new { enctype = "multipart/form-data" }))*@
+@*@using (Html.BeginForm("FileUpload", "UploadBack", FormMethod.Post, new { enctype = "multipart/form-data" }))*@
+
+@*@using (Html.BeginForm("FileUpload", "UploadBack", FormMethod.Post, new { enctype = "multipart/form-data" }))*@
+@using (Html.BeginForm("FileUpload", "", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.ValidationSummary();
     @*<ol>
-        <li class="lifile">
-            <input type="file" id="fileToUpload" name="file" />
-            <span class="field-validation-error" id="spanfile"></span>
-            <img id="blah_preview" src="#" alt="your image" />
-        </li>
-    </ol>*@
+            <li class="lifile">
+                <input type="file" id="fileToUpload" name="file" />
+                <span class="field-validation-error" id="spanfile"></span>
+                <img id="blah_preview" src="#" alt="your image" />
+            </li>
+        </ol>*@
 
     @*<input type='file' id="imgInp" />
         <img id="blah" src="#" alt="your image" />*@

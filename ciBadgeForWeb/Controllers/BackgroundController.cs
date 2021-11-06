@@ -293,7 +293,8 @@ namespace ciBadgeForWeb.Controllers
             
             //return View();
             //----return Redirect("~/LayoutText1/Index");
-            return Redirect("~/Background/ShowCurrent");
+            //+++return Redirect("~/Background/ShowCurrent");
+            return ShowCurrent();
 
         }
 
@@ -384,8 +385,15 @@ namespace ciBadgeForWeb.Controllers
             //
             // Added 11/4/2021 thomas downes
             //
-            if (mod_backgrounds.Count == 0) RefreshBackgroundList();
-            if (mod_backgrounds.Count == 0) throw new Exception("No background images exist.");
+            if (mod_backgrounds.Count == 0)
+            {
+                mod_backgrounds = RefreshBackgroundList();
+
+                // Double-check that our loading work suceeded as expected. 
+                //   ---11/5/2021 td 
+                if (mod_backgrounds.Count == 0) 
+                    throw new Exception("No background images exist.");
+            }
             return mod_backgrounds.OrderByDescending(s => s.Index).FirstOrDefault().Index;
 
         }

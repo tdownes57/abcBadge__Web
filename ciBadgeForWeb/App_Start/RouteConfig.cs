@@ -81,15 +81,35 @@ namespace ciBadgeForWeb
             //
             // Added 7/3/2019 thomas DOWNES
             //
+            //_____routes.MapRoute(
+            //_____     name: "UploadBack",
+            //_____     url: "UploadBack",
+            //_____     defaults: new { controller = "UploadBack", action = "Index" }
+            //_____ );
+            //routes.MapRoute(
+            //   name: "Background",
+            //        url: "Background",
+            //        defaults: new { controller = "Background", action = "ShowCurrent" }
+            //    );
+            //routes.MapRoute(
+            //   name: "UploadBack",
+            //        url: "UploadBack",
+            //        defaults: new { controller = "Background", action = "ShowCurrent" }
+            //    );
             routes.MapRoute(
                name: "Background",
                     url: "Background",
-                    defaults: new { controller = "Background", action = "ShowCurrent" }
+                    defaults: new { controller = "Background", action = "UploadBack" }
                 );
 
             //
             // Added 7/7/2019 thomas DOWNES
             //
+            //_____routes.MapRoute(
+            //_____     name: "Backgrounds",
+            //_____     url: "Backgrounds",
+            //_____     defaults: new { controller = "UploadBack", action = "ShowAll" }
+            //_____); 
             routes.MapRoute(
                 name: "Backgrounds",
                 url: "Backgrounds",
