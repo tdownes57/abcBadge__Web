@@ -25,6 +25,13 @@ namespace ciBadgeForWeb.Models
         }
 
 
+        public static bool IsSelected(int par_newIndex)
+        {
+            // Added 11/07/2021 thomas downes
+            return (par_newIndex == CurrentlySelectedBackIndex);
+        }
+
+
         //Added 11/2/2021 thomas downes
         public static int UsedIndexByConfigGuid6(string par_guid6Config)
         {

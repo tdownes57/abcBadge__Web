@@ -77,10 +77,10 @@
         @Html.DisplayFor(modelItem => item.IsSuppressedFromSelection)
     </td>
     <td>
-        @Html.ActionLink("Select Background", "Select", new { id = item.Index })
-        @Html.ActionLink("Edit", "Edit", new { id = item.Index })
-        @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ })*@ |
-        @Html.ActionLink("Delete", "Delete", new { id = item.Index })
+        @Html.ActionLink("Select Background", "Select", new { id = item.Index }) &#160; &#160;
+        @Html.ActionLink("Edit", "Edit", new { id = item.Index })  &#160; &#160;
+        @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) &#160; &#160;  *@
+        @Html.ActionLink("Delete Background", "DeleteTentative", new { id = item.Index })
     </td>
     <td>
         @*<img src="~/ASPX/BackHandler.ashx?big=y&hor=y&width=400&backid=@item.Index" />*@

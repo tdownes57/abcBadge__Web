@@ -175,19 +175,72 @@ namespace ciBadgeForWeb.Controllers
 
         }
 
-        // GET: Background/Delete/5
-        public ActionResult Delete(int id)
+        // GET: Background/DeleteTentative/5
+        public ActionResult DeleteTentative(int id)
         {
+            //
+            // Added 11/7/2021 Thomas Downes  
+            //
             var backgrounds_by_id_list = mod_backgrounds.Where(s => s.Index == id);
             var background_by_id_onlyone = backgrounds_by_id_list.FirstOrDefault();
-            mod_backgrounds.Remove(background_by_id_onlyone);
 
-            //System.Threading.Thread.Sleep(1000);
+            const bool c_bDeleteWithConfirmation = false; // true;
+            if (c_bDeleteWithConfirmation)
+            {
+                // Added 11/7/2021 Thomas Downes  
+                System.IO.File.Delete(background_by_id_onlyone.FullPathToFile);
+                mod_backgrounds.Remove(background_by_id_onlyone);
+                //System.Threading.Thread.Sleep(1000);
+                //return (ViewResult)View("ShowAll");
+                return RedirectToAction("ShowAll");
 
-            //return (ViewResult)View("ShowAll");
-            return RedirectToAction("ShowAll");
+            }
+            else
+            {
+                //
+                // Added 11/7/2021 thomas downes
+                //
+                //return View("Delete");
+                return (ViewResult)View(background_by_id_onlyone);
+            }
+
 
         }
+
+
+
+
+
+        // GET: Background/DeleteConfirmed/5
+        public ActionResult DeleteConfirmed(int id)
+        {
+            //
+            // Added 11/7/2021 Thomas Downes  
+            //
+            var backgrounds_by_id_list = mod_backgrounds.Where(s => s.Index == id);
+            var background_by_id_onlyone = backgrounds_by_id_list.FirstOrDefault();
+            int intIndexToDelete = background_by_id_onlyone.Index;  // Added 11/7/2021 Thomas  
+
+            const bool c_bDeleteImmediately = true;  // false; // true;
+            if (c_bDeleteImmediately)
+            {
+                // Added 11/7/2021 Thomas Downes  
+                System.IO.File.Delete(background_by_id_onlyone.FullPathToFile);
+                mod_backgrounds.Remove(background_by_id_onlyone);
+
+                //If the deleted background is also the selected background...
+                bool bJustDeletedWasSelected = (Models.Background.IsSelected(intIndexToDelete));
+                if (bJustDeletedWasSelected) SetIndexToHighestValue();
+
+                //System.Threading.Thread.Sleep(1000);
+                //return (ViewResult)View("ShowAll");
+                //return RedirectToAction("ShowAll");
+                return (ViewResult)View("DeleteConfirmationMsg");
+
+            }
+
+        }
+
 
         // POST: Background/Edit/5
         [HttpPost]
@@ -268,6 +321,7 @@ namespace ciBadgeForWeb.Controllers
                         catch (Exception ex_up)
                         {
                             ViewBag.Message = "File upload error, " + ex_up.Message;
+                            return Content(ViewBag.Message);
                         }
 
                         //Added 7/4/2019 thomas downes
@@ -421,6 +475,26 @@ namespace ciBadgeForWeb.Controllers
 
         }
 
+
+        public void SetCurrentIndex(int par_indexToUse)
+        {
+            //
+            // Added 11/7/2021 thomas downes
+            //
+            Models.Background.CurrentlySelectedBackIndex = par_indexToUse; 
+
+        }
+
+
+        public void SetIndexToHighestValue()
+        {
+            //
+            // Added 11/7/2021 thomas downes
+            //
+            int indexToUse = GetHighestIndex();
+            Models.Background.CurrentlySelectedBackIndex = indexToUse;
+
+        }
 
 
         //        <body>
