@@ -104,22 +104,25 @@ namespace ciBadgeForWeb.Controllers
                         // #2 10/7/2019 td//path = Path.Combine("C:\\Users\\tdown\\source\\repos\\ciLayout\\ciLayoutPrintLib\\BackExamples", fileName);
                         // #3 10/7/2019 td//path = Path.Combine(Server.MapPath("~/Images/BackExamples"), fileName);
 
-                        string path = Path.Combine(ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks, fileName);
+                        string strPathToNewImageFile_Provisional = Path.Combine(ciLayoutPrintLib.BackImageExamples.PathToFolderWithBacks, fileName);
+                        string strPathToNewImageFile_Confirmed = "";
 
                         try
                         {
-                            file.SaveAs(path);
+                            //----file.SaveAs(path);
+                            file.SaveAs(strPathToNewImageFile_Provisional);
                             ModelState.Clear();
                             ViewBag.Message = "File uploaded successfully";
                         }
                         catch (Exception ex_up)
                         {
-                            ViewBag.Message = "File upload error, " + ex_up.Message;
+                            //...ViewBag.Message = "File upload error, " + ex_up.Message;
+                            return Content("File upload error, " + ex_up.Message);
                         }
 
                         //Added 7/4/2019 thomas downes
                         //
-                        System.Drawing.Image myImg = System.Drawing.Image.FromFile(path);
+                        //+++System.Drawing.Image myImg = System.Drawing.Image.FromFile(path);
                         //(new ciLayoutPrintLib.BackImageExamples())
 
                         //Added 11/4/2021 thomas downes
@@ -129,10 +132,40 @@ namespace ciBadgeForWeb.Controllers
                         //  with the just-uploaded Background displayed as the current badge-layout
                         //  background.  ---11/4/2021 td
                         //
-                        int intNewIndex =
-                           Controllers.BackgroundController.AddNewBackgroundObject_ByPath(path);
-                        Controllers.BackgroundController.SkipRefresh = true;
-                        Models.Background.SetCurrentIndex(intNewIndex);
+                        int intWaitCounter = 0;
+                        DateTime timePrechecking = DateTime.Now;
+                        TimeSpan timePassed;  
+                        bool bSecondsHavePassed_7 = false; 
+
+                        while (!System.IO.File.Exists(strPathToNewImageFile_Provisional))
+                        {
+                            intWaitCounter++;
+                            timePassed = DateTime.Now.Subtract(timePrechecking);
+                            bSecondsHavePassed_7 = (timePassed > TimeSpan.FromSeconds(7));
+                            if (bSecondsHavePassed_7) break;
+                        }
+
+                        //Added 11/7/2021 td
+                        bool bFileIsThere = System.IO.File.Exists(strPathToNewImageFile_Provisional);
+                        if (bFileIsThere)
+                        {
+                            strPathToNewImageFile_Confirmed = strPathToNewImageFile_Provisional;
+
+                            int intNewIndex =
+                               Controllers.BackgroundController
+                               .AddNewBackgroundObject_ByPath(strPathToNewImageFile_Confirmed);
+
+                            Controllers.BackgroundController.SkipRefresh = true;
+                            Models.Background.SetCurrentIndex(intNewIndex);  
+
+                        }
+                        else
+                        {
+                            // Added 11/7/2021 thomas downes 
+
+                        }
+
+
 
                     }
                 }

@@ -272,7 +272,7 @@ namespace ciBadgeForWeb.Controllers
 
                         //Added 7/4/2019 thomas downes
                         //
-                        System.Drawing.Image myImg = System.Drawing.Image.FromFile(path);
+                        //-----System.Drawing.Image myImg = System.Drawing.Image.FromFile(path);
                         //(new ciLayoutPrintLib.BackImageExamples())
 
                         //Added 11/4/2021 thomas downes
