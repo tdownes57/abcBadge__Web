@@ -248,6 +248,7 @@
     <Compile Include="Controllers\TestingParamsController.cs" />
     <Compile Include="Controllers\TrackPrintsController.cs" />
     <Compile Include="Controllers\BackgroundController.cs" />
+    <Compile Include="Controllers\UploadBackController.cs" />
     <Compile Include="Controllers\ValuesController1.cs" />
     <Compile Include="Controllers\XmlCacheController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1193,7 +1194,7 @@
     <Content Include="ASPX\Step4Handler_Old.ashx" />
     <Content Include="Views\LayoutText1\Index.cshtml" />
     <Content Include="Views\LayoutText2\Index.cshtml" />
-    <Content Include="Views\UploadBack\Deprecated\Index.cshtml" />
+    <Content Include="Views\UploadBack\Index.cshtml" />
     <Content Include="Views\CILayoutLists\Index.cshtml" />
     <Content Include="Views\CILayoutLists\CILayoutText.cshtml" />
     <Content Include="Views\CILayoutLists\CILayoutPicture.cshtml" />
