@@ -5,7 +5,8 @@
 //using System.Text.JSON;  // Added 3/20/2020 thomas downes
 using Newtonsoft.Json;   // Added 3/20/2020 thomas downes
 using ciBadgeElements;  // Added 3/20/2020 thomas downes  
-using System.Drawing;  // Added 4/22/2020 thomas downese 
+using System.Drawing;  // Added 4/22/2020 thomas downes
+using System.Collections.Generic;  // Added 11/8/2021 thomas downes 
 
 namespace ciBadgeForWeb.Models
 {
@@ -34,6 +35,9 @@ namespace ciBadgeForWeb.Models
         //    //   ---  So, see Models/MoveableElementDivs.cs.  -----4/2/2020 thomas d. 
         //    //   ---  So, see Models/MoveableDivImage.cs.  -----4/2/2020 thomas d. 
         //
+        //====private Dictionary<int, string> mod_listMessages = new Dictionary<int, string>();
+        public string[] BugMessages = new string[12 + 1];
+
         // Here below are the Div/Divs Element coordinates.  
         //
         //public string EL1_Left { get; set; }
@@ -156,7 +160,7 @@ namespace ciBadgeForWeb.Models
         //
         // Initialize. ---3/20/2020 thomas downes 
         //
-        public MoveableDivImage(ciBadgeElements.ClassElementsCache_Deprecated par_cache, 
+        public MoveableDivImage(ciBadgeElements.ClassElementsCache_Deprecated par_cache,
                                   System.Drawing.Point par_offsetPoint)
         {
             //---April 22, 2020---public MoveableDivImage(ciBadgeElements.ClassElementsCache_Deprecated par_cache)
@@ -194,7 +198,7 @@ namespace ciBadgeForWeb.Models
             {
                 bElementHasField = true;  //Added 4/20/2020 thomas d.  
                 //Added 4/20/2020 thomas d.  
-                bElementIsVisible = each_element.IsDisplayedOnBadge_Visibly(); 
+                bElementIsVisible = each_element.IsDisplayedOnBadge_Visibly();
 
                 //---if (each_element.IsDisplayedOnBadge_Visibly())
                 if (bElementIsVisible)
@@ -223,7 +227,7 @@ namespace ciBadgeForWeb.Models
                     //Added 4/20/2020 thomas downes
                     this.MoveDisplayed[indexElement] = bElementIsVisible; // each_element.IsDisplayedOnBadge_Visibly();
                     this.MoveHasField[indexElement] = bElementHasField;  // true;  // each_element.IsDisplayedOnBadge_Visibly();
-                    this.MoveFieldName[indexElement] = each_element.FieldInfo.FieldLabelCaption ;
+                    this.MoveFieldName[indexElement] = each_element.FieldInfo.FieldLabelCaption;
 
                     //Added 5/3/2020 thomas downes 
                     this.ImageForElement[indexElement] = objImageGen.ElementFieldToImage(each_element, par_cache.BadgeLayout);
@@ -772,12 +776,22 @@ namespace ciBadgeForWeb.Models
 
         }
 
+
         public string GetImageString_Base64(int par_index)
         {
+            //=====public string GetImageString_Base64(int par_index, ref string par_strMessage)
+            //----public string GetImageString_Base64(int par_index)
             //
             //Added 5/3/2 020 thomas downes  
             //
             Image imageByIndex = this.ImageForElement[par_index];
+
+            //Added 11/8/2021 Thomas Downes
+            //string strMessage = "";
+            if (imageByIndex == null) BugMessages[par_index] = "Image is null.";
+            else if (50 > imageByIndex.Size.Width) BugMessages[par_index] = "Image is less than 50-in-width.";
+            else if (50 > imageByIndex.Size.Height) BugMessages[par_index] = "Image is less than 50-in-height.";
+            else BugMessages[par_index] = "";
 
             //
             //  https://stackoverflow.com/questions/8499633/how-to-display-base64-images-in-html
@@ -785,12 +799,14 @@ namespace ciBadgeForWeb.Models
             const string SRC_PREFIX_FOR_BASE64_1 = "data:image/png;base64, ";
             const string SRC_PREFIX_FOR_BASE64_2 = "data: image / jpeg; base64,";
 
-            return (SRC_PREFIX_FOR_BASE64_2 + GetBase64(imageByIndex));
+            //---return (SRC_PREFIX_FOR_BASE64_2 + GetBase64(imageByIndex));
+            return (SRC_PREFIX_FOR_BASE64_2 + GetBase64String_FromImage(imageByIndex));
 
         }
 
-        private string GetBase64(Image par_image)
+        private string GetBase64String_FromImage(Image par_image)
         {
+            //---private string GetBase64(Image par_image)
             //
             // How to convert image to byte array
             //  https://stackoverflow.com/questions/3801275/how-to-convert-image-to-byte-array
