@@ -38,6 +38,9 @@ namespace ciBadgeForWeb.Models
         //====private Dictionary<int, string> mod_listMessages = new Dictionary<int, string>();
         public string[] BugMessages = new string[12 + 1];
 
+        //Added 11/9/2021 thomas downes
+        public int CurrentIndexForDropbox = 0;
+
         // Here below are the Div/Divs Element coordinates.  
         //
         //public string EL1_Left { get; set; }
@@ -789,8 +792,8 @@ namespace ciBadgeForWeb.Models
             //Added 11/8/2021 Thomas Downes
             //string strMessage = "";
             if (imageByIndex == null) BugMessages[par_index] = "Image is null.";
-            else if (50 > imageByIndex.Size.Width) BugMessages[par_index] = "Image is less than 50-in-width.";
-            else if (50 > imageByIndex.Size.Height) BugMessages[par_index] = "Image is less than 50-in-height.";
+            else if (25 > imageByIndex.Size.Width) BugMessages[par_index] = "Image is less than 25-in-width.";
+            else if (25 > imageByIndex.Size.Height) BugMessages[par_index] = "Image is less than 25-in-height.";
             else BugMessages[par_index] = "";
 
             //

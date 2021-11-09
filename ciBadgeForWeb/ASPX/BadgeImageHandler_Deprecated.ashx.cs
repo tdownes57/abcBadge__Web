@@ -12,7 +12,7 @@ namespace ciBadgeForWeb.ASPX
     /// <summary>
     /// BadgeImageHandler provides the image of the created & saved badge, for the selected recipient. 
     /// </summary>
-    public class BadgeImageHandler : IHttpHandler
+    public class BadgeImageHandler_Deprecated : IHttpHandler
     {
 
         public void ProcessRequest(HttpContext context)
