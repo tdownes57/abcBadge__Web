@@ -12,7 +12,9 @@
 
 }
 
-<h2>ShowAll</h2>
+<h1>All Background Images Which Have Been Uploaded</h1>
+<h2>(A.K.A. Select a Background Image if it's been uploaded already.)</h2>
+<h3>Please click the "Select Background" action-link, in order to apply the desired image to the current Badge Layout.</h3>
 
 <p>
     @Html.ActionLink("Create New / Upload Background Image", "Create")
@@ -36,7 +38,7 @@
             @*<p>Show checkbox for hiding/preventing selection as badge-layout background.</p>*@
             @Html.DisplayNameFor(model => model.IsSuppressedFromSelection)
         </th>
-        <th >
+        <th>
             Action Links
         </th>
         <th width="415">
@@ -46,47 +48,47 @@
 
     @foreach (var item in Model)
     {
-<tr>
-    <!--<td>
-        <p>
-            @* Using the Step4Handler.ashx to generate the background, with a width of 400 pixels.<br />*@
-            @*<img src="~/ASPX/Step4Handler.ashx?id=back&big=y&hor=y&width=400&backid=@item.Index"
-                width="400" />*@
-            @*[[img src="~/ASPX/BackHandler.ashx?big=y&hor=y&width=400&backid=@item.Index"
-                width="400" ]] <br />*@
-            @*<img src="~/ASPX/BackHandler.ashx?big=y&hor=y&width=400&backid=@item.Index"
-                width="400" />*@
-            <!--<img src="~/ASPX/BackHandler.ashx?big=y&hor=y&width=400&backid=@item.Index" />
-        </p>
-    </td>-->
-    <td>
-        @Html.DisplayFor(modelItem => item.Index)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.FileName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Description)
-    </td>
-    <td>
-        @*<p>Show checkbox for selection as badge-layout background.</p>*@
-        @Html.DisplayFor(modelItem => item.IsSelectedForBadge)
-    </td>
-    <td>
-        @*<p>Show checkbox for hiding/preventing selection as badge-layout background.</p>*@
-        @Html.DisplayFor(modelItem => item.IsSuppressedFromSelection)
-    </td>
-    <td>
-        @Html.ActionLink("Select Background", "Select", new { id = item.Index }) &#160; &#160;
-        @Html.ActionLink("Edit", "Edit", new { id = item.Index })  &#160; &#160;
-        @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) &#160; &#160;  *@
-        @Html.ActionLink("Delete Background", "DeleteTentative", new { id = item.Index })
-    </td>
-    <td>
-        @*<img src="~/ASPX/BackHandler.ashx?big=y&hor=y&width=400&backid=@item.Index" />*@
-        <img src="~/ASPX/BackHandler.ashx?big=y&hor=y&height=300&backid=@item.Index" />
-    </td>
-</tr>
+        <tr>
+            <!--<td>
+                <p>
+                    @* Using the Step4Handler.ashx to generate the background, with a width of 400 pixels.<br />*@
+                    @*<img src="~/ASPX/Step4Handler.ashx?id=back&big=y&hor=y&width=400&backid=@item.Index"
+                        width="400" />*@
+                    @*[[img src="~/ASPX/BackHandler.ashx?big=y&hor=y&width=400&backid=@item.Index"
+                        width="400" ]] <br />*@
+                    @*<img src="~/ASPX/BackHandler.ashx?big=y&hor=y&width=400&backid=@item.Index"
+                        width="400" />*@
+                    <!--<img src="~/ASPX/BackHandler.ashx?big=y&hor=y&width=400&backid=@item.Index" />
+                </p>
+            </td>-->
+            <td>
+                @Html.DisplayFor(modelItem => item.Index)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FileName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @*<p>Show checkbox for selection as badge-layout background.</p>*@
+                @Html.DisplayFor(modelItem => item.IsSelectedForBadge)
+            </td>
+            <td>
+                @*<p>Show checkbox for hiding/preventing selection as badge-layout background.</p>*@
+                @Html.DisplayFor(modelItem => item.IsSuppressedFromSelection)
+            </td>
+            <td>
+                @Html.ActionLink("Select Background", "Select", new { id = item.Index }) &#160; &#160;
+                @Html.ActionLink("Edit", "Edit", new { id = item.Index })  &#160; &#160;
+                @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) &#160; &#160;  *@
+                @Html.ActionLink("Delete Background", "DeleteTentative", new { id = item.Index })
+            </td>
+            <td>
+                @*<img src="~/ASPX/BackHandler.ashx?big=y&hor=y&width=400&backid=@item.Index" />*@
+                <img src="~/ASPX/BackHandler.ashx?big=y&hor=y&height=300&backid=@item.Index" />
+            </td>
+        </tr>
     }
 
 </table>

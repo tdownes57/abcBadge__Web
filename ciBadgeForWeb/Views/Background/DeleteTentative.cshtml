@@ -10,49 +10,53 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-<div class="form-horizontal">
-    <h1>Do you want to delete the following Background?</h1>
-    <hr />
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.FileName, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.FileName, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.FileName, "", new { @class = "text-danger" })
-            <br />    
-            <img src="~/ASPX/BackHandler.ashx?big=y&hor=y&height=400&backid=@Model.Index" />
+    if (Model != null)
+    {
+        <div class="form-horizontal">
+            <h1>Do you want to delete the following Background?</h1>
+            <hr />
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.FileName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.FileName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FileName, "", new { @class = "text-danger" })
+                    <br />
+                    <img src="~/ASPX/BackHandler.ashx?big=y&hor=y&height=400&backid=@Model.Index" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.UploadDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.UploadDate, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.UploadDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="DeleteConfirmed" class="btn btn-default" />
+                </div>
+            </div>
+
         </div>
-    </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.UploadDate, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.UploadDate, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.UploadDate, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="DeleteConfirmed" class="btn btn-default" />
-        </div>
-    </div>
-</div>
-
+    }
 }
 
 <div>
     @*@Html.ActionLink("Back to List", "Index")*@
-    @Html.ActionLink("Back to List", "ShowAll")
+    @*@Html.ActionLink("Back to List", "ShowAll")*@
+    @Html.ActionLink("Show all background images which are still available for the Badge.", "ShowAll")
 </div>
+

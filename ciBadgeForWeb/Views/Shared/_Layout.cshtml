@@ -1,8 +1,8 @@
-﻿@{ 
+﻿@{
     //Added 2/22/2020 thomas downes
     string strRecipTypeName;  // Added 2/22/2020 td
     ciBadgeForWeb.Controllers.PersonalityController.SelectPersonality_Initialize();
-    strRecipTypeName = ciBadgeForWeb.Controllers.PersonalityController.CurrentPersonality.ConfigNameBrief; 
+    strRecipTypeName = ciBadgeForWeb.Controllers.PersonalityController.CurrentPersonality.ConfigNameBrief;
 }
 
 <!DOCTYPE html>
@@ -14,13 +14,13 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @*@Scripts.Render("~/Scripts/Closures/ClickClosure.js")
-      @Scripts.Render("~/Scripts/Closures/DragClosure.js")*@
+        @Scripts.Render("~/Scripts/Closures/DragClosure.js")*@
 
     @*//
-    //   https://stackoverflow.com/questions/45105931/bootstrap-not-working-with-asp-net-mvc-bundling
-    //*@
+        //   https://stackoverflow.com/questions/45105931/bootstrap-not-working-with-asp-net-mvc-bundling
+        //*@
 
-   @* @Styles.Render("~/Content/bootstrapcss")*@
+    @* @Styles.Render("~/Content/bootstrapcss")*@
 
     <style>
 
@@ -53,60 +53,62 @@
                 @if (Session["UserName"] != null || Session["UserID"] != null)
                 {
                     @*<button class="btn btn-primary dropdown-toggle" type="button" >
-                        Test for Clif
-                    </button>*@
+                            Test for Clif
+                        </button>*@
 
-                <ul class="nav navbar-nav">
-                    @* <li>@Html.ActionLink("Home", "Index", "Home", new { @class = "btn btn-primary dropdown-toggle" })</li>*@
-                    <li>
-                        <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/Home'">Home</button>
-                    </li>
+                    <ul class="nav navbar-nav">
+                        @* <li>@Html.ActionLink("Home", "Index", "Home", new { @class = "btn btn-primary dropdown-toggle" })</li>*@
+                        <li>
+                            <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/Home'">Home</button>
+                        </li>
 
-                    @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
+                        @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
 
-                    @* <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>*@
-                    <li>
-                        @*<a class="btn btn-primary" href="google.com">Testing</a>*@
-                        @*                            <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = 'https://code-boxx.com'">Testing</button>*@
-                        <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/Home/Contact'">Contact Me</button>
-                    </li>
+                        @* <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>*@
+                        <li>
+                            @*<a class="btn btn-primary" href="google.com">Testing</a>*@
+                            @*                            <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = 'https://code-boxx.com'">Testing</button>*@
+                            <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/Home/Contact'">Contact Me</button>
+                        </li>
 
-                    @* <li>@Html.ActionLink("Customers", "Index", "Customer")</li>*@
-                    <li>
-                        <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/Customer/Index'">Customers</button>
-                    </li>
+                        @* <li>@Html.ActionLink("Customers", "Index", "Customer")</li>*@
+                        <li>
+                            <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/Customer/Index'">Customers</button>
+                        </li>
 
-                    @* <li>@Html.ActionLink("Personalities", "Index", "Personality")</li>*@
-                    <li>
-                        <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/Personality/Index'">Personalities</button>
-                    </li>
+                        @* <li>@Html.ActionLink("Personalities", "Index", "Personality")</li>*@
+                        <li>
+                            <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/Personality/Index'">Personalities</button>
+                        </li>
 
-                    @* <li>@Html.ActionLink("Badge Layout", "Index", "LayoutText1")</li>*@
-                <li>
-                    @* <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/LayoutText1/Index'">Badge Layout</button>*@
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                        Badge Layout
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Modify Badge Layout", "Index", "LayoutText1")</li>
-                        @*<li>@Html.ActionLink("Select Background", "ChooseWhich", "UploadBack")</li>*@
-                        @*<li>@Html.ActionLink("Select Background", "ShowAll", "UploadBack")</li>*@
-                        <li>@Html.ActionLink("Show Current Background", "ShowCurrent", "Background")</li>
-                        <li>@Html.ActionLink("Select Background", "ShowAll", "Background")</li>
-                        @*<li>@Html.ActionLink("Upload Background", "UploadBack", "Background")</li>*@
-                        <li>@Html.ActionLink("Upload Background", "Index", "UploadBack")</li>
-                    </ul>
-                </li>
+                        @* <li>@Html.ActionLink("Badge Layout", "Index", "LayoutText1")</li>*@
+                        <li>
+                            @* <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/LayoutText1/Index'">Badge Layout</button>*@
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                                Badge Layout
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Modify Badge Layout", "Index", "LayoutText1")</li>
+                                @*<li>@Html.ActionLink("Upload Background", "UploadBack", "Background")</li>*@
+                                <li>@Html.ActionLink("Upload Background Image", "Index", "UploadBack")</li>
+                                @*<li>@Html.ActionLink("Select Background", "ChooseWhich", "UploadBack")</li>*@
+                                @*<li>@Html.ActionLink("Select Background", "ShowAll", "UploadBack")</li>*@
+                                <li>@Html.ActionLink("Show Current Background Image", "ShowCurrent", "Background")</li>
+                                @*<li>@Html.ActionLink("Select Background", "ShowAll", "Background")</li>*@
+                                <li>@Html.ActionLink("Show All Uploaded Background Images", "ShowAll", "Background")</li>
+                                <li>@Html.ActionLink("(a.k.a. Select a Background Image If Uploaded)", "ShowAll", "Background")</li>
+                            </ul>
+                        </li>
 
-                    @*<li>@Html.ActionLink("Students/Employees", "Index", "Recipient")</li>*@
-                    @*<li>@Html.ActionLink("Students", "Index_Cfg1", "Recipient")</li>
-        <li>@Html.ActionLink("Staff", "Index_Cfg2", "Recipient")</li>*@
-                    @* <li>@Html.ActionLink(strRecipTypeName, "Index_CurrCfg", "Recipient")</li>*@
-                    <li>
-                        <button class="btn btn-primary dropdown-toggle" type="button"
-                                onclick="location = '/Recipient/Index_CurrCfg'">
-                            @strRecipTypeName
+                        @*<li>@Html.ActionLink("Students/Employees", "Index", "Recipient")</li>*@
+                        @*<li>@Html.ActionLink("Students", "Index_Cfg1", "Recipient")</li>
+                            <li>@Html.ActionLink("Staff", "Index_Cfg2", "Recipient")</li>*@
+                        @* <li>@Html.ActionLink(strRecipTypeName, "Index_CurrCfg", "Recipient")</li>*@
+                        <li>
+                            <button class="btn btn-primary dropdown-toggle" type="button"
+                                    onclick="location = '/Recipient/Index_CurrCfg'">
+                                @strRecipTypeName
                             </button>
                         </li>
 
@@ -180,7 +182,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @*    @Scripts.Render("~/bundles/bootstrap")*@
-   @* <script src="/Scripts/bootstrap.js" type="text/javascript"></script>*@
+    @* <script src="/Scripts/bootstrap.js" type="text/javascript"></script>*@
 
     @*    @RenderSection("scripts", required: false)*@
     @* @RenderSection("scripts", required: true)*@

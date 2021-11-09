@@ -407,9 +407,6 @@
     <Content Include="Images\BackExamples\SOU735-IrvineValleyCollege.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\BackExamples\SOU735-IVC-VENDOR.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Images\BackExamples\SOU735-SADDLEBACK-VENDOR.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1273,7 +1270,7 @@
     <Content Include="Views\Background\Create.cshtml" />
     <Content Include="Views\Background\Edit.cshtml" />
     <Content Include="Views\Background\ElementCacheXML.cshtml" />
-    <Content Include="Views\Background\UploadBack.cshtml" />
+    <Content Include="Views\Background\UploadBack_Deprecated.cshtml" />
     <Content Include="Views\Background\ShowAll.cshtml" />
     <Content Include="Views\Background\UploadPic.cshtml" />
     <Content Include="Views\Background\DeleteTentative.cshtml" />

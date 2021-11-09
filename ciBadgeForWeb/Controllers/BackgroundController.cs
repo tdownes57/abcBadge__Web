@@ -176,7 +176,7 @@ namespace ciBadgeForWeb.Controllers
         }
 
         // GET: Background/DeleteTentative/5
-        public ActionResult DeleteTentative(int id)
+        public ActionResult DeleteTentative(int id, FormCollection collection)
         {
             //
             // Added 11/7/2021 Thomas Downes  
@@ -211,9 +211,12 @@ namespace ciBadgeForWeb.Controllers
 
 
 
-        // GET: Background/DeleteConfirmed/5
-        public ActionResult DeleteConfirmed(int id)
+        // POST: Background/Edit/5
+        [HttpPost]
+        public ActionResult DeleteTentative(int id)
         {
+            // GET: Background/DeleteConfirmed/5
+            //----public ActionResult DeleteConfirmed(int id)
             //
             // Added 11/7/2021 Thomas Downes  
             //
