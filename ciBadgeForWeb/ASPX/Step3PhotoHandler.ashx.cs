@@ -143,6 +143,10 @@ namespace ciBadgeForWeb
                 //Added 6/20/2019 td 
                 if (recipient_by_id_onlyone is null) return; 
 
+                //============================================================
+                // This is where the recipient photo comes from. ---11/9/2021
+                //=============================================================
+                //
                 Image imagePic = recipient_by_id_onlyone.Picture;
 
                 //Added 7/13/2019

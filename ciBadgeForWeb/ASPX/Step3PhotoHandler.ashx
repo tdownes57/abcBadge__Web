@@ -1,1 +1,1 @@
-﻿<%@ WebHandler Language="C#" CodeBehind="Step3PhotoHandler.ashx.cs" Class="ciBadgeForWeb.ImageHandler" %>
+﻿<%@ WebHandler Language="C#" CodeBehind="Step3PhotoHandler.ashx.cs" Class="ciBadgeForWeb.Step3PhotoHandler" %>

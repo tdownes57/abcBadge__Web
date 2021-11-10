@@ -11,6 +11,10 @@ using ciBadgeElements;       //Added 10/5/2019 td
 using ciBadgeElemImage;     //Added 10/5/2019 td  
 using ciBadgeGenerator; //Added 11/13/2019 td
 
+//
+// Example call:<img alt="Step4-Print Handler" width="500" src="~/ASPX/Step4PrintHandler.ashx?id=@Model.RecipientID&big=y&hor=y&width=500" style="border: 2px dotted black;" />
+//
+
 namespace ciBadgeForWeb
 {
     /// <summary>
@@ -21,12 +25,23 @@ namespace ciBadgeForWeb
         //
         //  ----public class Step4Handler : IHttpHandler
         //
+        // Example call:<img alt="Step4-Print Handler" width="500" src="~/ASPX/Step4PrintHandler.ashx?id=@Model.RecipientID&big=y&hor=y&width=500" style="border: 2px dotted black;" />
+        //
+        //
         public void ProcessRequest(HttpContext context)
         {
+            // Added 11/10/2021 Thomas Downes  
+            List<string> listMessages = new List<string>();
+            List<string> listFieldsIncluded = new List<string>();
+            List<string> listFieldsNotIncluded = new List<string>();
+
             try
             {
                 //Encapsulated 1/15/2020 td  
-                ProcessRequest_noTryCatch(context);
+                ProcessRequest_noTryCatch(context,
+                      listMessages,
+                      listFieldsIncluded,
+                      listFieldsNotIncluded);
             }
             catch (Exception ex)
             {
@@ -37,12 +52,17 @@ namespace ciBadgeForWeb
                 context.Response.ContentType = "text/html";
                 //context.Response.Write($"<p> {ex.ToString()} </p>");
                 context.Response.Write($"<p> {ex.Message} </p>");
+                context.Response.Write($"<p> </p>");
+                context.Response.Write($"<p> {ex.ToString()} </p>");
 
             }
         }
 
 
-        private void ProcessRequest_noTryCatch(HttpContext par_context)
+        private void ProcessRequest_noTryCatch(HttpContext par_context, 
+            List<string> par_listMessages,
+            List<string> par_listFieldsIncluded,
+            List<string> par_listFieldsNotIncluded)
         {
             //
             //Encapsulated 1-15-2020 td
@@ -56,6 +76,7 @@ namespace ciBadgeForWeb
 
             bool bSizeLarge = false, bHorizontalLarge = false, bHorizontalSmall = false; //Added 6/20/2019 thomas downes 
             bool bWereTwoPropertiesRefreshed = false; //Added 11/2/2021 td
+            bool bDisplayMessagesEtc = false;  // Added 11/10/2021 td 
 
             par_context.Response.Clear();
 
@@ -68,7 +89,7 @@ namespace ciBadgeForWeb
                 {
                     //Added 6/20/2019 td
                     //
-                    // Example call:
+                    // Example call:<img alt="Step4-Print Handler" width="500" src="~/ASPX/Step4PrintHandler.ashx?id=@Model.RecipientID&big=y&hor=y&width=500" style="border: 2px dotted black;" />
                     //
                     bSizeLarge = ("y" == par_context.Request.QueryString["big"]);  // ["size"]);
                     bHorizontalLarge = (bSizeLarge && ("y" == par_context.Request.QueryString["hor"]));
@@ -215,7 +236,10 @@ namespace ciBadgeForWeb
                                        intPixelsWidth, intPixelsHeight,
                                        recipient_by_id_onlyone,
                                        //|| recipient_by_id_onlyone.GetPortraitImage(),
-                                       objLayoutExample);
+                                       objLayoutExample,
+                                       par_listMessages,
+                                       par_listFieldsIncluded, 
+                                       par_listFieldsNotIncluded);
 
                         //If the image is null, set the image to an example badge.
                         //     ---9/17/2021 thomas downes
@@ -314,7 +338,10 @@ namespace ciBadgeForWeb
                                        image_back, ClassElementsCache_Deprecated.Singleton,
                                        intPixelsWidth, intPixelsHeight,
                                        recipient_by_id_onlyone,
-                                       recipient_by_id_onlyone.GetPortraitImage());
+                                       recipient_by_id_onlyone.GetPortraitImage(), 
+                                       par_listMessages,
+                                       par_listFieldsIncluded,
+                                       par_listFieldsNotIncluded);
                     }
 
                     //
@@ -363,30 +390,63 @@ namespace ciBadgeForWeb
                 //                             bHorizontalLarge, bHorizontalSmall);
                 //}
 
-                // Of course set this to whatever your format is of the image
-                //context.Response.ContentType = "image/png";
-                par_context.Response.ContentType = "image/Jpeg";
+                //Added 11/10/2021 td
+                if (!String.IsNullOrEmpty(par_context.Request.QueryString["msgs"]))
+                {
+                    //Added 11/10/2021 td
+                    //
+                    // Example call:
+                    //   <a src="~/ASPX/Step4PrintHandler.ashx?id=@Model.RecipientID&big=y&hor=y&width=500&msgs=y">
+                    //   Show any error messages / list fields.
+                    //   </ a >
+                    //
+                    bDisplayMessagesEtc = ("y" == par_context.Request.QueryString["msgs"]); 
+                    par_context.Response.ContentType = "image/Jpeg";
+                    if (bDisplayMessagesEtc)
+                    { 
+                        par_context.Response.ContentType = "text/html";
+                        par_context.Response.Write($"<p>-----Messages-------</p>");
+                        foreach (string strMsg in par_listMessages)
+                           par_context.Response.Write($"<p> {strMsg} </p>");
+                        par_context.Response.Write($"<p>------Fields Included------ </p>");
+                        foreach (string strField in par_listFieldsIncluded)
+                            par_context.Response.Write($"<p> {strField} </p>");
+                        par_context.Response.Write($"<p>------Fields Excluded / Not Included------ </p>");
+                        foreach (string strField in par_listFieldsNotIncluded)
+                            par_context.Response.Write($"<p> {strField} </p>");
+                        //
+                        // Exit the function. 
+                        //
+                        return; 
+                    }
 
-                // Save the image to the OutputStream
+                }
 
-                MemoryStream obj_ms_output = new MemoryStream();
-                
+                else par_context.Response.ContentType = "image/Jpeg";
+
+                //
+                // Create a memory-stream variable.
+                //
+                MemoryStream memstream_output = new MemoryStream();
+
                 //
                 // Load ("Save" to) the memory stream.
                 //
-                image_badge_output.Save(obj_ms_output, ImageFormat.Jpeg);
+                image_badge_output.Save(memstream_output, ImageFormat.Jpeg);
 
                 //
                 // Load the .Response property, via the memory stream. 
                 //
-                par_context.Response.BinaryWrite(obj_ms_output.GetBuffer());
+                par_context.Response.BinaryWrite(memstream_output.GetBuffer());
 
             }
             else
             {
                 par_context.Response.ContentType = "text/html";
+                par_context.Response.Write($"<p>------Missing query-string parameter------ </p>");
                 par_context.Response.Write("<p>Need a valid id</p>");
             }
+
         }
 
 
@@ -423,7 +483,10 @@ namespace ciBadgeForWeb
                             int par_badge_height_pixels,
                             ciBadgeInterfaces.IRecipient par_recipient,
                             LayoutExample par_objLayoutExample,
-                            out string pout_strPathToNewFile)
+                            out string pout_strPathToNewFile,
+                                    List<string> par_listMessages = null,
+                                    List<string> par_listFieldsIncluded = null,
+                                    List<string> par_listFieldsNotIncluded = null)
         {
             //
             // Added 9/17/2021 Thomas Downes
@@ -445,7 +508,10 @@ namespace ciBadgeForWeb
             Image image_badge = Step4Handler_MakeBadgeImage(par_recipient_by_id,
                                      par_badge_width_pixels, par_badge_height_pixels,
                                      par_recipient,
-                                     par_objLayoutExample);
+                                     par_objLayoutExample,
+                                        par_listMessages,
+                                        par_listFieldsIncluded,
+                                        par_listFieldsNotIncluded);
 
             //--pout_strPathToNewFile = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_QRCode(true);
             pout_strPathToNewFile = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_TempBadges(true,
@@ -465,7 +531,10 @@ namespace ciBadgeForWeb
                             ciBadgeInterfaces.IRecipient par_recipient,
                             LayoutExample par_objLayoutExample,
                             out MemoryStream out_ms,
-                            out System.Net.Mail.Attachment out_attachment)
+                            out System.Net.Mail.Attachment out_attachment,
+                                    List<string> par_listMessages = null,
+                                    List<string> par_listFieldsIncluded = null,
+                                    List<string> par_listFieldsNotIncluded = null)
         {
             //
             // Added 9/24/2021 thomas downes  
@@ -518,8 +587,11 @@ namespace ciBadgeForWeb
                             int par_badge_height_pixels,
                             ciBadgeInterfaces.IRecipient par_recipient,
                             //|| Image par_recipientPic, 
-                            LayoutExample par_objLayoutExample) // , 
-                                                                // int par_intPixelsWidth, int par_intPixelsHeight)
+                            LayoutExample par_objLayoutExample,
+                                    List<string> par_listMessages = null,
+                                    List<string> par_listFieldsIncluded = null,
+                                    List<string> par_listFieldsNotIncluded = null) 
+                             // int par_intPixelsWidth, int par_intPixelsHeight)
         {
             //
             // Encapsulated 9/15/2021 Thomas downes
@@ -619,7 +691,10 @@ namespace ciBadgeForWeb
                            //par_intPixelsWidth, par_intPixelsHeight,
                            par_badge_width_pixels, par_badge_height_pixels,
                            par_recipient_by_id,
-                           par_recipient_by_id.GetPortraitImage());
+                           par_recipient_by_id.GetPortraitImage(), 
+                           par_listMessages,
+                           par_listFieldsIncluded,
+                           par_listFieldsNotIncluded);
 
             return image_badge;
 

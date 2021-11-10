@@ -201,7 +201,9 @@ namespace ciBadgeForWeb.Models
             {
                 bElementHasField = true;  //Added 4/20/2020 thomas d.  
                 //Added 4/20/2020 thomas d.  
-                bElementIsVisible = each_element.IsDisplayedOnBadge_Visibly();
+                //bElementIsVisible = each_element.IsDisplayedOnBadge_Visibly();
+                WhyOmitted structWhy = new WhyOmitted();
+                bElementIsVisible = each_element.IsDisplayedOnBadge_Visibly(ref structWhy);
 
                 //---if (each_element.IsDisplayedOnBadge_Visibly())
                 if (bElementIsVisible)

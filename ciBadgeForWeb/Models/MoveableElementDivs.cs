@@ -71,7 +71,10 @@ namespace ciBadgeForWeb.Models
 
             foreach (ClassElementField each_element in par_cache.ListOfElementFields)
             {
-                if (each_element.IsDisplayedOnBadge_Visibly())
+                WhyOmitted structWhy = new WhyOmitted(); // Added 11/10/2021 td
+
+                //if (each_element.IsDisplayedOnBadge_Visibly())
+                if (each_element.IsDisplayedOnBadge_Visibly(ref structWhy))
                 {
                     intDivIndex++;
 
@@ -95,7 +98,7 @@ namespace ciBadgeForWeb.Models
                     if (intDivIndex == 10) this.Div10 = each_rectangle;
                     if (intDivIndex == 11) this.Div11 = each_rectangle;
                     if (intDivIndex == 12) this.Div12 = each_rectangle;
-                    
+
                     //
                     //  Let's store a link back to the Element Field, so as to 
                     //    enable storing the layout modifications. 

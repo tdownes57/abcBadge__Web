@@ -222,13 +222,29 @@
 
                 @*@Html.ActionLink("Upload New Photo", "UploadPic", new { id = Model.RecipientID })*@
 
+                &nbsp; | &nbsp;
+
                 @Html.ActionLink("Email Badge", "EmailBadge", new { parameter_id = @Model.RecipientID })
 
+                <!--                   -->
+                <!-- Show Badge Image -->
+                <!--                   -->
                 @*<img alt="Step4 Handler" width="500" src="~/ASPX/Step4Handler.ashx?id=@Model.RecipientID&big=y&hor=y&width=500" style="border: 2px dotted black;" />*@
                 <img alt="Step4-Print Handler" width="500" src="~/ASPX/Step4PrintHandler.ashx?id=@Model.RecipientID&big=y&hor=y&width=500" style="border: 2px dotted black;" />
 
+                <!--                   -->
+                <!-- Show Message Link -->
+                <!--                   -->
+                @*<a href="~/ASPX/Step4PrintHandler.ashx?id=@Model.RecipientID">Show any error messages / list fields.</a>*@
+                
+                <br />
+                <a href="~/ASPX/Step4PrintHandler.ashx?id=@Model.RecipientID&big=y&hor=y&width=500&msgs=y">
+                    Show any error messages / list fields.
+                </a>
+
                 <!-- img alt="Image Handler" src="../ASPX/ImageHand ler.ashx?id=<%= Request.QueryString[" id"] %>" -->
                 <!-- img alt="Step4 Handler" src="../ASPX/Step4Handler.ashx?id=<%= Request.QueryString[" id"] %>" -->
+
 
             </td>
 

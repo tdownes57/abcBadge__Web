@@ -589,7 +589,7 @@ namespace ciBadgeForWeb.Controllers
                 //
                 // This will require security impersonation in order to write to the harddisk. 
                 //
-                Step4Handler.Step4Handler_MakeBadgeFile(recipient_whoseBadgeIsToBeEmailed,
+                Step4PrintHandler.Step4Handler_MakeBadgeFile(recipient_whoseBadgeIsToBeEmailed,
                                c_intPixelsWidth, c_intPixelsHeight,
                                recipient_whoseBadgeIsToBeEmailed, objLayoutExample,
                                out strPathToGeneratedImageFile);
@@ -638,7 +638,7 @@ namespace ciBadgeForWeb.Controllers
                 //System.IO.MemoryStream objMemoryStream;     //Moved up 9/26.  --9/24/2021 Thomas Downes  
                 //System.Net.Mail.Attachment objAttachment;   //Moved up 9/26.  --9/24/2021 Thomas Downes
 
-                Step4Handler.Step4Handler_MakeAttachment(recipient_whoseBadgeIsToBeEmailed,
+                Step4PrintHandler.Step4Handler_MakeAttachment(recipient_whoseBadgeIsToBeEmailed,
                            c_intPixelsWidth, c_intPixelsHeight,
                            recipient_whoseBadgeIsToBeEmailed, objLayoutExample,
                            out objMemoryStream,
