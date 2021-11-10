@@ -211,11 +211,11 @@
     <Compile Include="ASPX\BadgeLayout.aspx.designer.cs">
       <DependentUpon>BadgeLayout.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ASPX\PicHandler.ashx.cs">
-      <DependentUpon>PicHandler.ashx</DependentUpon>
+    <Compile Include="ASPX\PicHandler_Deprecated.ashx.cs">
+      <DependentUpon>PicHandler_Deprecated.ashx</DependentUpon>
     </Compile>
-    <Compile Include="ASPX\Step4Handler.ashx.cs">
-      <DependentUpon>Step4Handler.ashx</DependentUpon>
+    <Compile Include="ASPX\Step4PrintHandler.ashx.cs">
+      <DependentUpon>Step4PrintHandler.ashx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\UltraSimpleHandler.ashx.cs">
       <DependentUpon>UltraSimpleHandler.ashx</DependentUpon>
@@ -255,8 +255,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="IISHandler1.cs" />
-    <Compile Include="ASPX\ImageHandler.ashx.cs">
-      <DependentUpon>ImageHandler.ashx</DependentUpon>
+    <Compile Include="ASPX\Step3PhotoHandler.ashx.cs">
+      <DependentUpon>Step3PhotoHandler.ashx</DependentUpon>
     </Compile>
     <Compile Include="JSON\MoveableDivImage.cs" />
     <Compile Include="JSON\__MoveableDivImage.cs" />
@@ -885,7 +885,7 @@
     </Content>
     <Content Include="Scripts\Adjustment_Click.js" />
     <Content Include="Scripts\Adjustment_Master.js" />
-    <Content Include="ASPX\ImageHandler.ashx" />
+    <Content Include="ASPX\Step3PhotoHandler.ashx" />
     <AdditionalFiles Include="Scripts\Closures\ClickClosure.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AdditionalFiles>
@@ -1076,9 +1076,9 @@
     <Content Include="__Documentation - Notes\CI Web - Proposed Features.docx" />
     <Content Include="__Documentation - Notes\Product Specifications - CI Web Secure Share v1.docx" />
     <Content Include="ApplicationInsights.config" />
-    <Content Include="ASPX\PicHandler.ashx" />
+    <Content Include="ASPX\PicHandler_Deprecated.ashx" />
     <Content Include="Connected Services\AzureStorage1\ConnectedService.json" />
-    <Content Include="ASPX\Step4Handler.ashx" />
+    <Content Include="ASPX\Step4PrintHandler.ashx" />
     <Content Include="__Documentation - Notes\Mock-Up Templates 11.13.pdf" />
     <Content Include="ASPX\UltraSimpleHandler.ashx" />
     <Content Include="__Documentation - Notes\disabling-copy-of-empty-text-in-VS.url" />

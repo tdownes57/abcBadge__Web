@@ -1,20 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;// Added 5/20/2019 thomas d. 
-using System.Drawing; // Added 5/20/2019 thomas d. 
-using System.Drawing.Imaging;// Added 5/20/2019 thomas d. 
-using System.IO;// Added 5/20/2019 thomas d. 
+using System.Web;         // Added 5/20/2019 thomas d. 
+using System.Drawing;           // Added 5/20/2019 thomas d. 
+using System.Drawing.Imaging;   // Added 5/20/2019 thomas d. 
+using System.IO;        // Added 5/20/2019 thomas d. 
 using ciLayoutPrintLib; // Added 7/13/2019 td
 
 namespace ciBadgeForWeb
 {
     /// <summary>
-    /// Summary description for PicHandler
+    /// Summary description for PhotoHandler (Step # 3 - Display the Recipient's Photo) 
     /// </summary>
-    public class PicHandler : IHttpHandler
+    public class Step3PhotoHandler : IHttpHandler
     {
-
+        //
+        //   Step # 3 - Display the Recipient's Photo
+        //
+        //---public class ImageHandler : IHttpHandler
+        //
         public void ProcessRequest(HttpContext context)
         {
             IList<Models.CIRecipient> recipients_list;
@@ -22,8 +26,13 @@ namespace ciBadgeForWeb
             bool boolImageSample = false; //Added 7/10/2019 td 
             bool boolApplyWidth = false;  //Added 7/13/2019 td  
 
+            //Added 8/20/2019 td 
+            //
+            // 8-21-2019 td//ciPictures_VB.PictureExamples.PathToFolderOfImages = "~/Images/PictureExamples";
+
             //Added 7/9/2019 td  
-            string queryID_ofRecip = context.Request.QueryString["id"];
+            string strContextRequestQuery = context.Request.QueryString.ToString();
+            var queryID_ofRecip = context.Request.QueryString["id"];
 
             //Added 7/06/2019 thomas downes
             int intPixelsWidth = 0; //Added 7/06/2019 thomas downes 
@@ -33,9 +42,11 @@ namespace ciBadgeForWeb
                 intPixelsWidth = int.Parse(context.Request.QueryString["width"]);
                 boolApplyWidth = (20 < intPixelsWidth);
             }
-            catch
+            catch (Exception ex)
             {
                 //Just try .......
+                string strMessage = ex.Message;
+                strMessage = ex.Message; 
             }
 
             //context.Response.ContentType = "text/plain";
@@ -43,6 +54,8 @@ namespace ciBadgeForWeb
             //
             context.Response.Clear();
 
+            //Added 7/9/2019 td  
+            //string queryID_ofRecip = context.Request.QueryString["id"];
 
             //if (!String.IsNullOrEmpty(context.Request.QueryString["id"]))
 
@@ -55,33 +68,7 @@ namespace ciBadgeForWeb
                 //Added 7/10/2019 td
                 boolImageSample = ("Sample" == queryID_ofRecip);
 
-                //Added 7/10/2019 td
-                if (boolImageSample)
-                {
-                    //Added 7/10/2019 td
-                    Image imageSample = ciPictures_VB.PictureExamples.GetImageSusanSample();
-
-                    //Added 7/13/2019
-                    //
-                    if (boolApplyWidth)
-                    {
-                        //Added 7/13/2019
-                        imageSample = LayoutPrint.ResizeImage_ToWidth(imageSample, intPixelsWidth);
-                    }
-
-                    context.Response.ContentType = "image/Jpeg";
-                    MemoryStream msSample = new MemoryStream();
-
-                    if (imageSample != null)
-                    {
-                        imageSample.Save(msSample, ImageFormat.Jpeg);
-                        context.Response.BinaryWrite(msSample.GetBuffer());
-                    } //End of "if (imageSample != null)"
-
-                    return; //Added 7/10/2019 td
-
-                } //End of "if (boolImageSample)"
-
+                //Added 7/9/2019 td
                 if (boolImageNoPicture)
                 {
                     //
@@ -106,12 +93,39 @@ namespace ciBadgeForWeb
                         context.Response.BinaryWrite(msNoPic.GetBuffer());
                     } //End of "if (imageNoPic != null)"
 
-                    return; //Added 7/10/2019 td
+                    return;
 
                 } //End of "if (boolImageNoPicture)"
 
+                //Added 7/10/2019 td
+                if (boolImageSample)
+                {
+                    //Added 7/10/2019 td
+                    Image imageSample = ciPictures_VB.PictureExamples.GetImageSusanSample();
+
+                    //Added 7/13/2019
+                    //
+                    if (boolApplyWidth)
+                    {
+                        //Added 7/13/2019
+                        imageSample = LayoutPrint.ResizeImage_ToWidth(imageSample, intPixelsWidth);
+                    }
+
+                    context.Response.ContentType = "image/Jpeg";
+                    MemoryStream msSample = new MemoryStream();
+
+                    if (imageSample != null)
+                    {
+                        imageSample.Save(msSample, ImageFormat.Jpeg);
+                        context.Response.BinaryWrite(msSample.GetBuffer());
+                    } //End of "if (imageNoPic != null)"
+
+                    return; //Added 7/10/2019 td 
+
+                } //End of "if (boolImageSample)"
+
                 //int recipient_id = Int32.Parse(context.Request.QueryString["id"]);
-                int recipient_id = Int32.Parse(queryID_ofRecip);
+                //11-19-2019 td//int recipient_id = Int32.Parse(queryID_ofRecip);
 
                 // Now you have the id, do what you want with it, to get the right image
                 // More than likely, just pass it to the method, that builds the image
@@ -121,7 +135,9 @@ namespace ciBadgeForWeb
 
                 recipients_list = Controllers.RecipientController.mod_recipientList2;
 
-                var recipients_by_id_list = recipients_list.Where(s => s.RecipientID == recipient_id.ToString());
+                // 11-19-2019 //var recipients_by_id_list = recipients_list.Where(s => s.RecipientID == recipient_id.ToString());
+                var recipients_by_id_list = recipients_list.Where(s => s.RecipientID == queryID_ofRecip);
+
                 var recipient_by_id_onlyone = recipients_by_id_list.FirstOrDefault();
 
                 //Added 6/20/2019 td 
@@ -152,8 +168,19 @@ namespace ciBadgeForWeb
                 //objBitmap.Save(ms, ImageFormat.Jpeg);
                 if (imagePic != null)
                 {
-                    imagePic.Save(msPic, ImageFormat.Jpeg);
-                    context.Response.BinaryWrite(msPic.GetBuffer());
+                    try //Added 11/13/2019 td
+                    {
+                        imagePic.Save(msPic, ImageFormat.Jpeg);
+                        context.Response.BinaryWrite(msPic.GetBuffer());
+                    }
+                    catch (Exception ex_memorystream)
+                    {
+                        string strErrorMsg = ex_memorystream.Message; //Added 11/13/2019 td
+                        //((System.Drawing.Image)imagePic.Clone()).Save(msPic, ImageFormat.Jpeg);
+                        System.Drawing.Image imagePic_clone = (System.Drawing.Image)imagePic.Clone();
+                        imagePic_clone.Save(msPic, ImageFormat.Jpeg);
+                        context.Response.BinaryWrite(msPic.GetBuffer());
+                    }
                 }
             }
             else

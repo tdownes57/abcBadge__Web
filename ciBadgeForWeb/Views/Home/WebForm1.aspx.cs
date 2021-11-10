@@ -19,7 +19,8 @@ namespace ciBadgeForWeb.Views.Home
             //
             //imageBadge.ImageUrl = "imageHandler.ashx";
 
-            imageBadge.ImageUrl = "~/ImageHandler.ashx?ID=myImageId";
+            //imageBadge.ImageUrl = "~/ImageHandler.ashx?ID=myImageId";
+            imageBadge.ImageUrl = "~/Step3PhotoHandler.ashx?ID=myImageId";
 
         }
     }

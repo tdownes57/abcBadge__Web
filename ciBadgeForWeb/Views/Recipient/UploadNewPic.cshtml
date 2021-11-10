@@ -187,27 +187,29 @@
     @*<h2>Recipient @Model.FirstName @Model.LastName (ID @Model.RecipientID)</h2>*@
     <h2>@strRecipTypeName @Model.FirstName @Model.LastName (ID @Model.RecipientID)</h2>
 
-    <img alt="Image Handler" width="100" src="~/ASPX/ImageHandler.ashx?id=@Model.RecipientID" />
+    @*<img alt="Image Handler" width="100" src="~/ASPX/ImageHandler.ashx?id=@Model.RecipientID" />*@
+    <img alt="Step 3 Photo Handler" width="100" src="~/ASPX/Step3PhotoHandler.ashx?id=@Model.RecipientID" />
 
     <!--<ol>
         <li class="lifile">-->
-            @*         [[[ button "Choose File" ]]]   "No file chosen"  *@
-            @*         icon   "your image"    icon "your image"     *@
+    @*         [[[ button "Choose File" ]]]   "No file chosen"  *@
+    @*         icon   "your image"    icon "your image"     *@
 
-            @*<input type="file" id="fileToUpload" name="file" />*@
-            <!--<input type="file" id="fileToUpload_deprecated" name="file_deprecated" />--> @*         [[[ button "Choose File" ]]]   *@
-            <!--<span class="field-validation-error" id="spanfile"></span>-->  @*message:  "No file chosen"     *@
-            <!--<img id="blah_preview" src="#" alt="your image" />-->    @*message:  "your image"     *@
-            <!--<img id="blah" src="#" alt="your image" />-->    @*message:  "your image"       *@
-        <!--</li>
+    @*<input type="file" id="fileToUpload" name="file" />*@
+    <!--<input type="file" id="fileToUpload_deprecated" name="file_deprecated" />--> @*         [[[ button "Choose File" ]]]   *@
+    <!--<span class="field-validation-error" id="spanfile"></span>--> @*message:  "No file chosen"     *@
+    <!--<img id="blah_preview" src="#" alt="your image" />--> @*message:  "your image"     *@
+    <!--<img id="blah" src="#" alt="your image" />--> @*message:  "your image"       *@
+    <!--</li>
     </ol>-->
 
-    @*//   August 7, 2021 
-    //     https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded
-    //     There are a couple ways you can do this. The most efficient way would be to use.....
-    // *@
+    @*//   August 7, 2021
+        //     https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded
+        //     There are a couple ways you can do this. The most efficient way would be to use.....
+        // *@
     <input type="file" accept="image/*" id="fileToUpload" name="file" onchange="loadFile(event)">
-    <img id="output" width="200" class="border" />   @* See CSS <style>.border ....</style> at the top of _Layout.cshtml *@ 
+    <img id="output" width="200" class="border" />
+    @* See CSS <style>.border ....</style> at the top of _Layout.cshtml *@
     <script>
         var loadFile = function (event) {
             var output = document.getElementById('output');

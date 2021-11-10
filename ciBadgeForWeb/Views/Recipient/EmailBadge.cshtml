@@ -45,7 +45,8 @@
         <dd>
             @*  @Html.DisplayFor(model => model.fstrFirstName)*@
             @*            <img src='@Url.Action("ImageOfBadgeAsResult", "Recipient", model, Request.Url.Scheme)' %> alt="" />*@
-            <img alt="Emailed Badge" width="500" src="~/ASPX/BadgeImageHandler.ashx?id=@Model.RecipientID" />
+            @*<img alt="Emailed Badge" width="500" src="~/ASPX/BadgeImageHandler.ashx?id=@Model.RecipientID" />*@
+            <img alt="Emailed Badge" width="500" src="~/ASPX/Step4PrintHandler.ashx?id=@Model.RecipientID" />
         </dd>
 
 

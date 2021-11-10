@@ -16,8 +16,11 @@ namespace ciBadgeForWeb
     /// <summary>
     /// Utilizes advanced layout programming from CILayoutDesigner by CI Solutions/Thomas Downes. 10/5/2019 td
     /// </summary>
-    public class Step4Handler : IHttpHandler
+    public class Step4PrintHandler : IHttpHandler
     {
+        //
+        //  ----public class Step4Handler : IHttpHandler
+        //
         public void ProcessRequest(HttpContext context)
         {
             try
@@ -64,6 +67,9 @@ namespace ciBadgeForWeb
                 if (!String.IsNullOrEmpty(par_context.Request.QueryString["hor"]))
                 {
                     //Added 6/20/2019 td
+                    //
+                    // Example call:
+                    //
                     bSizeLarge = ("y" == par_context.Request.QueryString["big"]);  // ["size"]);
                     bHorizontalLarge = (bSizeLarge && ("y" == par_context.Request.QueryString["hor"]));
                     bHorizontalSmall = (!(bSizeLarge) && ("y" == par_context.Request.QueryString["hor"]));
@@ -364,7 +370,15 @@ namespace ciBadgeForWeb
                 // Save the image to the OutputStream
 
                 MemoryStream obj_ms_output = new MemoryStream();
+                
+                //
+                // Load ("Save" to) the memory stream.
+                //
                 image_badge_output.Save(obj_ms_output, ImageFormat.Jpeg);
+
+                //
+                // Load the .Response property, via the memory stream. 
+                //
                 par_context.Response.BinaryWrite(obj_ms_output.GetBuffer());
 
             }
