@@ -9,12 +9,16 @@ namespace ciBadgeForWeb.Models
     public class Background
     {
         private static Dictionary<string, int> mod_dictionaryOfBackIndices;
+        private static int _currentlySelectedBackIndex = -1; // Added 11/10/2021   
 
         //Added 11/2/2021 thomas downes
         public static int CurrentlySelectedBackIndex
         {
             //Added 11/2/2021 thomas downes
-            get; set;
+            //get; set;
+            //get { return _currentlySelectedBackIndex; }
+            get => _currentlySelectedBackIndex;
+            set =>  _currentlySelectedBackIndex = value; 
         }
 
 
@@ -56,11 +60,18 @@ namespace ciBadgeForWeb.Models
             if (0 == Controllers.BackgroundController.mod_backgrounds.Count())
             {
                 Controllers.BackgroundController.RefreshBackgroundList();
-                CurrentlySelectedBackIndex = Controllers.BackgroundController.GetHighestIndex();
+                _currentlySelectedBackIndex = Controllers.BackgroundController.GetHighestIndex();
+            }
+
+            //Added 11/10/2021 td
+            //  Initialize the value to an actual value. 
+            else if (_currentlySelectedBackIndex == -1)
+            {  
+                _currentlySelectedBackIndex = Controllers.BackgroundController.GetHighestIndex(); 
             }
 
             //Added 11/2/2021 thomas downes
-            return CurrentlySelectedBackIndex;
+            return _currentlySelectedBackIndex;
         }
 
 
