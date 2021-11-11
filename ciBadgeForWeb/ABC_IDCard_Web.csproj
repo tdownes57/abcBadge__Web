@@ -214,6 +214,9 @@
     <Compile Include="ASPX\PicHandler_Deprecated.ashx.cs">
       <DependentUpon>PicHandler_Deprecated.ashx</DependentUpon>
     </Compile>
+    <Compile Include="ASPX\Step2DataHandler.ashx.cs">
+      <DependentUpon>Step2DataHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="ASPX\Step4PrintHandler.ashx.cs">
       <DependentUpon>Step4PrintHandler.ashx</DependentUpon>
     </Compile>
@@ -942,6 +945,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="ASPX\BadgeImageHandler_Deprecated.ashx" />
     <Content Include="ASPX\BackHandler.ashx" />
+    <Content Include="ASPX\Step2DataHandler.ashx" />
     <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <None Include="Properties\PublishProfiles\registry.hub.docker.com_tomdownes1.pubxml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
@@ -1092,23 +1096,25 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="JSON\JSON - twelve elements.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="JSON\JSON_4props.json" />
+    <Content Include="JSON\JSON_4props.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="JSON\JSON_Left.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="JSON\JSON_Top.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="JSON\How to use Export modifier %28StackOver%29.docx" />
     <Content Include="JS_Moveable_Divs_HTM\How to use Export modifier %28StackOver%29.docx" />
     <Content Include="Javascript - see Scripts\How to use Export modifier %28StackOver%29.docx" />
     <Content Include="JSON\JSON_Width.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="JSON\JSON_Height.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="libman.json" />
     <None Include="Properties\PublishProfiles\abcBadge - Web Deploy.pubxml" />
@@ -1278,6 +1284,7 @@
     <Content Include="Views\Background\DeleteTentative.cshtml" />
     <Content Include="Views\Background\DeleteConfirmationMsg.cshtml" />
     <Content Include="Views\JsonFile\Index_Dropbox.cshtml" />
+    <Content Include="Views\JsonFile\Index_1stElement.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />

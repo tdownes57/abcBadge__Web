@@ -84,7 +84,24 @@ namespace ciBadgeForWeb.Controllers
 
         }
 
-       // GET:
+
+        // GET: JsonFile
+        public ActionResult Index_1stElement()
+        {
+            //
+            // Added 11/10/2021 Thomas Downes  
+            //
+            ViewBag.LayoutWidthPixels = ClassElementsCache_Deprecated.Singleton.BadgeLayout.Width_Pixels;
+            ViewBag.LayoutHeightPixels = ClassElementsCache_Deprecated.Singleton.BadgeLayout.Height_Pixels;
+            ViewBag.OffsetLeftPixels = OffsetPoint.X;
+            ViewBag.OffsetTopPixels = OffsetPoint.Y;
+
+            return View(GetMoveableDivs());
+
+        }
+
+
+        // GET:
         public ActionResult TableEdit()
         {
             //
