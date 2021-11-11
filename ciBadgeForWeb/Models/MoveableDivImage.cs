@@ -37,6 +37,7 @@ namespace ciBadgeForWeb.Models
         //
         //====private Dictionary<int, string> mod_listMessages = new Dictionary<int, string>();
         public string[] BugMessages = new string[12 + 1];
+        public string BugMessageRecent = "";  // Added 11/11/2021 td
 
         //Added 11/9/2021 thomas downes
         public int CurrentIndexForDropbox = 0;
@@ -235,7 +236,14 @@ namespace ciBadgeForWeb.Models
                     this.MoveFieldName[indexElement] = each_element.FieldInfo.FieldLabelCaption;
 
                     //Added 5/3/2020 thomas downes 
-                    this.ImageForElement[indexElement] = objImageGen.ElementFieldToImage(each_element, par_cache.BadgeLayout);
+                    // 11-11-2021 td //this.ImageForElement[indexElement] = objImageGen.ElementFieldToImage(each_element, par_cache.BadgeLayout);
+                    string strBugMessage = "";
+                    this.ImageForElement[indexElement] = 
+                        objImageGen.ElementFieldToImage(each_element, par_cache.BadgeLayout, ref strBugMessage);
+
+                    //Added 11/11/2021 thomas downes
+                    this.BugMessages[indexElement] = this.ImageForElement[indexElement].ToString();
+                    this.BugMessageRecent = strBugMessage;
 
                     //Added 4/13/2020 thomas downes
                     this.ElementCount += 1;  // Increment. ---4/13/2020 thomas downes

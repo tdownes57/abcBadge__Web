@@ -56,12 +56,14 @@ namespace ciBadgeForWeb.ASPX
             //
             //Encapsulated 11-10-2021 td
             //
-            int intElementIndex = -1;  
+            int intElementIndex = -1;
 
             //context.Response.Clear();
             //context.Response.ContentType = "text/html";
             //context.Response.Write("<p>No images were loaded, unfortunately.</p>");
             //return;
+
+            bool bDisplayMessagesEtc = ("y" == par_context.Request.QueryString["msgs"]);
 
             if (!String.IsNullOrEmpty(par_context.Request.QueryString["elemindex"]))
             {
@@ -79,26 +81,42 @@ namespace ciBadgeForWeb.ASPX
                   .Where(i => i.FieldInfo.FieldIndex == intElementIndex);
 
                 var obj_element = list_elements.FirstOrDefault();
-                var obj_badgeLayout = ClassElementsCache_Deprecated.Singleton.BadgeLayout;  
+                var obj_badgeLayout = ClassElementsCache_Deprecated.Singleton.BadgeLayout;
 
-                Image output_dataImage = objImageGen.ElementFieldToImage(obj_element, obj_badgeLayout);
-
-                par_context.Response.ContentType = "image/Jpeg";
-
-                //
-                // Create a memory-stream variable.
-                //
-                MemoryStream memstream_output = new MemoryStream();
+                //Image output_dataImage = objImageGen.ElementFieldToImage(obj_element, obj_badgeLayout);
+                string strBugMessage = "";
+                Image output_dataImage = objImageGen.ElementFieldToImage(obj_element, obj_badgeLayout, ref strBugMessage);
 
                 //
-                // Load ("Save" to) the memory stream.
+                //Display error messages, if any.  ----11/11/2021 td 
                 //
-                output_dataImage.Save(memstream_output, ImageFormat.Jpeg);
+                if (bDisplayMessagesEtc)
+                {
+                    par_context.Response.ContentType = "text/html";
+                    par_context.Response.Write($"<p>-----Messages-------</p>");
+                    par_context.Response.Write($"<p>{strBugMessage}</p>");
+                }
+                else
+                {
+                    par_context.Response.ContentType = "image/Jpeg";
 
-                //
-                // Load the .Response property, via the memory stream. 
-                //
-                par_context.Response.BinaryWrite(memstream_output.GetBuffer());
+                    //
+                    // Create a memory-stream variable.
+                    //
+                    MemoryStream memstream_output = new MemoryStream();
+
+                    //
+                    // Load ("Save" to) the memory stream.
+                    //
+                    output_dataImage.Save(memstream_output, ImageFormat.Jpeg);
+
+                    //
+                    // Load the .Response property, via the memory stream. 
+                    //
+                    par_context.Response.BinaryWrite(memstream_output.GetBuffer());
+
+                }
+
             }
 
         }

@@ -7,7 +7,7 @@
     // Added 11/4/2021 thomas downes
     int intCurrBackIndex = ciBadgeForWeb.Models.Background.CurrentIndex_RunChecks();
 
-    bool mod_c_bTestStep2Handler = true;  // Added 11/10/2021 Thomas Downes 
+    const bool mod_c_bTestStep2Handler = true;  // Added 11/10/2021 Thomas Downes 
 }
 
 @*<script src="//code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>*@
@@ -42,7 +42,7 @@
 {
 <div id="EL1" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; border-width: thick; ">
     @* <img id="EL1_im" src="@Url.Content("~/Images/blue_star1.jpg")" width="200" height="35" />*@
-    <img id="EL1_im" src="~/ASPX/Step2DataHandler.ashx?elemindex=@intCurrBackIndex" /> @*width="200" height="35" />*@
+    <img id="EL1_im" src="~/ASPX/Step2DataHandler.ashx?elemindex=1" /> @*width="200" height="35" />*@
     @Model.BugMessages[1];
 </div>
 }
