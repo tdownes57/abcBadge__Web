@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - ABC ID Card by R Software Consulting 123</title>
+    <title>@ViewBag.Title - RSC ID Card by R Software Consulting 123</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @*@Scripts.Render("~/Scripts/Closures/ClickClosure.js")
@@ -73,6 +73,7 @@
                         <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/Home/Contact'">Contact Us</button>
                     </li>
 
+                    <!-- Customers -->
                     @* <li>@Html.ActionLink("Customers", "Index", "Customer")</li>*@
                     <li>
                         <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/Customer/Index'">Customers</button>
@@ -87,7 +88,7 @@
                     <!-- Fields -->
                     @* <li>@Html.ActionLink("Fields", "Simple", "Fields")</li>*@
                     <li>
-                        <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/Personality/Simple'">Personalities</button>
+                        <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/Fields/Simple'">Fields</button>
                     </li>
 
                     <!-- Badge Layout -->
@@ -186,7 +187,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - ABC ID Card by R Software Consulting 123</p>
+            <p>&copy; @DateTime.Now.Year - RSC ID Card by R Software Consulting 123</p>
         </footer>
     </div>
 

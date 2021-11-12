@@ -8,13 +8,13 @@
 <!--https://www.c-sharpcorner.com/article/simple-login-application-using-Asp-Net-mvc/ -->
 
 <div class="jumbotron">
-    @*<h1>ABC ID Card Web</h1>*@
+    @*<h2>ABC ID Card</h2>*@
     @*<img src="~/Images/ABC IDCardLogo.png" width="500" alt="ABC ID Card Web" />
         <img src="~/Images/ThomasDownesLogo.png" width="400" alt="ABC Solutions" />*@
-    <h2>by R Software Consulting / Thomas C. Downes <img src="~/Images/ThomasCDownes.png" width="70" /></h2>
+<h3>RSC ID Card by R Software Consulting / Thomas C. Downes <img src="~/Images/ThomasCDownes.png" width="70" /></h3>
     @*<img src="~/Images/ThomasCDownes.png" width="100" />*@
 
-    <p class="lead">ABC ID Card by R Software Consulting 123 is a software service enabling you to create badges for any group of people.</p>
+    <p class="lead">RSC ID Card by R Software Consulting 123 is a software service enabling you to create badges for any group of people.</p>
     @*<p><a href="https //ABC IDCard.AzureWebsites.net/card-printing-software/" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
     <p><a href="~/Home/LoginPlain" class="btn btn-primary btn-lg">Log in &raquo;</a></p>
 </div>
@@ -22,7 +22,7 @@
 @using (Html.BeginForm("Login", "Home", FormMethod.Post))
 {
     <fieldset>
-        <legend>Please log into ABC ID Card.</legend>
+        <legend>Please log into RSC ID Card.</legend>
 
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true)
