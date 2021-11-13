@@ -227,6 +227,7 @@
     <Compile Include="Controllers\BatchPrintController.cs" />
     <Compile Include="Controllers\CustomTextFieldController.cs" />
     <Compile Include="Controllers\FieldsController.cs" />
+    <Compile Include="Controllers\FieldsListController.cs" />
     <Compile Include="Controllers\JsonFileController.cs" />
     <Compile Include="Controllers\LayoutPicController.cs" />
     <Compile Include="Controllers\LayoutText1Controller.cs" />
@@ -244,6 +245,7 @@
     <Compile Include="Controllers\MvcTestController.cs" />
     <Compile Include="Controllers\OrangeCoastController.cs" />
     <Compile Include="Controllers\PersonalityController.cs" />
+    <Compile Include="Controllers\PersonListController.cs" />
     <Compile Include="Controllers\PortraitImageController.cs" />
     <Compile Include="Controllers\RecipientController.cs" />
     <Compile Include="Controllers\Step1Controller.cs" />
@@ -286,6 +288,7 @@
     <Compile Include="Models\Moveable_Left.cs" />
     <Compile Include="Models\Moveable_Top.cs" />
     <Compile Include="Models\Moveable_Width.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Personality.cs" />
     <Compile Include="Models\PortraitImage.cs" />
     <Compile Include="Models\PortraitImageModel.cs" />
@@ -1285,6 +1288,16 @@
     <Content Include="Views\Background\DeleteConfirmationMsg.cshtml" />
     <Content Include="Views\JsonFile\Index_Dropbox.cshtml" />
     <Content Include="Views\JsonFile\Index_1stElement.cshtml" />
+    <Content Include="Views\FieldList\EditorTemplates\Field.cshtml" />
+    <Content Include="Views\FieldList\Index.cshtml" />
+    <Content Include="Views\PersonList\EditorTemplates\Person.cshtml" />
+    <Content Include="Views\PersonList\Index.cshtml" />
+    <Content Include="Views\PersonList\EditorTemplates\Using EditorTemplates %28GitHub%29.url" />
+    <Content Include="Views\FieldList\EditorTemplates\Using EditorTemplates %28GitHub%29.url" />
+    <Content Include="Views\PersonList\EditorTemplates\Display Templates &amp; Edit Templates.url" />
+    <Content Include="Views\Personality\DisplayTemplates\Display Templates &amp; Edit Templates.url" />
+    <Content Include="Views\FieldsList_see_FieldList\EditorTemplates\Field_nee_Person.cshtml" />
+    <Content Include="Views\FieldsList_see_FieldList\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />
@@ -1293,6 +1306,7 @@
     <Folder Include="Scripts - 2020\" />
     <Folder Include="Views\CILayoutText\" />
     <Folder Include="Views\CustomField\" />
+    <Folder Include="Views\FieldsList w EditTemplates\" />
     <Folder Include="Views\LayoutTextboxes\" />
     <Folder Include="Views\Menu\" />
     <Folder Include="Views\MoveableDivs\" />

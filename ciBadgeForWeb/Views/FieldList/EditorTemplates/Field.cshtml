@@ -1,0 +1,27 @@
+﻿@* Goes in Views\PersonList\EditorTemplates *@
+@*@using EditableListMvc.Models*@
+@*@model Person*@
+@model ciBadgeFields.ClassFieldAny
+
+@*
+   //  https://gist.github.com/rockfordlhotka/0474af9cf53cec9f2d359fa413d61e73
+*@
+
+<tr>
+    <td>
+        @Html.HiddenFor(model => model.PrimaryKey)
+        @Html.EditorFor(model => model.FirstName)
+        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+    </td>
+    <td>
+        @Html.EditorFor(model => model.LastName)
+        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Age)
+        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+    </td>
+    <td>
+        @Html.EditorFor(model => model.Remove)
+    </td>
+</tr>
