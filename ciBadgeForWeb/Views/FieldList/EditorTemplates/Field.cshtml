@@ -9,19 +9,25 @@
 
 <tr>
     <td>
-        @Html.HiddenFor(model => model.PrimaryKey)
-        @Html.EditorFor(model => model.FirstName)
-        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+        @*@Html.HiddenFor(model => model.PrimaryKey)
+            @Html.EditorFor(model => model.FirstName)*@
+        @*@Html.HiddenFor(model => model.CIBadgeField)*@
+        @Html.DisplayFor(model => model.FieldLabelCaption)
+        @*@Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })*@
     </td>
     <td>
-        @Html.EditorFor(model => model.LastName)
-        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+        [ @Html.DisplayFor(model => model.CIBadgeField) ]
     </td>
     <td>
-        @Html.EditorFor(model => model.Age)
-        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+        @*@Html.EditorFor(model => model.LastName)*@
+        @*@Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })*@
+        @Html.EditorFor(model => model.IsDisplayedOnBadge)
     </td>
-    <td>
-        @Html.EditorFor(model => model.Remove)
-    </td>
+    @*<td>
+            @Html.EditorFor(model => model.Age)
+            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+        </td>*@
+    @*<td>
+            @Html.EditorFor(model => model.Remove)
+        </td>*@
 </tr>

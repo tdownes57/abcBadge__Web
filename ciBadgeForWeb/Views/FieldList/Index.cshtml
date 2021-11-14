@@ -1,37 +1,45 @@
 ﻿@* Goes in Views\PersonList *@
-@using EditableListMvc.Models
-@model IEnumerable<Person>
+@*@using EditableListMvc.Models*@
+@*@using ciBadgeForWeb.Models*@
+@using ciBadgeFields
+
+@*@model IEnumerable<Person>*@
+@model IEnumerable<ciBadgeFields.ClassFieldAny>
 
 @*
-@    //  https://gist.github.com/rockfordlhotka/0474af9cf53cec9f2d359fa413d61e73
-*@    
+    @    //  https://gist.github.com/rockfordlhotka/0474af9cf53cec9f2d359fa413d61e73
+*@
 
 @{
     //
     //  https://gist.github.com/rockfordlhotka/0474af9cf53cec9f2d359fa413d61e73
     //
-    ViewBag.Title = "Person List";
+    //ViewBag.Title = "Person List";
+    ViewBag.Title = "List of Fields";
 }
 
-<h2>Person List</h2>
+@*<h2>Person List</h2>*@
+<h2>Field List</h2>
 
-@using (Html.BeginForm("Index", "PersonList", FormMethod.Post))
+@*@using (Html.BeginForm("Index", "PersonList", FormMethod.Post))*@
+@using (Html.BeginForm("Index", "FieldList", FormMethod.Post))
 {
     <table class="table">
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.FirstName)
+                    @* @Html.DisplayNameFor(model => model.FirstName)*@
+                    @Html.DisplayNameFor(model => model.FieldLabelCaption)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.LastName)
+                    @Html.DisplayNameFor(model => model.CIBadgeField)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Age)
+                    @Html.DisplayNameFor(model => model.IsDisplayedOnBadge)
                 </th>
-                <th>
+                @*<th>
                     @Html.DisplayNameFor(model => model.Remove)
-                </th>
+                </th>*@
             </tr>
         </thead>
         <tbody id="childtable">
@@ -39,12 +47,12 @@
         </tbody>
     </table>
     <p>
-        <input name="command" type="submit" value="Add Item" />
-        <input name="command" type="submit" value="Remove Selected" />
-        <input name="command" type="submit" value="Cancel/Refresh" />
+        @*<input name="command" type="submit" value="Add Item" />*@
+        @*<input name="command" type="submit" value="Remove Selected" />*@
+        <input name="command" type="submit" value="Cancel Edits/Refresh" />
     </p>
     <p>
         @Html.ValidationSummary()
-        <input name="command" type="submit" value="Submit" />
+        <input name="command" type="submit" value="Submit/Save" />
     </p>
 }

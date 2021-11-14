@@ -227,7 +227,7 @@
     <Compile Include="Controllers\BatchPrintController.cs" />
     <Compile Include="Controllers\CustomTextFieldController.cs" />
     <Compile Include="Controllers\FieldsController.cs" />
-    <Compile Include="Controllers\FieldsListController.cs" />
+    <Compile Include="Controllers\FieldListController.cs" />
     <Compile Include="Controllers\JsonFileController.cs" />
     <Compile Include="Controllers\LayoutPicController.cs" />
     <Compile Include="Controllers\LayoutText1Controller.cs" />
@@ -256,6 +256,7 @@
     <Compile Include="Controllers\UploadBackController.cs" />
     <Compile Include="Controllers\ValuesController1.cs" />
     <Compile Include="Controllers\XmlCacheController.cs" />
+    <Compile Include="Controllers\__SessionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -374,11 +375,13 @@
     <Content Include="Content\smallPic.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Controllers\__Session notes.txt" />
     <Content Include="Images\BackExamples\football kick Cardinal.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\DropboxForEditOrDelete.jpg" />
     <Content Include="Images\DropboxToResizeEtc.jpg" />
+    <Content Include="Views\FieldsList w EditorTemplates\Notes.html" />
     <Content Include="__Documentation - Notes\CIBCards83 - removing PD.mdb" />
     <Content Include="__Documentation - Notes\CIBCards83 - very complex.mdb" />
     <Content Include="__Documentation - Notes\Notes.html" />
@@ -1306,11 +1309,11 @@
     <Folder Include="Scripts - 2020\" />
     <Folder Include="Views\CILayoutText\" />
     <Folder Include="Views\CustomField\" />
-    <Folder Include="Views\FieldsList w EditTemplates\" />
     <Folder Include="Views\LayoutTextboxes\" />
     <Folder Include="Views\Menu\" />
     <Folder Include="Views\MoveableDivs\" />
     <Folder Include="Views\OrangeCoast\" />
+    <Folder Include="Views\__Session\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

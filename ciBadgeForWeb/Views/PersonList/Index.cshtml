@@ -1,20 +1,24 @@
 ﻿@* Goes in Views\PersonList *@
-@using EditableListMvc.Models
+@*@using EditableListMvc.Models*@
+@using ciBadgeForWeb.Models
 @model IEnumerable<Person>
 
 @*
-@    //  https://gist.github.com/rockfordlhotka/0474af9cf53cec9f2d359fa413d61e73
-*@    
+    @    //  https://gist.github.com/rockfordlhotka/0474af9cf53cec9f2d359fa413d61e73
+*@
 
 @{
     //
     //  https://gist.github.com/rockfordlhotka/0474af9cf53cec9f2d359fa413d61e73
     //
+    //ViewBag.Title = "Person List";
+    //ViewBag.Title = "Field List";
     ViewBag.Title = "Person List";
 }
 
 <h2>Person List</h2>
 
+@*@using (Html.BeginForm("Index", "PersonList", FormMethod.Post))*@
 @using (Html.BeginForm("Index", "PersonList", FormMethod.Post))
 {
     <table class="table">
