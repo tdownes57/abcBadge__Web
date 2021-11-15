@@ -198,6 +198,13 @@ namespace ciBadgeForWeb.Controllers
         // GET: Recipient
         public ActionResult Index()
         {
+            //
+            // Check the Session variable, "CustomerCode". 
+            //    ---11/14/2021
+            //
+            HttpSession session = request.getSession();
+            string strCustomerCode = session["CustomerCode"];
+
             const bool c_boolSpecifyViewName = false;    //Added 5/28/2019 td
             if (c_boolSpecifyViewName) return View("Index");  //A View, i.e. a webpage, is the most popular type of ActionResult !!
 

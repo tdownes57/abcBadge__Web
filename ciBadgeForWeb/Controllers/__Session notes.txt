@@ -1,6 +1,14 @@
 ﻿
   Added 11/13/2021 Thomas c. downes
 
+              //
+            // Check the Session variable, "CustomerCode". 
+            //    ---11/14/2021
+            //
+            HttpSession session = request.getSession();
+            string strCustomerCode = session["CustomerCode"];
+
+
    http://tutorials.jenkov.com/java-servlets/httpsession.html
     //
     //   http://tutorials.jenkov.com/java-servlets/httpsession.html

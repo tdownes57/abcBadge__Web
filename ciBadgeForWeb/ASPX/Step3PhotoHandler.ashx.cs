@@ -26,6 +26,14 @@ namespace ciBadgeForWeb
             bool boolImageSample = false; //Added 7/10/2019 td 
             bool boolApplyWidth = false;  //Added 7/13/2019 td  
 
+            //
+            // Check the Session variable, "CustomerCode". 
+            //    ---11/14/2021
+            //
+            HttpSession session = request.getSession();
+            string strCustomerCode = session["CustomerCode"];
+
+
             //Added 8/20/2019 td 
             //
             // 8-21-2019 td//ciPictures_VB.PictureExamples.PathToFolderOfImages = "~/Images/PictureExamples";

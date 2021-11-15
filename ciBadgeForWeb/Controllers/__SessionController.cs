@@ -46,6 +46,13 @@ namespace ciBadgeForWeb.Controllers
         // GET: __Session
         public ActionResult Index()
         {
+            //
+            // Check the Session variable, "CustomerCode". 
+            //    ---11/14/2021
+            //
+            HttpSession session = request.getSession();
+            string strCustomerCode = session["CustomerCode"];
+
             return View();
         }
     }
