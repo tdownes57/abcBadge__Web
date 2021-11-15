@@ -6,6 +6,7 @@ using System.Drawing;           // Added 5/20/2019 thomas d.
 using System.Drawing.Imaging;   // Added 5/20/2019 thomas d. 
 using System.IO;        // Added 5/20/2019 thomas d. 
 using ciLayoutPrintLib; // Added 7/13/2019 td
+using System.Web.SessionState;  // Added 11/15/2021 td
 
 namespace ciBadgeForWeb
 {
@@ -30,8 +31,9 @@ namespace ciBadgeForWeb
             // Check the Session variable, "CustomerCode". 
             //    ---11/14/2021
             //
-            HttpSession session = request.getSession();
-            string strCustomerCode = session["CustomerCode"];
+            //HttpSession session = request.getSession();
+            HttpSessionState session = context.Session;
+            string strCustomerCode = (string)(session["CustomerCode"]);
 
 
             //Added 8/20/2019 td 

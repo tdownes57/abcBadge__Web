@@ -5,8 +5,9 @@
             // Check the Session variable, "CustomerCode". 
             //    ---11/14/2021
             //
-            HttpSession session = request.getSession();
-            string strCustomerCode = session["CustomerCode"];
+            using System.Web.SessionState;  // Added 11/15/2021 thomas downes
+            HttpSessionState session = request.Session;
+            string strCustomerCode = (string)(session["CustomerCode"]);
 
 
    http://tutorials.jenkov.com/java-servlets/httpsession.html

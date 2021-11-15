@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.SessionState;  // Added 11/15/2021 thomas downes 
 
 //
 //  Added 11/13/2021 Thomas c. downes
@@ -50,8 +51,9 @@ namespace ciBadgeForWeb.Controllers
             // Check the Session variable, "CustomerCode". 
             //    ---11/14/2021
             //
-            HttpSession session = request.getSession();
-            string strCustomerCode = session["CustomerCode"];
+            //---HttpSession session = request.getSession();
+            HttpSessionState session = request.Session;
+            string strCustomerCode = (string)(session["CustomerCode"]);
 
             return View();
         }
