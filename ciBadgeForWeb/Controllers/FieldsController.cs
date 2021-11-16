@@ -14,7 +14,12 @@ namespace ciBadgeForWeb.Controllers
         //
         private static List<ciBadgeFields.ClassFieldAny> _fieldsList;
 
-        public static List<ciBadgeFields.ClassFieldAny> GetFieldsList() => _fieldsList; 
+        public static List<ciBadgeFields.ClassFieldAny> GetFieldsList()
+        {
+            //Added 11/15/2021 thomas downes 
+            if (_fieldsList == null) RefreshFieldsList();
+            return _fieldsList;
+        }
 
         /// <summary>
         /// Use this in conjunction with GetFieldsList(), as needed.
