@@ -9,6 +9,34 @@ namespace ciBadgeForWeb.Controllers
 {
     public class FieldsController : Controller
     {
+        //
+        // Added 11/15/2021 thomas downes
+        //
+        private static List<ciBadgeFields.ClassFieldAny> _fieldsList;
+
+        public static List<ciBadgeFields.ClassFieldAny> GetFieldsList() => _fieldsList; 
+
+        /// <summary>
+        /// Use this in conjunction with GetFieldsList(), as needed.
+        /// </summary>
+        public static void RefreshFieldsList()
+        {
+            //Added 11/15/2021 td
+            //
+            _fieldsList = ClassElementsCache_Deprecated.Singleton.ListOfFields_CreateCopies();
+            //return _fieldsList;
+        }
+
+        public FieldsController()
+        {
+            //
+            // Added 11/15/2021 td  
+            //
+            //----_fieldsList = RefreshFieldsList();
+            RefreshFieldsList();
+
+        }
+
         // GET: Fields
         public ActionResult Index()
         {
@@ -22,7 +50,11 @@ namespace ciBadgeForWeb.Controllers
         public ActionResult Simple()
         {
             //Added 2/20/2020 thomas downes 
-            return View(ClassElementsCache_Deprecated.Singleton.ListOfFields_Any());
+            //----return View(ClassElementsCache_Deprecated.Singleton.ListOfFields_Any());
+
+            if (_fieldsList == null) RefreshFieldsList();
+            return View(_fieldsList);
+
         }
 
         // GET: Fields

@@ -52,8 +52,9 @@ namespace ciBadgeForWeb.Controllers
             //    ---11/14/2021
             //
             //---HttpSession session = request.getSession();
-            HttpSessionState session = request.Session;
-            string strCustomerCode = (string)(session["CustomerCode"]);
+            //HttpSessionState session = request.Session;
+            HttpSessionStateBase base_session = Session;
+            string strCustomerCode = (string)(base_session["CustomerCode"]);
 
             return View();
         }

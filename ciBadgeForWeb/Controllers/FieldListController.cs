@@ -37,7 +37,9 @@ namespace ciBadgeForWeb.Controllers //EditableListMvc.Controllers
             get
             {
                 if (_fieldList == null)
-                    _fieldList = Session["FieldsList"] as List<ciBadgeFields.ClassFieldAny>;
+                //_fieldList = Session["FieldsList"] as List<ciBadgeFields.ClassFieldAny>;
+                { _fieldList = FieldsController.GetFieldsList();  }   
+                
                 return _fieldList;
             }
             set
@@ -50,14 +52,20 @@ namespace ciBadgeForWeb.Controllers //EditableListMvc.Controllers
         // GET: FieldsList
         public ActionResult Index()
         {
-            if (FieldsList == null)
+            //if (FieldsList == null)
+            if (_fieldList == null)
             {
                 // TODO: load real data from database
                 //FieldsList = MockDb;
                 //FieldsList = ciBadgeFields.ClassFieldStandard;
-                FieldsList = ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
+                //    _fieldList = ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
+                //_fieldList = ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
+
+                //_fieldList = ClassElementsCache_Deprecated.Singleton.ListOfFields_CreateCopies();
+                _fieldList = FieldsController.GetFieldsList();
+
             }
-            return View(FieldsList);
+            return View(_fieldList);
         }
 
         [HttpPost]
@@ -79,12 +87,17 @@ namespace ciBadgeForWeb.Controllers //EditableListMvc.Controllers
                         //if (par_fieldList[pos].Remove)
                         //    par_fieldList.RemoveAt(pos);
                     }
-                    FieldsList = par_fieldList;
+                    
+                    //FieldsList = par_fieldList;
+                    _fieldList = par_fieldList;
+                
                 }
                 else if (command == "Cancel/Refresh")
                 {
                     // force reload of data from database
-                    FieldsList = null;
+                    //FieldsList = null;
+                    _fieldList = null;
+
                 }
                 else
                 {
@@ -92,11 +105,17 @@ namespace ciBadgeForWeb.Controllers //EditableListMvc.Controllers
                     // update actual database
                     //
                     //MockDb = par_fieldList;
-                    ClassElementsCache_Deprecated.Singleton.ListOfElementFields = 
-                        (HashSet<ciBadgeFields.ClassFieldAny>)par_fieldList; ;
+                    //ClassElementsCache_Deprecated.Singleton.ListOfElementFields =
+                    //ClassElementsCache_Deprecated.Singleton.ListOfFields_Any =
+                    //    // (HashSet<ciBadgeFields.ClassFieldAny>)par_fieldList; ;
+                    //    new HashSet<ciBadgeFields.ClassFieldAny>(par_fieldList);
+                    ClassElementsCache_Deprecated.Singleton.LoadFields_FromList(par_fieldList);
 
                     // force reload of data from database
-                    FieldsList = null;
+                    //_fieldList = null;
+                    FieldsController.RefreshFieldsList();
+                    _fieldList = FieldsController.GetFieldsList();
+
                 }
                 return RedirectToAction("Index");
             }

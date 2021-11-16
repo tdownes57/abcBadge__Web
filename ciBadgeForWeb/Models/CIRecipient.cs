@@ -56,7 +56,20 @@ namespace ciBadgeForWeb.Models
             //
             // 12-02-2019 td''return ((ClassElementsCache)ParentCache).ListOfFields_Any();
             return ((ClassElementsCache_Deprecated)ParentCache).ListOfFields_Any(this);
+
         }
+
+
+        List<ciBadgeFields.ClassFieldAny> ListOfCIBFields_CreateCopies()
+        {
+            //
+            // Added 11/15/2021 thomas d   
+            //
+            // 12-02-2019 td''return ((ClassElementsCache)ParentCache).ListOfFields_Any();
+            return ((ClassElementsCache_Deprecated)ParentCache).ListOfFields_CreateCopies();
+
+        }
+
 
         public System.Drawing.Image GetPortraitImage()
         {
