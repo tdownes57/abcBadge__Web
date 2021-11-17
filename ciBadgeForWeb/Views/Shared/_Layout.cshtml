@@ -79,6 +79,12 @@
                         <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/Customer/Index'">Customers</button>
                     </li>
 
+                    <!-- Persons -->
+                    @* <li>@Html.ActionLink("Persons", "Index", "PersonList")</li>*@
+                    <li>
+                        <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/PersonList/Index'">Persons</button>
+                    </li>
+
                     <!-- Personalities -->
                     @* <li>@Html.ActionLink("Personalities", "Index", "Personality")</li>*@
                     <li>
@@ -87,10 +93,10 @@
 
                     <!-- Fields -->
                     @* <li>@Html.ActionLink("Fields", "Simple", "Fields")</li>*@
-                <li>
-                    @*<button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/Fields/Simple'">Fields</button>*@
-                    <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/FieldList/Index'">Fields</button>
-                </li>
+                    <li>
+                        @*<button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/Fields/Simple'">Fields</button>*@
+                        <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/FieldList/Index'">Fields</button>
+                    </li>
 
                     <!-- Badge Layout -->
                     @* <li>@Html.ActionLink("Badge Layout", "Index", "LayoutText1")</li>*@

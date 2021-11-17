@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ciBadgeElements;  //Added 1/19/2020 thomas downes  
+using ciBadgeForWeb.Models;  //Added 11/16/2021 thomas downes
 
 namespace ciBadgeForWeb.Controllers
 {
@@ -12,9 +13,11 @@ namespace ciBadgeForWeb.Controllers
         //
         // Added 11/15/2021 thomas downes
         //
-        private static List<ciBadgeFields.ClassFieldAny> _fieldsList;
+        //---=-private static List<ciBadgeFields.ClassFieldAny> _fieldsList;
+        private static List<ciBadgeForWeb.Models.Field> _fieldsList;
 
-        public static List<ciBadgeFields.ClassFieldAny> GetFieldsList()
+        //---=-public static List<ciBadgeFields.ClassFieldAny> GetFieldsList()
+        public static List<ciBadgeForWeb.Models.Field> GetFieldsList()
         {
             //Added 11/15/2021 thomas downes 
             if (_fieldsList == null) RefreshFieldsList();
@@ -28,7 +31,8 @@ namespace ciBadgeForWeb.Controllers
         {
             //Added 11/15/2021 td
             //
-            _fieldsList = ClassElementsCache_Deprecated.Singleton.ListOfFields_CreateCopies();
+            //_fieldsList = ClassElementsCache_Deprecated.Singleton.ListOfFields_CreateCopies();
+            _fieldsList = Field.ListOfFields_CreateCopies();
             //return _fieldsList;
         }
 
