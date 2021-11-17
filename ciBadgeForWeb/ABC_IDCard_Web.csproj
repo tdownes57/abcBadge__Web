@@ -895,12 +895,12 @@
     <Content Include="Scripts\Adjustment_Click.js" />
     <Content Include="Scripts\Adjustment_Master.js" />
     <Content Include="ASPX\Step3PhotoHandler.ashx" />
-    <AdditionalFiles Include="Scripts\Closures\ClickClosure.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </AdditionalFiles>
-    <AdditionalFiles Include="Scripts\Closures\DragClosure.js">
+    <Content Include="Scripts\Closures\ClickClosure.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AdditionalFiles>
+    </Content>
+    <Content Include="Scripts\Closures\DragClosure.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -908,9 +908,9 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Closures\DragDivE99.js" />
-    <AdditionalFiles Include="Scripts\Closures\LinkUpClosures.js">
+    <Content Include="Scripts\Closures\LinkUpClosures.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AdditionalFiles>
+    </Content>
     <Content Include="OrangeCoast\MemeAppFinal\MemesAppFinal.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
