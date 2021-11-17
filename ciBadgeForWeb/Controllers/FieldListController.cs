@@ -30,9 +30,11 @@ namespace ciBadgeForWeb.Controllers //EditableListMvc.Controllers
         //    };
 
         //private List<ciBadgeFields.ClassFieldAny> _par_fieldList;
-        private List<ciBadgeFields.ClassFieldAny> _fieldList;
+        //---private List<ciBadgeFields.ClassFieldAny> _fieldList;
+        private List<Models.Field> _fieldList;
 
-        private List<ciBadgeFields.ClassFieldAny> FieldsList
+        //---private List<ciBadgeFields.ClassFieldAny> FieldsList
+        private List<Models.Field> FieldsList
         {
             get
             {
@@ -69,8 +71,9 @@ namespace ciBadgeForWeb.Controllers //EditableListMvc.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(List<ciBadgeFields.ClassFieldAny> par_fieldList, string command)
+        public ActionResult Index(List<Models.Field> par_fieldList, string command)
         {
+            //----public ActionResult Index(List<ciBadgeFields.ClassFieldAny> par_fieldList, string command)
             try
             {
                 if (command == "Add Item")
@@ -109,7 +112,12 @@ namespace ciBadgeForWeb.Controllers //EditableListMvc.Controllers
                     //ClassElementsCache_Deprecated.Singleton.ListOfFields_Any =
                     //    // (HashSet<ciBadgeFields.ClassFieldAny>)par_fieldList; ;
                     //    new HashSet<ciBadgeFields.ClassFieldAny>(par_fieldList);
-                    ClassElementsCache_Deprecated.Singleton.LoadFields_FromList(par_fieldList);
+
+                    //----ClassElementsCache_Deprecated.Singleton.LoadFields_FromList(par_fieldList);
+
+                    // Modified 11/17/2021 thomas downes 
+                    var list_converted = Models.Field.ConvertListItems(par_fieldList);
+                    ClassElementsCache_Deprecated.Singleton.LoadFields_FromList(list_converted);
 
                     // force reload of data from database
                     //_fieldList = null;

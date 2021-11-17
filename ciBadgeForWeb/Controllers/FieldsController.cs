@@ -32,7 +32,9 @@ namespace ciBadgeForWeb.Controllers
             //Added 11/15/2021 td
             //
             //_fieldsList = ClassElementsCache_Deprecated.Singleton.ListOfFields_CreateCopies();
-            _fieldsList = Field.ListOfFields_CreateCopies();
+            var list_standard = ClassElementsCache_Deprecated.Singleton.ListOfFields_Standard;
+            var list_custom = ClassElementsCache_Deprecated.Singleton.ListOfFields_Custom;
+            _fieldsList = Field.ListOfFields_CreateCopies(list_standard, list_custom);
             //return _fieldsList;
         }
 
