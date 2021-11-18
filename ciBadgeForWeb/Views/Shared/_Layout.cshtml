@@ -103,19 +103,23 @@
                     <li>
                         @* <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/LayoutText1/Index'">Badge Layout</button>*@
                         <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                            Badge Layout
+                            @*Badge Layout*@
+                            Badge Setup
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Modify Badge Layout", "Index", "LayoutText1")</li>
+                            @*<li>@Html.ActionLink("Modify Badge Layout", "Index", "LayoutText1")</li>*@
+                            <li>@Html.ActionLink("Set up Badge (BadgeSetupElement)", "Index", "BadgeSetupElement")</li>
+                            <li>@Html.ActionLink("Set up Badge (JsonFile)", "Index", "JsonFile")</li>
+                            <li>@Html.ActionLink("Set up Badge (LayoutText1)", "Index", "LayoutText1")</li>
                             @*<li>@Html.ActionLink("Upload Background", "UploadBack", "Background")</li>*@
                             <li>@Html.ActionLink("Upload Background Image", "Index", "UploadBack")</li>
                             @*<li>@Html.ActionLink("Select Background", "ChooseWhich", "UploadBack")</li>*@
                             @*<li>@Html.ActionLink("Select Background", "ShowAll", "UploadBack")</li>*@
                             <li>@Html.ActionLink("Show Current Background Image", "ShowCurrent", "Background")</li>
                             @*<li>@Html.ActionLink("Select Background", "ShowAll", "Background")</li>*@
-                            <li>@Html.ActionLink("Show All Uploaded Background Images", "ShowAll", "Background")</li>
-                            <li>@Html.ActionLink("(a.k.a. Select a Background Image If Uploaded)", "ShowAll", "Background")</li>
+                            <li>@Html.ActionLink("Show All Uploaded Background images", "ShowAll", "Background")</li>
+                            <li>@Html.ActionLink("(a.k.a. Select a Background image, if it's already uploaded)", "ShowAll", "Background")</li>
                         </ul>
                     </li>
 

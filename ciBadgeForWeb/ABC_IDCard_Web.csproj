@@ -228,6 +228,7 @@
       <DependentUpon>UltraSimpleHandler.ashx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\BadgeRecipientController_NotInUse.cs" />
+    <Compile Include="Controllers\BadgeSetupElementController.cs" />
     <Compile Include="Controllers\BatchPrintController.cs" />
     <Compile Include="Controllers\CustomTextFieldController.cs" />
     <Compile Include="Controllers\FieldsController.cs" />
@@ -238,8 +239,8 @@
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\ExampleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LayoutText2Controller.cs" />
-    <Compile Include="Controllers\LayoutText4Controller.cs" />
+    <Compile Include="Controllers\LayoutText2Controller_NotInUse.cs" />
+    <Compile Include="Controllers\LayoutText4Controller_NotUsed.cs" />
     <Compile Include="Controllers\LayoutText99Controller_NotUsed.cs" />
     <Compile Include="Controllers\LayoutTextboxesController.cs" />
     <Compile Include="Controllers\LegacyPagesController.cs" />
@@ -271,6 +272,7 @@
     <Compile Include="JSON\MoveableDivImage.cs" />
     <Compile Include="JSON\__MoveableDivImage.cs" />
     <Compile Include="Models\Background.cs" />
+    <Compile Include="Models\BadgeSetupElement.cs" />
     <Compile Include="Models\CICustomer.cs" />
     <Compile Include="Models\CIRecipient.cs" />
     <Compile Include="Models\CustomDateField.cs" />
@@ -1307,6 +1309,7 @@
     <Content Include="Views\FieldsList_see_FieldList\EditorTemplates\Field_nee_Person.cshtml" />
     <Content Include="Views\FieldsList_see_FieldList\Index.cshtml" />
     <Content Include="Views\Fields\AdvancedForOne.cshtml" />
+    <Content Include="Views\BadgeSetupElement\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />

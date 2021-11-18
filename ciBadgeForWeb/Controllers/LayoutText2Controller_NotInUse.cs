@@ -14,7 +14,7 @@ namespace ciBadgeForWeb.Controllers
     //
     //Added 6/27/2019 thomas downes  
     //
-    public class LayoutText2Controller : Controller
+    public class LayoutText2Controller_NotInUse : Controller
     {
         //Added 6/27/2019 thomas downes  
         //

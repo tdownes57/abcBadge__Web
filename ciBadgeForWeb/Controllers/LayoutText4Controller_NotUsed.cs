@@ -12,7 +12,7 @@ using ciLayoutPrintLib;  //Added 6/27/2019 thomas downes
 
 namespace ciBadgeForWeb.Controllers
 {
-    public class LayoutText4Controller : Controller
+    public class LayoutText4Controller_NotUsed : Controller
     {
         //Added 6/27/2019 thomas downes  
         //
