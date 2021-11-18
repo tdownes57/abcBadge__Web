@@ -38,6 +38,7 @@ namespace ciBadgeForWeb.Models
         //====private Dictionary<int, string> mod_listMessages = new Dictionary<int, string>();
         public string[] BugMessages = new string[19 + 1];  // new string[12 + 1];
         public string BugMessageRecent = "";  // Added 11/11/2021 td
+        public static string[] Messages = new string[19 + 1]; // Added 11/18/2021 td
 
         //Added 11/9/2021 thomas downes
         public int CurrentIndexForDropbox = 0;

@@ -10,9 +10,10 @@ namespace ciBadgeForWeb.Models
     public class Field : ciBadgeFields.ClassFieldAny
     {
         //
-        // Added 11/16/2021 thomas downes 
+        // Added 11/16/2021 thomas downes  
         //
-        public string[] BugMessages = new string[12 + 1]; // Added 11/17/2021 td
+        public string[] BugMessages = new string[19 + 1]; // string[19 + 1]; // Added 11/17/2021 td
+        public static string[] Messages = new string[19 + 1]; // Added 11/18/2021 td
 
         public static List<Field> ListOfFields_CreateCopies(HashSet<ClassFieldStandard> par_HashOfFields_Standard,
                                                             HashSet<ClassFieldCustomized> par_HashOfFields_Custom,

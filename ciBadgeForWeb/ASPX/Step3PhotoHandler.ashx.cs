@@ -32,9 +32,21 @@ namespace ciBadgeForWeb
             //    ---11/14/2021
             //
             //HttpSession session = request.getSession();
-            HttpSessionState session = context.Session;
-            string strCustomerCode = (string)(session["CustomerCode"]);
-
+            try
+            {
+                HttpSessionState session = context.Session;
+                string strCustomerCode = (string)(session["CustomerCode"]);
+            }
+            catch (Exception ex)
+            {
+                // Unable to capture the Customer code. ---11/18/2021
+                if (false)
+                {
+                    context.Response.ContentType = "text/html";
+                    context.Response.Write("<p>Unable to detect the customer code.</p>");
+                    return;
+                }
+            }
 
             //Added 8/20/2019 td 
             //
