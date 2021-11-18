@@ -10,25 +10,45 @@
 
 <tr>
     <td>
-        @*@Html.HiddenFor(model => model.PrimaryKey)
-            @Html.EditorFor(model => model.FirstName)*@
-        @*@Html.HiddenFor(model => model.CIBadgeField)*@
         @Html.DisplayFor(model => model.FieldLabelCaption)
-        @*@Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })*@
     </td>
     <td>
         [ @Html.DisplayFor(model => model.CIBadgeField) ]
     </td>
     <td>
-        @*@Html.EditorFor(model => model.LastName)*@
-        @*@Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })*@
         @Html.EditorFor(model => model.IsDisplayedOnBadge)
     </td>
     @*<td>
-            @Html.EditorFor(model => model.Age)
-            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+            Remove button
         </td>*@
-    @*<td>
-            @Html.EditorFor(model => model.Remove)
-        </td>*@
+<td>
+    <img src="~/ASPX/Step2DataHandler.ashx?fldindex=@Model.FieldIndex" />
+    # @Model.FieldIndex @Model.BugMessages[@Model.FieldIndex]
+</td>
+
+<td>
+    @Html.HiddenFor(model => model.CIBadgeField)
+    @Html.HiddenFor(model => model.DefaultValue)
+    @Html.HiddenFor(model => model.ExampleValue)
+    @Html.HiddenFor(model => model.FieldEnumValue)
+    @Html.HiddenFor(model => model.FieldIndex)
+    @Html.HiddenFor(model => model.FieldLabelCaption)
+    @Html.HiddenFor(model => model.FieldType_TD)
+    @Html.HiddenFor(model => model.HasPresetValues)
+    @Html.HiddenFor(model => model.IsAdditionalField)
+    @Html.HiddenFor(model => model.IsBarCode)
+    @Html.HiddenFor(model => model.IsCustomizable)
+    @Html.HiddenFor(model => model.IsDateField)
+    @Html.HiddenFor(model => model.IsDisplayedForEdits)
+    @*@Html.HiddenFor(model => model.IsDisplayedOnBadge)*@
+    @Html.HiddenFor(model => model.IsFieldForDates)
+    @Html.HiddenFor(model => model.IsLinkedToSections)
+    @Html.HiddenFor(model => model.IsLocked)
+    @Html.HiddenFor(model => model.IsStandard)
+    @Html.HiddenFor(model => model.OtherDbField_Optional)
+    @Html.HiddenFor(model => model.Text_orDate)
+</td>
+
+
+
 </tr>

@@ -35,6 +35,15 @@ namespace ciBadgeForWeb.Models
         public string EL11_Left { get; set; }  //E.g. "200px"
         public string EL12_Left { get; set; }  //E.g. "200px"
 
+        //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+        public string EL15_Left { get; set; }  //E.g. "200px"
+        public string EL16_Left { get; set; }  //E.g. "200px"
+        public string EL17_Left { get; set; }  //E.g. "200px"
+        public string EL18_Left { get; set; }  //E.g. "200px"
+        public string EL19_Left { get; set; }  //E.g. "200px"
+
+
+
         public string this[int i]
         {
             //
@@ -58,6 +67,16 @@ namespace ciBadgeForWeb.Models
                 if (i == 10) return this.EL10_Left;
                 if (i == 11) return this.EL11_Left;
                 if (i == 12) return this.EL12_Left;
+
+                //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+                if (i == 15) return this.EL15_Left;
+                if (i == 16) return this.EL16_Left;
+                if (i == 17) return this.EL17_Left;
+                if (i == 18) return this.EL18_Left;
+                if (i == 19) return this.EL19_Left;
+
+
+
                 //----else return "sdfg";
                 else throw new ArgumentException("The index exceeds 12, which is our current limit.");
             }
@@ -76,6 +95,14 @@ namespace ciBadgeForWeb.Models
                 if (i == 10) this.EL10_Left = value;
                 if (i == 11) this.EL11_Left = value;
                 if (i == 12) this.EL12_Left = value;
+
+                //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+                if (i == 15) this.EL15_Left = value;
+                if (i == 16) this.EL16_Left = value;
+                if (i == 17) this.EL17_Left = value;
+                if (i == 18) this.EL18_Left = value;
+                if (i == 19) this.EL19_Left = value;
+
                 //else ;
             }
         }
@@ -100,6 +127,14 @@ namespace ciBadgeForWeb.Models
             this.EL11_Left = AddPixelSuffix(GetNumber(par_oMoveLeft.EL11_Left) - par_offset.X);
             this.EL12_Left = AddPixelSuffix(GetNumber(par_oMoveLeft.EL12_Left) - par_offset.X);
 
+            //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+            this.EL15_Left = AddPixelSuffix(GetNumber(par_oMoveLeft.EL15_Left) - par_offset.X);
+            this.EL16_Left = AddPixelSuffix(GetNumber(par_oMoveLeft.EL16_Left) - par_offset.X);
+            this.EL17_Left = AddPixelSuffix(GetNumber(par_oMoveLeft.EL17_Left) - par_offset.X);
+            this.EL18_Left = AddPixelSuffix(GetNumber(par_oMoveLeft.EL18_Left) - par_offset.X);
+            this.EL19_Left = AddPixelSuffix(GetNumber(par_oMoveLeft.EL19_Left) - par_offset.X);
+
+
         }
 
         public void RefreshMe_AddOffsets(Moveable_Left par_oMoveLeft, Point par_offset)
@@ -120,6 +155,13 @@ namespace ciBadgeForWeb.Models
             this.EL10_Left = AddPixelSuffix(GetNumber(par_oMoveLeft.EL10_Left) + par_offset.X);
             this.EL11_Left = AddPixelSuffix(GetNumber(par_oMoveLeft.EL11_Left) + par_offset.X);
             this.EL12_Left = AddPixelSuffix(GetNumber(par_oMoveLeft.EL12_Left) + par_offset.X);
+
+            //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+            this.EL15_Left = AddPixelSuffix(GetNumber(par_oMoveLeft.EL15_Left) + par_offset.X);
+            this.EL16_Left = AddPixelSuffix(GetNumber(par_oMoveLeft.EL16_Left) + par_offset.X);
+            this.EL17_Left = AddPixelSuffix(GetNumber(par_oMoveLeft.EL17_Left) + par_offset.X);
+            this.EL18_Left = AddPixelSuffix(GetNumber(par_oMoveLeft.EL18_Left) + par_offset.X);
+            this.EL19_Left = AddPixelSuffix(GetNumber(par_oMoveLeft.EL19_Left) + par_offset.X);
 
         }
 

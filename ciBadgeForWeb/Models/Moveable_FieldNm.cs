@@ -21,6 +21,15 @@ namespace ciBadgeForWeb.Models
         public string EL11_FieldNm { get; set; }
         public string EL12_FieldNm { get; set; }
 
+
+        //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+        public string EL15_FieldNm { get; set; }
+        public string EL16_FieldNm { get; set; }
+        public string EL17_FieldNm { get; set; }
+        public string EL18_FieldNm { get; set; }
+        public string EL19_FieldNm { get; set; }
+
+
         public string this[int i]
         {
             get
@@ -37,6 +46,12 @@ namespace ciBadgeForWeb.Models
                 if (i == 10) return this.EL10_FieldNm;
                 if (i == 11) return this.EL11_FieldNm;
                 if (i == 12) return this.EL12_FieldNm;
+                //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+                if (i == 15) return this.EL15_FieldNm;
+                if (i == 16) return this.EL16_FieldNm;
+                if (i == 17) return this.EL17_FieldNm;
+                if (i == 18) return this.EL18_FieldNm;
+                if (i == 19) return this.EL19_FieldNm;
                 else return "[none]";    // false; // "sdfg";
             }
             set
@@ -53,6 +68,12 @@ namespace ciBadgeForWeb.Models
                 if (i == 10) this.EL10_FieldNm = value;
                 if (i == 11) this.EL11_FieldNm = value;
                 if (i == 12) this.EL12_FieldNm = value;
+                //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+                if (i == 15) this.EL15_FieldNm = value;
+                if (i == 16) this.EL16_FieldNm = value;
+                if (i == 17) this.EL17_FieldNm = value;
+                if (i == 18) this.EL18_FieldNm = value;
+                if (i == 19) this.EL19_FieldNm = value;
                 //else ;
             }
         }

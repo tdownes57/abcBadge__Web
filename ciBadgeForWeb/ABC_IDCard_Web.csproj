@@ -1306,6 +1306,7 @@
     <Content Include="Views\Personality\DisplayTemplates\Display Templates &amp; Edit Templates.url" />
     <Content Include="Views\FieldsList_see_FieldList\EditorTemplates\Field_nee_Person.cshtml" />
     <Content Include="Views\FieldsList_see_FieldList\Index.cshtml" />
+    <Content Include="Views\Fields\AdvancedForOne.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />

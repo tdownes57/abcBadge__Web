@@ -133,6 +133,7 @@ namespace ciBadgeForWeb.Controllers //EditableListMvc.Controllers
                     // force reload of data from database
                     //_fieldList = null;
                     FieldsController.RefreshFieldsList();
+
                     //----_fieldList = FieldsController.GetFieldsList();
                     _fieldList = FieldsController.GetFieldsListAny();
 

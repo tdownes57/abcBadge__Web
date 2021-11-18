@@ -21,6 +21,15 @@ namespace ciBadgeForWeb.Models
         public bool EL11_Displayed { get; set; }
         public bool EL12_Displayed { get; set; }
 
+        //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+        public bool EL15_Displayed { get; set; }
+        public bool EL16_Displayed { get; set; }
+        public bool EL17_Displayed { get; set; }
+        public bool EL18_Displayed { get; set; }
+        public bool EL19_Displayed { get; set; }
+
+
+
         public bool this[int i]
         {
             get
@@ -37,6 +46,14 @@ namespace ciBadgeForWeb.Models
                 if (i == 10) return this.EL10_Displayed;
                 if (i == 11) return this.EL11_Displayed;
                 if (i == 12) return this.EL12_Displayed;
+
+                //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+                if (i == 15) return this.EL15_Displayed;
+                if (i == 16) return this.EL16_Displayed;
+                if (i == 17) return this.EL17_Displayed;
+                if (i == 18) return this.EL18_Displayed;
+                if (i == 19) return this.EL19_Displayed;
+
                 else return false;  // 1655; // "sdfg";
             }
             set
@@ -53,6 +70,14 @@ namespace ciBadgeForWeb.Models
                 if (i == 10) this.EL10_Displayed = value;
                 if (i == 11) this.EL11_Displayed = value;
                 if (i == 12) this.EL12_Displayed = value;
+
+                //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+                if (i == 15) this.EL15_Displayed = value;
+                if (i == 16) this.EL16_Displayed = value;
+                if (i == 17) this.EL17_Displayed = value;
+                if (i == 18) this.EL18_Displayed = value;
+                if (i == 19) this.EL19_Displayed = value;
+
                 //else ;
             }
         }

@@ -126,13 +126,17 @@ namespace ciBadgeForWeb.Controllers
         }
 
         // GET: Fields/Advanced/5
-        public ActionResult Advanced(int id)
+        public ActionResult AdvancedForOne(int id)
         {
+            //----public ActionResult Advanced(int id)
+            //
+            //Suffixed 11/17/2021 td 
+            //
             //return View();
             //return View("EditSimple");
             var fields_list = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
             var fields_onlyone = fields_list.Where(x => x.FieldIndex == id).FirstOrDefault();
-            return (ViewResult)View("Advanced", fields_onlyone);
+            return (ViewResult)View("AdvancedForOne", fields_onlyone);
         }
 
 

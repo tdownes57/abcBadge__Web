@@ -57,13 +57,16 @@ namespace ciBadgeForWeb.ASPX
             //Encapsulated 11-10-2021 td
             //
             int intElementIndex = -1;
+            int intFieldIndex = -1;
 
             //context.Response.Clear();
             //context.Response.ContentType = "text/html";
             //context.Response.Write("<p>No images were loaded, unfortunately.</p>");
             //return;
 
+            bool bWeHave_ElementIndex = false; //Added 11/17/2021 
             bool bDisplayMessagesEtc = ("y" == par_context.Request.QueryString["msgs"]);
+            bool bQueryByField = false; //Added 11/18/2021 td
 
             if (!String.IsNullOrEmpty(par_context.Request.QueryString["elemindex"]))
             {
@@ -71,21 +74,47 @@ namespace ciBadgeForWeb.ASPX
                 //Added 11/10/2021 thomas downes  
                 //
                 intElementIndex = int.Parse(par_context.Request.QueryString["elemindex"]);
+                bWeHave_ElementIndex = true;  //Added 11/17/2021 td
+            }
 
+            if (!String.IsNullOrEmpty(par_context.Request.QueryString["fldindex"]))
+            {
+                //
+                //Added 11/17/2021 thomas downes  
+                //
+                intFieldIndex = int.Parse(par_context.Request.QueryString["fldindex"]);
+                intElementIndex = ClassElementsCache_Deprecated.Singleton
+                    .GetElementIndexByFieldIndex(intFieldIndex);
+                bWeHave_ElementIndex = true;  //Added 11/17/2021 td
+                bQueryByField = true;  
+            }
+
+
+            if (bWeHave_ElementIndex) 
+            {
+                //
+                // We can proceed with image generation. 
+                //
                 var objImageGen = new ciBadgeGenerator.ClassMakeBadge();
 
                 //= objImageGen.ElementFieldToImage(each_element, par_cache.BadgeLayout);
 
                 var list_elements = 
                   ClassElementsCache_Deprecated.Singleton.ListOfElementFields
-                  .Where(i => i.FieldInfo.FieldIndex == intElementIndex);
+                  //--.Where(i => i.FieldInfo.FieldIndex == intElementIndex)
+                  .Where(i => i.ElementIndexIsFieldIndex() == intElementIndex);
 
                 var obj_element = list_elements.FirstOrDefault();
                 var obj_badgeLayout = ClassElementsCache_Deprecated.Singleton.BadgeLayout;
 
                 //Image output_dataImage = objImageGen.ElementFieldToImage(obj_element, obj_badgeLayout);
                 string strBugMessage = "";
-                Image output_dataImage = objImageGen.ElementFieldToImage(obj_element, obj_badgeLayout, ref strBugMessage);
+                Image output_dataImage = objImageGen.ElementFieldToImage(obj_element, 
+                    obj_badgeLayout, ref strBugMessage);
+
+                // Added 11/18/2021 td 
+                if (bQueryByField) Models.Field.Messages[intFieldIndex] = strBugMessage;
+                else Models.MoveableDivImage.Messages[intFieldIndex] = strBugMessage;
 
                 //
                 //Display error messages, if any.  ----11/11/2021 td 

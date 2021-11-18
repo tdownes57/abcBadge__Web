@@ -34,6 +34,13 @@
         MakeClosure_dragElement(EL10);
         MakeClosure_dragElement(EL11);
         MakeClosure_dragElement(EL12);
+
+        //Added 11/18/2021 td
+        MakeClosure_dragElement(EL15);
+        MakeClosure_dragElement(EL16);
+        MakeClosure_dragElement(EL17);
+        MakeClosure_dragElement(EL18);
+        MakeClosure_dragElement(EL19);
     }
     else {
         //Unfortunately, our [0] syntax fails for identifying the IMAGE element.
@@ -41,26 +48,34 @@
     }
 
 
-    if (EL1) {
-        MakeClosure_dragElement(EL1);
-        MakeClosure_dragElement(EL2);
-        MakeClosure_dragElement(EL3);
-        MakeClosure_dragElement(EL4);
+    //if (EL1) {
+    //    MakeClosure_dragElement(EL1);
+    //    MakeClosure_dragElement(EL2);
+    //    MakeClosure_dragElement(EL3);
+    //    MakeClosure_dragElement(EL4);
 
-        MakeClosure_dragElement(EL5);
-        MakeClosure_dragElement(EL6);
-        MakeClosure_dragElement(EL7);
-        MakeClosure_dragElement(EL8);
+    //    MakeClosure_dragElement(EL5);
+    //    MakeClosure_dragElement(EL6);
+    //    MakeClosure_dragElement(EL7);
+    //    MakeClosure_dragElement(EL8);
 
-        MakeClosure_dragElement(EL9);
-        MakeClosure_dragElement(EL10);
-        MakeClosure_dragElement(EL11);
-        MakeClosure_dragElement(EL12);
-    }
-    else {
-    //Unfortunately, our [0] syntax fails for identifying the IMAGE element.
-    alert("We could not find the Element #1....Sad!");
-    }
+    //    MakeClosure_dragElement(EL9);
+    //    MakeClosure_dragElement(EL10);
+    //    MakeClosure_dragElement(EL11);
+    //    MakeClosure_dragElement(EL12);
+
+    //    //Added 11/18/2021 td
+    //    MakeClosure_dragElement(EL15);
+    //    MakeClosure_dragElement(EL16);
+    //    MakeClosure_dragElement(EL17);
+    //    MakeClosure_dragElement(EL18);
+    //    MakeClosure_dragElement(EL19);
+
+    //}
+    //else {
+    ////Unfortunately, our [0] syntax fails for identifying the IMAGE element.
+    //alert("We could not find the Element #1....Sad!");
+    //}
 
 
     if (EL1) {
@@ -81,6 +96,13 @@
         MakeClosure_clickElement(EL10);
         MakeClosure_clickElement(EL11);
         MakeClosure_clickElement(EL12);
+
+        //Added 11/18/2021 td
+        MakeClosure_clickElement(EL15);
+        MakeClosure_clickElement(EL16);
+        MakeClosure_clickElement(EL17);
+        MakeClosure_clickElement(EL18);
+        MakeClosure_clickElement(EL19);
     }
     else {
     //Unfortunately, our [0] syntax fails for identifying the IMAGE element.
@@ -101,6 +123,15 @@
     EL11.style.left = my_JSON_object_Left["EL11_Left"];
     EL12.style.left = my_JSON_object_Left["EL12_Left"];
 
+    //Added 11/18/2021 thomas downes
+    //  Four(4) of the 1st 4 custom fields, 
+    //   field indices 15 to 19.
+    EL15.style.left = my_JSON_object_Left["EL15_Left"];
+    EL16.style.left = my_JSON_object_Left["EL16_Left"];
+    EL17.style.left = my_JSON_object_Left["EL17_Left"];
+    EL18.style.left = my_JSON_object_Left["EL18_Left"];
+    EL19.style.left = my_JSON_object_Left["EL19_Left"];
+
     // Added 3/20/2020 thomas downes
     EL1.style.top = my_JSON_object_Top["EL1_Top"];
     EL2.style.top = my_JSON_object_Top["EL2_Top"];
@@ -114,6 +145,15 @@
     EL10.style.top = my_JSON_object_Top["EL10_Top"];
     EL11.style.top = my_JSON_object_Top["EL11_Top"];
     EL12.style.top = my_JSON_object_Top["EL12_Top"];
+
+    //Added 11/18/2021 thomas downes
+    //  Four(4) of the 1st 4 custom fields, 
+    //   field indices 15 to 19.
+    EL15.style.top = my_JSON_object_Top["EL15_Top"];
+    EL16.style.top = my_JSON_object_Top["EL16_Top"];
+    EL17.style.top = my_JSON_object_Top["EL17_Top"];
+    EL18.style.top = my_JSON_object_Top["EL18_Top"];
+    EL19.style.top = my_JSON_object_Top["EL19_Top"];
 
     // Added 3/29/2020 thomas downes
     //
@@ -133,6 +173,16 @@
     EL10_im.width = my_JSON_object_Width["EL10_Width"];
     EL11_im.width = my_JSON_object_Width["EL11_Width"];
     EL12_im.width = my_JSON_object_Width["EL12_Width"];
+
+    //Added 11/18/2021 thomas downes
+    //  Four(4) of the 1st 4 custom fields, 
+    //   field indices 15 to 19.
+    //
+    EL15_im.width = my_JSON_object_Width["EL15_Width"];
+    EL16_im.width = my_JSON_object_Width["EL16_Width"];
+    EL17_im.width = my_JSON_object_Width["EL17_Width"];
+    EL18_im.width = my_JSON_object_Width["EL18_Width"];
+    EL19_im.width = my_JSON_object_Width["EL19_Width"];
 
     //Added 3/3/2020 td
     if (document.getElementById("div_Width2x")) {

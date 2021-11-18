@@ -12,6 +12,8 @@ namespace ciBadgeForWeb.Models
         //
         // Added 11/16/2021 thomas downes 
         //
+        public string[] BugMessages = new string[12 + 1]; // Added 11/17/2021 td
+
         public static List<Field> ListOfFields_CreateCopies(HashSet<ClassFieldStandard> par_HashOfFields_Standard,
                                                             HashSet<ClassFieldCustomized> par_HashOfFields_Custom,
                                                             ref List<Field> ref_listStandard,
@@ -169,7 +171,7 @@ namespace ciBadgeForWeb.Models
             //--var mapper = new Mapper(App_Start.FieldMapper.GetMapperConfiguration());
             var mapper = new Mapper(App_Start.FieldMapper.GetMapperConfigStandard_Reverse());
             var new_field = mapper.Map<ciBadgeFields.ClassFieldStandard>(par_field);
-            //new_field.IsCustomizable = (false == true);
+            new_field.IsCustomizable = (false == true);
             return new_field;
 
         }

@@ -105,13 +105,48 @@
     <div id="EL11" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; border-width: thick; ">
         @* <img id="EL1_im" src="@Url.Content("~/Images/blue_star1.jpg")" width="200" height="35" />*@
         <img id="EL11_im" src="~/ASPX/Step2DataHandler.ashx?elemindex=11" /> @*width="200" height="35" />*@
-        #11...@Model.BugMessages[11] 
+        #11...@Model.BugMessages[11]
     </div>
     <div id="EL12" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; border-width: thick; ">
         @* <img id="EL1_im" src="@Url.Content("~/Images/blue_star1.jpg")" width="200" height="35" />*@
         <img id="EL12_im" src="~/ASPX/Step2DataHandler.ashx?elemindex=12" /> @*width="200" height="35" />*@
-        #12...@Model.BugMessages[12] 
+        #12...@Model.BugMessages[12]
     </div>
+
+
+    <!--                       -->
+    <!--                       -->
+    <!--  Customizable fields  -->
+    <!--                       -->
+    <!--                       -->
+    <div id="EL15" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; border-width: thick; ">
+        @* <img id="EL1_im" src="@Url.Content("~/Images/blue_star1.jpg")" width="200" height="35" />*@
+        <img id="EL15_im" src="~/ASPX/Step2DataHandler.ashx?elemindex=15" /> @*width="200" height="35" />*@
+        #15...@Model.BugMessages[15]
+    </div>
+    <div id="EL16" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; border-width: thick; ">
+        @* <img id="EL1_im" src="@Url.Content("~/Images/blue_star1.jpg")" width="200" height="35" />*@
+        <img id="EL16_im" src="~/ASPX/Step2DataHandler.ashx?elemindex=16" /> @*width="200" height="35" />*@
+        #16...@Model.BugMessages[16]
+    </div>
+    <div id="EL17" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; border-width: thick; ">
+        @* <img id="EL1_im" src="@Url.Content("~/Images/blue_star1.jpg")" width="200" height="35" />*@
+        <img id="EL17_im" src="~/ASPX/Step2DataHandler.ashx?elemindex=17" /> @*width="200" height="35" />*@
+        #17...@Model.BugMessages[17]
+    </div>
+    <div id="EL18" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; border-width: thick; ">
+        @* <img id="EL1_im" src="@Url.Content("~/Images/blue_star1.jpg")" width="200" height="35" />*@
+        <img id="EL18_im" src="~/ASPX/Step2DataHandler.ashx?elemindex=18" /> @*width="200" height="35" />*@
+        #18...@Model.BugMessages[18]
+    </div>
+    <div id="EL19" class="mydiv_class" style="position: absolute; top: 250px; left: 100px; border-width: thick; ">
+        @* <img id="EL1_im" src="@Url.Content("~/Images/blue_star1.jpg")" width="200" height="35" />*@
+        <img id="EL19_im" src="~/ASPX/Step2DataHandler.ashx?elemindex=19" /> @*width="200" height="35" />*@
+        #19...@Model.BugMessages[19]
+    </div>
+
+
+
 
 }
 else
@@ -192,6 +227,49 @@ else
         <img id="EL12_im" src="@Model.GetImageString_Base64(12)" width="200" height="35" />
         #12.. @Model.BugMessages[12]
     </div>
+
+
+    <!--                       -->
+    <!--                       -->
+    <!--  Customizable fields  -->
+    <!--                       -->
+    <!--                       -->
+    <div id="EL15" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; border-width: thick;">
+        @*<img id="EL15_im" src="@Url.Content("~/Images/blue_star15.jpg")" width="200" height="35" />*@
+        @Model.BugMessages[15]
+        <img id="EL15_im" src="@Model.GetImageString_Base64(15)" width="200" height="35" />
+        #15.. @Model.BugMessages[15]
+    </div>
+
+    <div id="EL16" class="mydiv_class" style="position: absolute; top: 250px; left: 300px; border-width: thick;">
+        @*<img id="EL16_im" src="@Url.Content("~/Images/blue_star16.jpg")" width="200" height="35" />*@
+        @Model.BugMessages[16]
+        <img id="EL16_im" src="@Model.GetImageString_Base64(16)" width="200" height="35" />
+        #16.. @Model.BugMessages[16]
+    </div>
+
+    <div id="EL17" class="mydiv_class" style="position: absolute; top: 250px; left: 400px; border-width: thick;">
+        @Model.BugMessages[17]
+        @*<img id="EL17_im" src="@Url.Content("~/Images/blue_star17.jpg")" width="200" height="35" />*@
+        <img id="EL17_im" src="@Model.GetImageString_Base64(17)" width="200" height="35" />
+        #17.. @Model.BugMessages[17]
+    </div>
+
+    <div id="EL18" class="mydiv_class" style="position: absolute; top: 250px; left: 200px; border-width: thick;">
+        @*<img id="EL18_im" src="@Url.Content("~/Images/blue_star18.jpg")" width="200" height="35" />*@
+        @Model.BugMessages[18]
+        <img id="EL18_im" src="@Model.GetImageString_Base64(18)" width="200" height="35" />
+        #18.. @Model.BugMessages[18]
+    </div>
+
+    <div id="EL19" class="mydiv_class" style="position: absolute; top: 250px; left: 300px; border-width: thick;">
+        @*<img id="EL19_im" src="@Url.Content("~/Images/blue_star19.jpg")" width="200" height="35" />*@
+        @Model.BugMessages[19]
+        <img id="EL19_im" src="@Model.GetImageString_Base64(19)" width="200" height="35" />
+        #19.. @Model.BugMessages[19]
+    </div>
+
+
 
 }
 
@@ -290,6 +368,14 @@ else
     const EL11 = document.getElementById("EL11"); //.style.left = my_JSON_object_Left["EL11_Left"];
     const EL12 = document.getElementById("EL12"); //.style.left = my_JSON_object_Left["EL12_Left"];
 
+    //Customizable fields.
+    const EL15 = document.getElementById("EL15"); //.style.left = my_JSON_object_Left["EL10_Left"];
+    const EL16 = document.getElementById("EL16"); //.style.left = my_JSON_object_Left["EL11_Left"];
+    const EL17 = document.getElementById("EL17"); //.style.left = my_JSON_object_Left["EL12_Left"];
+    const EL18 = document.getElementById("EL18"); //.style.left = my_JSON_object_Left["EL11_Left"];
+    const EL19 = document.getElementById("EL19"); //.style.left = my_JSON_object_Left["EL12_Left"];
+
+
     const EL1_im = document.getElementById("EL1_im"); //.style.left = my_JSON_object_Left["EL1_Left"];
     const EL2_im = document.getElementById("EL2_im"); //.style.left = my_JSON_object_Left["EL2_Left"];
     const EL3_im = document.getElementById("EL3_im"); //.style.left = my_JSON_object_Left["EL3_Left"];
@@ -302,6 +388,13 @@ else
     const EL10_im = document.getElementById("EL10_im"); //.style.left = my_JSON_object_Left["EL10_Left"];
     const EL11_im = document.getElementById("EL11_im"); //.style.left = my_JSON_object_Left["EL11_Left"];
     const EL12_im = document.getElementById("EL12_im"); //.style.left = my_JSON_object_Left["EL12_Left"];
+
+    //Customizable fields.
+    const EL15_im = document.getElementById("EL15_im"); //.style.left = my_JSON_object_Left["EL15_Left"];
+    const EL16_im = document.getElementById("EL16_im"); //.style.left = my_JSON_object_Left["EL16_Left"];
+    const EL17_im = document.getElementById("EL17_im"); //.style.left = my_JSON_object_Left["EL17_Left"];
+    const EL18_im = document.getElementById("EL18_im"); //.style.left = my_JSON_object_Left["EL18_Left"];
+    const EL19_im = document.getElementById("EL19_im"); //.style.left = my_JSON_object_Left["EL19_Left"];
 
     //Can we invent element properties???
     EL1.OnlyImage = EL1_im; // Let's create a new property (.OnlyImage)
@@ -316,32 +409,12 @@ else
     EL10.OnlyImage = EL10_im; // Let's create a new property (.OnlyImage)
     EL11.OnlyImage = EL11_im; // Let's create a new property (.OnlyImage)
     EL12.OnlyImage = EL12_im; // Let's create a new property (.OnlyImage)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //Customizable fields (Field indexes #15 to #19).
+    EL15.OnlyImage = EL15_im; // Let's create a new property (.OnlyImage)
+    EL16.OnlyImage = EL16_im; // Let's create a new property (.OnlyImage)
+    EL17.OnlyImage = EL17_im; // Let's create a new property (.OnlyImage)
+    EL18.OnlyImage = EL18_im; // Let's create a new property (.OnlyImage)
+    EL19.OnlyImage = EL19_im; // Let's create a new property (.OnlyImage)
 
 
 

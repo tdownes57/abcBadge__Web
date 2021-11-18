@@ -36,7 +36,7 @@ namespace ciBadgeForWeb.Models
         //    //   ---  So, see Models/MoveableDivImage.cs.  -----4/2/2020 thomas d. 
         //
         //====private Dictionary<int, string> mod_listMessages = new Dictionary<int, string>();
-        public string[] BugMessages = new string[12 + 1];
+        public string[] BugMessages = new string[19 + 1];  // new string[12 + 1];
         public string BugMessageRecent = "";  // Added 11/11/2021 td
 
         //Added 11/9/2021 thomas downes
@@ -111,7 +111,8 @@ namespace ciBadgeForWeb.Models
 
         // Initializ the array. ---3/20/2020 thomas downes 
         //----4/3/2020 td---
-        private ClassElementField[] mod_arrayElements = new ClassElementField[12 + 1];   // [12];
+        //----private ClassElementField[] mod_arrayElements = new ClassElementField[12 + 1];   // [12];
+        private ClassElementField[] mod_arrayElements = new ClassElementField[19 + 1];   // [12];
 
         private Newtonsoft.Json.JsonConverter mod_converter_Left;
         private Newtonsoft.Json.JsonConverter mod_converter_Top;
@@ -141,7 +142,9 @@ namespace ciBadgeForWeb.Models
         public string JSON_FieldNm { get; set; }
 
         //Number of displayable elements.
-        public int ElementCount = 12; //Default value is 12. ----4/13/2020 thomas downes
+        //---public int ElementCount = 12; //Default value is 12. ----4/13/2020 thomas downes
+        //---public int ElementCount = 12; //Default value is 12. ----4/13/2020 thomas downes
+        public int ElementCount = 19; //Default value is 19. ----11/18/2021 thomas downes
 
         public Moveable_Left MoveLeft;
         public Moveable_Top MoveTop;
@@ -171,7 +174,8 @@ namespace ciBadgeForWeb.Models
             //
             // Added 3/20/2020 thomas downes 
             //
-            int indexElement = 0;
+            //----11/18/2021---int indexElement = 0;
+            int indexElement = -1;
             bool bElementHasField = false;   //Added 4/20/2020 thomas downees 
             bool bElementIsVisible = false;  //Added 4/20/2020 thomas downes 
 
@@ -196,7 +200,8 @@ namespace ciBadgeForWeb.Models
             //Added 5/3/2020 thomas downes
             var objImageGen = new ciBadgeGenerator.ClassMakeBadge();
             // 5/4/2020 td //ImageForElement = new Image[12];
-            ImageForElement = new Image[12 + 1]; // We will use 1, 2, ... 12 as the indices. The element # 0 will be ignored. 
+            // 11/18/2021 td //ImageForElement = new Image[12 + 1]; // We will use 1, 2, ... 12 as the indices. The element # 0 will be ignored. 
+            ImageForElement = new Image[19 + 1]; // We will use 0, 1, 2, ... 12 as the indices. The element # 0 will be --INCLUDED--. 
 
             foreach (ClassElementField each_element in par_cache.ListOfElementFields)
             {
@@ -210,6 +215,10 @@ namespace ciBadgeForWeb.Models
                 if (bElementIsVisible)
                 {
                     indexElement++;
+
+                    //Added 11/18/2021 Thomas downes
+                    if (indexElement == 13) continue;  //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+                    if (indexElement == 14) continue;  //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
 
                     mod_arrayElements[indexElement] = each_element;
 
@@ -242,7 +251,8 @@ namespace ciBadgeForWeb.Models
                         objImageGen.ElementFieldToImage(each_element, par_cache.BadgeLayout, ref strBugMessage);
 
                     //Added 11/11/2021 thomas downes
-                    this.BugMessages[indexElement] = this.ImageForElement[indexElement].ToString();
+                    //===this.BugMessages[indexElement] = this.ImageForElement[indexElement].ToString();
+                    this.BugMessages[indexElement] = strBugMessage;
                     this.BugMessageRecent = strBugMessage;
 
                     //Added 4/13/2020 thomas downes
@@ -254,24 +264,30 @@ namespace ciBadgeForWeb.Models
             //
             // Fill in the unused values, if needed. 
             //
-            if (this.ElementCount < 12)
+            //----if (this.ElementCount < 12)
+            if (this.ElementCount < 19 + 1)
             {
-                for (int intEachUnused = +1 + this.ElementCount; intEachUnused <= 12; intEachUnused++)
+                //---for (int intEachUnused = +1 + this.ElementCount; intEachUnused <= 12; intEachUnused++)
+                for (int intEachUnused = +1 + this.ElementCount; intEachUnused <= 19; intEachUnused++)
                 {
+                    //Added 11/18/2021 Thomas downes
+                    if (intEachUnused == 13) continue;  //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+                    if (intEachUnused == 14) continue;  //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+
                     // Added 4/13/2020 thomas downes  
-                    this.MoveLeft[indexElement] = "0px";  //  "[not applicable]";
-                    this.MoveTop[indexElement] = "0px";  // "[not applicable]";
-                    this.MoveHeight[indexElement] = 0;
-                    this.MoveWidth[indexElement] = 0;
+                    this.MoveLeft[intEachUnused] = "0px";  //  "[not applicable]";
+                    this.MoveTop[intEachUnused] = "0px";  // "[not applicable]";
+                    this.MoveHeight[intEachUnused] = 0;
+                    this.MoveWidth[intEachUnused] = 0;
 
                     // Added 4/20/2020 thomas downes
-                    this.MoveHasField[indexElement] = false;
-                    this.MoveDisplayed[indexElement] = false;
-                    this.MoveFieldName[indexElement] = "";
+                    this.MoveHasField[intEachUnused] = false;
+                    this.MoveDisplayed[intEachUnused] = false;
+                    this.MoveFieldName[intEachUnused] = "";
 
                     // Added 4/24/2020 thomas downes  
-                    this.MoveLeft_Offset[indexElement] = "0px";  //  "[not applicable]";
-                    this.MoveTop_Offset[indexElement] = "0px";  // "[not applicable]";
+                    this.MoveLeft_Offset[intEachUnused] = "0px";  //  "[not applicable]";
+                    this.MoveTop_Offset[intEachUnused] = "0px";  // "[not applicable]";
 
                 }
             }
@@ -351,6 +367,13 @@ namespace ciBadgeForWeb.Models
             this.MoveLeft.EL11_Left = (par_moveable.MoveLeft.EL11_Left);
             this.MoveLeft.EL12_Left = (par_moveable.MoveLeft.EL12_Left);
 
+            //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+            this.MoveLeft.EL15_Left = (par_moveable.MoveLeft.EL15_Left);
+            this.MoveLeft.EL16_Left = (par_moveable.MoveLeft.EL16_Left);
+            this.MoveLeft.EL17_Left = (par_moveable.MoveLeft.EL17_Left);
+            this.MoveLeft.EL18_Left = (par_moveable.MoveLeft.EL18_Left);
+            this.MoveLeft.EL19_Left = (par_moveable.MoveLeft.EL19_Left);
+
             this.MoveTop.EL1_Top = (par_moveable.MoveTop.EL1_Top);
             this.MoveTop.EL2_Top = (par_moveable.MoveTop.EL2_Top);
             this.MoveTop.EL3_Top = (par_moveable.MoveTop.EL3_Top);
@@ -363,6 +386,13 @@ namespace ciBadgeForWeb.Models
             this.MoveTop.EL10_Top = (par_moveable.MoveTop.EL10_Top);
             this.MoveTop.EL11_Top = (par_moveable.MoveTop.EL11_Top);
             this.MoveTop.EL12_Top = (par_moveable.MoveTop.EL12_Top);
+
+            //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+            this.MoveTop.EL15_Top = (par_moveable.MoveTop.EL15_Top);
+            this.MoveTop.EL16_Top = (par_moveable.MoveTop.EL16_Top);
+            this.MoveTop.EL17_Top = (par_moveable.MoveTop.EL17_Top);
+            this.MoveTop.EL18_Top = (par_moveable.MoveTop.EL18_Top);
+            this.MoveTop.EL19_Top = (par_moveable.MoveTop.EL19_Top);
 
             //Added 4/20/2020 thomas downes
             this.MoveWidth.EL1_Width = (par_moveable.MoveWidth.EL1_Width);
@@ -378,6 +408,13 @@ namespace ciBadgeForWeb.Models
             this.MoveWidth.EL11_Width = (par_moveable.MoveWidth.EL11_Width);
             this.MoveWidth.EL12_Width = (par_moveable.MoveWidth.EL12_Width);
 
+            //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+            this.MoveWidth.EL15_Width = (par_moveable.MoveWidth.EL15_Width);
+            this.MoveWidth.EL16_Width = (par_moveable.MoveWidth.EL16_Width);
+            this.MoveWidth.EL17_Width = (par_moveable.MoveWidth.EL17_Width);
+            this.MoveWidth.EL18_Width = (par_moveable.MoveWidth.EL18_Width);
+            this.MoveWidth.EL19_Width = (par_moveable.MoveWidth.EL19_Width);
+
             //Added 4/20/2020 thomas downes
             this.MoveHeight.EL1_Height = (par_moveable.MoveHeight.EL1_Height);
             this.MoveHeight.EL2_Height = (par_moveable.MoveHeight.EL2_Height);
@@ -391,6 +428,13 @@ namespace ciBadgeForWeb.Models
             this.MoveHeight.EL10_Height = (par_moveable.MoveHeight.EL10_Height);
             this.MoveHeight.EL11_Height = (par_moveable.MoveHeight.EL11_Height);
             this.MoveHeight.EL12_Height = (par_moveable.MoveHeight.EL12_Height);
+
+            //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+            this.MoveHeight.EL15_Height = (par_moveable.MoveHeight.EL15_Height);
+            this.MoveHeight.EL16_Height = (par_moveable.MoveHeight.EL16_Height);
+            this.MoveHeight.EL17_Height = (par_moveable.MoveHeight.EL17_Height);
+            this.MoveHeight.EL18_Height = (par_moveable.MoveHeight.EL18_Height);
+            this.MoveHeight.EL19_Height = (par_moveable.MoveHeight.EL19_Height);
 
             //Added 4/20/2020 thomas downes
             this.MoveDisplayed.EL1_Displayed = (par_moveable.MoveDisplayed.EL1_Displayed);
@@ -406,6 +450,13 @@ namespace ciBadgeForWeb.Models
             this.MoveDisplayed.EL11_Displayed = (par_moveable.MoveDisplayed.EL11_Displayed);
             this.MoveDisplayed.EL12_Displayed = (par_moveable.MoveDisplayed.EL12_Displayed);
 
+            //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+            this.MoveDisplayed.EL15_Displayed = (par_moveable.MoveDisplayed.EL15_Displayed);
+            this.MoveDisplayed.EL16_Displayed = (par_moveable.MoveDisplayed.EL16_Displayed);
+            this.MoveDisplayed.EL17_Displayed = (par_moveable.MoveDisplayed.EL17_Displayed);
+            this.MoveDisplayed.EL18_Displayed = (par_moveable.MoveDisplayed.EL18_Displayed);
+            this.MoveDisplayed.EL19_Displayed = (par_moveable.MoveDisplayed.EL19_Displayed);
+
             //Added 4/20/2020 thomas downes
             this.MoveHasField.EL1_HasField = (par_moveable.MoveHasField.EL1_HasField);
             this.MoveHasField.EL2_HasField = (par_moveable.MoveHasField.EL2_HasField);
@@ -420,6 +471,13 @@ namespace ciBadgeForWeb.Models
             this.MoveHasField.EL11_HasField = (par_moveable.MoveHasField.EL11_HasField);
             this.MoveHasField.EL12_HasField = (par_moveable.MoveHasField.EL12_HasField);
 
+            //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+            this.MoveHasField.EL15_HasField = (par_moveable.MoveHasField.EL15_HasField);
+            this.MoveHasField.EL16_HasField = (par_moveable.MoveHasField.EL16_HasField);
+            this.MoveHasField.EL17_HasField = (par_moveable.MoveHasField.EL17_HasField);
+            this.MoveHasField.EL18_HasField = (par_moveable.MoveHasField.EL18_HasField);
+            this.MoveHasField.EL19_HasField = (par_moveable.MoveHasField.EL19_HasField);
+
             //Added 4/20/2020 thomas downes
             this.MoveFieldName.EL1_FieldNm = (par_moveable.MoveFieldName.EL1_FieldNm);
             this.MoveFieldName.EL2_FieldNm = (par_moveable.MoveFieldName.EL2_FieldNm);
@@ -433,6 +491,13 @@ namespace ciBadgeForWeb.Models
             this.MoveFieldName.EL10_FieldNm = (par_moveable.MoveFieldName.EL10_FieldNm);
             this.MoveFieldName.EL11_FieldNm = (par_moveable.MoveFieldName.EL11_FieldNm);
             this.MoveFieldName.EL12_FieldNm = (par_moveable.MoveFieldName.EL12_FieldNm);
+
+            //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+            this.MoveFieldName.EL15_FieldNm = (par_moveable.MoveFieldName.EL15_FieldNm);
+            this.MoveFieldName.EL16_FieldNm = (par_moveable.MoveFieldName.EL16_FieldNm);
+            this.MoveFieldName.EL17_FieldNm = (par_moveable.MoveFieldName.EL17_FieldNm);
+            this.MoveFieldName.EL18_FieldNm = (par_moveable.MoveFieldName.EL18_FieldNm);
+            this.MoveFieldName.EL19_FieldNm = (par_moveable.MoveFieldName.EL19_FieldNm);
 
             //---mod_arrayElements[1].LeftEdge_Pixels = int.Parse(this.EL1_Left.Replace("px", "")); 
             //---mod_arrayElements[2].LeftEdge_Pixels = int.Parse(this.EL2_Left.Replace("px", ""));

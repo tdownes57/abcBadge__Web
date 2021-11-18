@@ -35,6 +35,14 @@ namespace ciBadgeForWeb.Models
         public int EL11_Height { get; set; }
         public int EL12_Height { get; set; }
 
+        //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+        public int EL15_Height { get; set; }
+        public int EL16_Height { get; set; }
+        public int EL17_Height { get; set; }
+        public int EL18_Height { get; set; }
+        public int EL19_Height { get; set; }
+
+
         public int this[int i]
         {
             get
@@ -51,6 +59,15 @@ namespace ciBadgeForWeb.Models
                 if (i == 10) return this.EL10_Height;
                 if (i == 11) return this.EL11_Height;
                 if (i == 12) return this.EL12_Height;
+
+                //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+                if (i == 15) return this.EL15_Height;
+                if (i == 16) return this.EL16_Height;
+                if (i == 17) return this.EL17_Height;
+                if (i == 18) return this.EL18_Height;
+                if (i == 19) return this.EL19_Height;
+
+
                 else return 1655; // "sdfg";
             }
             set
@@ -67,6 +84,15 @@ namespace ciBadgeForWeb.Models
                 if (i == 10) this.EL10_Height = value;
                 if (i == 11) this.EL11_Height = value;
                 if (i == 12) this.EL12_Height = value;
+
+                //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+                if (i == 15) this.EL15_Height = value;
+                if (i == 16) this.EL16_Height = value;
+                if (i == 17) this.EL17_Height = value;
+                if (i == 18) this.EL18_Height = value;
+                if (i == 19) this.EL19_Height = value;
+
+
                 //else ;
             }
         }

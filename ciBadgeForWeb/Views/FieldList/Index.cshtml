@@ -1,10 +1,11 @@
-﻿@* Goes in Views\PersonList *@
+﻿ @* Goes in Views\PersonList *@
 @*@using EditableListMvc.Models*@
 @*@using ciBadgeForWeb.Models*@
-@using ciBadgeFields
+@using ciBadgeForWeb.Models
 
 @*@model IEnumerable<Person>*@
-@model IEnumerable<ciBadgeFields.ClassFieldAny>
+@*@model IEnumerable<ciBadgeFields.ClassFieldAny>*@
+@model IEnumerable<ciBadgeForWeb.Models.Field>
 
 @*
     @    //  https://gist.github.com/rockfordlhotka/0474af9cf53cec9f2d359fa413d61e73
@@ -38,14 +39,21 @@
                     @Html.DisplayNameFor(model => model.IsDisplayedOnBadge)
                 </th>
                 @*<th>
-                    @Html.DisplayNameFor(model => model.Remove)
-                </th>*@
+            @Html.DisplayNameFor(model => model.Remove)
+        </th>*@
+                <th>
+                    Image by Handler
+                </th>
+                <th>
+                    Hidden Fields
+                </th>
             </tr>
         </thead>
         <tbody id="childtable">
             @Html.EditorFor(model => Model)
         </tbody>
     </table>
+
     <p>
         @*<input name="command" type="submit" value="Add Item" />*@
         @*<input name="command" type="submit" value="Remove Selected" />*@
