@@ -40,8 +40,9 @@ namespace ciBadgeForWeb.Controllers //EditableListMvc.Controllers
             {
                 if (_fieldList == null)
                 //_fieldList = Session["FieldsList"] as List<ciBadgeFields.ClassFieldAny>;
-                { _fieldList = FieldsController.GetFieldsList();  }   
-                
+                //  { _fieldList = FieldsController.GetFieldsList();  }
+                { _fieldList = FieldsController.GetFieldsListAny(); }
+
                 return _fieldList;
             }
             set
@@ -64,7 +65,8 @@ namespace ciBadgeForWeb.Controllers //EditableListMvc.Controllers
                 //_fieldList = ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
 
                 //_fieldList = ClassElementsCache_Deprecated.Singleton.ListOfFields_CreateCopies();
-                _fieldList = FieldsController.GetFieldsList();
+                //----_fieldList = FieldsController.GetFieldsList();
+                _fieldList = FieldsController.GetFieldsListAny();
 
             }
             return View(_fieldList);
@@ -116,13 +118,23 @@ namespace ciBadgeForWeb.Controllers //EditableListMvc.Controllers
                     //----ClassElementsCache_Deprecated.Singleton.LoadFields_FromList(par_fieldList);
 
                     // Modified 11/17/2021 thomas downes 
-                    var list_converted = Models.Field.ConvertListItems(par_fieldList);
-                    ClassElementsCache_Deprecated.Singleton.LoadFields_FromList(list_converted);
+                    //var list_converted = Models.Field.ConvertListItems(par_fieldList);
+                    //var list_converted = Models.Field.ConvertListItems_Deprecated(par_fieldList);
+                    //ClassElementsCache_Deprecated.Singleton.LoadFields_FromList(list_converted);
+
+                    var listFieldsStandard = new List<ciBadgeFields.ClassFieldStandard>();
+                    var listFieldsCustom = new List<ciBadgeFields.ClassFieldCustomized>();
+
+                    Models.Field.ConvertListItems(par_fieldList, 
+                                            ref listFieldsStandard,
+                                            ref listFieldsCustom);
+                    ClassElementsCache_Deprecated.Singleton.LoadFields_FromList(listFieldsStandard, listFieldsCustom);
 
                     // force reload of data from database
                     //_fieldList = null;
                     FieldsController.RefreshFieldsList();
-                    _fieldList = FieldsController.GetFieldsList();
+                    //----_fieldList = FieldsController.GetFieldsList();
+                    _fieldList = FieldsController.GetFieldsListAny();
 
                 }
                 return RedirectToAction("Index");
