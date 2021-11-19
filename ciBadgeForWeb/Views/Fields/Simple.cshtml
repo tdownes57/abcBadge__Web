@@ -60,9 +60,15 @@
                 @Html.DisplayFor(modelItem => item.ExampleValue)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.FieldIndex }) 
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.FieldIndex })*@
+                <!--                                                 -->
+                <!-- Anonymous Type.... new { id = item.FieldIndex } -->
+                <!--                                                 -->
+                @Html.ActionLink("Edit This Field", "Edit",
+                        new { id = item.FieldIndex, isAnonymousType = true })
+
                 @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
             </td>
         </tr>
     }

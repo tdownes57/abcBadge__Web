@@ -58,6 +58,8 @@ namespace ciBadgeForWeb.ASPX
             //
             int intElementIndex = -1;
             int intFieldIndex = -1;
+            string strFieldCaption = ""; //Added 11/18/2021 td
+            string strTextDisplayed = "";  //Added 11/18/2021 td
 
             //context.Response.Clear();
             //context.Response.ContentType = "text/html";
@@ -68,12 +70,27 @@ namespace ciBadgeForWeb.ASPX
             bool bDisplayMessagesEtc = ("y" == par_context.Request.QueryString["msgs"]);
             bool bQueryByField = false; //Added 11/18/2021 td
 
+            string strQueryKey0 = ""; // par_context.Request.QueryString.Keys[0];
+            string strQueryKey1 = ""; // par_context.Request.QueryString.Keys[1];
+            string strValue0 = ""; // par_context.Request.QueryString.Keys[0];
+            string strValue1 = ""; // par_context.Request.QueryString.Keys[1];
+
+            try
+            {
+                strQueryKey0 = par_context.Request.QueryString.Keys[0];
+                strQueryKey1 = par_context.Request.QueryString.Keys[1];
+                strValue0 = par_context.Request.QueryString.GetValues(0).ToString();
+                strValue1 = par_context.Request.QueryString.GetValues(1).ToString();
+            }
+            catch { }
+
             if (!String.IsNullOrEmpty(par_context.Request.QueryString["elemindex"]))
             {
                 //
                 //Added 11/10/2021 thomas downes  
                 //
                 intElementIndex = int.Parse(par_context.Request.QueryString["elemindex"]);
+                intFieldIndex = intElementIndex;  //Is this aspirational, or a fact? 
                 bWeHave_ElementIndex = true;  //Added 11/17/2021 td
             }
 
@@ -82,7 +99,12 @@ namespace ciBadgeForWeb.ASPX
                 //
                 //Added 11/17/2021 thomas downes  
                 //
+                // Example of call:
+                //   < img src = "~/ASPX/Step2DataHandler.ashx?fldindex=@Model.FieldIndex
+                //        &fldcaption=@Model.FieldLabelCaption" />
+                //
                 intFieldIndex = int.Parse(par_context.Request.QueryString["fldindex"]);
+                strFieldCaption = (par_context.Request.QueryString["fldcaption"]).ToString();
                 intElementIndex = ClassElementsCache_Deprecated.Singleton
                     .GetElementIndexByFieldIndex(intFieldIndex);
                 bWeHave_ElementIndex = true;  //Added 11/17/2021 td
@@ -110,7 +132,10 @@ namespace ciBadgeForWeb.ASPX
                 //Image output_dataImage = objImageGen.ElementFieldToImage(obj_element, obj_badgeLayout);
                 string strBugMessage = "";
                 Image output_dataImage = objImageGen.ElementFieldToImage(obj_element, 
-                    obj_badgeLayout, ref strBugMessage);
+                    obj_badgeLayout, ref strBugMessage, ref strTextDisplayed);
+
+                // Added 11/18/2021 td 
+                System.Diagnostics.Debug.Print($"Field index: {intFieldIndex} Field caption: {strFieldCaption} Text displayed: {strTextDisplayed}");
 
                 // Added 11/18/2021 td 
                 if (bQueryByField) Models.Field.Messages[intFieldIndex] = strBugMessage;

@@ -271,6 +271,7 @@
     </Compile>
     <Compile Include="JSON\MoveableDivImage.cs" />
     <Compile Include="JSON\__MoveableDivImage.cs" />
+    <Compile Include="Models\Anonymous_Type_Tutorial.cs" />
     <Compile Include="Models\Background.cs" />
     <Compile Include="Models\BadgeSetupElement.cs" />
     <Compile Include="Models\CICustomer.cs" />

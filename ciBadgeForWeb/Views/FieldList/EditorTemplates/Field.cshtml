@@ -22,11 +22,17 @@
             Remove button
         </td>*@
 <td>
-    <img src="~/ASPX/Step2DataHandler.ashx?fldindex=@Model.FieldIndex" />
-    # @Model.FieldIndex @Model.BugMessages[@Model.FieldIndex]
+    <img src="~/ASPX/Step2DataHandler.ashx?fldindex=@Model.FieldIndex&fldcaption=@Model.FieldLabelCaption" />
+    # @Model.FieldIndex @Model.FieldLabelCaption @Model.BugMessages[@Model.FieldIndex]
 </td>
 
 <td>
+    <!--                                                 -->
+    <!-- Anonymous Type.... new { id = @Model.FieldIndex } -->
+    <!--                                                 -->
+    @Html.ActionLink("Edit This Field", "Edit", "Fields",
+            new { id = @Model.FieldIndex, isAnonymousType = true })
+
     @Html.HiddenFor(model => model.CIBadgeField)
     @Html.HiddenFor(model => model.DefaultValue)
     @Html.HiddenFor(model => model.ExampleValue)

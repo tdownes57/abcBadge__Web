@@ -253,8 +253,10 @@ namespace ciBadgeForWeb.Models
                     //Added 5/3/2020 thomas downes 
                     // 11-11-2021 td //this.ImageForElement[indexElement] = objImageGen.ElementFieldToImage(each_element, par_cache.BadgeLayout);
                     string strBugMessage = "";
+                    string strTextDisplayed = ""; //Added 11/18/2021 td  
                     this.ImageForElement[indexElement] =
-                        objImageGen.ElementFieldToImage(each_element, par_cache.BadgeLayout, ref strBugMessage);
+                        objImageGen.ElementFieldToImage(each_element, par_cache.BadgeLayout, 
+                                          ref strBugMessage, ref strTextDisplayed);
 
                     //Added 11/11/2021 thomas downes
                     //===this.BugMessages[indexElement] = this.ImageForElement[indexElement].ToString();
