@@ -14,37 +14,44 @@ namespace ciBadgeForWeb.Controllers
         // Added 11/15/2021 thomas downes
         //
         //---=-private static List<ciBadgeFields.ClassFieldAny> _fieldsList;
-        private static List<ciBadgeForWeb.Models.Field> _fieldsListAny; //Suffixed 11/17/2021 td
-        private static List<ciBadgeForWeb.Models.Field> _fieldsListStandard; //Added 11/17/2021 td
-        private static List<ciBadgeForWeb.Models.Field> _fieldsListCustom; //Added 11/17/2021 td
+
+        // Prefix "Mvc" in "MvcField" ==> Models.Field
+        private static List<ciBadgeForWeb.Models.Field> _mvcfieldsListAny; //Suffixed 11/17/2021 td
+        private static List<ciBadgeForWeb.Models.Field> _mvcfieldsListStandard; //Added 11/17/2021 td
+        private static List<ciBadgeForWeb.Models.Field> _mvcfieldsListCustom; //Added 11/17/2021 td
 
         //---=-public static List<ciBadgeFields.ClassFieldAny> GetFieldsList()
-        public static List<ciBadgeForWeb.Models.Field> GetFieldsListAny()
+        public static List<ciBadgeForWeb.Models.Field> GetMvcFieldsListAny()
         {
             //Added 11/15/2021 thomas downes 
-            if (_fieldsListAny == null) RefreshFieldsList();
-            return _fieldsListAny;
+            //
+            // Prefix "Mvc" in "MvcField" ==> Models.Field
+            //
+            if (_mvcfieldsListAny == null) RefreshMcvFieldsList();
+            return _mvcfieldsListAny;
         }
 
         /// <summary>
-        /// Use this in conjunction with GetFieldsList(), as needed.
+        /// Use this in conjunction with GetMvcFieldsList(), as needed.
         /// </summary>
-        public static void RefreshFieldsList()
+        public static void RefreshMcvFieldsList()
         {
             //Added 11/15/2021 td
+            //
+            // Prefix "Mvc" in "MvcField" ==> Models.Field
             //
             //_fieldsList = ClassElementsCache_Deprecated.Singleton.ListOfFields_CreateCopies();
             var list_standard = ClassElementsCache_Deprecated.Singleton.ListOfFields_Standard;
             var list_custom = ClassElementsCache_Deprecated.Singleton.ListOfFields_Custom;
 
             //Added 11/17/2021 td
-            _fieldsListStandard = new List<Field>(); //Built from ciBadgeFields.ClassFieldStandard.
-            _fieldsListCustom = new List<Field>(); //Built from ciBadgeFields.ClassFieldCustom.
+            _mvcfieldsListStandard = new List<Field>(); //Built from ciBadgeFields.ClassFieldStandard.
+            _mvcfieldsListCustom = new List<Field>(); //Built from ciBadgeFields.ClassFieldCustom.
 
             //_fieldsList = Field.ListOfFields_CreateCopies(list_standard, list_custom);
-            _fieldsListAny = Field.ListOfFields_CreateCopies(list_standard, list_custom,
-                                        ref _fieldsListStandard, 
-                                        ref _fieldsListCustom);
+            _mvcfieldsListAny = Field.ListOfMvcFields_CreateCopies(list_standard, list_custom,
+                                        ref _mvcfieldsListStandard, 
+                                        ref _mvcfieldsListCustom);
             //return _fieldsList;
 
         }
@@ -55,7 +62,7 @@ namespace ciBadgeForWeb.Controllers
             // Added 11/15/2021 td  
             //
             //----_fieldsList = RefreshFieldsList();
-            RefreshFieldsList();
+            RefreshMcvFieldsList();
 
         }
 
@@ -74,8 +81,8 @@ namespace ciBadgeForWeb.Controllers
             //Added 2/20/2020 thomas downes 
             //----return View(ClassElementsCache_Deprecated.Singleton.ListOfFields_Any());
 
-            if (_fieldsListAny == null) RefreshFieldsList();
-            return View(_fieldsListAny);
+            if (_mvcfieldsListAny == null) RefreshMcvFieldsList();
+            return View(_mvcfieldsListAny);
 
         }
 

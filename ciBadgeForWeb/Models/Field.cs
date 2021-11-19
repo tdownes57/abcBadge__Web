@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using ciBadgeFields;  //Added 11/16/2021 thomas downes
 using AutoMapper;  // Added 11/17/2021 thomas downes
+using ciBadgeElements; // Added 11/19/2021 thomas downes  
 
 namespace ciBadgeForWeb.Models
 {
@@ -15,13 +16,34 @@ namespace ciBadgeForWeb.Models
         public string[] BugMessages = new string[19 + 1]; // string[19 + 1]; // Added 11/17/2021 td
         public static string[] Messages = new string[19 + 1]; // Added 11/18/2021 td
 
-        public static List<Field> ListOfFields_CreateCopies(HashSet<ClassFieldStandard> par_HashOfFields_Standard,
+        // Added 11/19/2021 td
+        //  This new property will enable us to call the ElementField property LabelText_ToDisplay.
+        public ClassElementField BadgeElement;
+
+        // Added 11/19/2021 td
+        public static Field CreateMvcField(ClassFieldAny par_fieldAny, 
+            ClassElementField par_linkedElement)
+        {
+            //
+            // Created 11/19/2021 td 
+            //
+            // Prefix "Mvc" in "MvcField" ==> Models.Field
+            //
+            var objMvcField = CopyToMvcField_FromAny(par_fieldAny);
+            objMvcField.BadgeElement = par_linkedElement;
+            return objMvcField;
+
+        }
+
+        public static List<Field> ListOfMvcFields_CreateCopies(HashSet<ClassFieldStandard> par_HashOfFields_Standard,
                                                             HashSet<ClassFieldCustomized> par_HashOfFields_Custom,
                                                             ref List<Field> ref_listStandard,
                                                             ref List<Field> ref_listCustom) // As List(Of ClassFieldAny)
         {
             //''
             //''Added 11/15/2021 thomas downes
+            //''
+            //'' Prefix "Mvc" in "MvcField" ==> Models.Field
             //''
             //''Create copies of the Field objects.
             //''
@@ -39,9 +61,13 @@ namespace ciBadgeForWeb.Models
                 //---=-obj_list.Add(new Field(each_fld));
                 //---===obj_list.Add(Field.CopyToField(each_fld));
                 //====obj_listAny.Add(Field.CopyToField_Standard(each_fld));
-                var each_standard = Field.CopyToField_Standard(each_fld);
+                //----//var each_standard = Field.CopyToField_Standard(each_fld);
+                var each_standard = Field.CopyToMvcField_Standard(each_fld);
                 obj_listAny.Add(each_standard);
                 ref_listStandard.Add(each_standard);
+
+                //Added 11/19/2021 thomas downes
+                each_standard.BadgeElement = ClassElementsCache_Deprecated.Singleton.GetElementByField(each_fld);
 
             }
 
@@ -54,6 +80,9 @@ namespace ciBadgeForWeb.Models
                 var each_customField = Field.CopyToField_Custom(each_fldCustom);
                 obj_listAny.Add(each_customField);
                 ref_listCustom.Add(each_customField);
+
+                //Added 11/19/2021 thomas downes
+                each_customField.BadgeElement = ClassElementsCache_Deprecated.Singleton.GetElementByField(each_fld);
 
             }
 
@@ -112,11 +141,13 @@ namespace ciBadgeForWeb.Models
         }
 
 
-        public static Models.Field CopyToField_Any(ciBadgeFields.ClassFieldAny par_field)
+        public static Models.Field CopyToMvcField_FromAny(ciBadgeFields.ClassFieldAny par_fieldAny)
         {
             //public static Models.Field CopyToField(ciBadgeFields.ClassFieldAny par_field)
             //
             //Added 11/17/2021 thomas d. 
+            //
+            // Prefix "Mvc" in "MvcField" ==> Models.Field
             //
             // https://stackoverflow.com/questions/16534253/c-sharp-converting-base-class-to-child-class
             //
@@ -142,23 +173,27 @@ namespace ciBadgeForWeb.Models
             //Using automapper. https://dotnettutorials.net/lesson/automapper-in-c-sharp/
             //-----var mapper = new Mapper(App_Start.FieldMapper.GetMapperConfiguration());
             var mapper = new Mapper(App_Start.FieldMapper.GetMapperConfigAny());
-            var new_field = mapper.Map<Field>(par_field);
-            return new_field;
+
+            // Prefix "Mvc" in "MvcField" ==> Models.Field
+            Field new_mvcfield = mapper.Map<Field>(par_fieldAny);
+            return new_mvcfield;
 
         }
 
 
-        public static Models.Field CopyToField_Standard(ciBadgeFields.ClassFieldStandard par_field)
+        public static Models.Field CopyToMvcField_Standard(ciBadgeFields.ClassFieldStandard par_field)
         {
             //
             //Added 11/17/2021 thomas d. 
             //
+            // Prefix "Mvc" in "MvcField" ==> Models.Field
+            //
             //Using automapper. https://dotnettutorials.net/lesson/automapper-in-c-sharp/
             //--var mapper = new Mapper(App_Start.FieldMapper.GetMapperConfiguration());
             var mapper = new Mapper(App_Start.FieldMapper.GetMapperConfigStandard());
-            var new_field = mapper.Map<Field>(par_field);
-            new_field.IsCustomizable = (false == true);
-            return new_field;
+            var new_mvcfield = mapper.Map<Field>(par_field);
+            new_mvcfield.IsCustomizable = (false == true);
+            return new_mvcfield;
 
         }
 

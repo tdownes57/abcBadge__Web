@@ -41,7 +41,7 @@ namespace ciBadgeForWeb.Controllers //EditableListMvc.Controllers
                 if (_fieldList == null)
                 //_fieldList = Session["FieldsList"] as List<ciBadgeFields.ClassFieldAny>;
                 //  { _fieldList = FieldsController.GetFieldsList();  }
-                { _fieldList = FieldsController.GetFieldsListAny(); }
+                { _fieldList = FieldsController.GetMvcFieldsListAny(); }
 
                 return _fieldList;
             }
@@ -66,7 +66,7 @@ namespace ciBadgeForWeb.Controllers //EditableListMvc.Controllers
 
                 //_fieldList = ClassElementsCache_Deprecated.Singleton.ListOfFields_CreateCopies();
                 //----_fieldList = FieldsController.GetFieldsList();
-                _fieldList = FieldsController.GetFieldsListAny();
+                _fieldList = FieldsController.GetMvcFieldsListAny();
 
             }
             return View(_fieldList);
@@ -132,10 +132,10 @@ namespace ciBadgeForWeb.Controllers //EditableListMvc.Controllers
 
                     // force reload of data from database
                     //_fieldList = null;
-                    FieldsController.RefreshFieldsList();
+                    FieldsController.RefreshMcvFieldsList();
 
                     //----_fieldList = FieldsController.GetFieldsList();
-                    _fieldList = FieldsController.GetFieldsListAny();
+                    _fieldList = FieldsController.GetMvcFieldsListAny();
 
                 }
                 return RedirectToAction("Index");
