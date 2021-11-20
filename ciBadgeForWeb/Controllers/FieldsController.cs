@@ -129,8 +129,73 @@ namespace ciBadgeForWeb.Controllers
             var fields_list = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
             var fields_onlyone = fields_list.Where(x => x.FieldIndex == id).FirstOrDefault();
             //---return (ViewResult)View("EditSimple", fields_onlyone);
-            return (ViewResult)View(fields_onlyone);
+            if (fields_onlyone is ciBadgeFields.ClassFieldStandard)
+            {
+                return (ViewResult)View(fields_onlyone);
+            }
+            if (fields_onlyone is ciBadgeFields.ClassFieldCustomized)
+            {
+                //return (ViewResult)View(fields_onlyone);
+                return EditCustomized(id);
+            }
         }
+
+        
+        // GET: Fields/Edit/5
+        public ActionResult EditStandard(int id)
+        {
+            //return View();
+            //return View("EditSimple");
+            var fields_list = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
+            var fields_onlyone = fields_list.Where(x => x.FieldIndex == id).FirstOrDefault();
+            
+            //---return (ViewResult)View("EditSimple", fields_onlyone);
+            if (fields_onlyone is ciBadgeFields.ClassFieldStandard)
+            {
+                return (ViewResult)View(fields_onlyone);
+            }
+            else if (fields_onlyone is ciBadgeFields.ClassFieldCustomized)
+            {
+                //return (ViewResult)View(fields_onlyone);
+                //return EditCustomized(int);
+                throw new Exception("This field is customized, not standard.");
+            }
+            else
+            {
+                // Added 11/20/2021 Thomas Downes
+                throw new Exception("The class type is not recognized.");
+            }
+
+        }
+
+
+        // GET: Fields/Edit/5
+        public ActionResult EditCustomized(int id)
+        {
+            //return View();
+            //return View("EditSimple");
+            var fields_list = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
+            var fields_onlyone = fields_list.Where(x => x.FieldIndex == id).FirstOrDefault();
+            //---return (ViewResult)View("EditSimple", fields_onlyone);
+            if (fields_onlyone is ciBadgeFields.ClassFieldStandard)
+            {
+                //return (ViewResult)View(fields_onlyone);
+                //return EditStandard(int);
+                throw new Exception("This field is standard, not customized.");
+            }
+            else if (fields_onlyone is ciBadgeFields.ClassFieldCustomized)
+            {
+                //return (ViewResult)View(fields_onlyone);
+                //return EditCustomized(int);
+                return (ViewResult)View(fields_onlyone);
+            }
+            else
+            {
+                throw new Exception("The class type is not recognized.");
+            }
+
+        }
+
 
         // GET: Fields/Advanced/5
         public ActionResult AdvancedForOne(int id)
