@@ -75,8 +75,26 @@ namespace ciBadgeForWeb.ASPX
             string strValue0 = ""; // par_context.Request.QueryString.Keys[0];
             string strValue1 = ""; // par_context.Request.QueryString.Keys[1];
 
+            //
+            // Added 11/19/2021 thomas downes 
+            //
+            string strCheckMsg = "";
+            bool bAllFine = false;
+            ClassElementsCache_Deprecated.Singleton
+                .CheckAllElementsHaveCorrectFieldInfo(ref bAllFine, ref strCheckMsg);
+
+            if (!bAllFine)
+            {
+                par_context.Response.ContentType = "text/html";
+                par_context.Response.Write($"<p>-----Messages-------</p>");
+                par_context.Response.Write($"<p>{strCheckMsg}</p>");
+                return; 
+            }
+
             try
             {
+                //If the Query String does not have 2 values, the following will 
+                //   fail.  The result will be 0-length strings. 
                 strQueryKey0 = par_context.Request.QueryString.Keys[0];
                 strQueryKey1 = par_context.Request.QueryString.Keys[1];
                 strValue0 = par_context.Request.QueryString.GetValues(0).ToString();
@@ -106,7 +124,7 @@ namespace ciBadgeForWeb.ASPX
                 intFieldIndex = int.Parse(par_context.Request.QueryString["fldindex"]);
                 strFieldCaption = (par_context.Request.QueryString["fldcaption"]).ToString();
                 intElementIndex = ClassElementsCache_Deprecated.Singleton
-                    .GetElementIndexByFieldIndex(intFieldIndex);
+                    .GetElementIndexByFieldIndex_2ndTry(intFieldIndex);
                 bWeHave_ElementIndex = true;  //Added 11/17/2021 td
                 bQueryByField = true;  
             }
@@ -149,6 +167,7 @@ namespace ciBadgeForWeb.ASPX
                     par_context.Response.ContentType = "text/html";
                     par_context.Response.Write($"<p>-----Messages-------</p>");
                     par_context.Response.Write($"<p>{strBugMessage}</p>");
+                    return;  
                 }
                 else
                 {

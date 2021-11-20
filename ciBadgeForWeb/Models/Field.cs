@@ -82,7 +82,8 @@ namespace ciBadgeForWeb.Models
                 ref_listCustom.Add(each_customField);
 
                 //Added 11/19/2021 thomas downes
-                each_customField.BadgeElement = ClassElementsCache_Deprecated.Singleton.GetElementByField(each_fld);
+                each_customField.BadgeElement = ClassElementsCache_Deprecated
+                    .Singleton.GetElementByField(each_customField);
 
             }
 
