@@ -23,16 +23,19 @@
         </td>*@
 <td>
     <img src="~/ASPX/Step2DataHandler.ashx?fldindex=@Model.FieldIndex&fldcaption=@Model.FieldLabelCaption" />
-    # @Model.FieldIndex __Caption: @Model.FieldLabelCaption __BugMessage: @Model.BugMessages[@Model.FieldIndex]
-      @Model.BadgeElement.LabelText_ToDisplay(false)
+    @*# @Model.FieldIndex __Caption: @Model.FieldLabelCaption __BugMessage: @Model.BugMessages[@Model.FieldIndex]
+      @Model.BadgeElement.LabelText_ToDisplay(false)*@
 </td>
 
 <td>
     <!--                                                 -->
     <!-- Anonymous Type.... new { id = @Model.FieldIndex } -->
     <!--                                                 -->
+    @*@Html.ActionLink("Edit This Field", "Edit", "Fields",
+            new { id = @Model.FieldIndex, isAnonymousType = true })*@
     @Html.ActionLink("Edit This Field", "Edit", "Fields",
-            new { id = @Model.FieldIndex, isAnonymousType = true })
+                           new { id = @Model.FieldIndex },
+                           new { @class = "name" } )
 
     @Html.HiddenFor(model => model.CIBadgeField)
     @Html.HiddenFor(model => model.DefaultValue)
