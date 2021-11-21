@@ -128,19 +128,26 @@ namespace ciBadgeForWeb.Controllers
             //return View("EditSimple");
             var fields_list = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
             var fields_onlyone = fields_list.Where(x => x.FieldIndex == id).FirstOrDefault();
+            
             //---return (ViewResult)View("EditSimple", fields_onlyone);
             if (fields_onlyone is ciBadgeFields.ClassFieldStandard)
             {
                 return (ViewResult)View(fields_onlyone);
             }
-            if (fields_onlyone is ciBadgeFields.ClassFieldCustomized)
+            else if (fields_onlyone is ciBadgeFields.ClassFieldCustomized)
             {
                 //return (ViewResult)View(fields_onlyone);
                 return EditCustomized(id);
             }
+            else
+            {
+                // Added 11/20/2021 Thomas Downes
+                throw new Exception("The class type is not recognized.");
+            }
+
         }
 
-        
+
         // GET: Fields/Edit/5
         public ActionResult EditStandard(int id)
         {
