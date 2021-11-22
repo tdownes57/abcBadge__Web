@@ -31,7 +31,8 @@ namespace ciBadgeForWeb.Controllers
         //Added 3/21/2020 Thomas Downes
         public static JsonFile JsonFile_MoveableDivs = new JsonFile();
         //Added 4/16/2020 Thomas Downes
-        public static MoveableDivImage MoveableDivs;  //--- = new JsonFile();
+        //-----public static MoveableDivImage MoveableDivs;  //--- = new JsonFile();
+        public static BadgeSetupElement BadgeSetup;  //--- = new JsonFile();
 
         //Added 4/22/2020 thomas downes 
         //---public static Point OffsetPoint = new Point(100, 100);
@@ -39,55 +40,47 @@ namespace ciBadgeForWeb.Controllers
         public static Point OffsetPoint = new Point(300, 200);
         public static Point LayoutSize = new Point(650, 410);
 
-        public static MoveableDivImage GetMoveableDivs()
+        public static BadgeSetupElement GetBadgeSetup()
         {
             //
             // Added 4/22/2020 td 
             //
-            MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
-            if (JsonFileController.MoveableDivs == null)
+            //MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
+            BadgeSetupElement objectBadgeSetup = BadgeSetupElementController.BadgeSetup;
+            if (BadgeSetupElementController.BadgeSetup == null)
             {
-                // 4-22-2020 td //objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
-                objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton, OffsetPoint);
-                JsonFileController.MoveableDivs = objectMoveableDivs;
+                //objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton, OffsetPoint);
+                //JsonFileController.MoveableDivs = objectMoveableDivs;
+                objectBadgeSetup = new BadgeSetupElement(ClassElementsCache_Deprecated.Singleton, OffsetPoint);
+                BadgeSetup = objectBadgeSetup;
             }
-            return objectMoveableDivs;
+            
+            //return objectMoveableDivs;
+            return objectBadgeSetup;
+
         }
 
         // GET: JsonFile
         public ActionResult Index()
         {
             //
-            // Added 3/21/2020 Thomas Downes  
+            // Added 11/21/2021 Thomas Downes  
             //
-
-            //JsonFile objectJsonFile = new JsonFile();
-            // 5/2/2020 thomas downes //---var objectJsonFile = JsonFileController.JsonFile_MoveableDivs;
-
-            //return View(objectJsonFile);
-            //return IndexGroupWidth();
-
-            //---   4/13/2020  ---//return View(objectJsonFile);
-            //---   4/16/2020  ---//var objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
-
-            //Added 4/16/2020 thomas downes 
-            //MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs; 
-            //if (JsonFileController.MoveableDivs == null)
-            //{
-            //    // 4-22-2020 td //objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
-            //    objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton, OffsetPoint);
-            //    JsonFileController.MoveableDivs = objectMoveableDivs;
-            //}
-            //return View(objectMoveableDivs);
-
-            //Added 5/2/2020 thomas downes  
             ViewBag.LayoutWidthPixels = ClassElementsCache_Deprecated.Singleton.BadgeLayout.Width_Pixels;
             ViewBag.LayoutHeightPixels = ClassElementsCache_Deprecated.Singleton.BadgeLayout.Height_Pixels;
             ViewBag.OffsetLeftPixels = OffsetPoint.X;
             ViewBag.OffsetTopPixels = OffsetPoint.Y;
 
+            //Added 11/21/2021 td
+            //  We need to remove any references to a Recipient, otherwise the 
+            //  field elements will contain that Recipient's data. 
+            //
+            ClassElementField.oRecipient = null;
+            ClassElementField.iRecipientInfo = null;
+
             //Modified 4/22/2020 td
-            return View(GetMoveableDivs());
+            //return View(GetMoveableDivs());
+            return View(GetBadgeSetup());
 
         }
 
@@ -103,7 +96,8 @@ namespace ciBadgeForWeb.Controllers
             ViewBag.OffsetLeftPixels = OffsetPoint.X;
             ViewBag.OffsetTopPixels = OffsetPoint.Y;
 
-            return View(GetMoveableDivs());
+            //return View(GetMoveableDivs());
+            return View(GetBadgeSetup());
 
         }
 
@@ -112,19 +106,9 @@ namespace ciBadgeForWeb.Controllers
         public ActionResult TableEdit()
         {
             //
-            // Added 4/18/2020 Thomas Downes  
+            // Added 11/21/2021 Thomas Downes  
             //
-            //MoveableDivImage objectMoveableDivs = JsonFileController.MoveableDivs;
-            //if (JsonFileController.MoveableDivs == null)
-            //{
-            //    // 4-22-2020 td //objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
-            //    objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton, OffsetPoint);
-            //    JsonFileController.MoveableDivs = objectMoveableDivs;
-            //}
-            //return View(objectMoveableDivs);
-
-            //Modified 4/22/2020 td
-            return View(GetMoveableDivs());
+            return View(GetBadgeSetup());
 
         }
 

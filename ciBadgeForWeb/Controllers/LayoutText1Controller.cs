@@ -36,7 +36,8 @@ namespace ciBadgeForWeb.Controllers
             // ADDED 7/6/2019 TD
             // 7-6-2019 td//ciLayoutPrintLib.LayoutExample.RefreshChoiceOfBackground_Next();
 
-            const bool b_UseCodePriorToApril2020 = false;  // Added 8/17/2021 Thomas downes
+            //Modified to True on 11/22/2021 thomas downes
+            const bool b_UseCodePriorToApril2020 = true;  // false;  // Added 8/17/2021 Thomas downes
             if (b_UseCodePriorToApril2020)  // Added 8/17/2021 Thomas downes
             {
                 return View(mod_objLayoutText);

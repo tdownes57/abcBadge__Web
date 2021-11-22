@@ -45,7 +45,9 @@ namespace ciBadgeForWeb.Controllers
                 JsonFileController.MoveableDivs = objectMoveableDivs;
             }
             return objectMoveableDivs;
+
         }
+
 
     // GET: JsonFile
     public ActionResult Index()
@@ -78,6 +80,10 @@ namespace ciBadgeForWeb.Controllers
             ViewBag.LayoutHeightPixels = ClassElementsCache_Deprecated.Singleton.BadgeLayout.Height_Pixels;
             ViewBag.OffsetLeftPixels = OffsetPoint.X;
             ViewBag.OffsetTopPixels = OffsetPoint.Y;
+
+            //Added 11/21/2021 td
+            ClassElementField.oRecipient = null;
+            ClassElementField.iRecipientInfo = null;  
 
             //Modified 4/22/2020 td
             return View(GetMoveableDivs());
