@@ -169,7 +169,8 @@ namespace ciBadgeForWeb.Models
         // Initialize. ---3/20/2020 thomas downes 
         //
         public MoveableDivImage(ciBadgeElements.ClassElementsCache_Deprecated par_cache,
-                                  System.Drawing.Point par_offsetPoint)
+                                  System.Drawing.Point par_offsetPoint,
+                                  bool par_allStackedUp = false)
         {
             //---April 22, 2020---public MoveableDivImage(ciBadgeElements.ClassElementsCache_Deprecated par_cache)
             //
@@ -179,6 +180,7 @@ namespace ciBadgeForWeb.Models
             int indexElement = -1;
             bool bElementHasField = false;   //Added 4/20/2020 thomas downees 
             bool bElementIsVisible = false;  //Added 4/20/2020 thomas downes 
+            bool bFirstVisibleElement = true;  //Rare to default a Boolean to True, but here it is.---11/22/2021 td
 
             //Added 4/13/2020 thomas downes
             this.MoveTop = new Moveable_Top();
@@ -203,6 +205,7 @@ namespace ciBadgeForWeb.Models
             // 5/4/2020 td //ImageForElement = new Image[12];
             // 11/18/2021 td //ImageForElement = new Image[12 + 1]; // We will use 1, 2, ... 12 as the indices. The element # 0 will be ignored. 
             ImageForElement = new Image[19 + 1]; // We will use 0, 1, 2, ... 12 as the indices. The element # 0 will be --INCLUDED--. 
+            ClassElementField prior_element = null; //Added 11/22/2021 td
 
             foreach (ClassElementField each_element in par_cache.ListOfElementFields)
             {
@@ -228,13 +231,35 @@ namespace ciBadgeForWeb.Models
                     if (c_boolIncludeOffset) //Added 4/22/2020 thomas d.
                     {
                         //Added 4/22/2020 thomas d.
-                        this.MoveLeft_Offset[indexElement] = (par_offsetPoint.X + each_element.LeftEdge_Pixels).ToString() + "px";
-                        this.MoveTop_Offset[indexElement] = (par_offsetPoint.Y + each_element.TopEdge_Pixels).ToString() + "px";
+                        //We need to left-align the elements. ----this.MoveLeft_Offset[indexElement] = (par_offsetPoint.X + each_element.LeftEdge_Pixels).ToString() + "px";
+                        this.MoveLeft_Offset[indexElement] = (par_offsetPoint.X + 0).ToString() + "px";
+
+                        //We need to stack the elements. ----this.MoveTop_Offset[indexElement] = (par_offsetPoint.Y + each_element.TopEdge_Pixels).ToString() + "px";
+                        if (bFirstVisibleElement) 
+                            this.MoveTop_Offset[indexElement] = ((par_offsetPoint.Y).ToString() + "px");
+                        else this.MoveTop_Offset[indexElement] = (par_offsetPoint.Y + 0 
+                            + prior_element.TopEdge_Pixels + 10 
+                            + prior_element.Height_Pixels).ToString() + "px";
+
+                        //Moved below.//bFirstVisibleElement = false; // Prepare for next iteration.
+                        //Moved below.//prior_element = each_element;  // Prepare for next iteration.
+
                     }
 
                     //Added 4/13/2020 thomas downes
-                    this.MoveLeft[indexElement] = each_element.LeftEdge_Pixels.ToString() + "px";
+                    //We need to left-align the elements. ----this.MoveLeft[indexElement] = each_element.LeftEdge_Pixels.ToString() + "px";
+                    this.MoveLeft[indexElement] = "0px";
+
+                    //We need to stack the elements. ----this.MoveTop[indexElement] = each_element.TopEdge_Pixels.ToString() + "px";
                     this.MoveTop[indexElement] = each_element.TopEdge_Pixels.ToString() + "px";
+                    if (bFirstVisibleElement)
+                        this.MoveTop[indexElement] = "0px";
+                    else this.MoveTop[indexElement] = (0
+                        + prior_element.TopEdge_Pixels + 10
+                        + prior_element.Height_Pixels).ToString() + "px";
+
+                    bFirstVisibleElement = false; // Prepare for next iteration.
+                    prior_element = each_element;  // Prepare for next iteration.
 
                     //Integers are fine, strings not needed. 
                     this.MoveWidth[indexElement] = each_element.Width_Pixels;   //.ToString() + "px";

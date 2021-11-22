@@ -49,8 +49,22 @@ namespace ciBadgeForWeb.Controllers
         }
 
 
-    // GET: JsonFile
-    public ActionResult Index()
+        public static MoveableDivImage GetMoveableDivs_StackedCopies()
+        {
+            //
+            // Added 11/22/2021 td 
+            //
+            MoveableDivImage objectMoveableDivs_Stacked = JsonFileController.MoveableDivs;
+            const bool c_boolStackedUp = true;
+            objectMoveableDivs_Stacked = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton, OffsetPoint, c_boolStackedUp);
+            //---JsonFileController.MoveableDivs = objectMoveableDivs_Stacked;
+            return objectMoveableDivs_Stacked;
+
+        }
+
+
+        // GET: JsonFile
+        public ActionResult Index()
         {
             //
             // Added 3/21/2020 Thomas Downes  
@@ -83,7 +97,7 @@ namespace ciBadgeForWeb.Controllers
 
             //Added 11/21/2021 td
             ClassElementField.oRecipient = null;
-            ClassElementField.iRecipientInfo = null;  
+            ClassElementField.iRecipientInfo = null;
 
             //Modified 4/22/2020 td
             return View(GetMoveableDivs());
@@ -288,7 +302,7 @@ namespace ciBadgeForWeb.Controllers
             // Added 4/06/2020 Thomas Downes  
             //
             //----4-22-2020 td //var objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
-            var objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton, 
+            var objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton,
                 Controllers.JsonFileController.OffsetPoint);
 
             return View(objectMoveableDivs);
@@ -377,10 +391,10 @@ namespace ciBadgeForWeb.Controllers
                     var objectMoveableDivs = JsonFileController.MoveableDivs;
                     //4-22-2020//objectMoveableDivs.SavePositions_Left(collection["JsonTextContent_Left"]);
                     //4-22-2020//objectMoveableDivs.SavePositions_Top(collection["JsonTextContent_Top"]);
-                    
+
                     objectMoveableDivs.SavePositions_Left(collection["JsonTextContent_Left"], c_boolHasOffsets);
                     objectMoveableDivs.SavePositions_Top(collection["JsonTextContent_Top"], c_boolHasOffsets);
-                    
+
                     objectMoveableDivs.SavePositions_Width(collection["JsonTextContent_Width"]);
                     objectMoveableDivs.SavePositions_Height(collection["JsonTextContent_Height"]);
 
@@ -449,7 +463,7 @@ namespace ciBadgeForWeb.Controllers
 
                 //Added 4/16/2020 thomas downes 
                 objContent.Content = ("Unfortunately, the save failed." + ex_Index.Message);
-                return objContent; 
+                return objContent;
             }
         }
 
@@ -534,15 +548,15 @@ namespace ciBadgeForWeb.Controllers
             //
             var objectMoveableDivs = JsonFileController.MoveableDivs;
 
-            objectMoveableDivs.MoveLeft.EL1_Left =  collection["EL1_Left"];
-            objectMoveableDivs.MoveLeft.EL2_Left =  collection["EL2_Left"];
-            objectMoveableDivs.MoveLeft.EL3_Left =  collection["EL3_Left"];
-            objectMoveableDivs.MoveLeft.EL4_Left =  collection["EL4_Left"];
-            objectMoveableDivs.MoveLeft.EL5_Left =  collection["EL5_Left"];
-            objectMoveableDivs.MoveLeft.EL6_Left =  collection["EL6_Left"];
-            objectMoveableDivs.MoveLeft.EL7_Left =  collection["EL7_Left"];
-            objectMoveableDivs.MoveLeft.EL8_Left =  collection["EL8_Left"];
-            objectMoveableDivs.MoveLeft.EL9_Left =  collection["EL9_Left"];
+            objectMoveableDivs.MoveLeft.EL1_Left = collection["EL1_Left"];
+            objectMoveableDivs.MoveLeft.EL2_Left = collection["EL2_Left"];
+            objectMoveableDivs.MoveLeft.EL3_Left = collection["EL3_Left"];
+            objectMoveableDivs.MoveLeft.EL4_Left = collection["EL4_Left"];
+            objectMoveableDivs.MoveLeft.EL5_Left = collection["EL5_Left"];
+            objectMoveableDivs.MoveLeft.EL6_Left = collection["EL6_Left"];
+            objectMoveableDivs.MoveLeft.EL7_Left = collection["EL7_Left"];
+            objectMoveableDivs.MoveLeft.EL8_Left = collection["EL8_Left"];
+            objectMoveableDivs.MoveLeft.EL9_Left = collection["EL9_Left"];
             objectMoveableDivs.MoveLeft.EL10_Left = collection["EL10_Left"];
             objectMoveableDivs.MoveLeft.EL11_Left = collection["EL11_Left"];
             objectMoveableDivs.MoveLeft.EL12_Left = collection["EL12_Left"];
@@ -641,6 +655,26 @@ namespace ciBadgeForWeb.Controllers
             //   
 
             return View(objectMoveableDivs.MoveWidth);
+
+        }
+
+
+        public ActionResult IndexStackAllElements()
+        {
+            //
+            // Added 11/22/2020 Thomas Downes  
+            //
+            //Added 5/2/2020 thomas downes  
+            ViewBag.LayoutWidthPixels = ClassElementsCache_Deprecated.Singleton.BadgeLayout.Width_Pixels;
+            ViewBag.LayoutHeightPixels = ClassElementsCache_Deprecated.Singleton.BadgeLayout.Height_Pixels;
+            ViewBag.OffsetLeftPixels = OffsetPoint.X;
+            ViewBag.OffsetTopPixels = OffsetPoint.Y;
+
+            //Added 11/21/2021 td
+            ClassElementField.oRecipient = null;
+            ClassElementField.iRecipientInfo = null;
+
+            return View(GetMoveableDivs_Stacked());
 
         }
 

@@ -17,7 +17,11 @@ namespace ciBadgeForWeb.Controllers
             //  Go to the JsonController to find my "Moveable DIVs" work.
             //  ----4/1 td
             //
-            return new EmptyResult();     // View();
+            //---return new EmptyResult();     // View();
+            var objResult = new System.Web.Mvc.ContentResult(); // "Go to the JsonController to find my Moveable DIVs work.");     // View();
+            objResult.Content = "Go to the JsonController to find my Moveable DIVs work.";
+            return objResult;
+
         }
     }
 }

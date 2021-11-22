@@ -305,16 +305,16 @@ else
 
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal"  style="position: absolute; top: 750px; left: 300px;">
-        <h4>BadgeSetupElement</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
+<div class="form-horizontal" style="position: absolute; top: 150px; left: 900px; ">
+    <h4>BadgeSetupElement</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save Badge Setup" class="btn btn-default" />
         </div>
     </div>
+</div>
 }
 
 <div>

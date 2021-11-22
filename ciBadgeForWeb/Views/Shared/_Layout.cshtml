@@ -146,7 +146,7 @@
 
                     @* <li>@Html.ActionLink("Moveable Divs", "Index", "JsonFile")</li>*@
 
-                    @if (false)
+                    @if (true)
                     {
                         <li>
                             <!-- https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp -->
@@ -156,17 +156,18 @@
                                     Moveable_Divs
                                     <span class="caret"></span>
                                 </button>@*</a>*@
-                                <ul class="dropdown-menu">
-                                    <li>@Html.ActionLink("Proof of Concept", "Index", "JsonFile")</li>
-                                    <li>@Html.ActionLink("JSON strings", "TableEdit", "JsonFile")</li>
-                                    <li>@Html.ActionLink("Element-Location - Left", "TableDivsLeft", "JsonFile")</li>
-                                    <li>@Html.ActionLink("Element-Location - Top", "TableDivsTop", "JsonFile")</li>
-                                    <li>@Html.ActionLink("Element-Location - Width", "TableDivsWidth", "JsonFile")</li>
-                                    <li>@Html.ActionLink("Element-Location - Height", "TableDivsHeight", "JsonFile")</li>
-                                    <li>@Html.ActionLink("Element-Location - HasField", "TableDivsHasField", "JsonFile")</li>
-                                    <li>@Html.ActionLink("Element-Location - Displayed", "TableDivsDisplayed", "JsonFile")</li>
-                                    <li>@Html.ActionLink("Element-Location - Fieldname", "TableDivsFieldName", "JsonFile")</li>
-                                </ul>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Proof of Concept", "Index", "JsonFile")</li>
+                                <li>@Html.ActionLink("Stack All Elements", "IndexStackAllElements", "JsonFile")</li>
+                                <li>@Html.ActionLink("JSON strings", "TableEdit", "JsonFile")</li>
+                                <li>@Html.ActionLink("Element-Location - Left", "TableDivsLeft", "JsonFile")</li>
+                                <li>@Html.ActionLink("Element-Location - Top", "TableDivsTop", "JsonFile")</li>
+                                <li>@Html.ActionLink("Element-Location - Width", "TableDivsWidth", "JsonFile")</li>
+                                <li>@Html.ActionLink("Element-Location - Height", "TableDivsHeight", "JsonFile")</li>
+                                <li>@Html.ActionLink("Element-Location - HasField", "TableDivsHasField", "JsonFile")</li>
+                                <li>@Html.ActionLink("Element-Location - Displayed", "TableDivsDisplayed", "JsonFile")</li>
+                                <li>@Html.ActionLink("Element-Location - Fieldname", "TableDivsFieldName", "JsonFile")</li>
+                            </ul>
                             </div>
                         </li>
                     }
