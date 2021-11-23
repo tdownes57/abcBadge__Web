@@ -1255,7 +1255,7 @@
     <Content Include="Scripts\__MoveableDivs\How to use Export modifier %28StackOver%29.docx" />
     <Content Include="Views\JsonFile\__Export modifier %28StackOver%29.docx" />
     <Content Include="Views\JsonFile\Index_GroupWidth.cshtml" />
-    <Content Include="Views\JsonFile\Index - Works great.cshtml" />
+    <Content Include="Views\JsonFile\Index_WorksGreat.cshtml" />
     <Content Include="Views\JsonFile\Index_Awesome.cshtml" />
     <Content Include="Views\JsonFile\MoveableDivImage.cshtml" />
     <Content Include="Views\JsonFile\Index.cshtml" />
@@ -1317,6 +1317,7 @@
     <Content Include="Views\JsonFile\Index_12elements.cshtml" />
     <Content Include="__MS Typescript\Download TypeScript.url" />
     <Content Include="__MS Typescript\Download TypeScript 3.7.2 for Visual Studio.url" />
+    <Content Include="Views\JsonFile\Index - Works Great.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />
