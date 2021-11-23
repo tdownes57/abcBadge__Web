@@ -1315,6 +1315,8 @@
     <Content Include="Views\BadgeSetupElement\Index.cshtml" />
     <Content Include="Views\JsonFile\Index_StackAllElements.cshtml" />
     <Content Include="Views\JsonFile\Index_12elements.cshtml" />
+    <Content Include="__MS Typescript\Download TypeScript.url" />
+    <Content Include="__MS Typescript\Download TypeScript 3.7.2 for Visual Studio.url" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />
