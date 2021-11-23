@@ -35,7 +35,8 @@ namespace ciBadgeForWeb.Models
         public int EL11_Height { get; set; }
         public int EL12_Height { get; set; }
 
-        //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+        //There is a gap between the 12(+1 for 0th) Standard fields being
+        //   possibly displayed, and the five customizable fields.)
         public int EL15_Height { get; set; }
         public int EL16_Height { get; set; }
         public int EL17_Height { get; set; }

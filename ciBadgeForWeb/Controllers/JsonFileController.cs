@@ -32,6 +32,14 @@ namespace ciBadgeForWeb.Controllers
         public static Point OffsetPoint = new Point(300, 200);
         public static Point LayoutSize = new Point(650, 410);
 
+        //Added 11/23/2021 Thomas Downes
+        public static bool IncludeElement0 = false;
+        public static bool ExcludeElement13 = true; // true, we will skip Element #13.
+        public static bool ExcludeElement14 = true; // true, we will skip Element #14.
+        private static bool _excludeCustoms = true; // Added 11/23/2021 td
+        public static bool ExcludeElement15_etc = _excludeCustoms; // true, so we will exclude the customized elements. 
+        public static bool ExcludeElement20_etc = true; // true, so we will stop after 5 customized elements. 
+
         public static MoveableDivImage GetMoveableDivs()
         {
             //
@@ -42,6 +50,8 @@ namespace ciBadgeForWeb.Controllers
             {
                 // 4-22-2020 td //objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton);
                 objectMoveableDivs = new MoveableDivImage(ClassElementsCache_Deprecated.Singleton, OffsetPoint);
+                
+                // Save the object reference. 
                 JsonFileController.MoveableDivs = objectMoveableDivs;
             }
             return objectMoveableDivs;
@@ -98,11 +108,41 @@ namespace ciBadgeForWeb.Controllers
             //Added 11/21/2021 td
             ClassElementField.oRecipient = null;
             ClassElementField.iRecipientInfo = null;
+            bool bReturnView = false; //Default 
 
             //Modified 4/22/2020 td
-            return View(GetMoveableDivs());
+            //----return View(GetMoveableDivs());
+            try
+            {
+                var objMoveableDivImage = GetMoveableDivs();
+                bReturnView = true;
+                //return View(objMoveableDivImage);
+                return ============; ; ; ; ;
+            }
+            catch (Exception ex)
+            {
+                // Added 11/23/2021 Thomas Downes
+                return Content("Error 1291: " + ex.Message + 
+                    " ...  " + (bReturnView ? " [bReturnView] " : " [] ") + 
+                    ex.ToString());
+
+            }
 
         }
+
+
+        public void Index_12elements()
+        {
+            //
+            // Created 11/23/2021 thomas downes 
+            //
+
+
+
+
+        }
+
+
 
 
         // GET: JsonFile
@@ -283,7 +323,7 @@ namespace ciBadgeForWeb.Controllers
 
 
         // GET: JsonFile
-        public ActionResult IndexGroupWidth()
+        public ActionResult Index_GroupWidth()
         {
             //
             // Added 3/21/2020 Thomas Downes  

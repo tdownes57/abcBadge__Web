@@ -142,7 +142,9 @@ namespace ciBadgeForWeb.Controllers
             else
             {
                 // Added 11/20/2021 Thomas Downes
-                throw new Exception("The class type is not recognized.");
+                //----throw new Exception("The class type is not recognized.");
+                return Content("The class type is not recognized. --Error 1290");
+
             }
 
         }

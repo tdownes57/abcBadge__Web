@@ -47,7 +47,8 @@ namespace ciBadgeForWeb.Models
                 if (i == 11) return this.EL11_HasField;
                 if (i == 12) return this.EL12_HasField;
 
-                //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+                //There is a gap between the 12(+1 for 0th) Standard fields being
+                //  possibly displayed, and the five customizable fields.)
                 if (i == 15) return this.EL15_HasField;
                 if (i == 16) return this.EL16_HasField;
                 if (i == 17) return this.EL17_HasField;
@@ -70,7 +71,8 @@ namespace ciBadgeForWeb.Models
                 if (i == 11) this.EL11_HasField = value;
                 if (i == 12) this.EL12_HasField = value;
 
-                //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+                //There is a gap between the 12(+1 for 0th) Standard fields being
+                //  possibly displayed, and the five customizable fields.)
                 if (i == 15) this.EL15_HasField = value;
                 if (i == 16) this.EL16_HasField = value;
                 if (i == 17) this.EL17_HasField = value;

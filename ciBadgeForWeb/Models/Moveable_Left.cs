@@ -35,7 +35,8 @@ namespace ciBadgeForWeb.Models
         public string EL11_Left { get; set; }  //E.g. "200px"
         public string EL12_Left { get; set; }  //E.g. "200px"
 
-        //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+        //There is a gap between the 12(+1 for 0th) Standard fields being
+        //  possibly displayed, and the five customizable fields.)
         public string EL15_Left { get; set; }  //E.g. "200px"
         public string EL16_Left { get; set; }  //E.g. "200px"
         public string EL17_Left { get; set; }  //E.g. "200px"
@@ -68,7 +69,8 @@ namespace ciBadgeForWeb.Models
                 if (i == 11) return this.EL11_Left;
                 if (i == 12) return this.EL12_Left;
 
-                //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+                //There is a gap between the 12(+1 for 0th) Standard fields
+                //   being possibly displayed, and the five customizable fields.)
                 if (i == 15) return this.EL15_Left;
                 if (i == 16) return this.EL16_Left;
                 if (i == 17) return this.EL17_Left;

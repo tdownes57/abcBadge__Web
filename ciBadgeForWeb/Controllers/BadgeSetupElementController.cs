@@ -254,7 +254,7 @@ namespace ciBadgeForWeb.Controllers
 
 
         // GET: JsonFile
-        public ActionResult IndexGroupWidth()
+        public ActionResult Index_GroupWidth()
         {
             //
             // Added 3/21/2020 Thomas Downes  

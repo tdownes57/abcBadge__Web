@@ -21,7 +21,8 @@ namespace ciBadgeForWeb.Models
         public bool EL11_Displayed { get; set; }
         public bool EL12_Displayed { get; set; }
 
-        //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+        //There is a gap between the 12(+1 for 0th) Standard fields being
+        //   possibly displayed, and the five customizable fields.)
         public bool EL15_Displayed { get; set; }
         public bool EL16_Displayed { get; set; }
         public bool EL17_Displayed { get; set; }

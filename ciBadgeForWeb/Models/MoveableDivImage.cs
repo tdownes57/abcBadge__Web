@@ -177,7 +177,21 @@ namespace ciBadgeForWeb.Models
             // Added 3/20/2020 thomas downes 
             //
             //----11/18/2021---int indexElement = 0;
-            int indexElement = -1;
+            //----11/23/2021---int indexElement = -1;
+
+            //Added 11/23/2021 thomas downes
+            bool bIncludeElementZero = Controllers.JsonFileController.IncludeElement0;
+            bool bExcludeElement13 = Controllers.JsonFileController.ExcludeElement13;
+            bool bExcludeElement14 = Controllers.JsonFileController.ExcludeElement14;
+
+            //Added 11/23/2021 thomas downes
+            bool bExcludeElement15_etc = Controllers.JsonFileController.ExcludeElement15_etc;
+            bool bExcludeElement20_etc = Controllers.JsonFileController.ExcludeElement20_etc;
+
+            int indexElement = (bIncludeElementZero ? -1 : 0);
+            //int indexHighestPossible = (bExcludeElement15_etc ? 14 :
+            //       (bExcludeElement20_etc ? 19 : 100));
+
             bool bElementHasField = false;   //Added 4/20/2020 thomas downees 
             bool bElementIsVisible = false;  //Added 4/20/2020 thomas downes 
             bool bFirstVisibleElement = true;  //Rare to default a Boolean to True, but here it is.---11/22/2021 td
@@ -221,8 +235,20 @@ namespace ciBadgeForWeb.Models
                     indexElement++;
 
                     //Added 11/18/2021 Thomas downes
-                    if (indexElement == 13) continue;  //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields (EL15 to EL19).)
-                    if (indexElement == 14) continue;  //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields (EL15 to EL19).)
+                    if (bExcludeElement13 && indexElement == 13) continue;  //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields (EL15 to EL19).)
+                    if (bExcludeElement14 && indexElement == 14) continue;  //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields (EL15 to EL19).)
+
+                    //Added 11/23/2021 Thomas downes
+                    if (bExcludeElement15_etc)
+                    {
+                        if (indexElement >= 15) break;  //The highest possible index is 14 (EL1 to EL12).)
+                    }
+
+                    //Added 11/23/2021 Thomas downes
+                    if (bExcludeElement20_etc)
+                    {
+                        if (indexElement >= (19 + 1)) break;  //The highest possible index is 19 (EL1 to EL12, EL15 to EL19).)
+                    }
 
                     mod_arrayElements[indexElement] = each_element;
 
@@ -244,6 +270,9 @@ namespace ciBadgeForWeb.Models
                         //Moved below.//bFirstVisibleElement = false; // Prepare for next iteration.
                         //Moved below.//prior_element = each_element;  // Prepare for next iteration.
 
+                        //
+                        //End of "if (c_boolIncludeOffset)"
+                        //
                     }
 
                     //Added 4/13/2020 thomas downes
@@ -286,7 +315,14 @@ namespace ciBadgeForWeb.Models
                     //Added 4/13/2020 thomas downes
                     this.ElementCount += 1;  // Increment. ---4/13/2020 thomas downes
 
+                    //
+                    //End of "if (bElementIsVisible)"
+                    //
                 }
+
+                //
+                //End of "foreach (ClassElementField each_element in par_cache.ListOfElementFields)"
+                //
             }
 
             //

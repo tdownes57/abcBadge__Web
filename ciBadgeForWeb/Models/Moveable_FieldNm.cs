@@ -22,7 +22,8 @@ namespace ciBadgeForWeb.Models
         public string EL12_FieldNm { get; set; }
 
 
-        //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+        //There is a gap between the 12(+1 for 0th) Standard fields
+        //  being possibly displayed, and the five customizable fields.)
         public string EL15_FieldNm { get; set; }
         public string EL16_FieldNm { get; set; }
         public string EL17_FieldNm { get; set; }
@@ -46,7 +47,9 @@ namespace ciBadgeForWeb.Models
                 if (i == 10) return this.EL10_FieldNm;
                 if (i == 11) return this.EL11_FieldNm;
                 if (i == 12) return this.EL12_FieldNm;
-                //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+
+                //There is a gap between the 12(+1 for 0th) Standard fields
+                //  being possibly displayed, and the five customizable fields.)
                 if (i == 15) return this.EL15_FieldNm;
                 if (i == 16) return this.EL16_FieldNm;
                 if (i == 17) return this.EL17_FieldNm;
