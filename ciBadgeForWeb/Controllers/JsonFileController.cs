@@ -116,8 +116,8 @@ namespace ciBadgeForWeb.Controllers
             {
                 var objMoveableDivImage = GetMoveableDivs();
                 bReturnView = true;
-                //return View(objMoveableDivImage);
-                return ============; ; ; ; ;
+                return View(objMoveableDivImage);
+                //return ============; ; ; ; ;
             }
             catch (Exception ex)
             {
@@ -131,14 +131,39 @@ namespace ciBadgeForWeb.Controllers
         }
 
 
-        public void Index_12elements()
+        public ActionResult Index_12elements()
         {
             //
             // Created 11/23/2021 thomas downes 
             //
+            //Added 5/2/2020 thomas downes  
+            ViewBag.LayoutWidthPixels = ClassElementsCache_Deprecated.Singleton.BadgeLayout.Width_Pixels;
+            ViewBag.LayoutHeightPixels = ClassElementsCache_Deprecated.Singleton.BadgeLayout.Height_Pixels;
+            ViewBag.OffsetLeftPixels = OffsetPoint.X;
+            ViewBag.OffsetTopPixels = OffsetPoint.Y;
 
+            //Added 11/21/2021 td
+            ClassElementField.oRecipient = null;
+            ClassElementField.iRecipientInfo = null;
+            bool bReturnView = false; //Default 
 
+            //Modified 4/22/2020 td
+            //----return View(GetMoveableDivs());
+            try
+            {
+                var objMoveableDivImage = GetMoveableDivs();
+                bReturnView = true;
+                return View(objMoveableDivImage);
+                //return ============; ; ; ; ;
+            }
+            catch (Exception ex)
+            {
+                // Added 11/23/2021 Thomas Downes
+                return Content("Error 1291: " + ex.Message +
+                    " ...  " + (bReturnView ? " [bReturnView] " : " [] ") +
+                    ex.ToString());
 
+            }
 
         }
 
