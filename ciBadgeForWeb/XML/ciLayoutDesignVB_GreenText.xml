@@ -5,7 +5,7 @@
   <XmlFile_Path>C:\Users\tdown\source\repos\ciBadgeForWeb - Framework\ciBadgeForWeb\XML\ciLayoutDesignVB_GreenText.xml</XmlFile_Path>
   <XmlFile_FTitle>ciLayoutDesignVB_GreenText.xml</XmlFile_FTitle>
   <BackgroundImage_Path>C:\Users\tdown\source\repos\ciBadgeForWeb - Framework\ciBadgeForWeb\Images\BackExamples\Width or Height Sizer.png</BackgroundImage_Path>
-  <BackgroundImage_FTitle>Width or Height Sizer.png</BackgroundImage_FTitle>
+  <BackgroundImage_FTitle>BackExample.jpg</BackgroundImage_FTitle>
   <ElementQRCode>
     <BadgeLayout>
       <Width_Pixels>681</Width_Pixels>
@@ -72,8 +72,8 @@
       <IsBarCode>false</IsBarCode>
       <DataEntryText>01/01/0001</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>001</CurrentRecipValue>
-      <CurrentRecipValue_Date>01/01/0001</CurrentRecipValue_Date>
+      <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+      <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
     </ClassFieldStandard>
     <ClassFieldStandard>
       <IsRelevantToPersonality>false</IsRelevantToPersonality>
@@ -97,8 +97,8 @@
       <IsBarCode>false</IsBarCode>
       <DataEntryText>01/01/0001</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>Johnny</CurrentRecipValue>
-      <CurrentRecipValue_Date>01/01/0001</CurrentRecipValue_Date>
+      <CurrentRecipValue>Undetermined value, for Field #1</CurrentRecipValue>
+      <CurrentRecipValue_Date>Undetermined value, for Field #1</CurrentRecipValue_Date>
     </ClassFieldStandard>
     <ClassFieldStandard>
       <IsRelevantToPersonality>false</IsRelevantToPersonality>
@@ -122,8 +122,8 @@
       <IsBarCode>false</IsBarCode>
       <DataEntryText>01/01/0001</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>Davidson</CurrentRecipValue>
-      <CurrentRecipValue_Date>01/01/0001</CurrentRecipValue_Date>
+      <CurrentRecipValue>Undetermined value, for Field #2</CurrentRecipValue>
+      <CurrentRecipValue_Date>Undetermined value, for Field #2</CurrentRecipValue_Date>
     </ClassFieldStandard>
     <ClassFieldStandard>
       <IsRelevantToPersonality>false</IsRelevantToPersonality>
@@ -449,8 +449,8 @@
       <IsBarCode>false</IsBarCode>
       <DataEntryText>01/01/0001</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>Willcrest School</CurrentRecipValue>
-      <CurrentRecipValue_Date>01/01/0001</CurrentRecipValue_Date>
+      <CurrentRecipValue>Undetermined value, for Field #15</CurrentRecipValue>
+      <CurrentRecipValue_Date>Undetermined value, for Field #15</CurrentRecipValue_Date>
     </ClassFieldCustomized>
     <ClassFieldCustomized>
       <IsRelevantToPersonality>false</IsRelevantToPersonality>
@@ -474,8 +474,8 @@
       <IsBarCode>false</IsBarCode>
       <DataEntryText>01/01/0001</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>Ms. Robinson</CurrentRecipValue>
-      <CurrentRecipValue_Date>01/01/0001</CurrentRecipValue_Date>
+      <CurrentRecipValue>Undetermined value, for Field #16</CurrentRecipValue>
+      <CurrentRecipValue_Date>Undetermined value, for Field #16</CurrentRecipValue_Date>
     </ClassFieldCustomized>
     <ClassFieldCustomized>
       <IsRelevantToPersonality>false</IsRelevantToPersonality>
@@ -499,8 +499,8 @@
       <IsBarCode>false</IsBarCode>
       <DataEntryText>01/01/0001</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>9TH</CurrentRecipValue>
-      <CurrentRecipValue_Date>01/01/0001</CurrentRecipValue_Date>
+      <CurrentRecipValue>Undetermined value, for Field #17</CurrentRecipValue>
+      <CurrentRecipValue_Date>Undetermined value, for Field #17</CurrentRecipValue_Date>
     </ClassFieldCustomized>
     <ClassFieldCustomized>
       <IsRelevantToPersonality>false</IsRelevantToPersonality>
@@ -524,8 +524,8 @@
       <IsBarCode>false</IsBarCode>
       <DataEntryText>07/21/2003</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
-      <CurrentRecipValue>07/21/2003</CurrentRecipValue>
-      <CurrentRecipValue_Date>07/21/2003</CurrentRecipValue_Date>
+      <CurrentRecipValue>Undetermined value, for Field #18</CurrentRecipValue>
+      <CurrentRecipValue_Date>Undetermined value, for Field #18</CurrentRecipValue_Date>
     </ClassFieldCustomized>
     <ClassFieldCustomized>
       <IsRelevantToPersonality>false</IsRelevantToPersonality>
@@ -589,8 +589,8 @@
         <IsBarCode>false</IsBarCode>
         <DataEntryText>01/01/0001</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>001</CurrentRecipValue>
-        <CurrentRecipValue_Date>01/01/0001</CurrentRecipValue_Date>
+        <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
+        <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>fstrID</FieldEnum>
       <TextAlignment>Left</TextAlignment>
@@ -647,8 +647,8 @@
         <IsBarCode>false</IsBarCode>
         <DataEntryText>01/01/0001</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>Johnny</CurrentRecipValue>
-        <CurrentRecipValue_Date>01/01/0001</CurrentRecipValue_Date>
+        <CurrentRecipValue>Undetermined value, for Field #1</CurrentRecipValue>
+        <CurrentRecipValue_Date>Undetermined value, for Field #1</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>fstrFirstName</FieldEnum>
       <TextAlignment>Left</TextAlignment>
@@ -658,8 +658,8 @@
         <Width_Pixels>675</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>64</TopEdge_Pixels>
-      <LeftEdge_Pixels>-177</LeftEdge_Pixels>
+      <TopEdge_Pixels>38</TopEdge_Pixels>
+      <LeftEdge_Pixels>0</LeftEdge_Pixels>
       <Width_Pixels>300</Width_Pixels>
       <Height_Pixels>35</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
@@ -705,8 +705,8 @@
         <IsBarCode>false</IsBarCode>
         <DataEntryText>01/01/0001</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>Davidson</CurrentRecipValue>
-        <CurrentRecipValue_Date>01/01/0001</CurrentRecipValue_Date>
+        <CurrentRecipValue>Undetermined value, for Field #2</CurrentRecipValue>
+        <CurrentRecipValue_Date>Undetermined value, for Field #2</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>fstrLastName</FieldEnum>
       <TextAlignment>Left</TextAlignment>
@@ -716,8 +716,8 @@
         <Width_Pixels>675</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>30</TopEdge_Pixels>
-      <LeftEdge_Pixels>-175</LeftEdge_Pixels>
+      <TopEdge_Pixels>109</TopEdge_Pixels>
+      <LeftEdge_Pixels>0</LeftEdge_Pixels>
       <Width_Pixels>253</Width_Pixels>
       <Height_Pixels>30</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
@@ -773,8 +773,8 @@
         <Width_Pixels>681</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>101</TopEdge_Pixels>
-      <LeftEdge_Pixels>-176</LeftEdge_Pixels>
+      <TopEdge_Pixels>70</TopEdge_Pixels>
+      <LeftEdge_Pixels>0</LeftEdge_Pixels>
       <Width_Pixels>253</Width_Pixels>
       <Height_Pixels>30</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
@@ -830,8 +830,8 @@
         <Width_Pixels>681</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>290</TopEdge_Pixels>
-      <LeftEdge_Pixels>-166</LeftEdge_Pixels>
+      <TopEdge_Pixels>141</TopEdge_Pixels>
+      <LeftEdge_Pixels>0</LeftEdge_Pixels>
       <Width_Pixels>253</Width_Pixels>
       <Height_Pixels>30</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
@@ -887,8 +887,8 @@
         <Width_Pixels>681</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>254</TopEdge_Pixels>
-      <LeftEdge_Pixels>-168</LeftEdge_Pixels>
+      <TopEdge_Pixels>330</TopEdge_Pixels>
+      <LeftEdge_Pixels>0</LeftEdge_Pixels>
       <Width_Pixels>253</Width_Pixels>
       <Height_Pixels>30</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
@@ -1447,8 +1447,8 @@
         <IsBarCode>false</IsBarCode>
         <DataEntryText>01/01/0001</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>Willcrest School</CurrentRecipValue>
-        <CurrentRecipValue_Date>01/01/0001</CurrentRecipValue_Date>
+        <CurrentRecipValue>Undetermined value, for Field #15</CurrentRecipValue>
+        <CurrentRecipValue_Date>Undetermined value, for Field #15</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>TextField01</FieldEnum>
       <TextAlignment>Left</TextAlignment>
@@ -1458,8 +1458,8 @@
         <Width_Pixels>675</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>145</TopEdge_Pixels>
-      <LeftEdge_Pixels>55</LeftEdge_Pixels>
+      <TopEdge_Pixels>294</TopEdge_Pixels>
+      <LeftEdge_Pixels>0</LeftEdge_Pixels>
       <Width_Pixels>225</Width_Pixels>
       <Height_Pixels>33</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
@@ -1504,8 +1504,8 @@
         <IsBarCode>false</IsBarCode>
         <DataEntryText>01/01/0001</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>Ms. Robinson</CurrentRecipValue>
-        <CurrentRecipValue_Date>01/01/0001</CurrentRecipValue_Date>
+        <CurrentRecipValue>Undetermined value, for Field #16</CurrentRecipValue>
+        <CurrentRecipValue_Date>Undetermined value, for Field #16</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>TextField02</FieldEnum>
       <TextAlignment>Left</TextAlignment>
@@ -1515,8 +1515,8 @@
         <Width_Pixels>681</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>147</TopEdge_Pixels>
-      <LeftEdge_Pixels>313</LeftEdge_Pixels>
+      <TopEdge_Pixels>188</TopEdge_Pixels>
+      <LeftEdge_Pixels>0</LeftEdge_Pixels>
       <Width_Pixels>300</Width_Pixels>
       <Height_Pixels>35</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
@@ -1561,8 +1561,8 @@
         <IsBarCode>false</IsBarCode>
         <DataEntryText>01/01/0001</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>9TH</CurrentRecipValue>
-        <CurrentRecipValue_Date>01/01/0001</CurrentRecipValue_Date>
+        <CurrentRecipValue>Undetermined value, for Field #17</CurrentRecipValue>
+        <CurrentRecipValue_Date>Undetermined value, for Field #17</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>TextField03</FieldEnum>
       <TextAlignment>Left</TextAlignment>
@@ -1572,8 +1572,8 @@
         <Width_Pixels>681</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>141</TopEdge_Pixels>
-      <LeftEdge_Pixels>-168</LeftEdge_Pixels>
+      <TopEdge_Pixels>192</TopEdge_Pixels>
+      <LeftEdge_Pixels>0</LeftEdge_Pixels>
       <Width_Pixels>253</Width_Pixels>
       <Height_Pixels>30</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
@@ -1619,8 +1619,8 @@
         <IsBarCode>false</IsBarCode>
         <DataEntryText>07/21/2003</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
-        <CurrentRecipValue>07/21/2003</CurrentRecipValue>
-        <CurrentRecipValue_Date>07/21/2003</CurrentRecipValue_Date>
+        <CurrentRecipValue>Undetermined value, for Field #18</CurrentRecipValue>
+        <CurrentRecipValue_Date>Undetermined value, for Field #18</CurrentRecipValue_Date>
       </FieldObject>
       <FieldEnum>DateField01</FieldEnum>
       <TextAlignment>Left</TextAlignment>
@@ -1630,8 +1630,8 @@
         <Width_Pixels>675</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>180</TopEdge_Pixels>
-      <LeftEdge_Pixels>-168</LeftEdge_Pixels>
+      <TopEdge_Pixels>181</TopEdge_Pixels>
+      <LeftEdge_Pixels>0</LeftEdge_Pixels>
       <Width_Pixels>253</Width_Pixels>
       <Height_Pixels>30</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
@@ -1687,8 +1687,8 @@
         <Width_Pixels>681</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>217</TopEdge_Pixels>
-      <LeftEdge_Pixels>-170</LeftEdge_Pixels>
+      <TopEdge_Pixels>220</TopEdge_Pixels>
+      <LeftEdge_Pixels>0</LeftEdge_Pixels>
       <Width_Pixels>253</Width_Pixels>
       <Height_Pixels>30</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>

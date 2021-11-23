@@ -421,6 +421,12 @@ namespace ciBadgeForWeb.Controllers
                     objectMoveableDivs.JSON_Width = collection["JsonTextContent_Width"];
                     objectMoveableDivs.JSON_Height = collection["JsonTextContent_Height"];
 
+                    //Added 11/22/2021 thomas downes 
+                    ViewBag.LayoutWidthPixels = ClassElementsCache_Deprecated.Singleton.BadgeLayout.Width_Pixels;
+                    ViewBag.LayoutHeightPixels = ClassElementsCache_Deprecated.Singleton.BadgeLayout.Height_Pixels;
+                    ViewBag.OffsetLeftPixels = OffsetPoint.X;
+                    ViewBag.OffsetTopPixels = OffsetPoint.Y;
+
                     return View(objectMoveableDivs);
 
                 }
@@ -659,7 +665,7 @@ namespace ciBadgeForWeb.Controllers
         }
 
 
-        public ActionResult IndexStackAllElements()
+        public ActionResult Index_StackAllElements()
         {
             //
             // Added 11/22/2020 Thomas Downes  
@@ -674,7 +680,7 @@ namespace ciBadgeForWeb.Controllers
             ClassElementField.oRecipient = null;
             ClassElementField.iRecipientInfo = null;
 
-            return View(GetMoveableDivs_Stacked());
+            return View(GetMoveableDivs_StackedCopies());
 
         }
 

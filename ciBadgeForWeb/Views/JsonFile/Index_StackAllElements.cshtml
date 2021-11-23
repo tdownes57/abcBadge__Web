@@ -1,7 +1,7 @@
 ﻿@model ciBadgeForWeb.Models.MoveableDivImage
 
 @{
-    ViewBag.Title = "IndexStackAllElements";
+    ViewBag.Title = "Index_StackAllElements";
     //----Layout = "~/Views/Shared/_LayoutClosures.cshtml";
     Layout = "~/Views/Shared/_Layout.cshtml";
     //---Layout = "";
@@ -46,18 +46,89 @@
 @*<div style="position: absolute; top: @Model.GetOffsetPixels_Left() ;
     left: @Model.GetOffsetPixels_Top() ;
     border-width: thick;  z-index:-1;">*@
-<div style="position: absolute; top: @ViewBag.OffsetLeftPixels ;
+<!--<div style="position: absolute; top: @ViewBag.OffsetLeftPixels ;
                                 left: @ViewBag.OffsetRightPixels ;
                                 border-width: thick;  z-index:-1;">
-    <p>Any Messages?  @Model.BugMessageRecent</p>
-    @*<img src="@Url.Content("~/Images/BackExamples/ExampleBack.jpg")" width="650" height="410" />*@
-    @*<img src="@Url.Content("~/Images/BackExamples/ExampleBack.jpg")"*@
-    @*<img src="~/ASPX/Step4Handler.ashx?big=y&hor=y&width=400&backid=@intCurrBackIndex"*@
-    <img src="~/ASPX/BackHandler.ashx?big=y&hor=y&width=400&backid=@intCurrBackIndex"
+    <p>Any Messages?  @Model.BugMessageRecent</p>-->
+@*<img src="@Url.Content("~/Images/BackExamples/ExampleBack.jpg")" width="650" height="410" />*@
+@*<img src="@Url.Content("~/Images/BackExamples/ExampleBack.jpg")"*@
+@*<img src="~/ASPX/Step4Handler.ashx?big=y&hor=y&width=400&backid=@intCurrBackIndex"*@
+<!--<img src="~/ASPX/BackHandler.ashx?big=y&hor=y&width=400&backid=@intCurrBackIndex"
          width="@ViewBag.LayoutWidthPixels"
          height="@ViewBag.LayoutHeightPixels" />
     <br />
     <img src="~/Images/DropboxToResizeEtc.jpg" />
+</div>-->
+
+<div>
+    <!-- I need to "push" the HTML footer, proveded by Shared/_Layout.cshtml, -->
+    <!--    down below the graphical elements.  ----11/22/2021 thomas -->
+    <p>
+        . <br />
+    </p>
+    <p>
+        . <br />
+    </p>
+    <p>
+        . <br />
+    </p>
+    <p>
+        . <br />
+    </p>
+    <p>
+        . <br />
+    </p>
+    <p>
+        . <br />
+    </p>
+    <p>
+        . <br />
+    </p>
+    <p>
+        . <br />
+    </p>
+    <p>
+        . <br />
+    </p>
+    <p>
+        . <br />
+    </p>
+    <p>
+        . <br />
+    </p>
+    <p>
+        . <br />
+    </p>
+    <p>
+        . <br />
+    </p>
+    <p>
+        . <br />
+    </p>
+    <p>
+        . <br />
+    </p>
+    <p>
+        . <br />
+    </p>
+    <p>
+        . <br />
+    </p>
+    <p>
+        . <br />
+    </p>
+    <p>
+        . <br />
+    </p>
+    <p>
+        . <br />
+    </p>
+    <p>
+        . <br />
+    </p>
+    <p>
+        . <br />
+    </p>
 </div>
 
 @if (mod_c_bTestStep2Handler)
