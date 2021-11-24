@@ -3,7 +3,15 @@
 @{
     ViewBag.Title = "MoveableDivImage";
     //Layout = "~/Views/Shared/_LayoutClosures.cshtml";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+
+    //<!-- Really fucking important.....                         -->
+    //<!--    Otherwise, the Batch Setup elements won't move.... -->
+    //<!--      ----11/23/2021 thomas downes                     -->
+    //<!--                                                       -->
+    //Layout = "~/Views/Shared/_LayoutClosures.cshtml";
+    Layout = "~/Views/Shared/_LayoutBadgeSetup.cshtml";
+
     //---Layout = "";
     // Added 11/4/2021 thomas downes
     int intCurrBackIndex = ciBadgeForWeb.Models.Background.CurrentIndex_RunChecks();
@@ -469,270 +477,279 @@ else
     const EL11 = document.getElementById("EL11"); //.style.left = my_JSON_object_Left["EL11_Left"];
     const EL12 = document.getElementById("EL12"); //.style.left = my_JSON_object_Left["EL12_Left"];
 
-        //Customizable fields.
-        @if (!ciBadgeForWeb.Controllers.JsonFileController.ExcludeElement15_etc)
-        {
-                const EL15 = document.getElementById("EL15"); //.style.left = my_JSON_object_Left["EL10_Left"];
-            const EL16 = document.getElementById("EL16"); //.style.left = my_JSON_object_Left["EL11_Left"];
-            const EL17 = document.getElementById("EL17"); //.style.left = my_JSON_object_Left["EL12_Left"];
-            const EL18 = document.getElementById("EL18"); //.style.left = my_JSON_object_Left["EL11_Left"];
-            const EL19 = document.getElementById("EL19"); //.style.left = my_JSON_object_Left["EL12_Left"];
+    //Customizable fields.
+    //if (!ciBadgeForWeb.Controllers.JsonFileController.ExcludeElement15_etc)
+    //{
+    const EL15 = document.getElementById("EL15"); //.style.left = my_JSON_object_Left["EL10_Left"];
+    const EL16 = document.getElementById("EL16"); //.style.left = my_JSON_object_Left["EL11_Left"];
+    const EL17 = document.getElementById("EL17"); //.style.left = my_JSON_object_Left["EL12_Left"];
+    const EL18 = document.getElementById("EL18"); //.style.left = my_JSON_object_Left["EL11_Left"];
+    const EL19 = document.getElementById("EL19"); //.style.left = my_JSON_object_Left["EL12_Left"];
+    //}
+
+    const EL1_im = document.getElementById("EL1_im"); //.style.left = my_JSON_object_Left["EL1_Left"];
+    const EL2_im = document.getElementById("EL2_im"); //.style.left = my_JSON_object_Left["EL2_Left"];
+    const EL3_im = document.getElementById("EL3_im"); //.style.left = my_JSON_object_Left["EL3_Left"];
+    const EL4_im = document.getElementById("EL4_im"); //.style.left = my_JSON_object_Left["EL4_Left"];
+    const EL5_im = document.getElementById("EL5_im"); //.style.left = my_JSON_object_Left["EL5_Left"];
+    const EL6_im = document.getElementById("EL6_im"); //.style.left = my_JSON_object_Left["EL6_Left"];
+    const EL7_im = document.getElementById("EL7_im"); //.style.left = my_JSON_object_Left["EL7_Left"];
+    const EL8_im = document.getElementById("EL8_im"); //.style.left = my_JSON_object_Left["EL8_Left"];
+    const EL9_im = document.getElementById("EL9_im"); //.style.left = my_JSON_object_Left["EL9_Left"];
+    const EL10_im = document.getElementById("EL10_im"); //.style.left = my_JSON_object_Left["EL10_Left"];
+    const EL11_im = document.getElementById("EL11_im"); //.style.left = my_JSON_object_Left["EL11_Left"];
+    const EL12_im = document.getElementById("EL12_im"); //.style.left = my_JSON_object_Left["EL12_Left"];
+
+    //Customizable fields.
+    //---if (!ciBadgeForWeb.Controllers.JsonFileController.ExcludeElement15_etc)
+    //{
+    const EL15_im = document.getElementById("EL15_im"); //.style.left = my_JSON_object_Left["EL15_Left"];
+    const EL16_im = document.getElementById("EL16_im"); //.style.left = my_JSON_object_Left["EL16_Left"];
+    const EL17_im = document.getElementById("EL17_im"); //.style.left = my_JSON_object_Left["EL17_Left"];
+    const EL18_im = document.getElementById("EL18_im"); //.style.left = my_JSON_object_Left["EL18_Left"];
+    const EL19_im = document.getElementById("EL19_im"); //.style.left = my_JSON_object_Left["EL19_Left"];
+    //}
+
+    //Can we invent element properties???
+    EL1.OnlyImage = EL1_im; // Let's create a new property (.OnlyImage)
+    EL2.OnlyImage = EL2_im; // Let's create a new property (.OnlyImage)
+    EL3.OnlyImage = EL3_im; // Let's create a new property (.OnlyImage)
+    EL4.OnlyImage = EL4_im; // Let's create a new property (.OnlyImage)
+    EL5.OnlyImage = EL5_im; // Let's create a new property (.OnlyImage)
+    EL6.OnlyImage = EL6_im; // Let's create a new property (.OnlyImage)
+    EL7.OnlyImage = EL7_im; // Let's create a new property (.OnlyImage)
+    EL8.OnlyImage = EL8_im; // Let's create a new property (.OnlyImage)
+    EL9.OnlyImage = EL9_im; // Let's create a new property (.OnlyImage)
+    EL10.OnlyImage = EL10_im; // Let's create a new property (.OnlyImage)
+    EL11.OnlyImage = EL11_im; // Let's create a new property (.OnlyImage)
+    EL12.OnlyImage = EL12_im; // Let's create a new property (.OnlyImage)
+
+    //Customizable fields.
+    //----if (!ciBadgeForWeb.Controllers.JsonFileController.ExcludeElement15_etc)
+    //{
+    //Customizable fields (Field indexes #15 to #19).
+    EL15.OnlyImage = EL15_im; // Let's create a new property (.OnlyImage)
+    EL16.OnlyImage = EL16_im; // Let's create a new property (.OnlyImage)
+    EL17.OnlyImage = EL17_im; // Let's create a new property (.OnlyImage)
+    EL18.OnlyImage = EL18_im; // Let's create a new property (.OnlyImage)
+    EL19.OnlyImage = EL19_im; // Let's create a new property (.OnlyImage)
+    //}
+
+
+    //-------------------------------------------------------------------------------------------
+    // MakeClosure Function closure_clickElement
+    //-------------------------------------------------------------------------------------------
+    //
+    //---import {MakeClosure_clickElement} from "ExportClosures.js";
+    //function MakeClosure_clickElement___NotInUse(par_elmntDiv) {
+    //    //
+    //    //This is a Javascript closure.
+    //    //   ---3/20/2020 Thomas Downes
+    //    //
+
+    //    var closure_DivElement; // = par_elmntDiv;
+
+    //    closure_DivElement = par_elmntDiv;
+
+    //    //closure_DivElement.onclick = subClosFun_click;
+    //    //closure_DivElement.onclick = subClosFun_click;
+    //    closure_DivElement.addEventListener('click', event => {
+    //    subClosFun_click(event);
+    //});
+
+    function subClosFun_click(par_e_EventC) {
+        //
+        //Uses closure variables:
+        //
+        par_e_EventC = par_e_EventC || window.event;
+        par_e_EventC.preventDefault();
+
+        if (mod_JS_mode != "Include") { return; }  // Exit if we are "out of mode".
+
+        //
+        // Is this element already in the group of elements?
+        //
+        //let strElementID = closure_DivElement.id;
+        //let index_of_element = mod_array_elementIDs.indexOf(strElementID);
+        let index_of_element = mod_array_elementIDs.indexOf(closure_DivElement);
+        let boolGroupHasItAlready = (0 <= index_of_element);
+
+        if (boolGroupHasItAlready) {
+            //
+            // Remove the Element ID from the selection group.
+            //
+            closure_DivElement.style.borderWidth = 'thick';  // 'thin' ;
+            closure_DivElement.style.borderBottomColor = 'gray';
+            closure_DivElement.style.color = '';
+            closure_DivElement.style.backgroundColor = '';
+            //mod_array_elementIDs.pop(closure_DivElement.id); // Pop = Remove
+            mod_array_elementIDs.splice(index_of_element, 1);  // This will delete the element.
         }
-
-                const EL1_im = document.getElementById("EL1_im"); //.style.left = my_JSON_object_Left["EL1_Left"];
-                const EL2_im = document.getElementById("EL2_im"); //.style.left = my_JSON_object_Left["EL2_Left"];
-                const EL3_im = document.getElementById("EL3_im"); //.style.left = my_JSON_object_Left["EL3_Left"];
-                const EL4_im = document.getElementById("EL4_im"); //.style.left = my_JSON_object_Left["EL4_Left"];
-                const EL5_im = document.getElementById("EL5_im"); //.style.left = my_JSON_object_Left["EL5_Left"];
-                const EL6_im = document.getElementById("EL6_im"); //.style.left = my_JSON_object_Left["EL6_Left"];
-                const EL7_im = document.getElementById("EL7_im"); //.style.left = my_JSON_object_Left["EL7_Left"];
-                const EL8_im = document.getElementById("EL8_im"); //.style.left = my_JSON_object_Left["EL8_Left"];
-                const EL9_im = document.getElementById("EL9_im"); //.style.left = my_JSON_object_Left["EL9_Left"];
-                const EL10_im = document.getElementById("EL10_im"); //.style.left = my_JSON_object_Left["EL10_Left"];
-                const EL11_im = document.getElementById("EL11_im"); //.style.left = my_JSON_object_Left["EL11_Left"];
-                const EL12_im = document.getElementById("EL12_im"); //.style.left = my_JSON_object_Left["EL12_Left"];
-
-                //Customizable fields.
-                @if (!ciBadgeForWeb.Controllers.JsonFileController.ExcludeElement15_etc)
-                {
-                    const EL15_im = document.getElementById("EL15_im"); //.style.left = my_JSON_object_Left["EL15_Left"];
-                    const EL16_im = document.getElementById("EL16_im"); //.style.left = my_JSON_object_Left["EL16_Left"];
-                    const EL17_im = document.getElementById("EL17_im"); //.style.left = my_JSON_object_Left["EL17_Left"];
-                    const EL18_im = document.getElementById("EL18_im"); //.style.left = my_JSON_object_Left["EL18_Left"];
-                    const EL19_im = document.getElementById("EL19_im"); //.style.left = my_JSON_object_Left["EL19_Left"];
-                }
-
-                //Can we invent element properties???
-                EL1.OnlyImage = EL1_im; // Let's create a new property (.OnlyImage)
-                EL2.OnlyImage = EL2_im; // Let's create a new property (.OnlyImage)
-                EL3.OnlyImage = EL3_im; // Let's create a new property (.OnlyImage)
-                EL4.OnlyImage = EL4_im; // Let's create a new property (.OnlyImage)
-                EL5.OnlyImage = EL5_im; // Let's create a new property (.OnlyImage)
-                EL6.OnlyImage = EL6_im; // Let's create a new property (.OnlyImage)
-                EL7.OnlyImage = EL7_im; // Let's create a new property (.OnlyImage)
-                EL8.OnlyImage = EL8_im; // Let's create a new property (.OnlyImage)
-                EL9.OnlyImage = EL9_im; // Let's create a new property (.OnlyImage)
-                EL10.OnlyImage = EL10_im; // Let's create a new property (.OnlyImage)
-                EL11.OnlyImage = EL11_im; // Let's create a new property (.OnlyImage)
-                EL12.OnlyImage = EL12_im; // Let's create a new property (.OnlyImage)
-
-                //Customizable fields.
-                @if (!ciBadgeForWeb.Controllers.JsonFileController.ExcludeElement15_etc)
-                            {
-                                //Customizable fields (Field indexes #15 to #19).
-                                EL15.OnlyImage = EL15_im; // Let's create a new property (.OnlyImage)
-                                EL16.OnlyImage = EL16_im; // Let's create a new property (.OnlyImage)
-                                EL17.OnlyImage = EL17_im; // Let's create a new property (.OnlyImage)
-                                EL18.OnlyImage = EL18_im; // Let's create a new property (.OnlyImage)
-                                EL19.OnlyImage = EL19_im; // Let's create a new property (.OnlyImage)
-                            }
-
-
-                            //-------------------------------------------------------------------------------------------
-                            // MakeClosure Function closure_clickElement
-                            //-------------------------------------------------------------------------------------------
-                            //
-                            //---import {MakeClosure_clickElement} from "ExportClosures.js";
-                            function MakeClosure_clickElement___NotInUse(par_elmntDiv) {
-                                //
-                                //This is a Javascript closure.
-                                //   ---3/20/2020 Thomas Downes
-                                //
-
-                                var closure_DivElement; // = par_elmntDiv;
-
-                                closure_DivElement = par_elmntDiv;
-
-                                //closure_DivElement.onclick = subClosFun_click;
-                                //closure_DivElement.onclick = subClosFun_click;
-                                closure_DivElement.addEventListener('click', event => {
-                            subClosFun_click(event);
-                        });
-
-        function subClosFun_click(par_e_EventC) {
-                            //
-                            //Uses closure variables:
-                            //
-                            par_e_EventC = par_e_EventC || window.event;
-                        par_e_EventC.preventDefault();
-
-            if (mod_JS_mode != "Include") { return; }  // Exit if we are "out of mode".
+        else {
+            //
+            // Add the closure element to the selection group.
+            //
+            closure_DivElement.style.borderWidth = 'thick';
+            closure_DivElement.style.borderBottomColor = 'blue';
+            closure_DivElement.style.color = 'blue';
+            closure_DivElement.style.backgroundColor = 'blue';
+            clo.closure_DivElement.style.padding = "25px";
+            //mod_array_elementIDs.push(closure_DivElement.id); //Push = Insert
+            mod_array_elementIDs.push(closure_DivElement); //Push = Insert
 
             //
-            // Is this element already in the group of elements?
+            //End of "if (boolGroupHasItAlready) .... else ...."
             //
-            //let strElementID = closure_DivElement.id;
-            //let index_of_element = mod_array_elementIDs.indexOf(strElementID);
-            let index_of_element = mod_array_elementIDs.indexOf(closure_DivElement);
-                        let boolGroupHasItAlready = (0 <= index_of_element);
-            if (boolGroupHasItAlready) {
-                //
-                // Remove the Element ID from the selection group.
-                //
-                closure_DivElement.style.borderWidth = 'thick';  // 'thin' ;
-                closure_DivElement.style.borderBottomColor = 'gray';
-                closure_DivElement.style.color = '';
-                closure_DivElement.style.backgroundColor = '';
-                //mod_array_elementIDs.pop(closure_DivElement.id); // Pop = Remove
-                mod_array_elementIDs.splice(index_of_element, 1);  // This will delete the element.
-            }
-            else {
-                //
-                // Add the closure element to the selection group.
-                //
-                closure_DivElement.style.borderWidth = 'thick';
-                closure_DivElement.style.borderBottomColor = 'blue';
-                closure_DivElement.style.color = 'blue';
-                closure_DivElement.style.backgroundColor = 'blue';
-                clo.closure_DivElement.style.padding = "25px";
-                //mod_array_elementIDs.push(closure_DivElement.id); //Push = Insert
-                mod_array_elementIDs.push(closure_DivElement); //Push = Insert
-            }
-
         }
 
+        //
+        // End of "function subClosFun_click(par_e_EventC)"
+        //
     }
+
+    
 
     //-------------------------------------------------------------------------------------------
     // MakeClosure Function closure_dragElement
     //-------------------------------------------------------------------------------------------
     //
     //---import {MakeClosure_dragElement} from "ExportClosures.js";
-    function MakeClosure_dragElement___NotInUse(par_elmntDiv) {
-                    //
-                    //This is a Javascript closure.
-                    //
-                    var closure_DivElement; // = par_elmnt;
-                    var closure_pos1_x = 0;
-                    var closure_pos2_y = 0;
+    //function MakeClosure_dragElement___NotInUse(par_elmntDiv) {
+    //                //
+    //                //This is a Javascript closure.
+    //                //
+    //                var closure_DivElement; // = par_elmnt;
+    //                var closure_pos1_x = 0;
+    //                var closure_pos2_y = 0;
 
-                    var closure_pos3_xPrior = 0;
-                    var closure_pos4_yPrior = 0;
+    //                var closure_pos3_xPrior = 0;
+    //                var closure_pos4_yPrior = 0;
 
-                    //Added 3/20/2020
-                    closure_DivElement = par_elmntDiv;
+    //                //Added 3/20/2020
+    //                closure_DivElement = par_elmntDiv;
 
-                    // Added 3/17/2020 thomas downes
-                    const c_useHeaderToMove = false; // Turn off the header functionality.
+    //                // Added 3/17/2020 thomas downes
+    //                const c_useHeaderToMove = false; // Turn off the header functionality.
 
-                    if (c_useHeaderToMove && document.getElementById(closure_DivElement.id + "header")) {
-                        /* if present, the header is where you move the DIV from:*/
-                        document.getElementById(closure_DivElement.id + "header").onmousedown = subClosFun_dragMouseDown;
-                    }
-                    else {
-                        /* otherwise, move the DIV from anywhere inside the DIV:*/
-                        closure_DivElement.onmousedown = subClosFun_dragMouseDown;
-                    }
+    //                if (c_useHeaderToMove && document.getElementById(closure_DivElement.id + "header")) {
+    //                    /* if present, the header is where you move the DIV from:*/
+    //                    document.getElementById(closure_DivElement.id + "header").onmousedown = subClosFun_dragMouseDown;
+    //                }
+    //                else {
+    //                    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    //                    closure_DivElement.onmousedown = subClosFun_dragMouseDown;
+    //                }
 
-                    function subClosFun_dragMouseDown(par_e_EventMD) {
-                        //
-                        //Uses closure variables:
-                        //
-                        //    closure_pos1_x
-                        //    closure_pos2_y
-                        //    closure_pos3_xPrior
-                        //    closure_pos4_yPrior
-                        //    closure_DivElement
-                        //
-                        if (mod_JS_mode != "Move") { return; }  // Exit if we are "out of mode".
+    //                function subClosFun_dragMouseDown(par_e_EventMD) {
+    //                    //
+    //                    //Uses closure variables:
+    //                    //
+    //                    //    closure_pos1_x
+    //                    //    closure_pos2_y
+    //                    //    closure_pos3_xPrior
+    //                    //    closure_pos4_yPrior
+    //                    //    closure_DivElement
+    //                    //
+    //                    if (mod_JS_mode != "Move") { return; }  // Exit if we are "out of mode".
 
-                        par_e_EventMD = par_e_EventMD || window.event;
-                        par_e_EventMD.preventDefault();
+    //                    par_e_EventMD = par_e_EventMD || window.event;
+    //                    par_e_EventMD.preventDefault();
 
-                        // get the "prior" mouse cursor position at startup:
-                        //
-                        closure_pos3_xPrior = par_e_EventMD.clientX;
-                        closure_pos4_yPrior = par_e_EventMD.clientY;
+    //                    // get the "prior" mouse cursor position at startup:
+    //                    //
+    //                    closure_pos3_xPrior = par_e_EventMD.clientX;
+    //                    closure_pos4_yPrior = par_e_EventMD.clientY;
 
-                        //
-                        // Document-Level
-                        //
-                        document.onmouseup = subClosFun_closeDragElement;
+    //                    //
+    //                    // Document-Level
+    //                    //
+    //                    document.onmouseup = subClosFun_closeDragElement;
 
-                        // call a function whenever the cursor moves:
-                        //
-                        document.onmousemove = subClosFun_elementDrag;
-                    }
+    //                    // call a function whenever the cursor moves:
+    //                    //
+    //                    document.onmousemove = subClosFun_elementDrag;
+    //                }
 
-                    function subClosFun_elementDrag(par_e_EventDrag) {
-                        //
-                        //Uses closure variables:
-                        //    closure_pos1_x
-                        //    closure_pos2_y
-                        //    closure_pos3_xPrior
-                        //    closure_pos4_yPrior
-                        //    closure_DivElement
-                        //
-                        if (mod_JS_mode != "Move") { return; }  // Exit if we are "out of mode".
+    //                function subClosFun_elementDrag(par_e_EventDrag) {
+    //                    //
+    //                    //Uses closure variables:
+    //                    //    closure_pos1_x
+    //                    //    closure_pos2_y
+    //                    //    closure_pos3_xPrior
+    //                    //    closure_pos4_yPrior
+    //                    //    closure_DivElement
+    //                    //
+    //                    if (mod_JS_mode != "Move") { return; }  // Exit if we are "out of mode".
 
-                        par_e_EventDrag = par_e_EventDrag || window.event;
-                        par_e_EventDrag.preventDefault();
+    //                    par_e_EventDrag = par_e_EventDrag || window.event;
+    //                    par_e_EventDrag.preventDefault();
 
-                        // calculate the new cursor position:
-                        closure_pos1_x = closure_pos3_xPrior - par_e_EventDrag.clientX;
-                        closure_pos2_y = closure_pos4_yPrior - par_e_EventDrag.clientY;
+    //                    // calculate the new cursor position:
+    //                    closure_pos1_x = closure_pos3_xPrior - par_e_EventDrag.clientX;
+    //                    closure_pos2_y = closure_pos4_yPrior - par_e_EventDrag.clientY;
 
-                        // Prepare for next call.
-                        closure_pos3_xPrior = par_e_EventDrag.clientX;
-                        closure_pos4_yPrior = par_e_EventDrag.clientY;
+    //                    // Prepare for next call.
+    //                    closure_pos3_xPrior = par_e_EventDrag.clientX;
+    //                    closure_pos4_yPrior = par_e_EventDrag.clientY;
 
-                        // Set the element's new position:
-                        closure_DivElement.style.left = (closure_DivElement.offsetLeft - closure_pos1_x) + "px";  // px = pixels
-                        closure_DivElement.style.top = (closure_DivElement.offsetTop - closure_pos2_y) + "px";  //  px = pixels
+    //                    // Set the element's new position:
+    //                    closure_DivElement.style.left = (closure_DivElement.offsetLeft - closure_pos1_x) + "px";  // px = pixels
+    //                    closure_DivElement.style.top = (closure_DivElement.offsetTop - closure_pos2_y) + "px";  //  px = pixels
 
-                        // Added 3/20/2020 thomas downes
-                        //----mod_record_all_positions[closure_DivElement.id + "_Left"] = closure_DivElement.style.left;
-                        //----mod_record_all_positions[closure_DivElement.id + "_Top"] = closure_DivElement.style.top;
-                        my_JSON_object_Left[closure_DivElement.id + "_Left"] = closure_DivElement.style.left;
-                        my_JSON_object_Top[closure_DivElement.id + "_Top"] = closure_DivElement.style.top;
+    //                    // Added 3/20/2020 thomas downes
+    //                    //----mod_record_all_positions[closure_DivElement.id + "_Left"] = closure_DivElement.style.left;
+    //                    //----mod_record_all_positions[closure_DivElement.id + "_Top"] = closure_DivElement.style.top;
+    //                    my_JSON_object_Left[closure_DivElement.id + "_Left"] = closure_DivElement.style.left;
+    //                    my_JSON_object_Top[closure_DivElement.id + "_Top"] = closure_DivElement.style.top;
 
-                        //Record the position.
-                        //if (document.getElementById(closure_DivElement.id + "header")) {
-                        //    /* if present, the header is where you move the DIV from:*/
-                        //    document.getElementById(closure_DivElement.id + "header").innerHTML = "Hello, " + closure_DivElement.id + "header";
-                        //}
+    //                    //Record the position.
+    //                    //if (document.getElementById(closure_DivElement.id + "header")) {
+    //                    //    /* if present, the header is where you move the DIV from:*/
+    //                    //    document.getElementById(closure_DivElement.id + "header").innerHTML = "Hello, " + closure_DivElement.id + "header";
+    //                    //}
 
-                        //Propagate the move.
-                        //function_PropagateMoveToGroup_NoUse(closure_DivElement.style.left, closure_DivElement.style.top, closure_DivElement);
+    //                    //Propagate the move.
+    //                    //function_PropagateMoveToGroup_NoUse(closure_DivElement.style.left, closure_DivElement.style.top, closure_DivElement);
 
-                        //Added 3/20/220 Thomas Downes
-                        function_PropagateMoveToGroup(closure_pos1_x, closure_pos2_y, closure_DivElement,
-                        closure_DivElement.style.left);
+    //                    //Added 3/20/220 Thomas Downes
+    //                    function_PropagateMoveToGroup(closure_pos1_x, closure_pos2_y, closure_DivElement,
+    //                    closure_DivElement.style.left);
 
-                    }
+    //                }
 
-                    function subClosFun_closeDragElement() {
-                        /* stop moving when mouse button is released:*/
-                        document.onmouseup = null;
-                        document.onmousemove = null;
+    //                function subClosFun_closeDragElement() {
+    //                    /* stop moving when mouse button is released:*/
+    //                    document.onmouseup = null;
+    //                    document.onmousemove = null;
 
-                        //Added 3/20/2020 thomas downes
-                        //---document.getElementById('p_JSON').innerHTML = JSON.stringify(mod_record_all_positions);
-                        //document.getElementById('p_JSON').innerHTML = JSON.stringify(my_JSON_object);
+    //                    //Added 3/20/2020 thomas downes
+    //                    //---document.getElementById('p_JSON').innerHTML = JSON.stringify(mod_record_all_positions);
+    //                    //document.getElementById('p_JSON').innerHTML = JSON.stringify(my_JSON_object);
 
-                        // Added 3/22/2020 thomas downes
-                        //let strCurrentJSON = JSON.stringify(my_JSON_object);
-                        let strCurrentJSON_Left = JSON.stringify(my_JSON_object_Left);
-                        let strCurrentJSON_Top = JSON.stringify(my_JSON_object_Top);
+    //                    // Added 3/22/2020 thomas downes
+    //                    //let strCurrentJSON = JSON.stringify(my_JSON_object);
+    //                    let strCurrentJSON_Left = JSON.stringify(my_JSON_object_Left);
+    //                    let strCurrentJSON_Top = JSON.stringify(my_JSON_object_Top);
 
-                        //document.getElementById('p_JSON').innerText = strCurrentJSON;  // JSON.stringify(my_JSON_object);
-                        //document.getElementById('p_JSON_Left').innerText = strCurrentJSON_Left;  // JSON.stringify(my_JSON_object);
-                        //document.getElementById('p_JSON_Top').innerText = strCurrentJSON_Top;  // JSON.stringify(my_JSON_object);
+    //                    //document.getElementById('p_JSON').innerText = strCurrentJSON;  // JSON.stringify(my_JSON_object);
+    //                    //document.getElementById('p_JSON_Left').innerText = strCurrentJSON_Left;  // JSON.stringify(my_JSON_object);
+    //                    //document.getElementById('p_JSON_Top').innerText = strCurrentJSON_Top;  // JSON.stringify(my_JSON_object);
 
-                        //document.getElementById("JsonTextContent").innerText = strCurrentJSON;
-                        //document.getElementById("JsonTextContent")[0].innerText = strCurrentJSON;
+    //                    //document.getElementById("JsonTextContent").innerText = strCurrentJSON;
+    //                    //document.getElementById("JsonTextContent")[0].innerText = strCurrentJSON;
 
-                        //  http://javascript-coder.com/javascript-form/javascript-set-form-field.phtml
-                        //document.getElementById('JsonTextContent')[0].value = strCurrentJSON;
-                        //jQuery('JsonTextContent').value = strCurrentJSON;
-                        //  document.getElementById("p_JSON").innerText;
+    //                    //  http://javascript-coder.com/javascript-form/javascript-set-form-field.phtml
+    //                    //document.getElementById('JsonTextContent')[0].value = strCurrentJSON;
+    //                    //jQuery('JsonTextContent').value = strCurrentJSON;
+    //                    //  document.getElementById("p_JSON").innerText;
 
-                        //ADded 3/22/2020
-                        //SaveJsonToForm(strCurrentJSON);  //Added 3/22/2020 td
-                        SaveJsonToForm_stringsLeftTop(strCurrentJSON_Left, strCurrentJSON_Top);  //Added 3/22/2020 td
+    //                    //ADded 3/22/2020
+    //                    //SaveJsonToForm(strCurrentJSON);  //Added 3/22/2020 td
+    //                    SaveJsonToForm_stringsLeftTop(strCurrentJSON_Left, strCurrentJSON_Top);  //Added 3/22/2020 td
 
-                    }
-                }
+    //                }
+    //            }
+
 </script>
 
                 //

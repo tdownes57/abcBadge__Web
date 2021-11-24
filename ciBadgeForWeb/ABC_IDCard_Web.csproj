@@ -389,6 +389,7 @@
     </Content>
     <Content Include="Images\DropboxForEditOrDelete.jpg" />
     <Content Include="Images\DropboxToResizeEtc.jpg" />
+    <Content Include="Scripts\Closures\LinkUpClosures_BACKUP.js" />
     <Content Include="Views\FieldsList w EditorTemplates\Notes.html" />
     <Content Include="__Documentation - Notes\CIBCards83 - removing PD.mdb" />
     <Content Include="__Documentation - Notes\CIBCards83 - very complex.mdb" />
@@ -1318,6 +1319,8 @@
     <Content Include="__MS Typescript\Download TypeScript.url" />
     <Content Include="__MS Typescript\Download TypeScript 3.7.2 for Visual Studio.url" />
     <Content Include="Views\JsonFile\Index - Works Great.cshtml" />
+    <Content Include="Views\Shared\_LayoutBadgeSetup.cshtml" />
+    <Content Include="Views\Shared\__ReallyFuckingImportant.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Upload\" />

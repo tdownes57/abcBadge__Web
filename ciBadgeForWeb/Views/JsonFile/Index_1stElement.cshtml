@@ -2,7 +2,14 @@
 
 @{
     ViewBag.Title = "MoveableDivImage";
-    Layout = "~/Views/Shared/_LayoutClosures.cshtml";
+
+    //<!-- Really fucking important.....                         -->
+    //<!--    Otherwise, the Batch Setup elements won't move.... -->
+    //<!--      ----11/23/2021 thomas downes                     -->
+    //<!--                                                       -->
+    //Layout = "~/Views/Shared/_LayoutClosures.cshtml";
+    Layout = "~/Views/Shared/_LayoutBadgeSetup.cshtml";
+     
     //---Layout = "";
     // Added 11/4/2021 thomas downes
     int intCurrBackIndex = ciBadgeForWeb.Models.Background.CurrentIndex_RunChecks();
