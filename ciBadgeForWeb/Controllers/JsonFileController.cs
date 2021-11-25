@@ -33,10 +33,10 @@ namespace ciBadgeForWeb.Controllers
         public static Point LayoutSize = new Point(650, 410);
 
         //Added 11/23/2021 Thomas Downes
-        public static bool IncludeElement0 = false;
+        public static bool IncludeElement0 = true; //false;
         public static bool ExcludeElement13 = true; // true, we will skip Element #13.
         public static bool ExcludeElement14 = true; // true, we will skip Element #14.
-        private static bool _excludeCustoms = true; // Added 11/23/2021 td
+        private static bool _excludeCustoms = false; // true; // Added 11/23/2021 td
         public static bool ExcludeElement15_etc = _excludeCustoms; // true, so we will exclude the customized elements. 
         public static bool ExcludeElement20_etc = true; // true, so we will stop after 5 customized elements. 
 

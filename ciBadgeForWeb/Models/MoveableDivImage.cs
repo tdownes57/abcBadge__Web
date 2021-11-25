@@ -47,66 +47,32 @@ namespace ciBadgeForWeb.Models
         //
         //public string EL1_Left { get; set; }
         //public string EL2_Left { get; set; }
-        //public string EL3_Left { get; set; }
-        //public string EL4_Left { get; set; }
-        //public string EL5_Left { get; set; }
-        //public string EL6_Left { get; set; }
-        //public string EL7_Left { get; set; }
-        //public string EL8_Left { get; set; }
-        //public string EL9_Left { get; set; }
-        //public string EL10_Left { get; set; }
+        //....
         //public string EL11_Left { get; set; }
         //public string EL12_Left { get; set; }
 
         //public string EL1_Top { get; set; }
         //public string EL2_Top { get; set; }
-        //public string EL3_Top { get; set; }
-        //public string EL4_Top { get; set; }
-        //public string EL5_Top { get; set; }
-        //public string EL6_Top { get; set; }
-        //public string EL7_Top { get; set; }
-        //public string EL8_Top { get; set; }
-        //public string EL9_Top { get; set; }
-        //public string EL10_Top { get; set; }
+        //...
         //public string EL11_Top { get; set; }
         //public string EL12_Top { get; set; }
 
         //public int EL1_Width { get; set; }
         //public int EL2_Width { get; set; }
-        //public int EL3_Width { get; set; }
-        //public int EL4_Width { get; set; }
-        //public int EL5_Width { get; set; }
-        //public int EL6_Width { get; set; }
-        //public int EL7_Width { get; set; }
-        //public int EL8_Width { get; set; }
-        //public int EL9_Width { get; set; }
-        //public int EL10_Width { get; set; }
+        //...
         //public int EL11_Width { get; set; }
         //public int EL12_Width { get; set; }
 
 
         //public int EL1_Height { get; set; }
         //public int EL2_Height { get; set; }
-        //public int EL3_Height { get; set; }
-        //public int EL4_Height { get; set; }
-        //public int EL5_Height { get; set; }
-        //public int EL6_Height { get; set; }
-        //public int EL7_Height { get; set; }
-        //public int EL8_Height { get; set; }
-        //public int EL9_Height { get; set; }
-        //public int EL10_Height { get; set; }
+        //....
         //public int EL11_Height { get; set; }
         //public int EL12_Height { get; set; }
 
         //private ClassElementField _Element1 = null;
         //private ClassElementField _Element2 = null;
-        //private ClassElementField _Element3 = null;
-        //private ClassElementField _Element4 = null;
-        //private ClassElementField _Element5 = null;
-        //private ClassElementField _Element6 = null;
-        //private ClassElementField _Element7 = null;
-        //private ClassElementField _Element9 = null;
-        //private ClassElementField _Element10 = null;
+        //...
         //private ClassElementField _Element11 = null;
         //private ClassElementField _Element12 = null;
 

@@ -30,6 +30,7 @@ namespace ciBadgeForWeb.Controllers
         //
         //Added 3/21/2020 Thomas Downes
         public static JsonFile JsonFile_MoveableDivs = new JsonFile();
+
         //Added 4/16/2020 Thomas Downes
         //-----public static MoveableDivImage MoveableDivs;  //--- = new JsonFile();
         public static BadgeSetupElement BadgeSetup;  //--- = new JsonFile();
@@ -39,6 +40,14 @@ namespace ciBadgeForWeb.Controllers
         //--- 5/2/2020 td ---//public static Point OffsetPoint = new Point(200, 100);
         public static Point OffsetPoint = new Point(300, 200);
         public static Point LayoutSize = new Point(650, 410);
+
+        //Added 11/24/2021 Thomas Downes
+        public static bool IncludeElement0 = true; //false;
+        public static bool ExcludeElement13 = true; // true, we will skip Element #13.
+        public static bool ExcludeElement14 = true; // true, we will skip Element #14.
+        private static bool _excludeCustoms = false; // true; // Added 11/23/2021 td
+        public static bool ExcludeElement15_etc = _excludeCustoms; // true, so we will exclude the customized elements. 
+        public static bool ExcludeElement20_etc = true; // true, so we will stop after 5 customized elements. 
 
         public static BadgeSetupElement GetBadgeSetup()
         {
@@ -359,40 +368,47 @@ namespace ciBadgeForWeb.Controllers
                     //
                     //Added 4/16/2020 thomas downes
                     //
-                    var objectMoveableDivs = JsonFileController.MoveableDivs;
+                    ViewBag.LayoutWidthPixels = ClassElementsCache_Deprecated.Singleton.BadgeLayout.Width_Pixels;
+                    ViewBag.LayoutHeightPixels = ClassElementsCache_Deprecated.Singleton.BadgeLayout.Height_Pixels;
+                    ViewBag.OffsetLeftPixels = OffsetPoint.X;
+                    ViewBag.OffsetTopPixels = OffsetPoint.Y;
+
+                    //---var objectMoveableDivs = JsonFileController.MoveableDivs;
+                    var objectBadgeSetup = BadgeSetupElementController.BadgeSetup;
+
                     //4-22-2020//objectMoveableDivs.SavePositions_Left(collection["JsonTextContent_Left"]);
                     //4-22-2020//objectMoveableDivs.SavePositions_Top(collection["JsonTextContent_Top"]);
 
-                    objectMoveableDivs.SavePositions_Left(collection["JsonTextContent_Left"], c_boolHasOffsets);
-                    objectMoveableDivs.SavePositions_Top(collection["JsonTextContent_Top"], c_boolHasOffsets);
+                    objectBadgeSetup.SavePositions_Left(collection["JsonTextContent_Left"], c_boolHasOffsets);
+                    objectBadgeSetup.SavePositions_Top(collection["JsonTextContent_Top"], c_boolHasOffsets);
 
-                    objectMoveableDivs.SavePositions_Width(collection["JsonTextContent_Width"]);
-                    objectMoveableDivs.SavePositions_Height(collection["JsonTextContent_Height"]);
+                    objectBadgeSetup.SavePositions_Width(collection["JsonTextContent_Width"]);
+                    objectBadgeSetup.SavePositions_Height(collection["JsonTextContent_Height"]);
 
                     //Added 4/16/2020 td
                     //
                     //  Transfer the positions to the element-fields stored in the cache. 
                     //
-                    objectMoveableDivs.SavePositions_ToCache();
+                    objectBadgeSetup.SavePositions_ToCache();
 
                     //Added 4/16/2020 td
                     //  We need to refresh the four(4) JSON-string properties. 
                     if (c_boolHasOffsets)
                     {
                         //Updathe the offset strings.   ---4/20/2020 thomas d. 
-                        objectMoveableDivs.JSON_Offset_Left = collection["JsonTextContent_Left"];
-                        objectMoveableDivs.JSON_Offset_Top = collection["JsonTextContent_Top"];
+                        objectBadgeSetup.JSON_Offset_Left = collection["JsonTextContent_Left"];
+                        objectBadgeSetup.JSON_Offset_Top = collection["JsonTextContent_Top"];
                     }
                     else
                     {
-                        objectMoveableDivs.JSON_Left = collection["JsonTextContent_Left"];
-                        objectMoveableDivs.JSON_Top = collection["JsonTextContent_Top"];
+                        objectBadgeSetup.JSON_Left = collection["JsonTextContent_Left"];
+                        objectBadgeSetup.JSON_Top = collection["JsonTextContent_Top"];
                     }
 
-                    objectMoveableDivs.JSON_Width = collection["JsonTextContent_Width"];
-                    objectMoveableDivs.JSON_Height = collection["JsonTextContent_Height"];
+                    objectBadgeSetup.JSON_Width = collection["JsonTextContent_Width"];
+                    objectBadgeSetup.JSON_Height = collection["JsonTextContent_Height"];
 
-                    return View(objectMoveableDivs);
+                    return View(objectBadgeSetup);
 
                 }
 

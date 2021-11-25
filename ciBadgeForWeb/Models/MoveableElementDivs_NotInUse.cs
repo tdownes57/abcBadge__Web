@@ -11,7 +11,7 @@ namespace ciBadgeForWeb.Models
     //     //   ---  So, see Models/MoveableDivImage.cs.  -----4/2/2020 thomas d. 
     //
     //
-    public class MoveableElementDivs
+    public class MoveableElementDivs_NotInUse
     {
         //
         // Added 4/2/2020 thomas downes 
@@ -62,7 +62,7 @@ namespace ciBadgeForWeb.Models
         public ClassElementField Div11_Element { get; set; }
         public ClassElementField Div12_Element { get; set; }
 
-        public MoveableElementDivs(ClassElementsCache_Deprecated par_cache)
+        public MoveableElementDivs_NotInUse(ClassElementsCache_Deprecated par_cache)
         {
             //
             // Added 4/2/2020 thomas downes 
@@ -119,10 +119,6 @@ namespace ciBadgeForWeb.Models
                 }
             }
         }
-
-
-
-
 
     }
 }

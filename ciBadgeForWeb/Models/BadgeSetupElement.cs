@@ -349,19 +349,7 @@ namespace ciBadgeForWeb.Models
             //
             // Added 3/20/2020 thomas downes  
             //
-            //---this.EL1_Left = (par_moveable.EL1_Left);
-            //---this.EL2_Left = (par_moveable.EL2_Left);
-            //---this.EL3_Left = (par_moveable.EL3_Left);
-            //---this.EL4_Left = (par_moveable.EL4_Left);
-            //---this.EL5_Left = (par_moveable.EL5_Left);
-            //---this.EL6_Left = (par_moveable.EL6_Left);
-            //---this.EL7_Left = (par_moveable.EL7_Left);
-            //---this.EL8_Left = (par_moveable.EL8_Left);
-            //---this.EL9_Left = (par_moveable.EL9_Left);
-            //---this.EL10_Left = (par_moveable.EL10_Left);
-            //---this.EL11_Left = (par_moveable.EL11_Left);
-            //---this.EL12_Left = (par_moveable.EL12_Left);
-
+            //Left
             this.MoveLeft.EL1_Left = (par_moveable.MoveLeft.EL1_Left);
             this.MoveLeft.EL2_Left = (par_moveable.MoveLeft.EL2_Left);
             this.MoveLeft.EL3_Left = (par_moveable.MoveLeft.EL3_Left);
@@ -375,13 +363,16 @@ namespace ciBadgeForWeb.Models
             this.MoveLeft.EL11_Left = (par_moveable.MoveLeft.EL11_Left);
             this.MoveLeft.EL12_Left = (par_moveable.MoveLeft.EL12_Left);
 
-            //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+            //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed,
+            //  and the five customizable fields (EL15 to EL19).)
+            //   -----11/18/2021 tcd
             this.MoveLeft.EL15_Left = (par_moveable.MoveLeft.EL15_Left);
             this.MoveLeft.EL16_Left = (par_moveable.MoveLeft.EL16_Left);
             this.MoveLeft.EL17_Left = (par_moveable.MoveLeft.EL17_Left);
             this.MoveLeft.EL18_Left = (par_moveable.MoveLeft.EL18_Left);
             this.MoveLeft.EL19_Left = (par_moveable.MoveLeft.EL19_Left);
 
+            // Top
             this.MoveTop.EL1_Top = (par_moveable.MoveTop.EL1_Top);
             this.MoveTop.EL2_Top = (par_moveable.MoveTop.EL2_Top);
             this.MoveTop.EL3_Top = (par_moveable.MoveTop.EL3_Top);
@@ -395,14 +386,17 @@ namespace ciBadgeForWeb.Models
             this.MoveTop.EL11_Top = (par_moveable.MoveTop.EL11_Top);
             this.MoveTop.EL12_Top = (par_moveable.MoveTop.EL12_Top);
 
-            //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+            //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed,
+            //  and the five customizable fields (EL15 to EL19).)
+            //   -----11/18/2021 tcd
             this.MoveTop.EL15_Top = (par_moveable.MoveTop.EL15_Top);
             this.MoveTop.EL16_Top = (par_moveable.MoveTop.EL16_Top);
             this.MoveTop.EL17_Top = (par_moveable.MoveTop.EL17_Top);
             this.MoveTop.EL18_Top = (par_moveable.MoveTop.EL18_Top);
             this.MoveTop.EL19_Top = (par_moveable.MoveTop.EL19_Top);
 
-            //Added 4/20/2020 thomas downes
+            //Width
+            //   ---Added 4/20/2020 thomas downes
             this.MoveWidth.EL1_Width = (par_moveable.MoveWidth.EL1_Width);
             this.MoveWidth.EL2_Width = (par_moveable.MoveWidth.EL2_Width);
             this.MoveWidth.EL3_Width = (par_moveable.MoveWidth.EL3_Width);
@@ -416,14 +410,17 @@ namespace ciBadgeForWeb.Models
             this.MoveWidth.EL11_Width = (par_moveable.MoveWidth.EL11_Width);
             this.MoveWidth.EL12_Width = (par_moveable.MoveWidth.EL12_Width);
 
-            //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+            //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed,
+            //  and the five customizable fields (EL15 to EL19).)
+            //   -----11/18/2021 tcd
             this.MoveWidth.EL15_Width = (par_moveable.MoveWidth.EL15_Width);
             this.MoveWidth.EL16_Width = (par_moveable.MoveWidth.EL16_Width);
             this.MoveWidth.EL17_Width = (par_moveable.MoveWidth.EL17_Width);
             this.MoveWidth.EL18_Width = (par_moveable.MoveWidth.EL18_Width);
             this.MoveWidth.EL19_Width = (par_moveable.MoveWidth.EL19_Width);
 
-            //Added 4/20/2020 thomas downes
+            //Height
+            //   ---Added 4/20/2020 thomas downes
             this.MoveHeight.EL1_Height = (par_moveable.MoveHeight.EL1_Height);
             this.MoveHeight.EL2_Height = (par_moveable.MoveHeight.EL2_Height);
             this.MoveHeight.EL3_Height = (par_moveable.MoveHeight.EL3_Height);
@@ -437,14 +434,17 @@ namespace ciBadgeForWeb.Models
             this.MoveHeight.EL11_Height = (par_moveable.MoveHeight.EL11_Height);
             this.MoveHeight.EL12_Height = (par_moveable.MoveHeight.EL12_Height);
 
-            //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+            //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed,
+            //  and the five customizable fields (EL15 to EL19).)
+            //   -----11/18/2021 tcd
             this.MoveHeight.EL15_Height = (par_moveable.MoveHeight.EL15_Height);
             this.MoveHeight.EL16_Height = (par_moveable.MoveHeight.EL16_Height);
             this.MoveHeight.EL17_Height = (par_moveable.MoveHeight.EL17_Height);
             this.MoveHeight.EL18_Height = (par_moveable.MoveHeight.EL18_Height);
             this.MoveHeight.EL19_Height = (par_moveable.MoveHeight.EL19_Height);
 
-            //Added 4/20/2020 thomas downes
+            //Displayed
+            //   ---Added 4/20/2020 thomas downes
             this.MoveDisplayed.EL1_Displayed = (par_moveable.MoveDisplayed.EL1_Displayed);
             this.MoveDisplayed.EL2_Displayed = (par_moveable.MoveDisplayed.EL2_Displayed);
             this.MoveDisplayed.EL3_Displayed = (par_moveable.MoveDisplayed.EL3_Displayed);
@@ -458,14 +458,17 @@ namespace ciBadgeForWeb.Models
             this.MoveDisplayed.EL11_Displayed = (par_moveable.MoveDisplayed.EL11_Displayed);
             this.MoveDisplayed.EL12_Displayed = (par_moveable.MoveDisplayed.EL12_Displayed);
 
-            //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+            //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed,
+            //  and the five customizable fields (EL15 to EL19).)
+            //   -----11/18/2021 tcd
             this.MoveDisplayed.EL15_Displayed = (par_moveable.MoveDisplayed.EL15_Displayed);
             this.MoveDisplayed.EL16_Displayed = (par_moveable.MoveDisplayed.EL16_Displayed);
             this.MoveDisplayed.EL17_Displayed = (par_moveable.MoveDisplayed.EL17_Displayed);
             this.MoveDisplayed.EL18_Displayed = (par_moveable.MoveDisplayed.EL18_Displayed);
             this.MoveDisplayed.EL19_Displayed = (par_moveable.MoveDisplayed.EL19_Displayed);
 
-            //Added 4/20/2020 thomas downes
+            //HasField
+            //  ----Added 4/20/2020 thomas downes
             this.MoveHasField.EL1_HasField = (par_moveable.MoveHasField.EL1_HasField);
             this.MoveHasField.EL2_HasField = (par_moveable.MoveHasField.EL2_HasField);
             this.MoveHasField.EL3_HasField = (par_moveable.MoveHasField.EL3_HasField);
@@ -479,7 +482,9 @@ namespace ciBadgeForWeb.Models
             this.MoveHasField.EL11_HasField = (par_moveable.MoveHasField.EL11_HasField);
             this.MoveHasField.EL12_HasField = (par_moveable.MoveHasField.EL12_HasField);
 
-            //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+            //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed,
+            //  and the five customizable fields (EL15 to EL19).)
+            //   -----11/18/2021 tcd
             this.MoveHasField.EL15_HasField = (par_moveable.MoveHasField.EL15_HasField);
             this.MoveHasField.EL16_HasField = (par_moveable.MoveHasField.EL16_HasField);
             this.MoveHasField.EL17_HasField = (par_moveable.MoveHasField.EL17_HasField);
@@ -500,7 +505,9 @@ namespace ciBadgeForWeb.Models
             this.MoveFieldName.EL11_FieldNm = (par_moveable.MoveFieldName.EL11_FieldNm);
             this.MoveFieldName.EL12_FieldNm = (par_moveable.MoveFieldName.EL12_FieldNm);
 
-            //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed, and the five customizable fields.)
+            //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed,
+            //  and the five customizable fields (EL15 to EL19).)
+            //   -----11/18/2021 tcd
             this.MoveFieldName.EL15_FieldNm = (par_moveable.MoveFieldName.EL15_FieldNm);
             this.MoveFieldName.EL16_FieldNm = (par_moveable.MoveFieldName.EL16_FieldNm);
             this.MoveFieldName.EL17_FieldNm = (par_moveable.MoveFieldName.EL17_FieldNm);
@@ -509,29 +516,6 @@ namespace ciBadgeForWeb.Models
 
             //---mod_arrayElements[1].LeftEdge_Pixels = int.Parse(this.EL1_Left.Replace("px", "")); 
             //---mod_arrayElements[2].LeftEdge_Pixels = int.Parse(this.EL2_Left.Replace("px", ""));
-            //---mod_arrayElements[3].LeftEdge_Pixels = int.Parse(this.EL3_Left.Replace("px", ""));
-            //---mod_arrayElements[4].LeftEdge_Pixels = int.Parse(this.EL4_Left.Replace("px", ""));
-            //---mod_arrayElements[5].LeftEdge_Pixels = int.Parse(this.EL5_Left.Replace("px", ""));
-            //---mod_arrayElements[6].LeftEdge_Pixels = int.Parse(this.EL6_Left.Replace("px", ""));
-            //---mod_arrayElements[7].LeftEdge_Pixels = int.Parse(this.EL7_Left.Replace("px", ""));
-            //---mod_arrayElements[8].LeftEdge_Pixels = int.Parse(this.EL8_Left.Replace("px", ""));
-            //---mod_arrayElements[9].LeftEdge_Pixels = int.Parse(this.EL9_Left.Replace("px", ""));
-            //---mod_arrayElements[10].LeftEdge_Pixels = int.Parse(this.EL10_Left.Replace("px", ""));
-            //---mod_arrayElements[11].LeftEdge_Pixels = int.Parse(this.EL11_Left.Replace("px", ""));
-            //---mod_arrayElements[12].LeftEdge_Pixels = int.Parse(this.EL12_Left.Replace("px", ""));
-
-            //---mod_arrayElements[1].TopEdge_Pixels = int.Parse(this.EL1_Top.Replace("px", ""));
-            //---mod_arrayElements[2].TopEdge_Pixels = int.Parse(this.EL2_Top.Replace("px", ""));
-            //---mod_arrayElements[3].TopEdge_Pixels = int.Parse(this.EL3_Top.Replace("px", ""));
-            //---mod_arrayElements[4].TopEdge_Pixels = int.Parse(this.EL4_Top.Replace("px", ""));
-            //---mod_arrayElements[5].TopEdge_Pixels = int.Parse(this.EL5_Top.Replace("px", ""));
-            //---mod_arrayElements[6].TopEdge_Pixels = int.Parse(this.EL6_Top.Replace("px", ""));
-            //---mod_arrayElements[7].TopEdge_Pixels = int.Parse(this.EL7_Top.Replace("px", ""));
-            //---mod_arrayElements[8].TopEdge_Pixels = int.Parse(this.EL8_Top.Replace("px", ""));
-            //---mod_arrayElements[9].TopEdge_Pixels = int.Parse(this.EL9_Top.Replace("px", ""));
-            //---mod_arrayElements[10].TopEdge_Pixels = int.Parse(this.EL10_Top.Replace("px", ""));
-            //---mod_arrayElements[11].TopEdge_Pixels = int.Parse(this.EL11_Top.Replace("px", ""));
-            //---mod_arrayElements[12].TopEdge_Pixels = int.Parse(this.EL12_Top.Replace("px", ""));
 
         }
 
@@ -567,6 +551,15 @@ namespace ciBadgeForWeb.Models
             if (this.MoveLeft.EL11_Left == null) this.MoveLeft.EL11_Left = "0px";
             if (this.MoveLeft.EL12_Left == null) this.MoveLeft.EL12_Left = "0px";
 
+            //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed,
+            //  and the five customizable fields (EL15 to EL19).)
+            //   -----11/18/2021 tcd
+            if (this.MoveLeft.EL15_Left == null) this.MoveLeft.EL15_Left = "0px";
+            if (this.MoveLeft.EL16_Left == null) this.MoveLeft.EL16_Left = "0px";
+            if (this.MoveLeft.EL17_Left == null) this.MoveLeft.EL17_Left = "0px";
+            if (this.MoveLeft.EL18_Left == null) this.MoveLeft.EL18_Left = "0px";
+            if (this.MoveLeft.EL19_Left == null) this.MoveLeft.EL19_Left = "0px";
+
             string strOutput = JsonConvert.SerializeObject(this.MoveLeft);
 
             return strOutput;
@@ -596,6 +589,15 @@ namespace ciBadgeForWeb.Models
             if (this.MoveTop.EL11_Top == null) this.MoveTop.EL11_Top = "0px";
             if (this.MoveTop.EL12_Top == null) this.MoveTop.EL12_Top = "0px";
 
+            //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed,
+            //  and the five customizable fields (EL15 to EL19).)
+            //   -----11/18/2021 tcd
+            if (this.MoveTop.EL15_Top == null) this.MoveTop.EL15_Top = "0px";
+            if (this.MoveTop.EL16_Top == null) this.MoveTop.EL16_Top = "0px";
+            if (this.MoveTop.EL17_Top == null) this.MoveTop.EL17_Top = "0px";
+            if (this.MoveTop.EL18_Top == null) this.MoveTop.EL18_Top = "0px";
+            if (this.MoveTop.EL19_Top == null) this.MoveTop.EL19_Top = "0px";
+
             string strOutput = JsonConvert.SerializeObject(this.MoveTop, this.MoveTop.GetType(), json_options);
 
             return strOutput;
@@ -623,6 +625,15 @@ namespace ciBadgeForWeb.Models
             if (this.MoveLeft_Offset.EL10_Left == null) this.MoveLeft_Offset.EL10_Left = "0px";
             if (this.MoveLeft_Offset.EL11_Left == null) this.MoveLeft_Offset.EL11_Left = "0px";
             if (this.MoveLeft_Offset.EL12_Left == null) this.MoveLeft_Offset.EL12_Left = "0px";
+
+            //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed,
+            //  and the five customizable fields (EL15 to EL19).)
+            //   -----11/18/2021 tcd
+            if (this.MoveLeft_Offset.EL15_Left == null) this.MoveLeft_Offset.EL15_Left = "0px";
+            if (this.MoveLeft_Offset.EL16_Left == null) this.MoveLeft_Offset.EL16_Left = "0px";
+            if (this.MoveLeft_Offset.EL17_Left == null) this.MoveLeft_Offset.EL17_Left = "0px";
+            if (this.MoveLeft_Offset.EL18_Left == null) this.MoveLeft_Offset.EL18_Left = "0px";
+            if (this.MoveLeft_Offset.EL19_Left == null) this.MoveLeft_Offset.EL19_Left = "0px";
 
             // 4-22-2020 td//string strOutput = JsonConvert.SerializeObject(this.MoveLeft_Offset);
             string strOutput = JsonConvert.SerializeObject(this.MoveLeft_Offset, this.MoveLeft_Offset.GetType(), json_options);
@@ -654,6 +665,15 @@ namespace ciBadgeForWeb.Models
             if (this.MoveTop_Offset.EL11_Top == null) this.MoveTop_Offset.EL11_Top = "0px";
             if (this.MoveTop_Offset.EL12_Top == null) this.MoveTop_Offset.EL12_Top = "0px";
 
+            //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed,
+            //  and the five customizable fields (EL15 to EL19).)
+            //   -----11/18/2021 tcd
+            if (this.MoveTop_Offset.EL15_Top == null) this.MoveTop_Offset.EL15_Top = "0px";
+            if (this.MoveTop_Offset.EL16_Top == null) this.MoveTop_Offset.EL16_Top = "0px";
+            if (this.MoveTop_Offset.EL17_Top == null) this.MoveTop_Offset.EL17_Top = "0px";
+            if (this.MoveTop_Offset.EL18_Top == null) this.MoveTop_Offset.EL18_Top = "0px";
+            if (this.MoveTop_Offset.EL19_Top == null) this.MoveTop_Offset.EL19_Top = "0px";
+            
             string strOutput = JsonConvert.SerializeObject(this.MoveTop_Offset, this.MoveTop_Offset.GetType(), json_options);
 
             return strOutput;

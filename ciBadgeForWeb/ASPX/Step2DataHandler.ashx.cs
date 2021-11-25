@@ -56,8 +56,9 @@ namespace ciBadgeForWeb.ASPX
             //
             //Encapsulated 11-10-2021 td
             //
-            int intElementIndex = -1;
-            int intFieldIndex = -1;
+            int intElementIndex_Query = -1;
+            int intElementIndex_Mapped = -1; // Suffixed 11/24/2021 td
+            int intFieldIndex = -1; // Added 11/24/2021 td
             string strFieldCaption = ""; //Added 11/18/2021 td
             string strTextDisplayed = "";  //Added 11/18/2021 td
 
@@ -107,8 +108,10 @@ namespace ciBadgeForWeb.ASPX
                 //
                 //Added 11/10/2021 thomas downes  
                 //
-                intElementIndex = int.Parse(par_context.Request.QueryString["elemindex"]);
-                intFieldIndex = intElementIndex;  //Is this aspirational, or a fact? 
+                intElementIndex_Query = int.Parse(par_context.Request.QueryString["elemindex"]);
+                //---intFieldIndex = intElementIndex;  //Is this aspirational, or a fact? 
+                int intElementIndex_Mapped = ClassElementsCache_Deprecated
+                        .Singleton.MapElementIndex_OmitUnneeded(intElementIndex_Query); 
                 bWeHave_ElementIndex = true;  //Added 11/17/2021 td
             }
 
