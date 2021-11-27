@@ -86,6 +86,7 @@ namespace ciBadgeForWeb.ASPX
             // Added 11/19/2021 thomas downes 
             //
             string strCheckMsg = "";
+            string strQueryString = ""; 
             bool bAllFine = false;
             ClassElementsCache_Deprecated.Singleton
                 .CheckAllElementsHaveCorrectFieldInfo(ref bAllFine, ref strCheckMsg);
@@ -102,12 +103,20 @@ namespace ciBadgeForWeb.ASPX
             {
                 //If the Query String does not have 2 values, the following will 
                 //   fail.  The result will be 0-length strings. 
+                strQueryString = par_context.Request.QueryString.ToString();
                 strQueryKey0 = par_context.Request.QueryString.Keys[0];
                 strQueryKey1 = par_context.Request.QueryString.Keys[1];
                 strValue0 = par_context.Request.QueryString.GetValues(0).ToString();
                 strValue1 = par_context.Request.QueryString.GetValues(1).ToString();
             }
-            catch { }
+            catch (Exception ex) 
+            {
+                //
+                //Added 11/27/2021 
+                //
+                strQueryString = par_context.Request.QueryString.ToString();
+
+            }
 
             if (!String.IsNullOrEmpty(par_context.Request.QueryString["elemindex"]))
             {
@@ -193,6 +202,11 @@ namespace ciBadgeForWeb.ASPX
                     par_context.Response.Write($"<p>-----Messages-------</p>");
                     par_context.Response.Write($"<p>No element is found for Element Index {intElementIndex_Final}.</p>");
                     return;
+                }
+                else
+                {
+                    //Added 11/27/2021 thomas d. 
+                    intFieldIndex = obj_element.FieldInfo.FieldIndex;
                 }
 
                 var obj_badgeLayout = ClassElementsCache_Deprecated.Singleton.BadgeLayout;

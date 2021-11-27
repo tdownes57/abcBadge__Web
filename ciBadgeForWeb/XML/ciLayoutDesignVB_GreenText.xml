@@ -7,6 +7,7 @@
   <BackgroundImage_Path>C:\Users\tdown\source\repos\ciBadgeForWeb - Framework\ciBadgeForWeb\Images\BackExamples\GoldDiagonal.jpg</BackgroundImage_Path>
   <BackgroundImage_FTitle>BackExample.jpg</BackgroundImage_FTitle>
   <ElementQRCode>
+    <BadgeDisplayIndex>0</BadgeDisplayIndex>
     <BadgeLayout>
       <Width_Pixels>681</Width_Pixels>
       <Height_Pixels>425</Height_Pixels>
@@ -26,6 +27,7 @@
   </ElementQRCode>
   <ElementSignature>
     <Id_GUID>00000000-0000-0000-0000-000000000000</Id_GUID>
+    <BadgeDisplayIndex>0</BadgeDisplayIndex>
     <BadgeLayout>
       <Width_Pixels>675</Width_Pixels>
       <Height_Pixels>425</Height_Pixels>
@@ -70,7 +72,7 @@
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
-      <DataEntryText>01/01/0001</DataEntryText>
+      <DataEntryText>Undetermined value, for Field #0</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
       <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
       <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
@@ -95,7 +97,7 @@
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
-      <DataEntryText>01/01/0001</DataEntryText>
+      <DataEntryText>Undetermined value, for Field #1</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
       <CurrentRecipValue>Undetermined value, for Field #1</CurrentRecipValue>
       <CurrentRecipValue_Date>Undetermined value, for Field #1</CurrentRecipValue_Date>
@@ -120,7 +122,7 @@
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
-      <DataEntryText>01/01/0001</DataEntryText>
+      <DataEntryText>Undetermined value, for Field #2</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
       <CurrentRecipValue>Undetermined value, for Field #2</CurrentRecipValue>
       <CurrentRecipValue_Date>Undetermined value, for Field #2</CurrentRecipValue_Date>
@@ -447,7 +449,7 @@
       <HasPresetValues>true</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
-      <DataEntryText>01/01/0001</DataEntryText>
+      <DataEntryText>Undetermined value, for Field #15</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
       <CurrentRecipValue>Undetermined value, for Field #15</CurrentRecipValue>
       <CurrentRecipValue_Date>Undetermined value, for Field #15</CurrentRecipValue_Date>
@@ -472,7 +474,7 @@
       <HasPresetValues>true</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
-      <DataEntryText>01/01/0001</DataEntryText>
+      <DataEntryText>Undetermined value, for Field #16</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
       <CurrentRecipValue>Undetermined value, for Field #16</CurrentRecipValue>
       <CurrentRecipValue_Date>Undetermined value, for Field #16</CurrentRecipValue_Date>
@@ -497,7 +499,7 @@
       <HasPresetValues>true</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
-      <DataEntryText>01/01/0001</DataEntryText>
+      <DataEntryText>Undetermined value, for Field #17</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
       <CurrentRecipValue>Undetermined value, for Field #17</CurrentRecipValue>
       <CurrentRecipValue_Date>Undetermined value, for Field #17</CurrentRecipValue_Date>
@@ -522,7 +524,7 @@
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
-      <DataEntryText>07/21/2003</DataEntryText>
+      <DataEntryText>Undetermined value, for Field #18</DataEntryText>
       <IsLinkedToSections>false</IsLinkedToSections>
       <CurrentRecipValue>Undetermined value, for Field #18</CurrentRecipValue>
       <CurrentRecipValue_Date>Undetermined value, for Field #18</CurrentRecipValue_Date>
@@ -556,6 +558,7 @@
   <ListOfElementFields>
     <ClassElementField>
       <Id_GUID>00000000-0000-0000-0000-000000000000</Id_GUID>
+      <BadgeDisplayIndex>1</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -587,7 +590,7 @@
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
-        <DataEntryText>01/01/0001</DataEntryText>
+        <DataEntryText>Undetermined value, for Field #0</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
         <CurrentRecipValue>Undetermined value, for Field #0</CurrentRecipValue>
         <CurrentRecipValue_Date>Undetermined value, for Field #0</CurrentRecipValue_Date>
@@ -614,6 +617,7 @@
     </ClassElementField>
     <ClassElementField>
       <Id_GUID>00000000-0000-0000-0000-000000000000</Id_GUID>
+      <BadgeDisplayIndex>2</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -645,7 +649,7 @@
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
-        <DataEntryText>01/01/0001</DataEntryText>
+        <DataEntryText>Undetermined value, for Field #1</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
         <CurrentRecipValue>Undetermined value, for Field #1</CurrentRecipValue>
         <CurrentRecipValue_Date>Undetermined value, for Field #1</CurrentRecipValue_Date>
@@ -658,8 +662,8 @@
         <Width_Pixels>675</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>46</TopEdge_Pixels>
-      <LeftEdge_Pixels>0</LeftEdge_Pixels>
+      <TopEdge_Pixels>9</TopEdge_Pixels>
+      <LeftEdge_Pixels>-4</LeftEdge_Pixels>
       <Width_Pixels>300</Width_Pixels>
       <Height_Pixels>35</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
@@ -672,6 +676,7 @@
     </ClassElementField>
     <ClassElementField>
       <Id_GUID>00000000-0000-0000-0000-000000000000</Id_GUID>
+      <BadgeDisplayIndex>3</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -703,7 +708,7 @@
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
-        <DataEntryText>01/01/0001</DataEntryText>
+        <DataEntryText>Undetermined value, for Field #2</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
         <CurrentRecipValue>Undetermined value, for Field #2</CurrentRecipValue>
         <CurrentRecipValue_Date>Undetermined value, for Field #2</CurrentRecipValue_Date>
@@ -716,7 +721,7 @@
         <Width_Pixels>675</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>77</TopEdge_Pixels>
+      <TopEdge_Pixels>46</TopEdge_Pixels>
       <LeftEdge_Pixels>0</LeftEdge_Pixels>
       <Width_Pixels>253</Width_Pixels>
       <Height_Pixels>30</Height_Pixels>
@@ -730,6 +735,7 @@
     </ClassElementField>
     <ClassElementField>
       <Id_GUID>00000000-0000-0000-0000-000000000000</Id_GUID>
+      <BadgeDisplayIndex>4</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -773,7 +779,7 @@
         <Width_Pixels>681</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>128</TopEdge_Pixels>
+      <TopEdge_Pixels>82</TopEdge_Pixels>
       <LeftEdge_Pixels>0</LeftEdge_Pixels>
       <Width_Pixels>253</Width_Pixels>
       <Height_Pixels>30</Height_Pixels>
@@ -787,6 +793,7 @@
     </ClassElementField>
     <ClassElementField>
       <Id_GUID>00000000-0000-0000-0000-000000000000</Id_GUID>
+      <BadgeDisplayIndex>5</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -830,7 +837,7 @@
         <Width_Pixels>681</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>114</TopEdge_Pixels>
+      <TopEdge_Pixels>117</TopEdge_Pixels>
       <LeftEdge_Pixels>0</LeftEdge_Pixels>
       <Width_Pixels>253</Width_Pixels>
       <Height_Pixels>30</Height_Pixels>
@@ -844,6 +851,7 @@
     </ClassElementField>
     <ClassElementField>
       <Id_GUID>00000000-0000-0000-0000-000000000000</Id_GUID>
+      <BadgeDisplayIndex>6</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -887,7 +895,7 @@
         <Width_Pixels>681</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>154</TopEdge_Pixels>
+      <TopEdge_Pixels>152</TopEdge_Pixels>
       <LeftEdge_Pixels>0</LeftEdge_Pixels>
       <Width_Pixels>253</Width_Pixels>
       <Height_Pixels>30</Height_Pixels>
@@ -901,6 +909,7 @@
     </ClassElementField>
     <ClassElementField>
       <Id_GUID>00000000-0000-0000-0000-000000000000</Id_GUID>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -958,6 +967,7 @@
     </ClassElementField>
     <ClassElementField>
       <Id_GUID>00000000-0000-0000-0000-000000000000</Id_GUID>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -1015,6 +1025,7 @@
     </ClassElementField>
     <ClassElementField>
       <Id_GUID>00000000-0000-0000-0000-000000000000</Id_GUID>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -1072,6 +1083,7 @@
     </ClassElementField>
     <ClassElementField>
       <Id_GUID>00000000-0000-0000-0000-000000000000</Id_GUID>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -1129,6 +1141,7 @@
     </ClassElementField>
     <ClassElementField>
       <Id_GUID>00000000-0000-0000-0000-000000000000</Id_GUID>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -1186,6 +1199,7 @@
     </ClassElementField>
     <ClassElementField>
       <Id_GUID>00000000-0000-0000-0000-000000000000</Id_GUID>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -1243,6 +1257,7 @@
     </ClassElementField>
     <ClassElementField>
       <Id_GUID>00000000-0000-0000-0000-000000000000</Id_GUID>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -1300,6 +1315,7 @@
     </ClassElementField>
     <ClassElementField>
       <Id_GUID>00000000-0000-0000-0000-000000000000</Id_GUID>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -1357,6 +1373,7 @@
     </ClassElementField>
     <ClassElementField>
       <Id_GUID>00000000-0000-0000-0000-000000000000</Id_GUID>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -1414,6 +1431,7 @@
     </ClassElementField>
     <ClassElementField>
       <Id_GUID>00000000-0000-0000-0000-000000000000</Id_GUID>
+      <BadgeDisplayIndex>7</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -1445,7 +1463,7 @@
         <HasPresetValues>true</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
-        <DataEntryText>01/01/0001</DataEntryText>
+        <DataEntryText>Undetermined value, for Field #15</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
         <CurrentRecipValue>Undetermined value, for Field #15</CurrentRecipValue>
         <CurrentRecipValue_Date>Undetermined value, for Field #15</CurrentRecipValue_Date>
@@ -1458,7 +1476,7 @@
         <Width_Pixels>675</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>194</TopEdge_Pixels>
+      <TopEdge_Pixels>190</TopEdge_Pixels>
       <LeftEdge_Pixels>0</LeftEdge_Pixels>
       <Width_Pixels>225</Width_Pixels>
       <Height_Pixels>33</Height_Pixels>
@@ -1472,6 +1490,7 @@
     </ClassElementField>
     <ClassElementField>
       <Id_GUID>00000000-0000-0000-0000-000000000000</Id_GUID>
+      <BadgeDisplayIndex>8</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -1502,7 +1521,7 @@
         <HasPresetValues>true</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
-        <DataEntryText>01/01/0001</DataEntryText>
+        <DataEntryText>Undetermined value, for Field #16</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
         <CurrentRecipValue>Undetermined value, for Field #16</CurrentRecipValue>
         <CurrentRecipValue_Date>Undetermined value, for Field #16</CurrentRecipValue_Date>
@@ -1515,8 +1534,8 @@
         <Width_Pixels>681</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>-5</TopEdge_Pixels>
-      <LeftEdge_Pixels>176</LeftEdge_Pixels>
+      <TopEdge_Pixels>230</TopEdge_Pixels>
+      <LeftEdge_Pixels>0</LeftEdge_Pixels>
       <Width_Pixels>300</Width_Pixels>
       <Height_Pixels>35</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
@@ -1529,6 +1548,7 @@
     </ClassElementField>
     <ClassElementField>
       <Id_GUID>00000000-0000-0000-0000-000000000000</Id_GUID>
+      <BadgeDisplayIndex>9</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -1559,7 +1579,7 @@
         <HasPresetValues>true</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
-        <DataEntryText>01/01/0001</DataEntryText>
+        <DataEntryText>Undetermined value, for Field #17</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
         <CurrentRecipValue>Undetermined value, for Field #17</CurrentRecipValue>
         <CurrentRecipValue_Date>Undetermined value, for Field #17</CurrentRecipValue_Date>
@@ -1572,7 +1592,7 @@
         <Width_Pixels>681</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>229</TopEdge_Pixels>
+      <TopEdge_Pixels>263</TopEdge_Pixels>
       <LeftEdge_Pixels>0</LeftEdge_Pixels>
       <Width_Pixels>253</Width_Pixels>
       <Height_Pixels>30</Height_Pixels>
@@ -1586,6 +1606,7 @@
     </ClassElementField>
     <ClassElementField>
       <Id_GUID>00000000-0000-0000-0000-000000000000</Id_GUID>
+      <BadgeDisplayIndex>10</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -1617,7 +1638,7 @@
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
-        <DataEntryText>07/21/2003</DataEntryText>
+        <DataEntryText>Undetermined value, for Field #18</DataEntryText>
         <IsLinkedToSections>false</IsLinkedToSections>
         <CurrentRecipValue>Undetermined value, for Field #18</CurrentRecipValue>
         <CurrentRecipValue_Date>Undetermined value, for Field #18</CurrentRecipValue_Date>
@@ -1630,7 +1651,7 @@
         <Width_Pixels>675</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>300</TopEdge_Pixels>
+      <TopEdge_Pixels>306</TopEdge_Pixels>
       <LeftEdge_Pixels>0</LeftEdge_Pixels>
       <Width_Pixels>253</Width_Pixels>
       <Height_Pixels>30</Height_Pixels>
@@ -1644,6 +1665,7 @@
     </ClassElementField>
     <ClassElementField>
       <Id_GUID>00000000-0000-0000-0000-000000000000</Id_GUID>
+      <BadgeDisplayIndex>11</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -1687,8 +1709,8 @@
         <Width_Pixels>681</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
       </BadgeLayout>
-      <TopEdge_Pixels>331</TopEdge_Pixels>
-      <LeftEdge_Pixels>-1</LeftEdge_Pixels>
+      <TopEdge_Pixels>344</TopEdge_Pixels>
+      <LeftEdge_Pixels>0</LeftEdge_Pixels>
       <Width_Pixels>253</Width_Pixels>
       <Height_Pixels>30</Height_Pixels>
       <Border_WidthInPixels>1</Border_WidthInPixels>
@@ -1703,6 +1725,7 @@
   <ListOfElementPics>
     <ClassElementPic>
       <Id_GUID>00000000-0000-0000-0000-000000000000</Id_GUID>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <BadgeLayout>
         <Width_Pixels>675</Width_Pixels>
         <Height_Pixels>425</Height_Pixels>
@@ -1724,6 +1747,7 @@
   </ListOfElementPics>
   <ListOfElementTexts>
     <ClassElementStaticText>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -1754,6 +1778,7 @@
       <SelectedHighlighting>false</SelectedHighlighting>
     </ClassElementStaticText>
     <ClassElementStaticText>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -1784,6 +1809,7 @@
       <SelectedHighlighting>false</SelectedHighlighting>
     </ClassElementStaticText>
     <ClassElementStaticText>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -1814,6 +1840,7 @@
       <SelectedHighlighting>false</SelectedHighlighting>
     </ClassElementStaticText>
     <ClassElementStaticText>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -1844,6 +1871,7 @@
       <SelectedHighlighting>false</SelectedHighlighting>
     </ClassElementStaticText>
     <ClassElementStaticText>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -1874,6 +1902,7 @@
       <SelectedHighlighting>false</SelectedHighlighting>
     </ClassElementStaticText>
     <ClassElementStaticText>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -1904,6 +1933,7 @@
       <SelectedHighlighting>false</SelectedHighlighting>
     </ClassElementStaticText>
     <ClassElementStaticText>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -1934,6 +1964,7 @@
       <SelectedHighlighting>false</SelectedHighlighting>
     </ClassElementStaticText>
     <ClassElementStaticText>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -1964,6 +1995,7 @@
       <SelectedHighlighting>false</SelectedHighlighting>
     </ClassElementStaticText>
     <ClassElementStaticText>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -1994,6 +2026,7 @@
       <SelectedHighlighting>false</SelectedHighlighting>
     </ClassElementStaticText>
     <ClassElementStaticText>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -2024,6 +2057,7 @@
       <SelectedHighlighting>false</SelectedHighlighting>
     </ClassElementStaticText>
     <ClassElementStaticText>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -2054,6 +2088,7 @@
       <SelectedHighlighting>false</SelectedHighlighting>
     </ClassElementStaticText>
     <ClassElementStaticText>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -2084,6 +2119,7 @@
       <SelectedHighlighting>false</SelectedHighlighting>
     </ClassElementStaticText>
     <ClassElementStaticText>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -2114,6 +2150,7 @@
       <SelectedHighlighting>false</SelectedHighlighting>
     </ClassElementStaticText>
     <ClassElementStaticText>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -2144,6 +2181,7 @@
       <SelectedHighlighting>false</SelectedHighlighting>
     </ClassElementStaticText>
     <ClassElementStaticText>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -2174,6 +2212,7 @@
       <SelectedHighlighting>false</SelectedHighlighting>
     </ClassElementStaticText>
     <ClassElementStaticText>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -2204,6 +2243,7 @@
       <SelectedHighlighting>false</SelectedHighlighting>
     </ClassElementStaticText>
     <ClassElementStaticText>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -2234,6 +2274,7 @@
       <SelectedHighlighting>false</SelectedHighlighting>
     </ClassElementStaticText>
     <ClassElementStaticText>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -2264,6 +2305,7 @@
       <SelectedHighlighting>false</SelectedHighlighting>
     </ClassElementStaticText>
     <ClassElementStaticText>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -2294,6 +2336,7 @@
       <SelectedHighlighting>false</SelectedHighlighting>
     </ClassElementStaticText>
     <ClassElementStaticText>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -2324,6 +2367,7 @@
       <SelectedHighlighting>false</SelectedHighlighting>
     </ClassElementStaticText>
     <ClassElementStaticText>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -2354,6 +2398,7 @@
       <SelectedHighlighting>false</SelectedHighlighting>
     </ClassElementStaticText>
     <ClassElementStaticText>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -2384,6 +2429,7 @@
       <SelectedHighlighting>false</SelectedHighlighting>
     </ClassElementStaticText>
     <ClassElementStaticText>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -2414,6 +2460,7 @@
       <SelectedHighlighting>false</SelectedHighlighting>
     </ClassElementStaticText>
     <ClassElementStaticText>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -2444,6 +2491,7 @@
       <SelectedHighlighting>false</SelectedHighlighting>
     </ClassElementStaticText>
     <ClassElementStaticText>
+      <BadgeDisplayIndex>0</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>

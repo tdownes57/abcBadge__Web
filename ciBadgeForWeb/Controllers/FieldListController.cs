@@ -69,6 +69,14 @@ namespace ciBadgeForWeb.Controllers //EditableListMvc.Controllers
                 _fieldList = FieldsController.GetMvcFieldsListAny();
 
             }
+
+            //Added 11/27/2021 td
+            //  We don't want any Recipient values to appear on this
+            //  page. 
+            //
+            ClassElementField.oRecipient = null;
+            ClassElementField.iRecipientInfo = null;
+
             return View(_fieldList);
         }
 
