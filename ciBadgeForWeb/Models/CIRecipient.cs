@@ -92,6 +92,20 @@ namespace ciBadgeForWeb.Models
             }
         }
 
+
+        [Display(Name = "Full Name")]
+        public string fstrFullName //Added 11-26-2021 td 
+        {
+            get
+            {
+                return this.FullName;
+            }
+            set
+            {
+                this.FullName = value;
+            }
+        }
+
         [Display(Name = "Last Name")]
         public string fstrLastName //Added 10-4-2019 td 
         {
@@ -171,6 +185,9 @@ namespace ciBadgeForWeb.Models
             }
         }
 
+
+        [Display(Name = "Full Name")]
+        public string FullName { get; set; }
 
         [Display(Name = "First Name")]
         public string FirstName { get; set; }

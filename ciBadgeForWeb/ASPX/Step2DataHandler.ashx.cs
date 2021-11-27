@@ -58,7 +58,12 @@ namespace ciBadgeForWeb.ASPX
             //
             int intElementIndex_Query = -1;
             int intElementIndex_Mapped = -1; // Suffixed 11/24/2021 td
+            int intElementIndex_2ndTry = -1; // Suffixed 11/24/2021 td
+            int intElementIndex_Final = -1; // Suffixed 11/24/2021 td
+
             int intFieldIndex = -1; // Added 11/24/2021 td
+            int intBadgeDisplayIndex = -1; // Added 11/24/2021 td
+
             string strFieldCaption = ""; //Added 11/18/2021 td
             string strTextDisplayed = "";  //Added 11/18/2021 td
 
@@ -68,6 +73,7 @@ namespace ciBadgeForWeb.ASPX
             //return;
 
             bool bWeHave_ElementIndex = false; //Added 11/17/2021 
+            bool bWeHave_DisplayIndex = false; //Added 11/26/2021 
             bool bDisplayMessagesEtc = ("y" == par_context.Request.QueryString["msgs"]);
             bool bQueryByField = false; //Added 11/18/2021 td
 
@@ -110,7 +116,7 @@ namespace ciBadgeForWeb.ASPX
                 //
                 intElementIndex_Query = int.Parse(par_context.Request.QueryString["elemindex"]);
                 //---intFieldIndex = intElementIndex;  //Is this aspirational, or a fact? 
-                int intElementIndex_Mapped = ClassElementsCache_Deprecated
+                intElementIndex_Mapped = ClassElementsCache_Deprecated
                         .Singleton.MapElementIndex_OmitUnneeded(intElementIndex_Query); 
                 bWeHave_ElementIndex = true;  //Added 11/17/2021 td
             }
@@ -126,14 +132,36 @@ namespace ciBadgeForWeb.ASPX
                 //
                 intFieldIndex = int.Parse(par_context.Request.QueryString["fldindex"]);
                 strFieldCaption = (par_context.Request.QueryString["fldcaption"]).ToString();
-                intElementIndex = ClassElementsCache_Deprecated.Singleton
+                intElementIndex_2ndTry = ClassElementsCache_Deprecated.Singleton
                     .GetElementIndexByFieldIndex_2ndTry(intFieldIndex);
+                intElementIndex_Final = intElementIndex_2ndTry;
                 bWeHave_ElementIndex = true;  //Added 11/17/2021 td
                 bQueryByField = true;  
             }
 
+            //Added 11/24/2021 thomas downes
+            if (!String.IsNullOrEmpty(par_context.Request.QueryString["badgedisplayindex"]))
+            {
+                //
+                //Added 11/10/2021 thomas downes  
+                //
+                intBadgeDisplayIndex = int.Parse(par_context.Request.QueryString["badgedisplayindex"]);
+                bWeHave_DisplayIndex = true;  //Added 11/17/2021 td
 
-            if (bWeHave_ElementIndex) 
+            }
+
+            //Added 11/24/2021 thomas downes
+            if (!String.IsNullOrEmpty(par_context.Request.QueryString["displayindex"]))
+            {
+                //
+                //Added 11/10/2021 thomas downes  
+                //
+                intBadgeDisplayIndex = int.Parse(par_context.Request.QueryString["displayindex"]);
+                bWeHave_DisplayIndex = true;  //Added 11/17/2021 td
+
+            }
+
+            if (bWeHave_ElementIndex || bWeHave_DisplayIndex) 
             {
                 //
                 // We can proceed with image generation. 
@@ -142,12 +170,31 @@ namespace ciBadgeForWeb.ASPX
 
                 //= objImageGen.ElementFieldToImage(each_element, par_cache.BadgeLayout);
 
-                var list_elements = 
-                  ClassElementsCache_Deprecated.Singleton.ListOfElementFields
-                  //--.Where(i => i.FieldInfo.FieldIndex == intElementIndex)
-                  .Where(i => i.ElementIndexIsFieldIndex() == intElementIndex);
+                //var list_elements = 
+                //  ClassElementsCache_Deprecated.Singleton.ListOfElementFields
+                //  //--.Where(i => i.FieldInfo.FieldIndex == intElementIndex)
+                //  .Where(i => i.ElementIndexIsFieldIndex() == intElementIndex_Final);
+
+                IEnumerable<ClassElementField> list_elements = null;
+                if (bWeHave_DisplayIndex) list_elements =
+                  ClassElementsCache_Deprecated.Singleton.ListOfBadgeDisplayElements_Flds(false)
+                  .Where(item => item.BadgeDisplayIndex == intBadgeDisplayIndex);
+
+                else if (bWeHave_ElementIndex) list_elements =
+                      ClassElementsCache_Deprecated.Singleton.ListOfBadgeDisplayElements_Flds(false)
+                     .Where(i => i.ElementIndexIsFieldIndex() == intElementIndex_Final);
 
                 var obj_element = list_elements.FirstOrDefault();
+
+                // Check if obj_element is Null or not. 
+                if (obj_element == null)
+                {
+                    par_context.Response.ContentType = "text/html";
+                    par_context.Response.Write($"<p>-----Messages-------</p>");
+                    par_context.Response.Write($"<p>No element is found for Element Index {intElementIndex_Final}.</p>");
+                    return;
+                }
+
                 var obj_badgeLayout = ClassElementsCache_Deprecated.Singleton.BadgeLayout;
 
                 //Image output_dataImage = objImageGen.ElementFieldToImage(obj_element, obj_badgeLayout);
