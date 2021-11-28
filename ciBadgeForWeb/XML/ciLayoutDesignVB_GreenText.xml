@@ -67,7 +67,6 @@
       <FieldIndex>0</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>true</IsLocked>
-      <DefaultValue />
       <ExampleValue>12345</ExampleValue>
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
@@ -92,8 +91,6 @@
       <FieldIndex>1</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>false</IsLocked>
-      <DefaultValue />
-      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
@@ -117,8 +114,6 @@
       <FieldIndex>2</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>false</IsLocked>
-      <DefaultValue />
-      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
@@ -142,8 +137,6 @@
       <FieldIndex>3</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>false</IsLocked>
-      <DefaultValue />
-      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
@@ -167,7 +160,6 @@
       <FieldIndex>4</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>false</IsLocked>
-      <DefaultValue />
       <ExampleValue>1234567890</ExampleValue>
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
@@ -192,8 +184,6 @@
       <FieldIndex>5</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>false</IsLocked>
-      <DefaultValue />
-      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
@@ -204,7 +194,7 @@
     </ClassFieldStandard>
     <ClassFieldStandard>
       <IsRelevantToPersonality>false</IsRelevantToPersonality>
-      <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
+      <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
       <IsDisplayedForEdits>false</IsDisplayedForEdits>
       <IsStandard>false</IsStandard>
       <IsCustomizable>false</IsCustomizable>
@@ -217,8 +207,6 @@
       <FieldIndex>6</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>false</IsLocked>
-      <DefaultValue />
-      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
@@ -242,8 +230,6 @@
       <FieldIndex>7</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>false</IsLocked>
-      <DefaultValue />
-      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
@@ -267,8 +253,6 @@
       <FieldIndex>8</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>false</IsLocked>
-      <DefaultValue />
-      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
@@ -292,8 +276,6 @@
       <FieldIndex>9</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>true</IsLocked>
-      <DefaultValue />
-      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
@@ -317,8 +299,6 @@
       <FieldIndex>10</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>true</IsLocked>
-      <DefaultValue />
-      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
@@ -342,8 +322,6 @@
       <FieldIndex>11</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>true</IsLocked>
-      <DefaultValue />
-      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
@@ -367,8 +345,6 @@
       <FieldIndex>12</FieldIndex>
       <IsFieldForDates>true</IsFieldForDates>
       <IsLocked>true</IsLocked>
-      <DefaultValue />
-      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
@@ -392,8 +368,6 @@
       <FieldIndex>13</FieldIndex>
       <IsFieldForDates>true</IsFieldForDates>
       <IsLocked>true</IsLocked>
-      <DefaultValue />
-      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
@@ -417,8 +391,6 @@
       <FieldIndex>14</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>false</IsLocked>
-      <DefaultValue />
-      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
@@ -431,7 +403,7 @@
   <ListOfFields_Custom>
     <ClassFieldCustomized>
       <IsRelevantToPersonality>false</IsRelevantToPersonality>
-      <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
+      <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
       <IsDisplayedForEdits>true</IsDisplayedForEdits>
       <IsStandard>false</IsStandard>
       <IsCustomizable>true</IsCustomizable>
@@ -444,7 +416,6 @@
       <FieldIndex>15</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>false</IsLocked>
-      <DefaultValue />
       <ExampleValue>Willcrest School</ExampleValue>
       <HasPresetValues>true</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
@@ -456,7 +427,7 @@
     </ClassFieldCustomized>
     <ClassFieldCustomized>
       <IsRelevantToPersonality>false</IsRelevantToPersonality>
-      <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
+      <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
       <IsDisplayedForEdits>true</IsDisplayedForEdits>
       <IsStandard>false</IsStandard>
       <IsCustomizable>true</IsCustomizable>
@@ -469,7 +440,6 @@
       <FieldIndex>16</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>false</IsLocked>
-      <DefaultValue />
       <ExampleValue>Mrs. Fitzgerald</ExampleValue>
       <HasPresetValues>true</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
@@ -481,7 +451,7 @@
     </ClassFieldCustomized>
     <ClassFieldCustomized>
       <IsRelevantToPersonality>false</IsRelevantToPersonality>
-      <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
+      <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
       <IsDisplayedForEdits>true</IsDisplayedForEdits>
       <IsStandard>false</IsStandard>
       <IsCustomizable>true</IsCustomizable>
@@ -494,7 +464,6 @@
       <FieldIndex>17</FieldIndex>
       <IsFieldForDates>false</IsFieldForDates>
       <IsLocked>false</IsLocked>
-      <DefaultValue />
       <ExampleValue>4th Grade</ExampleValue>
       <HasPresetValues>true</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
@@ -506,7 +475,7 @@
     </ClassFieldCustomized>
     <ClassFieldCustomized>
       <IsRelevantToPersonality>false</IsRelevantToPersonality>
-      <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
+      <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
       <IsDisplayedForEdits>true</IsDisplayedForEdits>
       <IsStandard>false</IsStandard>
       <IsCustomizable>true</IsCustomizable>
@@ -519,8 +488,6 @@
       <FieldIndex>18</FieldIndex>
       <IsFieldForDates>true</IsFieldForDates>
       <IsLocked>false</IsLocked>
-      <DefaultValue />
-      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
@@ -531,7 +498,7 @@
     </ClassFieldCustomized>
     <ClassFieldCustomized>
       <IsRelevantToPersonality>false</IsRelevantToPersonality>
-      <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
+      <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
       <IsDisplayedForEdits>false</IsDisplayedForEdits>
       <IsStandard>false</IsStandard>
       <IsCustomizable>true</IsCustomizable>
@@ -544,8 +511,6 @@
       <FieldIndex>19</FieldIndex>
       <IsFieldForDates>true</IsFieldForDates>
       <IsLocked>false</IsLocked>
-      <DefaultValue />
-      <ExampleValue />
       <HasPresetValues>false</HasPresetValues>
       <IsAdditionalField>false</IsAdditionalField>
       <IsBarCode>false</IsBarCode>
@@ -585,7 +550,6 @@
         <FieldIndex>0</FieldIndex>
         <IsFieldForDates>false</IsFieldForDates>
         <IsLocked>true</IsLocked>
-        <DefaultValue />
         <ExampleValue>12345</ExampleValue>
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
@@ -644,8 +608,6 @@
         <FieldIndex>1</FieldIndex>
         <IsFieldForDates>false</IsFieldForDates>
         <IsLocked>false</IsLocked>
-        <DefaultValue />
-        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
@@ -703,8 +665,6 @@
         <FieldIndex>2</FieldIndex>
         <IsFieldForDates>false</IsFieldForDates>
         <IsLocked>false</IsLocked>
-        <DefaultValue />
-        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
@@ -761,8 +721,6 @@
         <FieldIndex>3</FieldIndex>
         <IsFieldForDates>false</IsFieldForDates>
         <IsLocked>false</IsLocked>
-        <DefaultValue />
-        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
@@ -819,7 +777,6 @@
         <FieldIndex>4</FieldIndex>
         <IsFieldForDates>false</IsFieldForDates>
         <IsLocked>false</IsLocked>
-        <DefaultValue />
         <ExampleValue>1234567890</ExampleValue>
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
@@ -877,8 +834,6 @@
         <FieldIndex>5</FieldIndex>
         <IsFieldForDates>false</IsFieldForDates>
         <IsLocked>false</IsLocked>
-        <DefaultValue />
-        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
@@ -922,7 +877,7 @@
       <FontOffset_Y>0</FontOffset_Y>
       <FieldObject xsi:type="ClassFieldStandard">
         <IsRelevantToPersonality>false</IsRelevantToPersonality>
-        <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
+        <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
         <IsDisplayedForEdits>false</IsDisplayedForEdits>
         <IsStandard>false</IsStandard>
         <IsCustomizable>false</IsCustomizable>
@@ -935,8 +890,6 @@
         <FieldIndex>6</FieldIndex>
         <IsFieldForDates>false</IsFieldForDates>
         <IsLocked>false</IsLocked>
-        <DefaultValue />
-        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
@@ -993,8 +946,6 @@
         <FieldIndex>7</FieldIndex>
         <IsFieldForDates>false</IsFieldForDates>
         <IsLocked>false</IsLocked>
-        <DefaultValue />
-        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
@@ -1051,8 +1002,6 @@
         <FieldIndex>8</FieldIndex>
         <IsFieldForDates>false</IsFieldForDates>
         <IsLocked>false</IsLocked>
-        <DefaultValue />
-        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
@@ -1109,8 +1058,6 @@
         <FieldIndex>9</FieldIndex>
         <IsFieldForDates>false</IsFieldForDates>
         <IsLocked>true</IsLocked>
-        <DefaultValue />
-        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
@@ -1167,8 +1114,6 @@
         <FieldIndex>10</FieldIndex>
         <IsFieldForDates>false</IsFieldForDates>
         <IsLocked>true</IsLocked>
-        <DefaultValue />
-        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
@@ -1225,8 +1170,6 @@
         <FieldIndex>11</FieldIndex>
         <IsFieldForDates>false</IsFieldForDates>
         <IsLocked>true</IsLocked>
-        <DefaultValue />
-        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
@@ -1283,8 +1226,6 @@
         <FieldIndex>12</FieldIndex>
         <IsFieldForDates>true</IsFieldForDates>
         <IsLocked>true</IsLocked>
-        <DefaultValue />
-        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
@@ -1341,8 +1282,6 @@
         <FieldIndex>13</FieldIndex>
         <IsFieldForDates>true</IsFieldForDates>
         <IsLocked>true</IsLocked>
-        <DefaultValue />
-        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
@@ -1399,8 +1338,6 @@
         <FieldIndex>14</FieldIndex>
         <IsFieldForDates>false</IsFieldForDates>
         <IsLocked>false</IsLocked>
-        <DefaultValue />
-        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
@@ -1445,7 +1382,7 @@
       <Text_Static>Willcrest School</Text_Static>
       <FieldObject xsi:type="ClassFieldCustomized">
         <IsRelevantToPersonality>false</IsRelevantToPersonality>
-        <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
+        <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
         <IsDisplayedForEdits>true</IsDisplayedForEdits>
         <IsStandard>false</IsStandard>
         <IsCustomizable>true</IsCustomizable>
@@ -1458,7 +1395,6 @@
         <FieldIndex>15</FieldIndex>
         <IsFieldForDates>false</IsFieldForDates>
         <IsLocked>false</IsLocked>
-        <DefaultValue />
         <ExampleValue>Willcrest School</ExampleValue>
         <HasPresetValues>true</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
@@ -1503,7 +1439,7 @@
       <FontOffset_Y>0</FontOffset_Y>
       <FieldObject xsi:type="ClassFieldCustomized">
         <IsRelevantToPersonality>false</IsRelevantToPersonality>
-        <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
+        <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
         <IsDisplayedForEdits>true</IsDisplayedForEdits>
         <IsStandard>false</IsStandard>
         <IsCustomizable>true</IsCustomizable>
@@ -1516,7 +1452,6 @@
         <FieldIndex>16</FieldIndex>
         <IsFieldForDates>false</IsFieldForDates>
         <IsLocked>false</IsLocked>
-        <DefaultValue />
         <ExampleValue>Mrs. Fitzgerald</ExampleValue>
         <HasPresetValues>true</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
@@ -1561,7 +1496,7 @@
       <FontOffset_Y>0</FontOffset_Y>
       <FieldObject xsi:type="ClassFieldCustomized">
         <IsRelevantToPersonality>false</IsRelevantToPersonality>
-        <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
+        <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
         <IsDisplayedForEdits>true</IsDisplayedForEdits>
         <IsStandard>false</IsStandard>
         <IsCustomizable>true</IsCustomizable>
@@ -1574,7 +1509,6 @@
         <FieldIndex>17</FieldIndex>
         <IsFieldForDates>false</IsFieldForDates>
         <IsLocked>false</IsLocked>
-        <DefaultValue />
         <ExampleValue>4th Grade</ExampleValue>
         <HasPresetValues>true</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
@@ -1620,7 +1554,7 @@
       <Text_Static>Date of Birth</Text_Static>
       <FieldObject xsi:type="ClassFieldCustomized">
         <IsRelevantToPersonality>false</IsRelevantToPersonality>
-        <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
+        <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
         <IsDisplayedForEdits>true</IsDisplayedForEdits>
         <IsStandard>false</IsStandard>
         <IsCustomizable>true</IsCustomizable>
@@ -1633,8 +1567,6 @@
         <FieldIndex>18</FieldIndex>
         <IsFieldForDates>true</IsFieldForDates>
         <IsLocked>false</IsLocked>
-        <DefaultValue />
-        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>
@@ -1665,7 +1597,7 @@
     </ClassElementField>
     <ClassElementField>
       <Id_GUID>00000000-0000-0000-0000-000000000000</Id_GUID>
-      <BadgeDisplayIndex>11</BadgeDisplayIndex>
+      <BadgeDisplayIndex>7</BadgeDisplayIndex>
       <FontColor />
       <FontSize_Pixels>25</FontSize_Pixels>
       <FontBold>false</FontBold>
@@ -1678,7 +1610,7 @@
       <FontOffset_Y>0</FontOffset_Y>
       <FieldObject xsi:type="ClassFieldCustomized">
         <IsRelevantToPersonality>false</IsRelevantToPersonality>
-        <IsDisplayedOnBadge>true</IsDisplayedOnBadge>
+        <IsDisplayedOnBadge>false</IsDisplayedOnBadge>
         <IsDisplayedForEdits>false</IsDisplayedForEdits>
         <IsStandard>false</IsStandard>
         <IsCustomizable>true</IsCustomizable>
@@ -1691,8 +1623,6 @@
         <FieldIndex>19</FieldIndex>
         <IsFieldForDates>true</IsFieldForDates>
         <IsLocked>false</IsLocked>
-        <DefaultValue />
-        <ExampleValue />
         <HasPresetValues>false</HasPresetValues>
         <IsAdditionalField>false</IsAdditionalField>
         <IsBarCode>false</IsBarCode>

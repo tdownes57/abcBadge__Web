@@ -43,9 +43,28 @@ namespace ciBadgeForWeb.Controllers
             //
             //Added 11/28/2019 td
             //
-            ClassElementsCache_Deprecated.Singleton.SaveToXML();
+            //Called by the following:  
+            //
+            //     Views\XmlCache\ListAllSavedCaches.cshtml 
+            //
+            const bool c_bFirstShowEditableFilename = true; //Added 11/27/2021 td
 
-            return new EmptyResult();
+            //Conditioned 11/27/2021 thomas d. 
+            if (c_bFirstShowEditableFilename)
+            {
+                //Added 11/27/2021 thomas d. 
+                string sCurrentXmlFilename = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.XmlFile_FTitle;
+
+                return View(sCurrentXmlFilename);
+
+            }
+            else
+            {
+                // Just save the XML.  
+                ClassElementsCache_Deprecated.Singleton.SaveToXML();
+                return new EmptyResult();
+                return View("Saved");
+            }
 
         }
 

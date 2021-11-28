@@ -83,6 +83,11 @@ namespace ciBadgeForWeb.Controllers //EditableListMvc.Controllers
         [HttpPost]
         public ActionResult Index(List<Models.Field> par_fieldList, string command)
         {
+            //
+            // Added 11/27/2021 thomas downes 
+            //
+            if (par_fieldList == null) return RedirectToAction("Index", "FieldList");
+
             //----public ActionResult Index(List<ciBadgeFields.ClassFieldAny> par_fieldList, string command)
             try
             {

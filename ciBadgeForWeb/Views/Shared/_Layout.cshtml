@@ -97,8 +97,8 @@
                     <!-- Persons -->
                     @* <li>@Html.ActionLink("Persons", "Index", "PersonList")</li>*@
                     @*<li>
-                        <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/PersonList/Index'">Persons</button>
-                    </li>*@
+            <button class="btn btn-primary dropdown-toggle" type="button" onclick="location = '/PersonList/Index'">Persons</button>
+        </li>*@
 
                     <!-- Personalities -->
                     @* <li>@Html.ActionLink("Personalities", "Index", "Personality")</li>*@
@@ -173,21 +173,35 @@
                                     Moveable_Divs
                                     <span class="caret"></span>
                                 </button>@*</a>*@
-                            <ul class="dropdown-menu">
-                                <li>@Html.ActionLink("Proof of Concept", "Index", "JsonFile")</li>
-                                <li>@Html.ActionLink("Stack All Elements", "Index_StackAllElements", "JsonFile")</li>
-                                <li>@Html.ActionLink("JSON strings", "TableEdit", "JsonFile")</li>
-                                <li>@Html.ActionLink("Element-Location - Left", "TableDivsLeft", "JsonFile")</li>
-                                <li>@Html.ActionLink("Element-Location - Top", "TableDivsTop", "JsonFile")</li>
-                                <li>@Html.ActionLink("Element-Location - Width", "TableDivsWidth", "JsonFile")</li>
-                                <li>@Html.ActionLink("Element-Location - Height", "TableDivsHeight", "JsonFile")</li>
-                                <li>@Html.ActionLink("Element-Location - HasField", "TableDivsHasField", "JsonFile")</li>
-                                <li>@Html.ActionLink("Element-Location - Displayed", "TableDivsDisplayed", "JsonFile")</li>
-                                <li>@Html.ActionLink("Element-Location - Fieldname", "TableDivsFieldName", "JsonFile")</li>
-                            </ul>
+                                <ul class="dropdown-menu">
+                                    <li>@Html.ActionLink("Proof of Concept", "Index", "JsonFile")</li>
+                                    <li>@Html.ActionLink("Stack All Elements", "Index_StackAllElements", "JsonFile")</li>
+                                    <li>@Html.ActionLink("JSON strings", "TableEdit", "JsonFile")</li>
+                                    <li>@Html.ActionLink("Element-Location - Left", "TableDivsLeft", "JsonFile")</li>
+                                    <li>@Html.ActionLink("Element-Location - Top", "TableDivsTop", "JsonFile")</li>
+                                    <li>@Html.ActionLink("Element-Location - Width", "TableDivsWidth", "JsonFile")</li>
+                                    <li>@Html.ActionLink("Element-Location - Height", "TableDivsHeight", "JsonFile")</li>
+                                    <li>@Html.ActionLink("Element-Location - HasField", "TableDivsHasField", "JsonFile")</li>
+                                    <li>@Html.ActionLink("Element-Location - Displayed", "TableDivsDisplayed", "JsonFile")</li>
+                                    <li>@Html.ActionLink("Element-Location - Fieldname", "TableDivsFieldName", "JsonFile")</li>
+                                </ul>
                             </div>
                         </li>
                     }
+
+                    <li>
+                        <!-- https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp -->
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                                XML
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Xml Caching", "Index", "XmlCache")</li>
+                                <li>@Html.ActionLink("Upload Cache XML", "ElementCacheXML", "Background")</li>
+                            </ul>
+                        </div>
+                    </li>
 
                     <li>
                         <!-- https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp -->
@@ -197,7 +211,8 @@
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
-                                <li>@Html.ActionLink("Upload Background", "UploadBack", "Background")</li>
+                                @*<li>@Html.ActionLink("Upload Background", "UploadBack", "Background")</li>*@
+                                <li>@Html.ActionLink("Upload Background Image", "Index", "UploadBack")</li>
                                 <li>@Html.ActionLink("Upload Picture", "UploadPic", "Background")</li>
                                 <li>@Html.ActionLink("Xml Caching", "Index", "XmlCache")</li>
                                 <li>@Html.ActionLink("Upload Cache XML", "ElementCacheXML", "Background")</li>
@@ -206,10 +221,10 @@
                         </div>
                     </li>
                 </ul>
-                }
+                            }
 
-            </div>
-        </div>
+                        </div>
+</div>
     </div>
 
     <div class="container body-content">

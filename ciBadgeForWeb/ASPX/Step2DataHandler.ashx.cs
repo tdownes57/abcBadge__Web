@@ -198,9 +198,15 @@ namespace ciBadgeForWeb.ASPX
                 // Check if obj_element is Null or not. 
                 if (obj_element == null)
                 {
-                    par_context.Response.ContentType = "text/html";
-                    par_context.Response.Write($"<p>-----Messages-------</p>");
-                    par_context.Response.Write($"<p>No element is found for Element Index {intElementIndex_Final}.</p>");
+                    //par_context.Response.ContentType = "text/html";
+                    //par_context.Response.Write($"<p>-----Messages-------</p>");
+                    //par_context.Response.Write($"<p>No element is found for Element Index {intElementIndex_Final}.</p>");
+                    //return;
+                    par_context.Response.ContentType = "image/Jpeg";
+                    MemoryStream memstream_output = new MemoryStream();
+                    var bmp = new Bitmap(ciBadgeForWeb.Properties.Resources.BadgeDisplay_is_off);
+                    bmp.Save(memstream_output, ImageFormat.Jpeg);
+                    par_context.Response.BinaryWrite(memstream_output.GetBuffer());
                     return;
                 }
                 else

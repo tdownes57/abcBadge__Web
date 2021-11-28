@@ -1,0 +1,42 @@
+﻿@model String
+
+@{
+    //
+    // Added 11/27/2021 thomas downes
+    //
+    ViewBag.Title = "SaveThisCache";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    // Added 11/27/2021 Thomas Downes
+    string sCurrentXmlFilename = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.XmlFile_FTitle;
+
+}
+
+<h2>Save This Cache</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Filename of XML file</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model)
+                    @Html.ValidationMessageFor(model => model, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <p>
+        @Html.ValidationSummary()
+        <input name="command" type="submit" value="Submit/Save" />
+    </p>
+}
