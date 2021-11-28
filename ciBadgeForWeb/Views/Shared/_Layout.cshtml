@@ -189,6 +189,7 @@
                         </li>
                     }
 
+                    <!--  XML  -->
                     <li>
                         <!-- https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp -->
                         <div class="dropdown">
@@ -197,7 +198,9 @@
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
-                                <li>@Html.ActionLink("Xml Caching", "Index", "XmlCache")</li>
+                                <li>@Html.ActionLink("Save your work to XML", "SaveYourWork", "XmlCache")</li>
+                                <li>@Html.ActionLink("Save the current cache to XML...", "SaveThisCache", "XmlCache")</li>
+                                <li>@Html.ActionLink("List saved XML Caches", "Index", "XmlCache")</li>
                                 <li>@Html.ActionLink("Upload Cache XML", "ElementCacheXML", "Background")</li>
                             </ul>
                         </div>
@@ -220,6 +223,14 @@
                             </ul>
                         </div>
                     </li>
+
+                    <!--  Save your work -->
+                    <li>
+                        <button class="btn btn-primary dropdown-toggle" type="button" 
+                                onclick="location = '/XmlCache/SaveYourWork'">Save</button>
+                    </li>
+
+
                 </ul>
                             }
 

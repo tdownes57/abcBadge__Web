@@ -68,6 +68,19 @@ namespace ciBadgeForWeb.Controllers
 
         }
 
+
+        public ActionResult SaveYourWork()
+        {
+            //
+            // Added 11/28/2021 thomas downes
+            //
+            // Just save the XML.  
+            ClassElementsCache_Deprecated.Singleton.SaveToXML();
+            return new EmptyResult();
+            return View("Saved");
+        }
+
+
         public ActionResult SaveToNewName()
         {
             //
