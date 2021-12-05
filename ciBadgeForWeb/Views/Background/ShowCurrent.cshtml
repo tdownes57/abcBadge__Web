@@ -97,7 +97,8 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) | <br />
+    @*@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) | <br />*@
+    @Html.ActionLink("Edit File Description", "Edit", new { id = Model.Index })  | <br />
     @*@Html.ActionLink("Back to List", "Index")*@
     @Html.ActionLink("Show all uploaded background images.", "ShowAll")
 </p>

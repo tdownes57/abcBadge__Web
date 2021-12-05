@@ -7,7 +7,7 @@ using System.Web.Hosting; //Added 11/25/2019 td
 
 namespace ciBadgeForWeb.App_Start
 {
-    public class DiskFiles
+    public class DiskFilesCS
     {
         //
         //Added 11/15/2019 td  

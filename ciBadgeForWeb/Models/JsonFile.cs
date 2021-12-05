@@ -135,12 +135,12 @@ namespace ciBadgeForWeb.Models
             // Get the JSON file.  
             //
             // 3-24-2020 td//strFullPathToJsonFile = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_JSON_Current(true);
-            strFullPathToJsonFile_Left = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_JSON_Current(true, "_Left");
-            strFullPathToJsonFile_Top = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_JSON_Current(true, "_Top");
+            strFullPathToJsonFile_Left = ciBadgeForWeb.App_Start.DiskFilesCS.PathToFile_JSON_Current(true, "_Left");
+            strFullPathToJsonFile_Top = ciBadgeForWeb.App_Start.DiskFilesCS.PathToFile_JSON_Current(true, "_Top");
 
             // Added 3/29/2020 thomas downes
-            strFullPathToJsonFile_Width =  ciBadgeForWeb.App_Start.DiskFiles.PathToFile_JSON_Current(true, "_Width");
-            strFullPathToJsonFile_Height = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_JSON_Current(true, "_Height");
+            strFullPathToJsonFile_Width =  ciBadgeForWeb.App_Start.DiskFilesCS.PathToFile_JSON_Current(true, "_Width");
+            strFullPathToJsonFile_Height = ciBadgeForWeb.App_Start.DiskFilesCS.PathToFile_JSON_Current(true, "_Height");
 
             // Added 3/21/2020 td
             if (Directory.Exists(strFullPathToJsonFile_Left))

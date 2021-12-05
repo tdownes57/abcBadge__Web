@@ -346,7 +346,7 @@ namespace ciBadgeForWeb
             //  Good page:   https://stackoverflow.com/questions/28330257/get-relative-url-in-asp-net-mvc-view
             //  Even better: https://weblog.west-wind.com/posts/2007/Sep/18/ResolveUrl-without-Page
             //      
-            strFullPathToImageFile = App_Start.DiskFiles.ResolveUrl(strFullPathToImageFile);
+            strFullPathToImageFile = App_Start.DiskFilesCS.ResolveUrl(strFullPathToImageFile);
 
             //Graphics g = new Graphics
             Image imageCreated1 = new Bitmap(strFullPathToImageFile);

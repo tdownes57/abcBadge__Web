@@ -327,8 +327,8 @@ namespace ciBadgeForWeb
                         //11-26-2019 mod_generate.PathToFile_Sig = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_Sig(true);
                         //11-26-2019 mod_generate.ImageQRCode = new Bitmap(App_Start.DiskFiles.PathToFile_QRCode(true));
 
-                        mod_generate.PathToFile_Sig = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_Sig(true);
-                        mod_generate.PathToFile_QR = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_QRCode(true);
+                        mod_generate.PathToFile_Sig = ciBadgeForWeb.App_Start.DiskFilesCS.PathToFile_Sig(true);
+                        mod_generate.PathToFile_QR = ciBadgeForWeb.App_Start.DiskFilesCS.PathToFile_QRCode(true);
 
                         //mod_generate.ImageQRCode = new Bitmap(App_Start.DiskFiles.PathToFile_QRCode(true));
                         mod_generate.ImageQRCode = new Bitmap(mod_generate.PathToFile_QR);
@@ -514,7 +514,7 @@ namespace ciBadgeForWeb
                                         par_listFieldsNotIncluded);
 
             //--pout_strPathToNewFile = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_QRCode(true);
-            pout_strPathToNewFile = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_TempBadges(true,
+            pout_strPathToNewFile = ciBadgeForWeb.App_Start.DiskFilesCS.PathToFile_TempBadges(true,
                 par_recipient_by_id.RecipientID);
 
             image_badge.Save(pout_strPathToNewFile, ImageFormat.Jpeg);
@@ -680,8 +680,8 @@ namespace ciBadgeForWeb
             //11-26-2019 mod_generate.PathToFile_Sig = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_Sig(true);
             //11-26-2019 mod_generate.ImageQRCode = new Bitmap(App_Start.DiskFiles.PathToFile_QRCode(true));
 
-            mod_generate.PathToFile_Sig = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_Sig(true);
-            mod_generate.PathToFile_QR = ciBadgeForWeb.App_Start.DiskFiles.PathToFile_QRCode(true);
+            mod_generate.PathToFile_Sig = ciBadgeForWeb.App_Start.DiskFilesCS.PathToFile_Sig(true);
+            mod_generate.PathToFile_QR = ciBadgeForWeb.App_Start.DiskFilesCS.PathToFile_QRCode(true);
             //mod_generate.ImageQRCode = new Bitmap(App_Start.DiskFiles.PathToFile_QRCode(true));
             mod_generate.ImageQRCode = new Bitmap(mod_generate.PathToFile_QR);
 

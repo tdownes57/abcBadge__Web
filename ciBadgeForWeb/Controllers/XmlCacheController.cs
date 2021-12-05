@@ -24,7 +24,7 @@ namespace ciBadgeForWeb.Controllers
             //Added 11/28/2019 thomas downes 
             //
             string strPathToNextFileXml = 
-                      ciBadgeForWeb.App_Start.DiskFiles.PathToFile_XML_Next(true);
+                      ciBadgeForWeb.App_Start.DiskFilesCS.PathToFile_XML_Next(true);
 
             //
             //Refresh the cache with the next cache.
@@ -120,10 +120,10 @@ namespace ciBadgeForWeb.Controllers
             string strFileTitleXML = (parameter_id + ".xml");
 
             //ciBadgeForWeb.App_Start.DiskFiles.SpecifyCurrent_XML(parameter_id);
-            ciBadgeForWeb.App_Start.DiskFiles.SpecifyCurrent_XML(strFileTitleXML);
+            ciBadgeForWeb.App_Start.DiskFilesCS.SpecifyCurrent_XML(strFileTitleXML);
 
             string strPathToNewCurrentXML =
-                App_Start.DiskFiles.PathToFile_XML_Current(true);
+                App_Start.DiskFilesCS.PathToFile_XML_Current(true);
             
             boolBrandNewFile = false; //False, because the XML file might have
             //  been created a week or even a month ago. 
