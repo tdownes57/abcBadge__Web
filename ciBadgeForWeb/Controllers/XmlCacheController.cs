@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using ciBadgeElements; //Added 11/28/2019 thomas downes
+//using ciBadgeElements; //Added 11/28/2019 thomas downes
+using ciBadgeCachePersonality;  //Added 12/6/2021 td
 
 namespace ciBadgeForWeb.Controllers
 {
@@ -53,7 +54,7 @@ namespace ciBadgeForWeb.Controllers
             if (c_bFirstShowEditableFilename)
             {
                 //Added 11/27/2021 thomas d. 
-                string sCurrentXmlFilename = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.XmlFile_FTitle;
+                string sCurrentXmlFilename = ciBadgeCachePersonality.ClassElementsCache_Deprecated.Singleton.XmlFile_FTitle;
 
                 return View(sCurrentXmlFilename);
 

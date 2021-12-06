@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using ciBadgeForWeb.Models;  // Added 3/21/2020 Thomas Downes 
 using ciBadgeElements;  // Added 4/6/2020 Thomas Downes   
 using System.Drawing;   // Added 4/22/2020 thomas downes  
+using ciBadgeCachePersonality;  //Added 12/6/2021 td 
+
 //
 //     // See also, the CIBadgeElements Project, for JSON- & DIVs- related code. 
 //     //   ---Actually, I wasn't able to find it, so maybe I didn't do it.

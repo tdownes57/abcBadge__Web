@@ -44,7 +44,8 @@ namespace ciBadgeForWeb.Models
         }
 
         //Added 12/1/2019 thomas d.
-        public ciBadgeElements.ClassElementsCache_Deprecated ParentCache { get; set; }
+        // Dec.6 2021 //public ciBadgeElements.ClassElementsCache_Deprecated ParentCache { get; set; }
+        public ciBadgeCachePersonality.ClassElementsCache_Deprecated ParentCache { get; set; }
 
         //
         //Fields

@@ -126,7 +126,7 @@ namespace ciBadgeForWeb.Controllers
         {
             //return View();
             //return View("EditSimple");
-            var fields_list = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
+            var fields_list = ciBadgeCachePersonality.ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
             var fields_onlyone = fields_list.Where(x => x.FieldIndex == id).FirstOrDefault();
             
             //---return (ViewResult)View("EditSimple", fields_onlyone);
@@ -155,7 +155,7 @@ namespace ciBadgeForWeb.Controllers
         {
             //return View();
             //return View("EditSimple");
-            var fields_list = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
+            var fields_list = ciBadgeCachePersonality.ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
             var fields_onlyone = fields_list.Where(x => x.FieldIndex == id).FirstOrDefault();
             
             //---return (ViewResult)View("EditSimple", fields_onlyone);
@@ -183,7 +183,7 @@ namespace ciBadgeForWeb.Controllers
         {
             //return View();
             //return View("EditSimple");
-            var fields_list = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
+            var fields_list = ciBadgeCachePersonality.ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
             var fields_onlyone = fields_list.Where(x => x.FieldIndex == id).FirstOrDefault();
             //---return (ViewResult)View("EditSimple", fields_onlyone);
             if (fields_onlyone is ciBadgeFields.ClassFieldStandard)
@@ -215,7 +215,7 @@ namespace ciBadgeForWeb.Controllers
             //
             //return View();
             //return View("EditSimple");
-            var fields_list = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
+            var fields_list = ciBadgeCachePersonality.ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
             var fields_onlyone = fields_list.Where(x => x.FieldIndex == id).FirstOrDefault();
             return (ViewResult)View("AdvancedForOne", fields_onlyone);
         }
@@ -229,12 +229,12 @@ namespace ciBadgeForWeb.Controllers
             {
                 // TODO: Add update logic here
                 //--- 4/22/2020 td //return RedirectToAction("Index");
-                var fields_list = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
+                var fields_list = ciBadgeCachePersonality.ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
                 var field_edited = fields_list.Where(x => x.FieldIndex == id).FirstOrDefault();
                 UpdateModel(field_edited, collection);
 
                 //Added 4/22/2020 thomas downes
-                ciBadgeElements.ClassElementsCache_Deprecated.Singleton.SaveToXML();
+                ciBadgeCachePersonality.ClassElementsCache_Deprecated.Singleton.SaveToXML();
 
                 //return RedirectToAction("Edit", id);
                 //return RedirectToAction("Index");
@@ -257,7 +257,7 @@ namespace ciBadgeForWeb.Controllers
             {
                 // Added 2/20/2020 thomas downes 
 
-                var fields_list = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
+                var fields_list = ciBadgeCachePersonality.ClassElementsCache_Deprecated.Singleton.ListOfFields_Any();
                 var fields_onlyone = fields_list.Where(x => x.FieldIndex == id);
                 return (ViewResult)View(fields_onlyone);
 

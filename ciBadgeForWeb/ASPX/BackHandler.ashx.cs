@@ -280,7 +280,7 @@ namespace ciBadgeForWeb
                 //    It's important that the correct background image be displayed.
                 //
                 ciBadgeInterfaces.BadgeLayoutClass objLayout_B;   // Added 3/9/2020 thomas downes 
-                objLayout_B = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.BadgeLayout;
+                objLayout_B = ciBadgeCachePersonality.ClassElementsCache_Deprecated.Singleton.BadgeLayout;
                 string strPathToBackImages_B = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(true);
                 
                 // Deprecated 11/1/2021 thomas downes

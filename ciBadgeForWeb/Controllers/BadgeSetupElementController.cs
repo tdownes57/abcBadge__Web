@@ -9,6 +9,8 @@ using System.Web.Mvc;
 using ciBadgeForWeb.Models;  // Added 3/21/2020 Thomas Downes 
 using ciBadgeElements;  // Added 4/6/2020 Thomas Downes   
 using System.Drawing;   // Added 4/22/2020 thomas downes  
+using ciBadgeCachePersonality;  //Added 12/6/2021 td 
+
 //                        
 //Copy of JsonFileController.  ---11/18/2021 td 
 //

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using ciBadgeElements; //Added 11/15/2019 thomas downes  
+using ciBadgeCachePersonality;  //Added 12/6/2021 td 
 using System.Windows.Forms;  //Added 11/16/2019 td 
 using System.Configuration;
 

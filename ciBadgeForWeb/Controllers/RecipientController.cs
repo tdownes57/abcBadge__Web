@@ -328,7 +328,7 @@ namespace ciBadgeForWeb.Controllers
             //return View("Index", recipients_by_id);
 
             //Added 12/2/2019 td  
-            recipient_by_id_onlyone.ParentCache = ciBadgeElements.ClassElementsCache_Deprecated.Singleton;
+            recipient_by_id_onlyone.ParentCache = ciBadgeCachePersonality.ClassElementsCache_Deprecated.Singleton;
 
             return (ViewResult)View(recipient_by_id_onlyone);
 

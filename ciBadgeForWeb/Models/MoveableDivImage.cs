@@ -134,10 +134,12 @@ namespace ciBadgeForWeb.Models
         //
         // Initialize. ---3/20/2020 thomas downes 
         //
-        public MoveableDivImage(ciBadgeElements.ClassElementsCache_Deprecated par_cache,
+        public MoveableDivImage(ciBadgeCachePersonality.ClassElementsCache_Deprecated par_cache,
                                   System.Drawing.Point par_offsetPoint,
                                   bool par_allStackedUp = false)
         {
+            //---Dec.6, 2021----public MoveableDivImage(ciBadgeElements.ClassElementsCache_Deprecated par_cache
+            //
             //---April 22, 2020---public MoveableDivImage(ciBadgeElements.ClassElementsCache_Deprecated par_cache)
             //
             // Added 3/20/2020 thomas downes 

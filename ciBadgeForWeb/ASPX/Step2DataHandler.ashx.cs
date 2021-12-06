@@ -7,6 +7,7 @@ using System.Drawing.Imaging;   // Added 11/20/2021 thomas d.
 using System.IO;        // Added 11/20/2021 thomas d. 
 using ciLayoutPrintLib; // Added 11/20/2021 td
 using ciBadgeElements;       //Added 11/20/2021 td
+using ciBadgeCachePersonality; //Added 12/6/2021 thomas 
 
 namespace ciBadgeForWeb.ASPX
 {

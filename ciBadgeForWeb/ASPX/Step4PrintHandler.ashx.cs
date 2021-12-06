@@ -7,8 +7,9 @@ using System.Drawing.Imaging;   //Added 5/20/2019 thomas d.
 using System.IO;                //Added 5/20/2019 thomas d.
 using ciLayoutPrintLib;     //Added 10/5/2019 td
 
-using ciBadgeElements;       //Added 10/5/2019 td  
-using ciBadgeElemImage;     //Added 10/5/2019 td  
+//using ciBadgeElements;       //Added 10/5/2019 td
+using ciBadgeCachePersonality;  //Added 12/6/2021 td
+//using ciBadgeElemImage;     //Added 10/5/2019 td  
 using ciBadgeGenerator; //Added 11/13/2019 td
 
 //
@@ -163,7 +164,7 @@ namespace ciBadgeForWeb
                     //    It's important that the correct background image be displayed.
                     //
                     ciBadgeInterfaces.BadgeLayoutClass objLayout_B;   // Added 3/9/2020 thomas downes 
-                    objLayout_B = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.BadgeLayout;
+                    objLayout_B = ciBadgeCachePersonality.ClassElementsCache_Deprecated.Singleton.BadgeLayout;
                     string strPathToBackImages_B = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(true);
                     int intBackWidth_B = objLayout_B.Width_Pixels;
                     int intBackHeight_B = objLayout_B.Height_Pixels;
@@ -275,7 +276,7 @@ namespace ciBadgeForWeb
 
                         //Added 11/16/2019 td
                         // 1/14/2019 td//objLayout = ciBadgeElements.ClassElementsCache.Singleton.BadgeLayout;
-                        objBadgeLayout = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.BadgeLayout;
+                        objBadgeLayout = ciBadgeCachePersonality.ClassElementsCache_Deprecated.Singleton.BadgeLayout;
 
                         //Added 12/11/2019 td 
                         LayoutExample.PathToFolderWithBacks = ciBadgeForWeb.App_Start.DiskFolders.PathToFolderWithBacks(true);
@@ -627,7 +628,7 @@ namespace ciBadgeForWeb
 
             //Added 11/16/2019 td
             // 1/14/2019 td//objLayout = ciBadgeElements.ClassElementsCache.Singleton.BadgeLayout;
-            objBadgeLayout = ciBadgeElements.ClassElementsCache_Deprecated.Singleton.BadgeLayout;
+            objBadgeLayout = ciBadgeCachePersonality.ClassElementsCache_Deprecated.Singleton.BadgeLayout;
 
             //
             //Modify the placement of the Student/Employee's Full Name. ----6/27/2019 td

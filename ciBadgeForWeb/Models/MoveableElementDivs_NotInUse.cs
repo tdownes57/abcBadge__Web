@@ -1,5 +1,6 @@
 ﻿using ciBadgeElements; // Added 4/2/2020 thomas downes 
 using System.Drawing;
+using ciBadgeCachePersonality; // Added 12/6/2021 thomas downes
 
 namespace ciBadgeForWeb.Models
 {
@@ -64,6 +65,7 @@ namespace ciBadgeForWeb.Models
 
         public MoveableElementDivs_NotInUse(ClassElementsCache_Deprecated par_cache)
         {
+            //--Dec.6 2021---public MoveableElementDivs_NotInUse(ClassElementsCache_Deprecated par_cache)
             //
             // Added 4/2/2020 thomas downes 
             //
