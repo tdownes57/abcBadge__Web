@@ -89,7 +89,12 @@ namespace ciBadgeForWeb.App_Start
             {
                 // 2-4-2020 td //foreach (FileInfo file_Info in (new DirectoryInfo(strPathToFolderXML)).GetFiles("*.xml"))
                 FileInfo[] array_fileInfos = (new DirectoryInfo(strPathToFolderXML)).GetFiles("*.xml");  //Added 2/4/2020 thomas downes
-                foreach (FileInfo file_Info in array_fileInfos.OrderByDescending(n => n.LastWriteTime))
+
+                //Added 12/8/2021 thomas downes
+                var listMostRecentFiles = array_fileInfos.OrderByDescending(n => n.LastWriteTime);
+
+                //Dec. 8 //foreach (FileInfo file_Info in array_fileInfos.OrderByDescending(n => n.LastWriteTime))
+                foreach (FileInfo file_Info in listMostRecentFiles)
                 {
                     //Added 2/16/2020 thomas downes
                     boolExpectedFileType = file_Info.Name.EndsWith(".xml");
@@ -218,7 +223,7 @@ namespace ciBadgeForWeb.App_Start
             //    https://weblog.west-wind.com/posts/2007/Sep/18/ResolveUrl-without-Page
             //
             if (pboolResolveURL) return ResolveUrl(strPathToFile_Virtual);
-            
+
             return strPathToFile_Virtual;
 
         }
@@ -297,7 +302,7 @@ namespace ciBadgeForWeb.App_Start
             if (null == mod_dictionary_fileTitleJSON)
             {
                 //Added 3/24/2020 td
-                mod_dictionary_fileTitleJSON = new Dictionary<string, string>(); 
+                mod_dictionary_fileTitleJSON = new Dictionary<string, string>();
             }
             //Added 3/24/2020 td
             //
@@ -421,8 +426,8 @@ namespace ciBadgeForWeb.App_Start
             //   that the ..._Current function would have returned.)
             //-----3/24/2020 td 
             //
-            if (boolNotYetDetermined) return fileTitleJSON_Current; 
-            
+            if (boolNotYetDetermined) return fileTitleJSON_Current;
+
             string strSearchPattern = ("*" + pstrFileSuffix + ".json");  //Added 3-24-2020 thomas d.
 
             while (true)

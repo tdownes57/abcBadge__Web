@@ -401,6 +401,9 @@
     <Content Include="Images\Logos\feather logo RSC.jpg" />
     <Content Include="Scripts\Closures\LinkUpClosures_BACKUP.js" />
     <Content Include="Views\FieldsList w EditorTemplates\Notes.html" />
+    <Content Include="XML\CodeNinjas_Dec8.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="__Documentation - Notes\CIBCards83 - removing PD.mdb" />
     <Content Include="__Documentation - Notes\CIBCards83 - very complex.mdb" />
     <Content Include="__Documentation - Notes\Notes.html" />
