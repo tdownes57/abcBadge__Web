@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+//Dec. 8 2021 td //
 using ciBadgeElements;  //Added 11/13/2021 thomas downes  
+using ciBadgeCachePersonality;  //Added Dec. 8 2021 thomas
 
 //
 //  https://gist.github.com/rockfordlhotka/0474af9cf53cec9f2d359fa413d61e73

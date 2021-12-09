@@ -187,11 +187,11 @@ namespace ciBadgeForWeb.ASPX
 
                 IEnumerable<ClassElementField> list_elements = null;
                 if (bWeHave_DisplayIndex) list_elements =
-                  ClassElementsCache_Deprecated.Singleton.ListOfBadgeDisplayElements_Flds(false)
+                  ClassElementsCache_Deprecated.Singleton.ListOfBadgeDisplayElements_Flds_Front(false)
                   .Where(item => item.BadgeDisplayIndex == intBadgeDisplayIndex);
 
                 else if (bWeHave_ElementIndex) list_elements =
-                      ClassElementsCache_Deprecated.Singleton.ListOfBadgeDisplayElements_Flds(false)
+                      ClassElementsCache_Deprecated.Singleton.ListOfBadgeDisplayElements_Flds_Front(false)
                      .Where(i => i.ElementIndexIsFieldIndex() == intElementIndex_Final);
 
                 var obj_element = list_elements.FirstOrDefault();

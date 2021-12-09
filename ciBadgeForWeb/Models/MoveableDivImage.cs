@@ -7,6 +7,7 @@ using Newtonsoft.Json;   // Added 3/20/2020 thomas downes
 using ciBadgeElements;  // Added 3/20/2020 thomas downes  
 using System.Drawing;  // Added 4/22/2020 thomas downes
 using System.Collections.Generic;  // Added 11/8/2021 thomas downes 
+using ciBadgeCachePersonality;   // Added 12/8/2021 td 
 
 namespace ciBadgeForWeb.Models
 {

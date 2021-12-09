@@ -1,4 +1,4 @@
-﻿namespace ABC IDCardService
+﻿namespace abcBadgeService //''ABC IDCardService  // abcBadgeService
 {
     partial class Form1
     {

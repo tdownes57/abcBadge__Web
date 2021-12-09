@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using ciBadgeElements;  //Added 1/19/2020 thomas downes  
 using ciBadgeForWeb.Models;  //Added 11/16/2021 thomas downes
+using ciBadgeCachePersonality;   //Added 12/08/2021 thomas d. 
 
 namespace ciBadgeForWeb.Controllers
 {

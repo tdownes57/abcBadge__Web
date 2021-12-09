@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using ciBadgeFields;  //Added 11/16/2021 thomas downes
+using ciBadgeCachePersonality; //Added 12/8/2021 thomas downes
 using AutoMapper;  // Added 11/17/2021 thomas downes
 using ciBadgeElements; // Added 11/19/2021 thomas downes  
 

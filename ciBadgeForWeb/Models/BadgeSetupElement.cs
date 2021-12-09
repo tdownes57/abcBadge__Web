@@ -4,7 +4,9 @@
 //using System.Web;
 //using System.Text.JSON;  // Added 3/20/2020 thomas downes
 using Newtonsoft.Json;   // Added 3/20/2020 thomas downes
+// Dec. 8, 2021 //
 using ciBadgeElements;  // Added 3/20/2020 thomas downes  
+using ciBadgeCachePersonality;  //Added 12/8/2021 thomas downes
 using System.Drawing;  // Added 4/22/2020 thomas downes
 using System.Collections.Generic;  // Added 11/8/2021 thomas downes 
 

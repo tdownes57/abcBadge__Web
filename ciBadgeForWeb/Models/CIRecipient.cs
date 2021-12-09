@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+//using System.Linq;
+//using System.Web;
 using System.Web.Mvc; //Added 5/28/2019 td
 using System.ComponentModel.DataAnnotations; //Added 5/28/2019 td
 using System.Drawing; //Added 6/13/2019 thomas d. 
 using ciBadgeInterfaces; //Added 10/4/2019 td  
-using ciBadgeElements; // Added 12/01/2019 thomas d. 
-using ciPictures_VB; //Added 12/11/2019 thomas d. 
+//Dec.8 2021 //using ciBadgeElements; // Added 12/01/2019 thomas d. 
+using ciBadgeCachePersonality;  //Added 12/8/2021 thomas d. 
+//Dec.8 2021 //using ciPictures_VB; //Added 12/11/2019 thomas d. 
 using ciBadgeForWeb.Controllers;  //Added 12/11/2019 thomas d.
 
 using System.Linq.Expressions;  //Added 2-19-2020 thomas downes 
