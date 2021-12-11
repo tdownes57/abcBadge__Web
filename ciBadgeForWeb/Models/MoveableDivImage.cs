@@ -105,9 +105,14 @@ namespace ciBadgeForWeb.Models
         public string JSON_Offset_Top { get; set; }
 
         //Added 4/20/2020 thomas downes  
+        //  This is JSON data, so even Booleans are represented as strings??
         public string JSON_HasField { get; set; }
         public string JSON_Displayed { get; set; }
         public string JSON_FieldNm { get; set; }
+
+        //Added 12/11/2021 thomas downes
+        //  Boolean value.  This is JSON data, so even Booleans are represented as strings??
+        public string JSON_IsRotated90 { get; set; }
 
         //Number of displayable elements.
         //---public int ElementCount = 12; //Default value is 12. ----4/13/2020 thomas downes
@@ -126,8 +131,11 @@ namespace ciBadgeForWeb.Models
 
         //Added 4/20/2020 Thomas Downes 
         public Moveable_HasField MoveHasField;
-        public Moveable_Displayed MoveDisplayed;
+        public Moveable_IsDisplayed MoveIsDisplayed;   //Dec.11, 2021 // MoveDisplayed; 
         public Moveable_FieldNm MoveFieldName;
+
+        //Added 12/11/2020 Thomas Downes 
+        public Moveable_IsRotated90 MoveIsRotated90; // Added 12/11/2021 td
 
         //Added 5/3/2020 thomas downes
         public Image[] ImageForElement;
@@ -173,8 +181,11 @@ namespace ciBadgeForWeb.Models
 
             //Added 4/20/2020 Thomas Downes
             this.MoveHasField = new Moveable_HasField();
-            this.MoveDisplayed = new Moveable_Displayed();
+            this.MoveIsDisplayed = new Moveable_IsDisplayed();
             this.MoveFieldName = new Moveable_FieldNm();
+
+            //Added 12/11/2021 Thomas Downes
+            this.MoveIsRotated90 = new Moveable_IsRotated90();
 
             //Added 4/24/2020 thomas downes
             this.MoveTop_Offset = new Moveable_Top();
@@ -260,11 +271,13 @@ namespace ciBadgeForWeb.Models
                     prior_element = each_element;  // Prepare for next iteration.
 
                     //Integers are fine, strings not needed. 
-                    this.MoveWidth[indexElement] = each_element.Width_Pixels;   //.ToString() + "px";
-                    this.MoveHeight[indexElement] = each_element.Height_Pixels;  //.ToString() + "px";
+                    //Dec.11, 2021 td //this.MoveWidth[indexElement] = each_element.Width_Pixels;   //.ToString() + "px";
+                    //Dec.11, 2021 td //this.MoveHeight[indexElement] = each_element.Height_Pixels;  //.ToString() + "px";
+                    this.MoveWidth[indexElement] = each_element.Width_Pixels_MoveableDivImage();   //.ToString() + "px";
+                    this.MoveHeight[indexElement] = each_element.Height_Pixels_MoveableDivImage();  //.ToString() + "px";
 
                     //Added 4/20/2020 thomas downes
-                    this.MoveDisplayed[indexElement] = bElementIsVisible; // each_element.IsDisplayedOnBadge_Visibly();
+                    this.MoveIsDisplayed[indexElement] = bElementIsVisible; // each_element.IsDisplayedOnBadge_Visibly();
                     this.MoveHasField[indexElement] = bElementHasField;  // true;  // each_element.IsDisplayedOnBadge_Visibly();
                     this.MoveFieldName[indexElement] = each_element.FieldInfo.FieldLabelCaption;
 
@@ -318,7 +331,7 @@ namespace ciBadgeForWeb.Models
 
                     // Added 4/20/2020 thomas downes
                     this.MoveHasField[intEachUnused] = false;
-                    this.MoveDisplayed[intEachUnused] = false;
+                    this.MoveIsDisplayed[intEachUnused] = false;
                     this.MoveFieldName[intEachUnused] = "";
 
                     // Added 4/24/2020 thomas downes  
@@ -340,9 +353,17 @@ namespace ciBadgeForWeb.Models
             this.JSON_Offset_Top = this.GetJSON_Offset_Top();
 
             //Added 4/20/2020 thomas downes
+            //  This (JSON_Displayed, JSON_HasField) would be a Boolean value, except maybe because it's JSON data
+            //  it needs to be a string? 
             this.JSON_Displayed = this.GetJSON_Displayed();
             this.JSON_HasField = this.GetJSON_HasField();
             this.JSON_FieldNm = this.GetJSON_FieldName();
+
+            //Added 12/11/2021 thomas downes
+            //  This would be a Boolean value, except maybe because it's JSON data
+            //  it needs to be a string? 
+            this.JSON_IsRotated90 = this.GetJSON_IsRotated90();
+
 
             //this.EL1_Left = (mod_arrayElements[1].LeftEdge_Pixels.ToString() + "px");
             //this.EL2_Left = (mod_arrayElements[2].LeftEdge_Pixels.ToString() + "px");
@@ -481,27 +502,27 @@ namespace ciBadgeForWeb.Models
             this.MoveHeight.EL19_Height = (par_moveable.MoveHeight.EL19_Height);
 
             //Added 4/20/2020 thomas downes
-            this.MoveDisplayed.EL1_Displayed = (par_moveable.MoveDisplayed.EL1_Displayed);
-            this.MoveDisplayed.EL2_Displayed = (par_moveable.MoveDisplayed.EL2_Displayed);
-            this.MoveDisplayed.EL3_Displayed = (par_moveable.MoveDisplayed.EL3_Displayed);
-            this.MoveDisplayed.EL4_Displayed = (par_moveable.MoveDisplayed.EL4_Displayed);
-            this.MoveDisplayed.EL5_Displayed = (par_moveable.MoveDisplayed.EL5_Displayed);
-            this.MoveDisplayed.EL6_Displayed = (par_moveable.MoveDisplayed.EL6_Displayed);
-            this.MoveDisplayed.EL7_Displayed = (par_moveable.MoveDisplayed.EL7_Displayed);
-            this.MoveDisplayed.EL8_Displayed = (par_moveable.MoveDisplayed.EL8_Displayed);
-            this.MoveDisplayed.EL9_Displayed = (par_moveable.MoveDisplayed.EL9_Displayed);
-            this.MoveDisplayed.EL10_Displayed = (par_moveable.MoveDisplayed.EL10_Displayed);
-            this.MoveDisplayed.EL11_Displayed = (par_moveable.MoveDisplayed.EL11_Displayed);
-            this.MoveDisplayed.EL12_Displayed = (par_moveable.MoveDisplayed.EL12_Displayed);
+            this.MoveIsDisplayed.EL1_IsDisplayed = (par_moveable.MoveIsDisplayed.EL1_IsDisplayed);
+            this.MoveIsDisplayed.EL2_IsDisplayed = (par_moveable.MoveIsDisplayed.EL2_IsDisplayed);
+            this.MoveIsDisplayed.EL3_IsDisplayed = (par_moveable.MoveIsDisplayed.EL3_IsDisplayed);
+            this.MoveIsDisplayed.EL4_IsDisplayed = (par_moveable.MoveIsDisplayed.EL4_IsDisplayed);
+            this.MoveIsDisplayed.EL5_IsDisplayed = (par_moveable.MoveIsDisplayed.EL5_IsDisplayed);
+            this.MoveIsDisplayed.EL6_IsDisplayed = (par_moveable.MoveIsDisplayed.EL6_IsDisplayed);
+            this.MoveIsDisplayed.EL7_IsDisplayed = (par_moveable.MoveIsDisplayed.EL7_IsDisplayed);
+            this.MoveIsDisplayed.EL8_IsDisplayed = (par_moveable.MoveIsDisplayed.EL8_IsDisplayed);
+            this.MoveIsDisplayed.EL9_IsDisplayed = (par_moveable.MoveIsDisplayed.EL9_IsDisplayed);
+            this.MoveIsDisplayed.EL10_IsDisplayed = (par_moveable.MoveIsDisplayed.EL10_IsDisplayed);
+            this.MoveIsDisplayed.EL11_IsDisplayed = (par_moveable.MoveIsDisplayed.EL11_IsDisplayed);
+            this.MoveIsDisplayed.EL12_IsDisplayed = (par_moveable.MoveIsDisplayed.EL12_IsDisplayed);
 
             //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed,
             //  and the five customizable fields (EL15 to EL19).)
             //   -----11/18/2021 tcd
-            this.MoveDisplayed.EL15_Displayed = (par_moveable.MoveDisplayed.EL15_Displayed);
-            this.MoveDisplayed.EL16_Displayed = (par_moveable.MoveDisplayed.EL16_Displayed);
-            this.MoveDisplayed.EL17_Displayed = (par_moveable.MoveDisplayed.EL17_Displayed);
-            this.MoveDisplayed.EL18_Displayed = (par_moveable.MoveDisplayed.EL18_Displayed);
-            this.MoveDisplayed.EL19_Displayed = (par_moveable.MoveDisplayed.EL19_Displayed);
+            this.MoveIsDisplayed.EL15_IsDisplayed = (par_moveable.MoveIsDisplayed.EL15_IsDisplayed);
+            this.MoveIsDisplayed.EL16_IsDisplayed = (par_moveable.MoveIsDisplayed.EL16_IsDisplayed);
+            this.MoveIsDisplayed.EL17_IsDisplayed = (par_moveable.MoveIsDisplayed.EL17_IsDisplayed);
+            this.MoveIsDisplayed.EL18_IsDisplayed = (par_moveable.MoveIsDisplayed.EL18_IsDisplayed);
+            this.MoveIsDisplayed.EL19_IsDisplayed = (par_moveable.MoveIsDisplayed.EL19_IsDisplayed);
 
             //Added 4/20/2020 thomas downes
             this.MoveHasField.EL1_HasField = (par_moveable.MoveHasField.EL1_HasField);
@@ -753,6 +774,7 @@ namespace ciBadgeForWeb.Models
 
         }
 
+
         public string GetJSON_Width()
         {
             //
@@ -766,6 +788,7 @@ namespace ciBadgeForWeb.Models
             return strOutput;
 
         }
+
 
         public string GetJSON_Height()
         {
@@ -785,18 +808,23 @@ namespace ciBadgeForWeb.Models
             //
             // Added 4/20/2020 thomas downes
             //
+            //   Is this a Boolean value represented by strings?   Is it used?  What is some example data?
+            //
             JsonSerializerSettings json_options = new JsonSerializerSettings();
             //json_options.Formatting = Formatting.Indented;
             json_options.Formatting = Formatting.None;
-            string strOutput = JsonConvert.SerializeObject(this.MoveDisplayed, this.MoveDisplayed.GetType(), json_options);
+            string strOutput = JsonConvert.SerializeObject(this.MoveIsDisplayed, this.MoveIsDisplayed.GetType(), json_options);
             return strOutput;
 
         }
+
 
         public string GetJSON_HasField()
         {
             //
             // Added 4/20/2020 thomas downes
+            //
+            //   Is this a Boolean value represented by strings?   Is it used?  What is some example data?
             //
             JsonSerializerSettings json_options = new JsonSerializerSettings();
             //json_options.Formatting = Formatting.Indented;
@@ -805,6 +833,23 @@ namespace ciBadgeForWeb.Models
             return strOutput;
 
         }
+
+
+        public string GetJSON_IsRotated90()
+        {
+            //
+            // Added 12/11/2021 thomas downes
+            //
+            //   Is this a Boolean value represented by strings?   Is it used?  What is some example data?
+            //
+            JsonSerializerSettings json_options = new JsonSerializerSettings();
+            //json_options.Formatting = Formatting.Indented;
+            json_options.Formatting = Formatting.None;
+            string strOutput = JsonConvert.SerializeObject(this.MoveIsRotated90, this.MoveIsRotated90.GetType(), json_options);
+            return strOutput;
+
+        }
+
 
         public string GetJSON_FieldName()
         {
@@ -812,7 +857,7 @@ namespace ciBadgeForWeb.Models
             JsonSerializerSettings json_options = new JsonSerializerSettings();
             //json_options.Formatting = Formatting.Indented;
             json_options.Formatting = Formatting.None;
-            string strOutput = JsonConvert.SerializeObject(this.MoveHasField, this.MoveHasField.GetType(), json_options);
+            string strOutput = JsonConvert.SerializeObject(this.MoveFieldName, this.MoveFieldName.GetType(), json_options);
             return strOutput;
 
         }
@@ -921,8 +966,30 @@ namespace ciBadgeForWeb.Models
                     {
                         mod_arrayElements[i_indexElement].LeftEdge_Pixels = int.Parse(this.MoveLeft[i_indexElement].Replace("px", ""));
                         mod_arrayElements[i_indexElement].TopEdge_Pixels = int.Parse(this.MoveTop[i_indexElement].Replace("px", ""));
-                        mod_arrayElements[i_indexElement].Width_Pixels = this.MoveWidth[i_indexElement];
-                        mod_arrayElements[i_indexElement].Height_Pixels = this.MoveHeight[i_indexElement];
+
+                        //Dec11 2021 //mod_arrayElements[i_indexElement].Width_Pixels = this.MoveWidth[i_indexElement];
+                        //Dec11 2021 //mod_arrayElements[i_indexElement].Height_Pixels = this.MoveHeight[i_indexElement];
+
+                        // Added 12/11/2021 td
+                        //   Incorporate rotation.  
+                        bool bIsRotated90 = mod_arrayElements[i_indexElement].IsRotated_SwitchWidthHeight();
+                        if (bIsRotated90)
+                        {
+                            mod_arrayElements[i_indexElement].Width_Pixels = this.MoveWidth[i_indexElement];
+                            mod_arrayElements[i_indexElement].Height_Pixels = this.MoveHeight[i_indexElement];
+                        }
+                        else
+                        {
+                            //
+                            // Rotated 90 - Switching Width & Height.  
+                            //
+                            //Dec11 2021 //mod_arrayElements[i_indexElement].Width_Pixels = this.MoveWidth[i_indexElement];
+                            //Dec11 2021 //mod_arrayElements[i_indexElement].Height_Pixels = this.MoveHeight[i_indexElement];
+                            mod_arrayElements[i_indexElement].Width_Pixels = this.MoveHeight[i_indexElement]; // Switch Height & Width.
+                            mod_arrayElements[i_indexElement].Height_Pixels = this.MoveWidth[i_indexElement]; // Switch Height & Width.
+                        }
+
+
                     }
                     catch (Exception ex)
                     {

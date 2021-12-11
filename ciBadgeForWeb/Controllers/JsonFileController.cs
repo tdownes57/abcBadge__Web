@@ -351,7 +351,7 @@ namespace ciBadgeForWeb.Controllers
             //    JsonFileController.MoveableDivs = objectMoveableDivs;
             //}
             //Moveable_Displayed objectMoveDisplayed = JsonFileController.MoveableDivs.MoveDisplayed;
-            Moveable_Displayed objectMoveDisplayed = JsonFileController.GetMoveableDivs().MoveDisplayed;
+            Moveable_IsDisplayed objectMoveDisplayed = JsonFileController.GetMoveableDivs().MoveIsDisplayed;
             return View(objectMoveDisplayed);
 
         }

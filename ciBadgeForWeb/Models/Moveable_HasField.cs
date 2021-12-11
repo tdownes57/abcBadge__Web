@@ -1,13 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Web;
 
 namespace ciBadgeForWeb.Models
 {
     public class Moveable_HasField
     {
-
+        //  This would be a Boolean value, except maybe because it's JSON data
+        //  it needs to be a string? 
+        //
+        //  Oh, never mind, it IS a Boolean value. ----12/11/2021 thomas downes
+        //
         public bool EL1_HasField { get; set; }
         public bool EL2_HasField { get; set; }
         public bool EL3_HasField { get; set; }

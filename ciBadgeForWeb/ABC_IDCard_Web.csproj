@@ -290,10 +290,11 @@
       <DependentUpon>ModelEntity.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\MoveableDivImage.cs" />
-    <Compile Include="Models\Moveable_Displayed.cs" />
+    <Compile Include="Models\Moveable_IsDisplayed.cs" />
     <Compile Include="Models\Moveable_FieldNm.cs" />
     <Compile Include="Models\Moveable_HasField.cs" />
     <Compile Include="Models\Moveable_Height.cs" />
+    <Compile Include="Models\Moveable_IsRotated90.cs" />
     <Compile Include="Models\Moveable_Left.cs" />
     <Compile Include="Models\Moveable_Top.cs" />
     <Compile Include="Models\Moveable_Width.cs" />

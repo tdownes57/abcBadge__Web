@@ -164,7 +164,7 @@ namespace ciBadgeForWeb.Models
 
         //Added 4/20/2020 Thomas Downes 
         public Moveable_HasField MoveHasField;
-        public Moveable_Displayed MoveDisplayed;
+        public Moveable_IsDisplayed MoveDisplayed;
         public Moveable_FieldNm MoveFieldName;
 
         //Added 5/3/2020 thomas downes
@@ -197,7 +197,7 @@ namespace ciBadgeForWeb.Models
 
             //Added 4/20/2020 Thomas Downes
             this.MoveHasField = new Moveable_HasField();
-            this.MoveDisplayed = new Moveable_Displayed();
+            this.MoveDisplayed = new Moveable_IsDisplayed();
             this.MoveFieldName = new Moveable_FieldNm();
 
             //Added 4/24/2020 thomas downes
@@ -449,27 +449,27 @@ namespace ciBadgeForWeb.Models
 
             //Displayed
             //   ---Added 4/20/2020 thomas downes
-            this.MoveDisplayed.EL1_Displayed = (par_moveable.MoveDisplayed.EL1_Displayed);
-            this.MoveDisplayed.EL2_Displayed = (par_moveable.MoveDisplayed.EL2_Displayed);
-            this.MoveDisplayed.EL3_Displayed = (par_moveable.MoveDisplayed.EL3_Displayed);
-            this.MoveDisplayed.EL4_Displayed = (par_moveable.MoveDisplayed.EL4_Displayed);
-            this.MoveDisplayed.EL5_Displayed = (par_moveable.MoveDisplayed.EL5_Displayed);
-            this.MoveDisplayed.EL6_Displayed = (par_moveable.MoveDisplayed.EL6_Displayed);
-            this.MoveDisplayed.EL7_Displayed = (par_moveable.MoveDisplayed.EL7_Displayed);
-            this.MoveDisplayed.EL8_Displayed = (par_moveable.MoveDisplayed.EL8_Displayed);
-            this.MoveDisplayed.EL9_Displayed = (par_moveable.MoveDisplayed.EL9_Displayed);
-            this.MoveDisplayed.EL10_Displayed = (par_moveable.MoveDisplayed.EL10_Displayed);
-            this.MoveDisplayed.EL11_Displayed = (par_moveable.MoveDisplayed.EL11_Displayed);
-            this.MoveDisplayed.EL12_Displayed = (par_moveable.MoveDisplayed.EL12_Displayed);
+            this.MoveDisplayed.EL1_IsDisplayed = (par_moveable.MoveIsDisplayed.EL1_IsDisplayed);
+            this.MoveDisplayed.EL2_IsDisplayed = (par_moveable.MoveIsDisplayed.EL2_IsDisplayed);
+            this.MoveDisplayed.EL3_IsDisplayed = (par_moveable.MoveIsDisplayed.EL3_IsDisplayed);
+            this.MoveDisplayed.EL4_IsDisplayed = (par_moveable.MoveIsDisplayed.EL4_IsDisplayed);
+            this.MoveDisplayed.EL5_IsDisplayed = (par_moveable.MoveIsDisplayed.EL5_IsDisplayed);
+            this.MoveDisplayed.EL6_IsDisplayed = (par_moveable.MoveIsDisplayed.EL6_IsDisplayed);
+            this.MoveDisplayed.EL7_IsDisplayed = (par_moveable.MoveIsDisplayed.EL7_IsDisplayed);
+            this.MoveDisplayed.EL8_IsDisplayed = (par_moveable.MoveIsDisplayed.EL8_IsDisplayed);
+            this.MoveDisplayed.EL9_IsDisplayed = (par_moveable.MoveIsDisplayed.EL9_IsDisplayed);
+            this.MoveDisplayed.EL10_IsDisplayed = (par_moveable.MoveIsDisplayed.EL10_IsDisplayed);
+            this.MoveDisplayed.EL11_IsDisplayed = (par_moveable.MoveIsDisplayed.EL11_IsDisplayed);
+            this.MoveDisplayed.EL12_IsDisplayed = (par_moveable.MoveIsDisplayed.EL12_IsDisplayed);
 
             //There is a gap between the 12(+1 for 0th) Standard fields being possibly displayed,
             //  and the five customizable fields (EL15 to EL19).)
             //   -----11/18/2021 tcd
-            this.MoveDisplayed.EL15_Displayed = (par_moveable.MoveDisplayed.EL15_Displayed);
-            this.MoveDisplayed.EL16_Displayed = (par_moveable.MoveDisplayed.EL16_Displayed);
-            this.MoveDisplayed.EL17_Displayed = (par_moveable.MoveDisplayed.EL17_Displayed);
-            this.MoveDisplayed.EL18_Displayed = (par_moveable.MoveDisplayed.EL18_Displayed);
-            this.MoveDisplayed.EL19_Displayed = (par_moveable.MoveDisplayed.EL19_Displayed);
+            this.MoveDisplayed.EL15_IsDisplayed = (par_moveable.MoveIsDisplayed.EL15_IsDisplayed);
+            this.MoveDisplayed.EL16_IsDisplayed = (par_moveable.MoveIsDisplayed.EL16_IsDisplayed);
+            this.MoveDisplayed.EL17_IsDisplayed = (par_moveable.MoveIsDisplayed.EL17_IsDisplayed);
+            this.MoveDisplayed.EL18_IsDisplayed = (par_moveable.MoveIsDisplayed.EL18_IsDisplayed);
+            this.MoveDisplayed.EL19_IsDisplayed = (par_moveable.MoveIsDisplayed.EL19_IsDisplayed);
 
             //HasField
             //  ----Added 4/20/2020 thomas downes
