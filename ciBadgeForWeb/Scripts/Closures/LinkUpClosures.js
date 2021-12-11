@@ -164,6 +164,13 @@
     if (EL18) EL18_im.width = my_JSON_object_Width["EL18_Width"];
     if (EL19) EL19_im.width = my_JSON_object_Width["EL19_Width"];
 
+    //Added 12/10/2021 thomas downes
+    if (EL41_rotated) EL41_im.width = my_JSON_object_Height["EL41_Width"];
+    if (EL42_rotated) EL42_im.width = my_JSON_object_Height["EL42_Width"];
+    if (EL43_rotated) EL43_im.width = my_JSON_object_Height["EL43_Width"];
+    if (EL44_rotated) EL44_im.width = my_JSON_object_Height["EL44_Width"];
+    if (EL45_rotated) EL45_im.width = my_JSON_object_Height["EL45_Width"];
+
     //Added 3/3/2020 td
     if (document.getElementById("div_Width2x")) {
     //Added 3/30/2020 thomas downes
@@ -307,8 +314,18 @@
         //---my_JSON_object_Width[par_Element.id + "_width"] = my_image.width;
         //---my_JSON_object_Height[par_Element.id + "_height"] = my_image.height;
 
-        my_JSON_object_Width[par_Element.id + "_Width"] = my_image.width;
-        my_JSON_object_Height[par_Element.id + "_Height"] = my_image.height;
+        boolRotated = false; //Added 12/10/2021 thomas downes 
+        if (boolRotated) {
+            // 
+            // Switch Height & Width.
+            //
+            my_JSON_object_Width[par_Element.id + "_Width"] = my_image.height;  // my_image.width;
+            my_JSON_object_Height[par_Element.id + "_Height"] = my_image.width; // my_image.height; 
+        }
+        else {
+            my_JSON_object_Width[par_Element.id + "_Width"] = my_image.width;
+            my_JSON_object_Height[par_Element.id + "_Height"] = my_image.height;
+        }
 
         //par_sJsonString_Width = JSON.stringify(my_JSON_object_Width);
         //par_sJsonString_Height = JSON.stringify(my_JSON_object_Height);
