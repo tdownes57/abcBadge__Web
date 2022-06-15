@@ -6,6 +6,7 @@ using System.Web.Mvc; //Added 5/28/2019 td
 using System.ComponentModel.DataAnnotations; //Added 5/28/2019 td
 using System.Drawing; //Added 6/13/2019 thomas d. 
 using ciBadgeInterfaces; //Added 10/4/2019 td  
+using static ciBadgeInterfaces.ModEnumsAndStructs; //Added 6/14/2022 td
 //Dec.8 2021 //using ciBadgeElements; // Added 12/01/2019 thomas d. 
 using ciBadgeCachePersonality;  //Added 12/8/2021 thomas d. 
 //Dec.8 2021 //using ciPictures_VB; //Added 12/11/2019 thomas d. 
@@ -57,7 +58,8 @@ namespace ciBadgeForWeb.Models
             //Added 12/1/2019 thomas d
             //
             // 12-02-2019 td''return ((ClassElementsCache)ParentCache).ListOfFields_Any();
-            return ((ClassElementsCache_Deprecated)ParentCache).ListOfFields_Any(this);
+            // 06-14-2022 td''return ((ClassElementsCache_Deprecated)ParentCache).ListOfFields_Any(this);
+            return ((ClassElementsCache_Deprecated)ParentCache).ListOfFields_AnyRelevent();
 
         }
 
@@ -68,7 +70,8 @@ namespace ciBadgeForWeb.Models
             // Added 11/15/2021 thomas d   
             //
             // 12-02-2019 td''return ((ClassElementsCache)ParentCache).ListOfFields_Any();
-            return ((ClassElementsCache_Deprecated)ParentCache).ListOfFields_CreateCopies();
+            // 06-14-2022 td''return ((ClassElementsCache_Deprecated)ParentCache).ListOfFields_CreateCopies();
+            return ((ClassElementsCache_Deprecated)ParentCache).ListOfFields_SC_CreateCopies();
 
         }
 
@@ -77,9 +80,22 @@ namespace ciBadgeForWeb.Models
         {
             // Added 11/13/2019 td 
             //11-16-2019 td//return null;
-            return this.Picture;
+            return this.PortraitPicture;
 
         }
+
+        //
+        // Added 6/14/2022 thomas downes
+        //
+        public System.Drawing.Image PortraitPicture { get; set; }
+
+        //
+        // Added 6/14/2022 thomas downes
+        //
+        public string PortraitPhotoID { get; set; }
+        public string fstrNameAbbreviated { get; set; }
+        public string fstrEmailAddress { get; set; }
+
 
         [Display(Name = "ID")]
         public string fstrID //Added 10-4-2019 td 
@@ -392,8 +408,9 @@ namespace ciBadgeForWeb.Models
             return strOutput;
         }
 
+
         //
-        //Addeed 10/4/2019 thomas downes  
+        //Added 10/4/2019 thomas downes  
         //
         public string GetTextValue(EnumCIBFields par_enum)
         {
@@ -430,8 +447,58 @@ namespace ciBadgeForWeb.Models
                     return "Undetermined#1";
                     //break;
             }
+            
             return "Undetermined";
+
         }
+
+
+        //
+        //Added 6/14/2022 thomas downes  
+        //
+        public void SaveTextValue(EnumCIBFields par_enum, string par_value, ref bool par_bool)
+        {
+            switch (par_enum)
+            {
+                //Added 11/17/2019 td
+                case EnumCIBFields.fstrFirstName: this.fstrFirstName = par_value; break;
+                case EnumCIBFields.fstrID: this.fstrID= par_value; break;
+                case EnumCIBFields.fstrLastName: this.fstrLastName = par_value; break;
+                case EnumCIBFields.fstrMidName: this.fstrMidName = par_value; break;
+
+                //case EnumCIBFields.DateField01: DateField01.ToString("MM/dd/yyyy") = par_value;  break;
+                //case EnumCIBFields.DateField02: DateField02.ToString("MM/dd/yyyy") = par_value;  break;
+                //case EnumCIBFields.DateField03: DateField03.ToString("MM/dd/yyyy") = par_value;  break;
+                //case EnumCIBFields.DateField04: DateField04.ToString("MM/dd/yyyy") = par_value;  break;
+                //case EnumCIBFields.DateField05: DateField05.ToString("MM/dd/yyyy") = par_value;  break;
+                case EnumCIBFields.DateField01: DateField01 = DateTime.Parse(par_value); break;
+                case EnumCIBFields.DateField02: DateField02 = DateTime.Parse(par_value); break;
+                case EnumCIBFields.DateField03: DateField03 = DateTime.Parse(par_value); break;
+                case EnumCIBFields.DateField04: DateField04 = DateTime.Parse(par_value); break;
+                case EnumCIBFields.DateField05: DateField05 = DateTime.Parse(par_value); break;
+
+                case EnumCIBFields.TextField01: TextField01 = par_value;  break;
+                case EnumCIBFields.TextField02: TextField02 = par_value;  break;
+                case EnumCIBFields.TextField03: TextField03 = par_value;  break;
+                case EnumCIBFields.TextField04: TextField04 = par_value;  break;
+                case EnumCIBFields.TextField05: TextField05 = par_value;  break;
+                case EnumCIBFields.TextField06: TextField06 = par_value;  break;
+                case EnumCIBFields.TextField07: TextField07 = par_value;  break;
+                case EnumCIBFields.TextField08: TextField08 = par_value;  break;
+                case EnumCIBFields.TextField09: TextField09 = par_value;  break;
+                case EnumCIBFields.TextField10: TextField10 = par_value;  break;
+                case EnumCIBFields.TextField11: TextField11 = par_value;  break;
+                case EnumCIBFields.TextField12: TextField12 = par_value;  break;
+                case EnumCIBFields.TextField13: TextField13 = par_value;  break;
+                case EnumCIBFields.TextField14: TextField14 = par_value;  break;
+                case EnumCIBFields.TextField15: TextField15 = par_value;  break;
+            //    default:
+            //        "Undetermined#1";
+            //        //break;
+            }
+            //"Undetermined";
+        }
+
 
         //
         //Addeed 10/4/2019 thomas downes  

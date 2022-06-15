@@ -1356,9 +1356,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ciLayout\ciBadgeCachingPersonality\ciBadgeCachePersonality.vbproj">
-      <Project>{4c1b73a0-7c02-4ff4-96f2-acfa1306cce4}</Project>
-      <Name>ciBadgeCachePersonality</Name>
+    <ProjectReference Include="..\..\ciLayout\ciBadgeCachingPersonality\ciBadgeCachePersonalityEtc.vbproj">
+      <Project>{ac1439ed-52f9-4377-aeab-4ac6dd397ace}</Project>
+      <Name>ciBadgeCachePersonalityEtc</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\ciLayout\ciBadgeDesigner\ciBadgeDesigner.vbproj">
       <Project>{3a21a08c-c694-4f11-9838-91fff99a5d82}</Project>
@@ -1376,9 +1376,9 @@
       <Project>{ef9acec9-841e-4397-bfcb-917c814c4b8c}</Project>
       <Name>ciBadgeFields</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\ciLayout\ciBadgeGenerator\ciBadgeGenerator.csproj">
-      <Project>{42468695-2856-4336-8bca-c5af2ea8178e}</Project>
-      <Name>ciBadgeGenerator</Name>
+    <ProjectReference Include="..\..\ciLayout\ciBadgeGenerator\ciBadgeGeneratorCS.csproj">
+      <Project>{2c664f4b-14ba-4f1a-bacc-a6bc6284740e}</Project>
+      <Name>ciBadgeGeneratorCS</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\ciLayout\ciBadgeInterfaces\ciBadgeInterfaces.vbproj">
       <Project>{3d1acca6-585e-4c92-9a6d-9a51d2f72f5f}</Project>
