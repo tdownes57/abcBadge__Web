@@ -1,0 +1,41 @@
+﻿
+
+Injecting javascript from ASP.NET webcontrol
+https://stackoverflow.com/questions/48015521/injecting-javascript-from-asp-net-webcontrol
+
+I'm making an ASP.NET webforms application and I have a problem with injecting a script into the page from a web control. The script is located in the same folder as control:
+
+Screenshot1
+
+So I'm trying like:
+
+[ToolboxData("<{0}:MyWebControl runat=server></{0}:MyWebControl>")]
+[System.Drawing.ToolboxBitmap(typeof(MyWebControl))]
+public class MyWebControl : Image
+{
+
+    //...
+
+    protected override void OnPreRender(EventArgs e)
+    {
+        base.OnPreRender(e);
+
+
+        string scriptStr = "<script src=\"my_script.js\" type=\"text/javascript\">";
+        ClientScriptManager csm = Page.ClientScript;
+        csm.RegisterClientScriptBlock(this.Page.GetType(), "MyScriptTag", scriptStr);
+
+        //...
+    }
+
+}
+
+
+
+
+You need the path to the javascript file to be relative to the page that the user control is being rendered within. I'm assuming that the user control is being loaded by your index.aspx in your web project. Add a Scripts folder to the web project and move the javascript file there. Then, change the src to
+
+src=\"/Scripts/my_script.js\"
+
+
+
