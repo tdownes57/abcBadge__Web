@@ -1,4 +1,5 @@
-﻿
+﻿//
+//  R Software Consulting 123, Thomas C. Downes..  ----6/22/2019 td
 //
 //   How to create Better Tooltips with plain JavaScript and CSS
 //

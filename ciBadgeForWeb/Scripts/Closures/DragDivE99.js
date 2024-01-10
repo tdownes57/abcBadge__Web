@@ -1,4 +1,7 @@
-﻿//-----4/28/2020 thomas downes------<script>
+﻿//
+//  R Software Consulting 123, Thomas C. Downes..  ----6/22/2019 td
+//
+//-----4/28/2020 thomas downes------<script>
 
     if (EL1) {
         MakeClosure_dragElement(EL1);

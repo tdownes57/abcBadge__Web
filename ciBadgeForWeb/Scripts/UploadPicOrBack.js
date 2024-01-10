@@ -1,8 +1,10 @@
-﻿
+﻿//
+//  R Software Consulting 123, Thomas C. Downes..  ----6/22/2019 td
 //
 //   https://www.dotnettricks.com/learn/mvc/how-to-upload-a-file-in-mvc4
 //
-"use strict";  //Suggested by my Orange Coast class. ---2/4/2020 thomas downes
+"use strict";  //Suggested by my Orange Coast College Javascript class (online).
+//                          --- 2 / 4 / 2020 thomas downes
 
 //get file size
  //-----export function GetFileSize(fileid) {

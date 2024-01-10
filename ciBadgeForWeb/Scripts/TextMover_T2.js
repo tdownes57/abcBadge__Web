@@ -1,6 +1,6 @@
 
 //
-//CI Solutions, Thomas C. Downes..  ----6/22/2019 td  
+//  R Software Consulting 123, Thomas C. Downes..  ----6/22/2019 td  
 //
 //    TextMover_T2.js
 //
